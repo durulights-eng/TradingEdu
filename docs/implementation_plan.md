@@ -1,75 +1,123 @@
-# ChartMon 문제은행 2차 확충 (실전 행동 결정 시나리오형 30개 추가) 계획서
+# ChartMon 관리자 권한 분리 및 우회 차단 설계서
 
-이전 MVP 이론 인지형 문제(30개)에 이어, **실전 매매 도중 겪는 차트 변곡점 상황에서의 결단(전량 손절, 50% 손절, 관망, 추가 매수 등)을 테스트하는 실전 의사결정 시나리오 퀴즈 30개(ID 31~60)를 추가**하여 총 60개의 방대한 문제은행으로 볼륨을 확대합니다.
+일반 사용자가 `profiles` 테이블의 RLS 자가 업데이트 정책(`auth.uid() = id`)을 악용해 본인의 `is_admin` 필드를 `true`로 직접 변경함으로써 관리자 권한을 탈취하는 보안 취약점을 차단합니다. 
+
+이를 해결하기 위해 **어드민 권한 식별용 테이블(`admin_users`)을 별도로 격리 분리**하고 RLS 정책을 재구축합니다.
 
 ---
 
 ## User Review Required
 
-사용자의 실전 결단 능력(전량 손절, 50% 손절, 관망, 1차 매수 진입 등)을 시험하는 30개 신규 시나리오 문제 구성을 확인해 주세요.
-
 > [!IMPORTANT]
-> **신규 퀴즈의 행동 결정형 보기(Options) 구성 특징**
-> * 단순히 "이 패턴의 이름은?" 같은 단순 암기식 문제를 지양하고, **"이 차트 상황에서 당신의 다음 매매 행동으로 올바른 것은?"**을 묻습니다.
-> * **핵심 보기 구성**: 
->   - *전량 손절 (Stop Loss)*: 지지 실패 확인 즉시 원칙 손절
->   - *50% 분할 익절/손절 (Partial Exit)*: 비중을 조절하고 리스크 관리
->   - *관망 및 대기 (Wait & See)*: 가짜 이탈을 대비해 종가 마감까지 지켜보기
->   - *1차 진입 또는 물타기 (Entry / Scale-in)*: 지지선 및 리테스트 성공 확인 후 손절 라인을 설정한 진입
+> **1. 어드민 전용 테이블(`admin_users`) 격리 도입**
+> * 기존 `profiles` 테이블의 `is_admin` 컬럼을 완전히 제거합니다.
+> * 관리자 식별을 위해 오직 `auth.users`와 1:1 관계를 가지는 `public.admin_users(user_id)` 테이블을 새롭게 신설합니다.
+> * 이 테이블은 RLS 쓰기(`INSERT`/`UPDATE`/`DELETE`) 정책이 전혀 등록되지 않아 외부 API(클라이언트)를 통해서는 수정할 수 없고, 오직 Supabase 관리자 SQL 또는 서비스 롤을 통해서만 관리자를 등록할 수 있게 보안이 원천 차단됩니다.
 
 ---
 
 ## Proposed Changes
 
-### 1. 캔들 패턴 인지 드릴 (ID 31~35) - 실전 결단형
-* **ID 31 (행잉맨 하락 확인)**: 급등 천정에서 행잉맨(Hanging Man) 출현 후 음봉 갭하락 출발 시 대응. (정답: 50% 분할 익절 또는 전량 청산)
-* **ID 32 (샛별형 바닥 진입)**: 바닥 도지 캔들 후 장대 양봉 터진 샛별형(Morning Star) 완성 시 매수 진입과 합리적인 손절 기준점 잡기. (정답: 분할 매수 진입 및 도지 최저가 바로 밑 손절 설정)
-* **ID 33 (유성형 이중 저항)**: 박스권 고점에서 유성형(Shooting Star) 연속 발생 시 롱 포지션 관리. (정답: 저항대 도달로 판단하여 50% 분할 익절 또는 전량 매도)
-* **ID 34 (관통형 전환 진입)**: 폭락 끝자락에서 직전 음봉 몸통 70% 덮은 관통형(Piercing) 출현 시 액션. (정답: 음봉 저점 아래 타이트한 손절을 잡고 1차 분할 매수 진입)
-* **ID 35 (하락 잉태형 추세 둔화)**: 단기 고점에서 음봉이 양봉 내에 갇힌 하락 잉태형(Bearish Harami) 발생 시. (정답: 상승 관성이 꺾였으므로 비중 축소 및 일부 익절 후 대기)
+### 1. 데이터베이스 스키마 및 RLS 정책 변경
 
-### 2. 지지/저항 & 돌파 드릴 (ID 36~40) - 실전 결단형
-* **ID 36 (핵심 지지선 붕괴)**: 대량 거래량과 함께 지지선(100달러)을 종가로 1.5% 하방 이탈(Breakdown)했을 때 위기 조치. (정답: 원칙에 따라 즉시 전량 손절하여 추가 폭락 대비)
-* **ID 37 (돌파선 리테스트 지지)**: 저항선을 강하게 뚫은 주가가 거래량 소멸과 함께 해당 돌파선으로 되돌림(Retest) 조정을 받으며 도지 캔들로 지지받을 때. (정답: 돌파선 바로 밑에 손절을 셋업하고 눌림목 매수 진입)
-* **ID 38 (지지선 저점 하락 수렴)**: 지지선 부근에서 주가가 버티고 있으나 저점들이 점점 낮아지는 하락 삼각수렴(Descending) 진행 시 매수 보류 여부. (정답: 매도 압력이 지지 압력보다 강하므로 매수를 보류하고 하방 이탈 확인 대기)
-* **ID 39 (불 트랩 가짜 돌파 탈출)**: 저항선을 거래량 없이 돌파했다가 이내 장대 음봉으로 넥라인 아래로 회귀했을 때 매수자의 조치. (정답: 불 트랩 함정이 확인되었으므로 손실을 감수하고 즉시 전량 매도 및 손절)
-* **ID 40 (지지선 이탈 후 저항 전환 탈출)**: 200달러 지지선 붕괴 시 손절을 놓쳤는데, 주가가 반등하여 다시 200달러선 부근까지 복귀했을 때 탈출 매도 타점. (정답: 붕괴된 지지선이 강력한 저항선으로 변했으므로 본전 또는 최소 손실로 전량 매도 탈출)
+#### [MODIFY] [supabase_schema.sql](file:///d:/TradingEdu/docs/supabase_schema.sql)
+* `profiles` 테이블 정의에서 `is_admin` 제거.
+* `public.admin_users` 테이블 추가.
+* `public.is_admin()` 권한 검사 함수가 `admin_users` 테이블에 유저가 존재하는지 조회하도록 로직 갱신.
+* `public.handle_new_user()` 가입 트리거 함수가 프로필 생성 시 `is_admin`을 대입하지 않도록 수정.
+* `admin_users` 테이블에 RLS 적용 및 SELECT 정책 추가.
 
-### 3. 추세선과 채널 드릴 (ID 41~45) - 실전 결단형
-* **ID 41 (가속 추세선 붕괴)**: 가파른 단기 상승 추세선은 이탈했으나 아래에 완만한 장기 추세선이 살아있을 때의 비중 조절. (정답: 단기 상승 추세 종료이므로 50% 분할 익절/손절하여 현금을 챙기고 장기선 대기)
-* **ID 42 (하락 채널 상단 돌파)**: 하락 평행 채널 상단 저항선을 대량 거래량 양봉 종가로 상방 돌파했을 때 숏(매도) 포지션 보유자의 결단. (정답: 추세 상승 반전이 시작되었으므로 즉시 숏 포지션 전량 손절 및 롱 전환)
-* **ID 43 (상승 채널 미드라인 붕괴)**: 상승 채널 중심선(Mid-line)을 뚫고 내려가 리테스트 저항을 받고 있는 시점의 신규 진입 조절. (정답: 채널 하단부까지 추가 하락 리스크가 높으므로 신규 매수를 전면 보류하고 대기)
-* **ID 44 (추세선 3rd Touch 지지)**: 상승 추세선의 3번째 터치 포인트에 접근했을 때 손절 대비 기대수익 극대화 전략. (정답: 추세선 바로 아래에 손절매를 걸고, 양봉 전환 확인 후 매수 진입)
-* **ID 45 (추세선 돌파와 매물대 대치)**: 하락 추세선은 상방 돌파했으나 바로 위에 직전 매물대 저항선이 가로막고 있을 때의 진입 순서. (정답: 매물대 저항 돌파 또는 눌림목 안착 확인까지 매수를 보류하고 대기)
+```sql
+-- 변경될 핵심 SQL DDL 내용
 
-### 4. 차트 패턴 포착 드릴 (ID 46~50) - 실전 결단형
-* **ID 46 (어센딩 트라이앵글 하방 붕괴)**: 수평 저항선 돌파를 예상하고 선진입했으나 지점 지선이 하방으로 장대 음봉 마감 시 조치. (정답: 시나리오 실패를 즉각 인정하고 전량 손절)
-* **ID 47 (역헤드앤숄더 돌파 후 진입)**: 넥라인 돌파 시 추격 매수를 놓친 상태에서 합리적인 진입 기회 대기. (정답: 돌파된 넥라인 부근까지 가격 조정을 받아 지지(Retest)를 확인할 때 눌림목 진입)
-* **ID 48 (하락 쐐기형 돌파 손절 기준)**: 하락 쐐기형(Falling Wedge) 상방 이탈 양봉 출현 시 진입 타점과 정석 손절가 배치. (정답: 상방 돌파 확인 즉시 진입 후, 쐐기형 직전 최저가 바로 밑에 손절 라인 구축)
-* **ID 49 (상승 쐐기형 하방 이탈 위험)**: 상승 쐐기형(Rising Wedge) 패턴을 그리며 거래량이 마르고 저항선 상단에서 하락 이탈 낌새를 보일 때. (정답: 하락 위험이 팽배하므로 롱 포지션을 전량 정리 및 숏 전환 대기)
-* **ID 50 (컵앤핸들 핸들 돌파)**: 컵앤핸들 형태에서 거래량이 소멸한 핸들(Handle) 하향 채널을 상방으로 강하게 돌파하는 캔들 출현 시. (정답: 컵의 깊이만큼 상승을 기대하며 핸들 저점 바로 밑에 손절을 걸고 매수 진입)
+-- 1. profiles 테이블에서 기존 어드민 컬럼 제거
+ALTER TABLE public.profiles DROP COLUMN IF EXISTS is_admin;
 
-### 5. 보조지표 다이버전스 드릴 (ID 51~55) - 실전 결단형
-* **ID 51 (히든 상승 다이버전스 지속 매수)**: 주가 저점은 올라가고 있으나 RSI 지표 저점은 꺾여서 내려가는 히든 상승 다이버전스 포착 시. (정답: 상승 추세 강화 시그널이므로 분할 매수 추가 진입 및 전저점 손절선 구축)
-* **ID 52 (과매수 밴드워크 대응)**: RSI 80 이상 과매수 영역에서 볼린저 밴드 상단을 타고 오르는 밴드워크(Band Walk) 상황 시 숏 진입 리스크 관리. (정답: 추세 강도가 강력하므로 섣부른 숏 진입을 금지하고 익절가 상향(Trailing Stop)으로 수익 극대화)
-* **ID 53 (멀티 타임프레임 모순 대치)**: 1시간 봉 RSI는 상승 다이버전스이나 15분 봉은 하락세 지속 중일 때의 진입 템포. (정답: 대파동인 1시간 봉 전환 신뢰도가 높으므로, 15분 봉의 하방 둔화가 확인될 때 진입 준비)
-* **ID 54 (MACD 상승 동력 둔화)**: 주가는 신고가를 기록했으나 MACD 오실레이터 고점이 직전 고점보다 확연히 낮아지는 하락 다이버전스 출현 시. (정답: 상승 모멘텀 소진이므로 최소 50% 분할 익절하여 수익 보존)
-* **ID 55 (이평선 수렴 데드크로스 임박)**: EMA 20선과 50선이 데드크로스를 그리기 직전이고 주가가 지선을 뚫었을 때. (정답: 하락 추세 가속화 리스크가 가득하므로 즉시 전량 매도 및 대피)
+-- 2. 격리된 어드민 유저 테이블 생성
+CREATE TABLE IF NOT EXISTS public.admin_users (
+    user_id uuid REFERENCES auth.users ON DELETE CASCADE PRIMARY KEY,
+    created_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL
+);
 
-### 6. 자금관리/손익비 드릴 (ID 56~60) - 실전 결단형
-* **ID 56 (손실 한도 도달 기계적 매매)**: 거래 후 뇌동매매 충동 속에 계좌 총원금 대비 최대 감내 손실 한도인 -2% 라인에 정확히 닿았을 때. (정답: 뇌동매매를 거부하고 기계적인 100% 전량 손절매 집행)
-* **ID 57 (연속 손실 멘탈 쿨다운)**: 3회 연속 거래 손실로 보복 매매 충동이 강력하게 올라올 때의 위기 차단책. (정답: 매매 프로그램을 즉시 끄고 쿨다운 시간을 가진 뒤 매매 일지에 복기)
-* **ID 58 (손익비 불일치 진입 보류)**: 승률 50% 반반 확률 예상 구간에서 기대 손실 대비 기대 수익(손익비)이 1:1.2로 계산될 때의 진입 원칙. (정답: 장기 기대값이 낮은 애매한 타점이므로 진입을 포기하고 손익비 1:2 이상 자리 대기)
-* **ID 59 (변동성 급증에 따른 사이즈 조절)**: 시장 변동성(ATR)이 평소의 2배로 급등한 종목에서 2% 리스크 한도를 동일하게 유지하는 방법. (정답: 손절 폭을 2배로 넓히는 대신 포지션 매수 규모를 평소의 50%로 축소하여 리스크 통제)
-* **ID 60 (손절매 비율 비례 매수 수량 계산)**: 원금 10만 원 리스크 하에서 주가 10,000원, 손절가 9,500원(-5%)일 때의 최대 안전 매수 주식 수 계산. (정답: 손실 규모를 10만 원으로 맞추기 위해 최대 200주(200만 원 상당)만 매수)
+-- admin_users RLS 활성화
+ALTER TABLE public.admin_users ENABLE ROW LEVEL SECURITY;
+
+-- 3. Recursion 없는 어드민 검증 함수 갱신
+CREATE OR REPLACE FUNCTION public.is_admin()
+RETURNS boolean SECURITY DEFINER AS $$
+BEGIN
+  RETURN EXISTS (
+    SELECT 1 FROM public.admin_users WHERE user_id = auth.uid()
+  );
+END;
+$$ LANGUAGE plpgsql;
+
+-- 4. admin_users 조회 정책 추가 (자신의 정보 확인 또는 어드민의 전체 조회)
+CREATE POLICY "Allow users to read own admin status or admins to read all" ON public.admin_users
+    FOR SELECT USING (auth.uid() = user_id OR public.is_admin());
+
+-- 5. 트리거 복구 (is_admin 열 배제)
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS trigger AS $$
+BEGIN
+  INSERT INTO public.profiles (id, streak, xp, trading_level, completed_quizzes, drill_stats)
+  VALUES (
+    new.id, 
+    5,   -- 기본 스트릭 5일
+    150, -- 기본 150 XP
+    1,   -- 1단계 레벨
+    '{}'::bigint[],
+    '{}'::jsonb
+  );
+  RETURN new;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- 6. RLS 정책 재정리 (profiles RLS에서 is_admin 열이 제거됨에 따라 안전)
+DROP POLICY IF EXISTS "Allow users to read profile" ON public.profiles;
+DROP POLICY IF EXISTS "Allow users to update profile" ON public.profiles;
+DROP POLICY IF EXISTS "Allow users to insert profile" ON public.profiles;
+
+CREATE POLICY "Allow users to read profile" ON public.profiles
+    FOR SELECT USING (auth.uid() = id OR public.is_admin());
+
+CREATE POLICY "Allow users to update profile" ON public.profiles
+    FOR UPDATE USING (auth.uid() = id OR public.is_admin());
+
+CREATE POLICY "Allow users to insert profile" ON public.profiles
+    FOR INSERT WITH CHECK (auth.uid() = id OR public.is_admin());
+```
+
+---
+
+### 2. 어드민 패널 앱 코드 수정
+
+#### [MODIFY] [App.tsx](file:///d:/TradingEdu/admin/src/App.tsx)
+* 어드민 로그인 및 마운트 세션 복원 시, `profiles` 대신 신규 `admin_users` 테이블에 현재 `user.id`가 존재하는지 체크하는 방식으로 갱신.
+
+---
+
+### 3. 프로젝트 설명서 보완
+
+#### [MODIFY] [README.md](file:///d:/TradingEdu/README.md)
+* 어드민 권한 부여 방법 안내 시 `profiles` 테이블 갱신 대신 `admin_users` 테이블에 인서트하는 SQL 쿼리로 변경:
+  ```sql
+  INSERT INTO public.admin_users (user_id) 
+  VALUES ((SELECT id FROM auth.users WHERE email = 'admin@chartmon.com'));
+  ```
+
+#### [MODIFY] [README.md](file:///d:/TradingEdu/admin/README.md)
+* 동일한 데이터베이스 인서트 방식 반영 및 설명 갱신.
 
 ---
 
 ## Verification Plan
 
 ### Automated Tests
-* 빌드 컴파일 검증: `npm run build` 및 `npm run --prefix admin build`
+* SQL DDL 마이그레이션 정상 적용 완료 확인.
+* `npm run lint` 코드 정적 분석 통과 확인.
+* `npm run --prefix admin build` 컴파일 통과 검증.
 
 ### Manual Verification
-* 독립형 어드민 웹사이트를 켜고, 60개 퀴즈가 제대로 CRUD로 들어갔는지 검사.
-* 실제 퀴즈 검수기 모달을 띄워, 사용자의 다양한 선택지(전량 손절, 분할 손절, 관망 등)에 따른 기술적 근거가 담긴 정답 피드백 창이 온전하게 팝업되는지 테스트.
+* 일반 가입 유저가 본인의 `profiles` 테이블 행을 수정하여 어드민 권한을 자가 획득(우회)할 수 없음을 직접 테스트하여 차단력 검증.
+* `admin_users` 테이블에 등록된 공인 어드민 계정으로 어드민 웹 로그인 시 대시보드 정상 열림 및 CRUD 동작 확인.

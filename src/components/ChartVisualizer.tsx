@@ -32,7 +32,7 @@ export const ChartVisualizer: React.FC<ChartVisualizerProps> = ({ chartData, dra
     const height = rect.height;
 
     // Clear Canvas
-    ctx.fillStyle = '#11141e';
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, width, height);
 
     if (chartData.length === 0) return;
@@ -80,10 +80,10 @@ export const ChartVisualizer: React.FC<ChartVisualizerProps> = ({ chartData, dra
     };
 
     // Draw Grid Lines & Price Labels
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+    ctx.strokeStyle = '#edf1f7';
     ctx.lineWidth = 1;
     ctx.font = '10px Inter';
-    ctx.fillStyle = '#64748b';
+    ctx.fillStyle = '#8a95a5';
     ctx.textAlign = 'left';
 
     const gridLinesCount = 4;
@@ -112,7 +112,7 @@ export const ChartVisualizer: React.FC<ChartVisualizerProps> = ({ chartData, dra
       const yLow = getYPixel(candle.low);
 
       const isBullish = candle.close >= candle.open;
-      const color = isBullish ? '#10b981' : '#ef4444';
+      const color = isBullish ? '#089981' : '#f23645';
 
       ctx.strokeStyle = color;
       ctx.fillStyle = color;
@@ -139,7 +139,7 @@ export const ChartVisualizer: React.FC<ChartVisualizerProps> = ({ chartData, dra
       }
 
       // Draw Time labels at the bottom
-      ctx.fillStyle = '#64748b';
+      ctx.fillStyle = '#8a95a5';
       ctx.textAlign = 'center';
       if (index % 2 === 0 || index === chartData.length - 1) {
         ctx.fillText(candle.time, x, height - 8);
@@ -148,7 +148,7 @@ export const ChartVisualizer: React.FC<ChartVisualizerProps> = ({ chartData, dra
 
     // Draw Indicator Drawings
     drawings?.forEach(drawing => {
-      ctx.strokeStyle = drawing.color || '#3b82f6';
+      ctx.strokeStyle = drawing.color || '#2962ff';
       ctx.lineWidth = 2.5;
 
       if (drawing.type === 'horizontal-line') {
@@ -162,7 +162,7 @@ export const ChartVisualizer: React.FC<ChartVisualizerProps> = ({ chartData, dra
 
         // Label
         if (drawing.label) {
-          ctx.fillStyle = drawing.color || '#3b82f6';
+          ctx.fillStyle = drawing.color || '#2962ff';
           ctx.font = '700 9px Outfit';
           ctx.textAlign = 'left';
           ctx.fillText(drawing.label, leftMargin + 5, y - 6);
@@ -185,7 +185,7 @@ export const ChartVisualizer: React.FC<ChartVisualizerProps> = ({ chartData, dra
           const lastPt = drawing.points[drawing.points.length - 1];
           const x = getXPixel(lastPt.x);
           const y = getYPixel(lastPt.y);
-          ctx.fillStyle = drawing.color || '#3b82f6';
+          ctx.fillStyle = drawing.color || '#2962ff';
           ctx.font = '700 9px Outfit';
           ctx.textAlign = 'right';
           ctx.fillText(drawing.label, x - 5, y - 6);

@@ -235,7 +235,7 @@ export const App: React.FC = () => {
   const startDailyTraining = () => {
     // Select 3 quizzes: uncompleted first, then fill with completed
     const uncompleted = quizzesList.filter(q => !completedQuizzes.includes(q.id));
-    let selected: QuizItem[] = [];
+    let selected: QuizItem[];
     if (uncompleted.length >= 3) {
       selected = uncompleted.slice(0, 3);
     } else {
@@ -265,7 +265,7 @@ export const App: React.FC = () => {
 
     // Select 5 random/uncompleted quizzes from this category
     const uncompleted = categoryQuizzes.filter(q => !completedQuizzes.includes(q.id));
-    let selected: QuizItem[] = [];
+    let selected: QuizItem[];
     
     // Shuffle helper
     const shuffle = (array: QuizItem[]) => [...array].sort(() => 0.5 - Math.random());
@@ -337,7 +337,7 @@ export const App: React.FC = () => {
       }
 
       // Calculate streak
-      let finalStreak = streak;
+      let finalStreak: number;
       if (lastActiveDate === yesterday) {
         finalStreak = streak + 1;
       } else if (lastActiveDate === today) {
@@ -354,7 +354,7 @@ export const App: React.FC = () => {
       );
 
       // Update drill statistics if this was a drill session
-      let nextDrillStats = { ...drillStats };
+      const nextDrillStats = { ...drillStats };
       if (sessionCategory) {
         const sessionAccuracy = Math.round((sessionCorrectAnswers / activeQuizList.length) * 100);
         const currentStats = drillStats[sessionCategory] || { level: 1, accuracy: 0, attempts: 0 };

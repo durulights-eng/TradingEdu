@@ -1,34 +1,20 @@
-# ChartMon "Chart Training Gym" & Standalone Admin Overhaul Checklist
+# ChartMon 어드민 권한 격리 및 우회 차단 체크리스트
 
-- [x] 1. Cleanup Main App (Capacitor Android wrapper)
-  - [x] Delete main app `src/components/AdminPanel.tsx`
-  - [x] Remove `[🛠️ 운영자 모드]` button from Profile tab in main app `src/App.tsx`
-  - [x] Remove `'admin'` view mode type and AdminPanel imports from `src/App.tsx`
-- [x] 2. Setup Standalone Admin Folder & Project
-  - [x] Create `d:\TradingEdu\admin/` project using Vite + React + TS template
-  - [x] Configure `admin/package.json` and install `@supabase/supabase-js`, `lucide-react`, and standard types
-  - [x] Copy Supabase environment variables into `admin/.env`
-- [x] 3. Implement Standalone Admin Features
-  - [x] Create `admin/src/App.tsx` by porting the `AdminPanel.tsx` code
-  - [x] Copy `src/components/ChartVisualizer.tsx` to `admin/src/components/ChartVisualizer.tsx`
-  - [x] Set up clean, responsive layout & styling in `admin/src/index.css`
-- [x] 4. Rebuild & Native Sync
-  - [x] Compile main client Vite bundle (`npm run build`)
-  - [x] Sync assets to Capacitor (`npx cap sync android`)
-  - [x] Compile admin Vite bundle (`npm run --prefix admin build`) to verify there are no errors
-- [x] 5. Quiz Bank Expansion to 60 Quizzes & Seeding
-  - [x] Design 30 new high-quality decision-making quizzes (IDs 31-60) covering practical trading setups
-  - [x] Populate `src/data/quizzes.ts` with all 60 quizzes
-  - [x] Run `node docs/generate_seed_sql.cjs` to build `docs/seed_quizzes.sql`
-  - [x] Execute SQL queries on the active Supabase database (`nyebzpnncndhbujtegiv`)
-- [x] 6. UI Polish & Event Bubble Fix
-  - [x] Style option button text to white color (`#ffffff`) in `admin/src/index.css`
-  - [x] Implement quiz preview modal trigger on `quiz-row-card` click
-  - [x] Intercept event propagation on Edit/Delete buttons
-- [x] 7. Verification
-  - [x] Verify local compilation for both the main App and Standalone Admin website (Successful builds)
-  - [x] Set up password gate (`chartmon123!`) on standalone 어드민
-  - [x] Setup RLS policies verification (User management displays profile list and supports Quiz CRUD)
-  - [x] Verify Supabase seeding results (60 rows confirmed across all 6 categories)
-  - [x] Sync progress lists and walkthroughs to workspace docs
-
+- [x] 1. 데이터베이스 스키마 및 RLS 정책 마이그레이션
+  - [x] `profiles` 테이블에서 `is_admin` 컬럼 제거
+  - [x] 격리된 `admin_users` 테이블 생성 및 RLS 설정
+  - [x] Recursion 방지용 `public.is_admin()` 함수가 `admin_users`를 조회하도록 수정
+  - [x] `admin_users` 테이블에 SELECT 권한 정책 설정
+  - [x] 가입 트리거 `public.handle_new_user()` 함수에서 `is_admin` 인서트 제거
+  - [x] `profiles` RLS 정책 재설정
+  - [x] 로컬 스키마 문서 `docs/supabase_schema.sql` 최신화
+- [x] 2. 어드민 패널 앱 코드 수정
+  - [x] `admin/src/App.tsx`의 마운트 세션 복원 시 `admin_users` 조회하도록 변경
+  - [x] `admin/src/App.tsx`의 로그인 권한 확인 시 `admin_users` 조회하도록 변경
+- [x] 3. 설명서 가이드라인 업데이트
+  - [x] 루트 `README.md`에 `admin_users` 등록 SQL 가이드로 갱신
+  - [x] `admin/README.md`에 동일한 SQL 가이드 반영
+- [x] 4. 최종 검증
+  - [x] `npm run lint` 수행 및 정적 분석 통과 확인
+  - [x] 모바일 앱 빌드 컴파일 검증 (`npm run build`)
+  - [x] 관리자 웹 빌드 컴파일 검증 (`npm run --prefix admin build`)

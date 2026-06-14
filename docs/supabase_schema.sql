@@ -9,9 +9,9 @@ create table if not exists public.quizzes (
     category text not null,
     theory_ref text not null,
     question text not null,
-    chart_data jsonb not null,        -- Candlestick coordinates (시/고/저/종)
+    chart_data jsonb not null,          -- Candlestick coordinates (시/고/저/종)
     drawings jsonb default '[]'::jsonb, -- Indicator drawings overlay
-    options text[] not null,          -- 객관식 보기 4개
+    options text[] not null,            -- 객관식 보기 4개
     correct_index integer not null,
     explanation text not null,
     created_at timestamp with time zone default timezone('utc'::text, now()) not null
@@ -20,12 +20,43 @@ create table if not exists public.quizzes (
 -- Enable Row Level Security (RLS) for quizzes
 alter table public.quizzes enable row level security;
 
+-- 2. Admin Users Table (격리된 어드민 권한 식별용 테이블)
+-- ------------------------------------------
+create table if not exists public.admin_users (
+    user_id uuid references auth.users on delete cascade primary key,
+    created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+-- Enable Row Level Security (RLS) for admin_users
+alter table public.admin_users enable row level security;
+
+-- Recursion-free Admin check helper function (admin_users 조회)
+-- ------------------------------------------
+create or replace function public.is_admin()
+returns boolean security definer as $$
+begin
+  return exists (
+    select 1 from public.admin_users where user_id = auth.uid()
+  );
+end;
+$$ language plpgsql;
+
 -- Read policy: Anyone can read quizzes (모든 유저 읽기 가능)
 create policy "Enable read access for all users" on public.quizzes 
     for select using (true);
 
+-- Write policy: Only authenticated admins can insert/update/delete quizzes
+create policy "Enable write access for admins" on public.quizzes
+    for all to authenticated
+    using (public.is_admin())
+    with check (public.is_admin());
 
--- 2. Profiles Table (유저 수준 및 게임 정보 테이블)
+-- Read policy: Users can check their own admin status, or admins can read all
+create policy "Allow users to read own admin status or admins to read all" on public.admin_users
+    for select using (auth.uid() = user_id or public.is_admin());
+
+
+-- 3. Profiles Table (유저 수준 및 게임 정보 테이블)
 -- ------------------------------------------
 create table if not exists public.profiles (
     id uuid references auth.users on delete cascade primary key,
@@ -35,33 +66,38 @@ create table if not exists public.profiles (
     completed_quizzes bigint[] default '{}'::bigint[] not null,
     last_active_date text,                    -- 마지막 활성/학습 날짜 (YYYY-MM-DD)
     last_daily_completed_date text,           -- 마지막 데일리 트레이닝 완료 날짜 (YYYY-MM-DD)
+    drill_stats jsonb default '{}'::jsonb not null, -- 드릴 유형별 진행도/정답률 통계
     updated_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
 
 -- Enable RLS for profiles
 alter table public.profiles enable row level security;
 
--- CRUD policies for profiles
-create policy "Allow users to read their own profile" on public.profiles
-    for select using (auth.uid() = id);
+-- CRUD policies for profiles (Self or Admin)
+create policy "Allow users to read profile" on public.profiles
+    for select using (auth.uid() = id or public.is_admin());
 
-create policy "Allow users to update their own profile" on public.profiles
-    for update using (auth.uid() = id);
+create policy "Allow users to update profile" on public.profiles
+    for update using (auth.uid() = id or public.is_admin());
+
+create policy "Allow users to insert profile" on public.profiles
+    for insert with check (auth.uid() = id or public.is_admin());
 
 
--- 3. Automatic Profile Creation Trigger
+-- 4. Automatic Profile Creation Trigger
 -- ------------------------------------------
 -- 신규 유저 회원가입 시 auth.users에 행이 삽입되면 public.profiles에 자동으로 기본 프로필 행을 생성해주는 트리거
 create or replace function public.handle_new_user()
 returns trigger as $$
 begin
-  insert into public.profiles (id, streak, xp, trading_level, completed_quizzes)
+  insert into public.profiles (id, streak, xp, trading_level, completed_quizzes, drill_stats)
   values (
     new.id, 
     5,   -- 기본 스트릭 5일 부여
     150, -- 기본 150 XP 부여 (1단계 Paper Trader로 시작)
     1,   -- 1단계 레벨
-    '{}'::bigint[]
+    '{}'::bigint[],
+    '{}'::jsonb
   );
   return new;
 end;

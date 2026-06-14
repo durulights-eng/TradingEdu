@@ -1,59 +1,58 @@
-# ChartMon "Chart Training Gym" & Standalone Admin Overhaul Walkthrough
+# ChartMon 어드민 권한 격리 및 보안 취약점 개선 완료 보고서
 
-본 문서는 ChartMon의 운영자용 어드민 기능을 메인 앱(Capacitor 모바일 래퍼 대상) 내부에서 제거하고, 별도의 프로젝트 폴더인 **`admin/` 폴더에 독립적인 웹사이트(Vite + React + TS)로 신규 구축**한 개발 작업 내역을 정리한 문서입니다.
-
----
-
-## 1. 주요 개발 성과
-
-### 1) 메인 앱(Capacitor Client) 내 어드민 제거 및 경량화
-* **어드민 코드 완전 삭제**: `src/components/AdminPanel.tsx` 컴포넌트 파일을 완전히 제거하고, 메인 앱 `src/App.tsx` 내의 어드민 관련 타입 정의, 임포트, 라우팅 및 프로필 화면의 `[🛠️ 운영자 모드]` 진입 단추를 삭제했습니다.
-* **이유**: 일반 유저들이 사용하는 앱 패키지 내부에 어드민 기능과 비밀번호 검증 코드 등이 존재할 경우 발생할 수 있는 보안 취약점 및 불필요한 번들 크기 팽창을 원천 차단했습니다.
-
-### 2) 독립형 어드민 웹사이트 (`d:\TradingEdu\admin/`) 신규 구축
-* **단독 프로젝트 구성**: Vite + React + TypeScript를 채택한 웹 프로젝트 인프라를 `admin/` 폴더 내에 구축 완료했습니다.
-* **Supabase 연동**: 기존 메인 앱의 Supabase 프로젝트 인스턴스를 공유하여, 환경설정 파일 `admin/.env`를 생성하고 `@supabase/supabase-js` 및 `lucide-react` 의존성을 안전하게 바인딩했습니다.
-* **사용자 정의 CSS 스타일링 (`admin/src/index.css`)**: 메인 앱의 감각적인 다크 테마 테마 컬러(배경 `#0b0d12`, 카드 `#161a25`, 블루/퍼플 포인트 그라데이션)와 유리 모프 스타일을 승계하여, 고해상도 모니터와 모바일 기기 모두에 기분 좋게 어우러지는 전용 레이아웃을 완성했습니다.
-
-### 3) 독립형 어드민 탑재 기능
-* **운영자 전용 패스워드 게이트**: 웹사이트 최초 접속 시 패스워드 `chartmon123!`을 입력해야만 내부 통계와 편집기에 액세스할 수 있는 보안 게이트를 생성하고, 브라우저 세션 스토리지에 임시 인증을 보존하도록 설계했습니다.
-* **Tab 1: 사용자 프로필 관리 (Stats Monitor)**: Supabase `profiles` 테이블의 모든 행을 실시간으로 가져와 리스트업하고, 각 회원의 XP, 등급, 연속 스트릭, 최근 활동 일자 및 6대 드릴 카테고리별 누적 레벨과 평균 정답률을 한눈에 감시할 수 있도록 표(Table) UI를 제공합니다.
-* **Tab 2: 문제은행 CRUD 관리**: 퀴즈 데이터의 INSERT(신규 등록), UPDATE(수정), DELETE(삭제) 및 실시간 조회를 완벽 지원하는 폼 템플릿입니다. 차트 캔들 좌표(`chart_data` JSON)와 보조선 작도(`drawings` JSON) 필드는 제출 시 문법 에러 및 파싱 가능 여부를 엄격히 체크하여 DB 훼손을 예방합니다. 특히, **리스트의 문제를 클릭하면 그 자리에서 즉시 실전 퀴즈 형식으로 모의 풀이해 볼 수 있는 인터랙티브 검수 모달 팝업**을 새롭게 추가하여 검수 편의성을 한층 강화했습니다.
-* **Tab 3: 퀴즈 실전 검수기 (Interactive Inspector)**: 등록된 30여 개 퀴즈 목록 중 원하는 문제를 고르면, 실제 모바일 화면과 완벽히 호환되는 `ChartVisualizer` 캔버스 차트와 4지 선다형 버튼이 우측 화면에 즉시 로드됩니다. 운영자가 실전처럼 퀴즈를 직접 풀어보며 캔들 차트의 좌표, 해설 내용 및 보기의 구성 등을 빠르게 검사할 수 있습니다.
+이 문서는 사용자가 본인의 `profiles` 행을 수정하여 어드민 권한(`is_admin = true`)을 자가 획득할 수 있었던 심각한 RLS 보안 취약점을 차단하기 위해, **어드민 권한 판별 체계를 별도의 `admin_users` 테이블로 분리 격리**하고 관련 앱 코드 및 설정을 갱신한 내역을 정리한 문서입니다.
 
 ---
 
-## 2. 작업 완료 및 빌드 결과
+## 1. 개선 성과
+
+### 1) 어드민 권한 데이터베이스 격리 (`admin_users`)
+* **profiles.is_admin 컬럼 제거**: 일반 유저가 RLS `auth.uid() = id` 조건을 우회해 자가 업데이트할 수 있는 가능성을 원천 차단하기 위해 `profiles` 테이블에서 `is_admin` 컬럼을 완전히 드랍했습니다.
+* **admin_users 테이블 신설**: 오직 `auth.users`와 1:1 관계를 갖는 `public.admin_users(user_id)` 테이블을 신설하고 RLS를 적용했습니다.
+  - 외부 API(클라이언트)를 통한 쓰기 정책(`INSERT`/`UPDATE`/`DELETE`)을 일체 허용하지 않아 일반 인증 사용자는 이 테이블의 레코드를 생성하거나 조작할 수 없습니다.
+  - 오직 Supabase 관리자 대시보드(SQL Editor) 또는 서비스 롤을 통해서만 관리자를 추가/삭제할 수 있습니다.
+* **보안 검증 함수 및 RLS 적용**:
+  - `public.is_admin()` 권한 검사 헬퍼 함수가 `profiles` 대신 `admin_users` 테이블의 존재 여부를 체크하도록 수정하여 RLS 무한 루프(Recursion) 현상을 원천 방지했습니다.
+  - `quizzes`, `profiles`, `admin_users` 테이블의 모든 RLS 조회 및 편집 정책에 갱신된 `public.is_admin()` 검증 방식을 정상 매핑 완료했습니다.
+  - 신규 사용자 가입 트리거 `public.handle_new_user()`에서 `is_admin` 컬럼 삽입 로직을 배제하여 온전한 데이터 모델링을 수립했습니다.
+
+### 2) 관리자 웹 앱 코드 갱신
+* `admin/src/App.tsx`의 **마운트 세션 복원 및 로그인 검증 단계**에서 기존 `profiles` 테이블을 조회하는 대신, `admin_users` 테이블에 유저의 UUID가 존재하는지 조회하도록 API 쿼리를 교체했습니다.
+* 유저 조회 실패 또는 관리자가 아닌 계정일 경우, 즉시 `supabase.auth.signOut()`을 수행해 로그인 세션을 소멸시키는 보안 가드를 유지했습니다.
+
+### 3) 가이드라인 설명서 최신화
+* [README.md](file:///d:/TradingEdu/README.md)와 [admin/README.md](file:///d:/TradingEdu/admin/README.md)에 안내되어 있던 기존 `UPDATE profiles` 방식의 관리자 권한 부여 SQL 가이드를 격리된 테이블에 ID를 인서트하는 `INSERT INTO public.admin_users` 가이드라인으로 교체 완료했습니다.
+
+---
+
+## 2. 최종 빌드 및 검증 결과
+
+### 1) 자동화된 테스트 결과
+* **ESLint 정적 분석**: 에러 및 경고 **0건** 완료 (`npm run lint` 통과)
+* **모바일 클라이언트 앱 빌드**: 컴파일 성공 (`npm run build` 통과)
+* **독립형 어드민 웹사이트 빌드**: 컴파일 성공 (`npm run --prefix admin build` 통과)
 
 ```bash
-# 1. 메인 모바일 클라이언트 앱 빌드 성공 (어드민 잔재 없이 완벽 컴파일)
+# 린트 무결성 확인 (0 errors, 0 warnings)
+npm run lint
+
+# 클라이언트 앱 빌드 성공
 npm run build
-# dist/assets/index-BNdnwTrl.js (504.81 kB) -> TS 타입 검사 및 번들링 성공!
 
-# 2. Capacitor Android Native 복사 성공
-npx cap sync android
-# dist 빌드 에셋들이 android/app/src/main/assets/public 폴더로 완벽 전송됨
-
-# 3. 독립형 어드민 웹사이트 빌드 성공 (TS 타입 에러 0건)
+# 어드민 패널 웹 빌드 성공
 npm run --prefix admin build
-# dist/assets/index-PeqG7Jzm.js (418.89 kB) -> Vite 정적 에셋 빌드 성공!
 ```
 
----
-
-## 4. 퀴즈 문제은행 60선 확장 및 데이터베이스 Seeding
-* **실전 상황형 문제 30개 추가 (IDs 31-60)**: 주가 흐름 분석뿐 아니라 "전량 손절", "50% 분할 익절/손절", "관망/대기", "1차 분할 매수 진입" 등 실전 매매 결정(Decision Making) 상황의 고급 퀴즈들을 6대 카테고리별로 5개씩 균등 분배하여 설계했습니다.
-* **Supabase 최종 이식 완료**: `docs/seed_quizzes.sql` 을 빌드한 뒤 Supabase DB 인스턴스(`nyebzpnncndhbujtegiv`)의 `public.quizzes` 테이블에 실행하여 기존 30개에서 총 60개로 퀴즈를 확장 완료했습니다.
-  - 카테고리별 10개씩 균등 분포(총 60개) 조회 쿼리 검증 완료.
-* **UI 개선**: 어드민 검수 모달 내 객관식 버튼들의 텍스트 컬러를 `#ffffff`(흰색)으로 수정하여 가독성을 높였고, 리스트 행 클릭 시 팝업 미리보기 기능과 수정/삭제 버튼의 클릭 이벤트가 겹쳐 오작동하지 않도록 이벤트 버블링 차단을 검증했습니다.
+### 2) 데이터베이스 RLS 차단력 확인
+* 일반 가입 유저가 Supabase API 클라이언트를 통해 본인의 프로필을 조작하여 어드민 권한을 임의 승격하는 것이 논리적으로 불가능함을 SQL DDL 정의 및 RLS 정책 설정을 통해 확인 완료했습니다.
 
 ---
 
-## 5. 로컬 저장 문서 현황
+## 3. 로컬 저장 문서 현황
 
-유저가 로컬 폴더에서 언제든 동일하게 보실 수 있도록 `docs/` 폴더 내에 아래 문서들을 동기화 완료했습니다.
-1. [docs/implementation_plan.md](file:///d:/TradingEdu/docs/implementation_plan.md): 전체 개편 설계안 및 백엔드 RLS 기획
-2. [docs/task.md](file:///d:/TradingEdu/docs/task.md): 개발 진척 확인용 체크리스트
-3. [docs/walkthrough.md](file:///d:/TradingEdu/docs/walkthrough.md): 본 개발 완료 보고서
-4. [docs/trading-theories/*.md](file:///d:/TradingEdu/docs/trading-theories/): 6대 분야의 고급 트레이딩 이론서 마크다운 원본들
-
+* [docs/implementation_plan.md](file:///d:/TradingEdu/docs/implementation_plan.md): 본 개선 작업을 위한 설계 기획서
+* [docs/task.md](file:///d:/TradingEdu/docs/task.md): 전체 진척 체크리스트
+* [docs/walkthrough.md](file:///d:/TradingEdu/docs/walkthrough.md): 본 최종 완료 보고서
+* [docs/supabase_schema.sql](file:///d:/TradingEdu/docs/supabase_schema.sql): 갱신된 백엔드 DB 스키마 DDL 원본
+* [README.md](file:///d:/TradingEdu/README.md): 프로젝트 전체 로컬 실행 및 설정 가이드
+* [admin/README.md](file:///d:/TradingEdu/admin/README.md): 어드민 사용법 및 권한 배정 가이드

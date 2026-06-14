@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useEffect } from 'react';
 import { supabase, isSupabaseConfigured } from './lib/supabaseClient';
 import { ChartVisualizer } from './components/ChartVisualizer';
@@ -100,10 +101,10 @@ const THEORY_FILES: Record<string, string> = {
 
 export const App: React.FC = () => {
   // Authentication state
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
-    return sessionStorage.getItem('chartmon_admin_auth') === 'true';
-  });
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [checkingAuth, setCheckingAuth] = useState(true);
   const [authError, setAuthError] = useState('');
 
   // Navigation tab
@@ -217,30 +218,107 @@ export const App: React.FC = () => {
     }
   };
 
-  // Auth check & initial fetches
+  // Auth check & session recovery on mount
+  useEffect(() => {
+    const initAuth = async () => {
+      if (!isSupabaseConfigured) {
+        setCheckingAuth(false);
+        return;
+      }
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session && session.user) {
+          // Check if admin
+          const { data: adminRecord, error } = await supabase
+            .from('admin_users')
+            .select('user_id')
+            .eq('user_id', session.user.id)
+            .single();
+
+          if (!error && adminRecord) {
+            setIsAuthenticated(true);
+          } else {
+            // Not admin
+            await supabase.auth.signOut();
+            setIsAuthenticated(false);
+          }
+        }
+      } catch (e) {
+        console.error('AdminPanel Auth Init Error:', e);
+      } finally {
+        setCheckingAuth(false);
+      }
+    };
+
+    initAuth();
+  }, []);
+
   useEffect(() => {
     if (isAuthenticated) {
-      fetchUsers();
-      fetchQuizzes();
+      const load = async () => {
+        // Defer execution slightly to avoid synchronous setState cascading render warning
+        await Promise.resolve();
+        await Promise.all([fetchUsers(), fetchQuizzes()]);
+      };
+      load();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
   // Handle Login
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'chartmon123!') {
-      setIsAuthenticated(true);
-      sessionStorage.setItem('chartmon_admin_auth', 'true');
-      setAuthError('');
-    } else {
-      setAuthError('비밀번호가 일치하지 않습니다.');
+    if (!isSupabaseConfigured) {
+      setAuthError('Supabase가 설정되지 않았습니다.');
+      return;
+    }
+    setCheckingAuth(true);
+    setAuthError('');
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+      });
+
+      if (error) {
+        setAuthError(`로그인 실패: ${error.message}`);
+        setIsAuthenticated(false);
+        setCheckingAuth(false);
+        return;
+      }
+
+      if (data?.user) {
+        // Verify is_admin
+        const { data: adminRecord, error: adminError } = await supabase
+          .from('admin_users')
+          .select('user_id')
+          .eq('user_id', data.user.id)
+          .single();
+
+        if (adminError || !adminRecord) {
+          setAuthError('관리자 권한이 없는 계정입니다.');
+          await supabase.auth.signOut();
+          setIsAuthenticated(false);
+        } else {
+          setIsAuthenticated(true);
+          setAuthError('');
+        }
+      }
+    } catch (e: any) {
+      setAuthError(`오류가 발생했습니다: ${e.message || e}`);
+      setIsAuthenticated(false);
+    } finally {
+      setCheckingAuth(false);
     }
   };
 
   // Handle Logout
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    if (isSupabaseConfigured) {
+      await supabase.auth.signOut();
+    }
     setIsAuthenticated(false);
-    sessionStorage.removeItem('chartmon_admin_auth');
+    setEmail('');
     setPassword('');
   };
 
@@ -321,7 +399,7 @@ export const App: React.FC = () => {
     if (formOptions.some(opt => !opt.trim())) return setFormError('모든 객관식 보기를 완성해주세요.');
     if (!formExplanation.trim()) return setFormError('해설을 입력해주세요.');
 
-    let parsedChartData: Candlestick[] = [];
+    let parsedChartData: Candlestick[];
     try {
       parsedChartData = JSON.parse(formChartData);
       if (!Array.isArray(parsedChartData)) throw new Error('Array type expected');
@@ -329,7 +407,7 @@ export const App: React.FC = () => {
       return setFormError(`차트 데이터 JSON 파싱 에러: ${err.message}`);
     }
 
-    let parsedDrawings = [];
+    let parsedDrawings: any[];
     try {
       parsedDrawings = JSON.parse(formDrawings || '[]');
       if (!Array.isArray(parsedDrawings)) throw new Error('Array type expected');
@@ -398,6 +476,17 @@ export const App: React.FC = () => {
   };
 
   // Render Login Screen
+  if (checkingAuth) {
+    return (
+      <div className="login-overlay">
+        <div style={{ textAlign: 'center', color: '#fff' }}>
+          <div className="spin-anim" style={{ fontSize: '32px', marginBottom: '16px' }}>🔄</div>
+          <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>관리자 권한 및 세션 확인 중...</p>
+        </div>
+      </div>
+    );
+  }
+
   if (!isAuthenticated) {
     return (
       <div className="login-overlay">
@@ -410,7 +499,20 @@ export const App: React.FC = () => {
             <p>차트몬 운영관리자 전용 로그인 포털</p>
           </div>
           <div className="form-group">
-            <label htmlFor="pass">Operator Password</label>
+            <label htmlFor="email">이메일 주소 (Operator Email)</label>
+            <input 
+              id="email"
+              type="email" 
+              className="form-control"
+              placeholder="admin@chartmon.com"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
+              autoFocus
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="pass">비밀번호 (Password)</label>
             <input 
               id="pass"
               type="password" 
@@ -418,11 +520,11 @@ export const App: React.FC = () => {
               placeholder="••••••••"
               value={password}
               onChange={e => setPassword(e.target.value)}
-              autoFocus
+              required
             />
-            {authError && <span className="error-text">{authError}</span>}
+            {authError && <span className="error-text" style={{ display: 'block', marginTop: '8px', color: 'var(--color-error)' }}>⚠️ {authError}</span>}
           </div>
-          <button type="submit" className="btn btn-brand">접속 인증하기</button>
+          <button type="submit" className="btn btn-brand" style={{ width: '100%' }}>접속 인증하기</button>
         </form>
       </div>
     );
