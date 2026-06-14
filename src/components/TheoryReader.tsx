@@ -46,9 +46,6 @@ export const TheoryReader: React.FC<TheoryReaderProps> = ({ theoryFile, onBack }
           <h2>3. 복합 캔들 패턴</h2>
           <p><strong>상승 장악형 (Bullish Engulfing)</strong>: 하락 끝자락에서 전날 음봉을 큰 양봉이 완전히 감싸며 장악하는 신호. 강력한 상승 반전 예고.</p>
           <p><strong>하락 장악형 (Bearish Engulfing)</strong>: 상승 고점에서 직전 양봉을 큰 음봉이 덮어버리는 신호. 하락 전환 예고.</p>
-
-          <h2>💡 인스타 광고 활용 Tip</h2>
-          <p><em>"이 캔들 보이면 바로 풀매수 때리라고 배웠죠? 왜 당신 계좌만 녹아내릴까요?"</em> 라는 후킹을 통해 꼬리 길이와 거래량 없이 진입하면 휩소(속임수)에 당한다는 것을 퀴즈와 연계해 광고 영상으로 만들면 전환율이 극대화됩니다.</p>
         </div>
       )
     },
@@ -74,9 +71,6 @@ export const TheoryReader: React.FC<TheoryReaderProps> = ({ theoryFile, onBack }
 
           <h2>3. 가짜 돌파 (False Breakout / Bull Trap)</h2>
           <p>저항선을 뚫는 척하면서 거래량이 실린 장대양봉이 나왔다가, 이내 저항선 밑으로 급락하는 경우입니다. 돌파 후 지지력 테스트를 반드시 거쳐야 속임수를 피할 수 있습니다.</p>
-
-          <h2>💡 인스타 광고 활용 Tip</h2>
-          <p><em>"내가 사면 꼭대기고, 내가 팔면 바닥인 진짜 이유!"</em> - 저항선 돌파 시점에 즉시 추격매수하여 불트랩에 걸리는 개미의 아픔을 모션툰이나 퀴즈 화면으로 광고하면 뜨거운 반응을 얻을 수 있습니다.</p>
         </div>
       )
     },
@@ -101,9 +95,6 @@ export const TheoryReader: React.FC<TheoryReaderProps> = ({ theoryFile, onBack }
           <h2>3. 추세 돌파와 붕괴</h2>
           <p><strong>돌파 (Breakout)</strong>: 하락 추세선을 주가 몸통(종가)이 상향 돌파하면 하락 추세가 종료되고 상승 반전을 의미.</p>
           <p><strong>붕괴 (Breakdown)</strong>: 상승 추세선 아래로 이탈하면 매수세가 무너진 것으로 해석하여 비중 축소 및 즉각 손절 필요.</p>
-
-          <h2>💡 인스타 광고 활용 Tip</h2>
-          <p><em>"눈대중으로 그은 추세선은 그냥 낙서입니다."</em> - 대충 긋는 복잡한 차트와, 규칙에 맞춰 작도한 깔끔한 차트를 비교하는 비주얼로 TradingEdu의 신뢰성과 훈련의 중요성을 부각시킵니다.</p>
         </div>
       )
     },
@@ -121,9 +112,6 @@ export const TheoryReader: React.FC<TheoryReaderProps> = ({ theoryFile, onBack }
 
           <h2>2. 지속 패턴 (Continuation Patterns)</h2>
           <p><strong>불 플래그 (Bull Flag)</strong>: 강한 수직 상승(깃대) 후, 완만하게 우하향하는 채널형(깃발) 횡보를 하다가 상단을 뚫으면 다시 깃대 크기만큼 폭발적으로 2차 상승 랠리를 시작하는 패턴.</p>
-
-          <h2>💡 인스타 광고 활용 Tip</h2>
-          <p>오른쪽 어깨에서 미리 숏(매도)을 쳤다가 넥라인 지지를 받고 빔을 쏘아 올려 청산당하는 개미의 낚시 사례(Fake Shoulder)를 소개하며 <em>"패턴의 완성은 반드시 '넥라인 돌파'입니다. 완성 전에 타면 청산당합니다"</em> 문구를 활용하세요.</p>
         </div>
       )
     },
@@ -149,9 +137,6 @@ export const TheoryReader: React.FC<TheoryReaderProps> = ({ theoryFile, onBack }
             <strong>RSI 다이버전스 (Divergence)</strong><br />
             주가 저점은 낮아지나 RSI 저점은 높아지는 불일치 현상(상승 다이버전스)은 하방 매도세가 약해져 강한 반등이 임박했음을 가리키는 신뢰도 극상의 추세 전환 신호입니다.
           </blockquote>
-
-          <h2>💡 인스타 광고 활용 Tip</h2>
-          <p><em>"RSI 30 이하라고 생각 없이 물타던 분들 보십시오."</em> - 강력한 하락장에서는 RSI가 10~20까지 뚫리며 바닥에 박혀 기어갈 때 주가는 지하실을 뚫고 내려가는 현상을 보여주며, 다이버전스 훈련의 필연성을 설명합니다.</p>
         </div>
       )
     },
@@ -173,9 +158,6 @@ export const TheoryReader: React.FC<TheoryReaderProps> = ({ theoryFile, onBack }
             <code>(총 자산 * 0.02) / 손절 비율</code>
           </blockquote>
           <p>총자산 1,000만 원이고, 손절 라인이 -4%라면, <code>20만 원 / 0.04 = 500만 원</code> 만큼만 진입하면 됩니다. 손절을 맞아도 정확히 20만 원(총액의 2%)만 잃고 끝납니다.</p>
-
-          <h2>💡 인스타 광고 활용 Tip</h2>
-          <p>9번 연속으로 조금씩 벌다가, 단 한 번 물려서 손절을 놓치고 물타기를 시도하다 원금 전체가 청산(깡통)당하는 실제 개미들의 심리 궤적을 설명하며, <em>"뇌의 자연스러운 심리는 트레이딩의 주적입니다"</em>라고 리스크 관리의 중요성을 경고합니다.</p>
         </div>
       )
     }

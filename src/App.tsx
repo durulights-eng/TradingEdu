@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { quizzes } from './data/quizzes';
+import { quizzes, getTradingTier } from './data/quizzes';
 import type { QuizItem } from './data/quizzes';
 import { Dashboard } from './components/Dashboard';
 import { QuizCard } from './components/QuizCard';
 import { TheoryReader } from './components/TheoryReader';
-import { Flame, Award, LayoutDashboard, CheckSquare } from 'lucide-react';
+import { Flame, Award, LayoutDashboard, User, CheckCircle, Smartphone } from 'lucide-react';
+import { supabase, isSupabaseConfigured } from './lib/supabaseClient';
 
-type ViewMode = 'dashboard' | 'quiz' | 'theory' | 'roadmap';
+type ViewMode = 'dashboard' | 'quiz' | 'theory' | 'profile';
 
 export const App: React.FC = () => {
   // Gamification states loaded from LocalStorage (or defaults)
@@ -21,52 +22,105 @@ export const App: React.FC = () => {
     return saved ? JSON.parse(saved) : [];
   });
 
+  const [quizzesList, setQuizzesList] = useState<QuizItem[]>(quizzes);
   const [currentView, setCurrentView] = useState<ViewMode>('dashboard');
   const [activeQuizList, setActiveQuizList] = useState<QuizItem[]>([]);
   const [activeQuizIndex, setActiveQuizIndex] = useState<number>(0);
   const [activeTheoryFile, setActiveTheoryFile] = useState<string>('01_candlestick_basics.md');
+  const [userId, setUserId] = useState<string | null>(null);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
 
-  // Business Roadmap Checklist States (for reference inside the app)
-  const [roadmapChecklist, setRoadmapChecklist] = useState<Record<string, boolean>>(() => {
-    const saved = localStorage.getItem('chartmon_roadmap');
-    return saved ? JSON.parse(saved) : {
-      'github': false,
-      'scaffold': true, // Auto checked since we are doing this now!
-      'play_console': false,
-      'draft_docs': true, // Auto checked since we wrote docs!
-      'quizzes': true, // Auto checked since we wrote quizzes!
-      'insta_biz': false,
-      'meta_ads': false,
-      'payments': false
-    };
-  });
-
+  // Fetch quizzes and profiles from Supabase if configured
   useEffect(() => {
-    localStorage.setItem('chartmon_streak', String(streak));
-  }, [streak]);
+    async function loadInitialData() {
+      // 1. Fetch quizzes from Supabase
+      if (isSupabaseConfigured) {
+        try {
+          const { data, error } = await supabase
+            .from('quizzes')
+            .select('*')
+            .order('id', { ascending: true });
+          
+          if (!error && data && data.length > 0) {
+            const formatted: QuizItem[] = data.map(q => ({
+              id: Number(q.id),
+              category: q.category,
+              theoryRef: q.theory_ref,
+              question: q.question,
+              chartData: q.chart_data,
+              drawings: q.drawings,
+              options: q.options,
+              correctIndex: q.correct_index,
+              explanation: q.explanation
+            }));
+            setQuizzesList(formatted);
+          }
+        } catch (e) {
+          console.error('ChartMon: Supabase load quizzes failed, using local.', e);
+        }
 
-  useEffect(() => {
-    localStorage.setItem('chartmon_xp', String(xp));
-  }, [xp]);
+        // 2. Load authenticated user profile
+        try {
+          const { data: { user } } = await supabase.auth.getUser();
+          if (user) {
+            setUserId(user.id);
+            setUserEmail(user.email || 'Authenticated User');
+            const { data: profile, error } = await supabase
+              .from('profiles')
+              .select('*')
+              .eq('id', user.id)
+              .single();
+            
+            if (!error && profile) {
+              setStreak(profile.streak);
+              setXp(profile.xp);
+              setCompletedQuizzes(profile.completed_quizzes || []);
+            }
+          }
+        } catch (e) {
+          console.error('ChartMon: Profile loading failed.', e);
+        }
+      }
+    }
 
-  useEffect(() => {
-    localStorage.setItem('chartmon_completed', JSON.stringify(completedQuizzes));
-  }, [completedQuizzes]);
+    loadInitialData();
+  }, []);
 
-  useEffect(() => {
-    localStorage.setItem('chartmon_roadmap', JSON.stringify(roadmapChecklist));
-  }, [roadmapChecklist]);
+  // Sync state changes with LocalStorage and Supabase (upsert)
+  const updateStats = async (newXp: number, newStreak: number, newCompleted: number[]) => {
+    setXp(newXp);
+    setStreak(newStreak);
+    setCompletedQuizzes(newCompleted);
 
-  // Daily 15-minute training triggers all quizzes sequentially
+    localStorage.setItem('chartmon_xp', String(newXp));
+    localStorage.setItem('chartmon_streak', String(newStreak));
+    localStorage.setItem('chartmon_completed', JSON.stringify(newCompleted));
+
+    if (isSupabaseConfigured && userId) {
+      try {
+        const tier = getTradingTier(newXp);
+        await supabase.from('profiles').upsert({
+          id: userId,
+          xp: newXp,
+          streak: newStreak,
+          trading_level: tier.level,
+          completed_quizzes: newCompleted,
+          updated_at: new Date().toISOString()
+        });
+      } catch (e) {
+        console.error('ChartMon: Syncing profile with Supabase failed.', e);
+      }
+    }
+  };
+
   const startDailyTraining = () => {
-    // Shuffle quizzes or select all
-    setActiveQuizList(quizzes);
+    setActiveQuizList(quizzesList);
     setActiveQuizIndex(0);
     setCurrentView('quiz');
   };
 
   const startQuizById = (id: number) => {
-    const targetQuiz = quizzes.find(q => q.id === id);
+    const targetQuiz = quizzesList.find(q => q.id === id);
     if (targetQuiz) {
       setActiveQuizList([targetQuiz]);
       setActiveQuizIndex(0);
@@ -81,12 +135,13 @@ export const App: React.FC = () => {
 
   const handleAnswerChecked = (isCorrect: boolean) => {
     if (isCorrect) {
-      setXp(prev => prev + 10);
-      // Mark current quiz as completed
+      const newXp = xp + 10;
       const currentQuiz = activeQuizList[activeQuizIndex];
+      const newCompleted = [...completedQuizzes];
       if (currentQuiz && !completedQuizzes.includes(currentQuiz.id)) {
-        setCompletedQuizzes(prev => [...prev, currentQuiz.id]);
+        newCompleted.push(currentQuiz.id);
       }
+      updateStats(newXp, streak, newCompleted);
     }
   };
 
@@ -94,20 +149,14 @@ export const App: React.FC = () => {
     if (activeQuizIndex + 1 < activeQuizList.length) {
       setActiveQuizIndex(prev => prev + 1);
     } else {
-      // Completed the quiz deck!
       alert(`🎉 축하합니다! 오늘의 트레이닝 완료! +${activeQuizList.length * 10} XP 획득!`);
-      // Update streak
-      setStreak(prev => prev + 1);
+      const newStreak = streak + 1;
+      updateStats(xp, newStreak, completedQuizzes);
       setCurrentView('dashboard');
     }
   };
 
-  const toggleRoadmapItem = (key: string) => {
-    setRoadmapChecklist(prev => ({
-      ...prev,
-      [key]: !prev[key]
-    }));
-  };
+  const currentTier = getTradingTier(xp);
 
   return (
     <div className="app-container">
@@ -118,6 +167,9 @@ export const App: React.FC = () => {
             <h1>ChartMon</h1>
           </div>
           <div className="stats-bar">
+            <div className="stat-item tier" title={`${currentTier.name}: ${currentTier.description}`} style={{ border: '1px solid rgba(59, 130, 246, 0.25)', background: 'rgba(59, 130, 246, 0.05)', color: 'var(--color-brand)' }}>
+              <span>{currentTier.badge} {currentTier.name.split(' ')[0]}</span>
+            </div>
             <div className="stat-item streak" title="연속 활성 일수">
               <Flame size={16} fill="currentColor" />
               <span>{streak}일</span>
@@ -138,6 +190,7 @@ export const App: React.FC = () => {
             onSelectModule={handleSelectModule}
             onStartQuizById={startQuizById}
             completedQuizzes={completedQuizzes}
+            xp={xp}
           />
         )}
 
@@ -159,74 +212,67 @@ export const App: React.FC = () => {
           />
         )}
 
-        {currentView === 'roadmap' && (
+        {currentView === 'profile' && (
           <div style={{ padding: '24px 20px', display: 'flex', flex: 1, flexDirection: 'column', gap: '20px' }}>
             <h2 className="card-title">
-              <CheckSquare size={20} style={{ color: 'var(--color-brand)' }} />
-              ChartMon 사업 런칭 로드맵
+              <User size={20} style={{ color: 'var(--color-brand)' }} />
+              내 프로필
             </h2>
-            <div className="theory-content" style={{ maxHeight: 'calc(100vh - 200px)' }}>
-              <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '16px', lineHeight: 1.6 }}>
-                기본 사업자등록, 법인 설립 및 구글 개발자 계정이 준비되어 있으므로 아래 단계를 완료하여 서비스를 출시하십시오.
-              </p>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                <label style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', cursor: 'pointer', padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid var(--border-color)' }}>
-                  <input type="checkbox" checked={roadmapChecklist.github} onChange={() => toggleRoadmapItem('github')} style={{ marginTop: '3px' }} />
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '14px', color: roadmapChecklist.github ? 'var(--text-muted)' : 'var(--text-primary)' }}>1. 깃허브 리포지토리 생성 및 연동</strong>
-                    <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>ChartMon 비공개 저장소 생성 후 로컬 코드 푸시</span>
-                  </div>
-                </label>
 
-                <label style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', cursor: 'pointer', padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid var(--border-color)' }}>
-                  <input type="checkbox" checked={roadmapChecklist.scaffold} onChange={() => toggleRoadmapItem('scaffold')} style={{ marginTop: '3px' }} />
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '14px', color: roadmapChecklist.scaffold ? 'var(--text-muted)' : 'var(--text-primary)' }}>2. 앱 코딩 스캐폴딩 구축 [완료]</strong>
-                    <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>Vite + React + TS 기반 대시보드/차트/퀴즈 UI 완료</span>
-                  </div>
-                </label>
-
-                <label style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', cursor: 'pointer', padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid var(--border-color)' }}>
-                  <input type="checkbox" checked={roadmapChecklist.draft_docs} onChange={() => toggleRoadmapItem('draft_docs')} style={{ marginTop: '3px' }} />
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '14px', color: roadmapChecklist.draft_docs ? 'var(--text-muted)' : 'var(--text-primary)' }}>3. 트레이딩 이론 및 마케팅 카피 작성 [완료]</strong>
-                    <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>6개의 대분류 기술적 분석 문서 docs/ 폴더에 보관 완료</span>
-                  </div>
-                </label>
-
-                <label style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', cursor: 'pointer', padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid var(--border-color)' }}>
-                  <input type="checkbox" checked={roadmapChecklist.quizzes} onChange={() => toggleRoadmapItem('quizzes')} style={{ marginTop: '3px' }} />
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '14px', color: roadmapChecklist.quizzes ? 'var(--text-muted)' : 'var(--text-primary)' }}>4. 실전 차트 퀴즈 설계 및 바인딩 [완료]</strong>
-                    <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>총 6개 실전 분석 퀴즈 데이터 및 캔버스 렌더러 구축 완료</span>
-                  </div>
-                </label>
-
-                <label style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', cursor: 'pointer', padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid var(--border-color)' }}>
-                  <input type="checkbox" checked={roadmapChecklist.insta_biz} onChange={() => toggleRoadmapItem('insta_biz')} style={{ marginTop: '3px' }} />
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '14px', color: roadmapChecklist.insta_biz ? 'var(--text-muted)' : 'var(--text-primary)' }}>5. 인스타그램 비즈니스 계정 개설</strong>
-                    <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>페이스북 페이지 연결 및 인스타 프로필 세팅, 링크트리 추가</span>
-                  </div>
-                </label>
-
-                <label style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', cursor: 'pointer', padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid var(--border-color)' }}>
-                  <input type="checkbox" checked={roadmapChecklist.meta_ads} onChange={() => toggleRoadmapItem('meta_ads')} style={{ marginTop: '3px' }} />
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '14px', color: roadmapChecklist.meta_ads ? 'var(--text-muted)' : 'var(--text-primary)' }}>6. 메타(페이스북/인스타) 광고 캠페인 세팅</strong>
-                    <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>이론 기반 후킹 쇼츠(Reels) 영상 제작 및 잠재고객 광고 송출</span>
-                  </div>
-                </label>
-
-                <label style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', cursor: 'pointer', padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '10px', border: '1px solid var(--border-color)' }}>
-                  <input type="checkbox" checked={roadmapChecklist.payments} onChange={() => toggleRoadmapItem('payments')} style={{ marginTop: '3px' }} />
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '14px', color: roadmapChecklist.payments ? 'var(--text-muted)' : 'var(--text-primary)' }}>7. 구글 플레이 인앱 결제(Billing) 연동 및 출시</strong>
-                    <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>구글 플레이 콘솔 상품 등록 및 인앱 구독 API 연동 후 배포</span>
-                  </div>
-                </label>
+            {/* Profile Avatar Card */}
+            <div className="welcome-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
+              <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(59, 130, 246, 0.1)', border: '2px solid var(--color-brand)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '36px' }}>
+                {currentTier.badge}
               </div>
+              <div style={{ textAlign: 'center' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 800 }}>{currentTier.name}</h3>
+                <p style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '4px' }}>Lv.{currentTier.level} 트레이더</p>
+              </div>
+            </div>
+
+            {/* Stats Overview */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ fontSize: '11px', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Flame size={12} color="var(--color-streak)" /> 학습 스트릭
+                </span>
+                <span style={{ fontSize: '18px', fontWeight: 800, color: 'var(--color-streak)' }}>{streak}일 연속</span>
+              </div>
+              
+              <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <span style={{ fontSize: '11px', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Award size={12} color="var(--color-xp)" /> 획득한 경험치
+                </span>
+                <span style={{ fontSize: '18px', fontWeight: 800, color: 'var(--color-xp)' }}>{xp} XP</span>
+              </div>
+
+              <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '6px', gridColumn: 'span 2' }}>
+                <span style={{ fontSize: '11px', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <CheckCircle size={12} color="var(--color-bullish)" /> 학습 진척도 (모듈 완료 수)
+                </span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '4px' }}>
+                  <span style={{ fontSize: '16px', fontWeight: 800 }}>{completedQuizzes.length} / {quizzesList.length} 개 모듈 완료</span>
+                  <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>{Math.round((completedQuizzes.length / quizzesList.length) * 100)}%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Cloud Data Backup Option */}
+            <div style={{ background: 'rgba(59, 130, 246, 0.03)', border: '1px dashed rgba(59, 130, 246, 0.25)', borderRadius: '16px', padding: '18px', marginTop: '10px' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '12px' }}>
+                <Smartphone size={18} color="var(--color-brand)" style={{ marginTop: '2px' }} />
+                <div>
+                  <h4 style={{ fontSize: '13px', fontWeight: 700 }}>{userId ? '클라우드 연동 완료' : '진행 상황을 서버에 저장하세요'}</h4>
+                  <p style={{ fontSize: '11px', color: 'var(--text-secondary)', marginTop: '2px', lineHeight: 1.5 }}>
+                    {userId ? `연동 계정: ${userEmail}` : '현재 게스트 모드로 학습 중입니다. 기기를 바꾸거나 앱을 지워도 진행 데이터와 등급이 보존되도록 구글 계정 연동을 준비 중입니다.'}
+                  </p>
+                </div>
+              </div>
+              {!userId && (
+                <button className="btn-drawer-action check" style={{ fontSize: '13px', padding: '10px' }} onClick={() => alert('구글 클라우드 로그인 연동 준비 중입니다.')}>
+                  구글 계정 연동하기 (준비 중)
+                </button>
+              )}
             </div>
           </div>
         )}
@@ -243,11 +289,11 @@ export const App: React.FC = () => {
             <span>대시보드</span>
           </button>
           <button
-            onClick={() => setCurrentView('roadmap')}
-            className={`tab-btn ${currentView === 'roadmap' ? 'active' : ''}`}
+            onClick={() => setCurrentView('profile')}
+            className={`tab-btn ${currentView === 'profile' ? 'active' : ''}`}
           >
-            <CheckSquare size={20} />
-            <span>비즈니스 로드맵</span>
+            <User size={20} />
+            <span>프로필</span>
           </button>
         </nav>
       )}

@@ -1,18 +1,21 @@
 import React from 'react';
 import { BookOpen, Play, CheckCircle } from 'lucide-react';
+import { getTradingTier, tradingTiers } from '../data/quizzes';
 
 interface DashboardProps {
   onStartDailyQuiz: () => void;
   onSelectModule: (theoryFile: string) => void;
   onStartQuizById: (id: number) => void;
   completedQuizzes: number[];
+  xp: number;
 }
 
 export const Dashboard: React.FC<DashboardProps> = ({
   onStartDailyQuiz,
   onSelectModule,
   onStartQuizById,
-  completedQuizzes
+  completedQuizzes,
+  xp
 }) => {
   const modules = [
     { id: 1, title: '캔들스틱 기초 (Candlesticks)', desc: '캔들의 구조와 단일/복합 캔들 반전 패턴', file: '01_candlestick_basics.md' },
@@ -22,6 +25,12 @@ export const Dashboard: React.FC<DashboardProps> = ({
     { id: 5, title: '기술적 보조지표 (Technical Indicators)', desc: 'EMA 정배열, RSI 다이버전스 및 MACD 활용법', file: '05_technical_indicators.md' },
     { id: 6, title: '리스크 관리 (Risk Management)', desc: '손익비 계산과 2% 룰 기반 포지션 사이징 공식', file: '06_risk_management.md' }
   ];
+
+  const tier = getTradingTier(xp);
+  const nextTier = tradingTiers.find(t => t.level === tier.level + 1);
+  const xpNeeded = nextTier ? nextTier.minXp - xp : 0;
+  const currentTierRange = nextTier ? nextTier.minXp - tier.minXp : 1000;
+  const xpProgress = nextTier ? ((xp - tier.minXp) / currentTierRange) * 100 : 100;
 
   return (
     <div className="dashboard-wrapper">
@@ -33,6 +42,36 @@ export const Dashboard: React.FC<DashboardProps> = ({
           <Play size={18} fill="currentColor" />
           오늘의 15분 트레이닝 시작
         </button>
+      </div>
+
+      {/* User Tier Progression Card */}
+      <div className="welcome-card" style={{ background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(22, 26, 37, 0.6) 100%)', border: '1px solid rgba(168, 85, 247, 0.25)', padding: '20px', textAlign: 'left' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+          <div>
+            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-xp)', background: 'rgba(168, 85, 247, 0.1)', padding: '4px 8px', borderRadius: '6px' }}>현재 트레이더 레벨</span>
+            <h2 style={{ fontFamily: 'var(--font-title)', fontSize: '20px', fontWeight: 800, marginTop: '6px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              {tier.badge} {tier.name}
+            </h2>
+          </div>
+          <span style={{ fontSize: '24px', fontWeight: 800, color: 'var(--color-xp)' }}>Lv.{tier.level}</span>
+        </div>
+        <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '14px' }}>{tier.description}</p>
+        
+        {nextTier ? (
+          <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '6px' }}>
+              <span>다음 등급: {nextTier.badge} {nextTier.name.split(' ')[0]}</span>
+              <span>{xpNeeded} XP 남음 ({xp} / {nextTier.minXp} XP)</span>
+            </div>
+            <div className="progress-track" style={{ height: '8px' }}>
+              <div className="progress-fill" style={{ width: `${xpProgress}%`, background: 'linear-gradient(90deg, var(--color-xp) 0%, #d946ef 100%)' }}></div>
+            </div>
+          </div>
+        ) : (
+          <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-streak)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <span>👑 마켓 마스터 등급 달성! 당신은 최고 수준의 트레이더입니다.</span>
+          </div>
+        )}
       </div>
 
       {/* Course Modules Curriculum */}
