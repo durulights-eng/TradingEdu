@@ -1,0 +1,34 @@
+# ChartMon "Chart Training Gym" & Standalone Admin Overhaul Checklist
+
+- [x] 1. Cleanup Main App (Capacitor Android wrapper)
+  - [x] Delete main app `src/components/AdminPanel.tsx`
+  - [x] Remove `[🛠️ 운영자 모드]` button from Profile tab in main app `src/App.tsx`
+  - [x] Remove `'admin'` view mode type and AdminPanel imports from `src/App.tsx`
+- [x] 2. Setup Standalone Admin Folder & Project
+  - [x] Create `d:\TradingEdu\admin/` project using Vite + React + TS template
+  - [x] Configure `admin/package.json` and install `@supabase/supabase-js`, `lucide-react`, and standard types
+  - [x] Copy Supabase environment variables into `admin/.env`
+- [x] 3. Implement Standalone Admin Features
+  - [x] Create `admin/src/App.tsx` by porting the `AdminPanel.tsx` code
+  - [x] Copy `src/components/ChartVisualizer.tsx` to `admin/src/components/ChartVisualizer.tsx`
+  - [x] Set up clean, responsive layout & styling in `admin/src/index.css`
+- [x] 4. Rebuild & Native Sync
+  - [x] Compile main client Vite bundle (`npm run build`)
+  - [x] Sync assets to Capacitor (`npx cap sync android`)
+  - [x] Compile admin Vite bundle (`npm run --prefix admin build`) to verify there are no errors
+- [x] 5. Quiz Bank Expansion to 60 Quizzes & Seeding
+  - [x] Design 30 new high-quality decision-making quizzes (IDs 31-60) covering practical trading setups
+  - [x] Populate `src/data/quizzes.ts` with all 60 quizzes
+  - [x] Run `node docs/generate_seed_sql.cjs` to build `docs/seed_quizzes.sql`
+  - [x] Execute SQL queries on the active Supabase database (`nyebzpnncndhbujtegiv`)
+- [x] 6. UI Polish & Event Bubble Fix
+  - [x] Style option button text to white color (`#ffffff`) in `admin/src/index.css`
+  - [x] Implement quiz preview modal trigger on `quiz-row-card` click
+  - [x] Intercept event propagation on Edit/Delete buttons
+- [x] 7. Verification
+  - [x] Verify local compilation for both the main App and Standalone Admin website (Successful builds)
+  - [x] Set up password gate (`chartmon123!`) on standalone 어드민
+  - [x] Setup RLS policies verification (User management displays profile list and supports Quiz CRUD)
+  - [x] Verify Supabase seeding results (60 rows confirmed across all 6 categories)
+  - [x] Sync progress lists and walkthroughs to workspace docs
+
