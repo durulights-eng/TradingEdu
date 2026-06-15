@@ -3,29 +3,101 @@ import { quizzes, getTradingTier, getLocalDateString, getYesterdayDateString, is
 import type { QuizItem } from './data/quizzes';
 import { Dashboard } from './components/Dashboard';
 import { QuizCard } from './components/QuizCard';
-import { TheoryReader } from './components/TheoryReader';
-import { Flame, Award, LayoutDashboard, User, CheckCircle, Smartphone, BookOpen } from 'lucide-react';
+import { Flame, Award, LayoutDashboard, User, CheckCircle, Smartphone, Trophy } from 'lucide-react';
 import { supabase, isSupabaseConfigured } from './lib/supabaseClient';
+import { DrillGymTab } from './components/DrillGymTab';
 
-type ViewMode = 'dashboard' | 'quiz' | 'theory' | 'profile';
+type ViewMode = 'dashboard' | 'quiz' | 'drill' | 'profile';
 
-interface DrillStat {
-  level: number;
-  accuracy: number;
-  attempts: number;
-}
+import { 
+  createDefaultRatingState, 
+  processSessionUpdates, 
+  ALL_CATEGORIES 
+} from './lib/ratingEngine';
+import type { UserRatingState } from './lib/ratingEngine';
 
-const getCategoryKey = (category: string): 'candlestick' | 'sr' | 'trendline' | 'pattern' | 'indicator' | 'risk' => {
-  switch (category) {
-    case '캔들 패턴 인지': return 'candlestick';
-    case '지지/저항 & 돌파': return 'sr';
-    case '추세선과 채널': return 'trendline';
-    case '차트 패턴 포착': return 'pattern';
-    case '보조지표 다이버전스': return 'indicator';
-    case '자금관리/손익비': return 'risk';
-    default: return 'candlestick';
+const parseSavedRatingState = (savedStr: string | null): UserRatingState => {
+  const defaultState = createDefaultRatingState(ALL_CATEGORIES);
+  if (!savedStr) return defaultState;
+  try {
+    const parsed = JSON.parse(savedStr);
+    
+    // 1. If it's already the new format with overallRating, return it
+    if (parsed && typeof parsed.overallRating === 'number' && parsed.categories) {
+      ALL_CATEGORIES.forEach((cat: string) => {
+        if (!parsed.categories[cat]) {
+          parsed.categories[cat] = {
+            rating: 1000,
+            attempts: 0,
+            correct: 0,
+            nEff: 0,
+            recentAnswers: [],
+            seenQuestions: {},
+            level: 1,
+            accuracy: 50
+          };
+        }
+      });
+      return parsed as UserRatingState;
+    }
+    
+    // 2. Migration from old DrillStat format
+    const migrated = { ...defaultState };
+    const oldCategoryMap: Record<string, string> = {
+      '캔들 패턴 인지': '캔들/가격행동',
+      '지지/저항 & 돌파': '시장구조/SR',
+      '추세선과 채널': '추세/레짐',
+      '차트 패턴 포착': '패턴/돌파',
+      '보조지표 다이버전스': '지표/컨플루언스',
+      '자금관리/손익비': '리스크/심리'
+    };
+    
+    let totalAttempts = 0;
+    Object.entries(parsed).forEach(([oldCat, oldStat]: [string, any]) => {
+      const newCat = oldCategoryMap[oldCat];
+      if (newCat && oldStat) {
+        const attempts = oldStat.attempts || 0;
+        const accuracy = oldStat.accuracy || 0;
+        const correct = Math.round(attempts * (accuracy / 100));
+        const rating = 1000 + (attempts > 0 ? (accuracy - 50) * 6 : 0);
+        
+        totalAttempts += attempts;
+        
+        migrated.categories[newCat] = {
+          rating: Math.max(800, Math.min(1800, Math.round(rating))),
+          attempts: attempts,
+          correct: correct,
+          nEff: attempts,
+          recentAnswers: Array(Math.min(attempts, 10)).fill(accuracy >= 50 ? 1 : 0),
+          seenQuestions: {},
+          level: oldStat.level || 1,
+          accuracy: accuracy
+        };
+      }
+    });
+    
+    migrated.overallRating = 1000 + Math.min(600, totalAttempts * 15);
+    return migrated;
+  } catch (e) {
+    console.error("ChartMon: Failed to parse rating state, returning default", e);
+    return defaultState;
   }
 };
+
+const getCategoryKey = (category: string): 'candle' | 'structure' | 'trend' | 'pattern' | 'volume' | 'indicator' | 'execution' | 'risk' => {
+  switch (category) {
+    case '캔들/가격행동': return 'candle';
+    case '시장구조/SR': return 'structure';
+    case '추세/레짐': return 'trend';
+    case '패턴/돌파': return 'pattern';
+    case '거래량/유동성': return 'volume';
+    case '지표/컨플루언스': return 'indicator';
+    case '셋업/실행': return 'execution';
+    case '리스크/심리': return 'risk';
+    default: return 'candle';
+  }
+};
+
 
 export const App: React.FC = () => {
   // Gamification states loaded from LocalStorage (or defaults)
@@ -39,9 +111,9 @@ export const App: React.FC = () => {
     const saved = localStorage.getItem('chartmon_completed');
     return saved ? JSON.parse(saved) : [];
   });
-  const [drillStats, setDrillStats] = useState<Record<string, DrillStat>>(() => {
+  const [ratingState, setRatingState] = useState<UserRatingState>(() => {
     const saved = localStorage.getItem('chartmon_drill_stats');
-    return saved ? JSON.parse(saved) : {};
+    return parseSavedRatingState(saved);
   });
 
   const [lastActiveDate, setLastActiveDate] = useState<string | null>(() => {
@@ -54,14 +126,12 @@ export const App: React.FC = () => {
   const [sessionXp, setSessionXp] = useState<number>(0);
   const [sessionCompletedIds, setSessionCompletedIds] = useState<number[]>([]);
   const [sessionCorrectAnswers, setSessionCorrectAnswers] = useState<number>(0);
-  const [sessionCategory, setSessionCategory] = useState<string | null>(null);
   const [isDailySession, setIsDailySession] = useState<boolean>(false);
 
   const [quizzesList, setQuizzesList] = useState<QuizItem[]>(quizzes);
   const [currentView, setCurrentView] = useState<ViewMode>('dashboard');
   const [activeQuizList, setActiveQuizList] = useState<QuizItem[]>([]);
   const [activeQuizIndex, setActiveQuizIndex] = useState<number>(0);
-  const [activeTheoryFile, setActiveTheoryFile] = useState<string>('');
   const [userId, setUserId] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
 
@@ -92,6 +162,7 @@ export const App: React.FC = () => {
               id: Number(q.id),
               category: q.category,
               categoryKey: getCategoryKey(q.category),
+              difficulty: Number(q.difficulty) || 3,
               theoryRef: q.theory_ref,
               question: q.question,
               chartData: q.chart_data,
@@ -125,6 +196,9 @@ export const App: React.FC = () => {
               const profileActiveDate = profile.last_active_date || null;
               const profileDailyCompletedDate = profile.last_daily_completed_date || null;
               const profileDrillStats = profile.drill_stats || {};
+              const parsedRating = parseSavedRatingState(
+                typeof profileDrillStats === 'string' ? profileDrillStats : JSON.stringify(profileDrillStats)
+              );
 
               // Compare dates to see if streak is broken
               const today = getLocalDateString();
@@ -142,7 +216,7 @@ export const App: React.FC = () => {
                     completed_quizzes: profileCompleted,
                     last_active_date: profileActiveDate,
                     last_daily_completed_date: profileDailyCompletedDate,
-                    drill_stats: profileDrillStats,
+                    drill_stats: parsedRating,
                     updated_at: new Date().toISOString()
                   });
                 } catch (err) {
@@ -155,12 +229,12 @@ export const App: React.FC = () => {
               setCompletedQuizzes(profileCompleted);
               setLastActiveDate(profileActiveDate);
               setLastDailyCompletedDate(profileDailyCompletedDate);
-              setDrillStats(profileDrillStats);
+              setRatingState(parsedRating);
 
               localStorage.setItem('chartmon_streak', String(finalStreak));
               localStorage.setItem('chartmon_xp', String(profileXp));
               localStorage.setItem('chartmon_completed', JSON.stringify(profileCompleted));
-              localStorage.setItem('chartmon_drill_stats', JSON.stringify(profileDrillStats));
+              localStorage.setItem('chartmon_drill_stats', JSON.stringify(parsedRating));
               if (profileActiveDate) localStorage.setItem('chartmon_last_active', profileActiveDate);
               if (profileDailyCompletedDate) localStorage.setItem('chartmon_last_daily_completed', profileDailyCompletedDate);
             } else {
@@ -188,19 +262,19 @@ export const App: React.FC = () => {
     newCompleted: number[],
     newActiveDate: string | null,
     newDailyCompletedDate: string | null,
-    newDrillStats: Record<string, DrillStat>
+    newRatingState: UserRatingState
   ) => {
     setXp(newXp);
     setStreak(newStreak);
     setCompletedQuizzes(newCompleted);
     setLastActiveDate(newActiveDate);
     setLastDailyCompletedDate(newDailyCompletedDate);
-    setDrillStats(newDrillStats);
+    setRatingState(newRatingState);
 
     localStorage.setItem('chartmon_xp', String(newXp));
     localStorage.setItem('chartmon_streak', String(newStreak));
     localStorage.setItem('chartmon_completed', JSON.stringify(newCompleted));
-    localStorage.setItem('chartmon_drill_stats', JSON.stringify(newDrillStats));
+    localStorage.setItem('chartmon_drill_stats', JSON.stringify(newRatingState));
     if (newActiveDate) {
       localStorage.setItem('chartmon_last_active', newActiveDate);
     } else {
@@ -223,7 +297,7 @@ export const App: React.FC = () => {
           completed_quizzes: newCompleted,
           last_active_date: newActiveDate,
           last_daily_completed_date: newDailyCompletedDate,
-          drill_stats: newDrillStats,
+          drill_stats: newRatingState,
           updated_at: new Date().toISOString()
         });
       } catch (e) {
@@ -233,16 +307,16 @@ export const App: React.FC = () => {
   };
 
   const startDailyTraining = () => {
-    // Select 3 quizzes: uncompleted first, then fill with completed
+    // Select 15 quizzes: uncompleted first, then fill with completed
     const uncompleted = quizzesList.filter(q => !completedQuizzes.includes(q.id));
     let selected: QuizItem[];
-    if (uncompleted.length >= 3) {
-      selected = uncompleted.slice(0, 3);
+    if (uncompleted.length >= 15) {
+      selected = uncompleted.slice(0, 15);
     } else {
       selected = [...uncompleted];
       const completed = quizzesList.filter(q => completedQuizzes.includes(q.id));
       const shuffledCompleted = [...completed].sort(() => 0.5 - Math.random());
-      selected = [...selected, ...shuffledCompleted.slice(0, 3 - selected.length)];
+      selected = [...selected, ...shuffledCompleted.slice(0, 15 - selected.length)];
     }
 
     setActiveQuizList(selected);
@@ -250,7 +324,6 @@ export const App: React.FC = () => {
     setSessionXp(0);
     setSessionCompletedIds([]);
     setSessionCorrectAnswers(0);
-    setSessionCategory(null);
     setIsDailySession(true);
     setCurrentView('quiz');
   };
@@ -259,7 +332,7 @@ export const App: React.FC = () => {
     // Filter quizzes by category
     const categoryQuizzes = quizzesList.filter(q => q.category === category);
     if (categoryQuizzes.length === 0) {
-      alert('해당 드릴 범주의 퀴즈를 불러올 수 없습니다. 데이터베이스 연동을 확인해 주세요.');
+      alert('해당 훈련 범주의 퀴즈를 불러올 수 없습니다. 데이터베이스 연동을 확인해 주세요.');
       return;
     }
 
@@ -288,14 +361,8 @@ export const App: React.FC = () => {
     setSessionXp(0);
     setSessionCompletedIds([]);
     setSessionCorrectAnswers(0);
-    setSessionCategory(category);
     setIsDailySession(false);
     setCurrentView('quiz');
-  };
-
-  const handleSelectModule = (theoryFile: string) => {
-    setActiveTheoryFile(theoryFile);
-    setCurrentView('theory');
   };
 
   const handleAnswerChecked = (isCorrect: boolean) => {
@@ -353,41 +420,42 @@ export const App: React.FC = () => {
         new Set([...completedQuizzes, ...sessionCompletedIds])
       );
 
-      // Update drill statistics if this was a drill session
-      const nextDrillStats = { ...drillStats };
-      if (sessionCategory) {
-        const sessionAccuracy = Math.round((sessionCorrectAnswers / activeQuizList.length) * 100);
-        const currentStats = drillStats[sessionCategory] || { level: 1, accuracy: 0, attempts: 0 };
-        const nextAttempts = currentStats.attempts + 1;
-        const nextAccuracy = Math.max(currentStats.accuracy, sessionAccuracy);
-        
-        // Calculate new level: Milestones based on attempts & best accuracy
-        let nextLevel = 1;
-        if (nextAttempts >= 20 && nextAccuracy >= 95) nextLevel = 5;
-        else if (nextAttempts >= 10 && nextAccuracy >= 90) nextLevel = 4;
-        else if (nextAttempts >= 5 && nextAccuracy >= 80) nextLevel = 3;
-        else if (nextAttempts >= 2 && nextAccuracy >= 60) nextLevel = 2;
+      // ELO Rating and Skill Proficiency processing
+      const sessionQuizzes = activeQuizList.map(quiz => ({
+        id: quiz.id,
+        category: quiz.category,
+        difficulty: quiz.difficulty,
+        isCorrect: sessionCompletedIds.includes(quiz.id)
+      }));
 
-        nextDrillStats[sessionCategory] = {
-          level: nextLevel,
-          accuracy: nextAccuracy,
-          attempts: nextAttempts
-        };
+      const nextRatingState = processSessionUpdates(ratingState, sessionQuizzes, ALL_CATEGORIES);
 
-        // Feedback alert
-        let msg = `🎯 드릴 훈련 완료!\n- 정답률: ${sessionAccuracy}% (${sessionCorrectAnswers}/${activeQuizList.length} 정답)\n- 획득 경험치: +${sessionXp} XP`;
-        if (nextLevel > currentStats.level) {
-          msg += `\n\n🔥 레벨 업! [${sessionCategory}] 드릴 레벨이 Lv.${nextLevel}로 상승했습니다!`;
+      // Track level-up triggers
+      let levelUpMessage = "";
+      ALL_CATEGORIES.forEach(cat => {
+        const prevLevel = ratingState.categories[cat]?.level || 1;
+        const nextLevel = nextRatingState.categories[cat]?.level || 1;
+        if (nextLevel > prevLevel) {
+          levelUpMessage += `\n🔥 레벨 업! [${cat}] 훈련 레벨이 Lv.${nextLevel}로 상승했습니다!`;
         }
-        alert(msg);
-      } else {
-        // Daily training feedback
-        let msg = `🎉 오늘의 데일리 트레이닝 완료! (+${sessionXp} XP 획득)`;
-        if (dailyBonusAwarded) {
-          msg += `\n🎁 일일 완성 보너스 (+30 XP) 추가 지급!`;
-        }
-        alert(msg);
+      });
+
+      // ELO Change display
+      const eloDiff = nextRatingState.overallRating - ratingState.overallRating;
+      const eloDiffStr = eloDiff >= 0 ? `+${eloDiff}` : `${eloDiff}`;
+
+      // Feedback alert
+      let msg = isDailySession
+        ? `🎉 오늘의 데일리 트레이닝 완료! (+${sessionXp} XP 획득)\n📈 트레이더 레이팅: ${ratingState.overallRating} → ${nextRatingState.overallRating} RP (${eloDiffStr} RP)`
+        : `🎯 실전 훈련 완료!\n- 정답률: ${Math.round((sessionCorrectAnswers / activeQuizList.length) * 100)}% (${sessionCorrectAnswers}/${activeQuizList.length} 정답)\n- 획득 경험치: +${sessionXp} XP\n📈 트레이더 레이팅: ${ratingState.overallRating} → ${nextRatingState.overallRating} RP (${eloDiffStr} RP)`;
+
+      if (isDailySession && dailyBonusAwarded) {
+        msg += `\n🎁 일일 완성 보너스 (+30 XP) 추가 지급!`;
       }
+      if (levelUpMessage) {
+        msg += `\n${levelUpMessage}`;
+      }
+      alert(msg);
 
       // Clean up streak warning since they active today
       setStreakBroken(false);
@@ -399,7 +467,7 @@ export const App: React.FC = () => {
         combinedCompletedQuizzes,
         finalActiveDate,
         finalDailyCompletedDate,
-        nextDrillStats
+        nextRatingState
       );
 
       setCurrentView('dashboard');
@@ -408,22 +476,12 @@ export const App: React.FC = () => {
 
   const currentTier = getTradingTier(xp);
 
-  // 6 Theories details for the list tab
-  const theoryModulesList = [
-    { id: 1, title: '01. 캔들스틱 기초 (Candlesticks)', desc: '캔들의 구조와 단일/복합 캔들 반전 패턴', file: '01_candlestick_basics.md', category: '캔들스틱 기초' },
-    { id: 2, title: '02. 지지와 저항 (Support & Resistance)', desc: '매물대 작도법 및 역할 전환과 가짜 돌파', file: '02_support_resistance.md', category: '지지와 저항' },
-    { id: 3, title: '03. 추세선과 채널 (Trendlines & Channels)', desc: '추세 정의 및 평행 채널 작도와 추세선 돌파', file: '03_trendlines_channels.md', category: '추세선과 채널' },
-    { id: 4, title: '04. 차트 패턴 (Chart Patterns)', desc: '헤드앤숄더 및 삼각형, 깃발형 패턴의 완성', file: '04_chart_patterns.md', category: '차트 패턴' },
-    { id: 5, title: '05. 기술적 보조지표 (Technical Indicators)', desc: 'EMA 정배열, RSI 다이버전스 및 MACD 활용법', file: '05_technical_indicators.md', category: '보조지표' },
-    { id: 6, title: '06. 리스크 관리 (Risk Management)', desc: '손익비 계산과 2% 룰 기반 포지션 사이징 공식', file: '06_risk_management.md', category: '리스크 관리' }
-  ];
-
   return (
     <div className="app-container">
       {/* Top Header Section */}
       {currentView !== 'quiz' && (
         <header>
-          <div className="logo-section" onClick={() => { setCurrentView('dashboard'); setActiveTheoryFile(''); }} style={{ cursor: 'pointer' }}>
+          <div className="logo-section" onClick={() => { setCurrentView('dashboard'); }} style={{ cursor: 'pointer' }}>
             <h1>ChartMon</h1>
           </div>
           <div className="stats-bar">
@@ -447,13 +505,13 @@ export const App: React.FC = () => {
         {currentView === 'dashboard' && (
           <Dashboard
             onStartDailyQuiz={startDailyTraining}
-            onSelectModule={handleSelectModule}
-            onStartDrill={startDrill}
             xp={xp}
             streakBroken={streakBroken}
             onCloseStreakWarning={() => setStreakBroken(false)}
             isDailyCompletedToday={lastDailyCompletedDate === getLocalDateString()}
-            drillStats={drillStats}
+            drillStats={ratingState.categories}
+            overallRating={ratingState.overallRating}
+            completedQuizzes={completedQuizzes}
           />
         )}
 
@@ -472,52 +530,12 @@ export const App: React.FC = () => {
           />
         )}
 
-        {currentView === 'theory' && (
-          <>
-            {activeTheoryFile === '' ? (
-              /* Display list of theories to select */
-              <div style={{ padding: '24px 20px', paddingBottom: '90px' }}>
-                <h2 className="card-title" style={{ marginBottom: '20px' }}>
-                  <BookOpen size={20} style={{ color: 'var(--color-brand)' }} />
-                  트레이딩 핵심 이론 백과
-                </h2>
-                <div className="modules-list" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  {theoryModulesList.map((tm) => (
-                    <div 
-                      key={tm.id} 
-                      className="module-card"
-                      onClick={() => setActiveTheoryFile(tm.file)}
-                      style={{
-                        cursor: 'pointer',
-                        padding: '18px 20px',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        transition: 'transform 0.2s, border-color 0.2s',
-                        background: 'linear-gradient(135deg, rgba(255,255,255,0.01) 0%, rgba(22, 26, 37, 0.4) 100%)'
-                      }}
-                      onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--color-brand-glow)'}
-                      onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-color)'}
-                    >
-                      <div>
-                        <h3 style={{ fontSize: '15px', fontWeight: 800, marginBottom: '6px', color: '#fff' }}>{tm.title}</h3>
-                        <p style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>{tm.desc}</p>
-                      </div>
-                      <span className="category-tag" style={{ background: 'rgba(59, 130, 246, 0.1)', color: 'var(--color-brand)', fontSize: '11px', fontWeight: 700, padding: '4px 8px', borderRadius: '6px', flexShrink: 0 }}>
-                        {tm.category}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              /* Render the selected theory */
-              <TheoryReader
-                theoryFile={activeTheoryFile}
-                onBack={() => setActiveTheoryFile('')}
-              />
-            )}
-          </>
+        {currentView === 'drill' && (
+          <DrillGymTab
+            onStartDrill={startDrill}
+            xp={xp}
+            drillStats={ratingState.categories}
+          />
         )}
 
         {currentView === 'profile' && (
@@ -591,18 +609,18 @@ export const App: React.FC = () => {
       {currentView !== 'quiz' && (
         <nav className="tabs-navigation" style={{ zIndex: 100 }}>
           <button
-            onClick={() => { setCurrentView('dashboard'); setActiveTheoryFile(''); }}
+            onClick={() => { setCurrentView('dashboard'); }}
             className={`tab-btn ${currentView === 'dashboard' ? 'active' : ''}`}
           >
             <LayoutDashboard size={20} />
-            <span>대시보드</span>
+            <span>데일리 트레이닝</span>
           </button>
           <button
-            onClick={() => { setCurrentView('theory'); setActiveTheoryFile(''); }}
-            className={`tab-btn ${currentView === 'theory' ? 'active' : ''}`}
+            onClick={() => { setCurrentView('drill'); }}
+            className={`tab-btn ${currentView === 'drill' ? 'active' : ''}`}
           >
-            <BookOpen size={20} />
-            <span>이론 백과</span>
+            <Trophy size={20} />
+            <span>차트 훈련소</span>
           </button>
           <button
             onClick={() => { setCurrentView('profile'); }}

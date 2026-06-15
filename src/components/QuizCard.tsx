@@ -3,6 +3,7 @@ import type { QuizItem } from '../data/quizzes';
 import { ChartVisualizer } from './ChartVisualizer';
 import { X, CheckCircle, AlertTriangle, BookOpen } from 'lucide-react';
 import { TheoryReader } from './TheoryReader';
+import { HighlightText } from './HighlightText';
 
 interface QuizCardProps {
   quiz: QuizItem;
@@ -88,7 +89,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({
       {/* Main Question Card */}
       <div className="question-box">
         <span className="category-tag">{quiz.category}</span>
-        <p className="question-text">{quiz.question}</p>
+        <p className="question-text"><HighlightText text={quiz.question} /></p>
       </div>
 
       {/* Chart Visualizer */}
@@ -142,7 +143,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({
                 </>
               )}
             </div>
-            <p className="explanation-text">{quiz.explanation}</p>
+            <p className="explanation-text"><HighlightText text={quiz.explanation} /></p>
             <button
               className={`btn-drawer-action ${isCorrect ? 'continue-correct' : 'continue-incorrect'}`}
               onClick={() => {
@@ -184,13 +185,13 @@ export const QuizCard: React.FC<QuizCardProps> = ({
             boxShadow: '0 -10px 40px rgba(0,0,0,0.5)'
           }} onClick={e => e.stopPropagation()}>
             {/* Drawer Header */}
-            <div style={{
+             <div style={{
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
               marginBottom: '16px',
               paddingBottom: '12px',
-              borderBottom: '1px solid rgba(255,255,255,0.06)'
+              borderBottom: '1px solid var(--border-color)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <BookOpen size={18} style={{ color: 'var(--color-brand)' }} />
@@ -199,7 +200,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({
               <button 
                 onClick={() => setIsTheoryOpen(false)}
                 style={{
-                  background: 'rgba(255,255,255,0.06)',
+                  background: 'var(--bg-muted)',
                   border: 'none',
                   borderRadius: '50%',
                   width: '28px',
