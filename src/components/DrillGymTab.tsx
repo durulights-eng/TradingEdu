@@ -6,7 +6,7 @@ import { GlossaryViewer } from './GlossaryViewer';
 import type { CategoryStat } from '../lib/ratingEngine';
 
 interface DrillGymTabProps {
-  onStartDrill: (category: string) => void;
+  onStartDrill: (theoryFile: string) => void;
   xp: number;
   drillStats: Record<string, CategoryStat>;
 }
@@ -22,93 +22,127 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
   const drills = [
     {
       id: 1,
-      category: '캔들/가격행동',
-      title: '캔들/가격행동 훈련',
-      desc: '캔들 구조 분석 및 단일/복합 캔들 반전 형태 즉각 인지',
-      file: '01_candlestick_basics.md',
+      category: 'A. 차트와 시장 기초',
+      skillCategory: '시장구조/SR',
+      title: 'A. 차트 & 시장 기초 훈련',
+      desc: 'OHLC 구조, 호가와 체결 원리 및 슬리피지 관리 기초',
+      file: '01_chart_market_basics.md',
+      minXp: 0,
+      gradient: 'linear-gradient(135deg, rgba(148, 163, 184, 0.08) 0%, rgba(148, 163, 184, 0.01) 100%)',
+      borderColor: 'rgba(148, 163, 184, 0.22)'
+    },
+    {
+      id: 2,
+      category: 'B. 캔들스틱과 가격 행동',
+      skillCategory: '캔들/가격행동',
+      title: 'B. 캔들스틱 & 가격 행동 훈련',
+      desc: '망치형, 유성형, 장악형 캔들 인지 및 가격 움직임 해독',
+      file: '02_candlestick_price_action.md',
       minXp: 0,
       gradient: 'linear-gradient(135deg, rgba(90, 82, 229, 0.08) 0%, rgba(90, 82, 229, 0.01) 100%)',
       borderColor: 'rgba(90, 82, 229, 0.22)'
     },
     {
-      id: 2,
-      category: '시장구조/SR',
-      title: '시장구조 & S/R 훈련',
+      id: 3,
+      category: 'C. 시장 구조',
+      skillCategory: '시장구조/SR',
+      title: 'C. 시장 구조 & S/R 훈련',
       desc: '매물대 작도, 역할 전환(Role Reversal) 및 수평 구조 판독',
-      file: '02_support_resistance.md',
-      minXp: 0,
+      file: '03_market_structure.md',
+      minXp: 150,
       gradient: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.01) 100%)',
       borderColor: 'rgba(16, 185, 129, 0.22)'
     },
     {
-      id: 3,
-      category: '추세/레짐',
-      title: '추세선 & 시장 레짐 훈련',
-      desc: '추세선 작도, 평행 채널 상하단 타점 및 시장의 추세성 식별',
-      file: '03_trendlines_channels.md',
-      minXp: 150,
-      gradient: 'linear-gradient(135deg, rgba(217, 119, 6, 0.08) 0%, rgba(217, 119, 6, 0.01) 100%)',
-      borderColor: 'rgba(217, 119, 6, 0.22)'
-    },
-    {
       id: 4,
-      category: '패턴/돌파',
-      title: '차트 패턴 & 돌파 훈련',
+      category: 'D. 패턴과 돌파',
+      skillCategory: '패턴/돌파',
+      title: 'D. 차트 패턴 & 돌파 훈련',
       desc: '헤드앤숄더, 이중 천정/바닥, 삼각형 및 깃발 패턴 검수',
-      file: '04_chart_patterns.md',
+      file: '04_patterns_breakout.md',
       minXp: 300,
       gradient: 'linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(239, 68, 68, 0.01) 100%)',
       borderColor: 'rgba(239, 68, 68, 0.22)'
     },
     {
       id: 5,
-      category: '거래량/유동성',
-      title: '거래량 & 유동성 스윕 훈련',
+      category: 'E. 거래량과 유동성',
+      skillCategory: '거래량/유동성',
+      title: 'E. 거래량 & 유동성 스윕 훈련',
       desc: '불트랩/베어트랩 함정 포착 및 유동성 휩소 대응',
-      file: '02_support_resistance.md',
+      file: '05_volume_liquidity.md',
       minXp: 450,
       gradient: 'linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0.01) 100%)',
       borderColor: 'rgba(59, 130, 246, 0.22)'
     },
     {
       id: 6,
-      category: '지표/컨플루언스',
-      title: '보조지표 & 다이버전스 훈련',
+      category: 'F. 보조지표와 컨플루언스',
+      skillCategory: '지표/컨플루언스',
+      title: 'F. 보조지표 & 다이버전스 훈련',
       desc: 'EMA 배열 상태, RSI 과매도 고착화 오류 및 다이버전스 포착',
-      file: '05_technical_indicators.md',
+      file: '06_technical_indicators.md',
       minXp: 600,
       gradient: 'linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(124, 58, 237, 0.01) 100%)',
       borderColor: 'rgba(124, 58, 237, 0.22)'
     },
     {
       id: 7,
-      category: '셋업/실행',
-      title: '진입/청산 셋업 & 실행 훈련',
-      desc: '추적 손절매(Trailing Stop) 활용 및 기계적 주문 실행 판단',
-      file: '06_risk_management.md',
+      category: 'G. 멀티타임프레임과 시장 레짐',
+      skillCategory: '추세/레짐',
+      title: 'G. 멀티타임프레임 & 시장 레짐 훈련',
+      desc: '타임프레임 정렬 분석 및 추세장/박스장 기후 판별',
+      file: '07_multitimeframe_regime.md',
       minXp: 750,
-      gradient: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.01) 100%)',
-      borderColor: 'rgba(16, 185, 129, 0.22)'
+      gradient: 'linear-gradient(135deg, rgba(217, 119, 6, 0.08) 0%, rgba(217, 119, 6, 0.01) 100%)',
+      borderColor: 'rgba(217, 119, 6, 0.22)'
     },
     {
       id: 8,
-      category: '리스크/심리',
-      title: '리스크 관리 & 매매 심리 훈련',
-      desc: '2% 룰 포지션 사이징 수학 공식, 손익비 기댓값 계산 및 청산 방어',
-      file: '06_risk_management.md',
+      category: 'H. 셋업과 진입/청산',
+      skillCategory: '셋업/실행',
+      title: 'H. 진입/청산 셋업 & 실행 훈련',
+      desc: '추적 손절매(Trailing Stop) 활용 및 기계적 주문 실행 판단',
+      file: '08_setup_entry_exit.md',
       minXp: 900,
       gradient: 'linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(236, 72, 153, 0.01) 100%)',
       borderColor: 'rgba(236, 72, 153, 0.22)'
+    },
+    {
+      id: 9,
+      category: 'I. 리스크와 포지션 관리',
+      skillCategory: '리스크/심리',
+      title: 'I. 리스크 & 포지션 관리 훈련',
+      desc: '2% 룰 포지션 크기 수학적 사이징 및 손익비 기댓값 계산',
+      file: '09_risk_position_management.md',
+      minXp: 1050,
+      gradient: 'linear-gradient(135deg, rgba(20, 184, 166, 0.08) 0%, rgba(20, 184, 166, 0.01) 100%)',
+      borderColor: 'rgba(20, 184, 166, 0.22)'
+    },
+    {
+      id: 10,
+      category: 'J. 심리, 루틴, 복기',
+      skillCategory: '리스크/심리',
+      title: 'J. 트레이더 심리 & 매매 루틴 훈련',
+      desc: 'FOMO 제어, 보복매매 차단 냉각기 및 매매일지 복기 습관',
+      file: '10_psychology_routine_review.md',
+      minXp: 1200,
+      gradient: 'linear-gradient(135deg, rgba(244, 63, 94, 0.08) 0%, rgba(244, 63, 94, 0.01) 100%)',
+      borderColor: 'rgba(244, 63, 94, 0.22)'
     }
   ];
 
   const theoryModulesList = [
-    { id: 1, title: '01. 캔들스틱 기초 (Candlesticks)', desc: '캔들의 구조와 단일/복합 캔들 반전 패턴', file: '01_candlestick_basics.md', category: '캔들스틱 기초' },
-    { id: 2, title: '02. 지지와 저항 (Support & Resistance)', desc: '매물대 작도법 및 역할 전환과 가짜 돌파', file: '02_support_resistance.md', category: '지지와 저항' },
-    { id: 3, title: '03. 추세선과 채널 (Trendlines & Channels)', desc: '추세 정의 및 평행 채널 작도와 추세선 돌파', file: '03_trendlines_channels.md', category: '추세선과 채널' },
-    { id: 4, title: '04. 차트 패턴 (Chart Patterns)', desc: '헤드앤숄더 및 삼각형, 깃발형 패턴의 완성', file: '04_chart_patterns.md', category: '차트 패턴' },
-    { id: 5, title: '05. 기술적 보조지표 (Technical Indicators)', desc: 'EMA 정배열, RSI 다이버전스 및 MACD 활용법', file: '05_technical_indicators.md', category: '보조지표' },
-    { id: 6, title: '06. 리스크 관리 (Risk Management)', desc: '손익비 계산과 2% 룰 기반 포지션 사이징 공식', file: '06_risk_management.md', category: '리스크 관리' }
+    { id: 1, title: '01. 차트와 시장 기초', desc: 'OHLC 구조, 호가와 체결 원리 및 슬리피지 관리', file: '01_chart_market_basics.md', category: 'A. 차트와 시장 기초' },
+    { id: 2, title: '02. 캔들스틱과 가격 행동', desc: '망치형, 유성형 등 단일/복합 캔들 구성과 전쟁 심리', file: '02_candlestick_price_action.md', category: 'B. 캔들스틱과 가격 행동' },
+    { id: 3, title: '03. 시장 구조와 S/R 분석', desc: '스윙구조(HH/HL), BOS와 MSB, 역할 전환(S/R Flip)', file: '03_market_structure.md', category: 'C. 시장 구조' },
+    { id: 4, title: '04. 차트 패턴과 돌파 매매', desc: '반전/지속 패턴 및 돌파 판단의 3대 필터 검수 기법', file: '04_patterns_breakout.md', category: 'D. 패턴과 돌파' },
+    { id: 5, title: '05. 거래량과 유동성 스윕', desc: 'VSA 스프레드 조화, 유동성 스윕 및 스톱 헌팅 포착', file: '05_volume_liquidity.md', category: 'E. 거래량과 유동성' },
+    { id: 6, title: '06. 보조지표와 컨플루언스', desc: 'EMA 지지저항, RSI 일반/히든 다이버전스, 볼린저 밴드', file: '06_technical_indicators.md', category: 'F. 보조지표와 컨플루언스' },
+    { id: 7, title: '07. 멀티타임프레임과 레짐', desc: '3타임프레임 정렬, 추세/박스 기후 구분 및 시나리오', file: '07_multitimeframe_regime.md', category: 'G. 멀티타임프레임과 시장 레짐' },
+    { id: 8, title: '08. 셋업과 진입/청산 실행', desc: 'IF-THEN 룰, 지정가 대기 주문, 트레일링 스톱 기법', file: '08_setup_entry_exit.md', category: 'H. 셋업과 진입/청산' },
+    { id: 9, title: '09. 리스크와 포지션 관리', desc: '손익비 기댓값 공식, 2% 룰 기반 포지션 사이징 수학', file: '09_risk_position_management.md', category: 'I. 리스크와 포지션 관리' },
+    { id: 10, title: '10. 심리, 루틴, 복기 습관', desc: 'FOMO 억제, 보복매매 차단, 매매일지 복기 루틴 구축', file: '10_psychology_routine_review.md', category: 'J. 심리, 루틴, 복기' }
   ];
 
   return (
@@ -127,9 +161,9 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
             <button 
               onClick={() => { setSubView('gym'); setActiveTheory(null); }}
               style={{
-                background: 'rgba(255, 255, 255, 0.05)',
+                background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid var(--border-color)',
-                color: 'var(--text-primary)',
+                color: 'var(--text-secondary)',
                 padding: '6px 12px',
                 borderRadius: '16px',
                 fontSize: '11px',
@@ -138,7 +172,7 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
                 transition: 'all 0.2s'
               }}
             >
-              훈련소 홈
+              🏋️ 훈련소
             </button>
           )}
           <button 
@@ -181,7 +215,7 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
           {drills.map((d) => {
             const isLocked = xp < d.minXp;
-            const stats = drillStats[d.category] || { level: 1, accuracy: 50, attempts: 0 };
+            const stats = drillStats[d.skillCategory] || { level: 1, accuracy: 50, attempts: 0 };
             
             return (
               <div 
@@ -243,11 +277,11 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
                     fontSize: '11px'
                   }}>
                     <div>
-                      <div style={{ color: 'var(--text-secondary)', marginBottom: '3px' }}>레벨</div>
-                      <div style={{ color: 'var(--color-brand)', fontWeight: 800 }}>Lv.{stats.level}</div>
+                      <div style={{ color: 'var(--text-secondary)', marginBottom: '3px' }}>평가구분</div>
+                      <div style={{ color: 'var(--color-brand)', fontWeight: 800, whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{d.skillCategory}</div>
                     </div>
                     <div style={{ borderLeft: '1px solid rgba(255,255,255,0.05)', borderRight: '1px solid rgba(255,255,255,0.05)' }}>
-                      <div style={{ color: 'var(--text-secondary)', marginBottom: '3px' }}>숙련도</div>
+                      <div style={{ color: 'var(--text-secondary)', marginBottom: '3px' }}>평가숙련도</div>
                       <div style={{ color: 'var(--color-bullish)', fontWeight: 800 }}>{stats.accuracy}%</div>
                     </div>
                     <div>
@@ -261,7 +295,6 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
                 <div style={{ display: 'flex', gap: '8px', marginTop: '4px' }}>
                   <button 
                     onClick={() => {
-                      // Switch to Library tab and select file
                       setSubView('library');
                       setActiveTheory(d.file);
                     }}
@@ -287,7 +320,7 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
                   </button>
 
                   <button 
-                    onClick={() => !isLocked && onStartDrill(d.category)}
+                    onClick={() => !isLocked && onStartDrill(d.file)}
                     disabled={isLocked}
                     style={{ 
                       flex: 1.3,

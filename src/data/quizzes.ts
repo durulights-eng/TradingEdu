@@ -35,7 +35,7 @@ export const quizzes: QuizItem[] = [
     category: "캔들/가격행동",
     categoryKey: 'candle',
     difficulty: 2,
-    theoryRef: "01_candlestick_basics.md",
+    theoryRef: "02_candlestick_price_action.md",
     question: "하락 추세 지속 도중 바닥권에서 몸통이 짧고 아래꼬리가 몸통의 2배 이상인 아래 캔들이 출현했습니다. 이 캔들의 명칭과 올바른 대응은?",
     chartData: [
       { time: "10:00", open: 120, high: 122, low: 118, close: 119 },
@@ -58,7 +58,7 @@ export const quizzes: QuizItem[] = [
     category: "캔들/가격행동",
     categoryKey: 'candle',
     difficulty: 2,
-    theoryRef: "01_candlestick_basics.md",
+    theoryRef: "02_candlestick_price_action.md",
     question: "주가가 장기간 급등한 뒤, 고점 부근에서 위꼬리가 매우 길고 몸통이 짧은 형태의 캔들이 발생했습니다. 이 캔들의 해석으로 가장 적절한 것은?",
     chartData: [
       { time: "Day 1", open: 100, high: 108, low: 99, close: 105 },
@@ -81,7 +81,7 @@ export const quizzes: QuizItem[] = [
     category: "캔들/가격행동",
     categoryKey: 'candle',
     difficulty: 2,
-    theoryRef: "01_candlestick_basics.md",
+    theoryRef: "02_candlestick_price_action.md",
     question: "직전의 음봉 몸통을 다음 날의 거대한 양봉 몸통이 완전히 감싸 안는 아래 형태가 포착되었습니다. 이 패턴의 이름과 신뢰도는?",
     chartData: [
       { time: "Day 1", open: 98, high: 100, low: 95, close: 96 },
@@ -103,7 +103,7 @@ export const quizzes: QuizItem[] = [
     category: "캔들/가격행동",
     categoryKey: 'candle',
     difficulty: 1,
-    theoryRef: "01_candlestick_basics.md",
+    theoryRef: "01_chart_market_basics.md",
     question: "시가와 종가가 거의 일치하여 몸통이 거의 없고 위아래 꼬리만 달린 십자(+) 모양 캔들이 출현했습니다. 이 캔들에 대한 올바른 해석은?",
     chartData: [
       { time: "Day 1", open: 150, high: 155, low: 148, close: 152 },
@@ -124,7 +124,7 @@ export const quizzes: QuizItem[] = [
     category: "캔들/가격행동",
     categoryKey: 'candle',
     difficulty: 2,
-    theoryRef: "01_candlestick_basics.md",
+    theoryRef: "02_candlestick_price_action.md",
     question: "상승 추세 고점에서 직전 양봉의 몸통을 거대 음봉이 아래로 덮어버리는 캔들 조합이 발생했습니다. 이 현상을 의미하는 용어는?",
     chartData: [
       { time: "Day 1", open: 120, high: 125, low: 119, close: 124 },
@@ -149,7 +149,7 @@ export const quizzes: QuizItem[] = [
     category: "시장구조/SR",
     categoryKey: 'structure',
     difficulty: 3,
-    theoryRef: "02_support_resistance.md",
+    theoryRef: "03_market_structure.md",
     question: "주가가 장기 저항선인 150달러를 거래량 실린 강한 캔들로 돌파한 뒤, 다시 150달러 부근으로 내려와 버티고 있습니다. 가장 안전한 진입 방식은?",
     chartData: [
       { time: "Day 1", open: 140, high: 148, low: 139, close: 145 },
@@ -180,7 +180,7 @@ export const quizzes: QuizItem[] = [
     category: "거래량/유동성",
     categoryKey: 'volume',
     difficulty: 5,
-    theoryRef: "02_support_resistance.md",
+    theoryRef: "05_volume_liquidity.md",
     question: "주가가 저항선 위로 거래량 없이 장대양봉을 뿜어 올렸으나, 다음 날 곧바로 장대음봉으로 밀어붙이며 저항선 아래로 내려왔습니다. 이 현상의 명칭은?",
     chartData: [
       { time: "Day 1", open: 98, high: 101, low: 97, close: 100 },
@@ -210,7 +210,7 @@ export const quizzes: QuizItem[] = [
     category: "시장구조/SR",
     categoryKey: 'structure',
     difficulty: 1,
-    theoryRef: "02_support_resistance.md",
+    theoryRef: "01_chart_market_basics.md",
     question: "아래 차트에서 3번 연속 강하게 반등하며 가격 하락을 저지해 준 주요 가격대는 무엇을 의미하나요?",
     chartData: [
       { time: "Day 1", open: 100, high: 102, low: 90, close: 91 }, // 하락 후 90 반등
@@ -241,7 +241,7 @@ export const quizzes: QuizItem[] = [
     category: "거래량/유동성",
     categoryKey: 'volume',
     difficulty: 5,
-    theoryRef: "02_support_resistance.md",
+    theoryRef: "05_volume_liquidity.md",
     question: "지지선 아래로 주가가 이탈하여 공매도가 폭증했으나, 이내 거래량이 급증하며 양봉으로 지지선을 회복한 뒤 반등을 시작했습니다. 이 현상의 명칭은?",
     chartData: [
       { time: "Day 1", open: 120, high: 122, low: 118, close: 119 },
@@ -270,7 +270,7 @@ export const quizzes: QuizItem[] = [
     category: "시장구조/SR",
     categoryKey: 'structure',
     difficulty: 3,
-    theoryRef: "02_support_resistance.md",
+    theoryRef: "04_patterns_breakout.md",
     question: "저항선을 뚫어내기 직전 돌파 전조 현상 중 하나인 '지지점 상승'의 특징을 골라보세요.",
     chartData: [
       { time: "Day 1", open: 100, high: 105, low: 90, close: 102 }, // 지점 90
@@ -303,7 +303,7 @@ export const quizzes: QuizItem[] = [
     category: "추세/레짐",
     categoryKey: 'trend',
     difficulty: 2,
-    theoryRef: "03_trendlines_channels.md",
+    theoryRef: "03_market_structure.md",
     question: "저점들을 연결한 우상향 상승 추세선 아래로 캔들의 종가(마감가격)가 이탈했습니다. 기술적 분석 관점의 올바른 해석은 무엇입니까?",
     chartData: [
       { time: "W-5", open: 100, high: 105, low: 100, close: 103 },
@@ -334,7 +334,7 @@ export const quizzes: QuizItem[] = [
     category: "추세/레짐",
     categoryKey: 'trend',
     difficulty: 3,
-    theoryRef: "03_trendlines_channels.md",
+    theoryRef: "07_multitimeframe_regime.md",
     question: "아래 차트에서 고점들과 저점들이 일정한 평행 통로를 그리며 하락하고 있습니다. 채널 하단에 도달했을 때 단기 반등을 목표로 하는 매매의 명칭과 관점은?",
     chartData: [
       { time: "Day 1", open: 150, high: 152, low: 135, close: 140 }, // 하락
@@ -368,7 +368,7 @@ export const quizzes: QuizItem[] = [
     category: "추세/레짐",
     categoryKey: 'trend',
     difficulty: 3,
-    theoryRef: "03_trendlines_channels.md",
+    theoryRef: "03_market_structure.md",
     question: "우상향 상승 평행 채널의 상단 저항선 부근까지 주가가 도달했습니다. 합리적인 추세 채널 트레이더의 대응은?",
     chartData: [
       { time: "Day 1", open: 100, high: 102, low: 99, close: 101 },
@@ -402,7 +402,7 @@ export const quizzes: QuizItem[] = [
     category: "추세/레짐",
     categoryKey: 'trend',
     difficulty: 3,
-    theoryRef: "03_trendlines_channels.md",
+    theoryRef: "01_chart_market_basics.md",
     question: "고점들을 잇는 우하향 하락 추세선을 주가가 대량의 거래량을 동반하며 장대양봉 종가로 상향 돌파(Breakout)했습니다. 의미하는 시그널은?",
     chartData: [
       { time: "Day 1", open: 130, high: 132, low: 125, close: 127 },
@@ -432,7 +432,7 @@ export const quizzes: QuizItem[] = [
     category: "추세/레짐",
     categoryKey: 'trend',
     difficulty: 2,
-    theoryRef: "03_trendlines_channels.md",
+    theoryRef: "03_market_structure.md",
     question: "추세선 작도 시 신뢰도를 판단하는 가장 중요한 규칙은 무엇인가요?",
     chartData: [
       { time: "Day 1", open: 100, high: 101, low: 100, close: 101 },
@@ -456,7 +456,7 @@ export const quizzes: QuizItem[] = [
     category: "패턴/돌파",
     categoryKey: 'pattern',
     difficulty: 4,
-    theoryRef: "04_chart_patterns.md",
+    theoryRef: "04_patterns_breakout.md",
     question: "머리와 양쪽 어깨 형태를 그리며 넥라인 지지선(96달러)을 위태롭게 지탱하다가 하방으로 강한 캔들이 이탈했습니다. 숏(매도) 포지션 진입 시점은?",
     chartData: [
       { time: "Day 1", open: 100, high: 115, low: 98, close: 110 }, // 왼쪽 어깨
@@ -486,7 +486,7 @@ export const quizzes: QuizItem[] = [
     category: "패턴/돌파",
     categoryKey: 'pattern',
     difficulty: 3,
-    theoryRef: "04_chart_patterns.md",
+    theoryRef: "04_patterns_breakout.md",
     question: "하락 추세 끝에서 주가가 비슷한 깊이의 바닥을 두 번(이중바닥) 형성한 뒤, 중간 고점 저항선(넥라인)을 돌파했습니다. 향후 예상 방향성과 매수 타점은?",
     chartData: [
       { time: "Day 1", open: 100, high: 100, low: 80, close: 85 }, // 첫 바닥 80
@@ -516,7 +516,7 @@ export const quizzes: QuizItem[] = [
     category: "패턴/돌파",
     categoryKey: 'pattern',
     difficulty: 4,
-    theoryRef: "04_chart_patterns.md",
+    theoryRef: "04_patterns_breakout.md",
     question: "급격한 기둥식 주가 폭등(깃대) 후, 완만한 하향 평행 채널(깃발) 모양으로 횡보/수렴하다가 채널 상단을 강하게 돌파했습니다. 이 패턴과 예상 목표가는?",
     chartData: [
       { time: "Day 1", open: 50, high: 80, low: 49, close: 78 }, // 폭등
@@ -538,7 +538,7 @@ export const quizzes: QuizItem[] = [
     category: "패턴/돌파",
     categoryKey: 'pattern',
     difficulty: 3,
-    theoryRef: "04_chart_patterns.md",
+    theoryRef: "04_patterns_breakout.md",
     question: "상승 추세의 천정권에서 주가가 동일한 가격 저항을 두 번 확인하며 M자 모양을 만든 뒤, 두 고점 사이의 저점 지지선인 넥라인(120달러)을 이탈했습니다. 올바른 해석은?",
     chartData: [
       { time: "Day 1", open: 100, high: 140, low: 99, close: 135 }, // 첫 고점 140
@@ -568,7 +568,7 @@ export const quizzes: QuizItem[] = [
     category: "패턴/돌파",
     categoryKey: 'pattern',
     difficulty: 3,
-    theoryRef: "04_chart_patterns.md",
+    theoryRef: "04_patterns_breakout.md",
     question: "고점 저항선은 수평(평평함)을 유지하고 있으나, 저점 지지선은 점점 우상향하며 좁게 수렴하는 차트 형태의 명칭과 일반적인 돌파 방향은?",
     chartData: [
       { time: "Day 1", open: 80, high: 100, low: 80, close: 95 }, // 고점 100, 저점 80
@@ -607,7 +607,7 @@ export const quizzes: QuizItem[] = [
     category: "지표/컨플루언스",
     categoryKey: 'indicator',
     difficulty: 3,
-    theoryRef: "05_technical_indicators.md",
+    theoryRef: "06_technical_indicators.md",
     question: "주가는 매일 하락하여 신저가를 갱신하고 있으나, RSI 보조지표의 저점은 점점 높아지는 현상을 발견했습니다. 올바른 용어와 매매 대응법은?",
     chartData: [
       { time: "D-4", open: 110, high: 112, low: 98, close: 100 }, // 주가 100, RSI 25
@@ -630,7 +630,7 @@ export const quizzes: QuizItem[] = [
     category: "지표/컨플루언스",
     categoryKey: 'indicator',
     difficulty: 3,
-    theoryRef: "05_technical_indicators.md",
+    theoryRef: "06_technical_indicators.md",
     question: "주가는 급격히 치솟으며 최고가 갱신 랠리를 이어가고 있으나, RSI 지표의 고점은 계속 낮아지고 있습니다. 이 현상을 지칭하는 명칭과 대처법은?",
     chartData: [
       { time: "Day 1", open: 100, high: 120, low: 99, close: 118 }, // RSI 75
@@ -651,7 +651,7 @@ export const quizzes: QuizItem[] = [
     category: "지표/컨플루언스",
     categoryKey: 'indicator',
     difficulty: 2,
-    theoryRef: "05_technical_indicators.md",
+    theoryRef: "06_technical_indicators.md",
     question: "이동평균선(EMA) 20일선(단기)이 50일선(중기)을 아래에서 위로 강하게 뚫고 솟구쳐 올랐습니다. 이 교차 현상의 정식 명칭은?",
     chartData: [
       { time: "Day 1", open: 100, high: 102, low: 98, close: 99 },
@@ -672,7 +672,7 @@ export const quizzes: QuizItem[] = [
     category: "지표/컨플루언스",
     categoryKey: 'indicator',
     difficulty: 4,
-    theoryRef: "05_technical_indicators.md",
+    theoryRef: "07_multitimeframe_regime.md",
     question: "매우 강력한 원웨이 폭락장 속에서 RSI 지표가 20(과매도 영역) 이하로 깊이 내려왔습니다. 이를 보고 '과매도 반등'을 노리며 기계적 시장가 풀매수를 때렸을 때 나타나는 가장 빈번한 오류는?",
     chartData: [
       { time: "Day 1", open: 100, high: 101, low: 88, close: 89 },  // RSI 25
@@ -693,7 +693,7 @@ export const quizzes: QuizItem[] = [
     category: "지표/컨플루언스",
     categoryKey: 'indicator',
     difficulty: 3,
-    theoryRef: "05_technical_indicators.md",
+    theoryRef: "06_technical_indicators.md",
     question: "주가의 변동성이 극도로 축소되며 볼린저 밴드의 폭이 매우 좁아지는 '스퀴즈(Squeeze)' 현상이 나타났습니다. 이후 기대되는 시장 변동성의 원리는 무엇인가요?",
     chartData: [
       { time: "Day 1", open: 100, high: 101, low: 99, close: 100 },
@@ -718,7 +718,7 @@ export const quizzes: QuizItem[] = [
     category: "리스크/심리",
     categoryKey: 'risk',
     difficulty: 3,
-    theoryRef: "06_risk_management.md",
+    theoryRef: "09_risk_position_management.md",
     question: "총 투자 원금은 1,000만 원이며, 1회 거래 시 최대 손실 허용액을 원금의 2%(20만 원)로 제한하는 '2% 룰'을 지키려 합니다. 진입하려는 종목의 손절 라인 폭이 -5%일 때, 최대 매수(진입) 가능 금액은 얼마인가요?",
     chartData: [
       { time: "Day 1", open: 10000, high: 10500, low: 9800, close: 10200 },
@@ -738,7 +738,7 @@ export const quizzes: QuizItem[] = [
     category: "리스크/심리",
     categoryKey: 'risk',
     difficulty: 2,
-    theoryRef: "06_risk_management.md",
+    theoryRef: "09_risk_position_management.md",
     question: "어느 주식에 10,000원에 매수 진입합니다. 손절 라인은 9,500원(-5%)에 배치하고, 목표가는 11,500원(+15%)에 설정했습니다. 이 트레이딩 시나리오의 손익비(Risk-to-Reward Ratio)는 얼마입니까?",
     chartData: [
       { time: "Today", open: 10000, high: 10000, low: 10000, close: 10000 }
@@ -757,7 +757,7 @@ export const quizzes: QuizItem[] = [
     category: "리스크/심리",
     categoryKey: 'risk',
     difficulty: 4,
-    theoryRef: "06_risk_management.md",
+    theoryRef: "09_risk_position_management.md",
     question: "손익비를 엄격히 통제하여 항상 기대 손실의 2배를 버는 매매(손익비 1:2)만 고집합니다. 이 경우 내 계좌 잔고가 손실 없이 제자리걸음(본전)을 유지하기 위해 필요한 수학적인 최소 승률(Win Rate)은 얼마인가요?",
     chartData: [
       { time: "Today", open: 100, high: 100, low: 100, close: 100 }
@@ -776,7 +776,7 @@ export const quizzes: QuizItem[] = [
     category: "셋업/실행",
     categoryKey: 'execution',
     difficulty: 3,
-    theoryRef: "06_risk_management.md",
+    theoryRef: "08_setup_entry_exit.md",
     question: "10,000원에 산 주식이 15,000원까지 올랐습니다. 이익을 보존하면서 상승세를 끝까지 타기 위해, 최고점 대비 10% 하방 이탈 시 즉시 자동 익절되는 '추적 손절매(Trailing Stop)'를 적용했습니다. 최고점 15,000원 달성 후 주가가 조정받을 때 실제로 청산(익절)되는 가격은 얼마인가요?",
     chartData: [
       { time: "Day 1", open: 10000, high: 12000, low: 9900, close: 11900 },
@@ -796,7 +796,7 @@ export const quizzes: QuizItem[] = [
     category: "리스크/심리",
     categoryKey: 'risk',
     difficulty: 3,
-    theoryRef: "06_risk_management.md",
+    theoryRef: "09_risk_position_management.md",
     question: "레버리지 10배를 적용하여 비트코인 롱(매수) 포지션을 구축했습니다. 만약 비트코인 가격이 매수가 대비 몇 % 역방향으로 등락하면 내 투자 원금이 100% 강제 청산(증거금 완전 소멸)당할까요?",
     chartData: [
       { time: "Today", open: 50000, high: 50100, low: 49900, close: 50000 }
@@ -815,7 +815,7 @@ export const quizzes: QuizItem[] = [
     category: "캔들/가격행동",
     categoryKey: 'candle',
     difficulty: 4,
-    theoryRef: "01_candlestick_basics.md",
+    theoryRef: "02_candlestick_price_action.md",
     question: "상승 추세 고점 영역(150달러선)에서 몸통이 매우 작고 아래꼬리가 긴 행잉맨(Hanging Man) 캔들이 출현한 이후, 다음 날 시가가 전일 종가보다 큰 갭을 그리며 낮게 하락 출발(145달러)했습니다. 포지션을 보유한 스윙 트레이더로서 가장 적절한 위기 대응 행동은 무엇입니까?",
     chartData: [
       { time: "Day 1", open: 120, high: 125, low: 119, close: 124 },
@@ -838,7 +838,7 @@ export const quizzes: QuizItem[] = [
     category: "캔들/가격행동",
     categoryKey: 'candle',
     difficulty: 4,
-    theoryRef: "01_candlestick_basics.md",
+    theoryRef: "01_chart_market_basics.md",
     question: "지속적인 하락 추세 도중 바닥권(80달러선)에서 시가와 종가가 일치하고 긴 아래꼬리를 단 십자 형태의 도지(Doji) 캔들이 생성되었습니다. 다음 날 대량의 거래량과 함께 장대양봉이 솟구치며 87달러로 마감하는 샛별형(Morning Star) 조합이 확정되었습니다. 이때 가장 합리적인 매수 진입 지점과 손절가 기준은 무엇입니까?",
     chartData: [
       { time: "Day 1", open: 100, high: 101, low: 93, close: 94 },
@@ -861,7 +861,7 @@ export const quizzes: QuizItem[] = [
     category: "거래량/유동성",
     categoryKey: 'volume',
     difficulty: 4,
-    theoryRef: "01_candlestick_basics.md",
+    theoryRef: "02_candlestick_price_action.md",
     question: "주가가 강력한 횡보 박스권 고점(200달러 저항선)에 세 번째 터치하는 와중에, 윗꼬리가 길고 몸통이 매우 얇은 유성형(Shooting Star) 캔들이 이틀 연속 발생했습니다. 거래량 역시 저항선 부근에서 매수세가 더 올라가지 못하고 매도 압력이 실려 나타났습니다. 롱(매수) 포지션을 들고 있는 당신의 합리적인 의사결정은?",
     chartData: [
       { time: "Day 1", open: 175, high: 185, low: 174, close: 182 },
@@ -886,7 +886,7 @@ export const quizzes: QuizItem[] = [
     category: "캔들/가격행동",
     categoryKey: 'candle',
     difficulty: 3,
-    theoryRef: "01_candlestick_basics.md",
+    theoryRef: "02_candlestick_price_action.md",
     question: "극심한 하락 추세 중 100달러선 아래로 떨어지던 주가가 전일 장대음봉을 형성했습니다. 그러나 당일 시가는 갭하락하여 더 낮게 시작했으나, 장중에 강한 매수세가 들어오며 전일 음봉 몸통의 정확히 70% 라인(93달러선) 위로 덮어버리는 관통형(Piercing Line) 상승 캔들로 마감했습니다. 종가 매수(롱) 진입 시 원칙 대응은?",
     chartData: [
       { time: "Day 1", open: 110, high: 111, low: 104, close: 105 },
@@ -907,7 +907,7 @@ export const quizzes: QuizItem[] = [
     category: "캔들/가격행동",
     categoryKey: 'candle',
     difficulty: 3,
-    theoryRef: "01_candlestick_basics.md",
+    theoryRef: "05_volume_liquidity.md",
     question: "강한 급등세를 지속하던 주가가 최고점에서 큰 거래량을 터뜨리며 장대양봉을 만들었습니다. 그러나 다음 날, 전일 양봉 몸통의 한가운데 범위 안에서 움직이며 시가와 종가가 모두 갇혀버리는 짧은 음봉인 '하락 잉태형(Bearish Harami)' 캔들이 형성되었습니다. 단기 스윙 트레이더로서 당신의 포지션 리스크 관리 행동은?",
     chartData: [
       { time: "Day 1", open: 120, high: 128, low: 119, close: 127 },
@@ -928,7 +928,7 @@ export const quizzes: QuizItem[] = [
     category: "시장구조/SR",
     categoryKey: 'structure',
     difficulty: 4,
-    theoryRef: "02_support_resistance.md",
+    theoryRef: "03_market_structure.md",
     question: "오랫동안 지켜지던 핵심 지지선인 100달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 98.5달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
     chartData: [
       { time: "Day 1", open: 105, high: 108, low: 102, close: 103 },
@@ -952,7 +952,7 @@ export const quizzes: QuizItem[] = [
     category: "시장구조/SR",
     categoryKey: 'structure',
     difficulty: 3,
-    theoryRef: "02_support_resistance.md",
+    theoryRef: "03_market_structure.md",
     question: "150달러의 중요 저항선이 강한 거래량을 실은 돌파봉으로 뚫렸습니다. 이후 주가가 숨 고르기 조정을 받으며 150달러 부근까지 되돌아왔고(리테스트 구간), 저항선 부근에서 거래량이 크게 감소하며 아래꼬리가 달린 도지 캔들로 안착하는 모습을 보입니다. 이때 가장 안전하고 합리적인 매매 조치는?",
     chartData: [
       { time: "Day 1", open: 140, high: 146, low: 139, close: 144 },
@@ -976,7 +976,7 @@ export const quizzes: QuizItem[] = [
     category: "시장구조/SR",
     categoryKey: 'structure',
     difficulty: 4,
-    theoryRef: "02_support_resistance.md",
+    theoryRef: "03_market_structure.md",
     question: "가격이 80달러 지지선 근처에서 반등을 시도하고 있으나, 반등의 폭이 직전 고점에 턱없이 못 미치며 저점 부근으로 다시 짓눌리고 있습니다. 즉, 고점들이 계속 낮아지는 하락 우위 삼각수렴(Descending)의 형태가 지지선 바로 위에서 감지됩니다. 이 시점에서 지지선 반등을 믿고 신규 매수(롱)를 진입하는 것은 원칙에 맞습니까?",
     chartData: [
       { time: "Day 1", open: 95, high: 98, low: 80, close: 88 }, // 1차 반등
@@ -1000,7 +1000,7 @@ export const quizzes: QuizItem[] = [
     category: "거래량/유동성",
     categoryKey: 'volume',
     difficulty: 5,
-    theoryRef: "02_support_resistance.md",
+    theoryRef: "05_volume_liquidity.md",
     question: "주가가 120달러의 장기 저항벽을 거래량이 거의 실리지 않은 얇은 양봉으로 상방으로 살짝 뚫었으나, 바로 다음 날 직전 양봉 몸통을 통째로 덮어버리는 대량 거래량의 장대음봉이 출현하며 116달러로 곤두박질쳤습니다. 매수 포지션을 추격 진입했던 당신의 올바른 조치는?",
     chartData: [
       { time: "Day 1", open: 112, high: 118, low: 111, close: 117 },
@@ -1024,7 +1024,7 @@ export const quizzes: QuizItem[] = [
     category: "시장구조/SR",
     categoryKey: 'structure',
     difficulty: 4,
-    theoryRef: "02_support_resistance.md",
+    theoryRef: "10_psychology_routine_review.md",
     question: "주요 지지선(250달러선)이 아래로 무너질 때 제때 손절 처리를 하지 못해 주가가 220달러선까지 끌려 내려갔습니다. 다행히 단기 매도 진정세로 반등이 나와 주가가 다시 250달러 부근까지 상승하여 회복을 눈앞에 두고 있습니다. 이때 손실을 최소화하는 현명한 시나리오 대처법은?",
     chartData: [
       { time: "Day 1", open: 260, high: 262, low: 248, close: 249 }, // 지선 붕괴
@@ -1049,7 +1049,7 @@ export const quizzes: QuizItem[] = [
     category: "추세/레짐",
     categoryKey: 'trend',
     difficulty: 4,
-    theoryRef: "03_trendlines_channels.md",
+    theoryRef: "03_market_structure.md",
     question: "주가가 매우 가파르게 올라가던 1차 단기 상승 추세선을 강한 음봉 종가로 뚫고 내려왔습니다. 다행히 각도가 완만하고 탄탄한 장기 핵심 상승 추세선은 저 밑에 지지 영역을 유지하고 있습니다. 스윙 트레이더로서 가장 정석적인 포지션 제어 방식은 무엇인가요?",
     chartData: [
       { time: "Day 1", open: 100, high: 102, low: 100, close: 102 },
@@ -1075,7 +1075,7 @@ export const quizzes: QuizItem[] = [
     category: "거래량/유동성",
     categoryKey: 'volume',
     difficulty: 4,
-    theoryRef: "03_trendlines_channels.md",
+    theoryRef: "05_volume_liquidity.md",
     question: "고점과 저점이 연속으로 낮아지는 명확한 하락 평행 채널 내에서 하락 압력을 받아 숏(매도) 포지션을 잡고 수익 중이었습니다. 그런데 당일 캔들이 대량의 거래량과 함께 장대양봉을 그리며 채널 상단 저항선 위로 종가 안착(상방 돌파)했습니다. 숏 포지션을 쥔 당신의 결단은?",
     chartData: [
       { time: "Day 1", open: 100, high: 102, low: 90, close: 92 },
@@ -1100,7 +1100,7 @@ export const quizzes: QuizItem[] = [
     category: "추세/레짐",
     categoryKey: 'trend',
     difficulty: 4,
-    theoryRef: "03_trendlines_channels.md",
+    theoryRef: "07_multitimeframe_regime.md",
     question: "우상향하는 상승 평행 채널 안에서 순항하던 주가가 중심선(Mid-line)을 뚫고 하방으로 이탈 마감했습니다. 이후 중심선 부근까지 반등을 시도했으나 재차 저항을 받고 아래꼬리가 꺾여 채널 하단선을 향해 하락 조정을 재개하려 합니다. 신규 매수(롱) 포지션 진입을 계획 중인 트레이더의 대응법은?",
     chartData: [
       { time: "Day 1", open: 100, high: 108, low: 99, close: 106 },
@@ -1124,7 +1124,7 @@ export const quizzes: QuizItem[] = [
     category: "추세/레짐",
     categoryKey: 'trend',
     difficulty: 3,
-    theoryRef: "03_trendlines_channels.md",
+    theoryRef: "03_market_structure.md",
     question: "저점과 저점을 이은 장기 상승 추세선 상의 3번째 터치 포인트(지지선 부근)에 캔들이 매우 조심스럽게 안착하며 아래꼬리를 형성했습니다. 손익비(Risk-to-Reward) 관점에서 가장 이상적인 매수 타점 집행 및 손절 셋업 방법은 무엇입니까?",
     chartData: [
       { time: "Day 1", open: 80, high: 90, low: 80, close: 88 },  // 1차 지점
@@ -1148,7 +1148,7 @@ export const quizzes: QuizItem[] = [
     category: "추세/레짐",
     categoryKey: 'trend',
     difficulty: 4,
-    theoryRef: "03_trendlines_channels.md",
+    theoryRef: "08_setup_entry_exit.md",
     question: "주가가 장기 하락 추세선을 힘차게 뚫어 상방 돌파(Breakout)했습니다. 하지만 돌파선 바로 위(약 120달러)에 최근 여러 번 강한 매도 잔량이 쏟아지며 가격을 찍어 눌렀던 핵심 매물대 저항선이 떡하니 버티고 있습니다. 당신의 신규 진입 매수 순서는 어떻게 결정해야 안전할까요?",
     chartData: [
       { time: "Day 1", open: 125, high: 126, low: 110, close: 112 },
@@ -1173,7 +1173,7 @@ export const quizzes: QuizItem[] = [
     category: "패턴/돌파",
     categoryKey: 'pattern',
     difficulty: 4,
-    theoryRef: "04_chart_patterns.md",
+    theoryRef: "04_patterns_breakout.md",
     question: "고점 수평 저항선(100달러)과 저점 상승 지지선으로 이루어진 어센딩 트라이앵글 수렴 도중, 100달러를 돌파할 것을 미리 예측하고 98달러에서 비중 100% 매수로 진입했습니다. 그러나 주가는 돌파에 실패하고 하방 상승 지지선을 대량 거래량 장대음봉으로 뚫어 92달러로 하향 마감했습니다. 올바른 매매 액션은?",
     chartData: [
       { time: "Day 1", open: 80, high: 100, low: 80, close: 95 },
@@ -1198,7 +1198,7 @@ export const quizzes: QuizItem[] = [
     category: "패턴/돌파",
     categoryKey: 'pattern',
     difficulty: 3,
-    theoryRef: "04_chart_patterns.md",
+    theoryRef: "04_patterns_breakout.md",
     question: "하락 바닥권에서 왼쪽 어깨, 머리, 오른쪽 어깨를 그리며 역헤드앤숄더(Inverse Head & Shoulders) 패턴이 완성되었습니다. 가격이 넥라인 저항벽(80달러선)을 돌파했으나 이미 장대양봉으로 높이 솟아(87달러) 추격 매수 타이밍을 아쉽게 놓쳤습니다. 이때 뇌동매매를 피하는 가장 현명한 매수 타점 공략법은?",
     chartData: [
       { time: "Day 1", open: 95, high: 95, low: 70, close: 78 },   // 왼어깨
@@ -1223,7 +1223,7 @@ export const quizzes: QuizItem[] = [
     category: "패턴/돌파",
     categoryKey: 'pattern',
     difficulty: 4,
-    theoryRef: "04_chart_patterns.md",
+    theoryRef: "04_patterns_breakout.md",
     question: "지속적인 하락 추세 중, 고점과 저점이 수렴하며 우하향하는 하락 쐐기형(Falling Wedge) 패턴의 끝자락에 도달했습니다. 거래량이 급감하다가 마침내 쐐기형 상단 저항선을 상방으로 뚫는 강한 양봉 종가 마감(110달러)이 포착되었습니다. 합리적인 매수 진입 시 손절가 설정 기준은 무엇인가요?",
     chartData: [
       { time: "Day 1", open: 130, high: 132, low: 110, close: 112 },
@@ -1245,7 +1245,7 @@ export const quizzes: QuizItem[] = [
     category: "패턴/돌파",
     categoryKey: 'pattern',
     difficulty: 5,
-    theoryRef: "04_chart_patterns.md",
+    theoryRef: "04_patterns_breakout.md",
     question: "주가가 약한 매수세와 거래량 급감 속에 고점과 저점을 높이며 좁게 상승 쐐기형(Rising Wedge)을 그리고 있습니다. 현재 가격은 상승 쐐기형 하단 지지선(300달러)에 아주 밀착하여 붕괴 위기에 놓여 있습니다. 이 시점에서 롱(매수) 포지션을 들고 있는 트레이더의 리스크 대응은?",
     chartData: [
       { time: "Day 1", open: 260, high: 280, low: 260, close: 278 },
@@ -1269,7 +1269,7 @@ export const quizzes: QuizItem[] = [
     category: "패턴/돌파",
     categoryKey: 'pattern',
     difficulty: 4,
-    theoryRef: "04_chart_patterns.md",
+    theoryRef: "04_patterns_breakout.md",
     question: "둥근 대야 모양의 바닥(Cup)을 그리며 상승 회복한 주가가 전고점 저항벽 부근에서 하향 채널식 완만한 되돌림 조정 핸들(Handle)을 그리는 중입니다. 이후 핸들의 상단 저항선(150달러선)을 강한 거래량의 장대양봉으로 상향 돌파했습니다. 이때 합리적인 트레이더의 대응은?",
     chartData: [
       { time: "Day 1", open: 140, high: 142, low: 128, close: 130 },
@@ -1291,7 +1291,7 @@ export const quizzes: QuizItem[] = [
     category: "지표/컨플루언스",
     categoryKey: 'indicator',
     difficulty: 4,
-    theoryRef: "05_technical_indicators.md",
+    theoryRef: "06_technical_indicators.md",
     question: "강력한 대세 상승 국면인 종목이 일시 조정을 거쳐 전저점 지지 영역(100달러)에 도달해 저점을 지키고 있습니다(저점 높임 또는 수평). 그런데 이때 보조지표 RSI의 저점은 이전보다 훨씬 깊게 파여 낮아지는 '히든 상승 다이버전스(Hidden Bullish Divergence)'가 포착되었습니다. 현명한 의사결정은?",
     chartData: [
       { time: "Day 1", open: 90, high: 110, low: 88, close: 105 }, // 저점 88
@@ -1311,7 +1311,7 @@ export const quizzes: QuizItem[] = [
     category: "지표/컨플루언스",
     categoryKey: 'indicator',
     difficulty: 4,
-    theoryRef: "05_technical_indicators.md",
+    theoryRef: "07_multitimeframe_regime.md",
     question: "주가가 호재와 함께 밴드 상단선 바깥을 타고 계속 상승하는 강력한 볼린저 밴드 밴드워크(Band Walk) 현상이 발생 중이며, RSI는 80을 넘어 극단적 과매수 수치를 가리키고 있습니다. 이 구간에서 취해야 할 가장 합리적인 리스크 및 포지션 관리 행동은?",
     chartData: [
       { time: "Day 1", open: 100, high: 115, low: 99, close: 112 },
@@ -1332,7 +1332,7 @@ export const quizzes: QuizItem[] = [
     category: "지표/컨플루언스",
     categoryKey: 'indicator',
     difficulty: 4,
-    theoryRef: "05_technical_indicators.md",
+    theoryRef: "06_technical_indicators.md",
     question: "1시간 봉 차트 상에서 주가가 확실히 낮아졌으나 RSI 저점은 유의미하게 상승한 '상승 다이버전스'가 확인되어 매수 타점을 노리고 있습니다. 다만 15분 봉 단기 차트에서는 하락 장대음봉 관성이 아직 살아있어 매도 압력이 보입니다. 멀티 타임프레임 트레이더의 진입 의사결정은?",
     chartData: [
       { time: "Hour 1", open: 100, high: 102, low: 90, close: 91 },
@@ -1352,7 +1352,7 @@ export const quizzes: QuizItem[] = [
     category: "지표/컨플루언스",
     categoryKey: 'indicator',
     difficulty: 4,
-    theoryRef: "05_technical_indicators.md",
+    theoryRef: "06_technical_indicators.md",
     question: "주가는 200달러 저항대를 뚫고 220달러까지 계속 우상향하며 고점을 갱신하고 있으나, MACD 오실레이터의 히스토그램 산 높이는 직전 고점 시점 대비 현저하게 쪼그라들며 꺾여 내려가 하락 다이버전스를 형성 중입니다. 현명한 포지션 보유자의 이익 관리 행동은?",
     chartData: [
       { time: "Day 1", open: 180, high: 205, low: 179, close: 200 }, // MACD Peak
@@ -1372,7 +1372,7 @@ export const quizzes: QuizItem[] = [
     category: "지표/컨플루언스",
     categoryKey: 'indicator',
     difficulty: 5,
-    theoryRef: "05_technical_indicators.md",
+    theoryRef: "06_technical_indicators.md",
     question: "주가가 하락 횡보하던 도중, 단기 지평선인 EMA 20일선이 중장기선인 EMA 50일선에 극도로 밀착하며 수렴했습니다. 당일 대량 거래량의 음봉 캔들이 터지며 단기선이 장기선 아래로 교차하기 직전(데드크로스 임박)이며 주요 지지선 밑으로 떨어졌습니다. 롱(매수) 포지션 보유자의 올바른 대응은?",
     chartData: [
       { time: "Day 1", open: 105, high: 106, low: 99, close: 100 },
@@ -1392,7 +1392,7 @@ export const quizzes: QuizItem[] = [
     category: "리스크/심리",
     categoryKey: 'risk',
     difficulty: 3,
-    theoryRef: "06_risk_management.md",
+    theoryRef: "09_risk_position_management.md",
     question: "주식 매수 후 가격이 급락하여 내가 설정해 둔 최대 감내 손실 한도인 계좌 총원금 대비 -2% 라인(손절매 지정 가격)에 완벽하게 닿았습니다. 마침 본전 생각과 함께 '조금만 더 버티면 반등할 텐데...'하는 강한 뇌동매매 유혹이 솟구칩니다. 이때 원칙 트레이더의 결정은?",
     chartData: [
       { time: "Day 1", open: 100, high: 102, low: 99, close: 100 },
@@ -1412,7 +1412,7 @@ export const quizzes: QuizItem[] = [
     category: "리스크/심리",
     categoryKey: 'risk',
     difficulty: 3,
-    theoryRef: "06_risk_management.md",
+    theoryRef: "10_psychology_routine_review.md",
     question: "최근 3회 연속 거래에서 계속해서 손절(Stop Loss)을 맞아 뇌 내의 도파민 체계가 무너지고 심리가 극도로 불안해져 분노와 보복 매매 충동이 밀려옵니다. 이 상황에서 파산을 막는 가장 훌륭한 매매 심리 대처법은?",
     chartData: [
       { time: "Today", open: 100, high: 100, low: 100, close: 100 }
@@ -1431,7 +1431,7 @@ export const quizzes: QuizItem[] = [
     category: "셋업/실행",
     categoryKey: 'execution',
     difficulty: 4,
-    theoryRef: "06_risk_management.md",
+    theoryRef: "09_risk_position_management.md",
     question: "진입하고자 하는 매수 자리를 분석해 보니, 기술적 분석 상 이길 수 있는 확률(승률)은 반반인 50% 수준입니다. 그러나 손절 시 기대 손실금액 대비 성공 시 획득할 수 있는 기대 수익금액의 비율(손익비)을 정밀 셋업 해보니 1 : 1.2 수준으로 다소 애매하게 도출되었습니다. 원칙 트레이더의 진입 결정은?",
     chartData: [
       { time: "Today", open: 100, high: 100, low: 100, close: 100 }
@@ -1450,7 +1450,7 @@ export const quizzes: QuizItem[] = [
     category: "리스크/심리",
     categoryKey: 'risk',
     difficulty: 4,
-    theoryRef: "06_risk_management.md",
+    theoryRef: "09_risk_position_management.md",
     question: "갑작스러운 거시 경제 발표로 내가 매매 중인 종목의 캔들 변동성 폭(ATR)이 평소 시세의 2배 수준으로 널뛰기 시작했습니다. 1회 거래당 내 계좌 원금의 최대 2% 리스크 한도를 동일하게 고수하기 위해 취해야 할 올바른 조치는?",
     chartData: [
       { time: "Day 1", open: 100, high: 102, low: 98, close: 100 },
@@ -1470,7 +1470,7 @@ export const quizzes: QuizItem[] = [
     category: "리스크/심리",
     categoryKey: 'risk',
     difficulty: 3,
-    theoryRef: "06_risk_management.md",
+    theoryRef: "09_risk_position_management.md",
     question: "투자자 A의 전체 투자 원금은 500만 원이며, 1회 거래당 최대 허용 리스크 금액은 원금의 2%인 10만 원입니다. 현재 주가가 10,000원이며, 기술적 분석 상 합리적인 손절선은 지지선 바로 밑인 9,500원(-5%)입니다. 2% 룰 리스크 관리 원칙에 따라 A가 진입(매수)해야 하는 최대 주식 수량은?",
     chartData: [
       { time: "Today", open: 10000, high: 10000, low: 10000, close: 10000 }
@@ -1483,6 +1483,413 @@ export const quizzes: QuizItem[] = [
     ],
     correctIndex: 1,
     explanation: "포지션 크기 계산 공식은 `최대 매수 규모 = 최대 허용 리스크 금액 / 손절매 비율` 입니다. 이 시나리오에서 `100,000원 / 0.05(5%) = 2,000,000원`이 최대 허용 진입금액이 되며, 이를 주가 10,000원으로 나누면 `200주`가 도출됩니다. 200주 진입 후 -5% 가격 폭락으로 손절 당해도 내 총원금에서 깎이는 돈은 정확히 10만 원(2%)으로 완벽히 리스크 통제됩니다."
+  },
+  {
+    id: 61,
+    category: "거래량/유동성",
+    categoryKey: 'volume',
+    difficulty: 4,
+    theoryRef: "05_volume_liquidity.md",
+    question: "주가가 수평 저항선 부근까지 급상승했으나 캔들 몸통(Spread)이 지극히 좁아진 도지 형태로 마감하였고, 거래량은 이전 5일 평균 대비 3배 이상 폭증했습니다. VSA(Volume Spread Analysis) 관점에서 가장 타당한 차트 분석은?",
+    chartData: [
+      { time: "Day 1", open: 100, high: 105, low: 99, close: 104 },
+      { time: "Day 2", open: 104, high: 109, low: 103, close: 108 },
+      { time: "Day 3", open: 108, high: 110, low: 107, close: 108 } // 거래량 대폭발, 몸통 수축
+    ],
+    drawings: [
+      { type: "horizontal-line", points: [{ x: 0, y: 109 }, { x: 2, y: 109 }], label: "저항선", color: "#ef4444" }
+    ],
+    options: [
+      "매수 에너지가 매우 강하므로 즉시 풀매수로 돌파 매매를 실행한다.",
+      "저항선 부근에서 매수 물량을 압도하는 세력의 강한 분산(Distribution / 매도 공급)이 진행되고 있음을 뜻하므로, 상승이 정체되고 꺾일 리스크에 대비하여 이익을 실현한다.",
+      "거래량이 많이 터졌으므로 손절 라인을 지우고 장기 투자를 결심한다.",
+      "상승 추세가 무효화되었으므로 숏 50배 레버리지로 보복 매매를 가동한다."
+    ],
+    correctIndex: 1,
+    explanation: "캔들 몸통 크기(스프레드)가 좁은데 거래량이 매우 크게 폭증했다는 것은 저항선 부근에서 들어오는 매수세만큼 세력의 매도 물량 공급이 쏟아져 막강한 저항 벽을 형성하고 있다는 뜻입니다. VSA에서는 이를 불화(Disharmony)로 규정하며 상승 추세 감속 및 하락 반전의 경고로 해독합니다."
+  },
+  {
+    id: 62,
+    category: "거래량/유동성",
+    categoryKey: 'volume',
+    difficulty: 4,
+    theoryRef: "05_volume_liquidity.md",
+    question: "주가가 장기 횡보하던 박스권 지지선인 200달러를 깨고 195달러까지 하락 투매가 발생했으나, 종가 마감 직전 거래량이 크게 실린 긴 아래꼬리를 그리며 다시 201달러 위로 복귀 안착했습니다. 이 스톱 헌팅 유동성 현상에서의 실전 트레이더의 대응은?",
+    chartData: [
+      { time: "Day 1", open: 210, high: 212, low: 200, close: 202 },
+      { time: "Day 2", open: 202, high: 204, low: 195, close: 201 } // 스윕 아래꼬리 완성
+    ],
+    drawings: [
+      { type: "horizontal-line", points: [{ x: 0, y: 200 }, { x: 1, y: 200 }], label: "지지선", color: "#10b981" }
+    ],
+    options: [
+      "지지선 붕괴 완료로 확정하여 시장가 숏(공매도)에 추격 진입한다.",
+      "개인들의 손절 물량을 청산시키고 가격을 말아올린 '유동성 스윕(Liquidity Sweep)'이자 베어트랩으로 판단하며, 아래꼬리 저점인 195달러 밑에 손절을 짧게 걸고 롱(매수) 진입을 노린다.",
+      "아무런 신호도 아니므로 계좌를 관망 모드로 방치한다.",
+      "지지선 이탈 실패이므로 원금 100% 매도 후 영구 이탈한다."
+    ],
+    correctIndex: 1,
+    explanation: "지지선 아래에 걸려 있던 개인들의 손절 주문(Sell Stop)을 강제로 청산(Liquidity Sweep)시킨 뒤, 세력이 물량을 헐값에 다 받아 삼켜 종가를 지지선 위로 신속하게 복귀시킨 휩소(베어 트랩) 패턴입니다. 아래꼬리 극점(195달러)에 아주 좁은 손절 라인을 설정할 수 있어, 기대 손익비가 극대화되는 고확률 상승 반전 매수 타점입니다."
+  },
+  {
+    id: 63,
+    category: "거래량/유동성",
+    categoryKey: 'volume',
+    difficulty: 5,
+    theoryRef: "05_volume_liquidity.md",
+    question: "주가는 250달러에서 290달러까지 계속 고점을 높이며 상승 추세를 이어가고 있습니다. 그러나 각 상승 파동마다 터지는 거래량은 전고점 돌파 시점 대비 눈에 띄게 하향 곡선을 그리며 감소하고 있습니다. VSA 기법에 따른 합리적인 진단은?",
+    chartData: [
+      { time: "Wave 1", open: 230, high: 260, low: 228, close: 255 }, // High Volume
+      { time: "Wave 2", open: 255, high: 275, low: 250, close: 270 }, // Lower Volume
+      { time: "Wave 3", open: 270, high: 290, low: 265, close: 288 }  // Lowest Volume
+    ],
+    options: [
+      "가격이 올라가므로 매수 에너지가 지속 강화되는 초강세장이다.",
+      "상승 강세가 진행됨에 따라 시장에 매도 공급 물량이 아예 말라버린 극도의 무중력 랠리이므로 안심하고 홀딩한다.",
+      "상승 이면의 신규 매수 가담 자금이 고갈되는 '거래량 다이버전스' 현상으로 추세 피로도가 극에 달했음을 나타내므로, 추격 매수를 철저히 배제하고 포지션의 분할 익절 관리를 시작한다.",
+      "거래량 감소는 차트 조작이므로 매매를 즉시 정지한다."
+    ],
+    correctIndex: 2,
+    explanation: "주가는 상승하여 신고점을 갱신하지만 파동별 거래량이 지속 감소하는 흐름은 '거래량 다이버전스'로 상승 모멘텀의 내부 엔진이 식어감을 경고합니다. 조만간 가벼운 매도 포격에도 대규모의 차익 실현 폭락 조정이 발생할 수 있는 잠재적 폭락 국면이므로 물량을 덜어내고 현금을 확보해야 합니다."
+  },
+  {
+    id: 64,
+    category: "거래량/유동성",
+    categoryKey: 'volume',
+    difficulty: 3,
+    theoryRef: "05_volume_liquidity.md",
+    question: "가격이 이전 고점 저항선을 뚫고 강하게 솟구치며 장대양봉을 만들었습니다. 이때 가짜 이탈(Whipsaw / Bull Trap)이 아닌 진성 돌파(True Breakout)로 판정할 수 있는 가장 신뢰도 높은 거래량 기준은?",
+    chartData: [
+      { time: "Day 1", open: 100, high: 102, low: 99, close: 100 },
+      { time: "Day 2", open: 100, high: 112, low: 99, close: 110 } // 돌파봉
+    ],
+    options: [
+      "돌파 순간 거래량이 오히려 최저치로 메말라 있는 고요한 수렴 상태여야 한다.",
+      "돌파를 완료한 장대양봉의 마감 거래량이 이전 10일 평균 거래량 대비 최소 1.5배~2배 이상 폭발하며 동반 상승해야 세력의 진성 개입으로 신뢰할 수 있다.",
+      "거래량은 돌파 판정에 아무런 영향을 주지 않는다.",
+      "거래소 내부 슬리피지 수치만 보고 결정한다."
+    ],
+    correctIndex: 1,
+    explanation: "참된 저항 돌파(True Breakout)는 저항선 부근의 두터운 대기 매도 공급 물량을 대규모 자금으로 전부 씹어 삼키고 돌파해야 함을 뜻합니다. 따라서 반드시 평균 대비 1.5배~2배 이상의 거래량 분출이 동반되어야 신뢰할 수 있으며, 거래량이 적은 돌파는 꼬리 달고 내려앉는 불 트랩(Bull Trap)일 확률이 매우 높습니다."
+  },
+  {
+    id: 65,
+    category: "거래량/유동성",
+    categoryKey: 'volume',
+    difficulty: 5,
+    theoryRef: "05_volume_liquidity.md",
+    question: "비트코인 차트에서 중요 지지선 직전 저점 아래에 엄청난 규모의 롱 포지션 청산 및 매도 손절 주문이 쌓여 있는 유동성 풀(Liquidity Pool) 구간이 감지되었습니다. 세력이 이 구간을 공략할 때 나타날 캔들의 전형적인 무빙 패턴은?",
+    chartData: [
+      { time: "Day 1", open: 50000, high: 50500, low: 49200, close: 49500 },
+      { time: "Day 2", open: 49500, high: 49800, low: 48000, close: 49600 } // Sweep 꼬리 발생
+    ],
+    drawings: [
+      { type: "horizontal-line", points: [{ x: 0, y: 49200 }, { x: 1, y: 49200 }], label: "전저점 지지선", color: "#3b82f6" }
+    ],
+    options: [
+      "지지선을 가볍게 뚫고 내려가 아무 반등도 없이 20% 이상 수직 낙하 장대음봉으로 마감한다.",
+      "순간적으로 전저점(49,200달러) 밑으로 가격을 밀쳐 손절 물량을 대량 폭발시킨 후, 이를 순식간에 매수 흡수하여 아래꼬리가 아주 길게 달린 핀바 형태로 종가를 지지선 위로 회복 마감한다.",
+      "수평 지지지선을 한 치의 오차도 없이 터치하고 0.01%의 꼬리도 없이 완전 수평 도지로 횡보한다.",
+      "거래량 없이 수직 상방으로 폭등하여 10만 달러에 즉시 도달한다."
+    ],
+    correctIndex: 1,
+    explanation: "기관 세력(스마트 머니)은 대량 포지션을 구축하기 위해 개인의 손절 주문(Sell Stop)을 의도적으로 터트려 매도 유동성을 유도한 후 이를 다 매수합니다. 이로 인해 주가는 지지선 아래로 일시 급락 후(스톱 헌팅), 아래꼬리를 매우 길게 달며 지선 안쪽으로 급반등 마감하게 됩니다. 이것이 유동성 스윕(Liquidity Sweep)의 정석 패턴입니다."
+  },
+  {
+    id: 66,
+    category: "거래량/유동성",
+    categoryKey: 'volume',
+    difficulty: 4,
+    theoryRef: "05_volume_liquidity.md",
+    question: "상승 추세 도중 전고점 저항선 부근에서 위꼬리가 아주 긴 캔들이 터졌고, 거래량은 최근 보름 중 최고 수치로 솟구쳤습니다. VSA 관점에서 이 상승 거절(Upside Rejection) 현상에 대한 올바른 대처는?",
+    chartData: [
+      { time: "Day 1", open: 100, high: 115, low: 98, close: 101 } // 위꼬리 폭발
+    ],
+    options: [
+      "강력한 매수 시도 흔적이 있으므로 저점 매수 기회로 보고 적극 추가 매수한다.",
+      "고점 매도 공급이 롱 청산 손절 물량을 완벽히 제압하여 상방을 격렬하게 거절(Rejection)한 징후이며 매도세의 승리이므로, 기존 매수 포지션을 전량 대피 또는 매도 조치한다.",
+      "거래량이 많으므로 무조건 횡보 흐름으로 수렴될 것이라 판단해 양방향 마틴게일 베팅을 가동한다.",
+      "이평선이 정배열이므로 신경 쓰지 않고 무시한다."
+    ],
+    correctIndex: 1,
+    explanation: "위꼬리가 매우 긴 캔들이 대량 거래량과 함께 터졌다는 것은 고점 돌파 시도가 있었으나 그 자리에 숨어 있던 세력의 막강한 청산 매도 벽(Supply)을 만나 격렬하게 두들겨 맞고 밀려났음을 의미합니다. 상방 거절의 심리가 지배적이므로 고점 피로 및 하락 전환이 임박한 위험 징후입니다."
+  },
+  {
+    id: 67,
+    category: "지표/컨플루언스",
+    categoryKey: 'indicator',
+    difficulty: 4,
+    theoryRef: "06_technical_indicators.md",
+    question: "주가가 장기 박스권 횡보를 이어가며 볼린저 밴드의 폭이 최근 몇 달 중 가장 좁은 형태로 밀착 수렴(Squeeze)되었습니다. 이 스퀴즈 국면에 대한 올바른 기술적 이해와 매매 시나리오는?",
+    chartData: [
+      { time: "Week 1", open: 100, high: 103, low: 97, close: 101 },
+      { time: "Week 2", open: 101, high: 102, low: 99, close: 100 } // 변동성 수축 극대화
+    ],
+    options: [
+      "박스권 폭이 극도로 좁아졌으므로 향후에도 변동성 없이 계속 잔잔하게 기어갈 것이다.",
+      "상단과 하단 밴드가 맞닿을 정도로 에너지가 응축 수렴된 상태이며, 조만간 변동성이 사방으로 대폭발(상방 또는 하방으로 강력한 추세 이탈)할 것임을 예고하므로, 밴드 이탈 방향으로 돌파 진입 시나리오를 세운다.",
+      "스퀴즈는 지표 오작동이므로 볼린저 밴드를 지우고 다른 차트를 켠다.",
+      "중심선 부근에서 고배율 레버리지로 대기 주문 매수를 무조건 지른다."
+    ],
+    correctIndex: 1,
+    explanation: "볼린저 밴드의 폭이 극도로 좁아지는 스퀴즈(Squeeze) 현상은 시장의 표준편차 변동성이 임계치까지 압축 수렴되었음을 알려줍니다. 에너지 압축 뒤에는 항상 폭발적인 가격 분출(상방/하방 이탈)이 뒤따르므로, 밴드를 뚫고 거래량이 실려 돌파 마감하는 방향으로 추세 추종 시나리오를 설계해야 합니다."
+  },
+  {
+    id: 68,
+    category: "지표/컨플루언스",
+    categoryKey: 'indicator',
+    difficulty: 5,
+    theoryRef: "06_technical_indicators.md",
+    question: "주가는 HL(Higher Low)을 형성하며 이전 직전 저점(90달러)보다 높은 저점(95달러)을 지키고 있으나, RSI 지표는 이전 35 수치보다 더 깊숙하게 25 수치까지 떨어졌습니다. 이 지표 불일치 현상의 공식 명칭과 올바른 포지션 셋업은?",
+    chartData: [
+      { time: "Day 1", open: 100, high: 102, low: 90, close: 91 }, // RSI: 35
+      { time: "Day 2", open: 91, high: 96, low: 95, close: 95 }   // 주가 HL 형성, RSI: 25
+    ],
+    options: [
+      "일반 상승 다이버전스 - 하락 추세의 최종 종결 신호이므로 즉각 공매도를 잡는다.",
+      "히든 상승 다이버전스 - 기존의 상승 추세 진행 동력이 눌림목에서 견고하게 유지되고 있음을 뜻하므로, 95달러선 아래에 손절을 짧게 걸고 롱(매수) 진입 타점으로 활용한다.",
+      "일반 하락 다이버전스 - 상승 추세가 파괴되었으므로 모든 포지션을 비운다.",
+      "지표가 오작동하는 휩소 구간이므로 무조건 횡보에 베팅한다."
+    ],
+    correctIndex: 1,
+    explanation: "가격의 저점은 높아졌는데(Higher Low) 모멘텀 지표의 저점은 낮아지는 현상은 '히든 상승 다이버전스(Hidden Bullish Divergence)'입니다. 이는 추세 반전이 아닌 **기존 강세 추세 지속**을 뜻하며, 조정 눌림목이 완성되고 다음 상승 랠리를 준비한다는 최고의 매수 신호 중 하나입니다."
+  },
+  {
+    id: 69,
+    category: "지표/컨플루언스",
+    categoryKey: 'indicator',
+    difficulty: 4,
+    theoryRef: "06_technical_indicators.md",
+    question: "매수 타점을 신중하게 선별하고자 합니다. 기술적 분석의 성공 확률을 비약적으로 끌어올리는 '다중 컨플루언스(Confluence)' 결합 사례로 가장 적합한 조건 구성은?",
+    chartData: [
+      { time: "Today", open: 100, high: 100, low: 100, close: 100 }
+    ],
+    options: [
+      "오직 트위터나 뉴스 호재 찌라시 하나만 보고 즉시 시장가로 대량 매수한다.",
+      "주요 수평 지지선(S/R) + 200일 장기 이평선(EMA) 지지 중첩 + 1시간 봉 RSI 상승 다이버전스 발생 + 아래꼬리가 긴 핀바 캔들 종가 마감 등 독립적인 분석 근거들이 한 가격대에 포개질 때 진입한다.",
+      "RSI 과매수 상태에서 볼린저 밴드 상단을 뚫을 때 무조건 롱을 탄다.",
+      "아무 근거 없이 감정이 이끄는 대로 본능적으로 레버리지를 조절한다."
+    ],
+    correctIndex: 1,
+    explanation: "다중 컨플루언스(Confluence)는 독립적인 기술적 근거들이 동일한 특정 가격 구역에 중첩되는 현상입니다. 지지 저항, 이평선, 보조지표 다이버전스, 캔들 가격행동(Rejection 핀바)이 한 곳에 묶여 매수 자리를 형성할 때 매매를 실행하면, 높은 신뢰도와 좁은 손절 라인 덕분에 장기 기대값이 극대화됩니다."
+  },
+  {
+    id: 70,
+    category: "셋업/실행",
+    categoryKey: 'execution',
+    difficulty: 4,
+    theoryRef: "08_setup_entry_exit.md",
+    question: "중요 수평 저항선(120달러)을 상방으로 장대양봉 종가 돌파한 것을 확인하고 롱(매수) 진입 셋업을 준비하고 있습니다. 원칙 트레이더가 뇌동매매 추격을 막고 최상의 손익비를 확보하기 위해 즐겨 쓰는 정석적인 진입 실행법은?",
+    chartData: [
+      { time: "Day 1", open: 110, high: 112, low: 109, close: 111 },
+      { time: "Day 2", open: 111, high: 124, low: 110, close: 122 } // 120달러 돌파 완성
+    ],
+    drawings: [
+      { type: "horizontal-line", points: [{ x: 0, y: 120 }, { x: 1, y: 120 }], label: "저항선", color: "#ef4444" }
+    ],
+    options: [
+      "122달러에 마감했으므로 흥분하여 시장가로 추가 돌파 불타기 롱을 집행한다.",
+      "즉시 시장가로 타지 않고, 가격이 돌파된 저항선이자 이제는 지지선으로 역할이 교체된 120달러 부근까지 기술적 되돌림(Retest) 조정을 주어 지지받는 순간 지정가 대기 주문으로 진입하여 손절 라인을 타이트하게 설계한다.",
+      "돌파 후 다시 내려올 리가 없으므로 124달러 최고점에 지정가 롱 주문을 걸어둔다.",
+      "돌파는 다 휩소이므로 무조건 숏을 때리고 기도한다."
+    ],
+    correctIndex: 1,
+    explanation: "저항 돌파 후 즉시 가격을 따라붙는 추격 매수는 휩소 조정 시 심각한 손실을 초래합니다. 돌파된 라인이 S/R Flip을 통해 지지로 작용하는지 확인하는 되돌림 리테스트(Retest) 시점에 진입하는 것이, 지선 바로 아래에 좁은 손절 라인을 설계하고 이익 기대 폭을 넓힐 수 있는 가장 이상적인 정석 실행법입니다."
+  },
+  {
+    id: 71,
+    category: "셋업/실행",
+    categoryKey: 'execution',
+    difficulty: 5,
+    theoryRef: "08_setup_entry_exit.md",
+    question: "포지션 진입 직후, 가격이 계획대로 내 방향으로 순탄하게 우상향하고 있습니다. 기존 진입 시 설정한 손익비 1:2의 최종 목표가 도달 전에, 리스크 관리 차원에서 계좌 드로다운을 0으로 만드는 정석적인 1차 포지션 관리 행동은?",
+    chartData: [
+      { time: "Entry", open: 100, high: 100, low: 100, close: 100 }, // Entry: 100, SL: 95
+      { time: "Day 1", open: 100, high: 106, low: 100, close: 105 }  // Price goes to 105 (1:1 R:R)
+    ],
+    options: [
+      "105달러에 도달했으므로 욕심을 내어 레버리지를 2배로 불타기 증액한다.",
+      "수수료가 아까우므로 최종 목표가까지 아무 조치 없이 100% 비중으로 전액 홀딩한다.",
+      "손익비 1:1 지점(105달러) 또는 첫 마디 저항대 도달 시 보유 물량의 50%를 분할 익절하여 수익을 확정하고, 남은 50%의 손절 라인을 본전인 나의 최초 진입가(100달러)로 끌어 올린다.",
+      "목표가 근처에 왔으므로 즉시 전량 손절하고 시장을 완전히 탈출한다."
+    ],
+    correctIndex: 2,
+    explanation: "이득이 발생해 손익비 1:1 수준에 오면 물량의 절반을 분할 익절(Scale-out)하고 남은 포지션의 스톱로스를 진입가로 이동(Break-even)시키는 것이 포지션 관리의 기본입니다. 이렇게 셋업하면 차트가 갑자기 폭락세로 뒤집혀도 최소 본전 혹은 반절 익절 약수익으로 끝나 해당 거래의 최대 리스크가 Zero(0)로 봉쇄됩니다."
+  },
+  {
+    id: 72,
+    category: "셋업/실행",
+    categoryKey: 'execution',
+    difficulty: 4,
+    theoryRef: "08_setup_entry_exit.md",
+    question: "강력한 장기 상승 추세가 터져 주가가 20일 이평선을 타고 계속해서 폭발적으로 신고가를 갱신하고 있습니다. 이때 익절 시점을 서둘러 잡지 않고, 추세 상승 이익을 최대한 길게 끝까지 빨아먹기 위한 정석 청산 실행법은?",
+    chartData: [
+      { time: "Day 1", open: 100, high: 110, low: 99, close: 108 },
+      { time: "Day 2", open: 108, high: 120, low: 107, close: 118 },
+      { time: "Day 3", open: 118, high: 135, low: 117, close: 132 }  // 강력 추세
+    ],
+    options: [
+      "RSI가 조금이라도 높으면 불안하므로 즉시 시장가로 포지션을 전량 털고 도망친다.",
+      "주가가 지속 상승함에 따라 손절 라인을 직전의 의미 있는 높은 저점(HL: Higher Low) 지지 영역 바로 밑으로 지속 추종 상향 수정하는 '추격 손절매(Trailing Stop)'를 적용하여, 추세가 완전히 꺾여 터치될 때까지 홀딩한다.",
+      "익절 라인과 손절 라인을 아예 지워 무제한 방치한다.",
+      "즉시 숏 포지션 10배로 맞불을 놓는다."
+    ],
+    correctIndex: 1,
+    explanation: "강세 추세가 터졌을 때 지레짐작으로 청산하면 상승 파동의 초입만 먹고 끝납니다. 추세 붕괴의 명확한 신호(BOS/MSB)가 나오거나, 가격의 구조적 높은 저점(HL)이 깨질 때까지 손절 라인을 계속 추종해서 상향하는 '추격 손절매(Trailing Stop)'를 가동하는 것이 추세 이익을 극대화하는 정석 기법입니다."
+  },
+  {
+    id: 73,
+    category: "셋업/실행",
+    categoryKey: 'execution',
+    difficulty: 4,
+    theoryRef: "01_chart_market_basics.md",
+    question: "차트 분석 결과, 돌파 시점의 체결 변동성과 거래소 호가창의 얇은 매물 상태를 감안할 때 내가 진입하려는 주문 가격에서 체결이 뒤로 밀리는 '슬리피지(Slippage)'가 심각하게 예상됩니다. 이를 감안한 올바른 주문 실행법은?",
+    chartData: [
+      { time: "Today", open: 100, high: 100, low: 100, close: 100 }
+    ],
+    options: [
+      "가격 왜곡에 상관없이 무조건 최고 배율 시장가로 긁어서 집입한다.",
+      "돌파 시점의 추격 시장가 진입은 포지션 단가를 극도로 악화시킬 수 있으므로 진입 물량을 쪼개거나, 돌파 확정 이후 저항선 지리 리테스트를 줄 때 한도가 고정된 지정가 대기 주문(Limit Order)을 사용하여 불필요한 비용을 통제한다.",
+      "슬리피지는 차트 왜곡이 아니므로 거래소 고객센터에 항의만 한다.",
+      "호가창을 무시하고 무제한 레버리지 주문을 전송한다."
+    ],
+    correctIndex: 1,
+    explanation: "변동성이 크고 호가가 얇은 시장에서 돌파 시 시장가 진입은 나쁜 단가로 체결되는 슬리피지 비용을 발생시켜 시작부터 손실을 크게 안고 갑니다. 돌파 확인 후 되돌림 가격대에서 지정가(Limit Order)를 대기시켜 체결 단가를 내 손아귀에 고정하는 리스크 관리가 필요합니다."
+  },
+  {
+    id: 74,
+    category: "셋업/실행",
+    categoryKey: 'execution',
+    difficulty: 3,
+    theoryRef: "10_psychology_routine_review.md",
+    question: "원칙 기반의 정석 매매 셋업(Trading Setup)을 설계할 때, 진입 전 반드시 사전에 수치로 명문화되어 결정되어야 할 요소가 아닌 것은?",
+    chartData: [
+      { time: "Today", open: 100, high: 100, low: 100, close: 100 }
+    ],
+    options: [
+      "내 시나리오의 타당성을 증명할 진입 조건(Trigger)과 구체적 손절 가격(Stop Loss)",
+      "거래 당일 나의 예감과 감정에 기초한 감정적 목표 익절 가격",
+      "진입하려는 구체적인 포지션 규모(수량) 및 1차 분할 익절 지점",
+      "내 거래 아이디어가 무효화되는 구체적 가격 레벨"
+    ],
+    correctIndex: 1,
+    explanation: "매매 셋업은 규칙에 기반한 수치들(진입가, 손절가, 목표가, 수량)로 사전에 철저히 규격화되어야 합니다. 당일의 운이나 주관적 느낌, 예감에 기초한 비과학적 청산 설정은 셋업에서 배제되어야 할 대표적 뇌동매매 요소입니다."
+  },
+  {
+    id: 75,
+    category: "셋업/실행",
+    categoryKey: 'execution',
+    difficulty: 5,
+    theoryRef: "08_setup_entry_exit.md",
+    question: "하락 횡보하던 주가가 중요 매물대이자 피보나치 되돌림 0.618 지점에 정확히 맞닿아 아래꼬리가 긴 양봉 핀바(Pin Bar)를 그리며 마감했습니다. 룰베이스 트레이더가 진입 버튼을 누를 때 성립된 IF-THEN 시나리오는?",
+    chartData: [
+      { time: "Day 1", open: 100, high: 100, low: 80, close: 82 },
+      { time: "Day 2", open: 82, high: 86, low: 78, close: 85 } // 핀바 마감
+    ],
+    options: [
+      "느낌이 좋으므로 다음날 무조건 가격 불문하고 상방 100배 레버리지로 진입한다.",
+      "IF 지지 영역 + 피보나치 0.618 중첩 자리에서 종가 기준 핀바(Rejection)가 발생했으므로 ➔ THEN 다음 봉 시가에 롱 포지션을 진입하고, 스톱로스는 이번 핀바 꼬리 저점 아래에 칼같이 설정한다.",
+      "가격이 올랐으므로 즉시 숏 포지션으로 꺾어서 매도 친다.",
+      "아무 액션 없이 추세가 날아갈 때까지 구경만 한다."
+    ],
+    correctIndex: 1,
+    explanation: "훌륭한 트레이딩 실행은 'IF(조건 만족 시) ➔ THEN(원칙대로 포지션 진입 및 손절/목표가 기계적 배치)'의 룰베이스 알고리즘에 의해 움직여야 감정을 배제할 수 있습니다. 지지 구간 중첩과 핀바 출현 조건이 성립했으므로 다음 봉 시가에 진입하되 꼬리 저점 이탈 시 칼손절하여 리스크를 통제하는 것이 정석입니다."
+  },
+  {
+    id: 76,
+    category: "리스크/심리",
+    categoryKey: 'risk',
+    difficulty: 4,
+    theoryRef: "09_risk_position_management.md",
+    question: "나의 트레이딩 시스템 승률이 40%로 다소 낮게 고정되어 있습니다. 이 시스템을 통해 장기적으로 파산하지 않고 복리로 계좌 자산을 우상향시키기 위해 필수적으로 지켜야 할 손익비(평균손실 대비 평균수익 비율)의 최소 기준은?",
+    chartData: [
+      { time: "Today", open: 100, high: 100, low: 100, close: 100 }
+    ],
+    options: [
+      "손익비 1 : 1 수준 (벌 때와 잃을 때가 같아도 승률이 낮아 파산함)",
+      "승률 40%에서는 장기 기댓값을 플러스(+)로 만들기 위해, 수수료를 감안하여 최소 손익비 1 : 1.5 이상(벌 때 1.5, 잃을 때 1)을 안정적으로 선별하여 매매해야 한다.",
+      "승률이 낮으면 손익비에 상관없이 100% 파산한다.",
+      "레버리지를 20배로 키우면 해결된다."
+    ],
+    correctIndex: 1,
+    explanation: "승률이 40%일 때 기대값 수학적 수수료 감안 최소 손익비는 1:1.5입니다. 손익비 1.5배 이상 구간만 취하면 10번 중 6번 손절당하고 단 4번만 익절하더라도 계좌 총합은 수익 우위에 서게 됩니다. 저승률 시스템일수록 철저히 손익비가 유리한 진입가 근처 타점만 기계적으로 필터링해 진입해야 생존합니다."
+  },
+  {
+    id: 77,
+    category: "리스크/심리",
+    categoryKey: 'risk',
+    difficulty: 4,
+    theoryRef: "09_risk_position_management.md",
+    question: "선물 트레이더인 B는 담보금 효율을 극대화한다는 명목으로 50배 레버리지 롱 포지션 진입을 실행했습니다. 진입 가격 대비 B의 포지션 원금이 완전 소멸(강제 청산)되는 역방향 하락 거리(%)는 대략 몇 % 수준입니까?",
+    chartData: [
+      { time: "Today", open: 100, high: 100, low: 100, close: 100 }
+    ],
+    options: [
+      "반대 방향으로 20% 가격 폭락 조정 발생 시",
+      "반대 방향으로 단 -2% 가격 변동성 노이즈 스파이크 터치 시 원금 전액 청산",
+      "반대 방향으로 50% 폭락 발생 시",
+      "레버리지가 높아 청산 가격이 도달하지 않는다."
+    ],
+    correctIndex: 1,
+    explanation: "청산 거리 계산 공식은 대략 `100% / 레버리지 배수` 입니다. 50배 고배율 레버리지의 경우, 내 포지션 반대 방향으로 단 **-2%**의 시세 변동성(장중 흔한 잔파동 노이즈)만 터치해도 원금이 100% 강제 청산 증발됩니다. 고배율 레버리지는 수학적 확률상 100% 파멸을 초래하는 도박성 거래 행위입니다."
+  },
+  {
+    id: 78,
+    category: "리스크/심리",
+    categoryKey: 'risk',
+    difficulty: 5,
+    theoryRef: "09_risk_position_management.md",
+    question: "트레이딩 계좌 총자산이 2,000만 원인 트레이더가 있습니다. 1회 거래당 총자산의 2% 룰 원칙에 근거하여 리스크 한도(40만 원)를 설정했습니다. 진입하려는 종목의 손절가 거리가 -8%인 경우, 2% 룰을 완벽하게 충족하는 최대 진입(매수) 금액은?",
+    chartData: [
+      { time: "Today", open: 100, high: 100, low: 100, close: 100 }
+    ],
+    options: [
+      "2,000만 원 전액 몰빵 매수 (손절 당하면 160만 원 손실로 파산 경로 시작)",
+      "500만 원 진입 (500만 원 매수 후 -8% 손절 시 정확히 최대 한도인 40만 원 손실)",
+      "1,000만 원 진입",
+      "200만 원 진입"
+    ],
+    correctIndex: 1,
+    explanation: "포지션 사이징 공식은 `진입금액 = 최대 리스크 허용액(40만 원) / 손절 비율(0.08)` 입니다. 이에 따라 `400,000원 / 0.08 = 5,000,000원`이 도출됩니다. 500만 원 규모로 매수 진입 시 가격이 급락해 -8% 손절 라인을 때려도 내 총자산에서 깎이는 금액은 정확히 원칙 한도인 40만 원(2%)으로 제한되어 계좌가 완벽히 방어됩니다."
+  },
+  {
+    id: 79,
+    category: "리스크/심리",
+    categoryKey: 'risk',
+    difficulty: 3,
+    theoryRef: "10_psychology_routine_review.md",
+    question: "장중에 내가 째려보며 타점을 기다리던 주식이 아무런 조정도 없이 장대양봉을 그리며 갑자기 수직 폭등하기 시작하여 5% 이상 치솟았습니다. 이때 머릿속에 '나만 두고 날아가는 것 아닌가'하는 극심한 소외감 공포(FOMO)가 솟구칩니다. 원칙 트레이더의 올바른 심리 대응은?",
+    chartData: [
+      { time: "Day 1", open: 100, high: 102, low: 99, close: 100 },
+      { time: "Day 2", open: 100, high: 106, low: 100, close: 105 } // 급등 진행 중
+    ],
+    options: [
+      "날아가는 열차가 맞으므로 즉시 시장가로 대량 매수를 때려 추격한다.",
+      "감정적 뇌동매매 충동(FOMO)임을 스스로 자각하고 매수 버튼에서 즉각 손을 뗀 후, 가격이 내가 설계한 정석 지지 타점(되돌림 구간)까지 조정이 오지 않는다면 기꺼이 이 버스를 보내주고 다음 정석 셋업 타점을 차분하게 대기한다.",
+      "상방 저항 돌파가 확정이 안 되었으므로 홧김에 반대 방향 고배율 숏을 때린다.",
+      "거래소 창을 끄고 주식을 전량 매도한 뒤 영원히 주식 시장을 은퇴한다."
+    ],
+    correctIndex: 1,
+    explanation: "나만 기회를 잃는다는 공포(FOMO)로 날아가는 장대양봉 꼭대기에서 추격 매수하는 행위는 고점 물리기를 자처하는 가장 흔한 뇌동매매 패턴입니다. 내 타점을 비껴간 상승은 내 돈이 아니라고 인정하고, 사전에 정의한 룰베이스 타점까지 냉정하게 대기하는 것이 장기 생존자의 멘탈 습관입니다."
+  },
+  {
+    id: 80,
+    category: "리스크/심리",
+    categoryKey: 'risk',
+    difficulty: 4,
+    theoryRef: "10_psychology_routine_review.md",
+    question: "오전 거래에서 원칙을 어긴 무리한 진입으로 인해 3회 연속 스톱아웃(손절)을 당하여 당일 원금의 -6%의 큰 손실을 입었습니다. 본전 생각과 분노로 눈이 뒤집혀 비중을 올려 한 판으로 복수하려는 '보폭 매매' 충동이 폭발할 때, 파산을 막는 가장 강력한 멘탈 시스템 룰은?",
+    chartData: [
+      { time: "Today", open: 100, high: 100, low: 100, close: 100 }
+    ],
+    options: [
+      "손실을 복구하기 위해 빌린 돈까지 보증금에 얹어 100배 레버리지 올인 승부를 낸다.",
+      "당일 손실 한도 한계치(-3R 또는 원금 5% 이상 손실)에 도달했으므로 즉각 거래 시스템을 강제 종료하고 모니터 앞을 떠나 물리적으로 시장과 격리하며, 이성을 되찾을 때까지 충분한 냉각기(Cool-down)를 가질 뿐 절대 복수 매매를 하지 않는다.",
+      "유튜브 전문가들의 추천 급등주를 급하게 찾아 산다.",
+      "RSI가 낮으므로 횡보장이라 확신하며 반대로 숏 포지션을 크게 건다."
+    ],
+    correctIndex: 1,
+    explanation: "연패를 겪은 후 홧김에 비중을 더 크게 실어 한 번에 본전을 찾으려는 보복 매매는 계좌를 하루 만에 휴지조각으로 만드는 가장 무서운 파산 유도 심리 상태입니다. 이를 막기 위해 하루 최대 손실 한도 한계선(예: 3회 손절 또는 원금의 5%)을 정해두고, 이 한계선 터치 시 즉시 차트를 종료하고 냉각기를 강제 집행하는 룰이 필수입니다."
   }
 ];
 

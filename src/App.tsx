@@ -174,14 +174,26 @@ export const App: React.FC = () => {
               '자금관리/손익비': '리스크/심리'
             };
 
+            const THEORY_REF_MAP: Record<string, string> = {
+              '01_candlestick_basics.md': '02_candlestick_price_action.md',
+              '02_support_resistance.md': '03_market_structure.md',
+              '03_trendlines_channels.md': '03_market_structure.md',
+              '04_chart_patterns.md': '04_patterns_breakout.md',
+              '05_volume_liquidity.md': '05_volume_liquidity.md',
+              '06_technical_indicators.md': '06_technical_indicators.md',
+              '07_setup_execution.md': '08_setup_entry_exit.md',
+              '08_risk_management.md': '09_risk_position_management.md'
+            };
+
             const formatted: QuizItem[] = data.map(q => {
               const mappedCategory = DATABASE_CATEGORY_MAP[q.category] || q.category;
+              const mappedTheoryRef = THEORY_REF_MAP[q.theory_ref] || q.theory_ref;
               return {
                 id: Number(q.id),
                 category: mappedCategory,
                 categoryKey: getCategoryKey(mappedCategory),
                 difficulty: Number(q.difficulty) || 3,
-                theoryRef: q.theory_ref,
+                theoryRef: mappedTheoryRef,
                 question: q.question,
                 chartData: q.chart_data,
                 drawings: q.drawings,
@@ -348,9 +360,25 @@ export const App: React.FC = () => {
     setCurrentView('quiz');
   };
 
-  const startDrill = (category: string) => {
-    // Filter quizzes by category
-    const categoryQuizzes = quizzesList.filter(q => q.category === category);
+  const startDrill = (categoryOrFile: string) => {
+    const SKILL_TO_THEORY_MAP: Record<string, string> = {
+      '시장구조/SR': '03_market_structure.md',
+      '캔들/가격행동': '02_candlestick_price_action.md',
+      '추세/레짐': '07_multitimeframe_regime.md',
+      '패턴/돌파': '04_patterns_breakout.md',
+      '거래량/유동성': '05_volume_liquidity.md',
+      '지표/컨플루언스': '06_technical_indicators.md',
+      '셋업/실행': '08_setup_entry_exit.md',
+      '리스크/심리': '09_risk_position_management.md'
+    };
+
+    let theoryFile = categoryOrFile;
+    if (SKILL_TO_THEORY_MAP[categoryOrFile]) {
+      theoryFile = SKILL_TO_THEORY_MAP[categoryOrFile];
+    }
+
+    // Filter quizzes by theoryRef
+    const categoryQuizzes = quizzesList.filter(q => q.theoryRef === theoryFile);
     if (categoryQuizzes.length === 0) {
       alert('해당 훈련 범주의 퀴즈를 불러올 수 없습니다. 데이터베이스 연동을 확인해 주세요.');
       return;
