@@ -2,41 +2,41 @@ const fs = require('fs');
 const path = require('path');
 
 try {
-  // Read quizzes.ts
-  const filePath = path.join(__dirname, '../src/data/quizzes.ts');
-  let content = fs.readFileSync(filePath, 'utf8');
+  const quizzesDir = path.join(__dirname, '../src/data/quizzes');
+  const files = fs.readdirSync(quizzesDir).filter(f => f.endsWith('.ts') && f !== 'types.ts' && f !== 'index.ts');
 
-  // Truncate at the TradingTier interface definition
-  const tierIndex = content.indexOf('export interface TradingTier');
-  if (tierIndex !== -1) {
-    content = content.substring(0, tierIndex);
+  console.log(`Found ${files.length} modular quiz files to parse.`);
+
+  const allQuizzes = [];
+  for (const file of files) {
+    let content = fs.readFileSync(path.join(quizzesDir, file), 'utf8');
+    
+    // Strip import statement
+    content = content.replace(/import type[\s\S]*?\n/g, '');
+    
+    // Convert export const quizzes_xxx: QuizItem[] = [ ... ] to module.exports = [ ... ]
+    content = content.replace(/export const quizzes_\w+:\s*QuizItem\[\]\s*=\s*/g, 'module.exports = ');
+    
+    const tempPath = path.join(__dirname, 'temp_' + file.replace('.ts', '.cjs'));
+    fs.writeFileSync(tempPath, content);
+    
+    try {
+      const quizzes = require(tempPath);
+      allQuizzes.push(...quizzes);
+    } finally {
+      fs.unlinkSync(tempPath);
+    }
   }
 
-  // Strip TypeScript annotations using simple regexes
-  content = content.replace(/export interface [\s\S]*?\n\n/g, '');
-  content = content.replace(/: QuizItem\[\]/g, '');
-  content = content.replace(/: Candlestick\[\]/g, '');
-  content = content.replace(/: {[\s\S]*?}\[\]/g, '');
-  content = content.replace('export const quizzes', 'const quizzes');
-  
-  // Make sure it ends at the end of the quizzes array
-  const quizzesEndIndex = content.lastIndexOf('];');
-  if (quizzesEndIndex !== -1) {
-    content = content.substring(0, quizzesEndIndex + 2);
-  }
-  content += '\nmodule.exports = quizzes;\n';
-
-  // Write to a temporary file
-  const tempPath = path.join(__dirname, 'temp_quizzes.cjs');
-  fs.writeFileSync(tempPath, content);
-
-  // Require the temp file
-  const quizzes = require(tempPath);
+  console.log(`Successfully loaded ${allQuizzes.length} total quizzes for SQL generation.`);
 
   // Generate SQL
   let sql = `TRUNCATE public.quizzes RESTART IDENTITY;\n\n`;
 
-  for (const q of quizzes) {
+  // Sort by ID to keep database records sequential
+  allQuizzes.sort((a, b) => a.id - b.id);
+
+  for (const q of allQuizzes) {
     const category = q.category.replace(/'/g, "''");
     const theoryRef = q.theoryRef.replace(/'/g, "''");
     const question = q.question.replace(/'/g, "''");
@@ -54,8 +54,6 @@ try {
   fs.writeFileSync(path.join(__dirname, 'seed_quizzes.sql'), sql);
   console.log('SQL generated successfully in docs/seed_quizzes.sql');
 
-  // Cleanup
-  fs.unlinkSync(tempPath);
 } catch (err) {
   console.error('Failed to generate SQL:', err);
 }

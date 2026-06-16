@@ -9,6 +9,7 @@ export interface CategoryStat {
   seenQuestions: Record<number, number>; // Question ID -> Seen count
   level: number; // Category Level (1 to 5)
   accuracy: number; // Category Proficiency (0 to 100)
+  drillSessionCount?: number; // Total drill sessions completed in this category
 }
 
 export interface SessionAnswer {
@@ -69,7 +70,8 @@ export function createDefaultCategoryStat(): CategoryStat {
     recentAnswers: [],
     seenQuestions: {},
     level: 1,
-    accuracy: 50 // Default baseline proficiency
+    accuracy: 50, // Default baseline proficiency
+    drillSessionCount: 0
   };
 }
 
@@ -133,7 +135,8 @@ export function processSessionUpdates(
     difficulty: number;
     isCorrect: boolean;
   }>,
-  allCategories: string[]
+  allCategories: string[],
+  sessionType: 'daily' | 'drill' = 'drill'
 ): UserRatingState {
   // Ensure we copy state cleanly
   const nextState: UserRatingState = {
@@ -199,8 +202,11 @@ export function processSessionUpdates(
   nextState.overallRating = Math.max(500, Math.round(nextState.overallRating + finalSessionDelta));
 
   // 2. Calculate Category ELO & Proficiency Updates
+  const categoriesInSession = new Set<string>();
+
   quizDetails.forEach(item => {
     const cat = item.category;
+    categoriesInSession.add(cat);
     const catStat = nextState.categories[cat];
 
     const D = getDifficultyWeight(item.difficulty);
@@ -232,6 +238,16 @@ export function processSessionUpdates(
       catStat.recentAnswers.shift();
     }
   });
+
+  // Increment drill session completed count if this was a drill session
+  if (sessionType === 'drill') {
+    categoriesInSession.forEach(cat => {
+      const catStat = nextState.categories[cat];
+      if (catStat) {
+        catStat.drillSessionCount = (catStat.drillSessionCount || 0) + 1;
+      }
+    });
+  }
 
   // 3. Recalculate Proficiency & Level for ALL categories (including those not practiced)
   allCategories.forEach(cat => {

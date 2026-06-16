@@ -133,6 +133,7 @@ export const App: React.FC = () => {
   const [sessionCompletedIds, setSessionCompletedIds] = useState<number[]>([]);
   const [sessionCorrectAnswers, setSessionCorrectAnswers] = useState<number>(0);
   const [isDailySession, setIsDailySession] = useState<boolean>(false);
+  const [isDailyReview, setIsDailyReview] = useState<boolean>(false);
   const [sessionAnswers, setSessionAnswers] = useState<SessionAnswer[]>([]);
 
   const [quizzesList, setQuizzesList] = useState<QuizItem[]>(quizzes);
@@ -338,17 +339,21 @@ export const App: React.FC = () => {
   };
 
   const startDailyTraining = () => {
-    // Select 15 quizzes: uncompleted first, then fill with completed
+    // Select 15 quizzes: uncompleted first, then fill with completed (all shuffled)
     const uncompleted = quizzesList.filter(q => !completedQuizzes.includes(q.id));
     let selected: QuizItem[];
+    const shuffle = (array: QuizItem[]) => [...array].sort(() => 0.5 - Math.random());
     if (uncompleted.length >= 15) {
-      selected = uncompleted.slice(0, 15);
+      selected = shuffle(uncompleted).slice(0, 15);
     } else {
       selected = [...uncompleted];
       const completed = quizzesList.filter(q => completedQuizzes.includes(q.id));
-      const shuffledCompleted = [...completed].sort(() => 0.5 - Math.random());
-      selected = [...selected, ...shuffledCompleted.slice(0, 15 - selected.length)];
+      selected = shuffle(selected); // Shuffle uncompleted too
+      selected = [...selected, ...shuffle(completed).slice(0, 15 - selected.length)];
     }
+
+    const today = getLocalDateString();
+    const isReview = lastDailyCompletedDate === today;
 
     setActiveQuizList(selected);
     setActiveQuizIndex(0);
@@ -356,7 +361,15 @@ export const App: React.FC = () => {
     setSessionCompletedIds([]);
     setSessionCorrectAnswers(0);
     setSessionAnswers([]);
-    setIsDailySession(true);
+    
+    if (isReview) {
+      setIsDailySession(false);
+      setIsDailyReview(true);
+    } else {
+      setIsDailySession(true);
+      setIsDailyReview(false);
+    }
+    
     setCurrentView('quiz');
   };
 
@@ -411,6 +424,7 @@ export const App: React.FC = () => {
     setSessionCorrectAnswers(0);
     setSessionAnswers([]);
     setIsDailySession(false);
+    setIsDailyReview(false);
     setCurrentView('quiz');
   };
 
@@ -453,11 +467,15 @@ export const App: React.FC = () => {
       let finalDailyCompletedDate = lastDailyCompletedDate;
       let dailyBonusAwarded = false;
 
-      if (isDailySession) {
-        if (lastDailyCompletedDate !== today) {
-          finalXp += 30; // +30 XP Daily Training completion bonus
-          finalDailyCompletedDate = today;
-          dailyBonusAwarded = true;
+      if (isDailyReview) {
+        finalXp += 5; // +5 XP Review completion bonus
+      } else {
+        if (isDailySession) {
+          if (lastDailyCompletedDate !== today) {
+            finalXp += 30; // +30 XP Daily Training completion bonus
+            finalDailyCompletedDate = today;
+            dailyBonusAwarded = true;
+          }
         }
       }
 
@@ -478,70 +496,83 @@ export const App: React.FC = () => {
         new Set([...completedQuizzes, ...sessionCompletedIds])
       );
 
-      // ELO Rating and Skill Proficiency processing
-      const sessionQuizzes = activeQuizList.map(quiz => ({
-        id: quiz.id,
-        category: quiz.category,
-        difficulty: quiz.difficulty,
-        isCorrect: sessionCompletedIds.includes(quiz.id)
-      }));
+      let nextRatingState = ratingState;
 
-      const nextRatingState = processSessionUpdates(ratingState, sessionQuizzes, ALL_CATEGORIES);
+      if (isDailyReview) {
+        // Daily Review completion: skip ELO rating and session history update
+        let msg = `🎉 데일리 복습 완료!\n- 정답률: ${Math.round((sessionCorrectAnswers / activeQuizList.length) * 100)}% (${sessionCorrectAnswers}/${activeQuizList.length} 정답)\n- 획득 경험치: +${sessionXp} XP\n🎁 복습 완료 보너스 (+5 XP) 추가 지급!`;
+        alert(msg);
+      } else {
+        // ELO Rating and Skill Proficiency processing
+        const sessionQuizzes = activeQuizList.map(quiz => ({
+          id: quiz.id,
+          category: quiz.category,
+          difficulty: quiz.difficulty,
+          isCorrect: sessionCompletedIds.includes(quiz.id)
+        }));
 
-      // Track level-up triggers
-      let levelUpMessage = "";
-      ALL_CATEGORIES.forEach(cat => {
-        const prevLevel = ratingState.categories[cat]?.level || 1;
-        const nextLevel = nextRatingState.categories[cat]?.level || 1;
-        if (nextLevel > prevLevel) {
-          levelUpMessage += `\n🔥 레벨 업! [${cat}] 훈련 레벨이 Lv.${nextLevel}로 상승했습니다!`;
+        nextRatingState = processSessionUpdates(
+          ratingState, 
+          sessionQuizzes, 
+          ALL_CATEGORIES, 
+          isDailySession ? 'daily' : 'drill'
+        );
+
+        // Track level-up triggers
+        let levelUpMessage = "";
+        ALL_CATEGORIES.forEach(cat => {
+          const prevLevel = ratingState.categories[cat]?.level || 1;
+          const nextLevel = nextRatingState.categories[cat]?.level || 1;
+          if (nextLevel > prevLevel) {
+            levelUpMessage += `\n🔥 레벨 업! [${cat}] 훈련 레벨이 Lv.${nextLevel}로 상승했습니다!`;
+          }
+        });
+
+        // ELO Change display
+        const eloDiff = nextRatingState.overallRating - ratingState.overallRating;
+        const eloDiffStr = eloDiff >= 0 ? `+${eloDiff}` : `${eloDiff}`;
+
+        // Feedback alert
+        let msg = isDailySession
+          ? `🎉 오늘의 데일리 트레이닝 완료! (+${sessionXp} XP 획득)\n📈 트레이더 레이팅: ${ratingState.overallRating} → ${nextRatingState.overallRating} RP (${eloDiffStr} RP)`
+          : `🎯 실전 훈련 완료!\n- 정답률: ${Math.round((sessionCorrectAnswers / activeQuizList.length) * 100)}% (${sessionCorrectAnswers}/${activeQuizList.length} 정답)\n- 획득 경험치: +${sessionXp} XP\n📈 트레이더 레이팅: ${ratingState.overallRating} → ${nextRatingState.overallRating} RP (${eloDiffStr} RP)`;
+
+        if (isDailySession && dailyBonusAwarded) {
+          msg += `\n🎁 일일 완성 보너스 (+30 XP) 추가 지급!`;
         }
-      });
-
-      // ELO Change display
-      const eloDiff = nextRatingState.overallRating - ratingState.overallRating;
-      const eloDiffStr = eloDiff >= 0 ? `+${eloDiff}` : `${eloDiff}`;
-
-      // Feedback alert
-      let msg = isDailySession
-        ? `🎉 오늘의 데일리 트레이닝 완료! (+${sessionXp} XP 획득)\n📈 트레이더 레이팅: ${ratingState.overallRating} → ${nextRatingState.overallRating} RP (${eloDiffStr} RP)`
-        : `🎯 실전 훈련 완료!\n- 정답률: ${Math.round((sessionCorrectAnswers / activeQuizList.length) * 100)}% (${sessionCorrectAnswers}/${activeQuizList.length} 정답)\n- 획득 경험치: +${sessionXp} XP\n📈 트레이더 레이팅: ${ratingState.overallRating} → ${nextRatingState.overallRating} RP (${eloDiffStr} RP)`;
-
-      if (isDailySession && dailyBonusAwarded) {
-        msg += `\n🎁 일일 완성 보너스 (+30 XP) 추가 지급!`;
-      }
-      if (levelUpMessage) {
-        msg += `\n${levelUpMessage}`;
-      }
-      alert(msg);
-
-      // Build SessionRecord for history
-      const categoryDeltas: Record<string, { before: number; after: number }> = {};
-      ALL_CATEGORIES.forEach(cat => {
-        const before = ratingState.categories[cat]?.rating || 1000;
-        const after = nextRatingState.categories[cat]?.rating || 1000;
-        if (before !== after) {
-          categoryDeltas[cat] = { before, after };
+        if (levelUpMessage) {
+          msg += `\n${levelUpMessage}`;
         }
-      });
+        alert(msg);
 
-      const sessionRecord = {
-        date: today,
-        timestamp: Date.now(),
-        type: (isDailySession ? 'daily' : 'drill') as 'daily' | 'drill',
-        ratingBefore: ratingState.overallRating,
-        ratingAfter: nextRatingState.overallRating,
-        categoryDeltas,
-        answers: sessionAnswers,
-        correctCount: sessionCorrectAnswers,
-        totalCount: activeQuizList.length
-      };
+        // Build SessionRecord for history
+        const categoryDeltas: Record<string, { before: number; after: number }> = {};
+        ALL_CATEGORIES.forEach(cat => {
+          const before = ratingState.categories[cat]?.rating || 1000;
+          const after = nextRatingState.categories[cat]?.rating || 1000;
+          if (before !== after) {
+            categoryDeltas[cat] = { before, after };
+          }
+        });
 
-      // Append to session history (keep last 100 sessions)
-      nextRatingState.sessionHistory = [
-        ...(nextRatingState.sessionHistory || []),
-        sessionRecord
-      ].slice(-100);
+        const sessionRecord = {
+          date: today,
+          timestamp: Date.now(),
+          type: (isDailySession ? 'daily' : 'drill') as 'daily' | 'drill',
+          ratingBefore: ratingState.overallRating,
+          ratingAfter: nextRatingState.overallRating,
+          categoryDeltas,
+          answers: sessionAnswers,
+          correctCount: sessionCorrectAnswers,
+          totalCount: activeQuizList.length
+        };
+
+        // Append to session history (keep last 100 sessions)
+        nextRatingState.sessionHistory = [
+          ...(nextRatingState.sessionHistory || []),
+          sessionRecord
+        ].slice(-100);
+      }
 
       // Clean up streak warning since they active today
       setStreakBroken(false);

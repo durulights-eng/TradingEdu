@@ -45,7 +45,7 @@ interface UserProfile {
   completed_quizzes: number[];
   last_active_date: string | null;
   last_daily_completed_date: string | null;
-  drill_stats?: Record<string, { level: number; accuracy: number; attempts: number }>;
+  drill_stats?: Record<string, { level: number; accuracy: number; attempts: number; drillSessionCount?: number }>;
 }
 
 interface TradingTier {

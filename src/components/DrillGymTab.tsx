@@ -215,7 +215,7 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
           {drills.map((d) => {
             const isLocked = xp < d.minXp;
-            const stats = drillStats[d.skillCategory] || { level: 1, accuracy: 50, attempts: 0 };
+            const stats = drillStats[d.skillCategory] || { level: 1, accuracy: 50, attempts: 0, drillSessionCount: 0 };
             
             return (
               <div 
@@ -286,7 +286,9 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
                     </div>
                     <div>
                       <div style={{ color: 'var(--text-secondary)', marginBottom: '3px' }}>훈련 횟수</div>
-                      <div style={{ color: 'var(--text-primary)', fontWeight: 800 }}>{stats.attempts}회</div>
+                      <div style={{ color: 'var(--text-primary)', fontWeight: 800 }}>
+                        {stats.drillSessionCount !== undefined ? stats.drillSessionCount : Math.floor(stats.attempts / 5)}회
+                      </div>
                     </div>
                   </div>
                 )}

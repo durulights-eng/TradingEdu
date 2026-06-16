@@ -93,7 +93,9 @@ export const QuizCard: React.FC<QuizCardProps> = ({
       </div>
 
       {/* Chart Visualizer */}
-      <ChartVisualizer chartData={quiz.chartData} drawings={quiz.drawings} />
+      {quiz.chartData && quiz.chartData.length > 1 && (
+        <ChartVisualizer chartData={quiz.chartData} drawings={quiz.drawings} />
+      )}
 
       {/* Multiple Choices */}
       <div className="options-list">

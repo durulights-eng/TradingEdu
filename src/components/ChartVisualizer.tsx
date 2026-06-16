@@ -75,7 +75,13 @@ export const ChartVisualizer: React.FC<ChartVisualizerProps> = ({ chartData, dra
       return leftMargin + index * spacing + spacing / 2;
     };
 
+    const hasVolume = chartData.some(c => c.volume !== undefined && c.volume > 0);
+
     const getYPixel = (price: number) => {
+      if (hasVolume) {
+        // Reserve the bottom 25% for volume bars
+        return topMargin + (chartHeight * 0.73) - ((price - minPrice) / priceRange) * (chartHeight * 0.73);
+      }
       return topMargin + chartHeight - ((price - minPrice) / priceRange) * chartHeight;
     };
 
@@ -101,9 +107,30 @@ export const ChartVisualizer: React.FC<ChartVisualizerProps> = ({ chartData, dra
       ctx.fillText(`$${price.toFixed(1)}`, width - rightMargin + 5, y + 3);
     }
 
-    // Draw Candlesticks
     const candleWidth = Math.max(4, (chartWidth / chartData.length) * 0.55);
 
+    // Draw Volume Bars if available
+    if (hasVolume) {
+      const maxVolume = Math.max(...chartData.map(c => c.volume || 0)) || 1;
+      const volumeAreaHeight = chartHeight * 0.22;
+
+      chartData.forEach((candle, index) => {
+        const x = getXPixel(index);
+        const vol = candle.volume || 0;
+        const barHeight = (vol / maxVolume) * volumeAreaHeight;
+        const y = topMargin + chartHeight - barHeight;
+
+        const isBullish = candle.close >= candle.open;
+        ctx.fillStyle = isBullish ? 'rgba(8, 153, 129, 0.16)' : 'rgba(242, 54, 69, 0.16)';
+        ctx.fillRect(x - candleWidth / 2, y, candleWidth, barHeight);
+
+        ctx.strokeStyle = isBullish ? 'rgba(8, 153, 129, 0.45)' : 'rgba(242, 54, 69, 0.45)';
+        ctx.lineWidth = 0.8;
+        ctx.strokeRect(x - candleWidth / 2, y, candleWidth, barHeight);
+      });
+    }
+
+    // Draw Candlesticks
     chartData.forEach((candle, index) => {
       const x = getXPixel(index);
       const yOpen = getYPixel(candle.open);
