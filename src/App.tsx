@@ -3,17 +3,19 @@ import { quizzes, getTradingTier, getLocalDateString, getYesterdayDateString, is
 import type { QuizItem } from './data/quizzes';
 import { Dashboard } from './components/Dashboard';
 import { QuizCard } from './components/QuizCard';
-import { Flame, Award, LayoutDashboard, User, CheckCircle, Smartphone, Trophy } from 'lucide-react';
+import { Flame, Award, Play, Trophy, Settings } from 'lucide-react';
 import { supabase, isSupabaseConfigured } from './lib/supabaseClient';
 import { DrillGymTab } from './components/DrillGymTab';
+import { SettingsTab } from './components/SettingsTab';
 
-type ViewMode = 'dashboard' | 'quiz' | 'drill' | 'profile';
+type ViewMode = 'dashboard' | 'quiz' | 'drill' | 'settings';
 
 import { 
   createDefaultRatingState, 
   processSessionUpdates, 
-  ALL_CATEGORIES 
+  ALL_CATEGORIES
 } from './lib/ratingEngine';
+import type { SessionAnswer } from './lib/ratingEngine';
 import type { UserRatingState } from './lib/ratingEngine';
 
 const parseSavedRatingState = (savedStr: string | null): UserRatingState => {
@@ -38,6 +40,10 @@ const parseSavedRatingState = (savedStr: string | null): UserRatingState => {
           };
         }
       });
+      // Ensure sessionHistory exists
+      if (!parsed.sessionHistory) {
+        parsed.sessionHistory = [];
+      }
       return parsed as UserRatingState;
     }
     
@@ -127,6 +133,7 @@ export const App: React.FC = () => {
   const [sessionCompletedIds, setSessionCompletedIds] = useState<number[]>([]);
   const [sessionCorrectAnswers, setSessionCorrectAnswers] = useState<number>(0);
   const [isDailySession, setIsDailySession] = useState<boolean>(false);
+  const [sessionAnswers, setSessionAnswers] = useState<SessionAnswer[]>([]);
 
   const [quizzesList, setQuizzesList] = useState<QuizItem[]>(quizzes);
   const [currentView, setCurrentView] = useState<ViewMode>('dashboard');
@@ -158,19 +165,31 @@ export const App: React.FC = () => {
             .order('id', { ascending: true });
           
           if (!error && data && data.length > 0) {
-            const formatted: QuizItem[] = data.map(q => ({
-              id: Number(q.id),
-              category: q.category,
-              categoryKey: getCategoryKey(q.category),
-              difficulty: Number(q.difficulty) || 3,
-              theoryRef: q.theory_ref,
-              question: q.question,
-              chartData: q.chart_data,
-              drawings: q.drawings,
-              options: q.options,
-              correctIndex: q.correct_index,
-              explanation: q.explanation
-            }));
+            const DATABASE_CATEGORY_MAP: Record<string, string> = {
+              '캔들 패턴 인지': '캔들/가격행동',
+              '지지/저항 & 돌파': '시장구조/SR',
+              '추세선과 채널': '추세/레짐',
+              '차트 패턴 포착': '패턴/돌파',
+              '보조지표 다이버전스': '지표/컨플루언스',
+              '자금관리/손익비': '리스크/심리'
+            };
+
+            const formatted: QuizItem[] = data.map(q => {
+              const mappedCategory = DATABASE_CATEGORY_MAP[q.category] || q.category;
+              return {
+                id: Number(q.id),
+                category: mappedCategory,
+                categoryKey: getCategoryKey(mappedCategory),
+                difficulty: Number(q.difficulty) || 3,
+                theoryRef: q.theory_ref,
+                question: q.question,
+                chartData: q.chart_data,
+                drawings: q.drawings,
+                options: q.options,
+                correctIndex: q.correct_index,
+                explanation: q.explanation
+              };
+            });
             setQuizzesList(formatted);
           }
         } catch (e) {
@@ -324,6 +343,7 @@ export const App: React.FC = () => {
     setSessionXp(0);
     setSessionCompletedIds([]);
     setSessionCorrectAnswers(0);
+    setSessionAnswers([]);
     setIsDailySession(true);
     setCurrentView('quiz');
   };
@@ -361,15 +381,25 @@ export const App: React.FC = () => {
     setSessionXp(0);
     setSessionCompletedIds([]);
     setSessionCorrectAnswers(0);
+    setSessionAnswers([]);
     setIsDailySession(false);
     setCurrentView('quiz');
   };
 
-  const handleAnswerChecked = (isCorrect: boolean) => {
-    if (isCorrect) {
-      setSessionCorrectAnswers(prev => prev + 1);
-      const currentQuiz = activeQuizList[activeQuizIndex];
-      if (currentQuiz) {
+  const handleAnswerChecked = (isCorrect: boolean, selectedIndex?: number) => {
+    const currentQuiz = activeQuizList[activeQuizIndex];
+    if (currentQuiz) {
+      // Record session answer for history
+      setSessionAnswers(prev => [...prev, {
+        quizId: currentQuiz.id,
+        selectedIndex: selectedIndex ?? -1,
+        isCorrect,
+        category: currentQuiz.category,
+        difficulty: currentQuiz.difficulty
+      }]);
+
+      if (isCorrect) {
+        setSessionCorrectAnswers(prev => prev + 1);
         const isAlreadyCompleted = completedQuizzes.includes(currentQuiz.id);
         const earned = isAlreadyCompleted ? 5 : 20;
         setSessionXp(prev => prev + earned);
@@ -457,6 +487,34 @@ export const App: React.FC = () => {
       }
       alert(msg);
 
+      // Build SessionRecord for history
+      const categoryDeltas: Record<string, { before: number; after: number }> = {};
+      ALL_CATEGORIES.forEach(cat => {
+        const before = ratingState.categories[cat]?.rating || 1000;
+        const after = nextRatingState.categories[cat]?.rating || 1000;
+        if (before !== after) {
+          categoryDeltas[cat] = { before, after };
+        }
+      });
+
+      const sessionRecord = {
+        date: today,
+        timestamp: Date.now(),
+        type: (isDailySession ? 'daily' : 'drill') as 'daily' | 'drill',
+        ratingBefore: ratingState.overallRating,
+        ratingAfter: nextRatingState.overallRating,
+        categoryDeltas,
+        answers: sessionAnswers,
+        correctCount: sessionCorrectAnswers,
+        totalCount: activeQuizList.length
+      };
+
+      // Append to session history (keep last 100 sessions)
+      nextRatingState.sessionHistory = [
+        ...(nextRatingState.sessionHistory || []),
+        sessionRecord
+      ].slice(-100);
+
       // Clean up streak warning since they active today
       setStreakBroken(false);
 
@@ -505,13 +563,14 @@ export const App: React.FC = () => {
         {currentView === 'dashboard' && (
           <Dashboard
             onStartDailyQuiz={startDailyTraining}
-            xp={xp}
+            onStartDrill={startDrill}
             streakBroken={streakBroken}
             onCloseStreakWarning={() => setStreakBroken(false)}
             isDailyCompletedToday={lastDailyCompletedDate === getLocalDateString()}
-            drillStats={ratingState.categories}
-            overallRating={ratingState.overallRating}
+            ratingState={ratingState}
             completedQuizzes={completedQuizzes}
+            allQuizzes={quizzesList}
+            xp={xp}
           />
         )}
 
@@ -538,96 +597,34 @@ export const App: React.FC = () => {
           />
         )}
 
-        {currentView === 'profile' && (
-          <div style={{ padding: '24px 20px', paddingBottom: '90px', display: 'flex', flex: 1, flexDirection: 'column', gap: '20px' }}>
-            <h2 className="card-title">
-              <User size={20} style={{ color: 'var(--color-brand)' }} />
-              내 프로필
-            </h2>
-
-            {/* Profile Avatar Card */}
-            <div className="welcome-card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(59, 130, 246, 0.1)', border: '2px solid var(--color-brand)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '36px' }}>
-                {currentTier.badge}
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <h3 style={{ fontSize: '18px', fontWeight: 800 }}>{currentTier.name}</h3>
-                <p style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '4px' }}>Lv.{currentTier.level} 트레이더</p>
-              </div>
-            </div>
-
-            {/* Stats Overview */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-              <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <span style={{ fontSize: '11px', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <Flame size={12} color="var(--color-streak)" /> 학습 스트릭
-                </span>
-                <span style={{ fontSize: '18px', fontWeight: 800, color: 'var(--color-streak)' }}>{streak}일 연속</span>
-              </div>
-              
-              <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <span style={{ fontSize: '11px', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <Award size={12} color="var(--color-xp)" /> 획득한 경험치
-                </span>
-                <span style={{ fontSize: '18px', fontWeight: 800, color: 'var(--color-xp)' }}>{xp} XP</span>
-              </div>
-
-              <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '6px', gridColumn: 'span 2' }}>
-                <span style={{ fontSize: '11px', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <CheckCircle size={12} color="var(--color-bullish)" /> 학습 진척도 (모듈 완료 수)
-                </span>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '4px' }}>
-                  <span style={{ fontSize: '16px', fontWeight: 800 }}>{completedQuizzes.length} / {quizzesList.length} 개 모듈 완료</span>
-                  <span style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>{quizzesList.length > 0 ? Math.round((completedQuizzes.length / quizzesList.length) * 100) : 0}%</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Cloud Data Backup Option */}
-            <div style={{ background: 'rgba(59, 130, 246, 0.03)', border: '1px dashed rgba(59, 130, 246, 0.25)', borderRadius: '16px', padding: '18px' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '12px' }}>
-                <Smartphone size={18} color="var(--color-brand)" style={{ marginTop: '2px' }} />
-                <div>
-                  <h4 style={{ fontSize: '13px', fontWeight: 700 }}>{userId ? '클라우드 연동 완료' : '진행 상황을 서버에 저장하세요'}</h4>
-                  <p style={{ fontSize: '11px', color: 'var(--text-secondary)', marginTop: '2px', lineHeight: 1.5 }}>
-                    {userId ? `연동 계정: ${userEmail}` : '현재 게스트 모드로 학습 중입니다. 기기를 바꾸거나 앱을 지워도 진행 데이터와 등급이 보존되도록 구글 계정 연동을 준비 중입니다.'}
-                  </p>
-                </div>
-              </div>
-              {!userId && (
-                <button className="btn-drawer-action check" style={{ fontSize: '13px', padding: '10px' }} onClick={() => alert('구글 클라우드 로그인 연동 준비 중입니다.')}>
-                  구글 계정 연동하기 (준비 중)
-                </button>
-              )}
-            </div>
-
-            </div>
+        {currentView === 'settings' && (
+          <SettingsTab userId={userId} userEmail={userEmail} />
         )}
       </main>
 
-      {/* Sticky Bottom Tabs Navigation */}
+      {/* Sticky Bottom 3-Tab Navigation */}
       {currentView !== 'quiz' && (
         <nav className="tabs-navigation" style={{ zIndex: 100 }}>
-          <button
-            onClick={() => { setCurrentView('dashboard'); }}
-            className={`tab-btn ${currentView === 'dashboard' ? 'active' : ''}`}
-          >
-            <LayoutDashboard size={20} />
-            <span>데일리 트레이닝</span>
-          </button>
           <button
             onClick={() => { setCurrentView('drill'); }}
             className={`tab-btn ${currentView === 'drill' ? 'active' : ''}`}
           >
             <Trophy size={20} />
-            <span>차트 훈련소</span>
+            <span>훈련소</span>
           </button>
           <button
-            onClick={() => { setCurrentView('profile'); }}
-            className={`tab-btn ${currentView === 'profile' ? 'active' : ''}`}
+            onClick={() => { setCurrentView('dashboard'); }}
+            className={`tab-btn ${currentView === 'dashboard' ? 'active' : ''}`}
           >
-            <User size={20} />
-            <span>내 프로필</span>
+            <Play size={20} />
+            <span>데일리</span>
+          </button>
+          <button
+            onClick={() => { setCurrentView('settings'); }}
+            className={`tab-btn ${currentView === 'settings' ? 'active' : ''}`}
+          >
+            <Settings size={20} />
+            <span>설정</span>
           </button>
         </nav>
       )}
@@ -635,3 +632,4 @@ export const App: React.FC = () => {
   );
 };
 export default App;
+

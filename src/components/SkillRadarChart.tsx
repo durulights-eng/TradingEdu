@@ -3,9 +3,10 @@ import type { CategoryStat } from '../lib/ratingEngine';
 
 interface SkillRadarChartProps {
   drillStats: Record<string, CategoryStat>;
+  periodLabel?: string;
 }
 
-export const SkillRadarChart: React.FC<SkillRadarChartProps> = ({ drillStats }) => {
+export const SkillRadarChart: React.FC<SkillRadarChartProps> = ({ drillStats, periodLabel: _periodLabel }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const axes = [
@@ -28,10 +29,10 @@ export const SkillRadarChart: React.FC<SkillRadarChartProps> = ({ drillStats }) 
 
     // Handle high DPI manually with fixed base size of 280 x 180
     const dpr = window.devicePixelRatio || 1;
-    const width = 280;
-    const height = 180;
-    const center = { x: 140, y: 90 };
-    const radius = 48; // Max radius for 100% value (tuned for 8 axes labels space)
+    const width = 340;
+    const height = 260;
+    const center = { x: 170, y: 130 };
+    const radius = 75; // Max radius for 100% value (tuned for 8 axes labels space)
 
     // Explicitly sync resolution with dpr
     canvas.width = width * dpr;
@@ -180,8 +181,8 @@ export const SkillRadarChart: React.FC<SkillRadarChartProps> = ({ drillStats }) 
   }, [drillStats]);
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '180px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <canvas ref={canvasRef} style={{ width: '280px', height: '180px' }} />
+    <div style={{ position: 'relative', width: '100%', height: '260px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <canvas ref={canvasRef} style={{ width: '340px', height: '260px' }} />
     </div>
   );
 };

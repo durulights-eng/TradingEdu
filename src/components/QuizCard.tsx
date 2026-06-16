@@ -10,7 +10,7 @@ interface QuizCardProps {
   currentIndex: number;
   totalQuizzes: number;
   onClose: () => void;
-  onAnswerChecked: (isCorrect: boolean) => void;
+  onAnswerChecked: (isCorrect: boolean, selectedIndex: number) => void;
   onNext: () => void;
 }
 
@@ -40,7 +40,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({
     const correct = selectedOption === quiz.correctIndex;
     setIsCorrect(correct);
     setIsChecked(true);
-    onAnswerChecked(correct);
+    onAnswerChecked(correct, selectedOption);
   };
 
   const optionLetters = ["A", "B", "C", "D"];

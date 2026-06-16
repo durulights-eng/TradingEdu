@@ -11,9 +11,30 @@ export interface CategoryStat {
   accuracy: number; // Category Proficiency (0 to 100)
 }
 
+export interface SessionAnswer {
+  quizId: number;
+  selectedIndex: number;
+  isCorrect: boolean;
+  category: string;
+  difficulty: number;
+}
+
+export interface SessionRecord {
+  date: string;           // ISO date string (YYYY-MM-DD)
+  timestamp: number;      // Date.now()
+  type: 'daily' | 'drill';
+  ratingBefore: number;
+  ratingAfter: number;
+  categoryDeltas: Record<string, { before: number; after: number }>;
+  answers: SessionAnswer[];
+  correctCount: number;
+  totalCount: number;
+}
+
 export interface UserRatingState {
   overallRating: number; // R_u (Overall User ELO Rating, default 1000)
   categories: Record<string, CategoryStat>;
+  sessionHistory: SessionRecord[];
 }
 
 export const ALL_CATEGORIES = [
@@ -60,7 +81,8 @@ export function createDefaultRatingState(categories: string[]): UserRatingState 
   });
   return {
     overallRating: 1000,
-    categories: cats
+    categories: cats,
+    sessionHistory: []
   };
 }
 
@@ -116,7 +138,8 @@ export function processSessionUpdates(
   // Ensure we copy state cleanly
   const nextState: UserRatingState = {
     overallRating: currentState.overallRating || 1000,
-    categories: {}
+    categories: {},
+    sessionHistory: [...(currentState.sessionHistory || [])]
   };
 
   // Initialize all categories with existing or default stats
@@ -270,4 +293,67 @@ export const ELO_TIERS: EloTier[] = [
 
 export function getEloTier(rating: number): EloTier {
   return ELO_TIERS.find(t => rating >= t.minRating && rating <= t.maxRating) || ELO_TIERS[0];
+}
+
+// Period-based category stats calculation for 1d/1w/1m radar chart toggle
+export type StatPeriod = '1d' | '1w' | '1m' | 'all';
+
+export function getCategoryStatsForPeriod(
+  state: UserRatingState,
+  period: StatPeriod,
+  allCategories: string[]
+): Record<string, CategoryStat> {
+  if (period === 'all') {
+    return state.categories;
+  }
+
+  const now = Date.now();
+  const msPerDay = 86400000;
+  const cutoff = period === '1d' ? now - msPerDay
+    : period === '1w' ? now - 7 * msPerDay
+    : now - 30 * msPerDay;
+
+  const filteredSessions = (state.sessionHistory || []).filter(
+    s => s.timestamp >= cutoff
+  );
+
+  if (filteredSessions.length === 0) {
+    // No data for this period, return the cumulative stats
+    return state.categories;
+  }
+
+  // Compute average accuracy per category from filtered sessions
+  const catAccum: Record<string, { totalCorrect: number; totalAttempts: number }> = {};
+  allCategories.forEach(cat => {
+    catAccum[cat] = { totalCorrect: 0, totalAttempts: 0 };
+  });
+
+  filteredSessions.forEach(session => {
+    session.answers.forEach(ans => {
+      if (catAccum[ans.category]) {
+        catAccum[ans.category].totalAttempts += 1;
+        if (ans.isCorrect) catAccum[ans.category].totalCorrect += 1;
+      }
+    });
+  });
+
+  // Build period-specific CategoryStat records (use cumulative for non-attempted)
+  const result: Record<string, CategoryStat> = {};
+  allCategories.forEach(cat => {
+    const baseStat = state.categories[cat] || createDefaultCategoryStat();
+    const accum = catAccum[cat];
+    if (accum.totalAttempts > 0) {
+      const periodAccuracy = Math.round((accum.totalCorrect / accum.totalAttempts) * 100);
+      result[cat] = {
+        ...baseStat,
+        accuracy: periodAccuracy,
+        attempts: accum.totalAttempts,
+        correct: accum.totalCorrect
+      };
+    } else {
+      result[cat] = baseStat;
+    }
+  });
+
+  return result;
 }

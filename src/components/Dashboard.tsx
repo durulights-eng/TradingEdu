@@ -1,25 +1,58 @@
-import React from 'react';
-import { Play, Star, Trophy, TrendingUp } from 'lucide-react';
+import React, { useState } from 'react';
+import { Play, Star, Trophy, TrendingUp, Calendar, ArrowUpRight, ArrowDownRight } from 'lucide-react';
 import { SkillRadarChart } from './SkillRadarChart';
-import { type CategoryStat, getEloTier } from '../lib/ratingEngine';
+import { SessionReview } from './SessionReview';
+import type { QuizItem } from '../data/quizzes';
+import { 
+  type CategoryStat, 
+  type UserRatingState, 
+  type SessionRecord,
+  type StatPeriod,
+  getEloTier, 
+  getCategoryStatsForPeriod, 
+  ALL_CATEGORIES 
+} from '../lib/ratingEngine';
 
 interface DashboardProps {
   onStartDailyQuiz: () => void;
-  xp: number;
+  onStartDrill?: (category: string) => void;
   streakBroken?: boolean;
   onCloseStreakWarning?: () => void;
   isDailyCompletedToday: boolean;
-  drillStats: Record<string, CategoryStat>;
-  overallRating: number;
+  ratingState: UserRatingState;
   completedQuizzes: number[];
+  allQuizzes: QuizItem[];
+  xp: number;
 }
 
+const categoryMinXpMap: Record<string, number> = {
+  '캔들/가격행동': 0,
+  '시장구조/SR': 0,
+  '추세/레짐': 150,
+  '패턴/돌파': 300,
+  '거래량/유동성': 450,
+  '지표/컨플루언스': 600,
+  '셋업/실행': 750,
+  '리스크/심리': 900
+};
 
-const getSkillAnalysisFeedback = (drillStats: Record<string, CategoryStat>) => {
+const renderSkillAnalysisFeedback = (drillStats: Record<string, CategoryStat>, xp: number, onStartDrill?: (category: string) => void) => {
   const attempts = Object.values(drillStats).reduce((sum, s) => sum + s.attempts, 0);
+  
   if (attempts === 0) {
     return (
-      <span>데일리 트레이닝과 실전 훈련을 거듭할수록 분석 데이터가 정교해집니다.</span>
+      <div style={{
+        background: 'rgba(90, 82, 229, 0.03)',
+        border: '1px solid rgba(90, 82, 229, 0.12)',
+        borderRadius: '14px',
+        padding: '16px',
+        textAlign: 'center',
+        color: 'var(--text-secondary)',
+        fontSize: '12px',
+        lineHeight: '1.5'
+      }}>
+        💡 <strong>데일리 트레이닝</strong> 또는 <strong>실전 훈련</strong>을 진행하여 데이터를 축적하면, 여기에 나만의 강점/약점 분석 및 보완 학습 추천 리포트가 생성됩니다.
+      </div>
     );
   }
 
@@ -42,67 +75,231 @@ const getSkillAnalysisFeedback = (drillStats: Record<string, CategoryStat>) => {
   });
 
   if (!strongest) {
-    return <span>훈련 진행 데이터를 수집하고 있습니다. 더 많은 문제를 풀어보세요!</span>;
-  }
-
-  const theoryTips: Record<string, string> = {
-    '캔들/가격행동': '이론 백과의 "캔들스틱 기초" 모듈을 학습하여 개별 캔들의 숨겨진 심리를 복습해 보세요.',
-    '시장구조/SR': '이론 백과의 "지지와 저항" 모듈에서 수평 매물대의 역할 전환 개념을 다시 숙지해 보세요.',
-    '추세/레짐': '이론 백과의 "추세선과 채널" 모듈을 통해 추세선의 신뢰도를 판정하는 3rd Touch 룰을 학습해 보세요.',
-    '패턴/돌파': '이론 백과의 "차트 패턴" 모듈에서 헤드앤숄더 넥라인 돌파 및 어센딩 트라이앵글의 수렴 원리를 정독해 보세요.',
-    '거래량/유동성': '이론 백과의 "지지와 저항" 또는 "차트 패턴" 부문에서 불트랩과 베어트랩 등 가짜 돌파를 포착하는 거래량 분석 팁을 복습해 보세요.',
-    '지표/컨플루언스': '이론 백과의 "보조지표와 다이버전스" 모듈을 정독하여 RSI의 일반/히든 상승 다이버전스 생성 원리를 이해해 보세요.',
-    '셋업/실행': '이론 백과의 "자금관리 및 손익비" 모듈을 다시 보며 추적 손절매(Trailing Stop)와 진입 필터 조건들을 확립해 보세요.',
-    '리스크/심리': '이론 백과의 "자금관리 및 손익비" 모듈에서 2% 룰 기반 포지션 사이징과 승률 대비 손익비 본전 공식을 마스터해 보세요.'
-  };
-
-  const weakTip = theoryTips[weakest] || '다른 훈련 과목도 병행하여 육각형 균형을 맞춰보세요!';
-
-  if (strongest === weakest) {
     return (
-      <span>현재 <strong>{strongest}</strong> 분야의 학습을 시작하셨습니다. 다른 훈련 과목도 병행하여 스킬 균형을 맞춰보세요!</span>
+      <div style={{
+        background: 'rgba(90, 82, 229, 0.03)',
+        border: '1px solid rgba(90, 82, 229, 0.12)',
+        borderRadius: '14px',
+        padding: '16px',
+        textAlign: 'center',
+        color: 'var(--text-secondary)',
+        fontSize: '12px'
+      }}>
+        훈련 데이터 분석 중입니다. 더 많은 문제를 풀어보세요!
+      </div>
     );
   }
 
+  // If strongest and weakest are same, it means only 1 category has data
+  if (strongest === weakest) {
+    return (
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: '12px'
+      }}>
+        <div style={{
+          background: 'rgba(16, 185, 129, 0.03)',
+          border: '1px solid rgba(16, 185, 129, 0.12)',
+          borderRadius: '14px',
+          padding: '14px 16px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          gap: '10px'
+        }}>
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+              <span style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-bullish)' }}>🏆 첫 도전 과목</span>
+            </div>
+            <h4 style={{ fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)' }}>{strongest}</h4>
+            <p style={{ fontSize: '11px', color: 'var(--text-secondary)', marginTop: '4px', lineHeight: '1.4' }}>
+              현재 해당 분야의 훈련을 시작하셨습니다. 정답률을 높여가며 스킬을 마스터해 보세요!
+            </p>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
+            <span style={{ fontSize: '20px', fontWeight: 900, color: 'var(--color-bullish)', fontFamily: 'var(--font-title)' }}>{maxAcc}</span>
+            <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-bullish)' }}>% 정답률</span>
+          </div>
+        </div>
+
+        <div style={{
+          background: 'var(--bg-muted)',
+          border: '1px solid var(--border-color)',
+          borderRadius: '14px',
+          padding: '14px 16px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
+          gap: '8px'
+        }}>
+          <span style={{ fontSize: '20px' }}>⚖️</span>
+          <h4 style={{ fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)' }}>균형 잡힌 학습</h4>
+          <p style={{ fontSize: '11px', color: 'var(--text-secondary)', lineHeight: '1.4' }}>
+            다른 훈련 과목도 골고루 시도해 보시면 더욱 상세한 스킬 레포트가 제공됩니다.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  const minXpRequired = categoryMinXpMap[weakest] ?? 0;
+  const isLocked = xp < minXpRequired;
+
   return (
-    <span>
-      🎯 회원님은 현재 <strong style={{ color: 'var(--text-primary)' }}>{strongest}</strong> 분야(숙련도 {maxAcc}%)에 가장 강점을 보이고 있습니다. 반면, 상대적으로 숙련도가 낮은 <strong style={{ color: 'var(--text-primary)' }}>{weakest}</strong> 분야(숙련도 {minAcc}%)의 보완 훈련을 추천합니다.<br />
-      💡 <strong>가이드:</strong> {weakTip}
-    </span>
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: '12px'
+    }}>
+      {/* 강점 카드 */}
+      <div style={{
+        background: 'rgba(16, 185, 129, 0.03)',
+        border: '1px solid rgba(16, 185, 129, 0.12)',
+        borderRadius: '14px',
+        padding: '14px 16px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        gap: '10px'
+      }}>
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-bullish)' }}>🏆 최대 강점</span>
+          </div>
+          <h4 style={{ fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)', wordBreak: 'keep-all' }}>{strongest}</h4>
+          <p style={{ fontSize: '11px', color: 'var(--text-secondary)', marginTop: '4px', lineHeight: '1.4' }}>
+            현재 가장 안정적인 이해도와 실력을 보여주고 있습니다.
+          </p>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
+          <span style={{ fontSize: '20px', fontWeight: 900, color: 'var(--color-bullish)', fontFamily: 'var(--font-title)' }}>{maxAcc}</span>
+          <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-bullish)' }}>% 정답률</span>
+        </div>
+      </div>
+
+      {/* 보완 카드 */}
+      <div style={{
+        background: 'rgba(239, 68, 68, 0.03)',
+        border: '1px solid rgba(239, 68, 68, 0.12)',
+        borderRadius: '14px',
+        padding: '14px 16px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        gap: '10px'
+      }}>
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-bearish)' }}>🛠️ 보완 권장</span>
+          </div>
+          <h4 style={{ fontSize: '13px', fontWeight: 800, color: 'var(--text-primary)', wordBreak: 'keep-all' }}>{weakest}</h4>
+          <p style={{ fontSize: '11px', color: 'var(--text-secondary)', marginTop: '4px', lineHeight: '1.4' }}>
+            레이팅 향상을 위해 해당 과목의 집중 학습이 필요합니다.
+          </p>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
+            <span style={{ fontSize: '20px', fontWeight: 900, color: 'var(--color-bearish)', fontFamily: 'var(--font-title)' }}>{minAcc}</span>
+            <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--color-bearish)' }}>% 정답률</span>
+          </div>
+          {onStartDrill && (
+            <button 
+              onClick={() => {
+                if (isLocked) {
+                  alert(`이 과목의 전용 실전 훈련을 진행하려면 최소 ${minXpRequired} XP가 필요합니다. (현재: ${xp} XP)\n\n오늘의 데일리 트레이닝이나 다른 해제된 과목 훈련을 통해 XP를 획득해 보세요!`);
+                } else {
+                  onStartDrill(weakest);
+                }
+              }}
+              style={{
+                width: '100%',
+                background: isLocked ? '#cbd5e1' : 'var(--color-bearish)',
+                color: isLocked ? 'var(--text-muted)' : '#fff',
+                border: isLocked ? '1px solid var(--border-color)' : 'none',
+                borderRadius: '8px',
+                padding: '6px 0',
+                fontSize: '11px',
+                fontWeight: 800,
+                cursor: 'pointer',
+                textAlign: 'center',
+                boxShadow: isLocked ? 'none' : '0 2px 4px rgba(239, 68, 68, 0.15)',
+                transition: 'var(--transition-smooth)'
+              }}
+              onMouseOver={(e) => {
+                if (!isLocked) e.currentTarget.style.filter = 'brightness(0.9)';
+              }}
+              onMouseOut={(e) => {
+                if (!isLocked) e.currentTarget.style.filter = 'none';
+              }}
+            >
+              {isLocked ? `🔒 ${minXpRequired} XP 필요` : '보완 훈련 시작'}
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
 
 export const Dashboard: React.FC<DashboardProps> = ({
   onStartDailyQuiz,
-  xp,
+  onStartDrill,
   streakBroken = false,
   onCloseStreakWarning = () => {},
   isDailyCompletedToday,
-  drillStats,
-  overallRating,
-  completedQuizzes
+  ratingState,
+  completedQuizzes,
+  allQuizzes,
+  xp
 }) => {
-  const hasCompletedFirstSession = completedQuizzes.length > 0 || Object.values(drillStats).some(s => s.attempts > 0);
-  const ratingTier = getEloTier(overallRating);
+  const [statPeriod, setStatPeriod] = useState<StatPeriod>('all');
+  const [reviewingSession, setReviewingSession] = useState<SessionRecord | null>(null);
+
+  const ratingTier = getEloTier(ratingState.overallRating);
+  const hasData = completedQuizzes.length > 0 || Object.values(ratingState.categories).some(s => s.attempts > 0);
+
+  const periodStats = getCategoryStatsForPeriod(ratingState, statPeriod, ALL_CATEGORIES);
+  const sessionHistory = [...(ratingState.sessionHistory || [])].sort((a, b) => b.timestamp - a.timestamp);
+
+  const periodLabels: { key: StatPeriod; label: string }[] = [
+    { key: '1d', label: '1D' },
+    { key: '1w', label: '1W' },
+    { key: '1m', label: '1M' },
+    { key: 'all', label: '전체' }
+  ];
+
+  // If reviewing a session, show the session review component
+  if (reviewingSession) {
+    return (
+      <div style={{ padding: '24px 20px', paddingBottom: '90px' }}>
+        <SessionReview
+          session={reviewingSession}
+          allQuizzes={allQuizzes}
+          onBack={() => setReviewingSession(null)}
+        />
+      </div>
+    );
+  }
 
   return (
-    <div className="dashboard-wrapper" style={{ padding: '24px 20px', paddingBottom: '90px' }}>
+    <div className="dashboard-wrapper" style={{ padding: '24px 20px', paddingBottom: '90px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
       {/* Streak Broken Warning Banner */}
       {streakBroken && (
         <div style={{
-          background: 'rgba(239, 68, 68, 0.15)',
-          border: '1px solid rgba(239, 68, 68, 0.3)',
-          borderRadius: '16px',
+          background: 'rgba(239, 68, 68, 0.08)',
+          border: '1px solid rgba(239, 68, 68, 0.2)',
+          borderRadius: '14px',
           padding: '14px 18px',
-          marginBottom: '20px',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          gap: '12px',
-          animation: 'fadeIn 0.3s ease-out'
+          gap: '12px'
         }}>
-          <span style={{ fontSize: '13px', color: '#f87171', fontWeight: 600, lineHeight: 1.4 }}>
-            📢 최근 학습을 거르셔서 연속 학습 스트릭이 깨졌습니다! 오늘 훈련을 완료해 새로운 스트릭을 시작해 보세요.
+          <span style={{ fontSize: '13px', color: '#ef4444', fontWeight: 600, lineHeight: 1.4 }}>
+            📢 연속 학습 스트릭이 깨졌습니다! 오늘 훈련을 완료해 새로운 스트릭을 시작하세요.
           </span>
           <button 
             onClick={onCloseStreakWarning}
@@ -121,135 +318,256 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
       )}
 
-      {/* Welcome & Daily Workout Card */}
+      {/* Daily Training Card */}
       {isDailyCompletedToday ? (
-        <div className="welcome-card" style={{
-          background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.01) 100%)',
-          border: '1px solid rgba(16, 185, 129, 0.22)',
-          borderRadius: '20px',
-          padding: '24px',
-          marginBottom: '24px',
-          boxShadow: '0 8px 32px rgba(16, 185, 129, 0.03)'
+        <div style={{
+          background: 'var(--bg-surface)',
+          border: '1px solid rgba(16, 185, 129, 0.2)',
+          borderRadius: '18px',
+          padding: '22px',
+          boxShadow: 'var(--shadow-soft)'
         }}>
-          <h2 style={{ color: 'var(--color-bullish)', fontSize: '20px', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Star size={20} fill="var(--color-bullish)" />
+          <h2 style={{ color: 'var(--color-bullish)', fontSize: '18px', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Star size={18} fill="var(--color-bullish)" />
             오늘의 데일리 트레이닝 완료!
           </h2>
-          <p style={{ margin: '10px 0 18px 0', fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
-            오늘의 맞춤형 차트 학습 15문제를 모두 완수하셨습니다. (+30 XP 연속 학습 보너스 획득)
+          <p style={{ margin: '10px 0 16px 0', fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
+            오늘의 맞춤형 차트 학습 15문제를 모두 완수하셨습니다. (+30 XP 보너스 획득)
           </p>
-          <button className="btn-primary" onClick={onStartDailyQuiz} style={{ background: 'var(--color-bullish)', color: '#fff', fontWeight: 700, padding: '12px 20px', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <button className="btn-primary" onClick={onStartDailyQuiz} style={{ 
+            background: 'var(--color-bullish)', 
+            color: '#fff', 
+            fontWeight: 700, 
+            padding: '12px 20px', 
+            borderRadius: '12px', 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '8px',
+            width: '100%',
+            justifyContent: 'center'
+          }}>
             <Play size={16} fill="currentColor" />
             데일리 트레이닝 복습하기 (+5 XP)
           </button>
         </div>
       ) : (
-        <div className="welcome-card" style={{ borderRadius: '20px', padding: '24px', marginBottom: '24px' }}>
-          <h2 style={{ fontSize: '20px', fontWeight: 800 }}>하루 15분, 실전 차트 근육 키우기 💪</h2>
-          <p style={{ margin: '10px 0 18px 0', fontSize: '13.5px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
+        <div style={{
+          background: 'var(--bg-surface)',
+          border: '1px solid var(--border-color)',
+          borderRadius: '18px',
+          padding: '22px',
+          boxShadow: 'var(--shadow-soft)'
+        }}>
+          <h2 style={{ fontSize: '18px', fontWeight: 800 }}>하루 15분, 실전 차트 근육 키우기 💪</h2>
+          <p style={{ margin: '10px 0 16px 0', fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
             실전 차트 데이터로 구성된 15개의 데일리 훈련을 풀고 연속 스트릭 보너스(+30 XP)를 획득해 보세요.
           </p>
-          <button className="btn-primary" onClick={onStartDailyQuiz} style={{ fontWeight: 700, padding: '12px 20px', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <button className="btn-primary" onClick={onStartDailyQuiz} style={{ 
+            fontWeight: 700, 
+            padding: '12px 20px', 
+            borderRadius: '12px', 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '8px',
+            width: '100%',
+            justifyContent: 'center'
+          }}>
             <Play size={16} fill="currentColor" />
             오늘의 데일리 트레이닝 시작 (15문제)
           </button>
         </div>
       )}
 
-      {/* ELO Rating & Skill Radar Section (Unlocked after first session) */}
-      {hasCompletedFirstSession ? (
-        <div className="welcome-card" style={{
-          background: 'linear-gradient(135deg, rgba(90, 82, 229, 0.08) 0%, rgba(90, 82, 229, 0.01) 100%)',
-          border: '1px solid rgba(90, 82, 229, 0.22)',
-          borderRadius: '20px',
-          padding: '24px',
-          boxShadow: '0 8px 32px rgba(90, 82, 229, 0.03)'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '18px', borderBottom: '1px solid var(--border-color)', paddingBottom: '12px' }}>
-            <Trophy size={18} style={{ color: 'var(--color-brand)' }} />
-            <span style={{ fontSize: '14px', fontWeight: 800, color: 'var(--text-primary)' }}>나의 실시간 트레이딩 실력 분석</span>
+      {/* ELO Rating Card */}
+      <div style={{
+        background: 'var(--bg-surface)',
+        border: '1px solid var(--border-color)',
+        borderRadius: '16px',
+        padding: '20px',
+        boxShadow: 'var(--shadow-soft)'
+      }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.02em' }}>
+              트레이더 레이팅
+            </span>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginTop: '6px' }}>
+              <span style={{ fontSize: '32px', fontWeight: 900, color: 'var(--text-primary)', fontFamily: 'var(--font-title)' }}>
+                {ratingState.overallRating}
+              </span>
+              <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-brand)' }}>RP</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px' }}>
+              <span style={{ fontSize: '13px', fontWeight: 800, color: ratingTier.color }}>
+                {ratingTier.badge} {ratingTier.name}
+              </span>
+            </div>
           </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {/* Rating Stats Card */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <div>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--text-secondary)', textTransform: 'uppercase' }}>
-                  트레이더 레이팅 (ELO)
-                </span>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px', marginTop: '6px' }}>
-                  <span style={{ fontSize: '28px', fontWeight: 900, color: 'var(--text-primary)', fontFamily: 'var(--font-title)' }}>
-                    {overallRating}
-                  </span>
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-brand)' }}>RP</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px' }}>
-                  <span style={{ fontSize: '13px', fontWeight: 800, color: ratingTier.color }}>
-                    {ratingTier.badge} {ratingTier.name}
-                  </span>
-                </div>
-              </div>
-
-              <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                <div style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>
-                  완료한 문제 수: <strong style={{ color: 'var(--text-primary)' }}>{completedQuizzes.length}개</strong>
-                </div>
-                <div style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>
-                  누적 경험치: <strong style={{ color: 'var(--color-xp)' }}>{xp} XP</strong>
-                </div>
-              </div>
+          <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <div style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>
+              완료한 문제: <strong style={{ color: 'var(--text-primary)' }}>{completedQuizzes.length}개</strong>
             </div>
-
-            {/* Hexagonal Skill Radar Chart */}
-            <div style={{
-              background: 'var(--bg-muted)',
-              borderRadius: '16px',
-              padding: '20px 12px',
-              border: '1px solid var(--border-color)',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.01)'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
-                <TrendingUp size={13} style={{ color: 'var(--color-brand)' }} />
-                <span style={{ fontSize: '11.5px', fontWeight: 700, color: 'var(--text-secondary)' }}>스킬 부문별 이해도 (숙련도 점수 기준)</span>
-              </div>
-              <SkillRadarChart drillStats={drillStats} />
-            </div>
-
-            {/* Dynamic Analysis Feedback Callout */}
-            <div style={{
-              background: 'rgba(90, 82, 229, 0.04)',
-              borderLeft: '4px solid var(--color-brand)',
-              borderRadius: '8px',
-              padding: '12px 14px',
-              fontSize: '12px',
-              color: 'var(--text-secondary)',
-              lineHeight: '1.6'
-            }}>
-              {getSkillAnalysisFeedback(drillStats)}
+            <div style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>
+              총 세션: <strong style={{ color: 'var(--text-primary)' }}>{sessionHistory.length}회</strong>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* 8-Axis Skill Radar Chart with Period Toggle */}
+      {hasData ? (
+        <div style={{
+          background: 'var(--bg-surface)',
+          border: '1px solid var(--border-color)',
+          borderRadius: '16px',
+          padding: '20px',
+          boxShadow: 'var(--shadow-soft)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '14px'
+        }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <TrendingUp size={14} style={{ color: 'var(--color-brand)' }} />
+              <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)' }}>
+                스킬 레이더
+              </span>
+            </div>
+
+            {/* Period Toggle */}
+            <div className="period-toggle-group">
+              {periodLabels.map(({ key, label }) => (
+                <button
+                  key={key}
+                  className={`period-toggle-btn ${statPeriod === key ? 'active' : ''}`}
+                  onClick={() => setStatPeriod(key)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div style={{
+            background: 'var(--bg-muted)',
+            borderRadius: '12px',
+            padding: '16px 8px',
+            border: '1px solid var(--border-color)'
+          }}>
+            <SkillRadarChart drillStats={periodStats} periodLabel={periodLabels.find(p => p.key === statPeriod)?.label} />
+          </div>
+
+          {/* Analysis Feedback Cards */}
+          <div style={{ marginTop: '4px' }}>
+            {renderSkillAnalysisFeedback(periodStats, xp, onStartDrill)}
+          </div>
+        </div>
       ) : (
-        /* Empty / Locked Placeholder */
-        <div className="welcome-card" style={{
-          background: 'rgba(255, 255, 255, 0.01)',
+        <div style={{
+          background: 'var(--bg-surface)',
           border: '1px dashed var(--border-color)',
-          borderRadius: '20px',
+          borderRadius: '16px',
           padding: '30px 24px',
           textAlign: 'center'
         }}>
           <span style={{ fontSize: '28px', display: 'block', marginBottom: '12px' }}>🔒</span>
           <h3 style={{ fontSize: '15px', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '8px' }}>
-            트레이딩 실력 분석 잠금 해제 대기 중
+            실력 분석 잠금 해제 대기 중
           </h3>
           <p style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '280px', margin: '0 auto' }}>
-            첫 세션(데일리 또는 실전 훈련)을 완료하면 회원님의 ELO 실력 레이팅과 6대 지표 스킬 육각형 차트 분석이 여기에 열립니다.
+            첫 세션을 완료하면 ELO 레이팅과 8축 스킬 레이더 분석이 여기에 열립니다.
           </p>
         </div>
       )}
+
+      {/* Session History */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <Calendar size={14} style={{ color: 'var(--color-brand)' }} />
+          <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)' }}>
+            세션 히스토리
+          </span>
+          <span style={{ fontSize: '11px', color: 'var(--text-muted)', marginLeft: 'auto' }}>
+            {sessionHistory.length}개의 기록
+          </span>
+        </div>
+
+        {sessionHistory.length === 0 ? (
+          <div style={{
+            background: 'var(--bg-surface)',
+            border: '1px dashed var(--border-color)',
+            borderRadius: '14px',
+            padding: '24px',
+            textAlign: 'center'
+          }}>
+            <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+              아직 완료된 세션이 없습니다.
+            </p>
+          </div>
+        ) : (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            {sessionHistory.slice(0, 20).map((session, idx) => {
+              const diff = session.ratingAfter - session.ratingBefore;
+              const diffStr = diff >= 0 ? `+${diff}` : `${diff}`;
+              const accuracy = session.totalCount > 0 
+                ? Math.round((session.correctCount / session.totalCount) * 100) 
+                : 0;
+
+              return (
+                <button
+                  key={idx}
+                  className="session-card"
+                  onClick={() => setReviewingSession(session)}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: 1, minWidth: 0 }}>
+                    <div style={{
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '10px',
+                      background: session.type === 'daily' 
+                        ? 'rgba(90, 82, 229, 0.08)' 
+                        : 'rgba(16, 185, 129, 0.08)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0
+                    }}>
+                      {session.type === 'daily' 
+                        ? <Trophy size={16} style={{ color: 'var(--color-brand)' }} />
+                        : <TrendingUp size={16} style={{ color: 'var(--color-bullish)' }} />
+                      }
+                    </div>
+                    <div style={{ minWidth: 0 }}>
+                      <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)' }}>
+                        {session.type === 'daily' ? '데일리 트레이닝' : '실전 훈련'}
+                      </div>
+                      <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px' }}>
+                        {session.date} · 정답률 {accuracy}% ({session.correctCount}/{session.totalCount})
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    gap: '4px',
+                    fontSize: '14px',
+                    fontWeight: 800,
+                    color: diff >= 0 ? 'var(--color-bullish)' : 'var(--color-bearish)',
+                    flexShrink: 0
+                  }}>
+                    {diff >= 0 
+                      ? <ArrowUpRight size={14} /> 
+                      : <ArrowDownRight size={14} />
+                    }
+                    {diffStr} RP
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
