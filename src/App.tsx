@@ -142,9 +142,97 @@ export const App: React.FC = () => {
   const [activeQuizIndex, setActiveQuizIndex] = useState<number>(0);
   const [userId, setUserId] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [isInitialized, setIsInitialized] = useState<boolean>(false);
+  const [hasAutoStartedDaily, setHasAutoStartedDaily] = useState<boolean>(false);
+  const [showDailyPrompt, setShowDailyPrompt] = useState<boolean>(false);
 
   // Fetch quizzes and profiles from Supabase if configured
   useEffect(() => {
+    let authListenerSubscription: any = null;
+
+    async function syncUserProfile(user: any) {
+      setUserId(user.id);
+      setUserEmail(user.email || 'Authenticated User');
+      try {
+        const { data: profile, error } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', user.id)
+          .single();
+        
+        if (!error && profile) {
+          const profileStreak = profile.streak;
+          const profileXp = profile.xp;
+          const profileCompleted = profile.completed_quizzes || [];
+          const profileActiveDate = profile.last_active_date || null;
+          const profileDailyCompletedDate = profile.last_daily_completed_date || null;
+          const profileDrillStats = profile.drill_stats || {};
+          const parsedRating = parseSavedRatingState(
+            typeof profileDrillStats === 'string' ? profileDrillStats : JSON.stringify(profileDrillStats)
+          );
+
+          // Compare dates to see if streak is broken
+          const today = getLocalDateString();
+          let finalStreak = profileStreak;
+          if (profileActiveDate && isOlderThanYesterday(profileActiveDate, today)) {
+            finalStreak = 0;
+            setStreakBroken(true);
+            // Sync broken streak to server
+            try {
+              await supabase.from('profiles').upsert({
+                id: user.id,
+                streak: 0,
+                xp: profileXp,
+                trading_level: getTradingTier(profileXp).level,
+                completed_quizzes: profileCompleted,
+                last_active_date: profileActiveDate,
+                last_daily_completed_date: profileDailyCompletedDate,
+                drill_stats: parsedRating,
+                updated_at: new Date().toISOString()
+              });
+            } catch (err) {
+              console.error('ChartMon: Resetting broken streak on Supabase failed.', err);
+            }
+          }
+
+          setStreak(finalStreak);
+          setXp(profileXp);
+          setCompletedQuizzes(profileCompleted);
+          setLastActiveDate(profileActiveDate);
+          setLastDailyCompletedDate(profileDailyCompletedDate);
+          setRatingState(parsedRating);
+
+          localStorage.setItem('chartmon_streak', String(finalStreak));
+          localStorage.setItem('chartmon_xp', String(profileXp));
+          localStorage.setItem('chartmon_completed', JSON.stringify(profileCompleted));
+          localStorage.setItem('chartmon_drill_stats', JSON.stringify(parsedRating));
+          if (profileActiveDate) localStorage.setItem('chartmon_last_active', profileActiveDate);
+          if (profileDailyCompletedDate) localStorage.setItem('chartmon_last_daily_completed', profileDailyCompletedDate);
+        } else {
+          // If profile does not exist, initialize it with current local/default states
+          const localStreak = Number(localStorage.getItem('chartmon_streak')) || 0;
+          const localXp = Number(localStorage.getItem('chartmon_xp')) || 0;
+          const localCompleted = JSON.parse(localStorage.getItem('chartmon_completed') || '[]');
+          const localDrillStatsStr = localStorage.getItem('chartmon_drill_stats');
+          const localDrillStats = parseSavedRatingState(localDrillStatsStr);
+
+          await supabase.from('profiles').upsert({
+            id: user.id,
+            streak: localStreak,
+            xp: localXp,
+            trading_level: getTradingTier(localXp).level,
+            completed_quizzes: localCompleted,
+            last_active_date: localStorage.getItem('chartmon_last_active'),
+            last_daily_completed_date: localStorage.getItem('chartmon_last_daily_completed'),
+            drill_stats: localDrillStats,
+            updated_at: new Date().toISOString()
+          });
+        }
+      } catch (e) {
+        console.error('ChartMon: Sync user profile error.', e);
+      }
+    }
+
     async function loadInitialData() {
       // Local helper to check local streak break for guests
       const checkLocalStreak = () => {
@@ -211,67 +299,10 @@ export const App: React.FC = () => {
 
         // 2. Load authenticated user profile
         try {
-          const { data: { user } } = await supabase.auth.getUser();
+          const { data: { session } } = await supabase.auth.getSession();
+          const user = session?.user || null;
           if (user) {
-            setUserId(user.id);
-            setUserEmail(user.email || 'Authenticated User');
-            const { data: profile, error } = await supabase
-              .from('profiles')
-              .select('*')
-              .eq('id', user.id)
-              .single();
-            
-            if (!error && profile) {
-              const profileStreak = profile.streak;
-              const profileXp = profile.xp;
-              const profileCompleted = profile.completed_quizzes || [];
-              const profileActiveDate = profile.last_active_date || null;
-              const profileDailyCompletedDate = profile.last_daily_completed_date || null;
-              const profileDrillStats = profile.drill_stats || {};
-              const parsedRating = parseSavedRatingState(
-                typeof profileDrillStats === 'string' ? profileDrillStats : JSON.stringify(profileDrillStats)
-              );
-
-              // Compare dates to see if streak is broken
-              const today = getLocalDateString();
-              let finalStreak = profileStreak;
-              if (profileActiveDate && isOlderThanYesterday(profileActiveDate, today)) {
-                finalStreak = 0;
-                setStreakBroken(true);
-                // Sync broken streak to server
-                try {
-                  await supabase.from('profiles').upsert({
-                    id: user.id,
-                    streak: 0,
-                    xp: profileXp,
-                    trading_level: getTradingTier(profileXp).level,
-                    completed_quizzes: profileCompleted,
-                    last_active_date: profileActiveDate,
-                    last_daily_completed_date: profileDailyCompletedDate,
-                    drill_stats: parsedRating,
-                    updated_at: new Date().toISOString()
-                  });
-                } catch (err) {
-                  console.error('ChartMon: Resetting broken streak on Supabase failed.', err);
-                }
-              }
-
-              setStreak(finalStreak);
-              setXp(profileXp);
-              setCompletedQuizzes(profileCompleted);
-              setLastActiveDate(profileActiveDate);
-              setLastDailyCompletedDate(profileDailyCompletedDate);
-              setRatingState(parsedRating);
-
-              localStorage.setItem('chartmon_streak', String(finalStreak));
-              localStorage.setItem('chartmon_xp', String(profileXp));
-              localStorage.setItem('chartmon_completed', JSON.stringify(profileCompleted));
-              localStorage.setItem('chartmon_drill_stats', JSON.stringify(parsedRating));
-              if (profileActiveDate) localStorage.setItem('chartmon_last_active', profileActiveDate);
-              if (profileDailyCompletedDate) localStorage.setItem('chartmon_last_daily_completed', profileDailyCompletedDate);
-            } else {
-              checkLocalStreak();
-            }
+            await syncUserProfile(user);
           } else {
             checkLocalStreak();
           }
@@ -282,9 +313,43 @@ export const App: React.FC = () => {
       } else {
         checkLocalStreak();
       }
+      setIsInitialized(true);
+    }
+
+    // Auth listener setup
+    if (isSupabaseConfigured) {
+      const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+        if (event === 'SIGNED_IN' && session?.user) {
+          await syncUserProfile(session.user);
+        } else if (event === 'SIGNED_OUT') {
+          setUserId(null);
+          setUserEmail(null);
+          // Reset stats to guest defaults on sign out
+          setStreak(0);
+          setXp(0);
+          setCompletedQuizzes([]);
+          setLastActiveDate(null);
+          setLastDailyCompletedDate(null);
+          setRatingState(createDefaultRatingState(ALL_CATEGORIES));
+          
+          localStorage.removeItem('chartmon_streak');
+          localStorage.removeItem('chartmon_xp');
+          localStorage.removeItem('chartmon_completed');
+          localStorage.removeItem('chartmon_drill_stats');
+          localStorage.removeItem('chartmon_last_active');
+          localStorage.removeItem('chartmon_last_daily_completed');
+        }
+      });
+      authListenerSubscription = subscription;
     }
 
     loadInitialData();
+
+    return () => {
+      if (authListenerSubscription) {
+        authListenerSubscription.unsubscribe();
+      }
+    };
   }, []);
 
   // Sync state changes with LocalStorage and Supabase (upsert)
@@ -338,6 +403,52 @@ export const App: React.FC = () => {
     }
   };
 
+  const handleGoogleLogin = async () => {
+    if (!isSupabaseConfigured) return;
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: window.location.origin + window.location.pathname
+        }
+      });
+      if (error) {
+        alert(`구글 로그인 시도 실패: ${error.message}`);
+      }
+    } catch (e: any) {
+      alert(`오류가 발생했습니다: ${e.message || e}`);
+    }
+  };
+
+  const handleLogout = async () => {
+    if (isSupabaseConfigured) {
+      try {
+        await supabase.auth.signOut();
+      } catch (e) {
+        console.error('Logout error:', e);
+      }
+    }
+  };
+
+  const handleDeleteAccount = async () => {
+    if (!isSupabaseConfigured || !userId) return;
+    try {
+      const { error } = await supabase
+        .from('profiles')
+        .delete()
+        .eq('id', userId);
+      
+      if (error) {
+        throw error;
+      }
+      
+      await supabase.auth.signOut();
+      alert('계정이 성공적으로 삭제되었습니다.');
+    } catch (e: any) {
+      alert(`계정 삭제 처리 중 오류가 발생했습니다: ${e.message}`);
+    }
+  };
+
   const startDailyTraining = () => {
     // Select 15 quizzes: uncompleted first, then fill with completed (all shuffled)
     const uncompleted = quizzesList.filter(q => !completedQuizzes.includes(q.id));
@@ -372,6 +483,17 @@ export const App: React.FC = () => {
     
     setCurrentView('quiz');
   };
+
+  // Auto-start daily training if not completed today on initial load
+  useEffect(() => {
+    if (isInitialized && !hasAutoStartedDaily) {
+      const today = getLocalDateString();
+      if (lastDailyCompletedDate !== today) {
+        setShowDailyPrompt(true);
+      }
+      setHasAutoStartedDaily(true);
+    }
+  }, [isInitialized, lastDailyCompletedDate, hasAutoStartedDaily]);
 
   const startDrill = (categoryOrFile: string) => {
     const SKILL_TO_THEORY_MAP: Record<string, string> = {
@@ -591,7 +713,90 @@ export const App: React.FC = () => {
     }
   };
 
-  const currentTier = getTradingTier(xp);
+
+  if (!isInitialized) {
+    return (
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        background: '#0f172a',
+        color: '#fff',
+        fontFamily: 'var(--font-main)'
+      }}>
+        <div style={{
+          fontSize: '32px',
+          marginBottom: '16px',
+          animation: 'spin 1.5s linear infinite'
+        }}>🔄</div>
+        <p style={{ fontSize: '14px', color: '#94a3b8' }}>차트몬 학습 데이터 불러오는 중...</p>
+      </div>
+    );
+  }
+
+  if (isSupabaseConfigured && !userId) {
+    return (
+      <div className="welcome-screen">
+        <div className="welcome-logo-container">
+          <div className="welcome-logo-icon">
+            <Award size={40} color="#fff" />
+          </div>
+          <h2 className="welcome-title">ChartMon</h2>
+          <p className="welcome-subtitle">하루 15분 차트 트레이딩 실전 훈련</p>
+        </div>
+
+        <div className="welcome-card">
+          <div className="welcome-feature-list">
+            <div className="welcome-feature-item">
+              <div className="welcome-feature-icon">
+                <Play size={16} fill="currentColor" />
+              </div>
+              <div>
+                <div className="welcome-feature-title">실제 차트 데이터 기반 퀴즈</div>
+                <div className="welcome-feature-desc">과거 실제 금융 차트를 분석하며 올바른 매매 결정을 내리는 훈련을 합니다.</div>
+              </div>
+            </div>
+
+            <div className="welcome-feature-item">
+              <div className="welcome-feature-icon">
+                <Trophy size={16} />
+              </div>
+              <div>
+                <div className="welcome-feature-title">트레이더 ELO 레이팅 시스템</div>
+                <div className="welcome-feature-desc">문제 난이도와 정답률을 바탕으로 나의 실력을 객관적인 레이팅(RP)으로 측정합니다.</div>
+              </div>
+            </div>
+
+            <div className="welcome-feature-item">
+              <div className="welcome-feature-icon">
+                <Flame size={16} fill="currentColor" />
+              </div>
+              <div>
+                <div className="welcome-feature-title">매일 새로운 데일리 세션</div>
+                <div className="welcome-feature-desc">하루 한 번, 꾸준한 차트 읽기 연습으로 스트릭을 유지하고 경험치를 쌓아 등급을 올리세요.</div>
+              </div>
+            </div>
+          </div>
+
+          <button className="google-login-btn" onClick={handleGoogleLogin}>
+            <svg className="google-icon" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.69c-.29 1.5-.1.8-2.6 2.4l3.1 2.4c1.8-1.66 2.9-4.1 2.9-7.22z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.97-1.08 7.96-2.91l-3.1-2.4c-.86.58-1.97.92-3.26.92-2.5 0-4.63-1.69-5.38-3.96l-3.2 2.48C7.02 22.1 9.3 24 12 24z"/>
+              <path fill="#FBBC05" d="M6.62 14.05c-.2-.58-.3-1.2-.3-1.84s.1-1.26.3-1.84L3.42 7.89C2.52 9.7 2 11.77 2 13.92s.52 4.22 1.42 6.03l3.2-2.48z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.4-3.4C17.96 1.19 15.24 0 12 0 9.3 0 7.02 1.9 5.02 4.88l3.2 2.48c.75-2.27 2.88-3.96 5.38-3.96z"/>
+            </svg>
+            Google 계정으로 시작하기
+          </button>
+        </div>
+
+        <div className="welcome-footer">
+          계속 진행하면 서비스 이용약관 및 개인정보 처리방침에 동의하게 됩니다.
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="app-container">
@@ -602,9 +807,6 @@ export const App: React.FC = () => {
             <h1>ChartMon</h1>
           </div>
           <div className="stats-bar">
-            <div className="stat-item tier" title={`${currentTier.name}: ${currentTier.description}`} style={{ border: '1px solid rgba(59, 130, 246, 0.25)', background: 'rgba(59, 130, 246, 0.05)', color: 'var(--color-brand)' }}>
-              <span>{currentTier.badge} {currentTier.name.split(' ')[0]}</span>
-            </div>
             <div className="stat-item streak" title="연속 활성 일수">
               <Flame size={16} fill="currentColor" />
               <span>{streak}일</span>
@@ -657,7 +859,12 @@ export const App: React.FC = () => {
         )}
 
         {currentView === 'settings' && (
-          <SettingsTab userId={userId} userEmail={userEmail} />
+          <SettingsTab 
+            userId={userId} 
+            userEmail={userEmail} 
+            onLogout={handleLogout}
+            onDeleteAccount={handleDeleteAccount}
+          />
         )}
       </main>
 
@@ -686,6 +893,40 @@ export const App: React.FC = () => {
             <span>설정</span>
           </button>
         </nav>
+      )}
+
+      {showDailyPrompt && (
+        <div className="app-modal-overlay">
+          <div className="app-modal-card">
+            <div className="app-modal-icon-wrap">
+              <Flame size={32} fill="currentColor" />
+            </div>
+            <div>
+              <h3 className="app-modal-title">오늘의 훈련 시작</h3>
+              <p className="app-modal-desc">
+                새로운 하루가 시작되었습니다!<br />
+                오늘의 데일리 트레이닝 세션(15문제)을 지금 바로 시작하시겠습니까?
+              </p>
+            </div>
+            <div className="app-modal-actions">
+              <button 
+                className="app-modal-btn-primary" 
+                onClick={() => {
+                  setShowDailyPrompt(false);
+                  startDailyTraining();
+                }}
+              >
+                지금 시작하기
+              </button>
+              <button 
+                className="app-modal-btn-secondary" 
+                onClick={() => setShowDailyPrompt(false)}
+              >
+                나중에 하기
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

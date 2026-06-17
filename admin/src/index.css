@@ -705,3 +705,60 @@ textarea.form-control {
   padding: 40px 0;
   text-align: center;
 }
+
+/* Google Login Button for Admin */
+.google-login-btn-admin {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #0b0d12;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-smooth);
+}
+
+.google-login-btn-admin:hover {
+  background-color: #f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.google-login-btn-admin:active {
+  transform: translateY(0);
+}
+
+.admin-login-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 8px 0;
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.admin-login-divider::before,
+.admin-login-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-login-divider:not(:empty)::before {
+  margin-right: .5em;
+}
+
+.admin-login-divider:not(:empty)::after {
+  margin-left: .5em;
+}
+

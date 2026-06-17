@@ -237,8 +237,10 @@ export const App: React.FC = () => {
 
           if (!error && adminRecord) {
             setIsAuthenticated(true);
+            setAuthError('');
           } else {
             // Not admin
+            setAuthError('관리자 권한이 없는 계정입니다. (등록된 관리자 ID가 아님)');
             await supabase.auth.signOut();
             setIsAuthenticated(false);
           }
@@ -264,6 +266,31 @@ export const App: React.FC = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
+
+  // Handle Google Login
+  const handleGoogleLogin = async () => {
+    if (!isSupabaseConfigured) {
+      setAuthError('Supabase가 설정되지 않았습니다.');
+      return;
+    }
+    setCheckingAuth(true);
+    setAuthError('');
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: window.location.origin + window.location.pathname
+        }
+      });
+      if (error) {
+        setAuthError(`구글 로그인 실패: ${error.message}`);
+        setCheckingAuth(false);
+      }
+    } catch (e: any) {
+      setAuthError(`오류가 발생했습니다: ${e.message || e}`);
+      setCheckingAuth(false);
+    }
+  };
 
   // Handle Login
   const handleLogin = async (e: React.FormEvent) => {
@@ -507,7 +534,7 @@ export const App: React.FC = () => {
               placeholder="admin@chartmon.com"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              required
+              required={!authError} // Make it not strictly required if only doing Google login
               autoFocus
             />
           </div>
@@ -520,11 +547,28 @@ export const App: React.FC = () => {
               placeholder="••••••••"
               value={password}
               onChange={e => setPassword(e.target.value)}
-              required
+              required={!authError}
             />
             {authError && <span className="error-text" style={{ display: 'block', marginTop: '8px', color: 'var(--color-error)' }}>⚠️ {authError}</span>}
           </div>
           <button type="submit" className="btn btn-brand" style={{ width: '100%' }}>접속 인증하기</button>
+          
+          <div className="admin-login-divider">또는</div>
+          
+          <button 
+            type="button" 
+            className="google-login-btn-admin" 
+            onClick={handleGoogleLogin}
+            style={{ width: '100%' }}
+          >
+            <svg className="google-icon" viewBox="0 0 24 24" style={{ width: '18px', height: '18px' }}>
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.69c-.29 1.5-.1.8-2.6 2.4l3.1 2.4c1.8-1.66 2.9-4.1 2.9-7.22z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.97-1.08 7.96-2.91l-3.1-2.4c-.86.58-1.97.92-3.26.92-2.5 0-4.63-1.69-5.38-3.96l-3.2 2.48C7.02 22.1 9.3 24 12 24z"/>
+              <path fill="#FBBC05" d="M6.62 14.05c-.2-.58-.3-1.2-.3-1.84s.1-1.26.3-1.84L3.42 7.89C2.52 9.7 2 11.77 2 13.92s.52 4.22 1.42 6.03l3.2-2.48z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.4-3.4C17.96 1.19 15.24 0 12 0 9.3 0 7.02 1.9 5.02 4.88l3.2 2.48c.75-2.27 2.88-3.96 5.38-3.96z"/>
+            </svg>
+            Google 계정으로 로그인
+          </button>
         </form>
       </div>
     );

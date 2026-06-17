@@ -4,9 +4,11 @@ import { Settings, Bell, BellOff, FileText, Shield, LogOut, Trash2, Info, Smartp
 interface SettingsTabProps {
   userId: string | null;
   userEmail: string | null;
+  onLogout?: () => void;
+  onDeleteAccount?: () => void;
 }
 
-export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail }) => {
+export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onLogout, onDeleteAccount }) => {
   const [notificationsEnabled, setNotificationsEnabled] = useState<boolean>(() => {
     return localStorage.getItem('chartmon_notifications_enabled') !== 'false';
   });
@@ -19,14 +21,22 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail }) =
 
   const handleLogout = () => {
     if (window.confirm('정말로 로그아웃하시겠습니까? 기기에 저장된 학습 데이터는 유지됩니다.')) {
-      alert('로그아웃 기능은 구글 로그인 연동 후 활성화됩니다.');
+      if (onLogout) {
+        onLogout();
+      } else {
+        alert('로그아웃 기능은 구글 로그인 연동 후 활성화됩니다.');
+      }
     }
   };
 
   const handleDeleteAccount = () => {
     if (window.confirm('⚠️ 정말로 계정을 삭제하시겠습니까?\n\n삭제 시 모든 학습 기록, 레이팅, 세션 히스토리가 영구적으로 삭제됩니다. 이 작업은 되돌릴 수 없습니다.')) {
       if (window.confirm('최종 확인: 계정 삭제를 진행합니다. 계속하시겠습니까?')) {
-        alert('계정 삭제 기능은 구글 로그인 연동 후 활성화됩니다.');
+        if (onDeleteAccount) {
+          onDeleteAccount();
+        } else {
+          alert('계정 삭제 기능은 구글 로그인 연동 후 활성화됩니다.');
+        }
       }
     }
   };
@@ -55,7 +65,7 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail }) =
               <Smartphone size={18} style={{ color: 'var(--color-brand)', flexShrink: 0 }} />
               <div>
                 <div style={{ fontSize: '14px', fontWeight: 700 }}>
-                  {userId ? '클라우드 연동 완료' : '게스트 모드'}
+                  {userId ? '구글 로그인 완료' : '게스트 모드'}
                 </div>
                 <div style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '2px' }}>
                   {userId ? userEmail : '로그인 없이 학습 중입니다'}
@@ -65,7 +75,7 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail }) =
             {!userId && (
               <button 
                 className="settings-connect-btn"
-                onClick={() => alert('구글 계정 연동 기능을 준비 중입니다.')}
+                onClick={() => alert('Supabase 연동이 설정되지 않아 게스트 모드로만 이용 가능합니다.')}
               >
                 연동하기
               </button>
