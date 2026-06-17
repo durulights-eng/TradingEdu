@@ -15,7 +15,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 101,
             "low": 97,
             "close": 100,
-            "volume": 96
+            "volume": 118
         },
         {
             "time": "Day 2",
@@ -23,7 +23,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 102,
             "low": 99,
             "close": 101,
-            "volume": 115
+            "volume": 88
         },
         {
             "time": "Day 3",
@@ -31,7 +31,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 110,
             "low": 100,
             "close": 108,
-            "volume": 20
+            "volume": 29
         },
         {
             "time": "Day 4",
@@ -39,7 +39,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 109,
             "low": 95,
             "close": 96,
-            "volume": 27
+            "volume": 22
         }
     ],
     drawings: [
@@ -61,9 +61,9 @@ export const quizzes_volume_liquidity: QuizItem[] = [
     ],
     options: [
         "진짜 상승 돌파 (True Breakout)",
-        "불 트랩 (Bull Trap / 가짜 돌파) - 추격 매수자들을 물리는 하락 함정",
-        "베어 트랩 (Bear Trap / 가짜 하방)",
-        "골든 크로스 (Golden Cross)"
+        "불 트랩 (Bull Trap) - 매수자 청산 유도 가짜 돌파",
+        "베어 트랩 (Bear Trap) - 매도자 청산 유도 가짜 하방",
+        "골든 크로스 (Golden Cross) - 이평선 돌파"
     ],
     correctIndex: 1,
     explanation: "저항선을 일시적으로 뚫었다가 대량 매도세와 함께 직후 캔들에서 하방으로 원상복귀하는 현상을 '불 트랩(Bull Trap/가짜 돌파)'이라고 합니다. 돌파 후 리테스트를 기다리지 않고 급히 추격 매수했던 투자자들이 고점에 물리는 대표적 함정입니다."
@@ -82,7 +82,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 122,
             "low": 118,
             "close": 119,
-            "volume": 102
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -90,7 +90,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 120,
             "low": 110,
             "close": 111,
-            "volume": 94
+            "volume": 108
         },
         {
             "time": "Day 3",
@@ -98,7 +98,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 123,
             "low": 110,
             "close": 122,
-            "volume": 114
+            "volume": 91
         }
     ],
     drawings: [
@@ -119,10 +119,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩 (Bull Trap)",
-        "베어 트랩 (Bear Trap / 가짜 하락 이탈) - 매도자 청산 유도 후 급등 함정",
-        "리테스트 실패",
-        "추세 추종 돌파"
+        "불 트랩 (Bull Trap) - 가짜 상방 돌파",
+        "베어 트랩 (Bear Trap) - 가짜 하방 이탈",
+        "리테스트 실패 - 지지선 붕괴",
+        "추세 추종 돌파 - 하방 랠리 가속"
     ],
     correctIndex: 1,
     explanation: "지지선을 아래로 뚫고 내려가 하락세가 지속될 것처럼 유도한 뒤, 매물을 털어내고 강력하게 다시 반등해 올리는 현상을 '베어 트랩(Bear Trap)'이라고 합니다. 하락 돌파로 생각하고 공매도를 치거나 손절했던 사람들의 손실을 강제하며 가격이 급등하게 만듭니다."
@@ -141,7 +141,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 128,
             "low": 119,
             "close": 127,
-            "volume": 94
+            "volume": 107
         },
         {
             "time": "Day 2",
@@ -149,7 +149,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 138,
             "low": 126,
             "close": 136,
-            "volume": 110
+            "volume": 103
         },
         {
             "time": "Day 3",
@@ -157,14 +157,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 134,
             "low": 130,
             "close": 131,
-            "volume": 119
+            "volume": 97
         }
     ],
     options: [
-        "상승 모멘텀이 일시적으로 정체되고 매도 공급이 잉태된 신호이므로, 보유 물량의 50% 정도를 익절하여 이익을 확정하고 다음 날 돌파/이탈 방향을 관망한다.",
-        "대세 상승의 일시 조정이므로 추가 대출을 통해 더 높은 비중으로 추격 매수한다.",
-        "즉시 숏(공매도) 20배 레버리지로 베팅하고 자리를 비운다.",
-        "어떠한 부분 매도도 거부하고 전량 영구 홀딩을 고집한다."
+        "상승 둔화 조짐에 따른 보유 물량 50% 분할 익절",
+        "추세 일시 조정으로 간주하여 비중 확대 추가 매수",
+        "추세 종결 판단에 따른 고배율 숏 포지션 즉시 진입",
+        "이익 실현 없이 전량 장기 보유 전략 유지"
     ],
     correctIndex: 0,
     explanation: "하락 잉태형(Bearish Harami)은 이전의 강한 상승 추세 동력이 감속하기 시작했으며, 매도 압력이 힘을 기르고 있음을 암시하는 변곡 캔들입니다. 따라서 단기 스윙 트레이더는 물량의 일부(50%)를 분할 익절하여 리스크를 낮추고, 다음 캔들에서 이전 양봉 저점을 깨뜨리는 하락 하방 이탈이 추가되는지 지켜보는 것이 정석입니다."
@@ -183,7 +183,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 118,
             "low": 111,
             "close": 117,
-            "volume": 118
+            "volume": 98
         },
         {
             "time": "Day 2",
@@ -191,7 +191,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 122,
             "low": 116,
             "close": 121,
-            "volume": 377
+            "volume": 353
         },
         {
             "time": "Day 3",
@@ -199,7 +199,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 122,
             "low": 115,
             "close": 116,
-            "volume": 391
+            "volume": 408
         }
     ],
     drawings: [
@@ -216,10 +216,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩(Bull Trap / 가짜 돌파) 함정에 걸려 고점에 물린 형국이 확정되었으므로, 추가 하락 피해를 예방하기 위해 즉각 전량 시장가 매도하여 탈출(손절)한다.",
-        "120달러의 지지력을 신뢰하며 영구 존버 전략으로 들어간다.",
-        "평단가 부근이므로 대출을 더 내어 2차 매수를 더 낮은 단가에 물탄다.",
-        "상황을 무시하고 다른 종목을 똑같이 추격 매수한다."
+        "불 트랩(Bull Trap) 확인 후 추가 하락 방지 즉시 손절",
+        "저항선 부근 매수세 복귀를 기대하며 전량 홀딩",
+        "평단가 관리 차원에서 추가 물타기 매수 집행",
+        "상황을 판단하기 위해 시장가로 추가 분할 진입"
     ],
     correctIndex: 0,
     explanation: "거래량 없는 돌파 직후에 거래량 실린 강한 음봉이 기존 돌파선(120달러) 아래로 재진입하여 마감하는 현상은 전형적인 불 트랩(Bull Trap/가짜 돌파) 함정입니다. 돌파 당시 샀던 매수자들의 패닉 셀이 출현하며 하락 가속화가 나오기 쉬우므로 즉시 손절하여 물량을 털어내야 생존할 수 있습니다."
@@ -238,7 +238,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 102,
             "low": 90,
             "close": 92,
-            "volume": 114
+            "volume": 104
         },
         {
             "time": "Day 2",
@@ -246,7 +246,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 94,
             "low": 82,
             "close": 83,
-            "volume": 107
+            "volume": 122
         },
         {
             "time": "Day 3",
@@ -254,7 +254,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 85,
             "low": 75,
             "close": 76,
-            "volume": 106
+            "volume": 99
         },
         {
             "time": "Day 4",
@@ -262,7 +262,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 90,
             "low": 75,
             "close": 89,
-            "volume": 113
+            "volume": 131
         }
     ],
     drawings: [
@@ -291,10 +291,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "하락 채널을 강하게 상방으로 뚫고 올라갔다는 것은 기존 하락 관성이 파괴되고 상승 추세 전환(Bullish Reversal)이 선언되었음을 뜻하므로, 원칙에 의거해 즉시 숏 포지션을 전량 손절(또는 익절)하고 대피하거나 롱 전환을 모색한다.",
-        "버티면 다시 채널 하방으로 들어올 것이므로 무제한 숏 추가 물타기를 집행한다.",
-        "영원히 포지션을 유지한 채 계좌가 마이너스로 깎여나가는 것을 바라본다.",
-        "증거금을 출금하고 거래소 앱을 삭제한다."
+        "상단 돌파 확인 즉시 숏 전량 손절 및 대피",
+        "채널 재진입 기대로 숏 포지션 추가 물타기",
+        "손절 없이 유지하면서 포지션 본전 도달 대기",
+        "포지션 유지 후 증거금을 출금하여 강제 횡보"
     ],
     correctIndex: 0,
     explanation: "하락 평행 채널의 상단 저항선 상향 돌파(Breakout)는 기존 하락 트렌드의 사멸과 매수세 지배령 복귀를 뜻합니다. 지표와 거래량이 동반된 돌파 확인 시에는 숏 포지션을 지체 없이 기계적으로 칼손절하여 자산을 보호하는 것이 원칙입니다."
@@ -313,7 +313,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 105,
             "low": 99,
             "close": 104,
-            "volume": 108
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -321,7 +321,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 109,
             "low": 103,
             "close": 108,
-            "volume": 89
+            "volume": 118
         },
         {
             "time": "Day 3",
@@ -329,7 +329,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 110,
             "low": 107,
             "close": 108,
-            "volume": 91
+            "volume": 102
         }
     ],
     drawings: [
@@ -350,10 +350,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "매수 에너지가 매우 강하므로 즉시 풀매수로 돌파 매매를 실행한다.",
-        "저항선 부근에서 매수 물량을 압도하는 세력의 강한 분산(Distribution / 매도 공급)이 진행되고 있음을 뜻하므로, 상승이 정체되고 꺾일 리스크에 대비하여 이익을 실현한다.",
-        "거래량이 많이 터졌으므로 손절 라인을 지우고 장기 투자를 결심한다.",
-        "상승 추세가 무효화되었으므로 숏 50배 레버리지로 보복 매매를 가동한다."
+        "강한 매수 기세 기대로 즉시 돌파 매매 풀매수",
+        "저항벽 매도 공급 세력 분산 확인 후 이익 실현",
+        "대량 거래 확인에 따른 손절 해제 후 장기 투자",
+        "반등 실패에 따른 고배율 보복 숏 베팅 가동"
     ],
     correctIndex: 1,
     explanation: "캔들 몸통 크기(스프레드)가 좁은데 거래량이 매우 크게 폭증했다는 것은 저항선 부근에서 들어오는 매수세만큼 세력의 매도 물량 공급이 쏟아져 막강한 저항 벽을 형성하고 있다는 뜻입니다. VSA에서는 이를 불화(Disharmony)로 규정하며 상승 추세 감속 및 하락 반전의 경고로 해독합니다."
@@ -372,7 +372,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 212,
             "low": 200,
             "close": 202,
-            "volume": 86
+            "volume": 99
         },
         {
             "time": "Day 2",
@@ -380,7 +380,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 204,
             "low": 195,
             "close": 201,
-            "volume": 107
+            "volume": 90
         }
     ],
     drawings: [
@@ -401,10 +401,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선 붕괴 완료로 확정하여 시장가 숏(공매도)에 추격 진입한다.",
-        "개인들의 손절 물량을 청산시키고 가격을 말아올린 '유동성 스윕(Liquidity Sweep)'이자 베어트랩으로 판단하며, 아래꼬리 저점인 195달러 밑에 손절을 짧게 걸고 롱(매수) 진입을 노린다.",
-        "아무런 신호도 아니므로 계좌를 관망 모드로 방치한다.",
-        "지지선 이탈 실패이므로 원금 100% 매도 후 영구 이탈한다."
+        "지지선 붕괴 확정으로 간주한 시장가 숏 추격",
+        "스윕(sweep) 판단 하에 아래꼬리 저점 손절 잡고 롱",
+        "아무런 신호도 아니라고 판단하고 포지션 방치",
+        "지지선 이탈 기대로 전량 손절 후 시장 영구 탈출"
     ],
     correctIndex: 1,
     explanation: "지지선 아래에 걸려 있던 개인들의 손절 주문(Sell Stop)을 강제로 청산(Liquidity Sweep)시킨 뒤, 세력이 물량을 헐값에 다 받아 삼켜 종가를 지지선 위로 신속하게 복귀시킨 휩소(베어 트랩) 패턴입니다. 아래꼬리 극점(195달러)에 아주 좁은 손절 라인을 설정할 수 있어, 기대 손익비가 극대화되는 고확률 상승 반전 매수 타점입니다."
@@ -423,7 +423,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 260,
             "low": 228,
             "close": 255,
-            "volume": 111
+            "volume": 94
         },
         {
             "time": "Wave 2",
@@ -439,14 +439,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 290,
             "low": 265,
             "close": 288,
-            "volume": 107
+            "volume": 127
         }
     ],
     options: [
-        "가격이 올라가므로 매수 에너지가 지속 강화되는 초강세장이다.",
-        "상승 강세가 진행됨에 따라 시장에 매도 공급 물량이 아예 말라버린 극도의 무중력 랠리이므로 안심하고 홀딩한다.",
-        "상승 이면의 신규 매수 가담 자금이 고갈되는 '거래량 다이버전스' 현상으로 추세 피로도가 극에 달했음을 나타내므로, 추격 매수를 철저히 배제하고 포지션의 분할 익절 관리를 시작한다.",
-        "거래량 감소는 차트 조작이므로 매매를 즉시 정지한다."
+        "가격 상승으로 인한 매수 지속 강화 초강세",
+        "매도 물량 고갈에 따른 무중력 안심 홀딩",
+        "신규 자금 유입 둔화 거래량 다이버전스로 분할 익절",
+        "지표 조작으로 판단하여 매매 중단 및 차트 종료"
     ],
     correctIndex: 2,
     explanation: "주가는 상승하여 신고점을 갱신하지만 파동별 거래량이 지속 감소하는 흐름은 '거래량 다이버전스'로 상승 모멘텀의 내부 엔진이 식어감을 경고합니다. 조만간 가벼운 매도 포격에도 대규모의 차익 실현 폭락 조정이 발생할 수 있는 잠재적 폭락 국면이므로 물량을 덜어내고 현금을 확보해야 합니다."
@@ -465,7 +465,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 102,
             "low": 99,
             "close": 100,
-            "volume": 114
+            "volume": 328
         },
         {
             "time": "Day 2",
@@ -473,14 +473,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 112,
             "low": 99,
             "close": 110,
-            "volume": 96
+            "volume": 404
         }
     ],
     options: [
-        "돌파 순간 거래량이 오히려 최저치로 메말라 있는 고요한 수렴 상태여야 한다.",
-        "돌파를 완료한 장대양봉의 마감 거래량이 이전 10일 평균 거래량 대비 최소 1.5배~2배 이상 폭발하며 동반 상승해야 세력의 진성 개입으로 신뢰할 수 있다.",
-        "거래량은 돌파 판정에 아무런 영향을 주지 않는다.",
-        "거래소 내부 슬리피지 수치만 보고 결정한다."
+        "수렴 끝자락에서 거래량이 최저치인 상태 유지",
+        "평균 대비 1.5~2배 이상 거래량 급증하며 돌파 마감",
+        "거래량이 전혀 변하지 않는 평이한 상태 유지",
+        "호가 스프레드가 가장 좁아지는 횡보 상태"
     ],
     correctIndex: 1,
     explanation: "참된 저항 돌파(True Breakout)는 저항선 부근의 두터운 대기 매도 공급 물량을 대규모 자금으로 전부 씹어 삼키고 돌파해야 함을 뜻합니다. 따라서 반드시 평균 대비 1.5배~2배 이상의 거래량 분출이 동반되어야 신뢰할 수 있으며, 거래량이 적은 돌파는 꼬리 달고 내려앉는 불 트랩(Bull Trap)일 확률이 매우 높습니다."
@@ -499,7 +499,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 50500,
             "low": 49200,
             "close": 49500,
-            "volume": 15
+            "volume": 30
         },
         {
             "time": "Day 2",
@@ -507,7 +507,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 49800,
             "low": 48000,
             "close": 49600,
-            "volume": 20
+            "volume": 15
         }
     ],
     drawings: [
@@ -528,10 +528,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선을 가볍게 뚫고 내려가 아무 반등도 없이 20% 이상 수직 낙하 장대음봉으로 마감한다.",
-        "순간적으로 전저점(49,200달러) 밑으로 가격을 밀쳐 손절 물량을 대량 폭발시킨 후, 이를 순식간에 매수 흡수하여 아래꼬리가 아주 길게 달린 핀바 형태로 종가를 지지선 위로 회복 마감한다.",
-        "수평 지지지선을 한 치의 오차도 없이 터치하고 0.01%의 꼬리도 없이 완전 수평 도지로 횡보한다.",
-        "거래량 없이 수직 상방으로 폭등하여 10만 달러에 즉시 도달한다."
+        "지지선을 장대음봉으로 돌파하여 20% 폭락 마감",
+        "전저점 이탈로 손절 유도 후 지지선 위 아래꼬리 안착",
+        "오차 없이 지지선 터치 후 꼬리 없는 수평 도지 횡보",
+        "거래량 없이 즉각 상승 빔 분출로 전고점 탈환"
     ],
     correctIndex: 1,
     explanation: "기관 세력(스마트 머니)은 대량 포지션을 구축하기 위해 개인의 손절 주문(Sell Stop)을 의도적으로 터트려 매도 유동성을 유도한 후 이를 다 매수합니다. 이로 인해 주가는 지지선 아래로 일시 급락 후(스톱 헌팅), 아래꼬리를 매우 길게 달며 지선 안쪽으로 급반등 마감하게 됩니다. 이것이 유동성 스윕(Liquidity Sweep)의 정석 패턴입니다."
@@ -553,10 +553,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 매수 시도 흔적이 있으므로 저점 매수 기회로 보고 적극 추가 매수한다.",
-        "고점 매도 공급이 롱 청산 손절 물량을 완벽히 제압하여 상방을 격렬하게 거절(Rejection)한 징후이며 매도세의 승리이므로, 기존 매수 포지션을 전량 대피 또는 매도 조치한다.",
-        "거래량이 많으므로 무조건 횡보 흐름으로 수렴될 것이라 판단해 양방향 마틴게일 베팅을 가동한다.",
-        "이평선이 정배열이므로 신경 쓰지 않고 무시한다."
+        "강한 저점 매수 기회로 인지하여 비중 대폭 추가",
+        "고점 매도 Rejection 확인 후 기존 롱 포지션 대피",
+        "박스 횡보 수렴 기대로 마틴게일 추가 매수 가동",
+        "이평선 정배열 판단에 따른 포지션 변경 없이 홀딩"
     ],
     correctIndex: 1,
     explanation: "위꼬리가 매우 긴 캔들이 대량 거래량과 함께 터졌다는 것은 고점 돌파 시도가 있었으나 그 자리에 숨어 있던 세력의 막강한 청산 매도 벽(Supply)을 만나 격렬하게 두들겨 맞고 밀려났음을 의미합니다. 상방 거절의 심리가 지배적이므로 고점 피로 및 하락 전환이 임박한 위험 징후입니다."
@@ -575,7 +575,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 151.5,
             "low": 145.5,
             "close": 150,
-            "volume": 81
+            "volume": 80
         },
         {
             "time": "Day 2",
@@ -583,7 +583,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 153,
             "low": 148.5,
             "close": 151.5,
-            "volume": 104
+            "volume": 102
         },
         {
             "time": "Day 3",
@@ -591,7 +591,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 165,
             "low": 150,
             "close": 162,
-            "volume": 15
+            "volume": 30
         },
         {
             "time": "Day 4",
@@ -599,7 +599,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 163.5,
             "low": 142.5,
             "close": 144,
-            "volume": 28
+            "volume": 17
         }
     ],
     drawings: [
@@ -621,9 +621,9 @@ export const quizzes_volume_liquidity: QuizItem[] = [
     ],
     options: [
         "진짜 상승 돌파 (True Breakout)",
-        "불 트랩 (Bull Trap / 가짜 돌파) - 추격 매수자들을 물리는 하락 함정",
-        "베어 트랩 (Bear Trap / 가짜 하방)",
-        "골든 크로스 (Golden Cross)"
+        "불 트랩 (Bull Trap) - 매수자 청산 유도 가짜 돌파",
+        "베어 트랩 (Bear Trap) - 매도자 청산 유도 가짜 하방",
+        "골든 크로스 (Golden Cross) - 이평선 돌파"
     ],
     correctIndex: 1,
     explanation: "저항선을 일시적으로 뚫었다가 대량 매도세와 함께 직후 캔들에서 하방으로 원상복귀하는 현상을 '불 트랩(Bull Trap/가짜 돌파)'이라고 합니다. 돌파 후 리테스트를 기다리지 않고 급히 추격 매수했던 투자자들이 고점에 물리는 대표적 함정입니다."
@@ -642,7 +642,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 183,
             "low": 177,
             "close": 178.5,
-            "volume": 99
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -650,7 +650,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 180,
             "low": 165,
             "close": 166.5,
-            "volume": 121
+            "volume": 104
         },
         {
             "time": "Day 3",
@@ -658,7 +658,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 184.5,
             "low": 165,
             "close": 183,
-            "volume": 127
+            "volume": 93
         }
     ],
     drawings: [
@@ -679,10 +679,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩 (Bull Trap)",
-        "베어 트랩 (Bear Trap / 가짜 하락 이탈) - 매도자 청산 유도 후 급등 함정",
-        "리테스트 실패",
-        "추세 추종 돌파"
+        "불 트랩 (Bull Trap) - 가짜 상방 돌파",
+        "베어 트랩 (Bear Trap) - 가짜 하방 이탈",
+        "리테스트 실패 - 지지선 붕괴",
+        "추세 추종 돌파 - 하방 랠리 가속"
     ],
     correctIndex: 1,
     explanation: "지지선을 아래로 뚫고 내려가 하락세가 지속될 것처럼 유도한 뒤, 매물을 털어내고 강력하게 다시 반등해 올리는 현상을 '베어 트랩(Bear Trap)'이라고 합니다. 하락 돌파로 생각하고 공매도를 치거나 손절했던 사람들의 손실을 강제하며 가격이 급등하게 만듭니다."
@@ -701,7 +701,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 192,
             "low": 178.5,
             "close": 190.5,
-            "volume": 106
+            "volume": 104
         },
         {
             "time": "Day 2",
@@ -709,7 +709,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 207,
             "low": 189,
             "close": 204,
-            "volume": 115
+            "volume": 101
         },
         {
             "time": "Day 3",
@@ -717,14 +717,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 201,
             "low": 195,
             "close": 196.5,
-            "volume": 104
+            "volume": 112
         }
     ],
     options: [
-        "상승 모멘텀이 일시적으로 정체되고 매도 공급이 잉태된 신호이므로, 보유 물량의 50% 정도를 익절하여 이익을 확정하고 다음 날 돌파/이탈 방향을 관망한다.",
-        "대세 상승의 일시 조정이므로 추가 대출을 통해 더 높은 비중으로 추격 매수한다.",
-        "즉시 숏(공매도) 20배 레버리지로 베팅하고 자리를 비운다.",
-        "어떠한 부분 매도도 거부하고 전량 영구 홀딩을 고집한다."
+        "상승 둔화 조짐에 따른 보유 물량 50% 분할 익절",
+        "추세 일시 조정으로 간주하여 비중 확대 추가 매수",
+        "추세 종결 판단에 따른 고배율 숏 포지션 즉시 진입",
+        "이익 실현 없이 전량 장기 보유 전략 유지"
     ],
     correctIndex: 0,
     explanation: "하락 잉태형(Bearish Harami)은 이전의 강한 상승 추세 동력이 감속하기 시작했으며, 매도 압력이 힘을 기르고 있음을 암시하는 변곡 캔들입니다. 따라서 단기 스윙 트레이더는 물량의 일부(50%)를 분할 익절하여 리스크를 낮추고, 다음 캔들에서 이전 양봉 저점을 깨뜨리는 하락 하방 이탈이 추가되는지 지켜보는 것이 정석입니다."
@@ -743,7 +743,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 177,
             "low": 166.5,
             "close": 175.5,
-            "volume": 104
+            "volume": 115
         },
         {
             "time": "Day 2",
@@ -751,7 +751,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 183,
             "low": 174,
             "close": 181.5,
-            "volume": 403
+            "volume": 401
         },
         {
             "time": "Day 3",
@@ -759,7 +759,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 183,
             "low": 172.5,
             "close": 174,
-            "volume": 325
+            "volume": 419
         }
     ],
     drawings: [
@@ -776,10 +776,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩(Bull Trap / 가짜 돌파) 함정에 걸려 고점에 물린 형국이 확정되었으므로, 추가 하락 피해를 예방하기 위해 즉각 전량 시장가 매도하여 탈출(손절)한다.",
-        "180달러의 지지력을 신뢰하며 영구 존버 전략으로 들어간다.",
-        "평단가 부근이므로 대출을 더 내어 2차 매수를 더 낮은 단가에 물탄다.",
-        "상황을 무시하고 다른 종목을 똑같이 추격 매수한다."
+        "불 트랩(Bull Trap) 확인 후 추가 하락 방지 즉시 손절",
+        "저항선 부근 매수세 복귀를 기대하며 전량 홀딩",
+        "평단가 관리 차원에서 추가 물타기 매수 집행",
+        "상황을 판단하기 위해 시장가로 추가 분할 진입"
     ],
     correctIndex: 0,
     explanation: "거래량 없는 돌파 직후에 거래량 실린 강한 음봉이 기존 돌파선(180달러) 아래로 재진입하여 마감하는 현상은 전형적인 불 트랩(Bull Trap/가짜 돌파) 함정입니다. 돌파 당시 샀던 매수자들의 패닉 셀이 출현하며 하락 가속화가 나오기 쉬우므로 즉시 손절하여 물량을 털어내야 생존할 수 있습니다."
@@ -798,7 +798,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 153,
             "low": 135,
             "close": 138,
-            "volume": 85
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -806,7 +806,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 141,
             "low": 123,
             "close": 124.5,
-            "volume": 118
+            "volume": 94
         },
         {
             "time": "Day 3",
@@ -814,7 +814,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 127.5,
             "low": 112.5,
             "close": 114,
-            "volume": 113
+            "volume": 95
         },
         {
             "time": "Day 4",
@@ -822,7 +822,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 135,
             "low": 112.5,
             "close": 133.5,
-            "volume": 131
+            "volume": 108
         }
     ],
     drawings: [
@@ -851,10 +851,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "하락 채널을 강하게 상방으로 뚫고 올라갔다는 것은 기존 하락 관성이 파괴되고 상승 추세 전환(Bullish Reversal)이 선언되었음을 뜻하므로, 원칙에 의거해 즉시 숏 포지션을 전량 손절(또는 익절)하고 대피하거나 롱 전환을 모색한다.",
-        "버티면 다시 채널 하방으로 들어올 것이므로 무제한 숏 추가 물타기를 집행한다.",
-        "영원히 포지션을 유지한 채 계좌가 마이너스로 깎여나가는 것을 바라본다.",
-        "증거금을 출금하고 거래소 앱을 삭제한다."
+        "상단 돌파 확인 즉시 숏 전량 손절 및 대피",
+        "채널 재진입 기대로 숏 포지션 추가 물타기",
+        "손절 없이 유지하면서 포지션 본전 도달 대기",
+        "포지션 유지 후 증거금을 출금하여 강제 횡보"
     ],
     correctIndex: 0,
     explanation: "하락 평행 채널의 상단 저항선 상향 돌파(Breakout)는 기존 하락 트렌드의 사멸과 매수세 지배령 복귀를 뜻합니다. 지표와 거래량이 동반된 돌파 확인 시에는 숏 포지션을 지체 없이 기계적으로 칼손절하여 자산을 보호하는 것이 원칙입니다."
@@ -873,7 +873,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 157.5,
             "low": 148.5,
             "close": 156,
-            "volume": 85
+            "volume": 105
         },
         {
             "time": "Day 2",
@@ -881,7 +881,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 163.5,
             "low": 154.5,
             "close": 162,
-            "volume": 88
+            "volume": 91
         },
         {
             "time": "Day 3",
@@ -889,7 +889,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 165,
             "low": 160.5,
             "close": 162,
-            "volume": 115
+            "volume": 113
         }
     ],
     drawings: [
@@ -910,10 +910,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "매수 에너지가 매우 강하므로 즉시 풀매수로 돌파 매매를 실행한다.",
-        "저항선 부근에서 매수 물량을 압도하는 세력의 강한 분산(Distribution / 매도 공급)이 진행되고 있음을 뜻하므로, 상승이 정체되고 꺾일 리스크에 대비하여 이익을 실현한다.",
-        "거래량이 많이 터졌으므로 손절 라인을 지우고 장기 투자를 결심한다.",
-        "상승 추세가 무효화되었으므로 숏 50배 레버리지로 보복 매매를 가동한다."
+        "강한 매수 기세 기대로 즉시 돌파 매매 풀매수",
+        "저항벽 매도 공급 세력 분산 확인 후 이익 실현",
+        "대량 거래 확인에 따른 손절 해제 후 장기 투자",
+        "반등 실패에 따른 고배율 보복 숏 베팅 가동"
     ],
     correctIndex: 1,
     explanation: "캔들 몸통 크기(스프레드)가 좁은데 거래량이 매우 크게 폭증했다는 것은 저항선 부근에서 들어오는 매수세만큼 세력의 매도 물량 공급이 쏟아져 막강한 저항 벽을 형성하고 있다는 뜻입니다. VSA에서는 이를 불화(Disharmony)로 규정하며 상승 추세 감속 및 하락 반전의 경고로 해독합니다."
@@ -932,7 +932,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 318,
             "low": 300,
             "close": 303,
-            "volume": 106
+            "volume": 85
         },
         {
             "time": "Day 2",
@@ -940,7 +940,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 306,
             "low": 292.5,
             "close": 301.5,
-            "volume": 99
+            "volume": 97
         }
     ],
     drawings: [
@@ -961,10 +961,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선 붕괴 완료로 확정하여 시장가 숏(공매도)에 추격 진입한다.",
-        "개인들의 손절 물량을 청산시키고 가격을 말아올린 '유동성 스윕(Liquidity Sweep)'이자 베어트랩으로 판단하며, 아래꼬리 저점인 292.50달러 밑에 손절을 짧게 걸고 롱(매수) 진입을 노린다.",
-        "아무런 신호도 아니므로 계좌를 관망 모드로 방치한다.",
-        "지지선 이탈 실패이므로 원금 100% 매도 후 영구 이탈한다."
+        "지지선 붕괴 확정으로 간주한 시장가 숏 추격",
+        "스윕(sweep) 판단 하에 아래꼬리 저점 손절 잡고 롱",
+        "아무런 신호도 아니라고 판단하고 포지션 방치",
+        "지지선 이탈 기대로 전량 손절 후 시장 영구 탈출"
     ],
     correctIndex: 1,
     explanation: "지지선 아래에 걸려 있던 개인들의 손절 주문(Sell Stop)을 강제로 청산(Liquidity Sweep)시킨 뒤, 세력이 물량을 헐값에 다 받아 삼켜 종가를 지지선 위로 신속하게 복귀시킨 휩소(베어 트랩) 패턴입니다. 아래꼬리 극점(292.50달러)에 아주 좁은 손절 라인을 설정할 수 있어, 기대 손익비가 극대화되는 고확률 상승 반전 매수 타점입니다."
@@ -983,7 +983,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 390,
             "low": 342,
             "close": 382.5,
-            "volume": 112
+            "volume": 87
         },
         {
             "time": "Wave 2",
@@ -991,7 +991,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 412.5,
             "low": 375,
             "close": 405,
-            "volume": 108
+            "volume": 100
         },
         {
             "time": "Wave 3",
@@ -999,14 +999,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 435,
             "low": 397.5,
             "close": 432,
-            "volume": 122
+            "volume": 105
         }
     ],
     options: [
-        "가격이 올라가므로 매수 에너지가 지속 강화되는 초강세장이다.",
-        "상승 강세가 진행됨에 따라 시장에 매도 공급 물량이 아예 말라버린 극도의 무중력 랠리이므로 안심하고 홀딩한다.",
-        "상승 이면의 신규 매수 가담 자금이 고갈되는 '거래량 다이버전스' 현상으로 추세 피로도가 극에 달했음을 나타내므로, 추격 매수를 철저히 배제하고 포지션의 분할 익절 관리를 시작한다.",
-        "거래량 감소는 차트 조작이므로 매매를 즉시 정지한다."
+        "가격 상승으로 인한 매수 지속 강화 초강세",
+        "매도 물량 고갈에 따른 무중력 안심 홀딩",
+        "신규 자금 유입 둔화 거래량 다이버전스로 분할 익절",
+        "지표 조작으로 판단하여 매매 중단 및 차트 종료"
     ],
     correctIndex: 2,
     explanation: "코인 가격는 상승하여 신고점을 갱신하지만 파동별 거래량이 지속 감소하는 흐름은 '거래량 다이버전스'로 상승 모멘텀의 내부 엔진이 식어감을 경고합니다. 조만간 가벼운 매도 포격에도 대규모의 차익 실현 폭락 조정이 발생할 수 있는 잠재적 폭락 국면이므로 물량을 덜어내고 현금을 확보해야 합니다."
@@ -1025,7 +1025,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 153,
             "low": 148.5,
             "close": 150,
-            "volume": 105
+            "volume": 383
         },
         {
             "time": "Day 2",
@@ -1033,14 +1033,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 168,
             "low": 148.5,
             "close": 165,
-            "volume": 99
+            "volume": 347
         }
     ],
     options: [
-        "돌파 순간 거래량이 오히려 최저치로 메말라 있는 고요한 수렴 상태여야 한다.",
-        "돌파를 완료한 장대양봉의 마감 거래량이 이전 10일 평균 거래량 대비 최소 1.5배~2배 이상 폭발하며 동반 상승해야 세력의 진성 개입으로 신뢰할 수 있다.",
-        "거래량은 돌파 판정에 아무런 영향을 주지 않는다.",
-        "거래소 내부 슬리피지 수치만 보고 결정한다."
+        "수렴 끝자락에서 거래량이 최저치인 상태 유지",
+        "평균 대비 1.5~2배 이상 거래량 급증하며 돌파 마감",
+        "거래량이 전혀 변하지 않는 평이한 상태 유지",
+        "호가 스프레드가 가장 좁아지는 횡보 상태"
     ],
     correctIndex: 1,
     explanation: "참된 저항 돌파(True Breakout)는 저항선 부근의 두터운 대기 매도 공급 물량을 대규모 자금으로 전부 씹어 삼키고 돌파해야 함을 뜻합니다. 따라서 반드시 평균 대비 1.5배~2배 이상의 거래량 분출이 동반되어야 신뢰할 수 있으며, 거래량이 적은 돌파는 꼬리 달고 내려앉는 불 트랩(Bull Trap)일 확률이 매우 높습니다."
@@ -1059,7 +1059,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 75750,
             "low": 73800,
             "close": 74250,
-            "volume": 25
+            "volume": 29
         },
         {
             "time": "Day 2",
@@ -1067,7 +1067,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 74700,
             "low": 72000,
             "close": 74400,
-            "volume": 31
+            "volume": 24
         }
     ],
     drawings: [
@@ -1088,10 +1088,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선을 가볍게 뚫고 내려가 아무 반등도 없이 20% 이상 수직 낙하 장대음봉으로 마감한다.",
-        "순간적으로 전저점(73,800달러) 밑으로 가격을 밀쳐 손절 물량을 대량 폭발시킨 후, 이를 순식간에 매수 흡수하여 아래꼬리가 아주 길게 달린 핀바 형태로 종가를 지지선 위로 회복 마감한다.",
-        "수평 지지지선을 한 치의 오차도 없이 터치하고 0.01%의 꼬리도 없이 완전 수평 도지로 횡보한다.",
-        "거래량 없이 수직 상방으로 폭등하여 10만 달러에 즉시 도달한다."
+        "지지선을 장대음봉으로 돌파하여 20% 폭락 마감",
+        "전저점 이탈로 손절 유도 후 지지선 위 아래꼬리 안착",
+        "오차 없이 지지선 터치 후 꼬리 없는 수평 도지 횡보",
+        "거래량 없이 즉각 상승 빔 분출로 전고점 탈환"
     ],
     correctIndex: 1,
     explanation: "기관 세력(스마트 머니)은 대량 포지션을 구축하기 위해 개인의 손절 주문(Sell Stop)을 의도적으로 터트려 매도 유동성을 유도한 후 이를 다 매수합니다. 이로 인해 코인 가격는 지지선 아래로 일시 급락 후(스톱 헌팅), 아래꼬리를 매우 길게 달며 지선 안쪽으로 급반등 마감하게 됩니다. 이것이 유동성 스윕(Liquidity Sweep)의 정석 패턴입니다."
@@ -1113,10 +1113,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 매수 시도 흔적이 있으므로 저점 매수 기회로 보고 적극 추가 매수한다.",
-        "고점 매도 공급이 롱 청산 손절 물량을 완벽히 제압하여 상방을 격렬하게 거절(Rejection)한 징후이며 매도세의 승리이므로, 기존 매수 포지션을 전량 대피 또는 매도 조치한다.",
-        "거래량이 많으므로 무조건 횡보 흐름으로 수렴될 것이라 판단해 양방향 마틴게일 베팅을 가동한다.",
-        "이평선이 정배열이므로 신경 쓰지 않고 무시한다."
+        "강한 저점 매수 기회로 인지하여 비중 대폭 추가",
+        "고점 매도 Rejection 확인 후 기존 롱 포지션 대피",
+        "박스 횡보 수렴 기대로 마틴게일 추가 매수 가동",
+        "이평선 정배열 판단에 따른 포지션 변경 없이 홀딩"
     ],
     correctIndex: 1,
     explanation: "위꼬리가 매우 긴 캔들이 대량 거래량과 함께 터졌다는 것은 고점 돌파 시도가 있었으나 그 자리에 숨어 있던 세력의 막강한 청산 매도 벽(Supply)을 만나 격렬하게 두들겨 맞고 밀려났음을 의미합니다. 상방 거절의 심리가 지배적이므로 고점 피로 및 하락 전환이 임박한 위험 징후입니다."
@@ -1135,7 +1135,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 202,
             "low": 194,
             "close": 200,
-            "volume": 109
+            "volume": 95
         },
         {
             "time": "Day 2",
@@ -1143,7 +1143,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 204,
             "low": 198,
             "close": 202,
-            "volume": 108
+            "volume": 85
         },
         {
             "time": "Day 3",
@@ -1151,7 +1151,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 220,
             "low": 200,
             "close": 216,
-            "volume": 22
+            "volume": 33
         },
         {
             "time": "Day 4",
@@ -1159,7 +1159,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 218,
             "low": 190,
             "close": 192,
-            "volume": 29
+            "volume": 22
         }
     ],
     drawings: [
@@ -1181,9 +1181,9 @@ export const quizzes_volume_liquidity: QuizItem[] = [
     ],
     options: [
         "진짜 상승 돌파 (True Breakout)",
-        "불 트랩 (Bull Trap / 가짜 돌파) - 추격 매수자들을 물리는 하락 함정",
-        "베어 트랩 (Bear Trap / 가짜 하방)",
-        "골든 크로스 (Golden Cross)"
+        "불 트랩 (Bull Trap) - 매수자 청산 유도 가짜 돌파",
+        "베어 트랩 (Bear Trap) - 매도자 청산 유도 가짜 하방",
+        "골든 크로스 (Golden Cross) - 이평선 돌파"
     ],
     correctIndex: 1,
     explanation: "저항선을 일시적으로 뚫었다가 대량 매도세와 함께 직후 캔들에서 하방으로 원상복귀하는 현상을 '불 트랩(Bull Trap/가짜 돌파)'이라고 합니다. 돌파 후 리테스트를 기다리지 않고 급히 추격 매수했던 투자자들이 고점에 물리는 대표적 함정입니다."
@@ -1202,7 +1202,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 244,
             "low": 236,
             "close": 238,
-            "volume": 108
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -1210,7 +1210,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 240,
             "low": 220,
             "close": 222,
-            "volume": 96
+            "volume": 108
         },
         {
             "time": "Day 3",
@@ -1218,7 +1218,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 246,
             "low": 220,
             "close": 244,
-            "volume": 127
+            "volume": 119
         }
     ],
     drawings: [
@@ -1239,10 +1239,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩 (Bull Trap)",
-        "베어 트랩 (Bear Trap / 가짜 하락 이탈) - 매도자 청산 유도 후 급등 함정",
-        "리테스트 실패",
-        "추세 추종 돌파"
+        "불 트랩 (Bull Trap) - 가짜 상방 돌파",
+        "베어 트랩 (Bear Trap) - 가짜 하방 이탈",
+        "리테스트 실패 - 지지선 붕괴",
+        "추세 추종 돌파 - 하방 랠리 가속"
     ],
     correctIndex: 1,
     explanation: "지지선을 아래로 뚫고 내려가 하락세가 지속될 것처럼 유도한 뒤, 매물을 털어내고 강력하게 다시 반등해 올리는 현상을 '베어 트랩(Bear Trap)'이라고 합니다. 하락 돌파로 생각하고 공매도를 치거나 손절했던 사람들의 손실을 강제하며 가격이 급등하게 만듭니다."
@@ -1261,7 +1261,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 256,
             "low": 238,
             "close": 254,
-            "volume": 88
+            "volume": 99
         },
         {
             "time": "Day 2",
@@ -1269,7 +1269,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 276,
             "low": 252,
             "close": 272,
-            "volume": 101
+            "volume": 123
         },
         {
             "time": "Day 3",
@@ -1277,14 +1277,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 268,
             "low": 260,
             "close": 262,
-            "volume": 110
+            "volume": 100
         }
     ],
     options: [
-        "상승 모멘텀이 일시적으로 정체되고 매도 공급이 잉태된 신호이므로, 보유 물량의 50% 정도를 익절하여 이익을 확정하고 다음 날 돌파/이탈 방향을 관망한다.",
-        "대세 상승의 일시 조정이므로 추가 대출을 통해 더 높은 비중으로 추격 매수한다.",
-        "즉시 숏(공매도) 20배 레버리지로 베팅하고 자리를 비운다.",
-        "어떠한 부분 매도도 거부하고 전량 영구 홀딩을 고집한다."
+        "상승 둔화 조짐에 따른 보유 물량 50% 분할 익절",
+        "추세 일시 조정으로 간주하여 비중 확대 추가 매수",
+        "추세 종결 판단에 따른 고배율 숏 포지션 즉시 진입",
+        "이익 실현 없이 전량 장기 보유 전략 유지"
     ],
     correctIndex: 0,
     explanation: "하락 잉태형(Bearish Harami)은 이전의 강한 상승 추세 동력이 감속하기 시작했으며, 매도 압력이 힘을 기르고 있음을 암시하는 변곡 캔들입니다. 따라서 단기 스윙 트레이더는 물량의 일부(50%)를 분할 익절하여 리스크를 낮추고, 다음 캔들에서 이전 양봉 저점을 깨뜨리는 하락 하방 이탈이 추가되는지 지켜보는 것이 정석입니다."
@@ -1303,7 +1303,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 236,
             "low": 222,
             "close": 234,
-            "volume": 108
+            "volume": 82
         },
         {
             "time": "Day 2",
@@ -1311,7 +1311,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 244,
             "low": 232,
             "close": 242,
-            "volume": 374
+            "volume": 342
         },
         {
             "time": "Day 3",
@@ -1319,7 +1319,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 244,
             "low": 230,
             "close": 232,
-            "volume": 383
+            "volume": 323
         }
     ],
     drawings: [
@@ -1336,10 +1336,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩(Bull Trap / 가짜 돌파) 함정에 걸려 고점에 물린 형국이 확정되었으므로, 추가 하락 피해를 예방하기 위해 즉각 전량 시장가 매도하여 탈출(손절)한다.",
-        "240달러의 지지력을 신뢰하며 영구 존버 전략으로 들어간다.",
-        "평단가 부근이므로 대출을 더 내어 2차 매수를 더 낮은 단가에 물탄다.",
-        "상황을 무시하고 다른 종목을 똑같이 추격 매수한다."
+        "불 트랩(Bull Trap) 확인 후 추가 하락 방지 즉시 손절",
+        "저항선 부근 매수세 복귀를 기대하며 전량 홀딩",
+        "평단가 관리 차원에서 추가 물타기 매수 집행",
+        "상황을 판단하기 위해 시장가로 추가 분할 진입"
     ],
     correctIndex: 0,
     explanation: "거래량 없는 돌파 직후에 거래량 실린 강한 음봉이 기존 돌파선(240달러) 아래로 재진입하여 마감하는 현상은 전형적인 불 트랩(Bull Trap/가짜 돌파) 함정입니다. 돌파 당시 샀던 매수자들의 패닉 셀이 출현하며 하락 가속화가 나오기 쉬우므로 즉시 손절하여 물량을 털어내야 생존할 수 있습니다."
@@ -1358,7 +1358,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 204,
             "low": 180,
             "close": 184,
-            "volume": 107
+            "volume": 84
         },
         {
             "time": "Day 2",
@@ -1366,7 +1366,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 188,
             "low": 164,
             "close": 166,
-            "volume": 112
+            "volume": 116
         },
         {
             "time": "Day 3",
@@ -1374,7 +1374,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 170,
             "low": 150,
             "close": 152,
-            "volume": 101
+            "volume": 120
         },
         {
             "time": "Day 4",
@@ -1382,7 +1382,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 180,
             "low": 150,
             "close": 178,
-            "volume": 127
+            "volume": 131
         }
     ],
     drawings: [
@@ -1411,10 +1411,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "하락 채널을 강하게 상방으로 뚫고 올라갔다는 것은 기존 하락 관성이 파괴되고 상승 추세 전환(Bullish Reversal)이 선언되었음을 뜻하므로, 원칙에 의거해 즉시 숏 포지션을 전량 손절(또는 익절)하고 대피하거나 롱 전환을 모색한다.",
-        "버티면 다시 채널 하방으로 들어올 것이므로 무제한 숏 추가 물타기를 집행한다.",
-        "영원히 포지션을 유지한 채 계좌가 마이너스로 깎여나가는 것을 바라본다.",
-        "증거금을 출금하고 거래소 앱을 삭제한다."
+        "상단 돌파 확인 즉시 숏 전량 손절 및 대피",
+        "채널 재진입 기대로 숏 포지션 추가 물타기",
+        "손절 없이 유지하면서 포지션 본전 도달 대기",
+        "포지션 유지 후 증거금을 출금하여 강제 횡보"
     ],
     correctIndex: 0,
     explanation: "하락 평행 채널의 상단 저항선 상향 돌파(Breakout)는 기존 하락 트렌드의 사멸과 매수세 지배령 복귀를 뜻합니다. 지표와 거래량이 동반된 돌파 확인 시에는 숏 포지션을 지체 없이 기계적으로 칼손절하여 자산을 보호하는 것이 원칙입니다."
@@ -1433,7 +1433,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 210,
             "low": 198,
             "close": 208,
-            "volume": 102
+            "volume": 86
         },
         {
             "time": "Day 2",
@@ -1441,7 +1441,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 218,
             "low": 206,
             "close": 216,
-            "volume": 122
+            "volume": 102
         },
         {
             "time": "Day 3",
@@ -1449,7 +1449,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 220,
             "low": 214,
             "close": 216,
-            "volume": 112
+            "volume": 99
         }
     ],
     drawings: [
@@ -1470,10 +1470,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "매수 에너지가 매우 강하므로 즉시 풀매수로 돌파 매매를 실행한다.",
-        "저항선 부근에서 매수 물량을 압도하는 세력의 강한 분산(Distribution / 매도 공급)이 진행되고 있음을 뜻하므로, 상승이 정체되고 꺾일 리스크에 대비하여 이익을 실현한다.",
-        "거래량이 많이 터졌으므로 손절 라인을 지우고 장기 투자를 결심한다.",
-        "상승 추세가 무효화되었으므로 숏 50배 레버리지로 보복 매매를 가동한다."
+        "강한 매수 기세 기대로 즉시 돌파 매매 풀매수",
+        "저항벽 매도 공급 세력 분산 확인 후 이익 실현",
+        "대량 거래 확인에 따른 손절 해제 후 장기 투자",
+        "반등 실패에 따른 고배율 보복 숏 베팅 가동"
     ],
     correctIndex: 1,
     explanation: "캔들 몸통 크기(스프레드)가 좁은데 거래량이 매우 크게 폭증했다는 것은 저항선 부근에서 들어오는 매수세만큼 세력의 매도 물량 공급이 쏟아져 막강한 저항 벽을 형성하고 있다는 뜻입니다. VSA에서는 이를 불화(Disharmony)로 규정하며 상승 추세 감속 및 하락 반전의 경고로 해독합니다."
@@ -1492,7 +1492,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 424,
             "low": 400,
             "close": 404,
-            "volume": 114
+            "volume": 100
         },
         {
             "time": "Day 2",
@@ -1500,7 +1500,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 408,
             "low": 390,
             "close": 402,
-            "volume": 111
+            "volume": 90
         }
     ],
     drawings: [
@@ -1521,10 +1521,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선 붕괴 완료로 확정하여 시장가 숏(공매도)에 추격 진입한다.",
-        "개인들의 손절 물량을 청산시키고 가격을 말아올린 '유동성 스윕(Liquidity Sweep)'이자 베어트랩으로 판단하며, 아래꼬리 저점인 390달러 밑에 손절을 짧게 걸고 롱(매수) 진입을 노린다.",
-        "아무런 신호도 아니므로 계좌를 관망 모드로 방치한다.",
-        "지지선 이탈 실패이므로 원금 100% 매도 후 영구 이탈한다."
+        "지지선 붕괴 확정으로 간주한 시장가 숏 추격",
+        "스윕(sweep) 판단 하에 아래꼬리 저점 손절 잡고 롱",
+        "아무런 신호도 아니라고 판단하고 포지션 방치",
+        "지지선 이탈 기대로 전량 손절 후 시장 영구 탈출"
     ],
     correctIndex: 1,
     explanation: "지지선 아래에 걸려 있던 개인들의 손절 주문(Sell Stop)을 강제로 청산(Liquidity Sweep)시킨 뒤, 세력이 물량을 헐값에 다 받아 삼켜 종가를 지지선 위로 신속하게 복귀시킨 휩소(베어 트랩) 패턴입니다. 아래꼬리 극점(390달러)에 아주 좁은 손절 라인을 설정할 수 있어, 기대 손익비가 극대화되는 고확률 상승 반전 매수 타점입니다."
@@ -1543,7 +1543,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 520,
             "low": 456,
             "close": 510,
-            "volume": 100
+            "volume": 91
         },
         {
             "time": "Wave 2",
@@ -1551,7 +1551,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 550,
             "low": 500,
             "close": 540,
-            "volume": 109
+            "volume": 88
         },
         {
             "time": "Wave 3",
@@ -1559,14 +1559,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 580,
             "low": 530,
             "close": 576,
-            "volume": 124
+            "volume": 122
         }
     ],
     options: [
-        "가격이 올라가므로 매수 에너지가 지속 강화되는 초강세장이다.",
-        "상승 강세가 진행됨에 따라 시장에 매도 공급 물량이 아예 말라버린 극도의 무중력 랠리이므로 안심하고 홀딩한다.",
-        "상승 이면의 신규 매수 가담 자금이 고갈되는 '거래량 다이버전스' 현상으로 추세 피로도가 극에 달했음을 나타내므로, 추격 매수를 철저히 배제하고 포지션의 분할 익절 관리를 시작한다.",
-        "거래량 감소는 차트 조작이므로 매매를 즉시 정지한다."
+        "가격 상승으로 인한 매수 지속 강화 초강세",
+        "매도 물량 고갈에 따른 무중력 안심 홀딩",
+        "신규 자금 유입 둔화 거래량 다이버전스로 분할 익절",
+        "지표 조작으로 판단하여 매매 중단 및 차트 종료"
     ],
     correctIndex: 2,
     explanation: "시세는 상승하여 신고점을 갱신하지만 파동별 거래량이 지속 감소하는 흐름은 '거래량 다이버전스'로 상승 모멘텀의 내부 엔진이 식어감을 경고합니다. 조만간 가벼운 매도 포격에도 대규모의 차익 실현 폭락 조정이 발생할 수 있는 잠재적 폭락 국면이므로 물량을 덜어내고 현금을 확보해야 합니다."
@@ -1585,7 +1585,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 204,
             "low": 198,
             "close": 200,
-            "volume": 80
+            "volume": 381
         },
         {
             "time": "Day 2",
@@ -1593,14 +1593,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 224,
             "low": 198,
             "close": 220,
-            "volume": 105
+            "volume": 346
         }
     ],
     options: [
-        "돌파 순간 거래량이 오히려 최저치로 메말라 있는 고요한 수렴 상태여야 한다.",
-        "돌파를 완료한 장대양봉의 마감 거래량이 이전 10일 평균 거래량 대비 최소 1.5배~2배 이상 폭발하며 동반 상승해야 세력의 진성 개입으로 신뢰할 수 있다.",
-        "거래량은 돌파 판정에 아무런 영향을 주지 않는다.",
-        "거래소 내부 슬리피지 수치만 보고 결정한다."
+        "수렴 끝자락에서 거래량이 최저치인 상태 유지",
+        "평균 대비 1.5~2배 이상 거래량 급증하며 돌파 마감",
+        "거래량이 전혀 변하지 않는 평이한 상태 유지",
+        "호가 스프레드가 가장 좁아지는 횡보 상태"
     ],
     correctIndex: 1,
     explanation: "참된 저항 돌파(True Breakout)는 저항선 부근의 두터운 대기 매도 공급 물량을 대규모 자금으로 전부 씹어 삼키고 돌파해야 함을 뜻합니다. 따라서 반드시 평균 대비 1.5배~2배 이상의 거래량 분출이 동반되어야 신뢰할 수 있으며, 거래량이 적은 돌파는 꼬리 달고 내려앉는 불 트랩(Bull Trap)일 확률이 매우 높습니다."
@@ -1619,7 +1619,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 101000,
             "low": 98400,
             "close": 99000,
-            "volume": 29
+            "volume": 31
         },
         {
             "time": "Day 2",
@@ -1627,7 +1627,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 99600,
             "low": 96000,
             "close": 99200,
-            "volume": 20
+            "volume": 31
         }
     ],
     drawings: [
@@ -1648,10 +1648,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선을 가볍게 뚫고 내려가 아무 반등도 없이 20% 이상 수직 낙하 장대음봉으로 마감한다.",
-        "순간적으로 전저점(98,400달러) 밑으로 가격을 밀쳐 손절 물량을 대량 폭발시킨 후, 이를 순식간에 매수 흡수하여 아래꼬리가 아주 길게 달린 핀바 형태로 종가를 지지선 위로 회복 마감한다.",
-        "수평 지지지선을 한 치의 오차도 없이 터치하고 0.01%의 꼬리도 없이 완전 수평 도지로 횡보한다.",
-        "거래량 없이 수직 상방으로 폭등하여 10만 달러에 즉시 도달한다."
+        "지지선을 장대음봉으로 돌파하여 20% 폭락 마감",
+        "전저점 이탈로 손절 유도 후 지지선 위 아래꼬리 안착",
+        "오차 없이 지지선 터치 후 꼬리 없는 수평 도지 횡보",
+        "거래량 없이 즉각 상승 빔 분출로 전고점 탈환"
     ],
     correctIndex: 1,
     explanation: "기관 세력(스마트 머니)은 대량 포지션을 구축하기 위해 개인의 손절 주문(Sell Stop)을 의도적으로 터트려 매도 유동성을 유도한 후 이를 다 매수합니다. 이로 인해 시세는 지지선 아래로 일시 급락 후(스톱 헌팅), 아래꼬리를 매우 길게 달며 지선 안쪽으로 급반등 마감하게 됩니다. 이것이 유동성 스윕(Liquidity Sweep)의 정석 패턴입니다."
@@ -1673,10 +1673,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 매수 시도 흔적이 있으므로 저점 매수 기회로 보고 적극 추가 매수한다.",
-        "고점 매도 공급이 롱 청산 손절 물량을 완벽히 제압하여 상방을 격렬하게 거절(Rejection)한 징후이며 매도세의 승리이므로, 기존 매수 포지션을 전량 대피 또는 매도 조치한다.",
-        "거래량이 많으므로 무조건 횡보 흐름으로 수렴될 것이라 판단해 양방향 마틴게일 베팅을 가동한다.",
-        "이평선이 정배열이므로 신경 쓰지 않고 무시한다."
+        "강한 저점 매수 기회로 인지하여 비중 대폭 추가",
+        "고점 매도 Rejection 확인 후 기존 롱 포지션 대피",
+        "박스 횡보 수렴 기대로 마틴게일 추가 매수 가동",
+        "이평선 정배열 판단에 따른 포지션 변경 없이 홀딩"
     ],
     correctIndex: 1,
     explanation: "위꼬리가 매우 긴 캔들이 대량 거래량과 함께 터졌다는 것은 고점 돌파 시도가 있었으나 그 자리에 숨어 있던 세력의 막강한 청산 매도 벽(Supply)을 만나 격렬하게 두들겨 맞고 밀려났음을 의미합니다. 상방 거절의 심리가 지배적이므로 고점 피로 및 하락 전환이 임박한 위험 징후입니다."
@@ -1695,7 +1695,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 303,
             "low": 291,
             "close": 300,
-            "volume": 112
+            "volume": 100
         },
         {
             "time": "Day 2",
@@ -1703,7 +1703,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 306,
             "low": 297,
             "close": 303,
-            "volume": 90
+            "volume": 104
         },
         {
             "time": "Day 3",
@@ -1711,7 +1711,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 330,
             "low": 300,
             "close": 324,
-            "volume": 26
+            "volume": 22
         },
         {
             "time": "Day 4",
@@ -1719,7 +1719,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 327,
             "low": 285,
             "close": 288,
-            "volume": 25
+            "volume": 17
         }
     ],
     drawings: [
@@ -1741,9 +1741,9 @@ export const quizzes_volume_liquidity: QuizItem[] = [
     ],
     options: [
         "진짜 상승 돌파 (True Breakout)",
-        "불 트랩 (Bull Trap / 가짜 돌파) - 추격 매수자들을 물리는 하락 함정",
-        "베어 트랩 (Bear Trap / 가짜 하방)",
-        "골든 크로스 (Golden Cross)"
+        "불 트랩 (Bull Trap) - 매수자 청산 유도 가짜 돌파",
+        "베어 트랩 (Bear Trap) - 매도자 청산 유도 가짜 하방",
+        "골든 크로스 (Golden Cross) - 이평선 돌파"
     ],
     correctIndex: 1,
     explanation: "저항선을 일시적으로 뚫었다가 대량 매도세와 함께 직후 캔들에서 하방으로 원상복귀하는 현상을 '불 트랩(Bull Trap/가짜 돌파)'이라고 합니다. 돌파 후 리테스트를 기다리지 않고 급히 추격 매수했던 투자자들이 고점에 물리는 대표적 함정입니다."
@@ -1762,7 +1762,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 366,
             "low": 354,
             "close": 357,
-            "volume": 96
+            "volume": 101
         },
         {
             "time": "Day 2",
@@ -1770,7 +1770,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 360,
             "low": 330,
             "close": 333,
-            "volume": 113
+            "volume": 88
         },
         {
             "time": "Day 3",
@@ -1778,7 +1778,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 369,
             "low": 330,
             "close": 366,
-            "volume": 88
+            "volume": 121
         }
     ],
     drawings: [
@@ -1799,10 +1799,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩 (Bull Trap)",
-        "베어 트랩 (Bear Trap / 가짜 하락 이탈) - 매도자 청산 유도 후 급등 함정",
-        "리테스트 실패",
-        "추세 추종 돌파"
+        "불 트랩 (Bull Trap) - 가짜 상방 돌파",
+        "베어 트랩 (Bear Trap) - 가짜 하방 이탈",
+        "리테스트 실패 - 지지선 붕괴",
+        "추세 추종 돌파 - 하방 랠리 가속"
     ],
     correctIndex: 1,
     explanation: "지지선을 아래로 뚫고 내려가 하락세가 지속될 것처럼 유도한 뒤, 매물을 털어내고 강력하게 다시 반등해 올리는 현상을 '베어 트랩(Bear Trap)'이라고 합니다. 하락 돌파로 생각하고 공매도를 치거나 손절했던 사람들의 손실을 강제하며 가격이 급등하게 만듭니다."
@@ -1829,7 +1829,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 414,
             "low": 378,
             "close": 408,
-            "volume": 109
+            "volume": 108
         },
         {
             "time": "Day 3",
@@ -1837,14 +1837,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 402,
             "low": 390,
             "close": 393,
-            "volume": 127
+            "volume": 91
         }
     ],
     options: [
-        "상승 모멘텀이 일시적으로 정체되고 매도 공급이 잉태된 신호이므로, 보유 물량의 50% 정도를 익절하여 이익을 확정하고 다음 날 돌파/이탈 방향을 관망한다.",
-        "대세 상승의 일시 조정이므로 추가 대출을 통해 더 높은 비중으로 추격 매수한다.",
-        "즉시 숏(공매도) 20배 레버리지로 베팅하고 자리를 비운다.",
-        "어떠한 부분 매도도 거부하고 전량 영구 홀딩을 고집한다."
+        "상승 둔화 조짐에 따른 보유 물량 50% 분할 익절",
+        "추세 일시 조정으로 간주하여 비중 확대 추가 매수",
+        "추세 종결 판단에 따른 고배율 숏 포지션 즉시 진입",
+        "이익 실현 없이 전량 장기 보유 전략 유지"
     ],
     correctIndex: 0,
     explanation: "하락 잉태형(Bearish Harami)은 이전의 강한 상승 추세 동력이 감속하기 시작했으며, 매도 압력이 힘을 기르고 있음을 암시하는 변곡 캔들입니다. 따라서 단기 스윙 트레이더는 물량의 일부(50%)를 분할 익절하여 리스크를 낮추고, 다음 캔들에서 이전 양봉 저점을 깨뜨리는 하락 하방 이탈이 추가되는지 지켜보는 것이 정석입니다."
@@ -1863,7 +1863,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 354,
             "low": 333,
             "close": 351,
-            "volume": 109
+            "volume": 86
         },
         {
             "time": "Day 2",
@@ -1871,7 +1871,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 366,
             "low": 348,
             "close": 363,
-            "volume": 393
+            "volume": 364
         },
         {
             "time": "Day 3",
@@ -1879,7 +1879,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 366,
             "low": 345,
             "close": 348,
-            "volume": 331
+            "volume": 327
         }
     ],
     drawings: [
@@ -1896,10 +1896,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩(Bull Trap / 가짜 돌파) 함정에 걸려 고점에 물린 형국이 확정되었으므로, 추가 하락 피해를 예방하기 위해 즉각 전량 시장가 매도하여 탈출(손절)한다.",
-        "360달러의 지지력을 신뢰하며 영구 존버 전략으로 들어간다.",
-        "평단가 부근이므로 대출을 더 내어 2차 매수를 더 낮은 단가에 물탄다.",
-        "상황을 무시하고 다른 종목을 똑같이 추격 매수한다."
+        "불 트랩(Bull Trap) 확인 후 추가 하락 방지 즉시 손절",
+        "저항선 부근 매수세 복귀를 기대하며 전량 홀딩",
+        "평단가 관리 차원에서 추가 물타기 매수 집행",
+        "상황을 판단하기 위해 시장가로 추가 분할 진입"
     ],
     correctIndex: 0,
     explanation: "거래량 없는 돌파 직후에 거래량 실린 강한 음봉이 기존 돌파선(360달러) 아래로 재진입하여 마감하는 현상은 전형적인 불 트랩(Bull Trap/가짜 돌파) 함정입니다. 돌파 당시 샀던 매수자들의 패닉 셀이 출현하며 하락 가속화가 나오기 쉬우므로 즉시 손절하여 물량을 털어내야 생존할 수 있습니다."
@@ -1918,7 +1918,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 306,
             "low": 270,
             "close": 276,
-            "volume": 112
+            "volume": 84
         },
         {
             "time": "Day 2",
@@ -1926,7 +1926,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 282,
             "low": 246,
             "close": 249,
-            "volume": 90
+            "volume": 88
         },
         {
             "time": "Day 3",
@@ -1934,7 +1934,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 255,
             "low": 225,
             "close": 228,
-            "volume": 125
+            "volume": 123
         },
         {
             "time": "Day 4",
@@ -1942,7 +1942,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 270,
             "low": 225,
             "close": 267,
-            "volume": 93
+            "volume": 101
         }
     ],
     drawings: [
@@ -1971,10 +1971,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "하락 채널을 강하게 상방으로 뚫고 올라갔다는 것은 기존 하락 관성이 파괴되고 상승 추세 전환(Bullish Reversal)이 선언되었음을 뜻하므로, 원칙에 의거해 즉시 숏 포지션을 전량 손절(또는 익절)하고 대피하거나 롱 전환을 모색한다.",
-        "버티면 다시 채널 하방으로 들어올 것이므로 무제한 숏 추가 물타기를 집행한다.",
-        "영원히 포지션을 유지한 채 계좌가 마이너스로 깎여나가는 것을 바라본다.",
-        "증거금을 출금하고 거래소 앱을 삭제한다."
+        "상단 돌파 확인 즉시 숏 전량 손절 및 대피",
+        "채널 재진입 기대로 숏 포지션 추가 물타기",
+        "손절 없이 유지하면서 포지션 본전 도달 대기",
+        "포지션 유지 후 증거금을 출금하여 강제 횡보"
     ],
     correctIndex: 0,
     explanation: "하락 평행 채널의 상단 저항선 상향 돌파(Breakout)는 기존 하락 트렌드의 사멸과 매수세 지배령 복귀를 뜻합니다. 지표와 거래량이 동반된 돌파 확인 시에는 숏 포지션을 지체 없이 기계적으로 칼손절하여 자산을 보호하는 것이 원칙입니다."
@@ -1993,7 +1993,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 315,
             "low": 297,
             "close": 312,
-            "volume": 88
+            "volume": 115
         },
         {
             "time": "Day 2",
@@ -2001,7 +2001,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 327,
             "low": 309,
             "close": 324,
-            "volume": 114
+            "volume": 116
         },
         {
             "time": "Day 3",
@@ -2009,7 +2009,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 330,
             "low": 321,
             "close": 324,
-            "volume": 102
+            "volume": 112
         }
     ],
     drawings: [
@@ -2030,10 +2030,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "매수 에너지가 매우 강하므로 즉시 풀매수로 돌파 매매를 실행한다.",
-        "저항선 부근에서 매수 물량을 압도하는 세력의 강한 분산(Distribution / 매도 공급)이 진행되고 있음을 뜻하므로, 상승이 정체되고 꺾일 리스크에 대비하여 이익을 실현한다.",
-        "거래량이 많이 터졌으므로 손절 라인을 지우고 장기 투자를 결심한다.",
-        "상승 추세가 무효화되었으므로 숏 50배 레버리지로 보복 매매를 가동한다."
+        "강한 매수 기세 기대로 즉시 돌파 매매 풀매수",
+        "저항벽 매도 공급 세력 분산 확인 후 이익 실현",
+        "대량 거래 확인에 따른 손절 해제 후 장기 투자",
+        "반등 실패에 따른 고배율 보복 숏 베팅 가동"
     ],
     correctIndex: 1,
     explanation: "캔들 몸통 크기(스프레드)가 좁은데 거래량이 매우 크게 폭증했다는 것은 저항선 부근에서 들어오는 매수세만큼 세력의 매도 물량 공급이 쏟아져 막강한 저항 벽을 형성하고 있다는 뜻입니다. VSA에서는 이를 불화(Disharmony)로 규정하며 상승 추세 감속 및 하락 반전의 경고로 해독합니다."
@@ -2052,7 +2052,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 636,
             "low": 600,
             "close": 606,
-            "volume": 83
+            "volume": 95
         },
         {
             "time": "Day 2",
@@ -2060,7 +2060,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 612,
             "low": 585,
             "close": 603,
-            "volume": 119
+            "volume": 108
         }
     ],
     drawings: [
@@ -2081,10 +2081,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선 붕괴 완료로 확정하여 시장가 숏(공매도)에 추격 진입한다.",
-        "개인들의 손절 물량을 청산시키고 가격을 말아올린 '유동성 스윕(Liquidity Sweep)'이자 베어트랩으로 판단하며, 아래꼬리 저점인 585달러 밑에 손절을 짧게 걸고 롱(매수) 진입을 노린다.",
-        "아무런 신호도 아니므로 계좌를 관망 모드로 방치한다.",
-        "지지선 이탈 실패이므로 원금 100% 매도 후 영구 이탈한다."
+        "지지선 붕괴 확정으로 간주한 시장가 숏 추격",
+        "스윕(sweep) 판단 하에 아래꼬리 저점 손절 잡고 롱",
+        "아무런 신호도 아니라고 판단하고 포지션 방치",
+        "지지선 이탈 기대로 전량 손절 후 시장 영구 탈출"
     ],
     correctIndex: 1,
     explanation: "지지선 아래에 걸려 있던 개인들의 손절 주문(Sell Stop)을 강제로 청산(Liquidity Sweep)시킨 뒤, 세력이 물량을 헐값에 다 받아 삼켜 종가를 지지선 위로 신속하게 복귀시킨 휩소(베어 트랩) 패턴입니다. 아래꼬리 극점(585달러)에 아주 좁은 손절 라인을 설정할 수 있어, 기대 손익비가 극대화되는 고확률 상승 반전 매수 타점입니다."
@@ -2103,7 +2103,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 780,
             "low": 684,
             "close": 765,
-            "volume": 118
+            "volume": 113
         },
         {
             "time": "Wave 2",
@@ -2111,7 +2111,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 825,
             "low": 750,
             "close": 810,
-            "volume": 111
+            "volume": 116
         },
         {
             "time": "Wave 3",
@@ -2119,14 +2119,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 870,
             "low": 795,
             "close": 864,
-            "volume": 112
+            "volume": 100
         }
     ],
     options: [
-        "가격이 올라가므로 매수 에너지가 지속 강화되는 초강세장이다.",
-        "상승 강세가 진행됨에 따라 시장에 매도 공급 물량이 아예 말라버린 극도의 무중력 랠리이므로 안심하고 홀딩한다.",
-        "상승 이면의 신규 매수 가담 자금이 고갈되는 '거래량 다이버전스' 현상으로 추세 피로도가 극에 달했음을 나타내므로, 추격 매수를 철저히 배제하고 포지션의 분할 익절 관리를 시작한다.",
-        "거래량 감소는 차트 조작이므로 매매를 즉시 정지한다."
+        "가격 상승으로 인한 매수 지속 강화 초강세",
+        "매도 물량 고갈에 따른 무중력 안심 홀딩",
+        "신규 자금 유입 둔화 거래량 다이버전스로 분할 익절",
+        "지표 조작으로 판단하여 매매 중단 및 차트 종료"
     ],
     correctIndex: 2,
     explanation: "삼성전자 주가는 상승하여 신고점을 갱신하지만 파동별 거래량이 지속 감소하는 흐름은 '거래량 다이버전스'로 상승 모멘텀의 내부 엔진이 식어감을 경고합니다. 조만간 가벼운 매도 포격에도 대규모의 차익 실현 폭락 조정이 발생할 수 있는 잠재적 폭락 국면이므로 물량을 덜어내고 현금을 확보해야 합니다."
@@ -2145,7 +2145,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 306,
             "low": 297,
             "close": 300,
-            "volume": 116
+            "volume": 368
         },
         {
             "time": "Day 2",
@@ -2153,14 +2153,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 336,
             "low": 297,
             "close": 330,
-            "volume": 97
+            "volume": 396
         }
     ],
     options: [
-        "돌파 순간 거래량이 오히려 최저치로 메말라 있는 고요한 수렴 상태여야 한다.",
-        "돌파를 완료한 장대양봉의 마감 거래량이 이전 10일 평균 거래량 대비 최소 1.5배~2배 이상 폭발하며 동반 상승해야 세력의 진성 개입으로 신뢰할 수 있다.",
-        "거래량은 돌파 판정에 아무런 영향을 주지 않는다.",
-        "거래소 내부 슬리피지 수치만 보고 결정한다."
+        "수렴 끝자락에서 거래량이 최저치인 상태 유지",
+        "평균 대비 1.5~2배 이상 거래량 급증하며 돌파 마감",
+        "거래량이 전혀 변하지 않는 평이한 상태 유지",
+        "호가 스프레드가 가장 좁아지는 횡보 상태"
     ],
     correctIndex: 1,
     explanation: "참된 저항 돌파(True Breakout)는 저항선 부근의 두터운 대기 매도 공급 물량을 대규모 자금으로 전부 씹어 삼키고 돌파해야 함을 뜻합니다. 따라서 반드시 평균 대비 1.5배~2배 이상의 거래량 분출이 동반되어야 신뢰할 수 있으며, 거래량이 적은 돌파는 꼬리 달고 내려앉는 불 트랩(Bull Trap)일 확률이 매우 높습니다."
@@ -2179,7 +2179,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 151500,
             "low": 147600,
             "close": 148500,
-            "volume": 31
+            "volume": 17
         },
         {
             "time": "Day 2",
@@ -2187,7 +2187,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 149400,
             "low": 144000,
             "close": 148800,
-            "volume": 24
+            "volume": 17
         }
     ],
     drawings: [
@@ -2208,10 +2208,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선을 가볍게 뚫고 내려가 아무 반등도 없이 20% 이상 수직 낙하 장대음봉으로 마감한다.",
-        "순간적으로 전저점(147,600달러) 밑으로 가격을 밀쳐 손절 물량을 대량 폭발시킨 후, 이를 순식간에 매수 흡수하여 아래꼬리가 아주 길게 달린 핀바 형태로 종가를 지지선 위로 회복 마감한다.",
-        "수평 지지지선을 한 치의 오차도 없이 터치하고 0.01%의 꼬리도 없이 완전 수평 도지로 횡보한다.",
-        "거래량 없이 수직 상방으로 폭등하여 10만 달러에 즉시 도달한다."
+        "지지선을 장대음봉으로 돌파하여 20% 폭락 마감",
+        "전저점 이탈로 손절 유도 후 지지선 위 아래꼬리 안착",
+        "오차 없이 지지선 터치 후 꼬리 없는 수평 도지 횡보",
+        "거래량 없이 즉각 상승 빔 분출로 전고점 탈환"
     ],
     correctIndex: 1,
     explanation: "기관 세력(스마트 머니)은 대량 포지션을 구축하기 위해 개인의 손절 주문(Sell Stop)을 의도적으로 터트려 매도 유동성을 유도한 후 이를 다 매수합니다. 이로 인해 삼성전자 주가는 지지선 아래로 일시 급락 후(스톱 헌팅), 아래꼬리를 매우 길게 달며 지선 안쪽으로 급반등 마감하게 됩니다. 이것이 유동성 스윕(Liquidity Sweep)의 정석 패턴입니다."
@@ -2233,10 +2233,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 매수 시도 흔적이 있으므로 저점 매수 기회로 보고 적극 추가 매수한다.",
-        "고점 매도 공급이 롱 청산 손절 물량을 완벽히 제압하여 상방을 격렬하게 거절(Rejection)한 징후이며 매도세의 승리이므로, 기존 매수 포지션을 전량 대피 또는 매도 조치한다.",
-        "거래량이 많으므로 무조건 횡보 흐름으로 수렴될 것이라 판단해 양방향 마틴게일 베팅을 가동한다.",
-        "이평선이 정배열이므로 신경 쓰지 않고 무시한다."
+        "강한 저점 매수 기회로 인지하여 비중 대폭 추가",
+        "고점 매도 Rejection 확인 후 기존 롱 포지션 대피",
+        "박스 횡보 수렴 기대로 마틴게일 추가 매수 가동",
+        "이평선 정배열 판단에 따른 포지션 변경 없이 홀딩"
     ],
     correctIndex: 1,
     explanation: "위꼬리가 매우 긴 캔들이 대량 거래량과 함께 터졌다는 것은 고점 돌파 시도가 있었으나 그 자리에 숨어 있던 세력의 막강한 청산 매도 벽(Supply)을 만나 격렬하게 두들겨 맞고 밀려났음을 의미합니다. 상방 거절의 심리가 지배적이므로 고점 피로 및 하락 전환이 임박한 위험 징후입니다."
@@ -2255,7 +2255,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 505,
             "low": 485,
             "close": 500,
-            "volume": 114
+            "volume": 88
         },
         {
             "time": "Day 2",
@@ -2263,7 +2263,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 510,
             "low": 495,
             "close": 505,
-            "volume": 100
+            "volume": 120
         },
         {
             "time": "Day 3",
@@ -2271,7 +2271,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 550,
             "low": 500,
             "close": 540,
-            "volume": 24
+            "volume": 15
         },
         {
             "time": "Day 4",
@@ -2279,7 +2279,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 545,
             "low": 475,
             "close": 480,
-            "volume": 33
+            "volume": 19
         }
     ],
     drawings: [
@@ -2301,9 +2301,9 @@ export const quizzes_volume_liquidity: QuizItem[] = [
     ],
     options: [
         "진짜 상승 돌파 (True Breakout)",
-        "불 트랩 (Bull Trap / 가짜 돌파) - 추격 매수자들을 물리는 하락 함정",
-        "베어 트랩 (Bear Trap / 가짜 하방)",
-        "골든 크로스 (Golden Cross)"
+        "불 트랩 (Bull Trap) - 매수자 청산 유도 가짜 돌파",
+        "베어 트랩 (Bear Trap) - 매도자 청산 유도 가짜 하방",
+        "골든 크로스 (Golden Cross) - 이평선 돌파"
     ],
     correctIndex: 1,
     explanation: "저항선을 일시적으로 뚫었다가 대량 매도세와 함께 직후 캔들에서 하방으로 원상복귀하는 현상을 '불 트랩(Bull Trap/가짜 돌파)'이라고 합니다. 돌파 후 리테스트를 기다리지 않고 급히 추격 매수했던 투자자들이 고점에 물리는 대표적 함정입니다."
@@ -2322,7 +2322,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 610,
             "low": 590,
             "close": 595,
-            "volume": 93
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -2330,7 +2330,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 600,
             "low": 550,
             "close": 555,
-            "volume": 101
+            "volume": 115
         },
         {
             "time": "Day 3",
@@ -2338,7 +2338,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 615,
             "low": 550,
             "close": 610,
-            "volume": 110
+            "volume": 126
         }
     ],
     drawings: [
@@ -2359,10 +2359,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩 (Bull Trap)",
-        "베어 트랩 (Bear Trap / 가짜 하락 이탈) - 매도자 청산 유도 후 급등 함정",
-        "리테스트 실패",
-        "추세 추종 돌파"
+        "불 트랩 (Bull Trap) - 가짜 상방 돌파",
+        "베어 트랩 (Bear Trap) - 가짜 하방 이탈",
+        "리테스트 실패 - 지지선 붕괴",
+        "추세 추종 돌파 - 하방 랠리 가속"
     ],
     correctIndex: 1,
     explanation: "지지선을 아래로 뚫고 내려가 하락세가 지속될 것처럼 유도한 뒤, 매물을 털어내고 강력하게 다시 반등해 올리는 현상을 '베어 트랩(Bear Trap)'이라고 합니다. 하락 돌파로 생각하고 공매도를 치거나 손절했던 사람들의 손실을 강제하며 가격이 급등하게 만듭니다."
@@ -2381,7 +2381,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 640,
             "low": 595,
             "close": 635,
-            "volume": 118
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -2389,7 +2389,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 690,
             "low": 630,
             "close": 680,
-            "volume": 115
+            "volume": 106
         },
         {
             "time": "Day 3",
@@ -2397,14 +2397,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 670,
             "low": 650,
             "close": 655,
-            "volume": 117
+            "volume": 97
         }
     ],
     options: [
-        "상승 모멘텀이 일시적으로 정체되고 매도 공급이 잉태된 신호이므로, 보유 물량의 50% 정도를 익절하여 이익을 확정하고 다음 날 돌파/이탈 방향을 관망한다.",
-        "대세 상승의 일시 조정이므로 추가 대출을 통해 더 높은 비중으로 추격 매수한다.",
-        "즉시 숏(공매도) 20배 레버리지로 베팅하고 자리를 비운다.",
-        "어떠한 부분 매도도 거부하고 전량 영구 홀딩을 고집한다."
+        "상승 둔화 조짐에 따른 보유 물량 50% 분할 익절",
+        "추세 일시 조정으로 간주하여 비중 확대 추가 매수",
+        "추세 종결 판단에 따른 고배율 숏 포지션 즉시 진입",
+        "이익 실현 없이 전량 장기 보유 전략 유지"
     ],
     correctIndex: 0,
     explanation: "하락 잉태형(Bearish Harami)은 이전의 강한 상승 추세 동력이 감속하기 시작했으며, 매도 압력이 힘을 기르고 있음을 암시하는 변곡 캔들입니다. 따라서 단기 스윙 트레이더는 물량의 일부(50%)를 분할 익절하여 리스크를 낮추고, 다음 캔들에서 이전 양봉 저점을 깨뜨리는 하락 하방 이탈이 추가되는지 지켜보는 것이 정석입니다."
@@ -2423,7 +2423,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 590,
             "low": 555,
             "close": 585,
-            "volume": 109
+            "volume": 115
         },
         {
             "time": "Day 2",
@@ -2431,7 +2431,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 610,
             "low": 580,
             "close": 605,
-            "volume": 388
+            "volume": 347
         },
         {
             "time": "Day 3",
@@ -2439,7 +2439,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 610,
             "low": 575,
             "close": 580,
-            "volume": 403
+            "volume": 375
         }
     ],
     drawings: [
@@ -2456,10 +2456,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩(Bull Trap / 가짜 돌파) 함정에 걸려 고점에 물린 형국이 확정되었으므로, 추가 하락 피해를 예방하기 위해 즉각 전량 시장가 매도하여 탈출(손절)한다.",
-        "600달러의 지지력을 신뢰하며 영구 존버 전략으로 들어간다.",
-        "평단가 부근이므로 대출을 더 내어 2차 매수를 더 낮은 단가에 물탄다.",
-        "상황을 무시하고 다른 종목을 똑같이 추격 매수한다."
+        "불 트랩(Bull Trap) 확인 후 추가 하락 방지 즉시 손절",
+        "저항선 부근 매수세 복귀를 기대하며 전량 홀딩",
+        "평단가 관리 차원에서 추가 물타기 매수 집행",
+        "상황을 판단하기 위해 시장가로 추가 분할 진입"
     ],
     correctIndex: 0,
     explanation: "거래량 없는 돌파 직후에 거래량 실린 강한 음봉이 기존 돌파선(600달러) 아래로 재진입하여 마감하는 현상은 전형적인 불 트랩(Bull Trap/가짜 돌파) 함정입니다. 돌파 당시 샀던 매수자들의 패닉 셀이 출현하며 하락 가속화가 나오기 쉬우므로 즉시 손절하여 물량을 털어내야 생존할 수 있습니다."
@@ -2478,7 +2478,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 510,
             "low": 450,
             "close": 460,
-            "volume": 111
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -2486,7 +2486,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 470,
             "low": 410,
             "close": 415,
-            "volume": 119
+            "volume": 93
         },
         {
             "time": "Day 3",
@@ -2494,7 +2494,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 425,
             "low": 375,
             "close": 380,
-            "volume": 97
+            "volume": 125
         },
         {
             "time": "Day 4",
@@ -2502,7 +2502,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 450,
             "low": 375,
             "close": 445,
-            "volume": 93
+            "volume": 105
         }
     ],
     drawings: [
@@ -2531,10 +2531,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "하락 채널을 강하게 상방으로 뚫고 올라갔다는 것은 기존 하락 관성이 파괴되고 상승 추세 전환(Bullish Reversal)이 선언되었음을 뜻하므로, 원칙에 의거해 즉시 숏 포지션을 전량 손절(또는 익절)하고 대피하거나 롱 전환을 모색한다.",
-        "버티면 다시 채널 하방으로 들어올 것이므로 무제한 숏 추가 물타기를 집행한다.",
-        "영원히 포지션을 유지한 채 계좌가 마이너스로 깎여나가는 것을 바라본다.",
-        "증거금을 출금하고 거래소 앱을 삭제한다."
+        "상단 돌파 확인 즉시 숏 전량 손절 및 대피",
+        "채널 재진입 기대로 숏 포지션 추가 물타기",
+        "손절 없이 유지하면서 포지션 본전 도달 대기",
+        "포지션 유지 후 증거금을 출금하여 강제 횡보"
     ],
     correctIndex: 0,
     explanation: "하락 평행 채널의 상단 저항선 상향 돌파(Breakout)는 기존 하락 트렌드의 사멸과 매수세 지배령 복귀를 뜻합니다. 지표와 거래량이 동반된 돌파 확인 시에는 숏 포지션을 지체 없이 기계적으로 칼손절하여 자산을 보호하는 것이 원칙입니다."
@@ -2553,7 +2553,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 525,
             "low": 495,
             "close": 520,
-            "volume": 98
+            "volume": 104
         },
         {
             "time": "Day 2",
@@ -2561,7 +2561,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 545,
             "low": 515,
             "close": 540,
-            "volume": 102
+            "volume": 101
         },
         {
             "time": "Day 3",
@@ -2569,7 +2569,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 550,
             "low": 535,
             "close": 540,
-            "volume": 112
+            "volume": 126
         }
     ],
     drawings: [
@@ -2590,10 +2590,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "매수 에너지가 매우 강하므로 즉시 풀매수로 돌파 매매를 실행한다.",
-        "저항선 부근에서 매수 물량을 압도하는 세력의 강한 분산(Distribution / 매도 공급)이 진행되고 있음을 뜻하므로, 상승이 정체되고 꺾일 리스크에 대비하여 이익을 실현한다.",
-        "거래량이 많이 터졌으므로 손절 라인을 지우고 장기 투자를 결심한다.",
-        "상승 추세가 무효화되었으므로 숏 50배 레버리지로 보복 매매를 가동한다."
+        "강한 매수 기세 기대로 즉시 돌파 매매 풀매수",
+        "저항벽 매도 공급 세력 분산 확인 후 이익 실현",
+        "대량 거래 확인에 따른 손절 해제 후 장기 투자",
+        "반등 실패에 따른 고배율 보복 숏 베팅 가동"
     ],
     correctIndex: 1,
     explanation: "캔들 몸통 크기(스프레드)가 좁은데 거래량이 매우 크게 폭증했다는 것은 저항선 부근에서 들어오는 매수세만큼 세력의 매도 물량 공급이 쏟아져 막강한 저항 벽을 형성하고 있다는 뜻입니다. VSA에서는 이를 불화(Disharmony)로 규정하며 상승 추세 감속 및 하락 반전의 경고로 해독합니다."
@@ -2612,7 +2612,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1060,
             "low": 1000,
             "close": 1010,
-            "volume": 90
+            "volume": 109
         },
         {
             "time": "Day 2",
@@ -2620,7 +2620,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1020,
             "low": 975,
             "close": 1005,
-            "volume": 104
+            "volume": 97
         }
     ],
     drawings: [
@@ -2641,10 +2641,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선 붕괴 완료로 확정하여 시장가 숏(공매도)에 추격 진입한다.",
-        "개인들의 손절 물량을 청산시키고 가격을 말아올린 '유동성 스윕(Liquidity Sweep)'이자 베어트랩으로 판단하며, 아래꼬리 저점인 975달러 밑에 손절을 짧게 걸고 롱(매수) 진입을 노린다.",
-        "아무런 신호도 아니므로 계좌를 관망 모드로 방치한다.",
-        "지지선 이탈 실패이므로 원금 100% 매도 후 영구 이탈한다."
+        "지지선 붕괴 확정으로 간주한 시장가 숏 추격",
+        "스윕(sweep) 판단 하에 아래꼬리 저점 손절 잡고 롱",
+        "아무런 신호도 아니라고 판단하고 포지션 방치",
+        "지지선 이탈 기대로 전량 손절 후 시장 영구 탈출"
     ],
     correctIndex: 1,
     explanation: "지지선 아래에 걸려 있던 개인들의 손절 주문(Sell Stop)을 강제로 청산(Liquidity Sweep)시킨 뒤, 세력이 물량을 헐값에 다 받아 삼켜 종가를 지지선 위로 신속하게 복귀시킨 휩소(베어 트랩) 패턴입니다. 아래꼬리 극점(975달러)에 아주 좁은 손절 라인을 설정할 수 있어, 기대 손익비가 극대화되는 고확률 상승 반전 매수 타점입니다."
@@ -2663,7 +2663,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1300,
             "low": 1140,
             "close": 1275,
-            "volume": 99
+            "volume": 103
         },
         {
             "time": "Wave 2",
@@ -2671,7 +2671,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1375,
             "low": 1250,
             "close": 1350,
-            "volume": 84
+            "volume": 89
         },
         {
             "time": "Wave 3",
@@ -2679,14 +2679,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1450,
             "low": 1325,
             "close": 1440,
-            "volume": 102
+            "volume": 95
         }
     ],
     options: [
-        "가격이 올라가므로 매수 에너지가 지속 강화되는 초강세장이다.",
-        "상승 강세가 진행됨에 따라 시장에 매도 공급 물량이 아예 말라버린 극도의 무중력 랠리이므로 안심하고 홀딩한다.",
-        "상승 이면의 신규 매수 가담 자금이 고갈되는 '거래량 다이버전스' 현상으로 추세 피로도가 극에 달했음을 나타내므로, 추격 매수를 철저히 배제하고 포지션의 분할 익절 관리를 시작한다.",
-        "거래량 감소는 차트 조작이므로 매매를 즉시 정지한다."
+        "가격 상승으로 인한 매수 지속 강화 초강세",
+        "매도 물량 고갈에 따른 무중력 안심 홀딩",
+        "신규 자금 유입 둔화 거래량 다이버전스로 분할 익절",
+        "지표 조작으로 판단하여 매매 중단 및 차트 종료"
     ],
     correctIndex: 2,
     explanation: "테슬라 주가는 상승하여 신고점을 갱신하지만 파동별 거래량이 지속 감소하는 흐름은 '거래량 다이버전스'로 상승 모멘텀의 내부 엔진이 식어감을 경고합니다. 조만간 가벼운 매도 포격에도 대규모의 차익 실현 폭락 조정이 발생할 수 있는 잠재적 폭락 국면이므로 물량을 덜어내고 현금을 확보해야 합니다."
@@ -2705,7 +2705,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 510,
             "low": 495,
             "close": 500,
-            "volume": 112
+            "volume": 358
         },
         {
             "time": "Day 2",
@@ -2713,14 +2713,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 560,
             "low": 495,
             "close": 550,
-            "volume": 120
+            "volume": 409
         }
     ],
     options: [
-        "돌파 순간 거래량이 오히려 최저치로 메말라 있는 고요한 수렴 상태여야 한다.",
-        "돌파를 완료한 장대양봉의 마감 거래량이 이전 10일 평균 거래량 대비 최소 1.5배~2배 이상 폭발하며 동반 상승해야 세력의 진성 개입으로 신뢰할 수 있다.",
-        "거래량은 돌파 판정에 아무런 영향을 주지 않는다.",
-        "거래소 내부 슬리피지 수치만 보고 결정한다."
+        "수렴 끝자락에서 거래량이 최저치인 상태 유지",
+        "평균 대비 1.5~2배 이상 거래량 급증하며 돌파 마감",
+        "거래량이 전혀 변하지 않는 평이한 상태 유지",
+        "호가 스프레드가 가장 좁아지는 횡보 상태"
     ],
     correctIndex: 1,
     explanation: "참된 저항 돌파(True Breakout)는 저항선 부근의 두터운 대기 매도 공급 물량을 대규모 자금으로 전부 씹어 삼키고 돌파해야 함을 뜻합니다. 따라서 반드시 평균 대비 1.5배~2배 이상의 거래량 분출이 동반되어야 신뢰할 수 있으며, 거래량이 적은 돌파는 꼬리 달고 내려앉는 불 트랩(Bull Trap)일 확률이 매우 높습니다."
@@ -2739,7 +2739,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 252500,
             "low": 246000,
             "close": 247500,
-            "volume": 24
+            "volume": 28
         },
         {
             "time": "Day 2",
@@ -2747,7 +2747,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 249000,
             "low": 240000,
             "close": 248000,
-            "volume": 23
+            "volume": 25
         }
     ],
     drawings: [
@@ -2768,10 +2768,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선을 가볍게 뚫고 내려가 아무 반등도 없이 20% 이상 수직 낙하 장대음봉으로 마감한다.",
-        "순간적으로 전저점(246,000달러) 밑으로 가격을 밀쳐 손절 물량을 대량 폭발시킨 후, 이를 순식간에 매수 흡수하여 아래꼬리가 아주 길게 달린 핀바 형태로 종가를 지지선 위로 회복 마감한다.",
-        "수평 지지지선을 한 치의 오차도 없이 터치하고 0.01%의 꼬리도 없이 완전 수평 도지로 횡보한다.",
-        "거래량 없이 수직 상방으로 폭등하여 10만 달러에 즉시 도달한다."
+        "지지선을 장대음봉으로 돌파하여 20% 폭락 마감",
+        "전저점 이탈로 손절 유도 후 지지선 위 아래꼬리 안착",
+        "오차 없이 지지선 터치 후 꼬리 없는 수평 도지 횡보",
+        "거래량 없이 즉각 상승 빔 분출로 전고점 탈환"
     ],
     correctIndex: 1,
     explanation: "기관 세력(스마트 머니)은 대량 포지션을 구축하기 위해 개인의 손절 주문(Sell Stop)을 의도적으로 터트려 매도 유동성을 유도한 후 이를 다 매수합니다. 이로 인해 테슬라 주가는 지지선 아래로 일시 급락 후(스톱 헌팅), 아래꼬리를 매우 길게 달며 지선 안쪽으로 급반등 마감하게 됩니다. 이것이 유동성 스윕(Liquidity Sweep)의 정석 패턴입니다."
@@ -2793,10 +2793,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 매수 시도 흔적이 있으므로 저점 매수 기회로 보고 적극 추가 매수한다.",
-        "고점 매도 공급이 롱 청산 손절 물량을 완벽히 제압하여 상방을 격렬하게 거절(Rejection)한 징후이며 매도세의 승리이므로, 기존 매수 포지션을 전량 대피 또는 매도 조치한다.",
-        "거래량이 많으므로 무조건 횡보 흐름으로 수렴될 것이라 판단해 양방향 마틴게일 베팅을 가동한다.",
-        "이평선이 정배열이므로 신경 쓰지 않고 무시한다."
+        "강한 저점 매수 기회로 인지하여 비중 대폭 추가",
+        "고점 매도 Rejection 확인 후 기존 롱 포지션 대피",
+        "박스 횡보 수렴 기대로 마틴게일 추가 매수 가동",
+        "이평선 정배열 판단에 따른 포지션 변경 없이 홀딩"
     ],
     correctIndex: 1,
     explanation: "위꼬리가 매우 긴 캔들이 대량 거래량과 함께 터졌다는 것은 고점 돌파 시도가 있었으나 그 자리에 숨어 있던 세력의 막강한 청산 매도 벽(Supply)을 만나 격렬하게 두들겨 맞고 밀려났음을 의미합니다. 상방 거절의 심리가 지배적이므로 고점 피로 및 하락 전환이 임박한 위험 징후입니다."
@@ -2815,7 +2815,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 808,
             "low": 776,
             "close": 800,
-            "volume": 116
+            "volume": 117
         },
         {
             "time": "Day 2",
@@ -2823,7 +2823,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 816,
             "low": 792,
             "close": 808,
-            "volume": 94
+            "volume": 117
         },
         {
             "time": "Day 3",
@@ -2831,7 +2831,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 880,
             "low": 800,
             "close": 864,
-            "volume": 17
+            "volume": 28
         },
         {
             "time": "Day 4",
@@ -2839,7 +2839,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 872,
             "low": 760,
             "close": 768,
-            "volume": 34
+            "volume": 17
         }
     ],
     drawings: [
@@ -2861,9 +2861,9 @@ export const quizzes_volume_liquidity: QuizItem[] = [
     ],
     options: [
         "진짜 상승 돌파 (True Breakout)",
-        "불 트랩 (Bull Trap / 가짜 돌파) - 추격 매수자들을 물리는 하락 함정",
-        "베어 트랩 (Bear Trap / 가짜 하방)",
-        "골든 크로스 (Golden Cross)"
+        "불 트랩 (Bull Trap) - 매수자 청산 유도 가짜 돌파",
+        "베어 트랩 (Bear Trap) - 매도자 청산 유도 가짜 하방",
+        "골든 크로스 (Golden Cross) - 이평선 돌파"
     ],
     correctIndex: 1,
     explanation: "저항선을 일시적으로 뚫었다가 대량 매도세와 함께 직후 캔들에서 하방으로 원상복귀하는 현상을 '불 트랩(Bull Trap/가짜 돌파)'이라고 합니다. 돌파 후 리테스트를 기다리지 않고 급히 추격 매수했던 투자자들이 고점에 물리는 대표적 함정입니다."
@@ -2882,7 +2882,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 976,
             "low": 944,
             "close": 952,
-            "volume": 104
+            "volume": 86
         },
         {
             "time": "Day 2",
@@ -2890,7 +2890,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 960,
             "low": 880,
             "close": 888,
-            "volume": 98
+            "volume": 96
         },
         {
             "time": "Day 3",
@@ -2898,7 +2898,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 984,
             "low": 880,
             "close": 976,
-            "volume": 104
+            "volume": 115
         }
     ],
     drawings: [
@@ -2919,10 +2919,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩 (Bull Trap)",
-        "베어 트랩 (Bear Trap / 가짜 하락 이탈) - 매도자 청산 유도 후 급등 함정",
-        "리테스트 실패",
-        "추세 추종 돌파"
+        "불 트랩 (Bull Trap) - 가짜 상방 돌파",
+        "베어 트랩 (Bear Trap) - 가짜 하방 이탈",
+        "리테스트 실패 - 지지선 붕괴",
+        "추세 추종 돌파 - 하방 랠리 가속"
     ],
     correctIndex: 1,
     explanation: "지지선을 아래로 뚫고 내려가 하락세가 지속될 것처럼 유도한 뒤, 매물을 털어내고 강력하게 다시 반등해 올리는 현상을 '베어 트랩(Bear Trap)'이라고 합니다. 하락 돌파로 생각하고 공매도를 치거나 손절했던 사람들의 손실을 강제하며 가격이 급등하게 만듭니다."
@@ -2941,7 +2941,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1024,
             "low": 952,
             "close": 1016,
-            "volume": 108
+            "volume": 89
         },
         {
             "time": "Day 2",
@@ -2949,7 +2949,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1104,
             "low": 1008,
             "close": 1088,
-            "volume": 116
+            "volume": 84
         },
         {
             "time": "Day 3",
@@ -2957,14 +2957,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1072,
             "low": 1040,
             "close": 1048,
-            "volume": 123
+            "volume": 114
         }
     ],
     options: [
-        "상승 모멘텀이 일시적으로 정체되고 매도 공급이 잉태된 신호이므로, 보유 물량의 50% 정도를 익절하여 이익을 확정하고 다음 날 돌파/이탈 방향을 관망한다.",
-        "대세 상승의 일시 조정이므로 추가 대출을 통해 더 높은 비중으로 추격 매수한다.",
-        "즉시 숏(공매도) 20배 레버리지로 베팅하고 자리를 비운다.",
-        "어떠한 부분 매도도 거부하고 전량 영구 홀딩을 고집한다."
+        "상승 둔화 조짐에 따른 보유 물량 50% 분할 익절",
+        "추세 일시 조정으로 간주하여 비중 확대 추가 매수",
+        "추세 종결 판단에 따른 고배율 숏 포지션 즉시 진입",
+        "이익 실현 없이 전량 장기 보유 전략 유지"
     ],
     correctIndex: 0,
     explanation: "하락 잉태형(Bearish Harami)은 이전의 강한 상승 추세 동력이 감속하기 시작했으며, 매도 압력이 힘을 기르고 있음을 암시하는 변곡 캔들입니다. 따라서 단기 스윙 트레이더는 물량의 일부(50%)를 분할 익절하여 리스크를 낮추고, 다음 캔들에서 이전 양봉 저점을 깨뜨리는 하락 하방 이탈이 추가되는지 지켜보는 것이 정석입니다."
@@ -2983,7 +2983,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 944,
             "low": 888,
             "close": 936,
-            "volume": 84
+            "volume": 101
         },
         {
             "time": "Day 2",
@@ -2991,7 +2991,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 976,
             "low": 928,
             "close": 968,
-            "volume": 402
+            "volume": 347
         },
         {
             "time": "Day 3",
@@ -2999,7 +2999,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 976,
             "low": 920,
             "close": 928,
-            "volume": 419
+            "volume": 388
         }
     ],
     drawings: [
@@ -3016,10 +3016,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩(Bull Trap / 가짜 돌파) 함정에 걸려 고점에 물린 형국이 확정되었으므로, 추가 하락 피해를 예방하기 위해 즉각 전량 시장가 매도하여 탈출(손절)한다.",
-        "960달러의 지지력을 신뢰하며 영구 존버 전략으로 들어간다.",
-        "평단가 부근이므로 대출을 더 내어 2차 매수를 더 낮은 단가에 물탄다.",
-        "상황을 무시하고 다른 종목을 똑같이 추격 매수한다."
+        "불 트랩(Bull Trap) 확인 후 추가 하락 방지 즉시 손절",
+        "저항선 부근 매수세 복귀를 기대하며 전량 홀딩",
+        "평단가 관리 차원에서 추가 물타기 매수 집행",
+        "상황을 판단하기 위해 시장가로 추가 분할 진입"
     ],
     correctIndex: 0,
     explanation: "거래량 없는 돌파 직후에 거래량 실린 강한 음봉이 기존 돌파선(960달러) 아래로 재진입하여 마감하는 현상은 전형적인 불 트랩(Bull Trap/가짜 돌파) 함정입니다. 돌파 당시 샀던 매수자들의 패닉 셀이 출현하며 하락 가속화가 나오기 쉬우므로 즉시 손절하여 물량을 털어내야 생존할 수 있습니다."
@@ -3038,7 +3038,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 816,
             "low": 720,
             "close": 736,
-            "volume": 105
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -3046,7 +3046,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 752,
             "low": 656,
             "close": 664,
-            "volume": 114
+            "volume": 121
         },
         {
             "time": "Day 3",
@@ -3054,7 +3054,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 680,
             "low": 600,
             "close": 608,
-            "volume": 88
+            "volume": 105
         },
         {
             "time": "Day 4",
@@ -3062,7 +3062,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 720,
             "low": 600,
             "close": 712,
-            "volume": 114
+            "volume": 111
         }
     ],
     drawings: [
@@ -3091,10 +3091,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "하락 채널을 강하게 상방으로 뚫고 올라갔다는 것은 기존 하락 관성이 파괴되고 상승 추세 전환(Bullish Reversal)이 선언되었음을 뜻하므로, 원칙에 의거해 즉시 숏 포지션을 전량 손절(또는 익절)하고 대피하거나 롱 전환을 모색한다.",
-        "버티면 다시 채널 하방으로 들어올 것이므로 무제한 숏 추가 물타기를 집행한다.",
-        "영원히 포지션을 유지한 채 계좌가 마이너스로 깎여나가는 것을 바라본다.",
-        "증거금을 출금하고 거래소 앱을 삭제한다."
+        "상단 돌파 확인 즉시 숏 전량 손절 및 대피",
+        "채널 재진입 기대로 숏 포지션 추가 물타기",
+        "손절 없이 유지하면서 포지션 본전 도달 대기",
+        "포지션 유지 후 증거금을 출금하여 강제 횡보"
     ],
     correctIndex: 0,
     explanation: "하락 평행 채널의 상단 저항선 상향 돌파(Breakout)는 기존 하락 트렌드의 사멸과 매수세 지배령 복귀를 뜻합니다. 지표와 거래량이 동반된 돌파 확인 시에는 숏 포지션을 지체 없이 기계적으로 칼손절하여 자산을 보호하는 것이 원칙입니다."
@@ -3113,7 +3113,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 840,
             "low": 792,
             "close": 832,
-            "volume": 99
+            "volume": 88
         },
         {
             "time": "Day 2",
@@ -3121,7 +3121,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 872,
             "low": 824,
             "close": 864,
-            "volume": 86
+            "volume": 115
         },
         {
             "time": "Day 3",
@@ -3129,7 +3129,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 880,
             "low": 856,
             "close": 864,
-            "volume": 103
+            "volume": 91
         }
     ],
     drawings: [
@@ -3150,10 +3150,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "매수 에너지가 매우 강하므로 즉시 풀매수로 돌파 매매를 실행한다.",
-        "저항선 부근에서 매수 물량을 압도하는 세력의 강한 분산(Distribution / 매도 공급)이 진행되고 있음을 뜻하므로, 상승이 정체되고 꺾일 리스크에 대비하여 이익을 실현한다.",
-        "거래량이 많이 터졌으므로 손절 라인을 지우고 장기 투자를 결심한다.",
-        "상승 추세가 무효화되었으므로 숏 50배 레버리지로 보복 매매를 가동한다."
+        "강한 매수 기세 기대로 즉시 돌파 매매 풀매수",
+        "저항벽 매도 공급 세력 분산 확인 후 이익 실현",
+        "대량 거래 확인에 따른 손절 해제 후 장기 투자",
+        "반등 실패에 따른 고배율 보복 숏 베팅 가동"
     ],
     correctIndex: 1,
     explanation: "캔들 몸통 크기(스프레드)가 좁은데 거래량이 매우 크게 폭증했다는 것은 저항선 부근에서 들어오는 매수세만큼 세력의 매도 물량 공급이 쏟아져 막강한 저항 벽을 형성하고 있다는 뜻입니다. VSA에서는 이를 불화(Disharmony)로 규정하며 상승 추세 감속 및 하락 반전의 경고로 해독합니다."
@@ -3172,7 +3172,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1696,
             "low": 1600,
             "close": 1616,
-            "volume": 119
+            "volume": 90
         },
         {
             "time": "Day 2",
@@ -3180,7 +3180,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1632,
             "low": 1560,
             "close": 1608,
-            "volume": 92
+            "volume": 118
         }
     ],
     drawings: [
@@ -3201,10 +3201,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선 붕괴 완료로 확정하여 시장가 숏(공매도)에 추격 진입한다.",
-        "개인들의 손절 물량을 청산시키고 가격을 말아올린 '유동성 스윕(Liquidity Sweep)'이자 베어트랩으로 판단하며, 아래꼬리 저점인 1,560달러 밑에 손절을 짧게 걸고 롱(매수) 진입을 노린다.",
-        "아무런 신호도 아니므로 계좌를 관망 모드로 방치한다.",
-        "지지선 이탈 실패이므로 원금 100% 매도 후 영구 이탈한다."
+        "지지선 붕괴 확정으로 간주한 시장가 숏 추격",
+        "스윕(sweep) 판단 하에 아래꼬리 저점 손절 잡고 롱",
+        "아무런 신호도 아니라고 판단하고 포지션 방치",
+        "지지선 이탈 기대로 전량 손절 후 시장 영구 탈출"
     ],
     correctIndex: 1,
     explanation: "지지선 아래에 걸려 있던 개인들의 손절 주문(Sell Stop)을 강제로 청산(Liquidity Sweep)시킨 뒤, 세력이 물량을 헐값에 다 받아 삼켜 종가를 지지선 위로 신속하게 복귀시킨 휩소(베어 트랩) 패턴입니다. 아래꼬리 극점(1,560달러)에 아주 좁은 손절 라인을 설정할 수 있어, 기대 손익비가 극대화되는 고확률 상승 반전 매수 타점입니다."
@@ -3223,7 +3223,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2080,
             "low": 1824,
             "close": 2040,
-            "volume": 109
+            "volume": 84
         },
         {
             "time": "Wave 2",
@@ -3231,7 +3231,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2200,
             "low": 2000,
             "close": 2160,
-            "volume": 101
+            "volume": 119
         },
         {
             "time": "Wave 3",
@@ -3239,14 +3239,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2320,
             "low": 2120,
             "close": 2304,
-            "volume": 91
+            "volume": 125
         }
     ],
     options: [
-        "가격이 올라가므로 매수 에너지가 지속 강화되는 초강세장이다.",
-        "상승 강세가 진행됨에 따라 시장에 매도 공급 물량이 아예 말라버린 극도의 무중력 랠리이므로 안심하고 홀딩한다.",
-        "상승 이면의 신규 매수 가담 자금이 고갈되는 '거래량 다이버전스' 현상으로 추세 피로도가 극에 달했음을 나타내므로, 추격 매수를 철저히 배제하고 포지션의 분할 익절 관리를 시작한다.",
-        "거래량 감소는 차트 조작이므로 매매를 즉시 정지한다."
+        "가격 상승으로 인한 매수 지속 강화 초강세",
+        "매도 물량 고갈에 따른 무중력 안심 홀딩",
+        "신규 자금 유입 둔화 거래량 다이버전스로 분할 익절",
+        "지표 조작으로 판단하여 매매 중단 및 차트 종료"
     ],
     correctIndex: 2,
     explanation: "애플 주가는 상승하여 신고점을 갱신하지만 파동별 거래량이 지속 감소하는 흐름은 '거래량 다이버전스'로 상승 모멘텀의 내부 엔진이 식어감을 경고합니다. 조만간 가벼운 매도 포격에도 대규모의 차익 실현 폭락 조정이 발생할 수 있는 잠재적 폭락 국면이므로 물량을 덜어내고 현금을 확보해야 합니다."
@@ -3265,7 +3265,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 816,
             "low": 792,
             "close": 800,
-            "volume": 115
+            "volume": 338
         },
         {
             "time": "Day 2",
@@ -3273,14 +3273,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 896,
             "low": 792,
             "close": 880,
-            "volume": 93
+            "volume": 387
         }
     ],
     options: [
-        "돌파 순간 거래량이 오히려 최저치로 메말라 있는 고요한 수렴 상태여야 한다.",
-        "돌파를 완료한 장대양봉의 마감 거래량이 이전 10일 평균 거래량 대비 최소 1.5배~2배 이상 폭발하며 동반 상승해야 세력의 진성 개입으로 신뢰할 수 있다.",
-        "거래량은 돌파 판정에 아무런 영향을 주지 않는다.",
-        "거래소 내부 슬리피지 수치만 보고 결정한다."
+        "수렴 끝자락에서 거래량이 최저치인 상태 유지",
+        "평균 대비 1.5~2배 이상 거래량 급증하며 돌파 마감",
+        "거래량이 전혀 변하지 않는 평이한 상태 유지",
+        "호가 스프레드가 가장 좁아지는 횡보 상태"
     ],
     correctIndex: 1,
     explanation: "참된 저항 돌파(True Breakout)는 저항선 부근의 두터운 대기 매도 공급 물량을 대규모 자금으로 전부 씹어 삼키고 돌파해야 함을 뜻합니다. 따라서 반드시 평균 대비 1.5배~2배 이상의 거래량 분출이 동반되어야 신뢰할 수 있으며, 거래량이 적은 돌파는 꼬리 달고 내려앉는 불 트랩(Bull Trap)일 확률이 매우 높습니다."
@@ -3299,7 +3299,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 404000,
             "low": 393600,
             "close": 396000,
-            "volume": 32
+            "volume": 30
         },
         {
             "time": "Day 2",
@@ -3307,7 +3307,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 398400,
             "low": 384000,
             "close": 396800,
-            "volume": 29
+            "volume": 20
         }
     ],
     drawings: [
@@ -3328,10 +3328,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선을 가볍게 뚫고 내려가 아무 반등도 없이 20% 이상 수직 낙하 장대음봉으로 마감한다.",
-        "순간적으로 전저점(393,600달러) 밑으로 가격을 밀쳐 손절 물량을 대량 폭발시킨 후, 이를 순식간에 매수 흡수하여 아래꼬리가 아주 길게 달린 핀바 형태로 종가를 지지선 위로 회복 마감한다.",
-        "수평 지지지선을 한 치의 오차도 없이 터치하고 0.01%의 꼬리도 없이 완전 수평 도지로 횡보한다.",
-        "거래량 없이 수직 상방으로 폭등하여 10만 달러에 즉시 도달한다."
+        "지지선을 장대음봉으로 돌파하여 20% 폭락 마감",
+        "전저점 이탈로 손절 유도 후 지지선 위 아래꼬리 안착",
+        "오차 없이 지지선 터치 후 꼬리 없는 수평 도지 횡보",
+        "거래량 없이 즉각 상승 빔 분출로 전고점 탈환"
     ],
     correctIndex: 1,
     explanation: "기관 세력(스마트 머니)은 대량 포지션을 구축하기 위해 개인의 손절 주문(Sell Stop)을 의도적으로 터트려 매도 유동성을 유도한 후 이를 다 매수합니다. 이로 인해 애플 주가는 지지선 아래로 일시 급락 후(스톱 헌팅), 아래꼬리를 매우 길게 달며 지선 안쪽으로 급반등 마감하게 됩니다. 이것이 유동성 스윕(Liquidity Sweep)의 정석 패턴입니다."
@@ -3353,10 +3353,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 매수 시도 흔적이 있으므로 저점 매수 기회로 보고 적극 추가 매수한다.",
-        "고점 매도 공급이 롱 청산 손절 물량을 완벽히 제압하여 상방을 격렬하게 거절(Rejection)한 징후이며 매도세의 승리이므로, 기존 매수 포지션을 전량 대피 또는 매도 조치한다.",
-        "거래량이 많으므로 무조건 횡보 흐름으로 수렴될 것이라 판단해 양방향 마틴게일 베팅을 가동한다.",
-        "이평선이 정배열이므로 신경 쓰지 않고 무시한다."
+        "강한 저점 매수 기회로 인지하여 비중 대폭 추가",
+        "고점 매도 Rejection 확인 후 기존 롱 포지션 대피",
+        "박스 횡보 수렴 기대로 마틴게일 추가 매수 가동",
+        "이평선 정배열 판단에 따른 포지션 변경 없이 홀딩"
     ],
     correctIndex: 1,
     explanation: "위꼬리가 매우 긴 캔들이 대량 거래량과 함께 터졌다는 것은 고점 돌파 시도가 있었으나 그 자리에 숨어 있던 세력의 막강한 청산 매도 벽(Supply)을 만나 격렬하게 두들겨 맞고 밀려났음을 의미합니다. 상방 거절의 심리가 지배적이므로 고점 피로 및 하락 전환이 임박한 위험 징후입니다."
@@ -3375,7 +3375,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1010,
             "low": 970,
             "close": 1000,
-            "volume": 83
+            "volume": 101
         },
         {
             "time": "Day 2",
@@ -3383,7 +3383,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1020,
             "low": 990,
             "close": 1010,
-            "volume": 108
+            "volume": 113
         },
         {
             "time": "Day 3",
@@ -3391,7 +3391,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1100,
             "low": 1000,
             "close": 1080,
-            "volume": 27
+            "volume": 23
         },
         {
             "time": "Day 4",
@@ -3399,7 +3399,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1090,
             "low": 950,
             "close": 960,
-            "volume": 22
+            "volume": 27
         }
     ],
     drawings: [
@@ -3421,9 +3421,9 @@ export const quizzes_volume_liquidity: QuizItem[] = [
     ],
     options: [
         "진짜 상승 돌파 (True Breakout)",
-        "불 트랩 (Bull Trap / 가짜 돌파) - 추격 매수자들을 물리는 하락 함정",
-        "베어 트랩 (Bear Trap / 가짜 하방)",
-        "골든 크로스 (Golden Cross)"
+        "불 트랩 (Bull Trap) - 매수자 청산 유도 가짜 돌파",
+        "베어 트랩 (Bear Trap) - 매도자 청산 유도 가짜 하방",
+        "골든 크로스 (Golden Cross) - 이평선 돌파"
     ],
     correctIndex: 1,
     explanation: "저항선을 일시적으로 뚫었다가 대량 매도세와 함께 직후 캔들에서 하방으로 원상복귀하는 현상을 '불 트랩(Bull Trap/가짜 돌파)'이라고 합니다. 돌파 후 리테스트를 기다리지 않고 급히 추격 매수했던 투자자들이 고점에 물리는 대표적 함정입니다."
@@ -3442,7 +3442,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1220,
             "low": 1180,
             "close": 1190,
-            "volume": 88
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -3450,7 +3450,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1200,
             "low": 1100,
             "close": 1110,
-            "volume": 102
+            "volume": 101
         },
         {
             "time": "Day 3",
@@ -3458,7 +3458,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1230,
             "low": 1100,
             "close": 1220,
-            "volume": 113
+            "volume": 122
         }
     ],
     drawings: [
@@ -3479,10 +3479,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩 (Bull Trap)",
-        "베어 트랩 (Bear Trap / 가짜 하락 이탈) - 매도자 청산 유도 후 급등 함정",
-        "리테스트 실패",
-        "추세 추종 돌파"
+        "불 트랩 (Bull Trap) - 가짜 상방 돌파",
+        "베어 트랩 (Bear Trap) - 가짜 하방 이탈",
+        "리테스트 실패 - 지지선 붕괴",
+        "추세 추종 돌파 - 하방 랠리 가속"
     ],
     correctIndex: 1,
     explanation: "지지선을 아래로 뚫고 내려가 하락세가 지속될 것처럼 유도한 뒤, 매물을 털어내고 강력하게 다시 반등해 올리는 현상을 '베어 트랩(Bear Trap)'이라고 합니다. 하락 돌파로 생각하고 공매도를 치거나 손절했던 사람들의 손실을 강제하며 가격이 급등하게 만듭니다."
@@ -3501,7 +3501,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1280,
             "low": 1190,
             "close": 1270,
-            "volume": 89
+            "volume": 82
         },
         {
             "time": "Day 2",
@@ -3509,7 +3509,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1380,
             "low": 1260,
             "close": 1360,
-            "volume": 103
+            "volume": 115
         },
         {
             "time": "Day 3",
@@ -3517,14 +3517,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1340,
             "low": 1300,
             "close": 1310,
-            "volume": 125
+            "volume": 89
         }
     ],
     options: [
-        "상승 모멘텀이 일시적으로 정체되고 매도 공급이 잉태된 신호이므로, 보유 물량의 50% 정도를 익절하여 이익을 확정하고 다음 날 돌파/이탈 방향을 관망한다.",
-        "대세 상승의 일시 조정이므로 추가 대출을 통해 더 높은 비중으로 추격 매수한다.",
-        "즉시 숏(공매도) 20배 레버리지로 베팅하고 자리를 비운다.",
-        "어떠한 부분 매도도 거부하고 전량 영구 홀딩을 고집한다."
+        "상승 둔화 조짐에 따른 보유 물량 50% 분할 익절",
+        "추세 일시 조정으로 간주하여 비중 확대 추가 매수",
+        "추세 종결 판단에 따른 고배율 숏 포지션 즉시 진입",
+        "이익 실현 없이 전량 장기 보유 전략 유지"
     ],
     correctIndex: 0,
     explanation: "하락 잉태형(Bearish Harami)은 이전의 강한 상승 추세 동력이 감속하기 시작했으며, 매도 압력이 힘을 기르고 있음을 암시하는 변곡 캔들입니다. 따라서 단기 스윙 트레이더는 물량의 일부(50%)를 분할 익절하여 리스크를 낮추고, 다음 캔들에서 이전 양봉 저점을 깨뜨리는 하락 하방 이탈이 추가되는지 지켜보는 것이 정석입니다."
@@ -3543,7 +3543,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1180,
             "low": 1110,
             "close": 1170,
-            "volume": 98
+            "volume": 100
         },
         {
             "time": "Day 2",
@@ -3551,7 +3551,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1220,
             "low": 1160,
             "close": 1210,
-            "volume": 332
+            "volume": 357
         },
         {
             "time": "Day 3",
@@ -3559,7 +3559,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1220,
             "low": 1150,
             "close": 1160,
-            "volume": 331
+            "volume": 342
         }
     ],
     drawings: [
@@ -3576,10 +3576,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩(Bull Trap / 가짜 돌파) 함정에 걸려 고점에 물린 형국이 확정되었으므로, 추가 하락 피해를 예방하기 위해 즉각 전량 시장가 매도하여 탈출(손절)한다.",
-        "1,200달러의 지지력을 신뢰하며 영구 존버 전략으로 들어간다.",
-        "평단가 부근이므로 대출을 더 내어 2차 매수를 더 낮은 단가에 물탄다.",
-        "상황을 무시하고 다른 종목을 똑같이 추격 매수한다."
+        "불 트랩(Bull Trap) 확인 후 추가 하락 방지 즉시 손절",
+        "저항선 부근 매수세 복귀를 기대하며 전량 홀딩",
+        "평단가 관리 차원에서 추가 물타기 매수 집행",
+        "상황을 판단하기 위해 시장가로 추가 분할 진입"
     ],
     correctIndex: 0,
     explanation: "거래량 없는 돌파 직후에 거래량 실린 강한 음봉이 기존 돌파선(1,200달러) 아래로 재진입하여 마감하는 현상은 전형적인 불 트랩(Bull Trap/가짜 돌파) 함정입니다. 돌파 당시 샀던 매수자들의 패닉 셀이 출현하며 하락 가속화가 나오기 쉬우므로 즉시 손절하여 물량을 털어내야 생존할 수 있습니다."
@@ -3606,7 +3606,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 940,
             "low": 820,
             "close": 830,
-            "volume": 120
+            "volume": 109
         },
         {
             "time": "Day 3",
@@ -3614,7 +3614,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 850,
             "low": 750,
             "close": 760,
-            "volume": 123
+            "volume": 122
         },
         {
             "time": "Day 4",
@@ -3622,7 +3622,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 900,
             "low": 750,
             "close": 890,
-            "volume": 123
+            "volume": 113
         }
     ],
     drawings: [
@@ -3651,10 +3651,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "하락 채널을 강하게 상방으로 뚫고 올라갔다는 것은 기존 하락 관성이 파괴되고 상승 추세 전환(Bullish Reversal)이 선언되었음을 뜻하므로, 원칙에 의거해 즉시 숏 포지션을 전량 손절(또는 익절)하고 대피하거나 롱 전환을 모색한다.",
-        "버티면 다시 채널 하방으로 들어올 것이므로 무제한 숏 추가 물타기를 집행한다.",
-        "영원히 포지션을 유지한 채 계좌가 마이너스로 깎여나가는 것을 바라본다.",
-        "증거금을 출금하고 거래소 앱을 삭제한다."
+        "상단 돌파 확인 즉시 숏 전량 손절 및 대피",
+        "채널 재진입 기대로 숏 포지션 추가 물타기",
+        "손절 없이 유지하면서 포지션 본전 도달 대기",
+        "포지션 유지 후 증거금을 출금하여 강제 횡보"
     ],
     correctIndex: 0,
     explanation: "하락 평행 채널의 상단 저항선 상향 돌파(Breakout)는 기존 하락 트렌드의 사멸과 매수세 지배령 복귀를 뜻합니다. 지표와 거래량이 동반된 돌파 확인 시에는 숏 포지션을 지체 없이 기계적으로 칼손절하여 자산을 보호하는 것이 원칙입니다."
@@ -3673,7 +3673,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1050,
             "low": 990,
             "close": 1040,
-            "volume": 118
+            "volume": 113
         },
         {
             "time": "Day 2",
@@ -3681,7 +3681,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1090,
             "low": 1030,
             "close": 1080,
-            "volume": 111
+            "volume": 118
         },
         {
             "time": "Day 3",
@@ -3689,7 +3689,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1100,
             "low": 1070,
             "close": 1080,
-            "volume": 105
+            "volume": 100
         }
     ],
     drawings: [
@@ -3710,10 +3710,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "매수 에너지가 매우 강하므로 즉시 풀매수로 돌파 매매를 실행한다.",
-        "저항선 부근에서 매수 물량을 압도하는 세력의 강한 분산(Distribution / 매도 공급)이 진행되고 있음을 뜻하므로, 상승이 정체되고 꺾일 리스크에 대비하여 이익을 실현한다.",
-        "거래량이 많이 터졌으므로 손절 라인을 지우고 장기 투자를 결심한다.",
-        "상승 추세가 무효화되었으므로 숏 50배 레버리지로 보복 매매를 가동한다."
+        "강한 매수 기세 기대로 즉시 돌파 매매 풀매수",
+        "저항벽 매도 공급 세력 분산 확인 후 이익 실현",
+        "대량 거래 확인에 따른 손절 해제 후 장기 투자",
+        "반등 실패에 따른 고배율 보복 숏 베팅 가동"
     ],
     correctIndex: 1,
     explanation: "캔들 몸통 크기(스프레드)가 좁은데 거래량이 매우 크게 폭증했다는 것은 저항선 부근에서 들어오는 매수세만큼 세력의 매도 물량 공급이 쏟아져 막강한 저항 벽을 형성하고 있다는 뜻입니다. VSA에서는 이를 불화(Disharmony)로 규정하며 상승 추세 감속 및 하락 반전의 경고로 해독합니다."
@@ -3732,7 +3732,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2120,
             "low": 2000,
             "close": 2020,
-            "volume": 93
+            "volume": 85
         },
         {
             "time": "Day 2",
@@ -3740,7 +3740,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2040,
             "low": 1950,
             "close": 2010,
-            "volume": 108
+            "volume": 96
         }
     ],
     drawings: [
@@ -3761,10 +3761,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선 붕괴 완료로 확정하여 시장가 숏(공매도)에 추격 진입한다.",
-        "개인들의 손절 물량을 청산시키고 가격을 말아올린 '유동성 스윕(Liquidity Sweep)'이자 베어트랩으로 판단하며, 아래꼬리 저점인 1,950달러 밑에 손절을 짧게 걸고 롱(매수) 진입을 노린다.",
-        "아무런 신호도 아니므로 계좌를 관망 모드로 방치한다.",
-        "지지선 이탈 실패이므로 원금 100% 매도 후 영구 이탈한다."
+        "지지선 붕괴 확정으로 간주한 시장가 숏 추격",
+        "스윕(sweep) 판단 하에 아래꼬리 저점 손절 잡고 롱",
+        "아무런 신호도 아니라고 판단하고 포지션 방치",
+        "지지선 이탈 기대로 전량 손절 후 시장 영구 탈출"
     ],
     correctIndex: 1,
     explanation: "지지선 아래에 걸려 있던 개인들의 손절 주문(Sell Stop)을 강제로 청산(Liquidity Sweep)시킨 뒤, 세력이 물량을 헐값에 다 받아 삼켜 종가를 지지선 위로 신속하게 복귀시킨 휩소(베어 트랩) 패턴입니다. 아래꼬리 극점(1,950달러)에 아주 좁은 손절 라인을 설정할 수 있어, 기대 손익비가 극대화되는 고확률 상승 반전 매수 타점입니다."
@@ -3783,7 +3783,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2600,
             "low": 2280,
             "close": 2550,
-            "volume": 95
+            "volume": 82
         },
         {
             "time": "Wave 2",
@@ -3791,7 +3791,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2750,
             "low": 2500,
             "close": 2700,
-            "volume": 122
+            "volume": 106
         },
         {
             "time": "Wave 3",
@@ -3799,14 +3799,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2900,
             "low": 2650,
             "close": 2880,
-            "volume": 110
+            "volume": 104
         }
     ],
     options: [
-        "가격이 올라가므로 매수 에너지가 지속 강화되는 초강세장이다.",
-        "상승 강세가 진행됨에 따라 시장에 매도 공급 물량이 아예 말라버린 극도의 무중력 랠리이므로 안심하고 홀딩한다.",
-        "상승 이면의 신규 매수 가담 자금이 고갈되는 '거래량 다이버전스' 현상으로 추세 피로도가 극에 달했음을 나타내므로, 추격 매수를 철저히 배제하고 포지션의 분할 익절 관리를 시작한다.",
-        "거래량 감소는 차트 조작이므로 매매를 즉시 정지한다."
+        "가격 상승으로 인한 매수 지속 강화 초강세",
+        "매도 물량 고갈에 따른 무중력 안심 홀딩",
+        "신규 자금 유입 둔화 거래량 다이버전스로 분할 익절",
+        "지표 조작으로 판단하여 매매 중단 및 차트 종료"
     ],
     correctIndex: 2,
     explanation: "나스닥 시세는 상승하여 신고점을 갱신하지만 파동별 거래량이 지속 감소하는 흐름은 '거래량 다이버전스'로 상승 모멘텀의 내부 엔진이 식어감을 경고합니다. 조만간 가벼운 매도 포격에도 대규모의 차익 실현 폭락 조정이 발생할 수 있는 잠재적 폭락 국면이므로 물량을 덜어내고 현금을 확보해야 합니다."
@@ -3825,7 +3825,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1020,
             "low": 990,
             "close": 1000,
-            "volume": 106
+            "volume": 362
         },
         {
             "time": "Day 2",
@@ -3833,14 +3833,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1120,
             "low": 990,
             "close": 1100,
-            "volume": 123
+            "volume": 401
         }
     ],
     options: [
-        "돌파 순간 거래량이 오히려 최저치로 메말라 있는 고요한 수렴 상태여야 한다.",
-        "돌파를 완료한 장대양봉의 마감 거래량이 이전 10일 평균 거래량 대비 최소 1.5배~2배 이상 폭발하며 동반 상승해야 세력의 진성 개입으로 신뢰할 수 있다.",
-        "거래량은 돌파 판정에 아무런 영향을 주지 않는다.",
-        "거래소 내부 슬리피지 수치만 보고 결정한다."
+        "수렴 끝자락에서 거래량이 최저치인 상태 유지",
+        "평균 대비 1.5~2배 이상 거래량 급증하며 돌파 마감",
+        "거래량이 전혀 변하지 않는 평이한 상태 유지",
+        "호가 스프레드가 가장 좁아지는 횡보 상태"
     ],
     correctIndex: 1,
     explanation: "참된 저항 돌파(True Breakout)는 저항선 부근의 두터운 대기 매도 공급 물량을 대규모 자금으로 전부 씹어 삼키고 돌파해야 함을 뜻합니다. 따라서 반드시 평균 대비 1.5배~2배 이상의 거래량 분출이 동반되어야 신뢰할 수 있으며, 거래량이 적은 돌파는 꼬리 달고 내려앉는 불 트랩(Bull Trap)일 확률이 매우 높습니다."
@@ -3859,7 +3859,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 505000,
             "low": 492000,
             "close": 495000,
-            "volume": 31
+            "volume": 33
         },
         {
             "time": "Day 2",
@@ -3867,7 +3867,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 498000,
             "low": 480000,
             "close": 496000,
-            "volume": 30
+            "volume": 20
         }
     ],
     drawings: [
@@ -3888,10 +3888,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선을 가볍게 뚫고 내려가 아무 반등도 없이 20% 이상 수직 낙하 장대음봉으로 마감한다.",
-        "순간적으로 전저점(492,000달러) 밑으로 가격을 밀쳐 손절 물량을 대량 폭발시킨 후, 이를 순식간에 매수 흡수하여 아래꼬리가 아주 길게 달린 핀바 형태로 종가를 지지선 위로 회복 마감한다.",
-        "수평 지지지선을 한 치의 오차도 없이 터치하고 0.01%의 꼬리도 없이 완전 수평 도지로 횡보한다.",
-        "거래량 없이 수직 상방으로 폭등하여 10만 달러에 즉시 도달한다."
+        "지지선을 장대음봉으로 돌파하여 20% 폭락 마감",
+        "전저점 이탈로 손절 유도 후 지지선 위 아래꼬리 안착",
+        "오차 없이 지지선 터치 후 꼬리 없는 수평 도지 횡보",
+        "거래량 없이 즉각 상승 빔 분출로 전고점 탈환"
     ],
     correctIndex: 1,
     explanation: "기관 세력(스마트 머니)은 대량 포지션을 구축하기 위해 개인의 손절 주문(Sell Stop)을 의도적으로 터트려 매도 유동성을 유도한 후 이를 다 매수합니다. 이로 인해 나스닥 시세는 지지선 아래로 일시 급락 후(스톱 헌팅), 아래꼬리를 매우 길게 달며 지선 안쪽으로 급반등 마감하게 됩니다. 이것이 유동성 스윕(Liquidity Sweep)의 정석 패턴입니다."
@@ -3913,10 +3913,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 매수 시도 흔적이 있으므로 저점 매수 기회로 보고 적극 추가 매수한다.",
-        "고점 매도 공급이 롱 청산 손절 물량을 완벽히 제압하여 상방을 격렬하게 거절(Rejection)한 징후이며 매도세의 승리이므로, 기존 매수 포지션을 전량 대피 또는 매도 조치한다.",
-        "거래량이 많으므로 무조건 횡보 흐름으로 수렴될 것이라 판단해 양방향 마틴게일 베팅을 가동한다.",
-        "이평선이 정배열이므로 신경 쓰지 않고 무시한다."
+        "강한 저점 매수 기회로 인지하여 비중 대폭 추가",
+        "고점 매도 Rejection 확인 후 기존 롱 포지션 대피",
+        "박스 횡보 수렴 기대로 마틴게일 추가 매수 가동",
+        "이평선 정배열 판단에 따른 포지션 변경 없이 홀딩"
     ],
     correctIndex: 1,
     explanation: "위꼬리가 매우 긴 캔들이 대량 거래량과 함께 터졌다는 것은 고점 돌파 시도가 있었으나 그 자리에 숨어 있던 세력의 막강한 청산 매도 벽(Supply)을 만나 격렬하게 두들겨 맞고 밀려났음을 의미합니다. 상방 거절의 심리가 지배적이므로 고점 피로 및 하락 전환이 임박한 위험 징후입니다."
@@ -3935,7 +3935,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1212,
             "low": 1164,
             "close": 1200,
-            "volume": 111
+            "volume": 113
         },
         {
             "time": "Day 2",
@@ -3943,7 +3943,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1224,
             "low": 1188,
             "close": 1212,
-            "volume": 94
+            "volume": 85
         },
         {
             "time": "Day 3",
@@ -3951,7 +3951,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1320,
             "low": 1200,
             "close": 1296,
-            "volume": 21
+            "volume": 33
         },
         {
             "time": "Day 4",
@@ -3959,7 +3959,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1308,
             "low": 1140,
             "close": 1152,
-            "volume": 23
+            "volume": 26
         }
     ],
     drawings: [
@@ -3981,9 +3981,9 @@ export const quizzes_volume_liquidity: QuizItem[] = [
     ],
     options: [
         "진짜 상승 돌파 (True Breakout)",
-        "불 트랩 (Bull Trap / 가짜 돌파) - 추격 매수자들을 물리는 하락 함정",
-        "베어 트랩 (Bear Trap / 가짜 하방)",
-        "골든 크로스 (Golden Cross)"
+        "불 트랩 (Bull Trap) - 매수자 청산 유도 가짜 돌파",
+        "베어 트랩 (Bear Trap) - 매도자 청산 유도 가짜 하방",
+        "골든 크로스 (Golden Cross) - 이평선 돌파"
     ],
     correctIndex: 1,
     explanation: "저항선을 일시적으로 뚫었다가 대량 매도세와 함께 직후 캔들에서 하방으로 원상복귀하는 현상을 '불 트랩(Bull Trap/가짜 돌파)'이라고 합니다. 돌파 후 리테스트를 기다리지 않고 급히 추격 매수했던 투자자들이 고점에 물리는 대표적 함정입니다."
@@ -4002,7 +4002,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1464,
             "low": 1416,
             "close": 1428,
-            "volume": 105
+            "volume": 97
         },
         {
             "time": "Day 2",
@@ -4010,7 +4010,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1440,
             "low": 1320,
             "close": 1332,
-            "volume": 119
+            "volume": 89
         },
         {
             "time": "Day 3",
@@ -4018,7 +4018,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1476,
             "low": 1320,
             "close": 1464,
-            "volume": 104
+            "volume": 108
         }
     ],
     drawings: [
@@ -4039,10 +4039,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩 (Bull Trap)",
-        "베어 트랩 (Bear Trap / 가짜 하락 이탈) - 매도자 청산 유도 후 급등 함정",
-        "리테스트 실패",
-        "추세 추종 돌파"
+        "불 트랩 (Bull Trap) - 가짜 상방 돌파",
+        "베어 트랩 (Bear Trap) - 가짜 하방 이탈",
+        "리테스트 실패 - 지지선 붕괴",
+        "추세 추종 돌파 - 하방 랠리 가속"
     ],
     correctIndex: 1,
     explanation: "지지선을 아래로 뚫고 내려가 하락세가 지속될 것처럼 유도한 뒤, 매물을 털어내고 강력하게 다시 반등해 올리는 현상을 '베어 트랩(Bear Trap)'이라고 합니다. 하락 돌파로 생각하고 공매도를 치거나 손절했던 사람들의 손실을 강제하며 가격이 급등하게 만듭니다."
@@ -4061,7 +4061,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1536,
             "low": 1428,
             "close": 1524,
-            "volume": 81
+            "volume": 82
         },
         {
             "time": "Day 2",
@@ -4069,7 +4069,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1656,
             "low": 1512,
             "close": 1632,
-            "volume": 101
+            "volume": 104
         },
         {
             "time": "Day 3",
@@ -4077,14 +4077,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1608,
             "low": 1560,
             "close": 1572,
-            "volume": 123
+            "volume": 108
         }
     ],
     options: [
-        "상승 모멘텀이 일시적으로 정체되고 매도 공급이 잉태된 신호이므로, 보유 물량의 50% 정도를 익절하여 이익을 확정하고 다음 날 돌파/이탈 방향을 관망한다.",
-        "대세 상승의 일시 조정이므로 추가 대출을 통해 더 높은 비중으로 추격 매수한다.",
-        "즉시 숏(공매도) 20배 레버리지로 베팅하고 자리를 비운다.",
-        "어떠한 부분 매도도 거부하고 전량 영구 홀딩을 고집한다."
+        "상승 둔화 조짐에 따른 보유 물량 50% 분할 익절",
+        "추세 일시 조정으로 간주하여 비중 확대 추가 매수",
+        "추세 종결 판단에 따른 고배율 숏 포지션 즉시 진입",
+        "이익 실현 없이 전량 장기 보유 전략 유지"
     ],
     correctIndex: 0,
     explanation: "하락 잉태형(Bearish Harami)은 이전의 강한 상승 추세 동력이 감속하기 시작했으며, 매도 압력이 힘을 기르고 있음을 암시하는 변곡 캔들입니다. 따라서 단기 스윙 트레이더는 물량의 일부(50%)를 분할 익절하여 리스크를 낮추고, 다음 캔들에서 이전 양봉 저점을 깨뜨리는 하락 하방 이탈이 추가되는지 지켜보는 것이 정석입니다."
@@ -4103,7 +4103,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1416,
             "low": 1332,
             "close": 1404,
-            "volume": 94
+            "volume": 105
         },
         {
             "time": "Day 2",
@@ -4111,7 +4111,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1464,
             "low": 1392,
             "close": 1452,
-            "volume": 334
+            "volume": 391
         },
         {
             "time": "Day 3",
@@ -4119,7 +4119,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1464,
             "low": 1380,
             "close": 1392,
-            "volume": 347
+            "volume": 374
         }
     ],
     drawings: [
@@ -4136,10 +4136,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩(Bull Trap / 가짜 돌파) 함정에 걸려 고점에 물린 형국이 확정되었으므로, 추가 하락 피해를 예방하기 위해 즉각 전량 시장가 매도하여 탈출(손절)한다.",
-        "1,440달러의 지지력을 신뢰하며 영구 존버 전략으로 들어간다.",
-        "평단가 부근이므로 대출을 더 내어 2차 매수를 더 낮은 단가에 물탄다.",
-        "상황을 무시하고 다른 종목을 똑같이 추격 매수한다."
+        "불 트랩(Bull Trap) 확인 후 추가 하락 방지 즉시 손절",
+        "저항선 부근 매수세 복귀를 기대하며 전량 홀딩",
+        "평단가 관리 차원에서 추가 물타기 매수 집행",
+        "상황을 판단하기 위해 시장가로 추가 분할 진입"
     ],
     correctIndex: 0,
     explanation: "거래량 없는 돌파 직후에 거래량 실린 강한 음봉이 기존 돌파선(1,440달러) 아래로 재진입하여 마감하는 현상은 전형적인 불 트랩(Bull Trap/가짜 돌파) 함정입니다. 돌파 당시 샀던 매수자들의 패닉 셀이 출현하며 하락 가속화가 나오기 쉬우므로 즉시 손절하여 물량을 털어내야 생존할 수 있습니다."
@@ -4158,7 +4158,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1224,
             "low": 1080,
             "close": 1104,
-            "volume": 115
+            "volume": 89
         },
         {
             "time": "Day 2",
@@ -4166,7 +4166,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1128,
             "low": 984,
             "close": 996,
-            "volume": 117
+            "volume": 88
         },
         {
             "time": "Day 3",
@@ -4182,7 +4182,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1080,
             "low": 900,
             "close": 1068,
-            "volume": 120
+            "volume": 94
         }
     ],
     drawings: [
@@ -4211,10 +4211,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "하락 채널을 강하게 상방으로 뚫고 올라갔다는 것은 기존 하락 관성이 파괴되고 상승 추세 전환(Bullish Reversal)이 선언되었음을 뜻하므로, 원칙에 의거해 즉시 숏 포지션을 전량 손절(또는 익절)하고 대피하거나 롱 전환을 모색한다.",
-        "버티면 다시 채널 하방으로 들어올 것이므로 무제한 숏 추가 물타기를 집행한다.",
-        "영원히 포지션을 유지한 채 계좌가 마이너스로 깎여나가는 것을 바라본다.",
-        "증거금을 출금하고 거래소 앱을 삭제한다."
+        "상단 돌파 확인 즉시 숏 전량 손절 및 대피",
+        "채널 재진입 기대로 숏 포지션 추가 물타기",
+        "손절 없이 유지하면서 포지션 본전 도달 대기",
+        "포지션 유지 후 증거금을 출금하여 강제 횡보"
     ],
     correctIndex: 0,
     explanation: "하락 평행 채널의 상단 저항선 상향 돌파(Breakout)는 기존 하락 트렌드의 사멸과 매수세 지배령 복귀를 뜻합니다. 지표와 거래량이 동반된 돌파 확인 시에는 숏 포지션을 지체 없이 기계적으로 칼손절하여 자산을 보호하는 것이 원칙입니다."
@@ -4233,7 +4233,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1260,
             "low": 1188,
             "close": 1248,
-            "volume": 110
+            "volume": 86
         },
         {
             "time": "Day 2",
@@ -4241,7 +4241,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1308,
             "low": 1236,
             "close": 1296,
-            "volume": 98
+            "volume": 99
         },
         {
             "time": "Day 3",
@@ -4249,7 +4249,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1320,
             "low": 1284,
             "close": 1296,
-            "volume": 95
+            "volume": 120
         }
     ],
     drawings: [
@@ -4270,10 +4270,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "매수 에너지가 매우 강하므로 즉시 풀매수로 돌파 매매를 실행한다.",
-        "저항선 부근에서 매수 물량을 압도하는 세력의 강한 분산(Distribution / 매도 공급)이 진행되고 있음을 뜻하므로, 상승이 정체되고 꺾일 리스크에 대비하여 이익을 실현한다.",
-        "거래량이 많이 터졌으므로 손절 라인을 지우고 장기 투자를 결심한다.",
-        "상승 추세가 무효화되었으므로 숏 50배 레버리지로 보복 매매를 가동한다."
+        "강한 매수 기세 기대로 즉시 돌파 매매 풀매수",
+        "저항벽 매도 공급 세력 분산 확인 후 이익 실현",
+        "대량 거래 확인에 따른 손절 해제 후 장기 투자",
+        "반등 실패에 따른 고배율 보복 숏 베팅 가동"
     ],
     correctIndex: 1,
     explanation: "캔들 몸통 크기(스프레드)가 좁은데 거래량이 매우 크게 폭증했다는 것은 저항선 부근에서 들어오는 매수세만큼 세력의 매도 물량 공급이 쏟아져 막강한 저항 벽을 형성하고 있다는 뜻입니다. VSA에서는 이를 불화(Disharmony)로 규정하며 상승 추세 감속 및 하락 반전의 경고로 해독합니다."
@@ -4292,7 +4292,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2544,
             "low": 2400,
             "close": 2424,
-            "volume": 86
+            "volume": 81
         },
         {
             "time": "Day 2",
@@ -4300,7 +4300,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2448,
             "low": 2340,
             "close": 2412,
-            "volume": 85
+            "volume": 118
         }
     ],
     drawings: [
@@ -4321,10 +4321,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선 붕괴 완료로 확정하여 시장가 숏(공매도)에 추격 진입한다.",
-        "개인들의 손절 물량을 청산시키고 가격을 말아올린 '유동성 스윕(Liquidity Sweep)'이자 베어트랩으로 판단하며, 아래꼬리 저점인 2,340달러 밑에 손절을 짧게 걸고 롱(매수) 진입을 노린다.",
-        "아무런 신호도 아니므로 계좌를 관망 모드로 방치한다.",
-        "지지선 이탈 실패이므로 원금 100% 매도 후 영구 이탈한다."
+        "지지선 붕괴 확정으로 간주한 시장가 숏 추격",
+        "스윕(sweep) 판단 하에 아래꼬리 저점 손절 잡고 롱",
+        "아무런 신호도 아니라고 판단하고 포지션 방치",
+        "지지선 이탈 기대로 전량 손절 후 시장 영구 탈출"
     ],
     correctIndex: 1,
     explanation: "지지선 아래에 걸려 있던 개인들의 손절 주문(Sell Stop)을 강제로 청산(Liquidity Sweep)시킨 뒤, 세력이 물량을 헐값에 다 받아 삼켜 종가를 지지선 위로 신속하게 복귀시킨 휩소(베어 트랩) 패턴입니다. 아래꼬리 극점(2,340달러)에 아주 좁은 손절 라인을 설정할 수 있어, 기대 손익비가 극대화되는 고확률 상승 반전 매수 타점입니다."
@@ -4343,7 +4343,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 3120,
             "low": 2736,
             "close": 3060,
-            "volume": 88
+            "volume": 85
         },
         {
             "time": "Wave 2",
@@ -4351,7 +4351,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 3300,
             "low": 3000,
             "close": 3240,
-            "volume": 103
+            "volume": 96
         },
         {
             "time": "Wave 3",
@@ -4359,14 +4359,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 3480,
             "low": 3180,
             "close": 3456,
-            "volume": 91
+            "volume": 115
         }
     ],
     options: [
-        "가격이 올라가므로 매수 에너지가 지속 강화되는 초강세장이다.",
-        "상승 강세가 진행됨에 따라 시장에 매도 공급 물량이 아예 말라버린 극도의 무중력 랠리이므로 안심하고 홀딩한다.",
-        "상승 이면의 신규 매수 가담 자금이 고갈되는 '거래량 다이버전스' 현상으로 추세 피로도가 극에 달했음을 나타내므로, 추격 매수를 철저히 배제하고 포지션의 분할 익절 관리를 시작한다.",
-        "거래량 감소는 차트 조작이므로 매매를 즉시 정지한다."
+        "가격 상승으로 인한 매수 지속 강화 초강세",
+        "매도 물량 고갈에 따른 무중력 안심 홀딩",
+        "신규 자금 유입 둔화 거래량 다이버전스로 분할 익절",
+        "지표 조작으로 판단하여 매매 중단 및 차트 종료"
     ],
     correctIndex: 2,
     explanation: "엔비디아 주가는 상승하여 신고점을 갱신하지만 파동별 거래량이 지속 감소하는 흐름은 '거래량 다이버전스'로 상승 모멘텀의 내부 엔진이 식어감을 경고합니다. 조만간 가벼운 매도 포격에도 대규모의 차익 실현 폭락 조정이 발생할 수 있는 잠재적 폭락 국면이므로 물량을 덜어내고 현금을 확보해야 합니다."
@@ -4385,7 +4385,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1224,
             "low": 1188,
             "close": 1200,
-            "volume": 89
+            "volume": 338
         },
         {
             "time": "Day 2",
@@ -4393,14 +4393,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1344,
             "low": 1188,
             "close": 1320,
-            "volume": 115
+            "volume": 378
         }
     ],
     options: [
-        "돌파 순간 거래량이 오히려 최저치로 메말라 있는 고요한 수렴 상태여야 한다.",
-        "돌파를 완료한 장대양봉의 마감 거래량이 이전 10일 평균 거래량 대비 최소 1.5배~2배 이상 폭발하며 동반 상승해야 세력의 진성 개입으로 신뢰할 수 있다.",
-        "거래량은 돌파 판정에 아무런 영향을 주지 않는다.",
-        "거래소 내부 슬리피지 수치만 보고 결정한다."
+        "수렴 끝자락에서 거래량이 최저치인 상태 유지",
+        "평균 대비 1.5~2배 이상 거래량 급증하며 돌파 마감",
+        "거래량이 전혀 변하지 않는 평이한 상태 유지",
+        "호가 스프레드가 가장 좁아지는 횡보 상태"
     ],
     correctIndex: 1,
     explanation: "참된 저항 돌파(True Breakout)는 저항선 부근의 두터운 대기 매도 공급 물량을 대규모 자금으로 전부 씹어 삼키고 돌파해야 함을 뜻합니다. 따라서 반드시 평균 대비 1.5배~2배 이상의 거래량 분출이 동반되어야 신뢰할 수 있으며, 거래량이 적은 돌파는 꼬리 달고 내려앉는 불 트랩(Bull Trap)일 확률이 매우 높습니다."
@@ -4419,7 +4419,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 606000,
             "low": 590400,
             "close": 594000,
-            "volume": 28
+            "volume": 31
         },
         {
             "time": "Day 2",
@@ -4427,7 +4427,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 597600,
             "low": 576000,
             "close": 595200,
-            "volume": 21
+            "volume": 25
         }
     ],
     drawings: [
@@ -4448,10 +4448,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선을 가볍게 뚫고 내려가 아무 반등도 없이 20% 이상 수직 낙하 장대음봉으로 마감한다.",
-        "순간적으로 전저점(590,400달러) 밑으로 가격을 밀쳐 손절 물량을 대량 폭발시킨 후, 이를 순식간에 매수 흡수하여 아래꼬리가 아주 길게 달린 핀바 형태로 종가를 지지선 위로 회복 마감한다.",
-        "수평 지지지선을 한 치의 오차도 없이 터치하고 0.01%의 꼬리도 없이 완전 수평 도지로 횡보한다.",
-        "거래량 없이 수직 상방으로 폭등하여 10만 달러에 즉시 도달한다."
+        "지지선을 장대음봉으로 돌파하여 20% 폭락 마감",
+        "전저점 이탈로 손절 유도 후 지지선 위 아래꼬리 안착",
+        "오차 없이 지지선 터치 후 꼬리 없는 수평 도지 횡보",
+        "거래량 없이 즉각 상승 빔 분출로 전고점 탈환"
     ],
     correctIndex: 1,
     explanation: "기관 세력(스마트 머니)은 대량 포지션을 구축하기 위해 개인의 손절 주문(Sell Stop)을 의도적으로 터트려 매도 유동성을 유도한 후 이를 다 매수합니다. 이로 인해 엔비디아 주가는 지지선 아래로 일시 급락 후(스톱 헌팅), 아래꼬리를 매우 길게 달며 지선 안쪽으로 급반등 마감하게 됩니다. 이것이 유동성 스윕(Liquidity Sweep)의 정석 패턴입니다."
@@ -4473,10 +4473,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 매수 시도 흔적이 있으므로 저점 매수 기회로 보고 적극 추가 매수한다.",
-        "고점 매도 공급이 롱 청산 손절 물량을 완벽히 제압하여 상방을 격렬하게 거절(Rejection)한 징후이며 매도세의 승리이므로, 기존 매수 포지션을 전량 대피 또는 매도 조치한다.",
-        "거래량이 많으므로 무조건 횡보 흐름으로 수렴될 것이라 판단해 양방향 마틴게일 베팅을 가동한다.",
-        "이평선이 정배열이므로 신경 쓰지 않고 무시한다."
+        "강한 저점 매수 기회로 인지하여 비중 대폭 추가",
+        "고점 매도 Rejection 확인 후 기존 롱 포지션 대피",
+        "박스 횡보 수렴 기대로 마틴게일 추가 매수 가동",
+        "이평선 정배열 판단에 따른 포지션 변경 없이 홀딩"
     ],
     correctIndex: 1,
     explanation: "위꼬리가 매우 긴 캔들이 대량 거래량과 함께 터졌다는 것은 고점 돌파 시도가 있었으나 그 자리에 숨어 있던 세력의 막강한 청산 매도 벽(Supply)을 만나 격렬하게 두들겨 맞고 밀려났음을 의미합니다. 상방 거절의 심리가 지배적이므로 고점 피로 및 하락 전환이 임박한 위험 징후입니다."
@@ -4495,7 +4495,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2020,
             "low": 1940,
             "close": 2000,
-            "volume": 97
+            "volume": 113
         },
         {
             "time": "Day 2",
@@ -4503,7 +4503,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2040,
             "low": 1980,
             "close": 2020,
-            "volume": 116
+            "volume": 114
         },
         {
             "time": "Day 3",
@@ -4511,7 +4511,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2200,
             "low": 2000,
             "close": 2160,
-            "volume": 26
+            "volume": 18
         },
         {
             "time": "Day 4",
@@ -4541,9 +4541,9 @@ export const quizzes_volume_liquidity: QuizItem[] = [
     ],
     options: [
         "진짜 상승 돌파 (True Breakout)",
-        "불 트랩 (Bull Trap / 가짜 돌파) - 추격 매수자들을 물리는 하락 함정",
-        "베어 트랩 (Bear Trap / 가짜 하방)",
-        "골든 크로스 (Golden Cross)"
+        "불 트랩 (Bull Trap) - 매수자 청산 유도 가짜 돌파",
+        "베어 트랩 (Bear Trap) - 매도자 청산 유도 가짜 하방",
+        "골든 크로스 (Golden Cross) - 이평선 돌파"
     ],
     correctIndex: 1,
     explanation: "저항선을 일시적으로 뚫었다가 대량 매도세와 함께 직후 캔들에서 하방으로 원상복귀하는 현상을 '불 트랩(Bull Trap/가짜 돌파)'이라고 합니다. 돌파 후 리테스트를 기다리지 않고 급히 추격 매수했던 투자자들이 고점에 물리는 대표적 함정입니다."
@@ -4562,7 +4562,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2440,
             "low": 2360,
             "close": 2380,
-            "volume": 88
+            "volume": 82
         },
         {
             "time": "Day 2",
@@ -4570,7 +4570,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2400,
             "low": 2200,
             "close": 2220,
-            "volume": 118
+            "volume": 104
         },
         {
             "time": "Day 3",
@@ -4578,7 +4578,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2460,
             "low": 2200,
             "close": 2440,
-            "volume": 99
+            "volume": 126
         }
     ],
     drawings: [
@@ -4599,10 +4599,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩 (Bull Trap)",
-        "베어 트랩 (Bear Trap / 가짜 하락 이탈) - 매도자 청산 유도 후 급등 함정",
-        "리테스트 실패",
-        "추세 추종 돌파"
+        "불 트랩 (Bull Trap) - 가짜 상방 돌파",
+        "베어 트랩 (Bear Trap) - 가짜 하방 이탈",
+        "리테스트 실패 - 지지선 붕괴",
+        "추세 추종 돌파 - 하방 랠리 가속"
     ],
     correctIndex: 1,
     explanation: "지지선을 아래로 뚫고 내려가 하락세가 지속될 것처럼 유도한 뒤, 매물을 털어내고 강력하게 다시 반등해 올리는 현상을 '베어 트랩(Bear Trap)'이라고 합니다. 하락 돌파로 생각하고 공매도를 치거나 손절했던 사람들의 손실을 강제하며 가격이 급등하게 만듭니다."
@@ -4621,7 +4621,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2560,
             "low": 2380,
             "close": 2540,
-            "volume": 91
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -4629,7 +4629,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2760,
             "low": 2520,
             "close": 2720,
-            "volume": 110
+            "volume": 117
         },
         {
             "time": "Day 3",
@@ -4637,14 +4637,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2680,
             "low": 2600,
             "close": 2620,
-            "volume": 117
+            "volume": 112
         }
     ],
     options: [
-        "상승 모멘텀이 일시적으로 정체되고 매도 공급이 잉태된 신호이므로, 보유 물량의 50% 정도를 익절하여 이익을 확정하고 다음 날 돌파/이탈 방향을 관망한다.",
-        "대세 상승의 일시 조정이므로 추가 대출을 통해 더 높은 비중으로 추격 매수한다.",
-        "즉시 숏(공매도) 20배 레버리지로 베팅하고 자리를 비운다.",
-        "어떠한 부분 매도도 거부하고 전량 영구 홀딩을 고집한다."
+        "상승 둔화 조짐에 따른 보유 물량 50% 분할 익절",
+        "추세 일시 조정으로 간주하여 비중 확대 추가 매수",
+        "추세 종결 판단에 따른 고배율 숏 포지션 즉시 진입",
+        "이익 실현 없이 전량 장기 보유 전략 유지"
     ],
     correctIndex: 0,
     explanation: "하락 잉태형(Bearish Harami)은 이전의 강한 상승 추세 동력이 감속하기 시작했으며, 매도 압력이 힘을 기르고 있음을 암시하는 변곡 캔들입니다. 따라서 단기 스윙 트레이더는 물량의 일부(50%)를 분할 익절하여 리스크를 낮추고, 다음 캔들에서 이전 양봉 저점을 깨뜨리는 하락 하방 이탈이 추가되는지 지켜보는 것이 정석입니다."
@@ -4663,7 +4663,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2360,
             "low": 2220,
             "close": 2340,
-            "volume": 98
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -4671,7 +4671,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2440,
             "low": 2320,
             "close": 2420,
-            "volume": 409
+            "volume": 387
         },
         {
             "time": "Day 3",
@@ -4679,7 +4679,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2440,
             "low": 2300,
             "close": 2320,
-            "volume": 401
+            "volume": 341
         }
     ],
     drawings: [
@@ -4696,10 +4696,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩(Bull Trap / 가짜 돌파) 함정에 걸려 고점에 물린 형국이 확정되었으므로, 추가 하락 피해를 예방하기 위해 즉각 전량 시장가 매도하여 탈출(손절)한다.",
-        "2,400달러의 지지력을 신뢰하며 영구 존버 전략으로 들어간다.",
-        "평단가 부근이므로 대출을 더 내어 2차 매수를 더 낮은 단가에 물탄다.",
-        "상황을 무시하고 다른 종목을 똑같이 추격 매수한다."
+        "불 트랩(Bull Trap) 확인 후 추가 하락 방지 즉시 손절",
+        "저항선 부근 매수세 복귀를 기대하며 전량 홀딩",
+        "평단가 관리 차원에서 추가 물타기 매수 집행",
+        "상황을 판단하기 위해 시장가로 추가 분할 진입"
     ],
     correctIndex: 0,
     explanation: "거래량 없는 돌파 직후에 거래량 실린 강한 음봉이 기존 돌파선(2,400달러) 아래로 재진입하여 마감하는 현상은 전형적인 불 트랩(Bull Trap/가짜 돌파) 함정입니다. 돌파 당시 샀던 매수자들의 패닉 셀이 출현하며 하락 가속화가 나오기 쉬우므로 즉시 손절하여 물량을 털어내야 생존할 수 있습니다."
@@ -4718,7 +4718,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2040,
             "low": 1800,
             "close": 1840,
-            "volume": 91
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -4726,7 +4726,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1880,
             "low": 1640,
             "close": 1660,
-            "volume": 107
+            "volume": 119
         },
         {
             "time": "Day 3",
@@ -4734,7 +4734,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1700,
             "low": 1500,
             "close": 1520,
-            "volume": 109
+            "volume": 118
         },
         {
             "time": "Day 4",
@@ -4771,10 +4771,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "하락 채널을 강하게 상방으로 뚫고 올라갔다는 것은 기존 하락 관성이 파괴되고 상승 추세 전환(Bullish Reversal)이 선언되었음을 뜻하므로, 원칙에 의거해 즉시 숏 포지션을 전량 손절(또는 익절)하고 대피하거나 롱 전환을 모색한다.",
-        "버티면 다시 채널 하방으로 들어올 것이므로 무제한 숏 추가 물타기를 집행한다.",
-        "영원히 포지션을 유지한 채 계좌가 마이너스로 깎여나가는 것을 바라본다.",
-        "증거금을 출금하고 거래소 앱을 삭제한다."
+        "상단 돌파 확인 즉시 숏 전량 손절 및 대피",
+        "채널 재진입 기대로 숏 포지션 추가 물타기",
+        "손절 없이 유지하면서 포지션 본전 도달 대기",
+        "포지션 유지 후 증거금을 출금하여 강제 횡보"
     ],
     correctIndex: 0,
     explanation: "하락 평행 채널의 상단 저항선 상향 돌파(Breakout)는 기존 하락 트렌드의 사멸과 매수세 지배령 복귀를 뜻합니다. 지표와 거래량이 동반된 돌파 확인 시에는 숏 포지션을 지체 없이 기계적으로 칼손절하여 자산을 보호하는 것이 원칙입니다."
@@ -4793,7 +4793,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2100,
             "low": 1980,
             "close": 2080,
-            "volume": 117
+            "volume": 83
         },
         {
             "time": "Day 2",
@@ -4801,7 +4801,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2180,
             "low": 2060,
             "close": 2160,
-            "volume": 111
+            "volume": 117
         },
         {
             "time": "Day 3",
@@ -4809,7 +4809,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2200,
             "low": 2140,
             "close": 2160,
-            "volume": 114
+            "volume": 98
         }
     ],
     drawings: [
@@ -4830,10 +4830,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "매수 에너지가 매우 강하므로 즉시 풀매수로 돌파 매매를 실행한다.",
-        "저항선 부근에서 매수 물량을 압도하는 세력의 강한 분산(Distribution / 매도 공급)이 진행되고 있음을 뜻하므로, 상승이 정체되고 꺾일 리스크에 대비하여 이익을 실현한다.",
-        "거래량이 많이 터졌으므로 손절 라인을 지우고 장기 투자를 결심한다.",
-        "상승 추세가 무효화되었으므로 숏 50배 레버리지로 보복 매매를 가동한다."
+        "강한 매수 기세 기대로 즉시 돌파 매매 풀매수",
+        "저항벽 매도 공급 세력 분산 확인 후 이익 실현",
+        "대량 거래 확인에 따른 손절 해제 후 장기 투자",
+        "반등 실패에 따른 고배율 보복 숏 베팅 가동"
     ],
     correctIndex: 1,
     explanation: "캔들 몸통 크기(스프레드)가 좁은데 거래량이 매우 크게 폭증했다는 것은 저항선 부근에서 들어오는 매수세만큼 세력의 매도 물량 공급이 쏟아져 막강한 저항 벽을 형성하고 있다는 뜻입니다. VSA에서는 이를 불화(Disharmony)로 규정하며 상승 추세 감속 및 하락 반전의 경고로 해독합니다."
@@ -4852,7 +4852,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 4240,
             "low": 4000,
             "close": 4040,
-            "volume": 80
+            "volume": 104
         },
         {
             "time": "Day 2",
@@ -4860,7 +4860,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 4080,
             "low": 3900,
             "close": 4020,
-            "volume": 111
+            "volume": 96
         }
     ],
     drawings: [
@@ -4881,10 +4881,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선 붕괴 완료로 확정하여 시장가 숏(공매도)에 추격 진입한다.",
-        "개인들의 손절 물량을 청산시키고 가격을 말아올린 '유동성 스윕(Liquidity Sweep)'이자 베어트랩으로 판단하며, 아래꼬리 저점인 3,900달러 밑에 손절을 짧게 걸고 롱(매수) 진입을 노린다.",
-        "아무런 신호도 아니므로 계좌를 관망 모드로 방치한다.",
-        "지지선 이탈 실패이므로 원금 100% 매도 후 영구 이탈한다."
+        "지지선 붕괴 확정으로 간주한 시장가 숏 추격",
+        "스윕(sweep) 판단 하에 아래꼬리 저점 손절 잡고 롱",
+        "아무런 신호도 아니라고 판단하고 포지션 방치",
+        "지지선 이탈 기대로 전량 손절 후 시장 영구 탈출"
     ],
     correctIndex: 1,
     explanation: "지지선 아래에 걸려 있던 개인들의 손절 주문(Sell Stop)을 강제로 청산(Liquidity Sweep)시킨 뒤, 세력이 물량을 헐값에 다 받아 삼켜 종가를 지지선 위로 신속하게 복귀시킨 휩소(베어 트랩) 패턴입니다. 아래꼬리 극점(3,900달러)에 아주 좁은 손절 라인을 설정할 수 있어, 기대 손익비가 극대화되는 고확률 상승 반전 매수 타점입니다."
@@ -4903,7 +4903,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5200,
             "low": 4560,
             "close": 5100,
-            "volume": 113
+            "volume": 110
         },
         {
             "time": "Wave 2",
@@ -4911,7 +4911,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5500,
             "low": 5000,
             "close": 5400,
-            "volume": 85
+            "volume": 84
         },
         {
             "time": "Wave 3",
@@ -4919,14 +4919,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5800,
             "low": 5300,
             "close": 5760,
-            "volume": 123
+            "volume": 105
         }
     ],
     options: [
-        "가격이 올라가므로 매수 에너지가 지속 강화되는 초강세장이다.",
-        "상승 강세가 진행됨에 따라 시장에 매도 공급 물량이 아예 말라버린 극도의 무중력 랠리이므로 안심하고 홀딩한다.",
-        "상승 이면의 신규 매수 가담 자금이 고갈되는 '거래량 다이버전스' 현상으로 추세 피로도가 극에 달했음을 나타내므로, 추격 매수를 철저히 배제하고 포지션의 분할 익절 관리를 시작한다.",
-        "거래량 감소는 차트 조작이므로 매매를 즉시 정지한다."
+        "가격 상승으로 인한 매수 지속 강화 초강세",
+        "매도 물량 고갈에 따른 무중력 안심 홀딩",
+        "신규 자금 유입 둔화 거래량 다이버전스로 분할 익절",
+        "지표 조작으로 판단하여 매매 중단 및 차트 종료"
     ],
     correctIndex: 2,
     explanation: "리플 시세는 상승하여 신고점을 갱신하지만 파동별 거래량이 지속 감소하는 흐름은 '거래량 다이버전스'로 상승 모멘텀의 내부 엔진이 식어감을 경고합니다. 조만간 가벼운 매도 포격에도 대규모의 차익 실현 폭락 조정이 발생할 수 있는 잠재적 폭락 국면이므로 물량을 덜어내고 현금을 확보해야 합니다."
@@ -4945,7 +4945,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2040,
             "low": 1980,
             "close": 2000,
-            "volume": 87
+            "volume": 348
         },
         {
             "time": "Day 2",
@@ -4953,14 +4953,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2240,
             "low": 1980,
             "close": 2200,
-            "volume": 114
+            "volume": 376
         }
     ],
     options: [
-        "돌파 순간 거래량이 오히려 최저치로 메말라 있는 고요한 수렴 상태여야 한다.",
-        "돌파를 완료한 장대양봉의 마감 거래량이 이전 10일 평균 거래량 대비 최소 1.5배~2배 이상 폭발하며 동반 상승해야 세력의 진성 개입으로 신뢰할 수 있다.",
-        "거래량은 돌파 판정에 아무런 영향을 주지 않는다.",
-        "거래소 내부 슬리피지 수치만 보고 결정한다."
+        "수렴 끝자락에서 거래량이 최저치인 상태 유지",
+        "평균 대비 1.5~2배 이상 거래량 급증하며 돌파 마감",
+        "거래량이 전혀 변하지 않는 평이한 상태 유지",
+        "호가 스프레드가 가장 좁아지는 횡보 상태"
     ],
     correctIndex: 1,
     explanation: "참된 저항 돌파(True Breakout)는 저항선 부근의 두터운 대기 매도 공급 물량을 대규모 자금으로 전부 씹어 삼키고 돌파해야 함을 뜻합니다. 따라서 반드시 평균 대비 1.5배~2배 이상의 거래량 분출이 동반되어야 신뢰할 수 있으며, 거래량이 적은 돌파는 꼬리 달고 내려앉는 불 트랩(Bull Trap)일 확률이 매우 높습니다."
@@ -4979,7 +4979,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 1010000,
             "low": 984000,
             "close": 990000,
-            "volume": 24
+            "volume": 33
         },
         {
             "time": "Day 2",
@@ -4987,7 +4987,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 996000,
             "low": 960000,
             "close": 992000,
-            "volume": 31
+            "volume": 24
         }
     ],
     drawings: [
@@ -5008,10 +5008,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선을 가볍게 뚫고 내려가 아무 반등도 없이 20% 이상 수직 낙하 장대음봉으로 마감한다.",
-        "순간적으로 전저점(984,000달러) 밑으로 가격을 밀쳐 손절 물량을 대량 폭발시킨 후, 이를 순식간에 매수 흡수하여 아래꼬리가 아주 길게 달린 핀바 형태로 종가를 지지선 위로 회복 마감한다.",
-        "수평 지지지선을 한 치의 오차도 없이 터치하고 0.01%의 꼬리도 없이 완전 수평 도지로 횡보한다.",
-        "거래량 없이 수직 상방으로 폭등하여 10만 달러에 즉시 도달한다."
+        "지지선을 장대음봉으로 돌파하여 20% 폭락 마감",
+        "전저점 이탈로 손절 유도 후 지지선 위 아래꼬리 안착",
+        "오차 없이 지지선 터치 후 꼬리 없는 수평 도지 횡보",
+        "거래량 없이 즉각 상승 빔 분출로 전고점 탈환"
     ],
     correctIndex: 1,
     explanation: "기관 세력(스마트 머니)은 대량 포지션을 구축하기 위해 개인의 손절 주문(Sell Stop)을 의도적으로 터트려 매도 유동성을 유도한 후 이를 다 매수합니다. 이로 인해 리플 시세는 지지선 아래로 일시 급락 후(스톱 헌팅), 아래꼬리를 매우 길게 달며 지선 안쪽으로 급반등 마감하게 됩니다. 이것이 유동성 스윕(Liquidity Sweep)의 정석 패턴입니다."
@@ -5033,10 +5033,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 매수 시도 흔적이 있으므로 저점 매수 기회로 보고 적극 추가 매수한다.",
-        "고점 매도 공급이 롱 청산 손절 물량을 완벽히 제압하여 상방을 격렬하게 거절(Rejection)한 징후이며 매도세의 승리이므로, 기존 매수 포지션을 전량 대피 또는 매도 조치한다.",
-        "거래량이 많으므로 무조건 횡보 흐름으로 수렴될 것이라 판단해 양방향 마틴게일 베팅을 가동한다.",
-        "이평선이 정배열이므로 신경 쓰지 않고 무시한다."
+        "강한 저점 매수 기회로 인지하여 비중 대폭 추가",
+        "고점 매도 Rejection 확인 후 기존 롱 포지션 대피",
+        "박스 횡보 수렴 기대로 마틴게일 추가 매수 가동",
+        "이평선 정배열 판단에 따른 포지션 변경 없이 홀딩"
     ],
     correctIndex: 1,
     explanation: "위꼬리가 매우 긴 캔들이 대량 거래량과 함께 터졌다는 것은 고점 돌파 시도가 있었으나 그 자리에 숨어 있던 세력의 막강한 청산 매도 벽(Supply)을 만나 격렬하게 두들겨 맞고 밀려났음을 의미합니다. 상방 거절의 심리가 지배적이므로 고점 피로 및 하락 전환이 임박한 위험 징후입니다."
@@ -5055,7 +5055,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5050,
             "low": 4850,
             "close": 5000,
-            "volume": 112
+            "volume": 87
         },
         {
             "time": "Day 2",
@@ -5063,7 +5063,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5100,
             "low": 4950,
             "close": 5050,
-            "volume": 89
+            "volume": 107
         },
         {
             "time": "Day 3",
@@ -5071,7 +5071,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5500,
             "low": 5000,
             "close": 5400,
-            "volume": 29
+            "volume": 20
         },
         {
             "time": "Day 4",
@@ -5079,7 +5079,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5450,
             "low": 4750,
             "close": 4800,
-            "volume": 25
+            "volume": 26
         }
     ],
     drawings: [
@@ -5101,9 +5101,9 @@ export const quizzes_volume_liquidity: QuizItem[] = [
     ],
     options: [
         "진짜 상승 돌파 (True Breakout)",
-        "불 트랩 (Bull Trap / 가짜 돌파) - 추격 매수자들을 물리는 하락 함정",
-        "베어 트랩 (Bear Trap / 가짜 하방)",
-        "골든 크로스 (Golden Cross)"
+        "불 트랩 (Bull Trap) - 매수자 청산 유도 가짜 돌파",
+        "베어 트랩 (Bear Trap) - 매도자 청산 유도 가짜 하방",
+        "골든 크로스 (Golden Cross) - 이평선 돌파"
     ],
     correctIndex: 1,
     explanation: "저항선을 일시적으로 뚫었다가 대량 매도세와 함께 직후 캔들에서 하방으로 원상복귀하는 현상을 '불 트랩(Bull Trap/가짜 돌파)'이라고 합니다. 돌파 후 리테스트를 기다리지 않고 급히 추격 매수했던 투자자들이 고점에 물리는 대표적 함정입니다."
@@ -5122,7 +5122,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 6100,
             "low": 5900,
             "close": 5950,
-            "volume": 116
+            "volume": 98
         },
         {
             "time": "Day 2",
@@ -5130,7 +5130,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 6000,
             "low": 5500,
             "close": 5550,
-            "volume": 108
+            "volume": 120
         },
         {
             "time": "Day 3",
@@ -5138,7 +5138,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 6150,
             "low": 5500,
             "close": 6100,
-            "volume": 104
+            "volume": 95
         }
     ],
     drawings: [
@@ -5159,10 +5159,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩 (Bull Trap)",
-        "베어 트랩 (Bear Trap / 가짜 하락 이탈) - 매도자 청산 유도 후 급등 함정",
-        "리테스트 실패",
-        "추세 추종 돌파"
+        "불 트랩 (Bull Trap) - 가짜 상방 돌파",
+        "베어 트랩 (Bear Trap) - 가짜 하방 이탈",
+        "리테스트 실패 - 지지선 붕괴",
+        "추세 추종 돌파 - 하방 랠리 가속"
     ],
     correctIndex: 1,
     explanation: "지지선을 아래로 뚫고 내려가 하락세가 지속될 것처럼 유도한 뒤, 매물을 털어내고 강력하게 다시 반등해 올리는 현상을 '베어 트랩(Bear Trap)'이라고 합니다. 하락 돌파로 생각하고 공매도를 치거나 손절했던 사람들의 손실을 강제하며 가격이 급등하게 만듭니다."
@@ -5181,7 +5181,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 6400,
             "low": 5950,
             "close": 6350,
-            "volume": 98
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -5189,7 +5189,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 6900,
             "low": 6300,
             "close": 6800,
-            "volume": 94
+            "volume": 100
         },
         {
             "time": "Day 3",
@@ -5197,14 +5197,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 6700,
             "low": 6500,
             "close": 6550,
-            "volume": 94
+            "volume": 106
         }
     ],
     options: [
-        "상승 모멘텀이 일시적으로 정체되고 매도 공급이 잉태된 신호이므로, 보유 물량의 50% 정도를 익절하여 이익을 확정하고 다음 날 돌파/이탈 방향을 관망한다.",
-        "대세 상승의 일시 조정이므로 추가 대출을 통해 더 높은 비중으로 추격 매수한다.",
-        "즉시 숏(공매도) 20배 레버리지로 베팅하고 자리를 비운다.",
-        "어떠한 부분 매도도 거부하고 전량 영구 홀딩을 고집한다."
+        "상승 둔화 조짐에 따른 보유 물량 50% 분할 익절",
+        "추세 일시 조정으로 간주하여 비중 확대 추가 매수",
+        "추세 종결 판단에 따른 고배율 숏 포지션 즉시 진입",
+        "이익 실현 없이 전량 장기 보유 전략 유지"
     ],
     correctIndex: 0,
     explanation: "하락 잉태형(Bearish Harami)은 이전의 강한 상승 추세 동력이 감속하기 시작했으며, 매도 압력이 힘을 기르고 있음을 암시하는 변곡 캔들입니다. 따라서 단기 스윙 트레이더는 물량의 일부(50%)를 분할 익절하여 리스크를 낮추고, 다음 캔들에서 이전 양봉 저점을 깨뜨리는 하락 하방 이탈이 추가되는지 지켜보는 것이 정석입니다."
@@ -5223,7 +5223,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5900,
             "low": 5550,
             "close": 5850,
-            "volume": 119
+            "volume": 106
         },
         {
             "time": "Day 2",
@@ -5231,7 +5231,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 6100,
             "low": 5800,
             "close": 6050,
-            "volume": 354
+            "volume": 366
         },
         {
             "time": "Day 3",
@@ -5239,7 +5239,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 6100,
             "low": 5750,
             "close": 5800,
-            "volume": 342
+            "volume": 392
         }
     ],
     drawings: [
@@ -5256,10 +5256,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "불 트랩(Bull Trap / 가짜 돌파) 함정에 걸려 고점에 물린 형국이 확정되었으므로, 추가 하락 피해를 예방하기 위해 즉각 전량 시장가 매도하여 탈출(손절)한다.",
-        "6,000달러의 지지력을 신뢰하며 영구 존버 전략으로 들어간다.",
-        "평단가 부근이므로 대출을 더 내어 2차 매수를 더 낮은 단가에 물탄다.",
-        "상황을 무시하고 다른 종목을 똑같이 추격 매수한다."
+        "불 트랩(Bull Trap) 확인 후 추가 하락 방지 즉시 손절",
+        "저항선 부근 매수세 복귀를 기대하며 전량 홀딩",
+        "평단가 관리 차원에서 추가 물타기 매수 집행",
+        "상황을 판단하기 위해 시장가로 추가 분할 진입"
     ],
     correctIndex: 0,
     explanation: "거래량 없는 돌파 직후에 거래량 실린 강한 음봉이 기존 돌파선(6,000달러) 아래로 재진입하여 마감하는 현상은 전형적인 불 트랩(Bull Trap/가짜 돌파) 함정입니다. 돌파 당시 샀던 매수자들의 패닉 셀이 출현하며 하락 가속화가 나오기 쉬우므로 즉시 손절하여 물량을 털어내야 생존할 수 있습니다."
@@ -5278,7 +5278,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5100,
             "low": 4500,
             "close": 4600,
-            "volume": 112
+            "volume": 104
         },
         {
             "time": "Day 2",
@@ -5286,7 +5286,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 4700,
             "low": 4100,
             "close": 4150,
-            "volume": 105
+            "volume": 121
         },
         {
             "time": "Day 3",
@@ -5294,7 +5294,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 4250,
             "low": 3750,
             "close": 3800,
-            "volume": 117
+            "volume": 110
         },
         {
             "time": "Day 4",
@@ -5302,7 +5302,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 4500,
             "low": 3750,
             "close": 4450,
-            "volume": 111
+            "volume": 97
         }
     ],
     drawings: [
@@ -5331,10 +5331,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "하락 채널을 강하게 상방으로 뚫고 올라갔다는 것은 기존 하락 관성이 파괴되고 상승 추세 전환(Bullish Reversal)이 선언되었음을 뜻하므로, 원칙에 의거해 즉시 숏 포지션을 전량 손절(또는 익절)하고 대피하거나 롱 전환을 모색한다.",
-        "버티면 다시 채널 하방으로 들어올 것이므로 무제한 숏 추가 물타기를 집행한다.",
-        "영원히 포지션을 유지한 채 계좌가 마이너스로 깎여나가는 것을 바라본다.",
-        "증거금을 출금하고 거래소 앱을 삭제한다."
+        "상단 돌파 확인 즉시 숏 전량 손절 및 대피",
+        "채널 재진입 기대로 숏 포지션 추가 물타기",
+        "손절 없이 유지하면서 포지션 본전 도달 대기",
+        "포지션 유지 후 증거금을 출금하여 강제 횡보"
     ],
     correctIndex: 0,
     explanation: "하락 평행 채널의 상단 저항선 상향 돌파(Breakout)는 기존 하락 트렌드의 사멸과 매수세 지배령 복귀를 뜻합니다. 지표와 거래량이 동반된 돌파 확인 시에는 숏 포지션을 지체 없이 기계적으로 칼손절하여 자산을 보호하는 것이 원칙입니다."
@@ -5353,7 +5353,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5250,
             "low": 4950,
             "close": 5200,
-            "volume": 110
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -5361,7 +5361,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5450,
             "low": 5150,
             "close": 5400,
-            "volume": 112
+            "volume": 89
         },
         {
             "time": "Day 3",
@@ -5369,7 +5369,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5500,
             "low": 5350,
             "close": 5400,
-            "volume": 95
+            "volume": 107
         }
     ],
     drawings: [
@@ -5390,10 +5390,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "매수 에너지가 매우 강하므로 즉시 풀매수로 돌파 매매를 실행한다.",
-        "저항선 부근에서 매수 물량을 압도하는 세력의 강한 분산(Distribution / 매도 공급)이 진행되고 있음을 뜻하므로, 상승이 정체되고 꺾일 리스크에 대비하여 이익을 실현한다.",
-        "거래량이 많이 터졌으므로 손절 라인을 지우고 장기 투자를 결심한다.",
-        "상승 추세가 무효화되었으므로 숏 50배 레버리지로 보복 매매를 가동한다."
+        "강한 매수 기세 기대로 즉시 돌파 매매 풀매수",
+        "저항벽 매도 공급 세력 분산 확인 후 이익 실현",
+        "대량 거래 확인에 따른 손절 해제 후 장기 투자",
+        "반등 실패에 따른 고배율 보복 숏 베팅 가동"
     ],
     correctIndex: 1,
     explanation: "캔들 몸통 크기(스프레드)가 좁은데 거래량이 매우 크게 폭증했다는 것은 저항선 부근에서 들어오는 매수세만큼 세력의 매도 물량 공급이 쏟아져 막강한 저항 벽을 형성하고 있다는 뜻입니다. VSA에서는 이를 불화(Disharmony)로 규정하며 상승 추세 감속 및 하락 반전의 경고로 해독합니다."
@@ -5412,7 +5412,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 10600,
             "low": 10000,
             "close": 10100,
-            "volume": 113
+            "volume": 107
         },
         {
             "time": "Day 2",
@@ -5420,7 +5420,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 10200,
             "low": 9750,
             "close": 10050,
-            "volume": 114
+            "volume": 101
         }
     ],
     drawings: [
@@ -5441,10 +5441,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선 붕괴 완료로 확정하여 시장가 숏(공매도)에 추격 진입한다.",
-        "개인들의 손절 물량을 청산시키고 가격을 말아올린 '유동성 스윕(Liquidity Sweep)'이자 베어트랩으로 판단하며, 아래꼬리 저점인 9,750달러 밑에 손절을 짧게 걸고 롱(매수) 진입을 노린다.",
-        "아무런 신호도 아니므로 계좌를 관망 모드로 방치한다.",
-        "지지선 이탈 실패이므로 원금 100% 매도 후 영구 이탈한다."
+        "지지선 붕괴 확정으로 간주한 시장가 숏 추격",
+        "스윕(sweep) 판단 하에 아래꼬리 저점 손절 잡고 롱",
+        "아무런 신호도 아니라고 판단하고 포지션 방치",
+        "지지선 이탈 기대로 전량 손절 후 시장 영구 탈출"
     ],
     correctIndex: 1,
     explanation: "지지선 아래에 걸려 있던 개인들의 손절 주문(Sell Stop)을 강제로 청산(Liquidity Sweep)시킨 뒤, 세력이 물량을 헐값에 다 받아 삼켜 종가를 지지선 위로 신속하게 복귀시킨 휩소(베어 트랩) 패턴입니다. 아래꼬리 극점(9,750달러)에 아주 좁은 손절 라인을 설정할 수 있어, 기대 손익비가 극대화되는 고확률 상승 반전 매수 타점입니다."
@@ -5463,7 +5463,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 13000,
             "low": 11400,
             "close": 12750,
-            "volume": 115
+            "volume": 101
         },
         {
             "time": "Wave 2",
@@ -5471,7 +5471,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 13750,
             "low": 12500,
             "close": 13500,
-            "volume": 99
+            "volume": 109
         },
         {
             "time": "Wave 3",
@@ -5479,14 +5479,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 14500,
             "low": 13250,
             "close": 14400,
-            "volume": 96
+            "volume": 110
         }
     ],
     options: [
-        "가격이 올라가므로 매수 에너지가 지속 강화되는 초강세장이다.",
-        "상승 강세가 진행됨에 따라 시장에 매도 공급 물량이 아예 말라버린 극도의 무중력 랠리이므로 안심하고 홀딩한다.",
-        "상승 이면의 신규 매수 가담 자금이 고갈되는 '거래량 다이버전스' 현상으로 추세 피로도가 극에 달했음을 나타내므로, 추격 매수를 철저히 배제하고 포지션의 분할 익절 관리를 시작한다.",
-        "거래량 감소는 차트 조작이므로 매매를 즉시 정지한다."
+        "가격 상승으로 인한 매수 지속 강화 초강세",
+        "매도 물량 고갈에 따른 무중력 안심 홀딩",
+        "신규 자금 유입 둔화 거래량 다이버전스로 분할 익절",
+        "지표 조작으로 판단하여 매매 중단 및 차트 종료"
     ],
     correctIndex: 2,
     explanation: "골드 가격는 상승하여 신고점을 갱신하지만 파동별 거래량이 지속 감소하는 흐름은 '거래량 다이버전스'로 상승 모멘텀의 내부 엔진이 식어감을 경고합니다. 조만간 가벼운 매도 포격에도 대규모의 차익 실현 폭락 조정이 발생할 수 있는 잠재적 폭락 국면이므로 물량을 덜어내고 현금을 확보해야 합니다."
@@ -5505,7 +5505,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5100,
             "low": 4950,
             "close": 5000,
-            "volume": 85
+            "volume": 370
         },
         {
             "time": "Day 2",
@@ -5513,14 +5513,14 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 5600,
             "low": 4950,
             "close": 5500,
-            "volume": 86
+            "volume": 354
         }
     ],
     options: [
-        "돌파 순간 거래량이 오히려 최저치로 메말라 있는 고요한 수렴 상태여야 한다.",
-        "돌파를 완료한 장대양봉의 마감 거래량이 이전 10일 평균 거래량 대비 최소 1.5배~2배 이상 폭발하며 동반 상승해야 세력의 진성 개입으로 신뢰할 수 있다.",
-        "거래량은 돌파 판정에 아무런 영향을 주지 않는다.",
-        "거래소 내부 슬리피지 수치만 보고 결정한다."
+        "수렴 끝자락에서 거래량이 최저치인 상태 유지",
+        "평균 대비 1.5~2배 이상 거래량 급증하며 돌파 마감",
+        "거래량이 전혀 변하지 않는 평이한 상태 유지",
+        "호가 스프레드가 가장 좁아지는 횡보 상태"
     ],
     correctIndex: 1,
     explanation: "참된 저항 돌파(True Breakout)는 저항선 부근의 두터운 대기 매도 공급 물량을 대규모 자금으로 전부 씹어 삼키고 돌파해야 함을 뜻합니다. 따라서 반드시 평균 대비 1.5배~2배 이상의 거래량 분출이 동반되어야 신뢰할 수 있으며, 거래량이 적은 돌파는 꼬리 달고 내려앉는 불 트랩(Bull Trap)일 확률이 매우 높습니다."
@@ -5539,7 +5539,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2525000,
             "low": 2460000,
             "close": 2475000,
-            "volume": 33
+            "volume": 25
         },
         {
             "time": "Day 2",
@@ -5547,7 +5547,7 @@ export const quizzes_volume_liquidity: QuizItem[] = [
             "high": 2490000,
             "low": 2400000,
             "close": 2480000,
-            "volume": 16
+            "volume": 20
         }
     ],
     drawings: [
@@ -5568,10 +5568,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "지지선을 가볍게 뚫고 내려가 아무 반등도 없이 20% 이상 수직 낙하 장대음봉으로 마감한다.",
-        "순간적으로 전저점(2,460,000달러) 밑으로 가격을 밀쳐 손절 물량을 대량 폭발시킨 후, 이를 순식간에 매수 흡수하여 아래꼬리가 아주 길게 달린 핀바 형태로 종가를 지지선 위로 회복 마감한다.",
-        "수평 지지지선을 한 치의 오차도 없이 터치하고 0.01%의 꼬리도 없이 완전 수평 도지로 횡보한다.",
-        "거래량 없이 수직 상방으로 폭등하여 10만 달러에 즉시 도달한다."
+        "지지선을 장대음봉으로 돌파하여 20% 폭락 마감",
+        "전저점 이탈로 손절 유도 후 지지선 위 아래꼬리 안착",
+        "오차 없이 지지선 터치 후 꼬리 없는 수평 도지 횡보",
+        "거래량 없이 즉각 상승 빔 분출로 전고점 탈환"
     ],
     correctIndex: 1,
     explanation: "기관 세력(스마트 머니)은 대량 포지션을 구축하기 위해 개인의 손절 주문(Sell Stop)을 의도적으로 터트려 매도 유동성을 유도한 후 이를 다 매수합니다. 이로 인해 골드 가격는 지지선 아래로 일시 급락 후(스톱 헌팅), 아래꼬리를 매우 길게 달며 지선 안쪽으로 급반등 마감하게 됩니다. 이것이 유동성 스윕(Liquidity Sweep)의 정석 패턴입니다."
@@ -5593,10 +5593,10 @@ export const quizzes_volume_liquidity: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 매수 시도 흔적이 있으므로 저점 매수 기회로 보고 적극 추가 매수한다.",
-        "고점 매도 공급이 롱 청산 손절 물량을 완벽히 제압하여 상방을 격렬하게 거절(Rejection)한 징후이며 매도세의 승리이므로, 기존 매수 포지션을 전량 대피 또는 매도 조치한다.",
-        "거래량이 많으므로 무조건 횡보 흐름으로 수렴될 것이라 판단해 양방향 마틴게일 베팅을 가동한다.",
-        "이평선이 정배열이므로 신경 쓰지 않고 무시한다."
+        "강한 저점 매수 기회로 인지하여 비중 대폭 추가",
+        "고점 매도 Rejection 확인 후 기존 롱 포지션 대피",
+        "박스 횡보 수렴 기대로 마틴게일 추가 매수 가동",
+        "이평선 정배열 판단에 따른 포지션 변경 없이 홀딩"
     ],
     correctIndex: 1,
     explanation: "위꼬리가 매우 긴 캔들이 대량 거래량과 함께 터졌다는 것은 고점 돌파 시도가 있었으나 그 자리에 숨어 있던 세력의 막강한 청산 매도 벽(Supply)을 만나 격렬하게 두들겨 맞고 밀려났음을 의미합니다. 상방 거절의 심리가 지배적이므로 고점 피로 및 하락 전환이 임박한 위험 징후입니다."

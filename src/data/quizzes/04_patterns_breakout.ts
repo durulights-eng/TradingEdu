@@ -15,7 +15,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 105,
             "low": 90,
             "close": 102,
-            "volume": 108
+            "volume": 85
         },
         {
             "time": "Day 2",
@@ -23,7 +23,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 105,
             "low": 93,
             "close": 103,
-            "volume": 99
+            "volume": 90
         },
         {
             "time": "Day 3",
@@ -31,7 +31,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 105,
             "low": 96,
             "close": 104,
-            "volume": 119
+            "volume": 114
         }
     ],
     drawings: [
@@ -53,9 +53,9 @@ export const quizzes_patterns_breakout: QuizItem[] = [
     ],
     options: [
         "저항선 부근에서 고점들이 점점 급락하며 붕괴하는 현상",
-        "저항선 아래에서 조정을 받을 때, 저점들이 점점 높아지며 저항선을 향해 밀어 올리는 현상 (매수 우위 수렴)",
-        "거래량이 완전 소멸하여 영원히 횡보하는 상태",
-        "갑작스럽게 아무 이유 없이 급락하는 현상"
+        "저항선 부근에서 저점들을 높여가며 밀어 올리는 수렴 현상",
+        "거래량이 완전히 소멸하여 긴 횡보 상태를 보이는 현상",
+        "지속적인 매도세로 인해 갑작스럽게 급락하는 현상"
     ],
     correctIndex: 1,
     explanation: "저항을 뚫지 못하고 밀려 내려올 때, 이전 저점보다 높은 지점에서 저점을 계속 잡아 올려주는 것은 매도 압력보다 매수 압력이 점점 올라오고 있음을 의미합니다. 수렴 끝에 돌파가 나타날 신뢰도가 매우 높습니다."
@@ -74,7 +74,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 115,
             "low": 98,
             "close": 110,
-            "volume": 100
+            "volume": 109
         },
         {
             "time": "Day 2",
@@ -82,7 +82,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 130,
             "low": 95,
             "close": 105,
-            "volume": 123
+            "volume": 89
         },
         {
             "time": "Day 3",
@@ -90,7 +90,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 114,
             "low": 96,
             "close": 110,
-            "volume": 99
+            "volume": 121
         },
         {
             "time": "Day 4",
@@ -98,7 +98,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 111,
             "low": 93,
             "close": 94,
-            "volume": 122
+            "volume": 105
         }
     ],
     drawings: [
@@ -119,10 +119,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "머리 꼭대기(130달러) 부근에서 예측 공매도",
-        "오른쪽 어깨가 올라가고 있을 때 미리 선진입",
-        "저점들을 연결한 핵심 지지선인 '넥라인'을 확실하게 하방 돌파(Breakdown) 완료할 때",
-        "패턴 돌파 여부와 무관하게 오른쪽 어깨 끝에서 대기"
+        "머리 꼭대기(130달러) 부근에서 예측 숏 진입",
+        "오른쪽 어깨가 올라가고 있을 때 돌파 전 선진입",
+        "저점들을 연결한 넥라인의 하방 돌파 완료 시",
+        "패턴 완성과 무관하게 오른쪽 어깨 끝에서 대기"
     ],
     correctIndex: 2,
     explanation: "헤드앤숄더(Head & Shoulders) 패턴은 오른쪽 어깨를 그린 후, 저점 지지선인 '넥라인(Neckline)'을 거래량을 실어 하방 돌파해야 최종 완성이 선언됩니다. 그전에 진입하면 넥라인 반등 시 극심한 손실을 입습니다."
@@ -149,7 +149,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 95,
             "low": 84,
             "close": 94,
-            "volume": 113
+            "volume": 93
         },
         {
             "time": "Day 3",
@@ -157,7 +157,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 95,
             "low": 79,
             "close": 82,
-            "volume": 104
+            "volume": 98
         },
         {
             "time": "Day 4",
@@ -165,7 +165,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 99,
             "low": 81,
             "close": 98,
-            "volume": 98
+            "volume": 92
         }
     ],
     drawings: [
@@ -186,10 +186,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "추가 폭락 예고이므로 전액 손절",
-        "이중 바닥형(W 패턴) 완성으로 강력한 상승 전환 시그널, 95달러 넥라인 돌파 시점 또는 눌림목 매수",
-        "박스권 횡보이므로 양방향 무시",
-        "쌍바닥이 깨진 것이므로 공매도"
+        "추가 폭락 가능성에 따른 전량 손절 대응",
+        "W 패턴 이중 바닥 완성 및 넥라인 돌파 시 매수",
+        "박스권 횡보 판단에 따른 무대응 및 관망",
+        "이중 바닥의 하방 이탈을 예상한 숏 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "W자 모양의 '이중 바닥형(Double Bottom)' 패턴입니다. 주가가 하락을 멈추고 바닥을 두 차례 단단히 지지해 준 뒤 중간 봉우리(넥라인 95달러)를 돌파해 마감하면 추세가 상승으로 강하게 전환될 가능성이 매우 높습니다."
@@ -208,7 +208,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 80,
             "low": 49,
             "close": 78,
-            "volume": 115
+            "volume": 101
         },
         {
             "time": "Day 2",
@@ -216,7 +216,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 79,
             "low": 72,
             "close": 74,
-            "volume": 123
+            "volume": 119
         },
         {
             "time": "Day 3",
@@ -224,7 +224,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 76,
             "low": 70,
             "close": 71,
-            "volume": 125
+            "volume": 106
         },
         {
             "time": "Day 4",
@@ -232,14 +232,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 85,
             "low": 70,
             "close": 83,
-            "volume": 130
+            "volume": 105
         }
     ],
     options: [
-        "이중 천정형 패턴 - 목표가 없음",
-        "불 플래그 (Bull Flag) 패턴 - 깃대의 높이(약 30달러 상승폭)만큼 돌파 지점부터 2차 폭등 랠리 기대",
-        "헤드앤숄더 패턴 - 하락 타겟 계산",
-        "대칭 삼각수렴 - 변동성 붕괴"
+        "이중 천정형 패턴 - 고점 도달 시 숏 진입",
+        "불 플래그 패턴 - 깃발 돌파 시 추가 상승 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 타겟",
+        "대칭 삼각수렴 패턴 - 변동성 축소 후 돌파 대기"
     ],
     correctIndex: 1,
     explanation: "대표적 강세 지속 패턴인 '불 플래그(Bull Flag)'입니다. 급격한 상승(깃대) 뒤 숨 고르기 채널(깃발)을 상방 돌파하면, 이전 상승 파동의 크기(깃대 높이)만큼 추가로 수직 랠리를 시작하는 관성이 있습니다."
@@ -258,7 +258,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 140,
             "low": 99,
             "close": 135,
-            "volume": 87
+            "volume": 100
         },
         {
             "time": "Day 2",
@@ -266,7 +266,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 136,
             "low": 120,
             "close": 122,
-            "volume": 119
+            "volume": 97
         },
         {
             "time": "Day 3",
@@ -274,7 +274,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 140,
             "low": 121,
             "close": 138,
-            "volume": 125
+            "volume": 115
         },
         {
             "time": "Day 4",
@@ -282,7 +282,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 139,
             "low": 115,
             "close": 116,
-            "volume": 99
+            "volume": 117
         }
     ],
     drawings: [
@@ -303,10 +303,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 상승 연장이므로 추가 매수",
-        "이중 천정형(Double Top / M 패턴) 완성으로 상승 추세가 종료되고 하락 반전될 가능성 매우 큼",
-        "일시적인 횡보 조절 국면",
-        "아무 조건 없는 단순 가격 노이즈"
+        "상승 추세의 지속 연장에 따른 추가 매수",
+        "이중 천정형(M 패턴) 완성에 따른 하락 반전 대비",
+        "단기 조정에 따른 일시적 횡보 박스권 진입",
+        "방향성 없는 일상적인 잔파동으로 판단해 홀딩"
     ],
     correctIndex: 1,
     explanation: "고점에서 지지받지 못하고 형성된 M자형 '이중 천정형(Double Top)' 패턴입니다. 두 차례 강력한 저항벽(140달러)을 넘지 못하고 넥라인(120달러)마저 붕괴했으므로 하방 추세가 가속화된다는 신호입니다."
@@ -325,7 +325,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 100,
             "low": 80,
             "close": 95,
-            "volume": 114
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -333,7 +333,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 100,
             "low": 86,
             "close": 98,
-            "volume": 103
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -341,7 +341,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 100,
             "low": 92,
             "close": 99,
-            "volume": 101
+            "volume": 95
         }
     ],
     drawings: [
@@ -381,10 +381,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "디센딩 트라이앵글 (Descending Triangle) - 대개 하방 돌파",
-        "어센딩 트라이앵글 (Ascending Triangle / 상승 삼각수렴) - 매수 압력이 우위에 있어 일반적으로 상방 돌파",
-        "헤드앤숄더 패턴 - 하방 돌파",
-        "상향 평행 채널 - 횡보"
+        "디센딩 트라이앵글 - 일반적으로 하방 돌파 기대",
+        "어센딩 트라이앵글 - 매수 압력 우위로 상방 돌파 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 기대",
+        "상향 평행 채널 - 상하단 터치식 채널 매매 기대"
     ],
     correctIndex: 1,
     explanation: "고점 저항은 평평하고 저점은 계속 높아지는 삼각수렴을 '어센딩 트라이앵글(Ascending Triangle)'이라고 합니다. 위로 갈수록 저점이 계속 올라가는 현상은 매수세가 가격을 위로 계속 압박하고 있음을 증명하며, 대개 저항선(100달러)을 상향 뚫고 오르는 확률이 높습니다."
@@ -403,7 +403,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 100,
             "low": 80,
             "close": 95,
-            "volume": 114
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -411,7 +411,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 100,
             "low": 88,
             "close": 97,
-            "volume": 122
+            "volume": 119
         },
         {
             "time": "Day 3",
@@ -419,7 +419,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 98,
             "low": 91,
             "close": 92,
-            "volume": 103
+            "volume": 112
         }
     ],
     drawings: [
@@ -455,10 +455,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "예측이 틀려 어센딩 패턴이 아래로 파괴(Breakdown)되었으므로 시나리오 실패를 즉각 인정하고 기계적으로 전량 손절매하여 계좌 추가 파산을 방지한다.",
-        "80달러선까지 평단가를 낮추는 대규모 물타기 추가 매수를 시작한다.",
-        "손절매 없이 본전 100달러가 올 때까지 무조건 홀딩(존버)한다.",
-        "아무 관리 주문 없이 차트창을 닫고 외면한다."
+        "하방 이탈 확인 즉시 손절하여 추가 폭락 차단",
+        "조정을 이용해 평단가를 조절하는 분할 물타기",
+        "본전 탈출 시까지 포지션을 유지하며 관망",
+        "손절 라인을 하단으로 조정하고 대기 주문 유지"
     ],
     correctIndex: 0,
     explanation: "어센딩 트라이앵글은 상방 확률이 다소 높지만, 하단 지지선이 뚫려 무너지는 순간 패턴 실패와 함께 엄청난 실망 매도 매물이 출하됩니다. 특히 돌파를 미리 예견해 들어간 포지션은 즉시 룰 위반을 시정하고 손절(92달러)해야 큰 자산 보호를 할 수 있습니다."
@@ -477,7 +477,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 95,
             "low": 70,
             "close": 78,
-            "volume": 107
+            "volume": 97
         },
         {
             "time": "Day 2",
@@ -485,7 +485,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 82,
             "low": 60,
             "close": 75,
-            "volume": 108
+            "volume": 122
         },
         {
             "time": "Day 3",
@@ -493,7 +493,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 79,
             "low": 68,
             "close": 76,
-            "volume": 97
+            "volume": 99
         },
         {
             "time": "Day 4",
@@ -501,7 +501,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 88,
             "low": 75,
             "close": 87,
-            "volume": 105
+            "volume": 119
         }
     ],
     drawings: [
@@ -518,10 +518,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "포모(FOMO / 소외 불안)를 이기지 못하고 꼭대기(87달러)에서 전액 시장가 추격 매수한다.",
-        "돌파봉 꼭대기에서 타는 것보다, 향후 넥라인(80달러선) 부근으로 주가가 눌려 새로운 지지선으로 작동(Retest)하는 조정을 보일 때까지 차분히 대기하여 지지 안착 확인 후 눌림목에서 정석 매수한다.",
-        "추세가 끝났으므로 숏 포지션만 진입한다.",
-        "무조건 상장폐지될 주식이라 조롱하며 관심종목에서 지운다."
+        "포모(FOMO) 현상에 따른 돌파봉 꼭대기 추격 매수",
+        "돌파 넥라인 부근의 리테스트 조정 눌림목 매수",
+        "반등 랠리 종결 판단에 따른 역베팅 숏 포지션",
+        "추세 전환 확인 후 무조건적인 관심종목 제외"
     ],
     correctIndex: 1,
     explanation: "강한 패턴 돌파봉 확인 후 뇌동매매로 추격하는 것은 손절 거리가 너무 멀어져 손익비가 최악인 나쁜 습관입니다. 정석 돌파 트레이더는 넥라인 역할 전환 지점(80달러)으로의 되돌림 눌림목(Retest)을 차분히 기다려 리스크를 짧게 끊고 들어가는 훈련을 해야 합니다."
@@ -540,7 +540,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 132,
             "low": 110,
             "close": 112,
-            "volume": 114
+            "volume": 96
         },
         {
             "time": "Day 2",
@@ -548,7 +548,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 116,
             "low": 102,
             "close": 104,
-            "volume": 92
+            "volume": 119
         },
         {
             "time": "Day 3",
@@ -556,7 +556,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 108,
             "low": 98,
             "close": 100,
-            "volume": 96
+            "volume": 121
         },
         {
             "time": "Day 4",
@@ -564,14 +564,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 112,
             "low": 99,
             "close": 110,
-            "volume": 115
+            "volume": 106
         }
     ],
     options: [
-        "손절가를 전혀 설정하지 않고 오직 청산가에 포지션 운명을 맡긴다.",
-        "상방 돌파 확인 즉시 매수를 개시하되, 손절가는 쐐기형 수렴의 직전 최저점(98달러선) 바로 아래 또는 돌파 봉의 시가 하방에 배치하여 손절폭을 타이트하게 관리한다.",
-        "평단가가 90달러가 될 때까지 손절 없이 10차례에 걸쳐 분할로 물타기한다.",
-        "쐐기형 붕괴이므로 무조건 숏(공매도)으로 전환한다."
+        "손절 없이 청산가에 의존하여 장기 홀딩",
+        "상방 돌파 확인 후 진입 및 직전 최저점 손절 셋업",
+        "평단가 개선을 위한 지속적인 분할 물타기 매수",
+        "상단 저항선 돌파 시점을 이용한 숏 포지션 스위칭"
     ],
     correctIndex: 1,
     explanation: "하락 쐐기형(Falling Wedge)의 상방 돌파는 강력한 반전 신호입니다. 이 패턴의 장점은 진입 즉시 명확하고 짧은 기준점(수렴 바닥 최저가 98달러 혹은 돌파봉 하단)을 손절가로 설정할 수 있어, 리스크 한도를 안전하게 통제한 채 상방 랠리를 도모할 수 있다는 점입니다."
@@ -590,7 +590,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 280,
             "low": 260,
             "close": 278,
-            "volume": 102
+            "volume": 96
         },
         {
             "time": "Day 2",
@@ -598,7 +598,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 295,
             "low": 272,
             "close": 290,
-            "volume": 32
+            "volume": 15
         },
         {
             "time": "Day 3",
@@ -606,7 +606,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 305,
             "low": 298,
             "close": 301,
-            "volume": 28
+            "volume": 17
         }
     ],
     drawings: [
@@ -631,10 +631,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "상승 쐐기형 패턴은 전형적인 하락 이탈(Bearish Breakdown) 패턴이며 거래량 축소는 신뢰도 저하를 반증하므로, 롱 포지션을 즉시 정리/매도하여 비중을 비우거나 하단선 붕괴 확정 시 숏 포지션 구축을 모색한다.",
-        "추세 상승 지속으로 확신하고 신용 레버리지를 이용해 풀매수한다.",
-        "500달러가 돌파될 때까지 절대 손절 없이 무기한 보유한다.",
-        "다른 카지노 도박에 참여한다."
+        "상승 쐐기형 하방 이탈 위험에 따른 롱 포지션 매도",
+        "상승 지속 확신에 따른 레버리지 추가 불타기",
+        "장기 상승 흐름 기대로 손절 없이 무기한 홀딩",
+        "다른 종목으로의 포지션 분산을 위한 관망"
     ],
     correctIndex: 0,
     explanation: "상승 쐐기형(Rising Wedge)은 약세 세력이 억지로 쥐어짜며 상승 가격을 만드는 패턴으로, 수렴 끝에서 거래량 소멸과 함께 하방 이탈(Breakdown)하여 폭락할 위험이 매우 높은 대표적인 하락 대비 패턴입니다. 하단 지지선 이탈 낌새 시에는 매수 포지션을 전부 도망쳐 나와야 큰 손실을 막을 수 있습니다."
@@ -653,7 +653,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 142,
             "low": 128,
             "close": 130,
-            "volume": 94
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -661,7 +661,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 140,
             "low": 129,
             "close": 138,
-            "volume": 101
+            "volume": 108
         },
         {
             "time": "Day 3",
@@ -669,7 +669,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 140,
             "low": 134,
             "close": 135,
-            "volume": 123
+            "volume": 95
         },
         {
             "time": "Day 4",
@@ -677,14 +677,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 154,
             "low": 134,
             "close": 152,
-            "volume": 123
+            "volume": 93
         }
     ],
     options: [
-        "이전 컵 깊이만큼의 강력한 2차 상승 파동 랠리가 시작될 확률이 높으므로, 핸들 저점(134달러) 바로 아래에 손절매를 걸어두고 신규 매수(롱) 포지션을 진입한다.",
-        "컵앤핸들은 하락 사멸 패턴이므로 즉시 전량 매도 및 손절 처리한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "상황을 외면하고 포지션을 청산한 뒤 게임을 켠다."
+        "핸들 상방 돌파 확인 후 진입 및 핸들 저점 손절",
+        "하락 지속 판단에 따른 즉각적인 전량 손절",
+        "평단가 부근이므로 추가 손절 설정 없이 관망",
+        "돌파 여부 확인 전 고점 돌파 매수 주문 100%"
     ],
     correctIndex: 0,
     explanation: "전형적인 강세 지속 패턴인 컵앤핸들(Cup & Handle)입니다. 핸들의 하락 조정 채널 상단 돌파는 매물 소화를 성공적으로 완수하고 본 랠리로 진입한다는 강력한 신호입니다. 손익비 관점에서 핸들의 지지 저점인 134달러 아래에 안전 손절을 지정한 뒤 진입 시 우수한 기대 수익을 가질 수 있습니다."
@@ -703,7 +703,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 157.5,
             "low": 135,
             "close": 153,
-            "volume": 82
+            "volume": 118
         },
         {
             "time": "Day 2",
@@ -719,7 +719,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 157.5,
             "low": 144,
             "close": 156,
-            "volume": 99
+            "volume": 125
         }
     ],
     drawings: [
@@ -741,9 +741,9 @@ export const quizzes_patterns_breakout: QuizItem[] = [
     ],
     options: [
         "저항선 부근에서 고점들이 점점 급락하며 붕괴하는 현상",
-        "저항선 아래에서 조정을 받을 때, 저점들이 점점 높아지며 저항선을 향해 밀어 올리는 현상 (매수 우위 수렴)",
-        "거래량이 완전 소멸하여 영원히 횡보하는 상태",
-        "갑작스럽게 아무 이유 없이 급락하는 현상"
+        "저항선 부근에서 저점들을 높여가며 밀어 올리는 수렴 현상",
+        "거래량이 완전히 소멸하여 긴 횡보 상태를 보이는 현상",
+        "지속적인 매도세로 인해 갑작스럽게 급락하는 현상"
     ],
     correctIndex: 1,
     explanation: "저항을 뚫지 못하고 밀려 내려올 때, 이전 저점보다 높은 지점에서 저점을 계속 잡아 올려주는 것은 매도 압력보다 매수 압력이 점점 올라오고 있음을 의미합니다. 수렴 끝에 돌파가 나타날 신뢰도가 매우 높습니다."
@@ -762,7 +762,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 172.5,
             "low": 147,
             "close": 165,
-            "volume": 97
+            "volume": 96
         },
         {
             "time": "Day 2",
@@ -770,7 +770,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 195,
             "low": 142.5,
             "close": 157.5,
-            "volume": 111
+            "volume": 92
         },
         {
             "time": "Day 3",
@@ -778,7 +778,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 171,
             "low": 144,
             "close": 165,
-            "volume": 111
+            "volume": 102
         },
         {
             "time": "Day 4",
@@ -786,7 +786,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 166.5,
             "low": 139.5,
             "close": 141,
-            "volume": 128
+            "volume": 118
         }
     ],
     drawings: [
@@ -807,10 +807,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "머리 꼭대기(195달러) 부근에서 예측 공매도",
-        "오른쪽 어깨가 올라가고 있을 때 미리 선진입",
-        "저점들을 연결한 핵심 지지선인 '넥라인'을 확실하게 하방 돌파(Breakdown) 완료할 때",
-        "패턴 돌파 여부와 무관하게 오른쪽 어깨 끝에서 대기"
+        "머리 꼭대기(195달러) 부근에서 예측 숏 진입",
+        "오른쪽 어깨가 올라가고 있을 때 돌파 전 선진입",
+        "저점들을 연결한 넥라인의 하방 돌파 완료 시",
+        "패턴 완성과 무관하게 오른쪽 어깨 끝에서 대기"
     ],
     correctIndex: 2,
     explanation: "헤드앤숄더(Head & Shoulders) 패턴은 오른쪽 어깨를 그린 후, 저점 지지선인 '넥라인(Neckline)'을 거래량을 실어 하방 돌파해야 최종 완성이 선언됩니다. 그전에 진입하면 넥라인 반등 시 극심한 손실을 입습니다."
@@ -829,7 +829,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 150,
             "low": 120,
             "close": 127.5,
-            "volume": 104
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -837,7 +837,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 142.5,
             "low": 126,
             "close": 141,
-            "volume": 112
+            "volume": 123
         },
         {
             "time": "Day 3",
@@ -845,7 +845,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 142.5,
             "low": 118.5,
             "close": 123,
-            "volume": 110
+            "volume": 119
         },
         {
             "time": "Day 4",
@@ -853,7 +853,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 148.5,
             "low": 121.5,
             "close": 147,
-            "volume": 121
+            "volume": 116
         }
     ],
     drawings: [
@@ -874,10 +874,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "추가 폭락 예고이므로 전액 손절",
-        "이중 바닥형(W 패턴) 완성으로 강력한 상승 전환 시그널, 142.50달러 넥라인 돌파 시점 또는 눌림목 매수",
-        "박스권 횡보이므로 양방향 무시",
-        "쌍바닥이 깨진 것이므로 공매도"
+        "추가 폭락 가능성에 따른 전량 손절 대응",
+        "W 패턴 이중 바닥 완성 및 넥라인 돌파 시 매수",
+        "박스권 횡보 판단에 따른 무대응 및 관망",
+        "이중 바닥의 하방 이탈을 예상한 숏 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "W자 모양의 '이중 바닥형(Double Bottom)' 패턴입니다. 코인 가격가 하락을 멈추고 바닥을 두 차례 단단히 지지해 준 뒤 중간 봉우리(넥라인 142.50달러)를 돌파해 마감하면 추세가 상승으로 강하게 전환될 가능성이 매우 높습니다."
@@ -896,7 +896,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 120,
             "low": 73.5,
             "close": 117,
-            "volume": 115
+            "volume": 96
         },
         {
             "time": "Day 2",
@@ -904,7 +904,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 118.5,
             "low": 108,
             "close": 111,
-            "volume": 104
+            "volume": 121
         },
         {
             "time": "Day 3",
@@ -912,7 +912,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 114,
             "low": 105,
             "close": 106.5,
-            "volume": 91
+            "volume": 105
         },
         {
             "time": "Day 4",
@@ -920,14 +920,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 127.5,
             "low": 105,
             "close": 124.5,
-            "volume": 128
+            "volume": 113
         }
     ],
     options: [
-        "이중 천정형 패턴 - 목표가 없음",
-        "불 플래그 (Bull Flag) 패턴 - 깃대의 높이(약 45달러 상승폭)만큼 돌파 지점부터 2차 폭등 랠리 기대",
-        "헤드앤숄더 패턴 - 하락 타겟 계산",
-        "대칭 삼각수렴 - 변동성 붕괴"
+        "이중 천정형 패턴 - 고점 도달 시 숏 진입",
+        "불 플래그 패턴 - 깃발 돌파 시 추가 상승 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 타겟",
+        "대칭 삼각수렴 패턴 - 변동성 축소 후 돌파 대기"
     ],
     correctIndex: 1,
     explanation: "대표적 강세 지속 패턴인 '불 플래그(Bull Flag)'입니다. 급격한 상승(깃대) 뒤 숨 고르기 채널(깃발)을 상방 돌파하면, 이전 상승 파동의 크기(깃대 높이)만큼 추가로 수직 랠리를 시작하는 관성이 있습니다."
@@ -946,7 +946,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 210,
             "low": 148.5,
             "close": 202.5,
-            "volume": 115
+            "volume": 99
         },
         {
             "time": "Day 2",
@@ -954,7 +954,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 204,
             "low": 180,
             "close": 183,
-            "volume": 119
+            "volume": 87
         },
         {
             "time": "Day 3",
@@ -962,7 +962,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 210,
             "low": 181.5,
             "close": 207,
-            "volume": 91
+            "volume": 127
         },
         {
             "time": "Day 4",
@@ -991,10 +991,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 상승 연장이므로 추가 매수",
-        "이중 천정형(Double Top / M 패턴) 완성으로 상승 추세가 종료되고 하락 반전될 가능성 매우 큼",
-        "일시적인 횡보 조절 국면",
-        "아무 조건 없는 단순 가격 노이즈"
+        "상승 추세의 지속 연장에 따른 추가 매수",
+        "이중 천정형(M 패턴) 완성에 따른 하락 반전 대비",
+        "단기 조정에 따른 일시적 횡보 박스권 진입",
+        "방향성 없는 일상적인 잔파동으로 판단해 홀딩"
     ],
     correctIndex: 1,
     explanation: "고점에서 지지받지 못하고 형성된 M자형 '이중 천정형(Double Top)' 패턴입니다. 두 차례 강력한 저항벽(210달러)을 넘지 못하고 넥라인(180달러)마저 붕괴했으므로 하방 추세가 가속화된다는 신호입니다."
@@ -1013,7 +1013,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 150,
             "low": 120,
             "close": 142.5,
-            "volume": 105
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -1021,7 +1021,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 150,
             "low": 129,
             "close": 147,
-            "volume": 87
+            "volume": 103
         },
         {
             "time": "Day 3",
@@ -1029,7 +1029,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 150,
             "low": 138,
             "close": 148.5,
-            "volume": 119
+            "volume": 125
         }
     ],
     drawings: [
@@ -1069,10 +1069,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "디센딩 트라이앵글 (Descending Triangle) - 대개 하방 돌파",
-        "어센딩 트라이앵글 (Ascending Triangle / 상승 삼각수렴) - 매수 압력이 우위에 있어 일반적으로 상방 돌파",
-        "헤드앤숄더 패턴 - 하방 돌파",
-        "상향 평행 채널 - 횡보"
+        "디센딩 트라이앵글 - 일반적으로 하방 돌파 기대",
+        "어센딩 트라이앵글 - 매수 압력 우위로 상방 돌파 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 기대",
+        "상향 평행 채널 - 상하단 터치식 채널 매매 기대"
     ],
     correctIndex: 1,
     explanation: "고점 저항은 평평하고 저점은 계속 높아지는 삼각수렴을 '어센딩 트라이앵글(Ascending Triangle)'이라고 합니다. 위로 갈수록 저점이 계속 올라가는 현상은 매수세가 가격을 위로 계속 압박하고 있음을 증명하며, 대개 저항선(150달러)을 상향 뚫고 오르는 확률이 높습니다."
@@ -1091,7 +1091,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 150,
             "low": 120,
             "close": 142.5,
-            "volume": 95
+            "volume": 107
         },
         {
             "time": "Day 2",
@@ -1099,7 +1099,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 150,
             "low": 132,
             "close": 145.5,
-            "volume": 88
+            "volume": 93
         },
         {
             "time": "Day 3",
@@ -1107,7 +1107,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 147,
             "low": 136.5,
             "close": 138,
-            "volume": 94
+            "volume": 103
         }
     ],
     drawings: [
@@ -1143,10 +1143,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "예측이 틀려 어센딩 패턴이 아래로 파괴(Breakdown)되었으므로 시나리오 실패를 즉각 인정하고 기계적으로 전량 손절매하여 계좌 추가 파산을 방지한다.",
-        "120달러선까지 평단가를 낮추는 대규모 물타기 추가 매수를 시작한다.",
-        "손절매 없이 본전 150달러가 올 때까지 무조건 홀딩(존버)한다.",
-        "아무 관리 주문 없이 차트창을 닫고 외면한다."
+        "하방 이탈 확인 즉시 손절하여 추가 폭락 차단",
+        "조정을 이용해 평단가를 조절하는 분할 물타기",
+        "본전 탈출 시까지 포지션을 유지하며 관망",
+        "손절 라인을 하단으로 조정하고 대기 주문 유지"
     ],
     correctIndex: 0,
     explanation: "어센딩 트라이앵글은 상방 확률이 다소 높지만, 하단 지지선이 뚫려 무너지는 순간 패턴 실패와 함께 엄청난 실망 매도 매물이 출하됩니다. 특히 돌파를 미리 예견해 들어간 포지션은 즉시 룰 위반을 시정하고 손절(138달러)해야 큰 자산 보호를 할 수 있습니다."
@@ -1165,7 +1165,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 142.5,
             "low": 105,
             "close": 117,
-            "volume": 107
+            "volume": 95
         },
         {
             "time": "Day 2",
@@ -1173,7 +1173,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 123,
             "low": 90,
             "close": 112.5,
-            "volume": 116
+            "volume": 110
         },
         {
             "time": "Day 3",
@@ -1181,7 +1181,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 118.5,
             "low": 102,
             "close": 114,
-            "volume": 106
+            "volume": 124
         },
         {
             "time": "Day 4",
@@ -1189,7 +1189,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 132,
             "low": 112.5,
             "close": 130.5,
-            "volume": 106
+            "volume": 114
         }
     ],
     drawings: [
@@ -1206,10 +1206,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "포모(FOMO / 소외 불안)를 이기지 못하고 꼭대기(130.50달러)에서 전액 시장가 추격 매수한다.",
-        "돌파봉 꼭대기에서 타는 것보다, 향후 넥라인(120달러선) 부근으로 코인 가격가 눌려 새로운 지지선으로 작동(Retest)하는 조정을 보일 때까지 차분히 대기하여 지지 안착 확인 후 눌림목에서 정석 매수한다.",
-        "추세가 끝났으므로 숏 포지션만 진입한다.",
-        "무조건 상장폐지될 알트코인이라 조롱하며 관심종목에서 지운다."
+        "포모(FOMO) 현상에 따른 돌파봉 꼭대기 추격 매수",
+        "돌파 넥라인 부근의 리테스트 조정 눌림목 매수",
+        "반등 랠리 종결 판단에 따른 역베팅 숏 포지션",
+        "추세 전환 확인 후 무조건적인 관심종목 제외"
     ],
     correctIndex: 1,
     explanation: "강한 패턴 돌파봉 확인 후 뇌동매매로 추격하는 것은 손절 거리가 너무 멀어져 손익비가 최악인 나쁜 습관입니다. 정석 돌파 트레이더는 넥라인 역할 전환 지점(120달러)으로의 되돌림 눌림목(Retest)을 차분히 기다려 리스크를 짧게 끊고 들어가는 훈련을 해야 합니다."
@@ -1228,7 +1228,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 198,
             "low": 165,
             "close": 168,
-            "volume": 95
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -1236,7 +1236,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 174,
             "low": 153,
             "close": 156,
-            "volume": 86
+            "volume": 122
         },
         {
             "time": "Day 3",
@@ -1244,7 +1244,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 162,
             "low": 147,
             "close": 150,
-            "volume": 105
+            "volume": 91
         },
         {
             "time": "Day 4",
@@ -1252,14 +1252,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 168,
             "low": 148.5,
             "close": 165,
-            "volume": 113
+            "volume": 106
         }
     ],
     options: [
-        "손절가를 전혀 설정하지 않고 오직 청산가에 포지션 운명을 맡긴다.",
-        "상방 돌파 확인 즉시 매수를 개시하되, 손절가는 쐐기형 수렴의 직전 최저점(147달러선) 바로 아래 또는 돌파 봉의 시가 하방에 배치하여 손절폭을 타이트하게 관리한다.",
-        "평단가가 135달러가 될 때까지 손절 없이 10차례에 걸쳐 분할로 물타기한다.",
-        "쐐기형 붕괴이므로 무조건 숏(공매도)으로 전환한다."
+        "손절 없이 청산가에 의존하여 장기 홀딩",
+        "상방 돌파 확인 후 진입 및 직전 최저점 손절 셋업",
+        "평단가 개선을 위한 지속적인 분할 물타기 매수",
+        "상단 저항선 돌파 시점을 이용한 숏 포지션 스위칭"
     ],
     correctIndex: 1,
     explanation: "하락 쐐기형(Falling Wedge)의 상방 돌파는 강력한 반전 신호입니다. 이 패턴의 장점은 진입 즉시 명확하고 짧은 기준점(수렴 바닥 최저가 147달러 혹은 돌파봉 하단)을 손절가로 설정할 수 있어, 리스크 한도를 안전하게 통제한 채 상방 랠리를 도모할 수 있다는 점입니다."
@@ -1278,7 +1278,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 420,
             "low": 390,
             "close": 417,
-            "volume": 119
+            "volume": 104
         },
         {
             "time": "Day 2",
@@ -1286,7 +1286,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 442.5,
             "low": 408,
             "close": 435,
-            "volume": 19
+            "volume": 32
         },
         {
             "time": "Day 3",
@@ -1294,7 +1294,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 457.5,
             "low": 447,
             "close": 451.5,
-            "volume": 30
+            "volume": 20
         }
     ],
     drawings: [
@@ -1319,10 +1319,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "상승 쐐기형 패턴은 전형적인 하락 이탈(Bearish Breakdown) 패턴이며 거래량 축소는 신뢰도 저하를 반증하므로, 롱 포지션을 즉시 정리/매도하여 비중을 비우거나 하단선 붕괴 확정 시 숏 포지션 구축을 모색한다.",
-        "추세 상승 지속으로 확신하고 신용 레버리지를 이용해 풀매수한다.",
-        "750달러가 돌파될 때까지 절대 손절 없이 무기한 보유한다.",
-        "다른 카지노 도박에 참여한다."
+        "상승 쐐기형 하방 이탈 위험에 따른 롱 포지션 매도",
+        "상승 지속 확신에 따른 레버리지 추가 불타기",
+        "장기 상승 흐름 기대로 손절 없이 무기한 홀딩",
+        "다른 종목으로의 포지션 분산을 위한 관망"
     ],
     correctIndex: 0,
     explanation: "상승 쐐기형(Rising Wedge)은 약세 세력이 억지로 쥐어짜며 상승 가격을 만드는 패턴으로, 수렴 끝에서 거래량 소멸과 함께 하방 이탈(Breakdown)하여 폭락할 위험이 매우 높은 대표적인 하락 대비 패턴입니다. 하단 지지선 이탈 낌새 시에는 매수 포지션을 전부 도망쳐 나와야 큰 손실을 막을 수 있습니다."
@@ -1341,7 +1341,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 213,
             "low": 192,
             "close": 195,
-            "volume": 105
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -1349,7 +1349,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 210,
             "low": 193.5,
             "close": 207,
-            "volume": 107
+            "volume": 121
         },
         {
             "time": "Day 3",
@@ -1357,7 +1357,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 210,
             "low": 201,
             "close": 202.5,
-            "volume": 113
+            "volume": 118
         },
         {
             "time": "Day 4",
@@ -1365,14 +1365,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 231,
             "low": 201,
             "close": 228,
-            "volume": 117
+            "volume": 129
         }
     ],
     options: [
-        "이전 컵 깊이만큼의 강력한 2차 상승 파동 랠리가 시작될 확률이 높으므로, 핸들 저점(201달러) 바로 아래에 손절매를 걸어두고 신규 매수(롱) 포지션을 진입한다.",
-        "컵앤핸들은 하락 사멸 패턴이므로 즉시 전량 매도 및 손절 처리한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "상황을 외면하고 포지션을 청산한 뒤 게임을 켠다."
+        "핸들 상방 돌파 확인 후 진입 및 핸들 저점 손절",
+        "하락 지속 판단에 따른 즉각적인 전량 손절",
+        "평단가 부근이므로 추가 손절 설정 없이 관망",
+        "돌파 여부 확인 전 고점 돌파 매수 주문 100%"
     ],
     correctIndex: 0,
     explanation: "전형적인 강세 지속 패턴인 컵앤핸들(Cup & Handle)입니다. 핸들의 하락 조정 채널 상단 돌파는 매물 소화를 성공적으로 완수하고 본 랠리로 진입한다는 강력한 신호입니다. 손익비 관점에서 핸들의 지지 저점인 201달러 아래에 안전 손절을 지정한 뒤 진입 시 우수한 기대 수익을 가질 수 있습니다."
@@ -1391,7 +1391,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 210,
             "low": 180,
             "close": 204,
-            "volume": 91
+            "volume": 84
         },
         {
             "time": "Day 2",
@@ -1399,7 +1399,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 210,
             "low": 186,
             "close": 206,
-            "volume": 109
+            "volume": 120
         },
         {
             "time": "Day 3",
@@ -1407,7 +1407,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 210,
             "low": 192,
             "close": 208,
-            "volume": 100
+            "volume": 105
         }
     ],
     drawings: [
@@ -1429,9 +1429,9 @@ export const quizzes_patterns_breakout: QuizItem[] = [
     ],
     options: [
         "저항선 부근에서 고점들이 점점 급락하며 붕괴하는 현상",
-        "저항선 아래에서 조정을 받을 때, 저점들이 점점 높아지며 저항선을 향해 밀어 올리는 현상 (매수 우위 수렴)",
-        "거래량이 완전 소멸하여 영원히 횡보하는 상태",
-        "갑작스럽게 아무 이유 없이 급락하는 현상"
+        "저항선 부근에서 저점들을 높여가며 밀어 올리는 수렴 현상",
+        "거래량이 완전히 소멸하여 긴 횡보 상태를 보이는 현상",
+        "지속적인 매도세로 인해 갑작스럽게 급락하는 현상"
     ],
     correctIndex: 1,
     explanation: "저항을 뚫지 못하고 밀려 내려올 때, 이전 저점보다 높은 지점에서 저점을 계속 잡아 올려주는 것은 매도 압력보다 매수 압력이 점점 올라오고 있음을 의미합니다. 수렴 끝에 돌파가 나타날 신뢰도가 매우 높습니다."
@@ -1450,7 +1450,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 230,
             "low": 196,
             "close": 220,
-            "volume": 83
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -1458,7 +1458,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 260,
             "low": 190,
             "close": 210,
-            "volume": 121
+            "volume": 86
         },
         {
             "time": "Day 3",
@@ -1466,7 +1466,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 228,
             "low": 192,
             "close": 220,
-            "volume": 113
+            "volume": 120
         },
         {
             "time": "Day 4",
@@ -1474,7 +1474,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 222,
             "low": 186,
             "close": 188,
-            "volume": 131
+            "volume": 104
         }
     ],
     drawings: [
@@ -1495,10 +1495,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "머리 꼭대기(260달러) 부근에서 예측 공매도",
-        "오른쪽 어깨가 올라가고 있을 때 미리 선진입",
-        "저점들을 연결한 핵심 지지선인 '넥라인'을 확실하게 하방 돌파(Breakdown) 완료할 때",
-        "패턴 돌파 여부와 무관하게 오른쪽 어깨 끝에서 대기"
+        "머리 꼭대기(260달러) 부근에서 예측 숏 진입",
+        "오른쪽 어깨가 올라가고 있을 때 돌파 전 선진입",
+        "저점들을 연결한 넥라인의 하방 돌파 완료 시",
+        "패턴 완성과 무관하게 오른쪽 어깨 끝에서 대기"
     ],
     correctIndex: 2,
     explanation: "헤드앤숄더(Head & Shoulders) 패턴은 오른쪽 어깨를 그린 후, 저점 지지선인 '넥라인(Neckline)'을 거래량을 실어 하방 돌파해야 최종 완성이 선언됩니다. 그전에 진입하면 넥라인 반등 시 극심한 손실을 입습니다."
@@ -1517,7 +1517,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 200,
             "low": 160,
             "close": 170,
-            "volume": 106
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -1525,7 +1525,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 190,
             "low": 168,
             "close": 188,
-            "volume": 104
+            "volume": 102
         },
         {
             "time": "Day 3",
@@ -1533,7 +1533,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 190,
             "low": 158,
             "close": 164,
-            "volume": 90
+            "volume": 120
         },
         {
             "time": "Day 4",
@@ -1541,7 +1541,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 198,
             "low": 162,
             "close": 196,
-            "volume": 92
+            "volume": 122
         }
     ],
     drawings: [
@@ -1562,10 +1562,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "추가 폭락 예고이므로 전액 손절",
-        "이중 바닥형(W 패턴) 완성으로 강력한 상승 전환 시그널, 190달러 넥라인 돌파 시점 또는 눌림목 매수",
-        "박스권 횡보이므로 양방향 무시",
-        "쌍바닥이 깨진 것이므로 공매도"
+        "추가 폭락 가능성에 따른 전량 손절 대응",
+        "W 패턴 이중 바닥 완성 및 넥라인 돌파 시 매수",
+        "박스권 횡보 판단에 따른 무대응 및 관망",
+        "이중 바닥의 하방 이탈을 예상한 숏 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "W자 모양의 '이중 바닥형(Double Bottom)' 패턴입니다. 시세가 하락을 멈추고 바닥을 두 차례 단단히 지지해 준 뒤 중간 봉우리(넥라인 190달러)를 돌파해 마감하면 추세가 상승으로 강하게 전환될 가능성이 매우 높습니다."
@@ -1584,7 +1584,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 160,
             "low": 98,
             "close": 156,
-            "volume": 115
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -1592,7 +1592,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 158,
             "low": 144,
             "close": 148,
-            "volume": 88
+            "volume": 115
         },
         {
             "time": "Day 3",
@@ -1600,7 +1600,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 152,
             "low": 140,
             "close": 142,
-            "volume": 112
+            "volume": 109
         },
         {
             "time": "Day 4",
@@ -1608,14 +1608,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 170,
             "low": 140,
             "close": 166,
-            "volume": 116
+            "volume": 100
         }
     ],
     options: [
-        "이중 천정형 패턴 - 목표가 없음",
-        "불 플래그 (Bull Flag) 패턴 - 깃대의 높이(약 60달러 상승폭)만큼 돌파 지점부터 2차 폭등 랠리 기대",
-        "헤드앤숄더 패턴 - 하락 타겟 계산",
-        "대칭 삼각수렴 - 변동성 붕괴"
+        "이중 천정형 패턴 - 고점 도달 시 숏 진입",
+        "불 플래그 패턴 - 깃발 돌파 시 추가 상승 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 타겟",
+        "대칭 삼각수렴 패턴 - 변동성 축소 후 돌파 대기"
     ],
     correctIndex: 1,
     explanation: "대표적 강세 지속 패턴인 '불 플래그(Bull Flag)'입니다. 급격한 상승(깃대) 뒤 숨 고르기 채널(깃발)을 상방 돌파하면, 이전 상승 파동의 크기(깃대 높이)만큼 추가로 수직 랠리를 시작하는 관성이 있습니다."
@@ -1634,7 +1634,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 280,
             "low": 198,
             "close": 270,
-            "volume": 98
+            "volume": 88
         },
         {
             "time": "Day 2",
@@ -1642,7 +1642,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 272,
             "low": 240,
             "close": 244,
-            "volume": 115
+            "volume": 123
         },
         {
             "time": "Day 3",
@@ -1650,7 +1650,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 280,
             "low": 242,
             "close": 276,
-            "volume": 125
+            "volume": 111
         },
         {
             "time": "Day 4",
@@ -1658,7 +1658,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 278,
             "low": 230,
             "close": 232,
-            "volume": 123
+            "volume": 125
         }
     ],
     drawings: [
@@ -1679,10 +1679,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 상승 연장이므로 추가 매수",
-        "이중 천정형(Double Top / M 패턴) 완성으로 상승 추세가 종료되고 하락 반전될 가능성 매우 큼",
-        "일시적인 횡보 조절 국면",
-        "아무 조건 없는 단순 가격 노이즈"
+        "상승 추세의 지속 연장에 따른 추가 매수",
+        "이중 천정형(M 패턴) 완성에 따른 하락 반전 대비",
+        "단기 조정에 따른 일시적 횡보 박스권 진입",
+        "방향성 없는 일상적인 잔파동으로 판단해 홀딩"
     ],
     correctIndex: 1,
     explanation: "고점에서 지지받지 못하고 형성된 M자형 '이중 천정형(Double Top)' 패턴입니다. 두 차례 강력한 저항벽(280달러)을 넘지 못하고 넥라인(240달러)마저 붕괴했으므로 하방 추세가 가속화된다는 신호입니다."
@@ -1701,7 +1701,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 200,
             "low": 160,
             "close": 190,
-            "volume": 98
+            "volume": 111
         },
         {
             "time": "Day 2",
@@ -1709,7 +1709,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 200,
             "low": 172,
             "close": 196,
-            "volume": 94
+            "volume": 92
         },
         {
             "time": "Day 3",
@@ -1757,10 +1757,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "디센딩 트라이앵글 (Descending Triangle) - 대개 하방 돌파",
-        "어센딩 트라이앵글 (Ascending Triangle / 상승 삼각수렴) - 매수 압력이 우위에 있어 일반적으로 상방 돌파",
-        "헤드앤숄더 패턴 - 하방 돌파",
-        "상향 평행 채널 - 횡보"
+        "디센딩 트라이앵글 - 일반적으로 하방 돌파 기대",
+        "어센딩 트라이앵글 - 매수 압력 우위로 상방 돌파 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 기대",
+        "상향 평행 채널 - 상하단 터치식 채널 매매 기대"
     ],
     correctIndex: 1,
     explanation: "고점 저항은 평평하고 저점은 계속 높아지는 삼각수렴을 '어센딩 트라이앵글(Ascending Triangle)'이라고 합니다. 위로 갈수록 저점이 계속 올라가는 현상은 매수세가 가격을 위로 계속 압박하고 있음을 증명하며, 대개 저항선(200달러)을 상향 뚫고 오르는 확률이 높습니다."
@@ -1779,7 +1779,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 200,
             "low": 160,
             "close": 190,
-            "volume": 106
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -1787,7 +1787,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 200,
             "low": 176,
             "close": 194,
-            "volume": 96
+            "volume": 111
         },
         {
             "time": "Day 3",
@@ -1795,7 +1795,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 196,
             "low": 182,
             "close": 184,
-            "volume": 91
+            "volume": 88
         }
     ],
     drawings: [
@@ -1831,10 +1831,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "예측이 틀려 어센딩 패턴이 아래로 파괴(Breakdown)되었으므로 시나리오 실패를 즉각 인정하고 기계적으로 전량 손절매하여 계좌 추가 파산을 방지한다.",
-        "160달러선까지 평단가를 낮추는 대규모 물타기 추가 매수를 시작한다.",
-        "손절매 없이 본전 200달러가 올 때까지 무조건 홀딩(존버)한다.",
-        "아무 관리 주문 없이 차트창을 닫고 외면한다."
+        "하방 이탈 확인 즉시 손절하여 추가 폭락 차단",
+        "조정을 이용해 평단가를 조절하는 분할 물타기",
+        "본전 탈출 시까지 포지션을 유지하며 관망",
+        "손절 라인을 하단으로 조정하고 대기 주문 유지"
     ],
     correctIndex: 0,
     explanation: "어센딩 트라이앵글은 상방 확률이 다소 높지만, 하단 지지선이 뚫려 무너지는 순간 패턴 실패와 함께 엄청난 실망 매도 매물이 출하됩니다. 특히 돌파를 미리 예견해 들어간 포지션은 즉시 룰 위반을 시정하고 손절(184달러)해야 큰 자산 보호를 할 수 있습니다."
@@ -1853,7 +1853,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 190,
             "low": 140,
             "close": 156,
-            "volume": 112
+            "volume": 96
         },
         {
             "time": "Day 2",
@@ -1861,7 +1861,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 164,
             "low": 120,
             "close": 150,
-            "volume": 88
+            "volume": 96
         },
         {
             "time": "Day 3",
@@ -1869,7 +1869,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 158,
             "low": 136,
             "close": 152,
-            "volume": 90
+            "volume": 118
         },
         {
             "time": "Day 4",
@@ -1877,7 +1877,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 176,
             "low": 150,
             "close": 174,
-            "volume": 110
+            "volume": 105
         }
     ],
     drawings: [
@@ -1894,10 +1894,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "포모(FOMO / 소외 불안)를 이기지 못하고 꼭대기(174달러)에서 전액 시장가 추격 매수한다.",
-        "돌파봉 꼭대기에서 타는 것보다, 향후 넥라인(160달러선) 부근으로 시세가 눌려 새로운 지지선으로 작동(Retest)하는 조정을 보일 때까지 차분히 대기하여 지지 안착 확인 후 눌림목에서 정석 매수한다.",
-        "추세가 끝났으므로 숏 포지션만 진입한다.",
-        "무조건 상장폐지될 가상자산이라 조롱하며 관심종목에서 지운다."
+        "포모(FOMO) 현상에 따른 돌파봉 꼭대기 추격 매수",
+        "돌파 넥라인 부근의 리테스트 조정 눌림목 매수",
+        "반등 랠리 종결 판단에 따른 역베팅 숏 포지션",
+        "추세 전환 확인 후 무조건적인 관심종목 제외"
     ],
     correctIndex: 1,
     explanation: "강한 패턴 돌파봉 확인 후 뇌동매매로 추격하는 것은 손절 거리가 너무 멀어져 손익비가 최악인 나쁜 습관입니다. 정석 돌파 트레이더는 넥라인 역할 전환 지점(160달러)으로의 되돌림 눌림목(Retest)을 차분히 기다려 리스크를 짧게 끊고 들어가는 훈련을 해야 합니다."
@@ -1916,7 +1916,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 264,
             "low": 220,
             "close": 224,
-            "volume": 80
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -1924,7 +1924,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 232,
             "low": 204,
             "close": 208,
-            "volume": 95
+            "volume": 102
         },
         {
             "time": "Day 3",
@@ -1932,7 +1932,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 216,
             "low": 196,
             "close": 200,
-            "volume": 116
+            "volume": 119
         },
         {
             "time": "Day 4",
@@ -1944,10 +1944,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "손절가를 전혀 설정하지 않고 오직 청산가에 포지션 운명을 맡긴다.",
-        "상방 돌파 확인 즉시 매수를 개시하되, 손절가는 쐐기형 수렴의 직전 최저점(196달러선) 바로 아래 또는 돌파 봉의 시가 하방에 배치하여 손절폭을 타이트하게 관리한다.",
-        "평단가가 180달러가 될 때까지 손절 없이 10차례에 걸쳐 분할로 물타기한다.",
-        "쐐기형 붕괴이므로 무조건 숏(공매도)으로 전환한다."
+        "손절 없이 청산가에 의존하여 장기 홀딩",
+        "상방 돌파 확인 후 진입 및 직전 최저점 손절 셋업",
+        "평단가 개선을 위한 지속적인 분할 물타기 매수",
+        "상단 저항선 돌파 시점을 이용한 숏 포지션 스위칭"
     ],
     correctIndex: 1,
     explanation: "하락 쐐기형(Falling Wedge)의 상방 돌파는 강력한 반전 신호입니다. 이 패턴의 장점은 진입 즉시 명확하고 짧은 기준점(수렴 바닥 최저가 196달러 혹은 돌파봉 하단)을 손절가로 설정할 수 있어, 리스크 한도를 안전하게 통제한 채 상방 랠리를 도모할 수 있다는 점입니다."
@@ -1966,7 +1966,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 560,
             "low": 520,
             "close": 556,
-            "volume": 102
+            "volume": 84
         },
         {
             "time": "Day 2",
@@ -1974,7 +1974,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 590,
             "low": 544,
             "close": 580,
-            "volume": 33
+            "volume": 34
         },
         {
             "time": "Day 3",
@@ -1982,7 +1982,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 610,
             "low": 596,
             "close": 602,
-            "volume": 15
+            "volume": 24
         }
     ],
     drawings: [
@@ -2007,10 +2007,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "상승 쐐기형 패턴은 전형적인 하락 이탈(Bearish Breakdown) 패턴이며 거래량 축소는 신뢰도 저하를 반증하므로, 롱 포지션을 즉시 정리/매도하여 비중을 비우거나 하단선 붕괴 확정 시 숏 포지션 구축을 모색한다.",
-        "추세 상승 지속으로 확신하고 신용 레버리지를 이용해 풀매수한다.",
-        "1,000달러가 돌파될 때까지 절대 손절 없이 무기한 보유한다.",
-        "다른 카지노 도박에 참여한다."
+        "상승 쐐기형 하방 이탈 위험에 따른 롱 포지션 매도",
+        "상승 지속 확신에 따른 레버리지 추가 불타기",
+        "장기 상승 흐름 기대로 손절 없이 무기한 홀딩",
+        "다른 종목으로의 포지션 분산을 위한 관망"
     ],
     correctIndex: 0,
     explanation: "상승 쐐기형(Rising Wedge)은 약세 세력이 억지로 쥐어짜며 상승 가격을 만드는 패턴으로, 수렴 끝에서 거래량 소멸과 함께 하방 이탈(Breakdown)하여 폭락할 위험이 매우 높은 대표적인 하락 대비 패턴입니다. 하단 지지선 이탈 낌새 시에는 매수 포지션을 전부 도망쳐 나와야 큰 손실을 막을 수 있습니다."
@@ -2029,7 +2029,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 284,
             "low": 256,
             "close": 260,
-            "volume": 95
+            "volume": 98
         },
         {
             "time": "Day 2",
@@ -2037,7 +2037,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 280,
             "low": 258,
             "close": 276,
-            "volume": 100
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -2045,7 +2045,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 280,
             "low": 268,
             "close": 270,
-            "volume": 103
+            "volume": 116
         },
         {
             "time": "Day 4",
@@ -2053,14 +2053,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 308,
             "low": 268,
             "close": 304,
-            "volume": 100
+            "volume": 118
         }
     ],
     options: [
-        "이전 컵 깊이만큼의 강력한 2차 상승 파동 랠리가 시작될 확률이 높으므로, 핸들 저점(268달러) 바로 아래에 손절매를 걸어두고 신규 매수(롱) 포지션을 진입한다.",
-        "컵앤핸들은 하락 사멸 패턴이므로 즉시 전량 매도 및 손절 처리한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "상황을 외면하고 포지션을 청산한 뒤 게임을 켠다."
+        "핸들 상방 돌파 확인 후 진입 및 핸들 저점 손절",
+        "하락 지속 판단에 따른 즉각적인 전량 손절",
+        "평단가 부근이므로 추가 손절 설정 없이 관망",
+        "돌파 여부 확인 전 고점 돌파 매수 주문 100%"
     ],
     correctIndex: 0,
     explanation: "전형적인 강세 지속 패턴인 컵앤핸들(Cup & Handle)입니다. 핸들의 하락 조정 채널 상단 돌파는 매물 소화를 성공적으로 완수하고 본 랠리로 진입한다는 강력한 신호입니다. 손익비 관점에서 핸들의 지지 저점인 268달러 아래에 안전 손절을 지정한 뒤 진입 시 우수한 기대 수익을 가질 수 있습니다."
@@ -2079,7 +2079,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 315,
             "low": 270,
             "close": 306,
-            "volume": 115
+            "volume": 81
         },
         {
             "time": "Day 2",
@@ -2087,7 +2087,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 315,
             "low": 279,
             "close": 309,
-            "volume": 94
+            "volume": 105
         },
         {
             "time": "Day 3",
@@ -2095,7 +2095,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 315,
             "low": 288,
             "close": 312,
-            "volume": 90
+            "volume": 95
         }
     ],
     drawings: [
@@ -2117,9 +2117,9 @@ export const quizzes_patterns_breakout: QuizItem[] = [
     ],
     options: [
         "저항선 부근에서 고점들이 점점 급락하며 붕괴하는 현상",
-        "저항선 아래에서 조정을 받을 때, 저점들이 점점 높아지며 저항선을 향해 밀어 올리는 현상 (매수 우위 수렴)",
-        "거래량이 완전 소멸하여 영원히 횡보하는 상태",
-        "갑작스럽게 아무 이유 없이 급락하는 현상"
+        "저항선 부근에서 저점들을 높여가며 밀어 올리는 수렴 현상",
+        "거래량이 완전히 소멸하여 긴 횡보 상태를 보이는 현상",
+        "지속적인 매도세로 인해 갑작스럽게 급락하는 현상"
     ],
     correctIndex: 1,
     explanation: "저항을 뚫지 못하고 밀려 내려올 때, 이전 저점보다 높은 지점에서 저점을 계속 잡아 올려주는 것은 매도 압력보다 매수 압력이 점점 올라오고 있음을 의미합니다. 수렴 끝에 돌파가 나타날 신뢰도가 매우 높습니다."
@@ -2138,7 +2138,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 345,
             "low": 294,
             "close": 330,
-            "volume": 114
+            "volume": 117
         },
         {
             "time": "Day 2",
@@ -2146,7 +2146,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 390,
             "low": 285,
             "close": 315,
-            "volume": 90
+            "volume": 97
         },
         {
             "time": "Day 3",
@@ -2154,7 +2154,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 342,
             "low": 288,
             "close": 330,
-            "volume": 106
+            "volume": 127
         },
         {
             "time": "Day 4",
@@ -2162,7 +2162,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 333,
             "low": 279,
             "close": 282,
-            "volume": 123
+            "volume": 125
         }
     ],
     drawings: [
@@ -2183,10 +2183,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "머리 꼭대기(390달러) 부근에서 예측 공매도",
-        "오른쪽 어깨가 올라가고 있을 때 미리 선진입",
-        "저점들을 연결한 핵심 지지선인 '넥라인'을 확실하게 하방 돌파(Breakdown) 완료할 때",
-        "패턴 돌파 여부와 무관하게 오른쪽 어깨 끝에서 대기"
+        "머리 꼭대기(390달러) 부근에서 예측 숏 진입",
+        "오른쪽 어깨가 올라가고 있을 때 돌파 전 선진입",
+        "저점들을 연결한 넥라인의 하방 돌파 완료 시",
+        "패턴 완성과 무관하게 오른쪽 어깨 끝에서 대기"
     ],
     correctIndex: 2,
     explanation: "헤드앤숄더(Head & Shoulders) 패턴은 오른쪽 어깨를 그린 후, 저점 지지선인 '넥라인(Neckline)'을 거래량을 실어 하방 돌파해야 최종 완성이 선언됩니다. 그전에 진입하면 넥라인 반등 시 극심한 손실을 입습니다."
@@ -2205,7 +2205,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 300,
             "low": 240,
             "close": 255,
-            "volume": 87
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -2213,7 +2213,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 285,
             "low": 252,
             "close": 282,
-            "volume": 123
+            "volume": 92
         },
         {
             "time": "Day 3",
@@ -2221,7 +2221,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 285,
             "low": 237,
             "close": 246,
-            "volume": 121
+            "volume": 116
         },
         {
             "time": "Day 4",
@@ -2229,7 +2229,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 297,
             "low": 243,
             "close": 294,
-            "volume": 105
+            "volume": 106
         }
     ],
     drawings: [
@@ -2250,10 +2250,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "추가 폭락 예고이므로 전액 손절",
-        "이중 바닥형(W 패턴) 완성으로 강력한 상승 전환 시그널, 285달러 넥라인 돌파 시점 또는 눌림목 매수",
-        "박스권 횡보이므로 양방향 무시",
-        "쌍바닥이 깨진 것이므로 공매도"
+        "추가 폭락 가능성에 따른 전량 손절 대응",
+        "W 패턴 이중 바닥 완성 및 넥라인 돌파 시 매수",
+        "박스권 횡보 판단에 따른 무대응 및 관망",
+        "이중 바닥의 하방 이탈을 예상한 숏 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "W자 모양의 '이중 바닥형(Double Bottom)' 패턴입니다. 삼성전자 주가가 하락을 멈추고 바닥을 두 차례 단단히 지지해 준 뒤 중간 봉우리(넥라인 285달러)를 돌파해 마감하면 추세가 상승으로 강하게 전환될 가능성이 매우 높습니다."
@@ -2272,7 +2272,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 240,
             "low": 147,
             "close": 234,
-            "volume": 88
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -2280,7 +2280,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 237,
             "low": 216,
             "close": 222,
-            "volume": 98
+            "volume": 86
         },
         {
             "time": "Day 3",
@@ -2288,7 +2288,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 228,
             "low": 210,
             "close": 213,
-            "volume": 105
+            "volume": 103
         },
         {
             "time": "Day 4",
@@ -2296,14 +2296,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 255,
             "low": 210,
             "close": 249,
-            "volume": 98
+            "volume": 101
         }
     ],
     options: [
-        "이중 천정형 패턴 - 목표가 없음",
-        "불 플래그 (Bull Flag) 패턴 - 깃대의 높이(약 90달러 상승폭)만큼 돌파 지점부터 2차 폭등 랠리 기대",
-        "헤드앤숄더 패턴 - 하락 타겟 계산",
-        "대칭 삼각수렴 - 변동성 붕괴"
+        "이중 천정형 패턴 - 고점 도달 시 숏 진입",
+        "불 플래그 패턴 - 깃발 돌파 시 추가 상승 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 타겟",
+        "대칭 삼각수렴 패턴 - 변동성 축소 후 돌파 대기"
     ],
     correctIndex: 1,
     explanation: "대표적 강세 지속 패턴인 '불 플래그(Bull Flag)'입니다. 급격한 상승(깃대) 뒤 숨 고르기 채널(깃발)을 상방 돌파하면, 이전 상승 파동의 크기(깃대 높이)만큼 추가로 수직 랠리를 시작하는 관성이 있습니다."
@@ -2322,7 +2322,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 420,
             "low": 297,
             "close": 405,
-            "volume": 106
+            "volume": 100
         },
         {
             "time": "Day 2",
@@ -2330,7 +2330,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 408,
             "low": 360,
             "close": 366,
-            "volume": 115
+            "volume": 84
         },
         {
             "time": "Day 3",
@@ -2338,7 +2338,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 420,
             "low": 363,
             "close": 414,
-            "volume": 114
+            "volume": 102
         },
         {
             "time": "Day 4",
@@ -2346,7 +2346,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 417,
             "low": 345,
             "close": 348,
-            "volume": 108
+            "volume": 94
         }
     ],
     drawings: [
@@ -2367,10 +2367,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 상승 연장이므로 추가 매수",
-        "이중 천정형(Double Top / M 패턴) 완성으로 상승 추세가 종료되고 하락 반전될 가능성 매우 큼",
-        "일시적인 횡보 조절 국면",
-        "아무 조건 없는 단순 가격 노이즈"
+        "상승 추세의 지속 연장에 따른 추가 매수",
+        "이중 천정형(M 패턴) 완성에 따른 하락 반전 대비",
+        "단기 조정에 따른 일시적 횡보 박스권 진입",
+        "방향성 없는 일상적인 잔파동으로 판단해 홀딩"
     ],
     correctIndex: 1,
     explanation: "고점에서 지지받지 못하고 형성된 M자형 '이중 천정형(Double Top)' 패턴입니다. 두 차례 강력한 저항벽(420달러)을 넘지 못하고 넥라인(360달러)마저 붕괴했으므로 하방 추세가 가속화된다는 신호입니다."
@@ -2389,7 +2389,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 300,
             "low": 240,
             "close": 285,
-            "volume": 86
+            "volume": 101
         },
         {
             "time": "Day 2",
@@ -2397,7 +2397,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 300,
             "low": 258,
             "close": 294,
-            "volume": 113
+            "volume": 109
         },
         {
             "time": "Day 3",
@@ -2405,7 +2405,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 300,
             "low": 276,
             "close": 297,
-            "volume": 114
+            "volume": 95
         }
     ],
     drawings: [
@@ -2445,10 +2445,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "디센딩 트라이앵글 (Descending Triangle) - 대개 하방 돌파",
-        "어센딩 트라이앵글 (Ascending Triangle / 상승 삼각수렴) - 매수 압력이 우위에 있어 일반적으로 상방 돌파",
-        "헤드앤숄더 패턴 - 하방 돌파",
-        "상향 평행 채널 - 횡보"
+        "디센딩 트라이앵글 - 일반적으로 하방 돌파 기대",
+        "어센딩 트라이앵글 - 매수 압력 우위로 상방 돌파 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 기대",
+        "상향 평행 채널 - 상하단 터치식 채널 매매 기대"
     ],
     correctIndex: 1,
     explanation: "고점 저항은 평평하고 저점은 계속 높아지는 삼각수렴을 '어센딩 트라이앵글(Ascending Triangle)'이라고 합니다. 위로 갈수록 저점이 계속 올라가는 현상은 매수세가 가격을 위로 계속 압박하고 있음을 증명하며, 대개 저항선(300달러)을 상향 뚫고 오르는 확률이 높습니다."
@@ -2467,7 +2467,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 300,
             "low": 240,
             "close": 285,
-            "volume": 93
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -2475,7 +2475,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 300,
             "low": 264,
             "close": 291,
-            "volume": 105
+            "volume": 113
         },
         {
             "time": "Day 3",
@@ -2483,7 +2483,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 294,
             "low": 273,
             "close": 276,
-            "volume": 106
+            "volume": 109
         }
     ],
     drawings: [
@@ -2519,10 +2519,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "예측이 틀려 어센딩 패턴이 아래로 파괴(Breakdown)되었으므로 시나리오 실패를 즉각 인정하고 기계적으로 전량 손절매하여 계좌 추가 파산을 방지한다.",
-        "240달러선까지 평단가를 낮추는 대규모 물타기 추가 매수를 시작한다.",
-        "손절매 없이 본전 300달러가 올 때까지 무조건 홀딩(존버)한다.",
-        "아무 관리 주문 없이 차트창을 닫고 외면한다."
+        "하방 이탈 확인 즉시 손절하여 추가 폭락 차단",
+        "조정을 이용해 평단가를 조절하는 분할 물타기",
+        "본전 탈출 시까지 포지션을 유지하며 관망",
+        "손절 라인을 하단으로 조정하고 대기 주문 유지"
     ],
     correctIndex: 0,
     explanation: "어센딩 트라이앵글은 상방 확률이 다소 높지만, 하단 지지선이 뚫려 무너지는 순간 패턴 실패와 함께 엄청난 실망 매도 매물이 출하됩니다. 특히 돌파를 미리 예견해 들어간 포지션은 즉시 룰 위반을 시정하고 손절(276달러)해야 큰 자산 보호를 할 수 있습니다."
@@ -2541,7 +2541,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 285,
             "low": 210,
             "close": 234,
-            "volume": 111
+            "volume": 107
         },
         {
             "time": "Day 2",
@@ -2549,7 +2549,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 246,
             "low": 180,
             "close": 225,
-            "volume": 114
+            "volume": 110
         },
         {
             "time": "Day 3",
@@ -2557,7 +2557,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 237,
             "low": 204,
             "close": 228,
-            "volume": 88
+            "volume": 101
         },
         {
             "time": "Day 4",
@@ -2565,7 +2565,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 264,
             "low": 225,
             "close": 261,
-            "volume": 111
+            "volume": 97
         }
     ],
     drawings: [
@@ -2582,10 +2582,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "포모(FOMO / 소외 불안)를 이기지 못하고 꼭대기(261달러)에서 전액 시장가 추격 매수한다.",
-        "돌파봉 꼭대기에서 타는 것보다, 향후 넥라인(240달러선) 부근으로 삼성전자 주가가 눌려 새로운 지지선으로 작동(Retest)하는 조정을 보일 때까지 차분히 대기하여 지지 안착 확인 후 눌림목에서 정석 매수한다.",
-        "추세가 끝났으므로 숏 포지션만 진입한다.",
-        "무조건 상장폐지될 국내 주식이라 조롱하며 관심종목에서 지운다."
+        "포모(FOMO) 현상에 따른 돌파봉 꼭대기 추격 매수",
+        "돌파 넥라인 부근의 리테스트 조정 눌림목 매수",
+        "반등 랠리 종결 판단에 따른 역베팅 숏 포지션",
+        "추세 전환 확인 후 무조건적인 관심종목 제외"
     ],
     correctIndex: 1,
     explanation: "강한 패턴 돌파봉 확인 후 뇌동매매로 추격하는 것은 손절 거리가 너무 멀어져 손익비가 최악인 나쁜 습관입니다. 정석 돌파 트레이더는 넥라인 역할 전환 지점(240달러)으로의 되돌림 눌림목(Retest)을 차분히 기다려 리스크를 짧게 끊고 들어가는 훈련을 해야 합니다."
@@ -2604,7 +2604,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 396,
             "low": 330,
             "close": 336,
-            "volume": 87
+            "volume": 112
         },
         {
             "time": "Day 2",
@@ -2612,7 +2612,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 348,
             "low": 306,
             "close": 312,
-            "volume": 104
+            "volume": 89
         },
         {
             "time": "Day 3",
@@ -2620,7 +2620,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 324,
             "low": 294,
             "close": 300,
-            "volume": 107
+            "volume": 90
         },
         {
             "time": "Day 4",
@@ -2628,14 +2628,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 336,
             "low": 297,
             "close": 330,
-            "volume": 130
+            "volume": 128
         }
     ],
     options: [
-        "손절가를 전혀 설정하지 않고 오직 청산가에 포지션 운명을 맡긴다.",
-        "상방 돌파 확인 즉시 매수를 개시하되, 손절가는 쐐기형 수렴의 직전 최저점(294달러선) 바로 아래 또는 돌파 봉의 시가 하방에 배치하여 손절폭을 타이트하게 관리한다.",
-        "평단가가 270달러가 될 때까지 손절 없이 10차례에 걸쳐 분할로 물타기한다.",
-        "쐐기형 붕괴이므로 무조건 숏(공매도)으로 전환한다."
+        "손절 없이 청산가에 의존하여 장기 홀딩",
+        "상방 돌파 확인 후 진입 및 직전 최저점 손절 셋업",
+        "평단가 개선을 위한 지속적인 분할 물타기 매수",
+        "상단 저항선 돌파 시점을 이용한 숏 포지션 스위칭"
     ],
     correctIndex: 1,
     explanation: "하락 쐐기형(Falling Wedge)의 상방 돌파는 강력한 반전 신호입니다. 이 패턴의 장점은 진입 즉시 명확하고 짧은 기준점(수렴 바닥 최저가 294달러 혹은 돌파봉 하단)을 손절가로 설정할 수 있어, 리스크 한도를 안전하게 통제한 채 상방 랠리를 도모할 수 있다는 점입니다."
@@ -2654,7 +2654,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 840,
             "low": 780,
             "close": 834,
-            "volume": 88
+            "volume": 104
         },
         {
             "time": "Day 2",
@@ -2662,7 +2662,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 885,
             "low": 816,
             "close": 870,
-            "volume": 19
+            "volume": 25
         },
         {
             "time": "Day 3",
@@ -2670,7 +2670,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 915,
             "low": 894,
             "close": 903,
-            "volume": 26
+            "volume": 29
         }
     ],
     drawings: [
@@ -2695,10 +2695,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "상승 쐐기형 패턴은 전형적인 하락 이탈(Bearish Breakdown) 패턴이며 거래량 축소는 신뢰도 저하를 반증하므로, 롱 포지션을 즉시 정리/매도하여 비중을 비우거나 하단선 붕괴 확정 시 숏 포지션 구축을 모색한다.",
-        "추세 상승 지속으로 확신하고 신용 레버리지를 이용해 풀매수한다.",
-        "1,500달러가 돌파될 때까지 절대 손절 없이 무기한 보유한다.",
-        "다른 카지노 도박에 참여한다."
+        "상승 쐐기형 하방 이탈 위험에 따른 롱 포지션 매도",
+        "상승 지속 확신에 따른 레버리지 추가 불타기",
+        "장기 상승 흐름 기대로 손절 없이 무기한 홀딩",
+        "다른 종목으로의 포지션 분산을 위한 관망"
     ],
     correctIndex: 0,
     explanation: "상승 쐐기형(Rising Wedge)은 약세 세력이 억지로 쥐어짜며 상승 가격을 만드는 패턴으로, 수렴 끝에서 거래량 소멸과 함께 하방 이탈(Breakdown)하여 폭락할 위험이 매우 높은 대표적인 하락 대비 패턴입니다. 하단 지지선 이탈 낌새 시에는 매수 포지션을 전부 도망쳐 나와야 큰 손실을 막을 수 있습니다."
@@ -2717,7 +2717,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 426,
             "low": 384,
             "close": 390,
-            "volume": 100
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -2725,7 +2725,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 420,
             "low": 387,
             "close": 414,
-            "volume": 114
+            "volume": 91
         },
         {
             "time": "Day 3",
@@ -2733,7 +2733,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 420,
             "low": 402,
             "close": 405,
-            "volume": 121
+            "volume": 89
         },
         {
             "time": "Day 4",
@@ -2745,10 +2745,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "이전 컵 깊이만큼의 강력한 2차 상승 파동 랠리가 시작될 확률이 높으므로, 핸들 저점(402달러) 바로 아래에 손절매를 걸어두고 신규 매수(롱) 포지션을 진입한다.",
-        "컵앤핸들은 하락 사멸 패턴이므로 즉시 전량 매도 및 손절 처리한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "상황을 외면하고 포지션을 청산한 뒤 게임을 켠다."
+        "핸들 상방 돌파 확인 후 진입 및 핸들 저점 손절",
+        "하락 지속 판단에 따른 즉각적인 전량 손절",
+        "평단가 부근이므로 추가 손절 설정 없이 관망",
+        "돌파 여부 확인 전 고점 돌파 매수 주문 100%"
     ],
     correctIndex: 0,
     explanation: "전형적인 강세 지속 패턴인 컵앤핸들(Cup & Handle)입니다. 핸들의 하락 조정 채널 상단 돌파는 매물 소화를 성공적으로 완수하고 본 랠리로 진입한다는 강력한 신호입니다. 손익비 관점에서 핸들의 지지 저점인 402달러 아래에 안전 손절을 지정한 뒤 진입 시 우수한 기대 수익을 가질 수 있습니다."
@@ -2767,7 +2767,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 525,
             "low": 450,
             "close": 510,
-            "volume": 109
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -2775,7 +2775,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 525,
             "low": 465,
             "close": 515,
-            "volume": 116
+            "volume": 92
         },
         {
             "time": "Day 3",
@@ -2783,7 +2783,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 525,
             "low": 480,
             "close": 520,
-            "volume": 108
+            "volume": 90
         }
     ],
     drawings: [
@@ -2805,9 +2805,9 @@ export const quizzes_patterns_breakout: QuizItem[] = [
     ],
     options: [
         "저항선 부근에서 고점들이 점점 급락하며 붕괴하는 현상",
-        "저항선 아래에서 조정을 받을 때, 저점들이 점점 높아지며 저항선을 향해 밀어 올리는 현상 (매수 우위 수렴)",
-        "거래량이 완전 소멸하여 영원히 횡보하는 상태",
-        "갑작스럽게 아무 이유 없이 급락하는 현상"
+        "저항선 부근에서 저점들을 높여가며 밀어 올리는 수렴 현상",
+        "거래량이 완전히 소멸하여 긴 횡보 상태를 보이는 현상",
+        "지속적인 매도세로 인해 갑작스럽게 급락하는 현상"
     ],
     correctIndex: 1,
     explanation: "저항을 뚫지 못하고 밀려 내려올 때, 이전 저점보다 높은 지점에서 저점을 계속 잡아 올려주는 것은 매도 압력보다 매수 압력이 점점 올라오고 있음을 의미합니다. 수렴 끝에 돌파가 나타날 신뢰도가 매우 높습니다."
@@ -2826,7 +2826,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 575,
             "low": 490,
             "close": 550,
-            "volume": 117
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -2834,7 +2834,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 650,
             "low": 475,
             "close": 525,
-            "volume": 85
+            "volume": 123
         },
         {
             "time": "Day 3",
@@ -2842,7 +2842,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 570,
             "low": 480,
             "close": 550,
-            "volume": 103
+            "volume": 117
         },
         {
             "time": "Day 4",
@@ -2850,7 +2850,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 555,
             "low": 465,
             "close": 470,
-            "volume": 128
+            "volume": 99
         }
     ],
     drawings: [
@@ -2871,10 +2871,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "머리 꼭대기(650달러) 부근에서 예측 공매도",
-        "오른쪽 어깨가 올라가고 있을 때 미리 선진입",
-        "저점들을 연결한 핵심 지지선인 '넥라인'을 확실하게 하방 돌파(Breakdown) 완료할 때",
-        "패턴 돌파 여부와 무관하게 오른쪽 어깨 끝에서 대기"
+        "머리 꼭대기(650달러) 부근에서 예측 숏 진입",
+        "오른쪽 어깨가 올라가고 있을 때 돌파 전 선진입",
+        "저점들을 연결한 넥라인의 하방 돌파 완료 시",
+        "패턴 완성과 무관하게 오른쪽 어깨 끝에서 대기"
     ],
     correctIndex: 2,
     explanation: "헤드앤숄더(Head & Shoulders) 패턴은 오른쪽 어깨를 그린 후, 저점 지지선인 '넥라인(Neckline)'을 거래량을 실어 하방 돌파해야 최종 완성이 선언됩니다. 그전에 진입하면 넥라인 반등 시 극심한 손실을 입습니다."
@@ -2893,7 +2893,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 500,
             "low": 400,
             "close": 425,
-            "volume": 82
+            "volume": 105
         },
         {
             "time": "Day 2",
@@ -2901,7 +2901,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 475,
             "low": 420,
             "close": 470,
-            "volume": 89
+            "volume": 90
         },
         {
             "time": "Day 3",
@@ -2909,7 +2909,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 475,
             "low": 395,
             "close": 410,
-            "volume": 114
+            "volume": 105
         },
         {
             "time": "Day 4",
@@ -2917,7 +2917,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 495,
             "low": 405,
             "close": 490,
-            "volume": 116
+            "volume": 120
         }
     ],
     drawings: [
@@ -2938,10 +2938,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "추가 폭락 예고이므로 전액 손절",
-        "이중 바닥형(W 패턴) 완성으로 강력한 상승 전환 시그널, 475달러 넥라인 돌파 시점 또는 눌림목 매수",
-        "박스권 횡보이므로 양방향 무시",
-        "쌍바닥이 깨진 것이므로 공매도"
+        "추가 폭락 가능성에 따른 전량 손절 대응",
+        "W 패턴 이중 바닥 완성 및 넥라인 돌파 시 매수",
+        "박스권 횡보 판단에 따른 무대응 및 관망",
+        "이중 바닥의 하방 이탈을 예상한 숏 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "W자 모양의 '이중 바닥형(Double Bottom)' 패턴입니다. 테슬라 주가가 하락을 멈추고 바닥을 두 차례 단단히 지지해 준 뒤 중간 봉우리(넥라인 475달러)를 돌파해 마감하면 추세가 상승으로 강하게 전환될 가능성이 매우 높습니다."
@@ -2960,7 +2960,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 400,
             "low": 245,
             "close": 390,
-            "volume": 80
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -2968,7 +2968,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 395,
             "low": 360,
             "close": 370,
-            "volume": 97
+            "volume": 87
         },
         {
             "time": "Day 3",
@@ -2976,7 +2976,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 380,
             "low": 350,
             "close": 355,
-            "volume": 89
+            "volume": 106
         },
         {
             "time": "Day 4",
@@ -2984,14 +2984,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 425,
             "low": 350,
             "close": 415,
-            "volume": 128
+            "volume": 119
         }
     ],
     options: [
-        "이중 천정형 패턴 - 목표가 없음",
-        "불 플래그 (Bull Flag) 패턴 - 깃대의 높이(약 150달러 상승폭)만큼 돌파 지점부터 2차 폭등 랠리 기대",
-        "헤드앤숄더 패턴 - 하락 타겟 계산",
-        "대칭 삼각수렴 - 변동성 붕괴"
+        "이중 천정형 패턴 - 고점 도달 시 숏 진입",
+        "불 플래그 패턴 - 깃발 돌파 시 추가 상승 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 타겟",
+        "대칭 삼각수렴 패턴 - 변동성 축소 후 돌파 대기"
     ],
     correctIndex: 1,
     explanation: "대표적 강세 지속 패턴인 '불 플래그(Bull Flag)'입니다. 급격한 상승(깃대) 뒤 숨 고르기 채널(깃발)을 상방 돌파하면, 이전 상승 파동의 크기(깃대 높이)만큼 추가로 수직 랠리를 시작하는 관성이 있습니다."
@@ -3010,7 +3010,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 700,
             "low": 495,
             "close": 675,
-            "volume": 92
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -3018,7 +3018,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 680,
             "low": 600,
             "close": 610,
-            "volume": 111
+            "volume": 95
         },
         {
             "time": "Day 3",
@@ -3026,7 +3026,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 700,
             "low": 605,
             "close": 690,
-            "volume": 104
+            "volume": 89
         },
         {
             "time": "Day 4",
@@ -3034,7 +3034,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 695,
             "low": 575,
             "close": 580,
-            "volume": 131
+            "volume": 116
         }
     ],
     drawings: [
@@ -3055,10 +3055,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 상승 연장이므로 추가 매수",
-        "이중 천정형(Double Top / M 패턴) 완성으로 상승 추세가 종료되고 하락 반전될 가능성 매우 큼",
-        "일시적인 횡보 조절 국면",
-        "아무 조건 없는 단순 가격 노이즈"
+        "상승 추세의 지속 연장에 따른 추가 매수",
+        "이중 천정형(M 패턴) 완성에 따른 하락 반전 대비",
+        "단기 조정에 따른 일시적 횡보 박스권 진입",
+        "방향성 없는 일상적인 잔파동으로 판단해 홀딩"
     ],
     correctIndex: 1,
     explanation: "고점에서 지지받지 못하고 형성된 M자형 '이중 천정형(Double Top)' 패턴입니다. 두 차례 강력한 저항벽(700달러)을 넘지 못하고 넥라인(600달러)마저 붕괴했으므로 하방 추세가 가속화된다는 신호입니다."
@@ -3077,7 +3077,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 500,
             "low": 400,
             "close": 475,
-            "volume": 81
+            "volume": 86
         },
         {
             "time": "Day 2",
@@ -3085,7 +3085,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 500,
             "low": 430,
             "close": 490,
-            "volume": 123
+            "volume": 96
         },
         {
             "time": "Day 3",
@@ -3093,7 +3093,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 500,
             "low": 460,
             "close": 495,
-            "volume": 88
+            "volume": 97
         }
     ],
     drawings: [
@@ -3133,10 +3133,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "디센딩 트라이앵글 (Descending Triangle) - 대개 하방 돌파",
-        "어센딩 트라이앵글 (Ascending Triangle / 상승 삼각수렴) - 매수 압력이 우위에 있어 일반적으로 상방 돌파",
-        "헤드앤숄더 패턴 - 하방 돌파",
-        "상향 평행 채널 - 횡보"
+        "디센딩 트라이앵글 - 일반적으로 하방 돌파 기대",
+        "어센딩 트라이앵글 - 매수 압력 우위로 상방 돌파 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 기대",
+        "상향 평행 채널 - 상하단 터치식 채널 매매 기대"
     ],
     correctIndex: 1,
     explanation: "고점 저항은 평평하고 저점은 계속 높아지는 삼각수렴을 '어센딩 트라이앵글(Ascending Triangle)'이라고 합니다. 위로 갈수록 저점이 계속 올라가는 현상은 매수세가 가격을 위로 계속 압박하고 있음을 증명하며, 대개 저항선(500달러)을 상향 뚫고 오르는 확률이 높습니다."
@@ -3155,7 +3155,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 500,
             "low": 400,
             "close": 475,
-            "volume": 87
+            "volume": 85
         },
         {
             "time": "Day 2",
@@ -3163,7 +3163,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 500,
             "low": 440,
             "close": 485,
-            "volume": 121
+            "volume": 111
         },
         {
             "time": "Day 3",
@@ -3171,7 +3171,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 490,
             "low": 455,
             "close": 460,
-            "volume": 95
+            "volume": 119
         }
     ],
     drawings: [
@@ -3207,10 +3207,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "예측이 틀려 어센딩 패턴이 아래로 파괴(Breakdown)되었으므로 시나리오 실패를 즉각 인정하고 기계적으로 전량 손절매하여 계좌 추가 파산을 방지한다.",
-        "400달러선까지 평단가를 낮추는 대규모 물타기 추가 매수를 시작한다.",
-        "손절매 없이 본전 500달러가 올 때까지 무조건 홀딩(존버)한다.",
-        "아무 관리 주문 없이 차트창을 닫고 외면한다."
+        "하방 이탈 확인 즉시 손절하여 추가 폭락 차단",
+        "조정을 이용해 평단가를 조절하는 분할 물타기",
+        "본전 탈출 시까지 포지션을 유지하며 관망",
+        "손절 라인을 하단으로 조정하고 대기 주문 유지"
     ],
     correctIndex: 0,
     explanation: "어센딩 트라이앵글은 상방 확률이 다소 높지만, 하단 지지선이 뚫려 무너지는 순간 패턴 실패와 함께 엄청난 실망 매도 매물이 출하됩니다. 특히 돌파를 미리 예견해 들어간 포지션은 즉시 룰 위반을 시정하고 손절(460달러)해야 큰 자산 보호를 할 수 있습니다."
@@ -3229,7 +3229,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 475,
             "low": 350,
             "close": 390,
-            "volume": 85
+            "volume": 96
         },
         {
             "time": "Day 2",
@@ -3237,7 +3237,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 410,
             "low": 300,
             "close": 375,
-            "volume": 108
+            "volume": 111
         },
         {
             "time": "Day 3",
@@ -3245,7 +3245,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 395,
             "low": 340,
             "close": 380,
-            "volume": 125
+            "volume": 88
         },
         {
             "time": "Day 4",
@@ -3253,7 +3253,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 440,
             "low": 375,
             "close": 435,
-            "volume": 103
+            "volume": 118
         }
     ],
     drawings: [
@@ -3270,10 +3270,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "포모(FOMO / 소외 불안)를 이기지 못하고 꼭대기(435달러)에서 전액 시장가 추격 매수한다.",
-        "돌파봉 꼭대기에서 타는 것보다, 향후 넥라인(400달러선) 부근으로 테슬라 주가가 눌려 새로운 지지선으로 작동(Retest)하는 조정을 보일 때까지 차분히 대기하여 지지 안착 확인 후 눌림목에서 정석 매수한다.",
-        "추세가 끝났으므로 숏 포지션만 진입한다.",
-        "무조건 상장폐지될 해외 주식이라 조롱하며 관심종목에서 지운다."
+        "포모(FOMO) 현상에 따른 돌파봉 꼭대기 추격 매수",
+        "돌파 넥라인 부근의 리테스트 조정 눌림목 매수",
+        "반등 랠리 종결 판단에 따른 역베팅 숏 포지션",
+        "추세 전환 확인 후 무조건적인 관심종목 제외"
     ],
     correctIndex: 1,
     explanation: "강한 패턴 돌파봉 확인 후 뇌동매매로 추격하는 것은 손절 거리가 너무 멀어져 손익비가 최악인 나쁜 습관입니다. 정석 돌파 트레이더는 넥라인 역할 전환 지점(400달러)으로의 되돌림 눌림목(Retest)을 차분히 기다려 리스크를 짧게 끊고 들어가는 훈련을 해야 합니다."
@@ -3292,7 +3292,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 660,
             "low": 550,
             "close": 560,
-            "volume": 103
+            "volume": 109
         },
         {
             "time": "Day 2",
@@ -3300,7 +3300,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 580,
             "low": 510,
             "close": 520,
-            "volume": 117
+            "volume": 106
         },
         {
             "time": "Day 3",
@@ -3308,7 +3308,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 540,
             "low": 490,
             "close": 500,
-            "volume": 105
+            "volume": 104
         },
         {
             "time": "Day 4",
@@ -3316,14 +3316,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 560,
             "low": 495,
             "close": 550,
-            "volume": 100
+            "volume": 106
         }
     ],
     options: [
-        "손절가를 전혀 설정하지 않고 오직 청산가에 포지션 운명을 맡긴다.",
-        "상방 돌파 확인 즉시 매수를 개시하되, 손절가는 쐐기형 수렴의 직전 최저점(490달러선) 바로 아래 또는 돌파 봉의 시가 하방에 배치하여 손절폭을 타이트하게 관리한다.",
-        "평단가가 450달러가 될 때까지 손절 없이 10차례에 걸쳐 분할로 물타기한다.",
-        "쐐기형 붕괴이므로 무조건 숏(공매도)으로 전환한다."
+        "손절 없이 청산가에 의존하여 장기 홀딩",
+        "상방 돌파 확인 후 진입 및 직전 최저점 손절 셋업",
+        "평단가 개선을 위한 지속적인 분할 물타기 매수",
+        "상단 저항선 돌파 시점을 이용한 숏 포지션 스위칭"
     ],
     correctIndex: 1,
     explanation: "하락 쐐기형(Falling Wedge)의 상방 돌파는 강력한 반전 신호입니다. 이 패턴의 장점은 진입 즉시 명확하고 짧은 기준점(수렴 바닥 최저가 490달러 혹은 돌파봉 하단)을 손절가로 설정할 수 있어, 리스크 한도를 안전하게 통제한 채 상방 랠리를 도모할 수 있다는 점입니다."
@@ -3342,7 +3342,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1400,
             "low": 1300,
             "close": 1390,
-            "volume": 84
+            "volume": 106
         },
         {
             "time": "Day 2",
@@ -3350,7 +3350,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1475,
             "low": 1360,
             "close": 1450,
-            "volume": 18
+            "volume": 25
         },
         {
             "time": "Day 3",
@@ -3358,7 +3358,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1525,
             "low": 1490,
             "close": 1505,
-            "volume": 32
+            "volume": 22
         }
     ],
     drawings: [
@@ -3383,10 +3383,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "상승 쐐기형 패턴은 전형적인 하락 이탈(Bearish Breakdown) 패턴이며 거래량 축소는 신뢰도 저하를 반증하므로, 롱 포지션을 즉시 정리/매도하여 비중을 비우거나 하단선 붕괴 확정 시 숏 포지션 구축을 모색한다.",
-        "추세 상승 지속으로 확신하고 신용 레버리지를 이용해 풀매수한다.",
-        "2,500달러가 돌파될 때까지 절대 손절 없이 무기한 보유한다.",
-        "다른 카지노 도박에 참여한다."
+        "상승 쐐기형 하방 이탈 위험에 따른 롱 포지션 매도",
+        "상승 지속 확신에 따른 레버리지 추가 불타기",
+        "장기 상승 흐름 기대로 손절 없이 무기한 홀딩",
+        "다른 종목으로의 포지션 분산을 위한 관망"
     ],
     correctIndex: 0,
     explanation: "상승 쐐기형(Rising Wedge)은 약세 세력이 억지로 쥐어짜며 상승 가격을 만드는 패턴으로, 수렴 끝에서 거래량 소멸과 함께 하방 이탈(Breakdown)하여 폭락할 위험이 매우 높은 대표적인 하락 대비 패턴입니다. 하단 지지선 이탈 낌새 시에는 매수 포지션을 전부 도망쳐 나와야 큰 손실을 막을 수 있습니다."
@@ -3405,7 +3405,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 710,
             "low": 640,
             "close": 650,
-            "volume": 89
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -3413,7 +3413,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 700,
             "low": 645,
             "close": 690,
-            "volume": 101
+            "volume": 116
         },
         {
             "time": "Day 3",
@@ -3421,7 +3421,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 700,
             "low": 670,
             "close": 675,
-            "volume": 125
+            "volume": 123
         },
         {
             "time": "Day 4",
@@ -3433,10 +3433,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "이전 컵 깊이만큼의 강력한 2차 상승 파동 랠리가 시작될 확률이 높으므로, 핸들 저점(670달러) 바로 아래에 손절매를 걸어두고 신규 매수(롱) 포지션을 진입한다.",
-        "컵앤핸들은 하락 사멸 패턴이므로 즉시 전량 매도 및 손절 처리한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "상황을 외면하고 포지션을 청산한 뒤 게임을 켠다."
+        "핸들 상방 돌파 확인 후 진입 및 핸들 저점 손절",
+        "하락 지속 판단에 따른 즉각적인 전량 손절",
+        "평단가 부근이므로 추가 손절 설정 없이 관망",
+        "돌파 여부 확인 전 고점 돌파 매수 주문 100%"
     ],
     correctIndex: 0,
     explanation: "전형적인 강세 지속 패턴인 컵앤핸들(Cup & Handle)입니다. 핸들의 하락 조정 채널 상단 돌파는 매물 소화를 성공적으로 완수하고 본 랠리로 진입한다는 강력한 신호입니다. 손익비 관점에서 핸들의 지지 저점인 670달러 아래에 안전 손절을 지정한 뒤 진입 시 우수한 기대 수익을 가질 수 있습니다."
@@ -3455,7 +3455,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 840,
             "low": 720,
             "close": 816,
-            "volume": 107
+            "volume": 115
         },
         {
             "time": "Day 2",
@@ -3463,7 +3463,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 840,
             "low": 744,
             "close": 824,
-            "volume": 104
+            "volume": 94
         },
         {
             "time": "Day 3",
@@ -3471,7 +3471,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 840,
             "low": 768,
             "close": 832,
-            "volume": 96
+            "volume": 121
         }
     ],
     drawings: [
@@ -3493,9 +3493,9 @@ export const quizzes_patterns_breakout: QuizItem[] = [
     ],
     options: [
         "저항선 부근에서 고점들이 점점 급락하며 붕괴하는 현상",
-        "저항선 아래에서 조정을 받을 때, 저점들이 점점 높아지며 저항선을 향해 밀어 올리는 현상 (매수 우위 수렴)",
-        "거래량이 완전 소멸하여 영원히 횡보하는 상태",
-        "갑작스럽게 아무 이유 없이 급락하는 현상"
+        "저항선 부근에서 저점들을 높여가며 밀어 올리는 수렴 현상",
+        "거래량이 완전히 소멸하여 긴 횡보 상태를 보이는 현상",
+        "지속적인 매도세로 인해 갑작스럽게 급락하는 현상"
     ],
     correctIndex: 1,
     explanation: "저항을 뚫지 못하고 밀려 내려올 때, 이전 저점보다 높은 지점에서 저점을 계속 잡아 올려주는 것은 매도 압력보다 매수 압력이 점점 올라오고 있음을 의미합니다. 수렴 끝에 돌파가 나타날 신뢰도가 매우 높습니다."
@@ -3514,7 +3514,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 920,
             "low": 784,
             "close": 880,
-            "volume": 119
+            "volume": 84
         },
         {
             "time": "Day 2",
@@ -3522,7 +3522,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1040,
             "low": 760,
             "close": 840,
-            "volume": 85
+            "volume": 89
         },
         {
             "time": "Day 3",
@@ -3530,7 +3530,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 912,
             "low": 768,
             "close": 880,
-            "volume": 127
+            "volume": 97
         },
         {
             "time": "Day 4",
@@ -3538,7 +3538,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 888,
             "low": 744,
             "close": 752,
-            "volume": 97
+            "volume": 119
         }
     ],
     drawings: [
@@ -3559,10 +3559,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "머리 꼭대기(1,040달러) 부근에서 예측 공매도",
-        "오른쪽 어깨가 올라가고 있을 때 미리 선진입",
-        "저점들을 연결한 핵심 지지선인 '넥라인'을 확실하게 하방 돌파(Breakdown) 완료할 때",
-        "패턴 돌파 여부와 무관하게 오른쪽 어깨 끝에서 대기"
+        "머리 꼭대기(1,040달러) 부근에서 예측 숏 진입",
+        "오른쪽 어깨가 올라가고 있을 때 돌파 전 선진입",
+        "저점들을 연결한 넥라인의 하방 돌파 완료 시",
+        "패턴 완성과 무관하게 오른쪽 어깨 끝에서 대기"
     ],
     correctIndex: 2,
     explanation: "헤드앤숄더(Head & Shoulders) 패턴은 오른쪽 어깨를 그린 후, 저점 지지선인 '넥라인(Neckline)'을 거래량을 실어 하방 돌파해야 최종 완성이 선언됩니다. 그전에 진입하면 넥라인 반등 시 극심한 손실을 입습니다."
@@ -3581,7 +3581,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 800,
             "low": 640,
             "close": 680,
-            "volume": 115
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -3589,7 +3589,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 760,
             "low": 672,
             "close": 752,
-            "volume": 91
+            "volume": 96
         },
         {
             "time": "Day 3",
@@ -3597,7 +3597,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 760,
             "low": 632,
             "close": 656,
-            "volume": 102
+            "volume": 126
         },
         {
             "time": "Day 4",
@@ -3605,7 +3605,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 792,
             "low": 648,
             "close": 784,
-            "volume": 95
+            "volume": 123
         }
     ],
     drawings: [
@@ -3626,10 +3626,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "추가 폭락 예고이므로 전액 손절",
-        "이중 바닥형(W 패턴) 완성으로 강력한 상승 전환 시그널, 760달러 넥라인 돌파 시점 또는 눌림목 매수",
-        "박스권 횡보이므로 양방향 무시",
-        "쌍바닥이 깨진 것이므로 공매도"
+        "추가 폭락 가능성에 따른 전량 손절 대응",
+        "W 패턴 이중 바닥 완성 및 넥라인 돌파 시 매수",
+        "박스권 횡보 판단에 따른 무대응 및 관망",
+        "이중 바닥의 하방 이탈을 예상한 숏 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "W자 모양의 '이중 바닥형(Double Bottom)' 패턴입니다. 애플 주가가 하락을 멈추고 바닥을 두 차례 단단히 지지해 준 뒤 중간 봉우리(넥라인 760달러)를 돌파해 마감하면 추세가 상승으로 강하게 전환될 가능성이 매우 높습니다."
@@ -3648,7 +3648,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 640,
             "low": 392,
             "close": 624,
-            "volume": 87
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -3656,7 +3656,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 632,
             "low": 576,
             "close": 592,
-            "volume": 86
+            "volume": 117
         },
         {
             "time": "Day 3",
@@ -3664,7 +3664,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 608,
             "low": 560,
             "close": 568,
-            "volume": 99
+            "volume": 106
         },
         {
             "time": "Day 4",
@@ -3672,14 +3672,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 680,
             "low": 560,
             "close": 664,
-            "volume": 130
+            "volume": 129
         }
     ],
     options: [
-        "이중 천정형 패턴 - 목표가 없음",
-        "불 플래그 (Bull Flag) 패턴 - 깃대의 높이(약 240달러 상승폭)만큼 돌파 지점부터 2차 폭등 랠리 기대",
-        "헤드앤숄더 패턴 - 하락 타겟 계산",
-        "대칭 삼각수렴 - 변동성 붕괴"
+        "이중 천정형 패턴 - 고점 도달 시 숏 진입",
+        "불 플래그 패턴 - 깃발 돌파 시 추가 상승 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 타겟",
+        "대칭 삼각수렴 패턴 - 변동성 축소 후 돌파 대기"
     ],
     correctIndex: 1,
     explanation: "대표적 강세 지속 패턴인 '불 플래그(Bull Flag)'입니다. 급격한 상승(깃대) 뒤 숨 고르기 채널(깃발)을 상방 돌파하면, 이전 상승 파동의 크기(깃대 높이)만큼 추가로 수직 랠리를 시작하는 관성이 있습니다."
@@ -3698,7 +3698,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1120,
             "low": 792,
             "close": 1080,
-            "volume": 107
+            "volume": 85
         },
         {
             "time": "Day 2",
@@ -3706,7 +3706,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1088,
             "low": 960,
             "close": 976,
-            "volume": 97
+            "volume": 98
         },
         {
             "time": "Day 3",
@@ -3714,7 +3714,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1120,
             "low": 968,
             "close": 1104,
-            "volume": 120
+            "volume": 117
         },
         {
             "time": "Day 4",
@@ -3722,7 +3722,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1112,
             "low": 920,
             "close": 928,
-            "volume": 99
+            "volume": 118
         }
     ],
     drawings: [
@@ -3743,10 +3743,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 상승 연장이므로 추가 매수",
-        "이중 천정형(Double Top / M 패턴) 완성으로 상승 추세가 종료되고 하락 반전될 가능성 매우 큼",
-        "일시적인 횡보 조절 국면",
-        "아무 조건 없는 단순 가격 노이즈"
+        "상승 추세의 지속 연장에 따른 추가 매수",
+        "이중 천정형(M 패턴) 완성에 따른 하락 반전 대비",
+        "단기 조정에 따른 일시적 횡보 박스권 진입",
+        "방향성 없는 일상적인 잔파동으로 판단해 홀딩"
     ],
     correctIndex: 1,
     explanation: "고점에서 지지받지 못하고 형성된 M자형 '이중 천정형(Double Top)' 패턴입니다. 두 차례 강력한 저항벽(1,120달러)을 넘지 못하고 넥라인(960달러)마저 붕괴했으므로 하방 추세가 가속화된다는 신호입니다."
@@ -3765,7 +3765,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 800,
             "low": 640,
             "close": 760,
-            "volume": 117
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -3773,7 +3773,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 800,
             "low": 688,
             "close": 784,
-            "volume": 120
+            "volume": 92
         },
         {
             "time": "Day 3",
@@ -3781,7 +3781,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 800,
             "low": 736,
             "close": 792,
-            "volume": 109
+            "volume": 101
         }
     ],
     drawings: [
@@ -3821,10 +3821,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "디센딩 트라이앵글 (Descending Triangle) - 대개 하방 돌파",
-        "어센딩 트라이앵글 (Ascending Triangle / 상승 삼각수렴) - 매수 압력이 우위에 있어 일반적으로 상방 돌파",
-        "헤드앤숄더 패턴 - 하방 돌파",
-        "상향 평행 채널 - 횡보"
+        "디센딩 트라이앵글 - 일반적으로 하방 돌파 기대",
+        "어센딩 트라이앵글 - 매수 압력 우위로 상방 돌파 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 기대",
+        "상향 평행 채널 - 상하단 터치식 채널 매매 기대"
     ],
     correctIndex: 1,
     explanation: "고점 저항은 평평하고 저점은 계속 높아지는 삼각수렴을 '어센딩 트라이앵글(Ascending Triangle)'이라고 합니다. 위로 갈수록 저점이 계속 올라가는 현상은 매수세가 가격을 위로 계속 압박하고 있음을 증명하며, 대개 저항선(800달러)을 상향 뚫고 오르는 확률이 높습니다."
@@ -3843,7 +3843,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 800,
             "low": 640,
             "close": 760,
-            "volume": 119
+            "volume": 83
         },
         {
             "time": "Day 2",
@@ -3851,7 +3851,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 800,
             "low": 704,
             "close": 776,
-            "volume": 104
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -3859,7 +3859,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 784,
             "low": 728,
             "close": 736,
-            "volume": 97
+            "volume": 127
         }
     ],
     drawings: [
@@ -3895,10 +3895,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "예측이 틀려 어센딩 패턴이 아래로 파괴(Breakdown)되었으므로 시나리오 실패를 즉각 인정하고 기계적으로 전량 손절매하여 계좌 추가 파산을 방지한다.",
-        "640달러선까지 평단가를 낮추는 대규모 물타기 추가 매수를 시작한다.",
-        "손절매 없이 본전 800달러가 올 때까지 무조건 홀딩(존버)한다.",
-        "아무 관리 주문 없이 차트창을 닫고 외면한다."
+        "하방 이탈 확인 즉시 손절하여 추가 폭락 차단",
+        "조정을 이용해 평단가를 조절하는 분할 물타기",
+        "본전 탈출 시까지 포지션을 유지하며 관망",
+        "손절 라인을 하단으로 조정하고 대기 주문 유지"
     ],
     correctIndex: 0,
     explanation: "어센딩 트라이앵글은 상방 확률이 다소 높지만, 하단 지지선이 뚫려 무너지는 순간 패턴 실패와 함께 엄청난 실망 매도 매물이 출하됩니다. 특히 돌파를 미리 예견해 들어간 포지션은 즉시 룰 위반을 시정하고 손절(736달러)해야 큰 자산 보호를 할 수 있습니다."
@@ -3917,7 +3917,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 760,
             "low": 560,
             "close": 624,
-            "volume": 107
+            "volume": 105
         },
         {
             "time": "Day 2",
@@ -3925,7 +3925,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 656,
             "low": 480,
             "close": 600,
-            "volume": 98
+            "volume": 123
         },
         {
             "time": "Day 3",
@@ -3933,7 +3933,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 632,
             "low": 544,
             "close": 608,
-            "volume": 122
+            "volume": 121
         },
         {
             "time": "Day 4",
@@ -3941,7 +3941,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 704,
             "low": 600,
             "close": 696,
-            "volume": 129
+            "volume": 97
         }
     ],
     drawings: [
@@ -3958,10 +3958,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "포모(FOMO / 소외 불안)를 이기지 못하고 꼭대기(696달러)에서 전액 시장가 추격 매수한다.",
-        "돌파봉 꼭대기에서 타는 것보다, 향후 넥라인(640달러선) 부근으로 애플 주가가 눌려 새로운 지지선으로 작동(Retest)하는 조정을 보일 때까지 차분히 대기하여 지지 안착 확인 후 눌림목에서 정석 매수한다.",
-        "추세가 끝났으므로 숏 포지션만 진입한다.",
-        "무조건 상장폐지될 미국 주식이라 조롱하며 관심종목에서 지운다."
+        "포모(FOMO) 현상에 따른 돌파봉 꼭대기 추격 매수",
+        "돌파 넥라인 부근의 리테스트 조정 눌림목 매수",
+        "반등 랠리 종결 판단에 따른 역베팅 숏 포지션",
+        "추세 전환 확인 후 무조건적인 관심종목 제외"
     ],
     correctIndex: 1,
     explanation: "강한 패턴 돌파봉 확인 후 뇌동매매로 추격하는 것은 손절 거리가 너무 멀어져 손익비가 최악인 나쁜 습관입니다. 정석 돌파 트레이더는 넥라인 역할 전환 지점(640달러)으로의 되돌림 눌림목(Retest)을 차분히 기다려 리스크를 짧게 끊고 들어가는 훈련을 해야 합니다."
@@ -3980,7 +3980,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1056,
             "low": 880,
             "close": 896,
-            "volume": 114
+            "volume": 111
         },
         {
             "time": "Day 2",
@@ -3988,7 +3988,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 928,
             "low": 816,
             "close": 832,
-            "volume": 118
+            "volume": 90
         },
         {
             "time": "Day 3",
@@ -3996,7 +3996,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 864,
             "low": 784,
             "close": 800,
-            "volume": 90
+            "volume": 122
         },
         {
             "time": "Day 4",
@@ -4004,14 +4004,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 896,
             "low": 792,
             "close": 880,
-            "volume": 127
+            "volume": 113
         }
     ],
     options: [
-        "손절가를 전혀 설정하지 않고 오직 청산가에 포지션 운명을 맡긴다.",
-        "상방 돌파 확인 즉시 매수를 개시하되, 손절가는 쐐기형 수렴의 직전 최저점(784달러선) 바로 아래 또는 돌파 봉의 시가 하방에 배치하여 손절폭을 타이트하게 관리한다.",
-        "평단가가 720달러가 될 때까지 손절 없이 10차례에 걸쳐 분할로 물타기한다.",
-        "쐐기형 붕괴이므로 무조건 숏(공매도)으로 전환한다."
+        "손절 없이 청산가에 의존하여 장기 홀딩",
+        "상방 돌파 확인 후 진입 및 직전 최저점 손절 셋업",
+        "평단가 개선을 위한 지속적인 분할 물타기 매수",
+        "상단 저항선 돌파 시점을 이용한 숏 포지션 스위칭"
     ],
     correctIndex: 1,
     explanation: "하락 쐐기형(Falling Wedge)의 상방 돌파는 강력한 반전 신호입니다. 이 패턴의 장점은 진입 즉시 명확하고 짧은 기준점(수렴 바닥 최저가 784달러 혹은 돌파봉 하단)을 손절가로 설정할 수 있어, 리스크 한도를 안전하게 통제한 채 상방 랠리를 도모할 수 있다는 점입니다."
@@ -4030,7 +4030,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2240,
             "low": 2080,
             "close": 2224,
-            "volume": 81
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -4038,7 +4038,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2360,
             "low": 2176,
             "close": 2320,
-            "volume": 29
+            "volume": 25
         },
         {
             "time": "Day 3",
@@ -4046,7 +4046,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2440,
             "low": 2384,
             "close": 2408,
-            "volume": 24
+            "volume": 34
         }
     ],
     drawings: [
@@ -4071,10 +4071,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "상승 쐐기형 패턴은 전형적인 하락 이탈(Bearish Breakdown) 패턴이며 거래량 축소는 신뢰도 저하를 반증하므로, 롱 포지션을 즉시 정리/매도하여 비중을 비우거나 하단선 붕괴 확정 시 숏 포지션 구축을 모색한다.",
-        "추세 상승 지속으로 확신하고 신용 레버리지를 이용해 풀매수한다.",
-        "4,000달러가 돌파될 때까지 절대 손절 없이 무기한 보유한다.",
-        "다른 카지노 도박에 참여한다."
+        "상승 쐐기형 하방 이탈 위험에 따른 롱 포지션 매도",
+        "상승 지속 확신에 따른 레버리지 추가 불타기",
+        "장기 상승 흐름 기대로 손절 없이 무기한 홀딩",
+        "다른 종목으로의 포지션 분산을 위한 관망"
     ],
     correctIndex: 0,
     explanation: "상승 쐐기형(Rising Wedge)은 약세 세력이 억지로 쥐어짜며 상승 가격을 만드는 패턴으로, 수렴 끝에서 거래량 소멸과 함께 하방 이탈(Breakdown)하여 폭락할 위험이 매우 높은 대표적인 하락 대비 패턴입니다. 하단 지지선 이탈 낌새 시에는 매수 포지션을 전부 도망쳐 나와야 큰 손실을 막을 수 있습니다."
@@ -4093,7 +4093,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1136,
             "low": 1024,
             "close": 1040,
-            "volume": 92
+            "volume": 113
         },
         {
             "time": "Day 2",
@@ -4101,7 +4101,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1120,
             "low": 1032,
             "close": 1104,
-            "volume": 119
+            "volume": 109
         },
         {
             "time": "Day 3",
@@ -4109,7 +4109,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1120,
             "low": 1072,
             "close": 1080,
-            "volume": 90
+            "volume": 98
         },
         {
             "time": "Day 4",
@@ -4117,14 +4117,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1232,
             "low": 1072,
             "close": 1216,
-            "volume": 107
+            "volume": 112
         }
     ],
     options: [
-        "이전 컵 깊이만큼의 강력한 2차 상승 파동 랠리가 시작될 확률이 높으므로, 핸들 저점(1,072달러) 바로 아래에 손절매를 걸어두고 신규 매수(롱) 포지션을 진입한다.",
-        "컵앤핸들은 하락 사멸 패턴이므로 즉시 전량 매도 및 손절 처리한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "상황을 외면하고 포지션을 청산한 뒤 게임을 켠다."
+        "핸들 상방 돌파 확인 후 진입 및 핸들 저점 손절",
+        "하락 지속 판단에 따른 즉각적인 전량 손절",
+        "평단가 부근이므로 추가 손절 설정 없이 관망",
+        "돌파 여부 확인 전 고점 돌파 매수 주문 100%"
     ],
     correctIndex: 0,
     explanation: "전형적인 강세 지속 패턴인 컵앤핸들(Cup & Handle)입니다. 핸들의 하락 조정 채널 상단 돌파는 매물 소화를 성공적으로 완수하고 본 랠리로 진입한다는 강력한 신호입니다. 손익비 관점에서 핸들의 지지 저점인 1,072달러 아래에 안전 손절을 지정한 뒤 진입 시 우수한 기대 수익을 가질 수 있습니다."
@@ -4143,7 +4143,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1050,
             "low": 900,
             "close": 1020,
-            "volume": 110
+            "volume": 117
         },
         {
             "time": "Day 2",
@@ -4151,7 +4151,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1050,
             "low": 930,
             "close": 1030,
-            "volume": 121
+            "volume": 89
         },
         {
             "time": "Day 3",
@@ -4159,7 +4159,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1050,
             "low": 960,
             "close": 1040,
-            "volume": 98
+            "volume": 125
         }
     ],
     drawings: [
@@ -4181,9 +4181,9 @@ export const quizzes_patterns_breakout: QuizItem[] = [
     ],
     options: [
         "저항선 부근에서 고점들이 점점 급락하며 붕괴하는 현상",
-        "저항선 아래에서 조정을 받을 때, 저점들이 점점 높아지며 저항선을 향해 밀어 올리는 현상 (매수 우위 수렴)",
-        "거래량이 완전 소멸하여 영원히 횡보하는 상태",
-        "갑작스럽게 아무 이유 없이 급락하는 현상"
+        "저항선 부근에서 저점들을 높여가며 밀어 올리는 수렴 현상",
+        "거래량이 완전히 소멸하여 긴 횡보 상태를 보이는 현상",
+        "지속적인 매도세로 인해 갑작스럽게 급락하는 현상"
     ],
     correctIndex: 1,
     explanation: "저항을 뚫지 못하고 밀려 내려올 때, 이전 저점보다 높은 지점에서 저점을 계속 잡아 올려주는 것은 매도 압력보다 매수 압력이 점점 올라오고 있음을 의미합니다. 수렴 끝에 돌파가 나타날 신뢰도가 매우 높습니다."
@@ -4202,7 +4202,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1150,
             "low": 980,
             "close": 1100,
-            "volume": 107
+            "volume": 83
         },
         {
             "time": "Day 2",
@@ -4210,7 +4210,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1300,
             "low": 950,
             "close": 1050,
-            "volume": 111
+            "volume": 92
         },
         {
             "time": "Day 3",
@@ -4218,7 +4218,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1140,
             "low": 960,
             "close": 1100,
-            "volume": 105
+            "volume": 117
         },
         {
             "time": "Day 4",
@@ -4226,7 +4226,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1110,
             "low": 930,
             "close": 940,
-            "volume": 108
+            "volume": 107
         }
     ],
     drawings: [
@@ -4247,10 +4247,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "머리 꼭대기(1,300달러) 부근에서 예측 공매도",
-        "오른쪽 어깨가 올라가고 있을 때 미리 선진입",
-        "저점들을 연결한 핵심 지지선인 '넥라인'을 확실하게 하방 돌파(Breakdown) 완료할 때",
-        "패턴 돌파 여부와 무관하게 오른쪽 어깨 끝에서 대기"
+        "머리 꼭대기(1,300달러) 부근에서 예측 숏 진입",
+        "오른쪽 어깨가 올라가고 있을 때 돌파 전 선진입",
+        "저점들을 연결한 넥라인의 하방 돌파 완료 시",
+        "패턴 완성과 무관하게 오른쪽 어깨 끝에서 대기"
     ],
     correctIndex: 2,
     explanation: "헤드앤숄더(Head & Shoulders) 패턴은 오른쪽 어깨를 그린 후, 저점 지지선인 '넥라인(Neckline)'을 거래량을 실어 하방 돌파해야 최종 완성이 선언됩니다. 그전에 진입하면 넥라인 반등 시 극심한 손실을 입습니다."
@@ -4269,7 +4269,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1000,
             "low": 800,
             "close": 850,
-            "volume": 84
+            "volume": 115
         },
         {
             "time": "Day 2",
@@ -4277,7 +4277,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 950,
             "low": 840,
             "close": 940,
-            "volume": 92
+            "volume": 110
         },
         {
             "time": "Day 3",
@@ -4285,7 +4285,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 950,
             "low": 790,
             "close": 820,
-            "volume": 114
+            "volume": 125
         },
         {
             "time": "Day 4",
@@ -4293,7 +4293,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 990,
             "low": 810,
             "close": 980,
-            "volume": 107
+            "volume": 103
         }
     ],
     drawings: [
@@ -4314,10 +4314,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "추가 폭락 예고이므로 전액 손절",
-        "이중 바닥형(W 패턴) 완성으로 강력한 상승 전환 시그널, 950달러 넥라인 돌파 시점 또는 눌림목 매수",
-        "박스권 횡보이므로 양방향 무시",
-        "쌍바닥이 깨진 것이므로 공매도"
+        "추가 폭락 가능성에 따른 전량 손절 대응",
+        "W 패턴 이중 바닥 완성 및 넥라인 돌파 시 매수",
+        "박스권 횡보 판단에 따른 무대응 및 관망",
+        "이중 바닥의 하방 이탈을 예상한 숏 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "W자 모양의 '이중 바닥형(Double Bottom)' 패턴입니다. 나스닥 시세가 하락을 멈추고 바닥을 두 차례 단단히 지지해 준 뒤 중간 봉우리(넥라인 950달러)를 돌파해 마감하면 추세가 상승으로 강하게 전환될 가능성이 매우 높습니다."
@@ -4336,7 +4336,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 800,
             "low": 490,
             "close": 780,
-            "volume": 83
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -4344,7 +4344,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 790,
             "low": 720,
             "close": 740,
-            "volume": 103
+            "volume": 111
         },
         {
             "time": "Day 3",
@@ -4352,7 +4352,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 760,
             "low": 700,
             "close": 710,
-            "volume": 110
+            "volume": 104
         },
         {
             "time": "Day 4",
@@ -4360,14 +4360,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 850,
             "low": 700,
             "close": 830,
-            "volume": 107
+            "volume": 115
         }
     ],
     options: [
-        "이중 천정형 패턴 - 목표가 없음",
-        "불 플래그 (Bull Flag) 패턴 - 깃대의 높이(약 300달러 상승폭)만큼 돌파 지점부터 2차 폭등 랠리 기대",
-        "헤드앤숄더 패턴 - 하락 타겟 계산",
-        "대칭 삼각수렴 - 변동성 붕괴"
+        "이중 천정형 패턴 - 고점 도달 시 숏 진입",
+        "불 플래그 패턴 - 깃발 돌파 시 추가 상승 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 타겟",
+        "대칭 삼각수렴 패턴 - 변동성 축소 후 돌파 대기"
     ],
     correctIndex: 1,
     explanation: "대표적 강세 지속 패턴인 '불 플래그(Bull Flag)'입니다. 급격한 상승(깃대) 뒤 숨 고르기 채널(깃발)을 상방 돌파하면, 이전 상승 파동의 크기(깃대 높이)만큼 추가로 수직 랠리를 시작하는 관성이 있습니다."
@@ -4386,7 +4386,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1400,
             "low": 990,
             "close": 1350,
-            "volume": 110
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -4394,7 +4394,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1360,
             "low": 1200,
             "close": 1220,
-            "volume": 98
+            "volume": 103
         },
         {
             "time": "Day 3",
@@ -4402,7 +4402,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1400,
             "low": 1210,
             "close": 1380,
-            "volume": 120
+            "volume": 106
         },
         {
             "time": "Day 4",
@@ -4410,7 +4410,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1390,
             "low": 1150,
             "close": 1160,
-            "volume": 125
+            "volume": 94
         }
     ],
     drawings: [
@@ -4431,10 +4431,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 상승 연장이므로 추가 매수",
-        "이중 천정형(Double Top / M 패턴) 완성으로 상승 추세가 종료되고 하락 반전될 가능성 매우 큼",
-        "일시적인 횡보 조절 국면",
-        "아무 조건 없는 단순 가격 노이즈"
+        "상승 추세의 지속 연장에 따른 추가 매수",
+        "이중 천정형(M 패턴) 완성에 따른 하락 반전 대비",
+        "단기 조정에 따른 일시적 횡보 박스권 진입",
+        "방향성 없는 일상적인 잔파동으로 판단해 홀딩"
     ],
     correctIndex: 1,
     explanation: "고점에서 지지받지 못하고 형성된 M자형 '이중 천정형(Double Top)' 패턴입니다. 두 차례 강력한 저항벽(1,400달러)을 넘지 못하고 넥라인(1,200달러)마저 붕괴했으므로 하방 추세가 가속화된다는 신호입니다."
@@ -4453,7 +4453,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1000,
             "low": 800,
             "close": 950,
-            "volume": 108
+            "volume": 89
         },
         {
             "time": "Day 2",
@@ -4461,7 +4461,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1000,
             "low": 860,
             "close": 980,
-            "volume": 110
+            "volume": 101
         },
         {
             "time": "Day 3",
@@ -4469,7 +4469,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1000,
             "low": 920,
             "close": 990,
-            "volume": 109
+            "volume": 113
         }
     ],
     drawings: [
@@ -4509,10 +4509,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "디센딩 트라이앵글 (Descending Triangle) - 대개 하방 돌파",
-        "어센딩 트라이앵글 (Ascending Triangle / 상승 삼각수렴) - 매수 압력이 우위에 있어 일반적으로 상방 돌파",
-        "헤드앤숄더 패턴 - 하방 돌파",
-        "상향 평행 채널 - 횡보"
+        "디센딩 트라이앵글 - 일반적으로 하방 돌파 기대",
+        "어센딩 트라이앵글 - 매수 압력 우위로 상방 돌파 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 기대",
+        "상향 평행 채널 - 상하단 터치식 채널 매매 기대"
     ],
     correctIndex: 1,
     explanation: "고점 저항은 평평하고 저점은 계속 높아지는 삼각수렴을 '어센딩 트라이앵글(Ascending Triangle)'이라고 합니다. 위로 갈수록 저점이 계속 올라가는 현상은 매수세가 가격을 위로 계속 압박하고 있음을 증명하며, 대개 저항선(1,000달러)을 상향 뚫고 오르는 확률이 높습니다."
@@ -4531,7 +4531,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1000,
             "low": 800,
             "close": 950,
-            "volume": 116
+            "volume": 117
         },
         {
             "time": "Day 2",
@@ -4539,7 +4539,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1000,
             "low": 880,
             "close": 970,
-            "volume": 91
+            "volume": 105
         },
         {
             "time": "Day 3",
@@ -4547,7 +4547,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 980,
             "low": 910,
             "close": 920,
-            "volume": 123
+            "volume": 106
         }
     ],
     drawings: [
@@ -4583,10 +4583,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "예측이 틀려 어센딩 패턴이 아래로 파괴(Breakdown)되었으므로 시나리오 실패를 즉각 인정하고 기계적으로 전량 손절매하여 계좌 추가 파산을 방지한다.",
-        "800달러선까지 평단가를 낮추는 대규모 물타기 추가 매수를 시작한다.",
-        "손절매 없이 본전 1,000달러가 올 때까지 무조건 홀딩(존버)한다.",
-        "아무 관리 주문 없이 차트창을 닫고 외면한다."
+        "하방 이탈 확인 즉시 손절하여 추가 폭락 차단",
+        "조정을 이용해 평단가를 조절하는 분할 물타기",
+        "본전 탈출 시까지 포지션을 유지하며 관망",
+        "손절 라인을 하단으로 조정하고 대기 주문 유지"
     ],
     correctIndex: 0,
     explanation: "어센딩 트라이앵글은 상방 확률이 다소 높지만, 하단 지지선이 뚫려 무너지는 순간 패턴 실패와 함께 엄청난 실망 매도 매물이 출하됩니다. 특히 돌파를 미리 예견해 들어간 포지션은 즉시 룰 위반을 시정하고 손절(920달러)해야 큰 자산 보호를 할 수 있습니다."
@@ -4605,7 +4605,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 950,
             "low": 700,
             "close": 780,
-            "volume": 81
+            "volume": 83
         },
         {
             "time": "Day 2",
@@ -4613,7 +4613,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 820,
             "low": 600,
             "close": 750,
-            "volume": 119
+            "volume": 104
         },
         {
             "time": "Day 3",
@@ -4621,7 +4621,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 790,
             "low": 680,
             "close": 760,
-            "volume": 108
+            "volume": 114
         },
         {
             "time": "Day 4",
@@ -4629,7 +4629,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 880,
             "low": 750,
             "close": 870,
-            "volume": 128
+            "volume": 120
         }
     ],
     drawings: [
@@ -4646,10 +4646,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "포모(FOMO / 소외 불안)를 이기지 못하고 꼭대기(870달러)에서 전액 시장가 추격 매수한다.",
-        "돌파봉 꼭대기에서 타는 것보다, 향후 넥라인(800달러선) 부근으로 나스닥 시세가 눌려 새로운 지지선으로 작동(Retest)하는 조정을 보일 때까지 차분히 대기하여 지지 안착 확인 후 눌림목에서 정석 매수한다.",
-        "추세가 끝났으므로 숏 포지션만 진입한다.",
-        "무조건 상장폐지될 지수 선물이라 조롱하며 관심종목에서 지운다."
+        "포모(FOMO) 현상에 따른 돌파봉 꼭대기 추격 매수",
+        "돌파 넥라인 부근의 리테스트 조정 눌림목 매수",
+        "반등 랠리 종결 판단에 따른 역베팅 숏 포지션",
+        "추세 전환 확인 후 무조건적인 관심종목 제외"
     ],
     correctIndex: 1,
     explanation: "강한 패턴 돌파봉 확인 후 뇌동매매로 추격하는 것은 손절 거리가 너무 멀어져 손익비가 최악인 나쁜 습관입니다. 정석 돌파 트레이더는 넥라인 역할 전환 지점(800달러)으로의 되돌림 눌림목(Retest)을 차분히 기다려 리스크를 짧게 끊고 들어가는 훈련을 해야 합니다."
@@ -4668,7 +4668,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1320,
             "low": 1100,
             "close": 1120,
-            "volume": 101
+            "volume": 97
         },
         {
             "time": "Day 2",
@@ -4676,7 +4676,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1160,
             "low": 1020,
             "close": 1040,
-            "volume": 102
+            "volume": 123
         },
         {
             "time": "Day 3",
@@ -4684,7 +4684,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1080,
             "low": 980,
             "close": 1000,
-            "volume": 105
+            "volume": 104
         },
         {
             "time": "Day 4",
@@ -4696,10 +4696,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "손절가를 전혀 설정하지 않고 오직 청산가에 포지션 운명을 맡긴다.",
-        "상방 돌파 확인 즉시 매수를 개시하되, 손절가는 쐐기형 수렴의 직전 최저점(980달러선) 바로 아래 또는 돌파 봉의 시가 하방에 배치하여 손절폭을 타이트하게 관리한다.",
-        "평단가가 900달러가 될 때까지 손절 없이 10차례에 걸쳐 분할로 물타기한다.",
-        "쐐기형 붕괴이므로 무조건 숏(공매도)으로 전환한다."
+        "손절 없이 청산가에 의존하여 장기 홀딩",
+        "상방 돌파 확인 후 진입 및 직전 최저점 손절 셋업",
+        "평단가 개선을 위한 지속적인 분할 물타기 매수",
+        "상단 저항선 돌파 시점을 이용한 숏 포지션 스위칭"
     ],
     correctIndex: 1,
     explanation: "하락 쐐기형(Falling Wedge)의 상방 돌파는 강력한 반전 신호입니다. 이 패턴의 장점은 진입 즉시 명확하고 짧은 기준점(수렴 바닥 최저가 980달러 혹은 돌파봉 하단)을 손절가로 설정할 수 있어, 리스크 한도를 안전하게 통제한 채 상방 랠리를 도모할 수 있다는 점입니다."
@@ -4718,7 +4718,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2800,
             "low": 2600,
             "close": 2780,
-            "volume": 101
+            "volume": 94
         },
         {
             "time": "Day 2",
@@ -4726,7 +4726,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2950,
             "low": 2720,
             "close": 2900,
-            "volume": 27
+            "volume": 16
         },
         {
             "time": "Day 3",
@@ -4734,7 +4734,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 3050,
             "low": 2980,
             "close": 3010,
-            "volume": 33
+            "volume": 28
         }
     ],
     drawings: [
@@ -4759,10 +4759,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "상승 쐐기형 패턴은 전형적인 하락 이탈(Bearish Breakdown) 패턴이며 거래량 축소는 신뢰도 저하를 반증하므로, 롱 포지션을 즉시 정리/매도하여 비중을 비우거나 하단선 붕괴 확정 시 숏 포지션 구축을 모색한다.",
-        "추세 상승 지속으로 확신하고 신용 레버리지를 이용해 풀매수한다.",
-        "5,000달러가 돌파될 때까지 절대 손절 없이 무기한 보유한다.",
-        "다른 카지노 도박에 참여한다."
+        "상승 쐐기형 하방 이탈 위험에 따른 롱 포지션 매도",
+        "상승 지속 확신에 따른 레버리지 추가 불타기",
+        "장기 상승 흐름 기대로 손절 없이 무기한 홀딩",
+        "다른 종목으로의 포지션 분산을 위한 관망"
     ],
     correctIndex: 0,
     explanation: "상승 쐐기형(Rising Wedge)은 약세 세력이 억지로 쥐어짜며 상승 가격을 만드는 패턴으로, 수렴 끝에서 거래량 소멸과 함께 하방 이탈(Breakdown)하여 폭락할 위험이 매우 높은 대표적인 하락 대비 패턴입니다. 하단 지지선 이탈 낌새 시에는 매수 포지션을 전부 도망쳐 나와야 큰 손실을 막을 수 있습니다."
@@ -4781,7 +4781,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1420,
             "low": 1280,
             "close": 1300,
-            "volume": 104
+            "volume": 86
         },
         {
             "time": "Day 2",
@@ -4789,7 +4789,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1400,
             "low": 1290,
             "close": 1380,
-            "volume": 98
+            "volume": 109
         },
         {
             "time": "Day 3",
@@ -4797,7 +4797,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1400,
             "low": 1340,
             "close": 1350,
-            "volume": 113
+            "volume": 95
         },
         {
             "time": "Day 4",
@@ -4805,14 +4805,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1540,
             "low": 1340,
             "close": 1520,
-            "volume": 124
+            "volume": 110
         }
     ],
     options: [
-        "이전 컵 깊이만큼의 강력한 2차 상승 파동 랠리가 시작될 확률이 높으므로, 핸들 저점(1,340달러) 바로 아래에 손절매를 걸어두고 신규 매수(롱) 포지션을 진입한다.",
-        "컵앤핸들은 하락 사멸 패턴이므로 즉시 전량 매도 및 손절 처리한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "상황을 외면하고 포지션을 청산한 뒤 게임을 켠다."
+        "핸들 상방 돌파 확인 후 진입 및 핸들 저점 손절",
+        "하락 지속 판단에 따른 즉각적인 전량 손절",
+        "평단가 부근이므로 추가 손절 설정 없이 관망",
+        "돌파 여부 확인 전 고점 돌파 매수 주문 100%"
     ],
     correctIndex: 0,
     explanation: "전형적인 강세 지속 패턴인 컵앤핸들(Cup & Handle)입니다. 핸들의 하락 조정 채널 상단 돌파는 매물 소화를 성공적으로 완수하고 본 랠리로 진입한다는 강력한 신호입니다. 손익비 관점에서 핸들의 지지 저점인 1,340달러 아래에 안전 손절을 지정한 뒤 진입 시 우수한 기대 수익을 가질 수 있습니다."
@@ -4831,7 +4831,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1260,
             "low": 1080,
             "close": 1224,
-            "volume": 82
+            "volume": 95
         },
         {
             "time": "Day 2",
@@ -4839,7 +4839,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1260,
             "low": 1116,
             "close": 1236,
-            "volume": 122
+            "volume": 86
         },
         {
             "time": "Day 3",
@@ -4847,7 +4847,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1260,
             "low": 1152,
             "close": 1248,
-            "volume": 96
+            "volume": 103
         }
     ],
     drawings: [
@@ -4869,9 +4869,9 @@ export const quizzes_patterns_breakout: QuizItem[] = [
     ],
     options: [
         "저항선 부근에서 고점들이 점점 급락하며 붕괴하는 현상",
-        "저항선 아래에서 조정을 받을 때, 저점들이 점점 높아지며 저항선을 향해 밀어 올리는 현상 (매수 우위 수렴)",
-        "거래량이 완전 소멸하여 영원히 횡보하는 상태",
-        "갑작스럽게 아무 이유 없이 급락하는 현상"
+        "저항선 부근에서 저점들을 높여가며 밀어 올리는 수렴 현상",
+        "거래량이 완전히 소멸하여 긴 횡보 상태를 보이는 현상",
+        "지속적인 매도세로 인해 갑작스럽게 급락하는 현상"
     ],
     correctIndex: 1,
     explanation: "저항을 뚫지 못하고 밀려 내려올 때, 이전 저점보다 높은 지점에서 저점을 계속 잡아 올려주는 것은 매도 압력보다 매수 압력이 점점 올라오고 있음을 의미합니다. 수렴 끝에 돌파가 나타날 신뢰도가 매우 높습니다."
@@ -4890,7 +4890,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1380,
             "low": 1176,
             "close": 1320,
-            "volume": 118
+            "volume": 86
         },
         {
             "time": "Day 2",
@@ -4898,7 +4898,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1560,
             "low": 1140,
             "close": 1260,
-            "volume": 104
+            "volume": 111
         },
         {
             "time": "Day 3",
@@ -4906,7 +4906,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1368,
             "low": 1152,
             "close": 1320,
-            "volume": 93
+            "volume": 101
         },
         {
             "time": "Day 4",
@@ -4914,7 +4914,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1332,
             "low": 1116,
             "close": 1128,
-            "volume": 108
+            "volume": 105
         }
     ],
     drawings: [
@@ -4935,10 +4935,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "머리 꼭대기(1,560달러) 부근에서 예측 공매도",
-        "오른쪽 어깨가 올라가고 있을 때 미리 선진입",
-        "저점들을 연결한 핵심 지지선인 '넥라인'을 확실하게 하방 돌파(Breakdown) 완료할 때",
-        "패턴 돌파 여부와 무관하게 오른쪽 어깨 끝에서 대기"
+        "머리 꼭대기(1,560달러) 부근에서 예측 숏 진입",
+        "오른쪽 어깨가 올라가고 있을 때 돌파 전 선진입",
+        "저점들을 연결한 넥라인의 하방 돌파 완료 시",
+        "패턴 완성과 무관하게 오른쪽 어깨 끝에서 대기"
     ],
     correctIndex: 2,
     explanation: "헤드앤숄더(Head & Shoulders) 패턴은 오른쪽 어깨를 그린 후, 저점 지지선인 '넥라인(Neckline)'을 거래량을 실어 하방 돌파해야 최종 완성이 선언됩니다. 그전에 진입하면 넥라인 반등 시 극심한 손실을 입습니다."
@@ -4957,7 +4957,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1200,
             "low": 960,
             "close": 1020,
-            "volume": 90
+            "volume": 85
         },
         {
             "time": "Day 2",
@@ -4965,7 +4965,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1140,
             "low": 1008,
             "close": 1128,
-            "volume": 113
+            "volume": 88
         },
         {
             "time": "Day 3",
@@ -4973,7 +4973,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1140,
             "low": 948,
             "close": 984,
-            "volume": 126
+            "volume": 105
         },
         {
             "time": "Day 4",
@@ -4981,7 +4981,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1188,
             "low": 972,
             "close": 1176,
-            "volume": 122
+            "volume": 113
         }
     ],
     drawings: [
@@ -5002,10 +5002,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "추가 폭락 예고이므로 전액 손절",
-        "이중 바닥형(W 패턴) 완성으로 강력한 상승 전환 시그널, 1,140달러 넥라인 돌파 시점 또는 눌림목 매수",
-        "박스권 횡보이므로 양방향 무시",
-        "쌍바닥이 깨진 것이므로 공매도"
+        "추가 폭락 가능성에 따른 전량 손절 대응",
+        "W 패턴 이중 바닥 완성 및 넥라인 돌파 시 매수",
+        "박스권 횡보 판단에 따른 무대응 및 관망",
+        "이중 바닥의 하방 이탈을 예상한 숏 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "W자 모양의 '이중 바닥형(Double Bottom)' 패턴입니다. 엔비디아 주가가 하락을 멈추고 바닥을 두 차례 단단히 지지해 준 뒤 중간 봉우리(넥라인 1,140달러)를 돌파해 마감하면 추세가 상승으로 강하게 전환될 가능성이 매우 높습니다."
@@ -5024,7 +5024,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 960,
             "low": 588,
             "close": 936,
-            "volume": 106
+            "volume": 105
         },
         {
             "time": "Day 2",
@@ -5032,7 +5032,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 948,
             "low": 864,
             "close": 888,
-            "volume": 101
+            "volume": 119
         },
         {
             "time": "Day 3",
@@ -5040,7 +5040,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 912,
             "low": 840,
             "close": 852,
-            "volume": 95
+            "volume": 88
         },
         {
             "time": "Day 4",
@@ -5048,14 +5048,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1020,
             "low": 840,
             "close": 996,
-            "volume": 125
+            "volume": 110
         }
     ],
     options: [
-        "이중 천정형 패턴 - 목표가 없음",
-        "불 플래그 (Bull Flag) 패턴 - 깃대의 높이(약 360달러 상승폭)만큼 돌파 지점부터 2차 폭등 랠리 기대",
-        "헤드앤숄더 패턴 - 하락 타겟 계산",
-        "대칭 삼각수렴 - 변동성 붕괴"
+        "이중 천정형 패턴 - 고점 도달 시 숏 진입",
+        "불 플래그 패턴 - 깃발 돌파 시 추가 상승 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 타겟",
+        "대칭 삼각수렴 패턴 - 변동성 축소 후 돌파 대기"
     ],
     correctIndex: 1,
     explanation: "대표적 강세 지속 패턴인 '불 플래그(Bull Flag)'입니다. 급격한 상승(깃대) 뒤 숨 고르기 채널(깃발)을 상방 돌파하면, 이전 상승 파동의 크기(깃대 높이)만큼 추가로 수직 랠리를 시작하는 관성이 있습니다."
@@ -5074,7 +5074,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1680,
             "low": 1188,
             "close": 1620,
-            "volume": 112
+            "volume": 81
         },
         {
             "time": "Day 2",
@@ -5082,7 +5082,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1632,
             "low": 1440,
             "close": 1464,
-            "volume": 112
+            "volume": 106
         },
         {
             "time": "Day 3",
@@ -5090,7 +5090,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1680,
             "low": 1452,
             "close": 1656,
-            "volume": 127
+            "volume": 109
         },
         {
             "time": "Day 4",
@@ -5098,7 +5098,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1668,
             "low": 1380,
             "close": 1392,
-            "volume": 98
+            "volume": 92
         }
     ],
     drawings: [
@@ -5119,10 +5119,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 상승 연장이므로 추가 매수",
-        "이중 천정형(Double Top / M 패턴) 완성으로 상승 추세가 종료되고 하락 반전될 가능성 매우 큼",
-        "일시적인 횡보 조절 국면",
-        "아무 조건 없는 단순 가격 노이즈"
+        "상승 추세의 지속 연장에 따른 추가 매수",
+        "이중 천정형(M 패턴) 완성에 따른 하락 반전 대비",
+        "단기 조정에 따른 일시적 횡보 박스권 진입",
+        "방향성 없는 일상적인 잔파동으로 판단해 홀딩"
     ],
     correctIndex: 1,
     explanation: "고점에서 지지받지 못하고 형성된 M자형 '이중 천정형(Double Top)' 패턴입니다. 두 차례 강력한 저항벽(1,680달러)을 넘지 못하고 넥라인(1,440달러)마저 붕괴했으므로 하방 추세가 가속화된다는 신호입니다."
@@ -5141,7 +5141,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1200,
             "low": 960,
             "close": 1140,
-            "volume": 86
+            "volume": 118
         },
         {
             "time": "Day 2",
@@ -5149,7 +5149,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1200,
             "low": 1032,
             "close": 1176,
-            "volume": 92
+            "volume": 113
         },
         {
             "time": "Day 3",
@@ -5157,7 +5157,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1200,
             "low": 1104,
             "close": 1188,
-            "volume": 116
+            "volume": 104
         }
     ],
     drawings: [
@@ -5197,10 +5197,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "디센딩 트라이앵글 (Descending Triangle) - 대개 하방 돌파",
-        "어센딩 트라이앵글 (Ascending Triangle / 상승 삼각수렴) - 매수 압력이 우위에 있어 일반적으로 상방 돌파",
-        "헤드앤숄더 패턴 - 하방 돌파",
-        "상향 평행 채널 - 횡보"
+        "디센딩 트라이앵글 - 일반적으로 하방 돌파 기대",
+        "어센딩 트라이앵글 - 매수 압력 우위로 상방 돌파 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 기대",
+        "상향 평행 채널 - 상하단 터치식 채널 매매 기대"
     ],
     correctIndex: 1,
     explanation: "고점 저항은 평평하고 저점은 계속 높아지는 삼각수렴을 '어센딩 트라이앵글(Ascending Triangle)'이라고 합니다. 위로 갈수록 저점이 계속 올라가는 현상은 매수세가 가격을 위로 계속 압박하고 있음을 증명하며, 대개 저항선(1,200달러)을 상향 뚫고 오르는 확률이 높습니다."
@@ -5219,7 +5219,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1200,
             "low": 960,
             "close": 1140,
-            "volume": 96
+            "volume": 100
         },
         {
             "time": "Day 2",
@@ -5227,7 +5227,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1200,
             "low": 1056,
             "close": 1164,
-            "volume": 116
+            "volume": 96
         },
         {
             "time": "Day 3",
@@ -5235,7 +5235,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1176,
             "low": 1092,
             "close": 1104,
-            "volume": 119
+            "volume": 111
         }
     ],
     drawings: [
@@ -5271,10 +5271,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "예측이 틀려 어센딩 패턴이 아래로 파괴(Breakdown)되었으므로 시나리오 실패를 즉각 인정하고 기계적으로 전량 손절매하여 계좌 추가 파산을 방지한다.",
-        "960달러선까지 평단가를 낮추는 대규모 물타기 추가 매수를 시작한다.",
-        "손절매 없이 본전 1,200달러가 올 때까지 무조건 홀딩(존버)한다.",
-        "아무 관리 주문 없이 차트창을 닫고 외면한다."
+        "하방 이탈 확인 즉시 손절하여 추가 폭락 차단",
+        "조정을 이용해 평단가를 조절하는 분할 물타기",
+        "본전 탈출 시까지 포지션을 유지하며 관망",
+        "손절 라인을 하단으로 조정하고 대기 주문 유지"
     ],
     correctIndex: 0,
     explanation: "어센딩 트라이앵글은 상방 확률이 다소 높지만, 하단 지지선이 뚫려 무너지는 순간 패턴 실패와 함께 엄청난 실망 매도 매물이 출하됩니다. 특히 돌파를 미리 예견해 들어간 포지션은 즉시 룰 위반을 시정하고 손절(1,104달러)해야 큰 자산 보호를 할 수 있습니다."
@@ -5293,7 +5293,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1140,
             "low": 840,
             "close": 936,
-            "volume": 102
+            "volume": 100
         },
         {
             "time": "Day 2",
@@ -5301,7 +5301,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 984,
             "low": 720,
             "close": 900,
-            "volume": 93
+            "volume": 105
         },
         {
             "time": "Day 3",
@@ -5309,7 +5309,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 948,
             "low": 816,
             "close": 912,
-            "volume": 115
+            "volume": 116
         },
         {
             "time": "Day 4",
@@ -5317,7 +5317,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1056,
             "low": 900,
             "close": 1044,
-            "volume": 105
+            "volume": 92
         }
     ],
     drawings: [
@@ -5334,10 +5334,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "포모(FOMO / 소외 불안)를 이기지 못하고 꼭대기(1,044달러)에서 전액 시장가 추격 매수한다.",
-        "돌파봉 꼭대기에서 타는 것보다, 향후 넥라인(960달러선) 부근으로 엔비디아 주가가 눌려 새로운 지지선으로 작동(Retest)하는 조정을 보일 때까지 차분히 대기하여 지지 안착 확인 후 눌림목에서 정석 매수한다.",
-        "추세가 끝났으므로 숏 포지션만 진입한다.",
-        "무조건 상장폐지될 성장주이라 조롱하며 관심종목에서 지운다."
+        "포모(FOMO) 현상에 따른 돌파봉 꼭대기 추격 매수",
+        "돌파 넥라인 부근의 리테스트 조정 눌림목 매수",
+        "반등 랠리 종결 판단에 따른 역베팅 숏 포지션",
+        "추세 전환 확인 후 무조건적인 관심종목 제외"
     ],
     correctIndex: 1,
     explanation: "강한 패턴 돌파봉 확인 후 뇌동매매로 추격하는 것은 손절 거리가 너무 멀어져 손익비가 최악인 나쁜 습관입니다. 정석 돌파 트레이더는 넥라인 역할 전환 지점(960달러)으로의 되돌림 눌림목(Retest)을 차분히 기다려 리스크를 짧게 끊고 들어가는 훈련을 해야 합니다."
@@ -5356,7 +5356,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1584,
             "low": 1320,
             "close": 1344,
-            "volume": 93
+            "volume": 99
         },
         {
             "time": "Day 2",
@@ -5364,7 +5364,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1392,
             "low": 1224,
             "close": 1248,
-            "volume": 100
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -5372,7 +5372,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1296,
             "low": 1176,
             "close": 1200,
-            "volume": 100
+            "volume": 105
         },
         {
             "time": "Day 4",
@@ -5380,14 +5380,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1344,
             "low": 1188,
             "close": 1320,
-            "volume": 95
+            "volume": 111
         }
     ],
     options: [
-        "손절가를 전혀 설정하지 않고 오직 청산가에 포지션 운명을 맡긴다.",
-        "상방 돌파 확인 즉시 매수를 개시하되, 손절가는 쐐기형 수렴의 직전 최저점(1,176달러선) 바로 아래 또는 돌파 봉의 시가 하방에 배치하여 손절폭을 타이트하게 관리한다.",
-        "평단가가 1,080달러가 될 때까지 손절 없이 10차례에 걸쳐 분할로 물타기한다.",
-        "쐐기형 붕괴이므로 무조건 숏(공매도)으로 전환한다."
+        "손절 없이 청산가에 의존하여 장기 홀딩",
+        "상방 돌파 확인 후 진입 및 직전 최저점 손절 셋업",
+        "평단가 개선을 위한 지속적인 분할 물타기 매수",
+        "상단 저항선 돌파 시점을 이용한 숏 포지션 스위칭"
     ],
     correctIndex: 1,
     explanation: "하락 쐐기형(Falling Wedge)의 상방 돌파는 강력한 반전 신호입니다. 이 패턴의 장점은 진입 즉시 명확하고 짧은 기준점(수렴 바닥 최저가 1,176달러 혹은 돌파봉 하단)을 손절가로 설정할 수 있어, 리스크 한도를 안전하게 통제한 채 상방 랠리를 도모할 수 있다는 점입니다."
@@ -5406,7 +5406,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 3360,
             "low": 3120,
             "close": 3336,
-            "volume": 80
+            "volume": 105
         },
         {
             "time": "Day 2",
@@ -5414,7 +5414,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 3540,
             "low": 3264,
             "close": 3480,
-            "volume": 30
+            "volume": 18
         },
         {
             "time": "Day 3",
@@ -5422,7 +5422,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 3660,
             "low": 3576,
             "close": 3612,
-            "volume": 29
+            "volume": 32
         }
     ],
     drawings: [
@@ -5447,10 +5447,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "상승 쐐기형 패턴은 전형적인 하락 이탈(Bearish Breakdown) 패턴이며 거래량 축소는 신뢰도 저하를 반증하므로, 롱 포지션을 즉시 정리/매도하여 비중을 비우거나 하단선 붕괴 확정 시 숏 포지션 구축을 모색한다.",
-        "추세 상승 지속으로 확신하고 신용 레버리지를 이용해 풀매수한다.",
-        "6,000달러가 돌파될 때까지 절대 손절 없이 무기한 보유한다.",
-        "다른 카지노 도박에 참여한다."
+        "상승 쐐기형 하방 이탈 위험에 따른 롱 포지션 매도",
+        "상승 지속 확신에 따른 레버리지 추가 불타기",
+        "장기 상승 흐름 기대로 손절 없이 무기한 홀딩",
+        "다른 종목으로의 포지션 분산을 위한 관망"
     ],
     correctIndex: 0,
     explanation: "상승 쐐기형(Rising Wedge)은 약세 세력이 억지로 쥐어짜며 상승 가격을 만드는 패턴으로, 수렴 끝에서 거래량 소멸과 함께 하방 이탈(Breakdown)하여 폭락할 위험이 매우 높은 대표적인 하락 대비 패턴입니다. 하단 지지선 이탈 낌새 시에는 매수 포지션을 전부 도망쳐 나와야 큰 손실을 막을 수 있습니다."
@@ -5469,7 +5469,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1704,
             "low": 1536,
             "close": 1560,
-            "volume": 85
+            "volume": 104
         },
         {
             "time": "Day 2",
@@ -5477,7 +5477,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1680,
             "low": 1548,
             "close": 1656,
-            "volume": 94
+            "volume": 123
         },
         {
             "time": "Day 3",
@@ -5485,7 +5485,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1680,
             "low": 1608,
             "close": 1620,
-            "volume": 109
+            "volume": 121
         },
         {
             "time": "Day 4",
@@ -5493,14 +5493,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1848,
             "low": 1608,
             "close": 1824,
-            "volume": 120
+            "volume": 94
         }
     ],
     options: [
-        "이전 컵 깊이만큼의 강력한 2차 상승 파동 랠리가 시작될 확률이 높으므로, 핸들 저점(1,608달러) 바로 아래에 손절매를 걸어두고 신규 매수(롱) 포지션을 진입한다.",
-        "컵앤핸들은 하락 사멸 패턴이므로 즉시 전량 매도 및 손절 처리한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "상황을 외면하고 포지션을 청산한 뒤 게임을 켠다."
+        "핸들 상방 돌파 확인 후 진입 및 핸들 저점 손절",
+        "하락 지속 판단에 따른 즉각적인 전량 손절",
+        "평단가 부근이므로 추가 손절 설정 없이 관망",
+        "돌파 여부 확인 전 고점 돌파 매수 주문 100%"
     ],
     correctIndex: 0,
     explanation: "전형적인 강세 지속 패턴인 컵앤핸들(Cup & Handle)입니다. 핸들의 하락 조정 채널 상단 돌파는 매물 소화를 성공적으로 완수하고 본 랠리로 진입한다는 강력한 신호입니다. 손익비 관점에서 핸들의 지지 저점인 1,608달러 아래에 안전 손절을 지정한 뒤 진입 시 우수한 기대 수익을 가질 수 있습니다."
@@ -5519,7 +5519,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2100,
             "low": 1800,
             "close": 2040,
-            "volume": 83
+            "volume": 82
         },
         {
             "time": "Day 2",
@@ -5527,7 +5527,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2100,
             "low": 1860,
             "close": 2060,
-            "volume": 117
+            "volume": 119
         },
         {
             "time": "Day 3",
@@ -5535,7 +5535,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2100,
             "low": 1920,
             "close": 2080,
-            "volume": 110
+            "volume": 103
         }
     ],
     drawings: [
@@ -5557,9 +5557,9 @@ export const quizzes_patterns_breakout: QuizItem[] = [
     ],
     options: [
         "저항선 부근에서 고점들이 점점 급락하며 붕괴하는 현상",
-        "저항선 아래에서 조정을 받을 때, 저점들이 점점 높아지며 저항선을 향해 밀어 올리는 현상 (매수 우위 수렴)",
-        "거래량이 완전 소멸하여 영원히 횡보하는 상태",
-        "갑작스럽게 아무 이유 없이 급락하는 현상"
+        "저항선 부근에서 저점들을 높여가며 밀어 올리는 수렴 현상",
+        "거래량이 완전히 소멸하여 긴 횡보 상태를 보이는 현상",
+        "지속적인 매도세로 인해 갑작스럽게 급락하는 현상"
     ],
     correctIndex: 1,
     explanation: "저항을 뚫지 못하고 밀려 내려올 때, 이전 저점보다 높은 지점에서 저점을 계속 잡아 올려주는 것은 매도 압력보다 매수 압력이 점점 올라오고 있음을 의미합니다. 수렴 끝에 돌파가 나타날 신뢰도가 매우 높습니다."
@@ -5578,7 +5578,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2300,
             "low": 1960,
             "close": 2200,
-            "volume": 113
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -5586,7 +5586,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2600,
             "low": 1900,
             "close": 2100,
-            "volume": 104
+            "volume": 92
         },
         {
             "time": "Day 3",
@@ -5594,7 +5594,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2280,
             "low": 1920,
             "close": 2200,
-            "volume": 89
+            "volume": 123
         },
         {
             "time": "Day 4",
@@ -5602,7 +5602,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2220,
             "low": 1860,
             "close": 1880,
-            "volume": 97
+            "volume": 96
         }
     ],
     drawings: [
@@ -5623,10 +5623,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "머리 꼭대기(2,600달러) 부근에서 예측 공매도",
-        "오른쪽 어깨가 올라가고 있을 때 미리 선진입",
-        "저점들을 연결한 핵심 지지선인 '넥라인'을 확실하게 하방 돌파(Breakdown) 완료할 때",
-        "패턴 돌파 여부와 무관하게 오른쪽 어깨 끝에서 대기"
+        "머리 꼭대기(2,600달러) 부근에서 예측 숏 진입",
+        "오른쪽 어깨가 올라가고 있을 때 돌파 전 선진입",
+        "저점들을 연결한 넥라인의 하방 돌파 완료 시",
+        "패턴 완성과 무관하게 오른쪽 어깨 끝에서 대기"
     ],
     correctIndex: 2,
     explanation: "헤드앤숄더(Head & Shoulders) 패턴은 오른쪽 어깨를 그린 후, 저점 지지선인 '넥라인(Neckline)'을 거래량을 실어 하방 돌파해야 최종 완성이 선언됩니다. 그전에 진입하면 넥라인 반등 시 극심한 손실을 입습니다."
@@ -5645,7 +5645,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2000,
             "low": 1600,
             "close": 1700,
-            "volume": 89
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -5653,7 +5653,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1900,
             "low": 1680,
             "close": 1880,
-            "volume": 98
+            "volume": 85
         },
         {
             "time": "Day 3",
@@ -5661,7 +5661,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1900,
             "low": 1580,
             "close": 1640,
-            "volume": 110
+            "volume": 108
         },
         {
             "time": "Day 4",
@@ -5669,7 +5669,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1980,
             "low": 1620,
             "close": 1960,
-            "volume": 92
+            "volume": 93
         }
     ],
     drawings: [
@@ -5690,10 +5690,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "추가 폭락 예고이므로 전액 손절",
-        "이중 바닥형(W 패턴) 완성으로 강력한 상승 전환 시그널, 1,900달러 넥라인 돌파 시점 또는 눌림목 매수",
-        "박스권 횡보이므로 양방향 무시",
-        "쌍바닥이 깨진 것이므로 공매도"
+        "추가 폭락 가능성에 따른 전량 손절 대응",
+        "W 패턴 이중 바닥 완성 및 넥라인 돌파 시 매수",
+        "박스권 횡보 판단에 따른 무대응 및 관망",
+        "이중 바닥의 하방 이탈을 예상한 숏 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "W자 모양의 '이중 바닥형(Double Bottom)' 패턴입니다. 리플 시세가 하락을 멈추고 바닥을 두 차례 단단히 지지해 준 뒤 중간 봉우리(넥라인 1,900달러)를 돌파해 마감하면 추세가 상승으로 강하게 전환될 가능성이 매우 높습니다."
@@ -5712,7 +5712,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1600,
             "low": 980,
             "close": 1560,
-            "volume": 117
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -5720,7 +5720,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1580,
             "low": 1440,
             "close": 1480,
-            "volume": 99
+            "volume": 96
         },
         {
             "time": "Day 3",
@@ -5728,7 +5728,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1520,
             "low": 1400,
             "close": 1420,
-            "volume": 100
+            "volume": 121
         },
         {
             "time": "Day 4",
@@ -5736,14 +5736,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1700,
             "low": 1400,
             "close": 1660,
-            "volume": 111
+            "volume": 120
         }
     ],
     options: [
-        "이중 천정형 패턴 - 목표가 없음",
-        "불 플래그 (Bull Flag) 패턴 - 깃대의 높이(약 600달러 상승폭)만큼 돌파 지점부터 2차 폭등 랠리 기대",
-        "헤드앤숄더 패턴 - 하락 타겟 계산",
-        "대칭 삼각수렴 - 변동성 붕괴"
+        "이중 천정형 패턴 - 고점 도달 시 숏 진입",
+        "불 플래그 패턴 - 깃발 돌파 시 추가 상승 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 타겟",
+        "대칭 삼각수렴 패턴 - 변동성 축소 후 돌파 대기"
     ],
     correctIndex: 1,
     explanation: "대표적 강세 지속 패턴인 '불 플래그(Bull Flag)'입니다. 급격한 상승(깃대) 뒤 숨 고르기 채널(깃발)을 상방 돌파하면, 이전 상승 파동의 크기(깃대 높이)만큼 추가로 수직 랠리를 시작하는 관성이 있습니다."
@@ -5762,7 +5762,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2800,
             "low": 1980,
             "close": 2700,
-            "volume": 111
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -5770,7 +5770,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2720,
             "low": 2400,
             "close": 2440,
-            "volume": 88
+            "volume": 85
         },
         {
             "time": "Day 3",
@@ -5778,7 +5778,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2800,
             "low": 2420,
             "close": 2760,
-            "volume": 118
+            "volume": 92
         },
         {
             "time": "Day 4",
@@ -5786,7 +5786,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2780,
             "low": 2300,
             "close": 2320,
-            "volume": 107
+            "volume": 130
         }
     ],
     drawings: [
@@ -5807,10 +5807,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 상승 연장이므로 추가 매수",
-        "이중 천정형(Double Top / M 패턴) 완성으로 상승 추세가 종료되고 하락 반전될 가능성 매우 큼",
-        "일시적인 횡보 조절 국면",
-        "아무 조건 없는 단순 가격 노이즈"
+        "상승 추세의 지속 연장에 따른 추가 매수",
+        "이중 천정형(M 패턴) 완성에 따른 하락 반전 대비",
+        "단기 조정에 따른 일시적 횡보 박스권 진입",
+        "방향성 없는 일상적인 잔파동으로 판단해 홀딩"
     ],
     correctIndex: 1,
     explanation: "고점에서 지지받지 못하고 형성된 M자형 '이중 천정형(Double Top)' 패턴입니다. 두 차례 강력한 저항벽(2,800달러)을 넘지 못하고 넥라인(2,400달러)마저 붕괴했으므로 하방 추세가 가속화된다는 신호입니다."
@@ -5829,7 +5829,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2000,
             "low": 1600,
             "close": 1900,
-            "volume": 93
+            "volume": 90
         },
         {
             "time": "Day 2",
@@ -5837,7 +5837,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2000,
             "low": 1720,
             "close": 1960,
-            "volume": 108
+            "volume": 96
         },
         {
             "time": "Day 3",
@@ -5845,7 +5845,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2000,
             "low": 1840,
             "close": 1980,
-            "volume": 101
+            "volume": 88
         }
     ],
     drawings: [
@@ -5885,10 +5885,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "디센딩 트라이앵글 (Descending Triangle) - 대개 하방 돌파",
-        "어센딩 트라이앵글 (Ascending Triangle / 상승 삼각수렴) - 매수 압력이 우위에 있어 일반적으로 상방 돌파",
-        "헤드앤숄더 패턴 - 하방 돌파",
-        "상향 평행 채널 - 횡보"
+        "디센딩 트라이앵글 - 일반적으로 하방 돌파 기대",
+        "어센딩 트라이앵글 - 매수 압력 우위로 상방 돌파 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 기대",
+        "상향 평행 채널 - 상하단 터치식 채널 매매 기대"
     ],
     correctIndex: 1,
     explanation: "고점 저항은 평평하고 저점은 계속 높아지는 삼각수렴을 '어센딩 트라이앵글(Ascending Triangle)'이라고 합니다. 위로 갈수록 저점이 계속 올라가는 현상은 매수세가 가격을 위로 계속 압박하고 있음을 증명하며, 대개 저항선(2,000달러)을 상향 뚫고 오르는 확률이 높습니다."
@@ -5915,7 +5915,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2000,
             "low": 1760,
             "close": 1940,
-            "volume": 96
+            "volume": 114
         },
         {
             "time": "Day 3",
@@ -5923,7 +5923,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1960,
             "low": 1820,
             "close": 1840,
-            "volume": 96
+            "volume": 90
         }
     ],
     drawings: [
@@ -5959,10 +5959,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "예측이 틀려 어센딩 패턴이 아래로 파괴(Breakdown)되었으므로 시나리오 실패를 즉각 인정하고 기계적으로 전량 손절매하여 계좌 추가 파산을 방지한다.",
-        "1,600달러선까지 평단가를 낮추는 대규모 물타기 추가 매수를 시작한다.",
-        "손절매 없이 본전 2,000달러가 올 때까지 무조건 홀딩(존버)한다.",
-        "아무 관리 주문 없이 차트창을 닫고 외면한다."
+        "하방 이탈 확인 즉시 손절하여 추가 폭락 차단",
+        "조정을 이용해 평단가를 조절하는 분할 물타기",
+        "본전 탈출 시까지 포지션을 유지하며 관망",
+        "손절 라인을 하단으로 조정하고 대기 주문 유지"
     ],
     correctIndex: 0,
     explanation: "어센딩 트라이앵글은 상방 확률이 다소 높지만, 하단 지지선이 뚫려 무너지는 순간 패턴 실패와 함께 엄청난 실망 매도 매물이 출하됩니다. 특히 돌파를 미리 예견해 들어간 포지션은 즉시 룰 위반을 시정하고 손절(1,840달러)해야 큰 자산 보호를 할 수 있습니다."
@@ -5981,7 +5981,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1900,
             "low": 1400,
             "close": 1560,
-            "volume": 107
+            "volume": 100
         },
         {
             "time": "Day 2",
@@ -5989,7 +5989,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1640,
             "low": 1200,
             "close": 1500,
-            "volume": 105
+            "volume": 114
         },
         {
             "time": "Day 3",
@@ -5997,7 +5997,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1580,
             "low": 1360,
             "close": 1520,
-            "volume": 118
+            "volume": 117
         },
         {
             "time": "Day 4",
@@ -6005,7 +6005,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 1760,
             "low": 1500,
             "close": 1740,
-            "volume": 129
+            "volume": 113
         }
     ],
     drawings: [
@@ -6022,10 +6022,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "포모(FOMO / 소외 불안)를 이기지 못하고 꼭대기(1,740달러)에서 전액 시장가 추격 매수한다.",
-        "돌파봉 꼭대기에서 타는 것보다, 향후 넥라인(1,600달러선) 부근으로 리플 시세가 눌려 새로운 지지선으로 작동(Retest)하는 조정을 보일 때까지 차분히 대기하여 지지 안착 확인 후 눌림목에서 정석 매수한다.",
-        "추세가 끝났으므로 숏 포지션만 진입한다.",
-        "무조건 상장폐지될 메이저 코인이라 조롱하며 관심종목에서 지운다."
+        "포모(FOMO) 현상에 따른 돌파봉 꼭대기 추격 매수",
+        "돌파 넥라인 부근의 리테스트 조정 눌림목 매수",
+        "반등 랠리 종결 판단에 따른 역베팅 숏 포지션",
+        "추세 전환 확인 후 무조건적인 관심종목 제외"
     ],
     correctIndex: 1,
     explanation: "강한 패턴 돌파봉 확인 후 뇌동매매로 추격하는 것은 손절 거리가 너무 멀어져 손익비가 최악인 나쁜 습관입니다. 정석 돌파 트레이더는 넥라인 역할 전환 지점(1,600달러)으로의 되돌림 눌림목(Retest)을 차분히 기다려 리스크를 짧게 끊고 들어가는 훈련을 해야 합니다."
@@ -6044,7 +6044,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2640,
             "low": 2200,
             "close": 2240,
-            "volume": 84
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -6052,7 +6052,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2320,
             "low": 2040,
             "close": 2080,
-            "volume": 97
+            "volume": 114
         },
         {
             "time": "Day 3",
@@ -6060,7 +6060,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2160,
             "low": 1960,
             "close": 2000,
-            "volume": 108
+            "volume": 118
         },
         {
             "time": "Day 4",
@@ -6068,14 +6068,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2240,
             "low": 1980,
             "close": 2200,
-            "volume": 125
+            "volume": 129
         }
     ],
     options: [
-        "손절가를 전혀 설정하지 않고 오직 청산가에 포지션 운명을 맡긴다.",
-        "상방 돌파 확인 즉시 매수를 개시하되, 손절가는 쐐기형 수렴의 직전 최저점(1,960달러선) 바로 아래 또는 돌파 봉의 시가 하방에 배치하여 손절폭을 타이트하게 관리한다.",
-        "평단가가 1,800달러가 될 때까지 손절 없이 10차례에 걸쳐 분할로 물타기한다.",
-        "쐐기형 붕괴이므로 무조건 숏(공매도)으로 전환한다."
+        "손절 없이 청산가에 의존하여 장기 홀딩",
+        "상방 돌파 확인 후 진입 및 직전 최저점 손절 셋업",
+        "평단가 개선을 위한 지속적인 분할 물타기 매수",
+        "상단 저항선 돌파 시점을 이용한 숏 포지션 스위칭"
     ],
     correctIndex: 1,
     explanation: "하락 쐐기형(Falling Wedge)의 상방 돌파는 강력한 반전 신호입니다. 이 패턴의 장점은 진입 즉시 명확하고 짧은 기준점(수렴 바닥 최저가 1,960달러 혹은 돌파봉 하단)을 손절가로 설정할 수 있어, 리스크 한도를 안전하게 통제한 채 상방 랠리를 도모할 수 있다는 점입니다."
@@ -6094,7 +6094,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5600,
             "low": 5200,
             "close": 5560,
-            "volume": 92
+            "volume": 82
         },
         {
             "time": "Day 2",
@@ -6102,7 +6102,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5900,
             "low": 5440,
             "close": 5800,
-            "volume": 32
+            "volume": 29
         },
         {
             "time": "Day 3",
@@ -6110,7 +6110,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 6100,
             "low": 5960,
             "close": 6020,
-            "volume": 22
+            "volume": 34
         }
     ],
     drawings: [
@@ -6135,10 +6135,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "상승 쐐기형 패턴은 전형적인 하락 이탈(Bearish Breakdown) 패턴이며 거래량 축소는 신뢰도 저하를 반증하므로, 롱 포지션을 즉시 정리/매도하여 비중을 비우거나 하단선 붕괴 확정 시 숏 포지션 구축을 모색한다.",
-        "추세 상승 지속으로 확신하고 신용 레버리지를 이용해 풀매수한다.",
-        "10,000달러가 돌파될 때까지 절대 손절 없이 무기한 보유한다.",
-        "다른 카지노 도박에 참여한다."
+        "상승 쐐기형 하방 이탈 위험에 따른 롱 포지션 매도",
+        "상승 지속 확신에 따른 레버리지 추가 불타기",
+        "장기 상승 흐름 기대로 손절 없이 무기한 홀딩",
+        "다른 종목으로의 포지션 분산을 위한 관망"
     ],
     correctIndex: 0,
     explanation: "상승 쐐기형(Rising Wedge)은 약세 세력이 억지로 쥐어짜며 상승 가격을 만드는 패턴으로, 수렴 끝에서 거래량 소멸과 함께 하방 이탈(Breakdown)하여 폭락할 위험이 매우 높은 대표적인 하락 대비 패턴입니다. 하단 지지선 이탈 낌새 시에는 매수 포지션을 전부 도망쳐 나와야 큰 손실을 막을 수 있습니다."
@@ -6157,7 +6157,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2840,
             "low": 2560,
             "close": 2600,
-            "volume": 99
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -6165,7 +6165,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2800,
             "low": 2580,
             "close": 2760,
-            "volume": 114
+            "volume": 121
         },
         {
             "time": "Day 3",
@@ -6173,7 +6173,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 2800,
             "low": 2680,
             "close": 2700,
-            "volume": 107
+            "volume": 94
         },
         {
             "time": "Day 4",
@@ -6181,14 +6181,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 3080,
             "low": 2680,
             "close": 3040,
-            "volume": 131
+            "volume": 104
         }
     ],
     options: [
-        "이전 컵 깊이만큼의 강력한 2차 상승 파동 랠리가 시작될 확률이 높으므로, 핸들 저점(2,680달러) 바로 아래에 손절매를 걸어두고 신규 매수(롱) 포지션을 진입한다.",
-        "컵앤핸들은 하락 사멸 패턴이므로 즉시 전량 매도 및 손절 처리한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "상황을 외면하고 포지션을 청산한 뒤 게임을 켠다."
+        "핸들 상방 돌파 확인 후 진입 및 핸들 저점 손절",
+        "하락 지속 판단에 따른 즉각적인 전량 손절",
+        "평단가 부근이므로 추가 손절 설정 없이 관망",
+        "돌파 여부 확인 전 고점 돌파 매수 주문 100%"
     ],
     correctIndex: 0,
     explanation: "전형적인 강세 지속 패턴인 컵앤핸들(Cup & Handle)입니다. 핸들의 하락 조정 채널 상단 돌파는 매물 소화를 성공적으로 완수하고 본 랠리로 진입한다는 강력한 신호입니다. 손익비 관점에서 핸들의 지지 저점인 2,680달러 아래에 안전 손절을 지정한 뒤 진입 시 우수한 기대 수익을 가질 수 있습니다."
@@ -6207,7 +6207,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5250,
             "low": 4500,
             "close": 5100,
-            "volume": 111
+            "volume": 107
         },
         {
             "time": "Day 2",
@@ -6215,7 +6215,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5250,
             "low": 4650,
             "close": 5150,
-            "volume": 92
+            "volume": 115
         },
         {
             "time": "Day 3",
@@ -6223,7 +6223,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5250,
             "low": 4800,
             "close": 5200,
-            "volume": 109
+            "volume": 100
         }
     ],
     drawings: [
@@ -6245,9 +6245,9 @@ export const quizzes_patterns_breakout: QuizItem[] = [
     ],
     options: [
         "저항선 부근에서 고점들이 점점 급락하며 붕괴하는 현상",
-        "저항선 아래에서 조정을 받을 때, 저점들이 점점 높아지며 저항선을 향해 밀어 올리는 현상 (매수 우위 수렴)",
-        "거래량이 완전 소멸하여 영원히 횡보하는 상태",
-        "갑작스럽게 아무 이유 없이 급락하는 현상"
+        "저항선 부근에서 저점들을 높여가며 밀어 올리는 수렴 현상",
+        "거래량이 완전히 소멸하여 긴 횡보 상태를 보이는 현상",
+        "지속적인 매도세로 인해 갑작스럽게 급락하는 현상"
     ],
     correctIndex: 1,
     explanation: "저항을 뚫지 못하고 밀려 내려올 때, 이전 저점보다 높은 지점에서 저점을 계속 잡아 올려주는 것은 매도 압력보다 매수 압력이 점점 올라오고 있음을 의미합니다. 수렴 끝에 돌파가 나타날 신뢰도가 매우 높습니다."
@@ -6266,7 +6266,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5750,
             "low": 4900,
             "close": 5500,
-            "volume": 94
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -6274,7 +6274,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 6500,
             "low": 4750,
             "close": 5250,
-            "volume": 119
+            "volume": 95
         },
         {
             "time": "Day 3",
@@ -6282,7 +6282,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5700,
             "low": 4800,
             "close": 5500,
-            "volume": 118
+            "volume": 115
         },
         {
             "time": "Day 4",
@@ -6290,7 +6290,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5550,
             "low": 4650,
             "close": 4700,
-            "volume": 112
+            "volume": 121
         }
     ],
     drawings: [
@@ -6311,10 +6311,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "머리 꼭대기(6,500달러) 부근에서 예측 공매도",
-        "오른쪽 어깨가 올라가고 있을 때 미리 선진입",
-        "저점들을 연결한 핵심 지지선인 '넥라인'을 확실하게 하방 돌파(Breakdown) 완료할 때",
-        "패턴 돌파 여부와 무관하게 오른쪽 어깨 끝에서 대기"
+        "머리 꼭대기(6,500달러) 부근에서 예측 숏 진입",
+        "오른쪽 어깨가 올라가고 있을 때 돌파 전 선진입",
+        "저점들을 연결한 넥라인의 하방 돌파 완료 시",
+        "패턴 완성과 무관하게 오른쪽 어깨 끝에서 대기"
     ],
     correctIndex: 2,
     explanation: "헤드앤숄더(Head & Shoulders) 패턴은 오른쪽 어깨를 그린 후, 저점 지지선인 '넥라인(Neckline)'을 거래량을 실어 하방 돌파해야 최종 완성이 선언됩니다. 그전에 진입하면 넥라인 반등 시 극심한 손실을 입습니다."
@@ -6333,7 +6333,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5000,
             "low": 4000,
             "close": 4250,
-            "volume": 81
+            "volume": 117
         },
         {
             "time": "Day 2",
@@ -6341,7 +6341,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 4750,
             "low": 4200,
             "close": 4700,
-            "volume": 90
+            "volume": 101
         },
         {
             "time": "Day 3",
@@ -6349,7 +6349,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 4750,
             "low": 3950,
             "close": 4100,
-            "volume": 99
+            "volume": 122
         },
         {
             "time": "Day 4",
@@ -6357,7 +6357,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 4950,
             "low": 4050,
             "close": 4900,
-            "volume": 117
+            "volume": 112
         }
     ],
     drawings: [
@@ -6378,10 +6378,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "추가 폭락 예고이므로 전액 손절",
-        "이중 바닥형(W 패턴) 완성으로 강력한 상승 전환 시그널, 4,750달러 넥라인 돌파 시점 또는 눌림목 매수",
-        "박스권 횡보이므로 양방향 무시",
-        "쌍바닥이 깨진 것이므로 공매도"
+        "추가 폭락 가능성에 따른 전량 손절 대응",
+        "W 패턴 이중 바닥 완성 및 넥라인 돌파 시 매수",
+        "박스권 횡보 판단에 따른 무대응 및 관망",
+        "이중 바닥의 하방 이탈을 예상한 숏 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "W자 모양의 '이중 바닥형(Double Bottom)' 패턴입니다. 골드 가격가 하락을 멈추고 바닥을 두 차례 단단히 지지해 준 뒤 중간 봉우리(넥라인 4,750달러)를 돌파해 마감하면 추세가 상승으로 강하게 전환될 가능성이 매우 높습니다."
@@ -6400,7 +6400,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 4000,
             "low": 2450,
             "close": 3900,
-            "volume": 104
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -6408,7 +6408,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 3950,
             "low": 3600,
             "close": 3700,
-            "volume": 122
+            "volume": 97
         },
         {
             "time": "Day 3",
@@ -6416,7 +6416,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 3800,
             "low": 3500,
             "close": 3550,
-            "volume": 118
+            "volume": 88
         },
         {
             "time": "Day 4",
@@ -6424,14 +6424,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 4250,
             "low": 3500,
             "close": 4150,
-            "volume": 130
+            "volume": 95
         }
     ],
     options: [
-        "이중 천정형 패턴 - 목표가 없음",
-        "불 플래그 (Bull Flag) 패턴 - 깃대의 높이(약 1,500달러 상승폭)만큼 돌파 지점부터 2차 폭등 랠리 기대",
-        "헤드앤숄더 패턴 - 하락 타겟 계산",
-        "대칭 삼각수렴 - 변동성 붕괴"
+        "이중 천정형 패턴 - 고점 도달 시 숏 진입",
+        "불 플래그 패턴 - 깃발 돌파 시 추가 상승 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 타겟",
+        "대칭 삼각수렴 패턴 - 변동성 축소 후 돌파 대기"
     ],
     correctIndex: 1,
     explanation: "대표적 강세 지속 패턴인 '불 플래그(Bull Flag)'입니다. 급격한 상승(깃대) 뒤 숨 고르기 채널(깃발)을 상방 돌파하면, 이전 상승 파동의 크기(깃대 높이)만큼 추가로 수직 랠리를 시작하는 관성이 있습니다."
@@ -6450,7 +6450,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 7000,
             "low": 4950,
             "close": 6750,
-            "volume": 107
+            "volume": 97
         },
         {
             "time": "Day 2",
@@ -6458,7 +6458,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 6800,
             "low": 6000,
             "close": 6100,
-            "volume": 103
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -6466,7 +6466,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 7000,
             "low": 6050,
             "close": 6900,
-            "volume": 109
+            "volume": 114
         },
         {
             "time": "Day 4",
@@ -6474,7 +6474,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 6950,
             "low": 5750,
             "close": 5800,
-            "volume": 131
+            "volume": 121
         }
     ],
     drawings: [
@@ -6495,10 +6495,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "강력한 상승 연장이므로 추가 매수",
-        "이중 천정형(Double Top / M 패턴) 완성으로 상승 추세가 종료되고 하락 반전될 가능성 매우 큼",
-        "일시적인 횡보 조절 국면",
-        "아무 조건 없는 단순 가격 노이즈"
+        "상승 추세의 지속 연장에 따른 추가 매수",
+        "이중 천정형(M 패턴) 완성에 따른 하락 반전 대비",
+        "단기 조정에 따른 일시적 횡보 박스권 진입",
+        "방향성 없는 일상적인 잔파동으로 판단해 홀딩"
     ],
     correctIndex: 1,
     explanation: "고점에서 지지받지 못하고 형성된 M자형 '이중 천정형(Double Top)' 패턴입니다. 두 차례 강력한 저항벽(7,000달러)을 넘지 못하고 넥라인(6,000달러)마저 붕괴했으므로 하방 추세가 가속화된다는 신호입니다."
@@ -6517,7 +6517,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5000,
             "low": 4000,
             "close": 4750,
-            "volume": 87
+            "volume": 101
         },
         {
             "time": "Day 2",
@@ -6525,7 +6525,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5000,
             "low": 4300,
             "close": 4900,
-            "volume": 109
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -6533,7 +6533,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5000,
             "low": 4600,
             "close": 4950,
-            "volume": 99
+            "volume": 126
         }
     ],
     drawings: [
@@ -6573,10 +6573,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "디센딩 트라이앵글 (Descending Triangle) - 대개 하방 돌파",
-        "어센딩 트라이앵글 (Ascending Triangle / 상승 삼각수렴) - 매수 압력이 우위에 있어 일반적으로 상방 돌파",
-        "헤드앤숄더 패턴 - 하방 돌파",
-        "상향 평행 채널 - 횡보"
+        "디센딩 트라이앵글 - 일반적으로 하방 돌파 기대",
+        "어센딩 트라이앵글 - 매수 압력 우위로 상방 돌파 기대",
+        "헤드앤숄더 패턴 - 넥라인 하방 돌파 기대",
+        "상향 평행 채널 - 상하단 터치식 채널 매매 기대"
     ],
     correctIndex: 1,
     explanation: "고점 저항은 평평하고 저점은 계속 높아지는 삼각수렴을 '어센딩 트라이앵글(Ascending Triangle)'이라고 합니다. 위로 갈수록 저점이 계속 올라가는 현상은 매수세가 가격을 위로 계속 압박하고 있음을 증명하며, 대개 저항선(5,000달러)을 상향 뚫고 오르는 확률이 높습니다."
@@ -6595,7 +6595,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5000,
             "low": 4000,
             "close": 4750,
-            "volume": 109
+            "volume": 115
         },
         {
             "time": "Day 2",
@@ -6603,7 +6603,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5000,
             "low": 4400,
             "close": 4850,
-            "volume": 85
+            "volume": 92
         },
         {
             "time": "Day 3",
@@ -6611,7 +6611,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 4900,
             "low": 4550,
             "close": 4600,
-            "volume": 120
+            "volume": 102
         }
     ],
     drawings: [
@@ -6647,10 +6647,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "예측이 틀려 어센딩 패턴이 아래로 파괴(Breakdown)되었으므로 시나리오 실패를 즉각 인정하고 기계적으로 전량 손절매하여 계좌 추가 파산을 방지한다.",
-        "4,000달러선까지 평단가를 낮추는 대규모 물타기 추가 매수를 시작한다.",
-        "손절매 없이 본전 5,000달러가 올 때까지 무조건 홀딩(존버)한다.",
-        "아무 관리 주문 없이 차트창을 닫고 외면한다."
+        "하방 이탈 확인 즉시 손절하여 추가 폭락 차단",
+        "조정을 이용해 평단가를 조절하는 분할 물타기",
+        "본전 탈출 시까지 포지션을 유지하며 관망",
+        "손절 라인을 하단으로 조정하고 대기 주문 유지"
     ],
     correctIndex: 0,
     explanation: "어센딩 트라이앵글은 상방 확률이 다소 높지만, 하단 지지선이 뚫려 무너지는 순간 패턴 실패와 함께 엄청난 실망 매도 매물이 출하됩니다. 특히 돌파를 미리 예견해 들어간 포지션은 즉시 룰 위반을 시정하고 손절(4,600달러)해야 큰 자산 보호를 할 수 있습니다."
@@ -6677,7 +6677,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 4100,
             "low": 3000,
             "close": 3750,
-            "volume": 90
+            "volume": 106
         },
         {
             "time": "Day 3",
@@ -6685,7 +6685,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 3950,
             "low": 3400,
             "close": 3800,
-            "volume": 115
+            "volume": 93
         },
         {
             "time": "Day 4",
@@ -6693,7 +6693,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 4400,
             "low": 3750,
             "close": 4350,
-            "volume": 131
+            "volume": 92
         }
     ],
     drawings: [
@@ -6710,10 +6710,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "포모(FOMO / 소외 불안)를 이기지 못하고 꼭대기(4,350달러)에서 전액 시장가 추격 매수한다.",
-        "돌파봉 꼭대기에서 타는 것보다, 향후 넥라인(4,000달러선) 부근으로 골드 가격가 눌려 새로운 지지선으로 작동(Retest)하는 조정을 보일 때까지 차분히 대기하여 지지 안착 확인 후 눌림목에서 정석 매수한다.",
-        "추세가 끝났으므로 숏 포지션만 진입한다.",
-        "무조건 상장폐지될 원자재이라 조롱하며 관심종목에서 지운다."
+        "포모(FOMO) 현상에 따른 돌파봉 꼭대기 추격 매수",
+        "돌파 넥라인 부근의 리테스트 조정 눌림목 매수",
+        "반등 랠리 종결 판단에 따른 역베팅 숏 포지션",
+        "추세 전환 확인 후 무조건적인 관심종목 제외"
     ],
     correctIndex: 1,
     explanation: "강한 패턴 돌파봉 확인 후 뇌동매매로 추격하는 것은 손절 거리가 너무 멀어져 손익비가 최악인 나쁜 습관입니다. 정석 돌파 트레이더는 넥라인 역할 전환 지점(4,000달러)으로의 되돌림 눌림목(Retest)을 차분히 기다려 리스크를 짧게 끊고 들어가는 훈련을 해야 합니다."
@@ -6732,7 +6732,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 6600,
             "low": 5500,
             "close": 5600,
-            "volume": 108
+            "volume": 118
         },
         {
             "time": "Day 2",
@@ -6740,7 +6740,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5800,
             "low": 5100,
             "close": 5200,
-            "volume": 120
+            "volume": 110
         },
         {
             "time": "Day 3",
@@ -6748,7 +6748,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5400,
             "low": 4900,
             "close": 5000,
-            "volume": 99
+            "volume": 125
         },
         {
             "time": "Day 4",
@@ -6756,14 +6756,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 5600,
             "low": 4950,
             "close": 5500,
-            "volume": 122
+            "volume": 121
         }
     ],
     options: [
-        "손절가를 전혀 설정하지 않고 오직 청산가에 포지션 운명을 맡긴다.",
-        "상방 돌파 확인 즉시 매수를 개시하되, 손절가는 쐐기형 수렴의 직전 최저점(4,900달러선) 바로 아래 또는 돌파 봉의 시가 하방에 배치하여 손절폭을 타이트하게 관리한다.",
-        "평단가가 4,500달러가 될 때까지 손절 없이 10차례에 걸쳐 분할로 물타기한다.",
-        "쐐기형 붕괴이므로 무조건 숏(공매도)으로 전환한다."
+        "손절 없이 청산가에 의존하여 장기 홀딩",
+        "상방 돌파 확인 후 진입 및 직전 최저점 손절 셋업",
+        "평단가 개선을 위한 지속적인 분할 물타기 매수",
+        "상단 저항선 돌파 시점을 이용한 숏 포지션 스위칭"
     ],
     correctIndex: 1,
     explanation: "하락 쐐기형(Falling Wedge)의 상방 돌파는 강력한 반전 신호입니다. 이 패턴의 장점은 진입 즉시 명확하고 짧은 기준점(수렴 바닥 최저가 4,900달러 혹은 돌파봉 하단)을 손절가로 설정할 수 있어, 리스크 한도를 안전하게 통제한 채 상방 랠리를 도모할 수 있다는 점입니다."
@@ -6782,7 +6782,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 14000,
             "low": 13000,
             "close": 13900,
-            "volume": 105
+            "volume": 83
         },
         {
             "time": "Day 2",
@@ -6790,7 +6790,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 14750,
             "low": 13600,
             "close": 14500,
-            "volume": 26
+            "volume": 29
         },
         {
             "time": "Day 3",
@@ -6798,7 +6798,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 15250,
             "low": 14900,
             "close": 15050,
-            "volume": 16
+            "volume": 19
         }
     ],
     drawings: [
@@ -6823,10 +6823,10 @@ export const quizzes_patterns_breakout: QuizItem[] = [
         }
     ],
     options: [
-        "상승 쐐기형 패턴은 전형적인 하락 이탈(Bearish Breakdown) 패턴이며 거래량 축소는 신뢰도 저하를 반증하므로, 롱 포지션을 즉시 정리/매도하여 비중을 비우거나 하단선 붕괴 확정 시 숏 포지션 구축을 모색한다.",
-        "추세 상승 지속으로 확신하고 신용 레버리지를 이용해 풀매수한다.",
-        "25,000달러가 돌파될 때까지 절대 손절 없이 무기한 보유한다.",
-        "다른 카지노 도박에 참여한다."
+        "상승 쐐기형 하방 이탈 위험에 따른 롱 포지션 매도",
+        "상승 지속 확신에 따른 레버리지 추가 불타기",
+        "장기 상승 흐름 기대로 손절 없이 무기한 홀딩",
+        "다른 종목으로의 포지션 분산을 위한 관망"
     ],
     correctIndex: 0,
     explanation: "상승 쐐기형(Rising Wedge)은 약세 세력이 억지로 쥐어짜며 상승 가격을 만드는 패턴으로, 수렴 끝에서 거래량 소멸과 함께 하방 이탈(Breakdown)하여 폭락할 위험이 매우 높은 대표적인 하락 대비 패턴입니다. 하단 지지선 이탈 낌새 시에는 매수 포지션을 전부 도망쳐 나와야 큰 손실을 막을 수 있습니다."
@@ -6845,7 +6845,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 7100,
             "low": 6400,
             "close": 6500,
-            "volume": 110
+            "volume": 112
         },
         {
             "time": "Day 2",
@@ -6853,7 +6853,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 7000,
             "low": 6450,
             "close": 6900,
-            "volume": 122
+            "volume": 103
         },
         {
             "time": "Day 3",
@@ -6861,7 +6861,7 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 7000,
             "low": 6700,
             "close": 6750,
-            "volume": 116
+            "volume": 98
         },
         {
             "time": "Day 4",
@@ -6869,14 +6869,14 @@ export const quizzes_patterns_breakout: QuizItem[] = [
             "high": 7700,
             "low": 6700,
             "close": 7600,
-            "volume": 95
+            "volume": 108
         }
     ],
     options: [
-        "이전 컵 깊이만큼의 강력한 2차 상승 파동 랠리가 시작될 확률이 높으므로, 핸들 저점(6,700달러) 바로 아래에 손절매를 걸어두고 신규 매수(롱) 포지션을 진입한다.",
-        "컵앤핸들은 하락 사멸 패턴이므로 즉시 전량 매도 및 손절 처리한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "상황을 외면하고 포지션을 청산한 뒤 게임을 켠다."
+        "핸들 상방 돌파 확인 후 진입 및 핸들 저점 손절",
+        "하락 지속 판단에 따른 즉각적인 전량 손절",
+        "평단가 부근이므로 추가 손절 설정 없이 관망",
+        "돌파 여부 확인 전 고점 돌파 매수 주문 100%"
     ],
     correctIndex: 0,
     explanation: "전형적인 강세 지속 패턴인 컵앤핸들(Cup & Handle)입니다. 핸들의 하락 조정 채널 상단 돌파는 매물 소화를 성공적으로 완수하고 본 랠리로 진입한다는 강력한 신호입니다. 손익비 관점에서 핸들의 지지 저점인 6,700달러 아래에 안전 손절을 지정한 뒤 진입 시 우수한 기대 수익을 가질 수 있습니다."

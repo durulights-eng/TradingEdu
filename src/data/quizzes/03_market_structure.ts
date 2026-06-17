@@ -15,7 +15,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 148,
             "low": 139,
             "close": 145,
-            "volume": 95
+            "volume": 86
         },
         {
             "time": "Day 2",
@@ -23,7 +23,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 149,
             "low": 143,
             "close": 144,
-            "volume": 84
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -31,7 +31,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 156,
             "low": 143,
             "close": 154,
-            "volume": 108
+            "volume": 105
         },
         {
             "time": "Day 4",
@@ -47,7 +47,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 153,
             "low": 150,
             "close": 152,
-            "volume": 330
+            "volume": 418
         }
     ],
     drawings: [
@@ -68,10 +68,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "돌파봉 꼭대기에서 뇌동매매 추격 매수",
-        "돌파된 저항선(150달러)이 지지선으로 역할 전환(Retest)에 성공할 때 눌림목 진입",
-        "140달러까지 떨어질 때까지 무작정 대기",
-        "돌파했으므로 이제 급락할 것이라 가정하고 숏 진입"
+        "돌파 시점에 시장가로 즉시 진입하는 추격 매수",
+        "돌파 후 저항선의 지지선 전환(Retest) 확인 시 진입",
+        "이전 최저가 부근인 140달러 조정 시까지 대기 매수",
+        "돌파 후 즉시 단기 조정을 예상한 역추세 숏 진입"
     ],
     correctIndex: 1,
     explanation: "저항선이 강하게 뚫리면 역할 전환(Role Reversal)에 의해 신규 지지선으로 바뀝니다. 돌파 시점에 뇌동매매하기보다는 돌파된 선 부근으로 주가가 눌려 지지(Retest)를 완성할 때 진입하는 것이 리스크 대비 기대 수익이 큽니다."
@@ -90,7 +90,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 105,
             "low": 100,
             "close": 103,
-            "volume": 82
+            "volume": 117
         },
         {
             "time": "W-4",
@@ -98,7 +98,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 110,
             "low": 102,
             "close": 108,
-            "volume": 94
+            "volume": 98
         },
         {
             "time": "W-3",
@@ -106,7 +106,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 109,
             "low": 105,
             "close": 106,
-            "volume": 126
+            "volume": 105
         },
         {
             "time": "W-2",
@@ -114,7 +114,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 115,
             "low": 107,
             "close": 113,
-            "volume": 99
+            "volume": 128
         },
         {
             "time": "Today",
@@ -122,7 +122,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 114,
             "low": 103,
             "close": 104,
-            "volume": 98
+            "volume": 101
         }
     ],
     drawings: [
@@ -147,10 +147,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세선의 이탈은 아무 영향이 없으므로 추가 홀딩",
-        "상승 추세 붕괴(Breakdown) - 하락 반전 가능성이 커지므로 비중 축소 및 손절 검토",
-        "일시적인 휩소이므로 전재산 물타기 기회",
-        "채널 상단 저항선에 부딪힌 것이므로 즉시 매수"
+        "추세선 이탈은 영향이 없으므로 비중 유지",
+        "상승 추세 붕괴로 하락 반전 대비 비중 축소",
+        "일시적인 속임수이므로 추가 불타기 진입",
+        "채널 상단 도달에 따른 즉각적인 매수 대응"
     ],
     correctIndex: 1,
     explanation: "신뢰받던 우상향 상승 추세선 하방으로 캔들의 종가가 이탈 마감하는 것은 매수 중심의 시장 주도권이 붕괴했음을 뜻합니다. 지지를 잃은 하락 가속화 리스크에 대비해야 합니다."
@@ -169,7 +169,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 102,
             "low": 99,
             "close": 101,
-            "volume": 111
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -177,7 +177,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 108,
             "low": 101,
             "close": 107,
-            "volume": 97
+            "volume": 104
         },
         {
             "time": "Day 3",
@@ -185,7 +185,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 109,
             "low": 104,
             "close": 105,
-            "volume": 109
+            "volume": 126
         },
         {
             "time": "Day 4",
@@ -193,7 +193,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 115,
             "low": 105,
             "close": 114,
-            "volume": 103
+            "volume": 94
         },
         {
             "time": "Day 5",
@@ -201,7 +201,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 116,
             "low": 112,
             "close": 113,
-            "volume": 120
+            "volume": 114
         }
     ],
     drawings: [
@@ -230,10 +230,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "채널을 뚫고 끝없이 오를 것으로 믿고 레버리지를 써서 풀매수",
-        "채널 상단 부근이므로 이익 실현(분할 익절)을 하거나 하방 숏 반등 매매를 노려보며 신규 매수는 대기",
-        "채널 중간 이하로 떨어질 때까지 전량 시장가 매수",
-        "채널 붕괴이므로 무조건 전량 손절"
+        "채널 상방 돌파를 예상한 고배율 레버리지 매수",
+        "채널 상단 저항에 따른 분할 익절 및 대기",
+        "채널 중간 조정 시 지정을 통한 시장가 추격",
+        "채널 붕괴 신호에 따른 전량 기계적 손절"
     ],
     correctIndex: 1,
     explanation: "상승 채널이라고 해도 상단 저항선에 닿으면 다시 채널 하단이나 중심선까지 조정을 받을 가능성이 매우 큽니다. 따라서 고점 영역에서의 추격매수를 금지하고, 기존 포지션을 분할 익절하는 기회로 삼아야 합니다."
@@ -252,7 +252,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 101,
             "low": 100,
             "close": 101,
-            "volume": 111
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -260,14 +260,14 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 105,
             "low": 102,
             "close": 104,
-            "volume": 119
+            "volume": 95
         }
     ],
     options: [
-        "선이 얼마나 예쁜 색상인지가 결정",
-        "최소 3개 이상의 뚜렷한 저점/고점 터치(3rd Touch)가 발생하여 반등/저항이 확인되었을 때 시장이 신뢰함",
-        "최대한 가파른 각도로 90도 가깝게 그려질 것",
-        "보조지표와 전혀 무관하게 차트 끝자락만 연결"
+        "차트상 선이 정배열로 정돈되어 그려질 때",
+        "최소 3개 이상의 뚜렷한 저점/고점 터치 확인 시",
+        "가파른 각도로 90도에 가깝게 작도될 때",
+        "보조지표와 결합하여 수평으로 그려질 때"
     ],
     correctIndex: 1,
     explanation: "두 점만으로도 선을 그릴 수 있지만, 3번째 터치(3rd Touch)에서 정확한 지지나 저항을 보이고 반등해 주는 순간부터 시장 참여자들이 공식 인지하는 신뢰도 높은 추세선이 됩니다."
@@ -286,7 +286,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 108,
             "low": 102,
             "close": 103,
-            "volume": 101
+            "volume": 111
         },
         {
             "time": "Day 2",
@@ -294,7 +294,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 104,
             "low": 99,
             "close": 100,
-            "volume": 121
+            "volume": 85
         },
         {
             "time": "Day 3",
@@ -302,7 +302,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 101,
             "low": 98,
             "close": 98.5,
-            "volume": 97
+            "volume": 109
         }
     ],
     drawings: [
@@ -319,10 +319,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "다시 지지선 위로 회복해 줄 것이라는 희망을 품고 원금의 절반을 더 투입해 강하게 물타기(추가 매수)한다.",
-        "거래량을 동반하여 종가 기준으로 중요 지지선 지지에 실패하고 붕괴(Breakdown)되었으므로 원칙에 따라 즉시 전량 손절하여 추가적인 연쇄 폭락 리스크를 차단한다.",
-        "손절매를 지연시키며 가격이 80달러선까지 더 떨어져도 물타지 않고 기도만 한다.",
-        "오히려 추가로 고배율 롱(매수) 포지션을 잡는다."
+        "추가 물타기를 위해 자금을 동원하여 평단가 관리",
+        "중요 지지선 붕괴(Breakdown) 확인 후 즉시 전량 손절",
+        "지속 하락 시 추가 평단가 관리를 위해 매수 유보",
+        "하방 이탈 시 즉시 반대 고배율 롱 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "거래량이 동반된 장대음봉으로 주요 지지선 아래에서 종가가 결정되는 이탈 마감은 매수 지지 세력의 패배이자 추세 붕괴(Breakdown)의 신호입니다. 이 시점에서 물타기를 하거나 존버를 하면 파산적인 하락 조정을 겪을 수 있으므로 즉시 룰에 근거한 '전량 손절'을 집행해야 계좌를 살릴 수 있습니다."
@@ -341,7 +341,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 146,
             "low": 139,
             "close": 144,
-            "volume": 110
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -349,7 +349,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 157,
             "low": 143,
             "close": 155,
-            "volume": 84
+            "volume": 98
         },
         {
             "time": "Day 3",
@@ -357,7 +357,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 156,
             "low": 149,
             "close": 150,
-            "volume": 108
+            "volume": 94
         }
     ],
     drawings: [
@@ -374,10 +374,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "가짜 돌파(휩소)의 징조이므로 즉시 전량 공매도(숏) 포지션에 몰빵한다.",
-        "돌파된 저항선이 새로운 지지선으로 역할 전환(Role Reversal)에 성공하는 모양새이므로, 150달러 지지선 바로 아래에 손절가(예: 147달러)를 타이트하게 잡고 매수(롱)로 눌림목 분할 진입한다.",
-        "추격 매수 기회를 완전히 날렸으므로 어떠한 주문도 넣지 않고 박스권 바닥까지 흘러내릴 때까지 무작정 기다린다.",
-        "160달러를 돌파할 때까지 시장가 추격 매수 100%를 집행한다."
+        "가짜 돌파(휩소) 판단에 따른 고배율 숏 진입",
+        "돌파 후 리테스트 성공 확인 시 지지선 눌림목 매수",
+        "추격 매수 기회 상실로 판단하고 거래 포기",
+        "160달러 추가 돌파를 타겟으로 시장가 추격 매수"
     ],
     correctIndex: 1,
     explanation: "강하게 돌파된 저항선은 룰 체인지에 의해 지지선으로 변합니다(역할 전환). 돌파 당시 추격 매수하기보다, 돌파된 선(150달러)으로 주가가 되돌아오는 리테스트(Retest) 시점에 저조한 거래량과 지지 캔들을 확인하고 손절선을 바로 밑에 설정하여 눌림목 진입하는 것이 리스크가 가장 적은 프로 트레이더의 정석입니다."
@@ -396,7 +396,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 98,
             "low": 80,
             "close": 88,
-            "volume": 114
+            "volume": 99
         },
         {
             "time": "Day 2",
@@ -404,7 +404,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 91,
             "low": 80,
             "close": 84,
-            "volume": 103
+            "volume": 118
         },
         {
             "time": "Day 3",
@@ -412,7 +412,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 86,
             "low": 80,
             "close": 81,
-            "volume": 108
+            "volume": 102
         }
     ],
     drawings: [
@@ -429,10 +429,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "네, 세 번이나 지지했으므로 추가 상승 신호로 간주하고 풀매수로 대응한다.",
-        "아니오, 지선 근처에서 매수세(반등 동력)가 결여되어 고점이 계속 낮아지는 구조는 하방 붕괴(Breakdown) 확률이 압도적으로 높으므로, 매수를 절대 보류하고 확실한 돌파/이탈 방향이 드러날 때까지 관망해야 한다.",
-        "네, 오히려 지금 물타기 평단가를 획기적으로 낮추기 위해 투자 원금을 추가 납입한다.",
-        "추세와 무관하게 숏 포지션만 영구 유지한다."
+        "삼중 바닥 지지로 판단하고 매수 비중 대폭 확대",
+        "디센딩 수렴 확인 후 하방 이탈 위험 대비 관망",
+        "물타기 평단가 관리를 위해 매수 보증금 추가 투입",
+        "추세와 무관하게 숏 포지션으로 전환 후 무기한 보유"
     ],
     correctIndex: 1,
     explanation: "지지선 부근에서 고점이 점점 낮아지는 '디센딩' 형태는 매수 지원 강도가 둔화되고 매도 출하 공급이 가격을 계속 하방으로 압박하고 있음을 증명합니다. 지지 성공보다 지선 하방 붕괴 후 급락할 확률이 높으므로, 지지선이라는 명목만으로 함부로 매수 진입하지 말고 돌파/이탈 컨펌을 기다려 관망하는 것이 현명합니다."
@@ -451,7 +451,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 102,
             "low": 100,
             "close": 102,
-            "volume": 100
+            "volume": 99
         },
         {
             "time": "Day 2",
@@ -459,7 +459,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 110,
             "low": 102,
             "close": 109,
-            "volume": 84
+            "volume": 111
         },
         {
             "time": "Day 3",
@@ -467,7 +467,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 125,
             "low": 109,
             "close": 124,
-            "volume": 116
+            "volume": 91
         },
         {
             "time": "Day 4",
@@ -475,7 +475,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 125,
             "low": 114,
             "close": 115,
-            "volume": 123
+            "volume": 107
         }
     ],
     drawings: [
@@ -511,10 +511,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세가 완전히 죽었으므로 모든 주식을 즉시 전량 시장가 손절 처리하고 다신 쳐다보지 않는다.",
-        "단기 가속 추세선 이탈로 상승 속도가 제어 및 하향 조정에 들어갔으므로, 보유 물량의 50%를 익절하여 이익을 확보하고, 나머지 물량은 완만한 장기 추세선 지지 여부를 지켜보며 리스크를 분산한다.",
-        "단기선 붕괴는 무의미하므로 레버리지를 써서 꼭대기에서 물타기 100% 매수를 때린다.",
-        "장기 추세선마저 붕괴될 때까지 신규 매수만 반복한다."
+        "추세 붕괴 판단에 따른 전량 손절 및 영구 이탈",
+        "가속 추세 이탈에 따른 50% 분할 익절 및 분산",
+        "단기 지지선 붕괴를 무시한 고배율 물타기 매수",
+        "장기 추세선까지 조정을 대비한 신규 매수 대기"
     ],
     correctIndex: 1,
     explanation: "가파르게 우상향하던 가속 추세선(Accelerated Trendline)이 하방 돌파되는 것은 기존 폭등 랠리의 속도가 둔화되고 완만한 본래 장기 추세선(장기 매물대)을 향해 정상적인 가격 조정을 받기 시작했음을 뜻합니다. 따라서 물량의 50%가량을 털어 수익을 실현하고 남은 물량으로 장기 추세선의 3rd Touch 지지 성공 여부를 테스트하는 것이 리스크 관리의 기본입니다."
@@ -533,7 +533,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 90,
             "low": 80,
             "close": 88,
-            "volume": 119
+            "volume": 99
         },
         {
             "time": "Day 2",
@@ -541,7 +541,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 99,
             "low": 88,
             "close": 95,
-            "volume": 95
+            "volume": 100
         },
         {
             "time": "Day 3",
@@ -549,7 +549,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 96,
             "low": 90,
             "close": 92,
-            "volume": 98
+            "volume": 109
         }
     ],
     drawings: [
@@ -574,10 +574,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "손절 라인 없이, 92달러에서 1차 매수를 전액 투입하고 반등을 기도한다.",
-        "추세선이 확실히 유효하다고 증명되는 3rd Touch 지점이므로, 92달러선 부근에서 분할 매수를 실행하되 손절가는 추세선 라인 직하방인 89달러선 밑에 짧게 걸어두어 손실폭은 극단적으로 최소화하고 상방 기대치(전고점 이상)는 크게 열어두는 매매를 집행한다.",
-        "추세선이 깨질 것을 100% 확신하고 무조건 숏을 잡는다.",
-        "어떠한 주문도 없이 110달러까지 돌파 랠리가 끝날 때까지 관망한다."
+        "손절 라인 없이 지정가로 1차 매수 몰빵 진입",
+        "3rd Touch 타점 진입 및 추세선 하단 칼손절 셋업",
+        "하방 붕괴 예상을 통한 고배율 숏 즉각 진입",
+        "목표가 터치 시까지 무작정 대기 후 추격 매수"
     ],
     correctIndex: 1,
     explanation: "추세선 상의 3번째 지지 포인트(3rd Touch)는 추세 신뢰도가 형성되는 대단히 성공률 높은 정석적 눌림목 타점입니다. 진입 가격과 손절 라인(추세선 이탈가)의 거리가 매우 가깝기 때문에 기대 수익 대비 잃을 금액이 매우 적어 프로 트레이더들이 가장 선호하는 칼손절 매수 스팟입니다."
@@ -596,7 +596,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 222,
             "low": 208.5,
             "close": 217.5,
-            "volume": 110
+            "volume": 80
         },
         {
             "time": "Day 2",
@@ -604,7 +604,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 223.5,
             "low": 214.5,
             "close": 216,
-            "volume": 111
+            "volume": 91
         },
         {
             "time": "Day 3",
@@ -612,7 +612,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 234,
             "low": 214.5,
             "close": 231,
-            "volume": 122
+            "volume": 89
         },
         {
             "time": "Day 4",
@@ -620,7 +620,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 232.5,
             "low": 223.5,
             "close": 226.5,
-            "volume": 401
+            "volume": 389
         },
         {
             "time": "Day 5",
@@ -628,7 +628,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 229.5,
             "low": 225,
             "close": 228,
-            "volume": 389
+            "volume": 324
         }
     ],
     drawings: [
@@ -649,10 +649,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "돌파봉 꼭대기에서 뇌동매매 추격 매수",
-        "돌파된 저항선(225달러)이 지지선으로 역할 전환(Retest)에 성공할 때 눌림목 진입",
-        "210달러까지 떨어질 때까지 무작정 대기",
-        "돌파했으므로 이제 급락할 것이라 가정하고 숏 진입"
+        "돌파 시점에 시장가로 즉시 진입하는 추격 매수",
+        "돌파 후 저항선의 지지선 전환(Retest) 확인 시 진입",
+        "이전 최저가 부근인 210달러 조정 시까지 대기 매수",
+        "돌파 후 즉시 단기 조정을 예상한 역추세 숏 진입"
     ],
     correctIndex: 1,
     explanation: "저항선이 강하게 뚫리면 역할 전환(Role Reversal)에 의해 신규 지지선으로 바뀝니다. 돌파 시점에 뇌동매매하기보다는 돌파된 선 부근으로 코인 가격가 눌려 지지(Retest)를 완성할 때 진입하는 것이 리스크 대비 기대 수익이 큽니다."
@@ -671,7 +671,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 157.5,
             "low": 150,
             "close": 154.5,
-            "volume": 113
+            "volume": 104
         },
         {
             "time": "W-4",
@@ -679,7 +679,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 165,
             "low": 153,
             "close": 162,
-            "volume": 92
+            "volume": 104
         },
         {
             "time": "W-3",
@@ -687,7 +687,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 163.5,
             "low": 157.5,
             "close": 159,
-            "volume": 100
+            "volume": 111
         },
         {
             "time": "W-2",
@@ -695,7 +695,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 172.5,
             "low": 160.5,
             "close": 169.5,
-            "volume": 124
+            "volume": 121
         },
         {
             "time": "Today",
@@ -703,7 +703,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 171,
             "low": 154.5,
             "close": 156,
-            "volume": 120
+            "volume": 104
         }
     ],
     drawings: [
@@ -728,10 +728,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세선의 이탈은 아무 영향이 없으므로 추가 홀딩",
-        "상승 추세 붕괴(Breakdown) - 하락 반전 가능성이 커지므로 비중 축소 및 손절 검토",
-        "일시적인 휩소이므로 전재산 물타기 기회",
-        "채널 상단 저항선에 부딪힌 것이므로 즉시 매수"
+        "추세선 이탈은 영향이 없으므로 비중 유지",
+        "상승 추세 붕괴로 하락 반전 대비 비중 축소",
+        "일시적인 속임수이므로 추가 불타기 진입",
+        "채널 상단 도달에 따른 즉각적인 매수 대응"
     ],
     correctIndex: 1,
     explanation: "신뢰받던 우상향 상승 추세선 하방으로 캔들의 종가가 이탈 마감하는 것은 매수 중심의 시장 주도권이 붕괴했음을 뜻합니다. 지지를 잃은 하락 가속화 리스크에 대비해야 합니다."
@@ -750,7 +750,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 153,
             "low": 148.5,
             "close": 151.5,
-            "volume": 97
+            "volume": 106
         },
         {
             "time": "Day 2",
@@ -758,7 +758,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 162,
             "low": 151.5,
             "close": 160.5,
-            "volume": 122
+            "volume": 84
         },
         {
             "time": "Day 3",
@@ -766,7 +766,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 163.5,
             "low": 156,
             "close": 157.5,
-            "volume": 118
+            "volume": 115
         },
         {
             "time": "Day 4",
@@ -774,7 +774,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 172.5,
             "low": 157.5,
             "close": 171,
-            "volume": 102
+            "volume": 92
         },
         {
             "time": "Day 5",
@@ -782,7 +782,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 174,
             "low": 168,
             "close": 169.5,
-            "volume": 127
+            "volume": 100
         }
     ],
     drawings: [
@@ -811,10 +811,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "채널을 뚫고 끝없이 오를 것으로 믿고 레버리지를 써서 풀매수",
-        "채널 상단 부근이므로 이익 실현(분할 익절)을 하거나 하방 숏 반등 매매를 노려보며 신규 매수는 대기",
-        "채널 중간 이하로 떨어질 때까지 전량 시장가 매수",
-        "채널 붕괴이므로 무조건 전량 손절"
+        "채널 상방 돌파를 예상한 고배율 레버리지 매수",
+        "채널 상단 저항에 따른 분할 익절 및 대기",
+        "채널 중간 조정 시 지정을 통한 시장가 추격",
+        "채널 붕괴 신호에 따른 전량 기계적 손절"
     ],
     correctIndex: 1,
     explanation: "상승 채널이라고 해도 상단 저항선에 닿으면 다시 채널 하단이나 중심선까지 조정을 받을 가능성이 매우 큽니다. 따라서 고점 영역에서의 추격매수를 금지하고, 기존 포지션을 분할 익절하는 기회로 삼아야 합니다."
@@ -833,7 +833,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 151.5,
             "low": 150,
             "close": 151.5,
-            "volume": 111
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -841,14 +841,14 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 157.5,
             "low": 153,
             "close": 156,
-            "volume": 96
+            "volume": 118
         }
     ],
     options: [
-        "선이 얼마나 예쁜 색상인지가 결정",
-        "최소 3개 이상의 뚜렷한 저점/고점 터치(3rd Touch)가 발생하여 반등/저항이 확인되었을 때 시장이 신뢰함",
-        "최대한 가파른 각도로 90도 가깝게 그려질 것",
-        "보조지표와 전혀 무관하게 차트 끝자락만 연결"
+        "차트상 선이 정배열로 정돈되어 그려질 때",
+        "최소 3개 이상의 뚜렷한 저점/고점 터치 확인 시",
+        "가파른 각도로 90도에 가깝게 작도될 때",
+        "보조지표와 결합하여 수평으로 그려질 때"
     ],
     correctIndex: 1,
     explanation: "두 점만으로도 선을 그릴 수 있지만, 3번째 터치(3rd Touch)에서 정확한 지지나 저항을 보이고 반등해 주는 순간부터 시장 참여자들이 공식 인지하는 신뢰도 높은 추세선이 됩니다."
@@ -867,7 +867,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 162,
             "low": 153,
             "close": 154.5,
-            "volume": 110
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -875,7 +875,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 156,
             "low": 148.5,
             "close": 150,
-            "volume": 91
+            "volume": 84
         },
         {
             "time": "Day 3",
@@ -883,7 +883,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 151.5,
             "low": 147,
             "close": 147.75,
-            "volume": 98
+            "volume": 120
         }
     ],
     drawings: [
@@ -900,10 +900,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "다시 지지선 위로 회복해 줄 것이라는 희망을 품고 원금의 절반을 더 투입해 강하게 물타기(추가 매수)한다.",
-        "거래량을 동반하여 종가 기준으로 중요 지지선 지지에 실패하고 붕괴(Breakdown)되었으므로 원칙에 따라 즉시 전량 손절하여 추가적인 연쇄 폭락 리스크를 차단한다.",
-        "손절매를 지연시키며 가격이 120달러선까지 더 떨어져도 물타지 않고 기도만 한다.",
-        "오히려 추가로 고배율 롱(매수) 포지션을 잡는다."
+        "추가 물타기를 위해 자금을 동원하여 평단가 관리",
+        "중요 지지선 붕괴(Breakdown) 확인 후 즉시 전량 손절",
+        "지속 하락 시 추가 평단가 관리를 위해 매수 유보",
+        "하방 이탈 시 즉시 반대 고배율 롱 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "거래량이 동반된 장대음봉으로 주요 지지선 아래에서 종가가 결정되는 이탈 마감은 매수 지지 세력의 패배이자 추세 붕괴(Breakdown)의 신호입니다. 이 시점에서 물타기를 하거나 존버를 하면 파산적인 하락 조정을 겪을 수 있으므로 즉시 룰에 근거한 '전량 손절'을 집행해야 계좌를 살릴 수 있습니다."
@@ -922,7 +922,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 219,
             "low": 208.5,
             "close": 216,
-            "volume": 103
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -930,7 +930,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 235.5,
             "low": 214.5,
             "close": 232.5,
-            "volume": 109
+            "volume": 111
         },
         {
             "time": "Day 3",
@@ -938,7 +938,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 234,
             "low": 223.5,
             "close": 225,
-            "volume": 118
+            "volume": 124
         }
     ],
     drawings: [
@@ -955,10 +955,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "가짜 돌파(휩소)의 징조이므로 즉시 전량 공매도(숏) 포지션에 몰빵한다.",
-        "돌파된 저항선이 새로운 지지선으로 역할 전환(Role Reversal)에 성공하는 모양새이므로, 225달러 지지선 바로 아래에 손절가(예: 220.50달러)를 타이트하게 잡고 매수(롱)로 눌림목 분할 진입한다.",
-        "추격 매수 기회를 완전히 날렸으므로 어떠한 주문도 넣지 않고 박스권 바닥까지 흘러내릴 때까지 무작정 기다린다.",
-        "240달러를 돌파할 때까지 시장가 추격 매수 100%를 집행한다."
+        "가짜 돌파(휩소) 판단에 따른 고배율 숏 진입",
+        "돌파 후 리테스트 성공 확인 시 지지선 눌림목 매수",
+        "추격 매수 기회 상실로 판단하고 거래 포기",
+        "240달러 추가 돌파를 타겟으로 시장가 추격 매수"
     ],
     correctIndex: 1,
     explanation: "강하게 돌파된 저항선은 룰 체인지에 의해 지지선으로 변합니다(역할 전환). 돌파 당시 추격 매수하기보다, 돌파된 선(225달러)으로 코인 가격가 되돌아오는 리테스트(Retest) 시점에 저조한 거래량과 지지 캔들을 확인하고 손절선을 바로 밑에 설정하여 눌림목 진입하는 것이 리스크가 가장 적은 프로 트레이더의 정석입니다."
@@ -977,7 +977,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 147,
             "low": 120,
             "close": 132,
-            "volume": 103
+            "volume": 111
         },
         {
             "time": "Day 2",
@@ -985,7 +985,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 136.5,
             "low": 120,
             "close": 126,
-            "volume": 99
+            "volume": 101
         },
         {
             "time": "Day 3",
@@ -1010,10 +1010,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "네, 세 번이나 지지했으므로 추가 상승 신호로 간주하고 풀매수로 대응한다.",
-        "아니오, 지선 근처에서 매수세(반등 동력)가 결여되어 고점이 계속 낮아지는 구조는 하방 붕괴(Breakdown) 확률이 압도적으로 높으므로, 매수를 절대 보류하고 확실한 돌파/이탈 방향이 드러날 때까지 관망해야 한다.",
-        "네, 오히려 지금 물타기 평단가를 획기적으로 낮추기 위해 투자 원금을 추가 납입한다.",
-        "추세와 무관하게 숏 포지션만 영구 유지한다."
+        "삼중 바닥 지지로 판단하고 매수 비중 대폭 확대",
+        "디센딩 수렴 확인 후 하방 이탈 위험 대비 관망",
+        "물타기 평단가 관리를 위해 매수 보증금 추가 투입",
+        "추세와 무관하게 숏 포지션으로 전환 후 무기한 보유"
     ],
     correctIndex: 1,
     explanation: "지지선 부근에서 고점이 점점 낮아지는 '디센딩' 형태는 매수 지원 강도가 둔화되고 매도 출하 공급이 가격을 계속 하방으로 압박하고 있음을 증명합니다. 지지 성공보다 지선 하방 붕괴 후 급락할 확률이 높으므로, 지지선이라는 명목만으로 함부로 매수 진입하지 말고 돌파/이탈 컨펌을 기다려 관망하는 것이 현명합니다."
@@ -1032,7 +1032,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 153,
             "low": 150,
             "close": 153,
-            "volume": 100
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -1040,7 +1040,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 165,
             "low": 153,
             "close": 163.5,
-            "volume": 91
+            "volume": 121
         },
         {
             "time": "Day 3",
@@ -1048,7 +1048,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 187.5,
             "low": 163.5,
             "close": 186,
-            "volume": 102
+            "volume": 107
         },
         {
             "time": "Day 4",
@@ -1056,7 +1056,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 187.5,
             "low": 171,
             "close": 172.5,
-            "volume": 121
+            "volume": 102
         }
     ],
     drawings: [
@@ -1092,10 +1092,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세가 완전히 죽었으므로 모든 알트코인을 즉시 전량 시장가 손절 처리하고 다신 쳐다보지 않는다.",
-        "단기 가속 추세선 이탈로 상승 속도가 제어 및 하향 조정에 들어갔으므로, 보유 물량의 50%를 익절하여 이익을 확보하고, 나머지 물량은 완만한 장기 추세선 지지 여부를 지켜보며 리스크를 분산한다.",
-        "단기선 붕괴는 무의미하므로 레버리지를 써서 꼭대기에서 물타기 100% 매수를 때린다.",
-        "장기 추세선마저 붕괴될 때까지 신규 매수만 반복한다."
+        "추세 붕괴 판단에 따른 전량 손절 및 영구 이탈",
+        "가속 추세 이탈에 따른 50% 분할 익절 및 분산",
+        "단기 지지선 붕괴를 무시한 고배율 물타기 매수",
+        "장기 추세선까지 조정을 대비한 신규 매수 대기"
     ],
     correctIndex: 1,
     explanation: "가파르게 우상향하던 가속 추세선(Accelerated Trendline)이 하방 돌파되는 것은 기존 폭등 랠리의 속도가 둔화되고 완만한 본래 장기 추세선(장기 매물대)을 향해 정상적인 가격 조정을 받기 시작했음을 뜻합니다. 따라서 물량의 50%가량을 털어 수익을 실현하고 남은 물량으로 장기 추세선의 3rd Touch 지지 성공 여부를 테스트하는 것이 리스크 관리의 기본입니다."
@@ -1114,7 +1114,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 135,
             "low": 120,
             "close": 132,
-            "volume": 83
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -1122,7 +1122,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 148.5,
             "low": 132,
             "close": 142.5,
-            "volume": 112
+            "volume": 108
         },
         {
             "time": "Day 3",
@@ -1130,7 +1130,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 144,
             "low": 135,
             "close": 138,
-            "volume": 126
+            "volume": 111
         }
     ],
     drawings: [
@@ -1155,10 +1155,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "손절 라인 없이, 138달러에서 1차 매수를 전액 투입하고 반등을 기도한다.",
-        "추세선이 확실히 유효하다고 증명되는 3rd Touch 지점이므로, 138달러선 부근에서 분할 매수를 실행하되 손절가는 추세선 라인 직하방인 133.50달러선 밑에 짧게 걸어두어 손실폭은 극단적으로 최소화하고 상방 기대치(전고점 이상)는 크게 열어두는 매매를 집행한다.",
-        "추세선이 깨질 것을 100% 확신하고 무조건 숏을 잡는다.",
-        "어떠한 주문도 없이 165달러까지 돌파 랠리가 끝날 때까지 관망한다."
+        "손절 라인 없이 지정가로 1차 매수 몰빵 진입",
+        "3rd Touch 타점 진입 및 추세선 하단 칼손절 셋업",
+        "하방 붕괴 예상을 통한 고배율 숏 즉각 진입",
+        "목표가 터치 시까지 무작정 대기 후 추격 매수"
     ],
     correctIndex: 1,
     explanation: "추세선 상의 3번째 지지 포인트(3rd Touch)는 추세 신뢰도가 형성되는 대단히 성공률 높은 정석적 눌림목 타점입니다. 진입 가격과 손절 라인(추세선 이탈가)의 거리가 매우 가깝기 때문에 기대 수익 대비 잃을 금액이 매우 적어 프로 트레이더들이 가장 선호하는 칼손절 매수 스팟입니다."
@@ -1177,7 +1177,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 296,
             "low": 278,
             "close": 290,
-            "volume": 110
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -1185,7 +1185,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 298,
             "low": 286,
             "close": 288,
-            "volume": 89
+            "volume": 91
         },
         {
             "time": "Day 3",
@@ -1193,7 +1193,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 312,
             "low": 286,
             "close": 308,
-            "volume": 117
+            "volume": 127
         },
         {
             "time": "Day 4",
@@ -1201,7 +1201,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 310,
             "low": 298,
             "close": 302,
-            "volume": 361
+            "volume": 357
         },
         {
             "time": "Day 5",
@@ -1209,7 +1209,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 306,
             "low": 300,
             "close": 304,
-            "volume": 374
+            "volume": 408
         }
     ],
     drawings: [
@@ -1230,10 +1230,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "돌파봉 꼭대기에서 뇌동매매 추격 매수",
-        "돌파된 저항선(300달러)이 지지선으로 역할 전환(Retest)에 성공할 때 눌림목 진입",
-        "280달러까지 떨어질 때까지 무작정 대기",
-        "돌파했으므로 이제 급락할 것이라 가정하고 숏 진입"
+        "돌파 시점에 시장가로 즉시 진입하는 추격 매수",
+        "돌파 후 저항선의 지지선 전환(Retest) 확인 시 진입",
+        "이전 최저가 부근인 280달러 조정 시까지 대기 매수",
+        "돌파 후 즉시 단기 조정을 예상한 역추세 숏 진입"
     ],
     correctIndex: 1,
     explanation: "저항선이 강하게 뚫리면 역할 전환(Role Reversal)에 의해 신규 지지선으로 바뀝니다. 돌파 시점에 뇌동매매하기보다는 돌파된 선 부근으로 시세가 눌려 지지(Retest)를 완성할 때 진입하는 것이 리스크 대비 기대 수익이 큽니다."
@@ -1252,7 +1252,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 210,
             "low": 200,
             "close": 206,
-            "volume": 90
+            "volume": 96
         },
         {
             "time": "W-4",
@@ -1260,7 +1260,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 220,
             "low": 204,
             "close": 216,
-            "volume": 105
+            "volume": 121
         },
         {
             "time": "W-3",
@@ -1268,7 +1268,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 218,
             "low": 210,
             "close": 212,
-            "volume": 122
+            "volume": 117
         },
         {
             "time": "W-2",
@@ -1276,7 +1276,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 230,
             "low": 214,
             "close": 226,
-            "volume": 117
+            "volume": 122
         },
         {
             "time": "Today",
@@ -1284,7 +1284,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 228,
             "low": 206,
             "close": 208,
-            "volume": 120
+            "volume": 114
         }
     ],
     drawings: [
@@ -1309,10 +1309,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세선의 이탈은 아무 영향이 없으므로 추가 홀딩",
-        "상승 추세 붕괴(Breakdown) - 하락 반전 가능성이 커지므로 비중 축소 및 손절 검토",
-        "일시적인 휩소이므로 전재산 물타기 기회",
-        "채널 상단 저항선에 부딪힌 것이므로 즉시 매수"
+        "추세선 이탈은 영향이 없으므로 비중 유지",
+        "상승 추세 붕괴로 하락 반전 대비 비중 축소",
+        "일시적인 속임수이므로 추가 불타기 진입",
+        "채널 상단 도달에 따른 즉각적인 매수 대응"
     ],
     correctIndex: 1,
     explanation: "신뢰받던 우상향 상승 추세선 하방으로 캔들의 종가가 이탈 마감하는 것은 매수 중심의 시장 주도권이 붕괴했음을 뜻합니다. 지지를 잃은 하락 가속화 리스크에 대비해야 합니다."
@@ -1331,7 +1331,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 204,
             "low": 198,
             "close": 202,
-            "volume": 115
+            "volume": 107
         },
         {
             "time": "Day 2",
@@ -1339,7 +1339,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 216,
             "low": 202,
             "close": 214,
-            "volume": 120
+            "volume": 122
         },
         {
             "time": "Day 3",
@@ -1347,7 +1347,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 218,
             "low": 208,
             "close": 210,
-            "volume": 107
+            "volume": 104
         },
         {
             "time": "Day 4",
@@ -1355,7 +1355,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 230,
             "low": 210,
             "close": 228,
-            "volume": 103
+            "volume": 92
         },
         {
             "time": "Day 5",
@@ -1363,7 +1363,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 232,
             "low": 224,
             "close": 226,
-            "volume": 100
+            "volume": 133
         }
     ],
     drawings: [
@@ -1392,10 +1392,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "채널을 뚫고 끝없이 오를 것으로 믿고 레버리지를 써서 풀매수",
-        "채널 상단 부근이므로 이익 실현(분할 익절)을 하거나 하방 숏 반등 매매를 노려보며 신규 매수는 대기",
-        "채널 중간 이하로 떨어질 때까지 전량 시장가 매수",
-        "채널 붕괴이므로 무조건 전량 손절"
+        "채널 상방 돌파를 예상한 고배율 레버리지 매수",
+        "채널 상단 저항에 따른 분할 익절 및 대기",
+        "채널 중간 조정 시 지정을 통한 시장가 추격",
+        "채널 붕괴 신호에 따른 전량 기계적 손절"
     ],
     correctIndex: 1,
     explanation: "상승 채널이라고 해도 상단 저항선에 닿으면 다시 채널 하단이나 중심선까지 조정을 받을 가능성이 매우 큽니다. 따라서 고점 영역에서의 추격매수를 금지하고, 기존 포지션을 분할 익절하는 기회로 삼아야 합니다."
@@ -1414,7 +1414,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 202,
             "low": 200,
             "close": 202,
-            "volume": 117
+            "volume": 89
         },
         {
             "time": "Day 2",
@@ -1422,14 +1422,14 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 210,
             "low": 204,
             "close": 208,
-            "volume": 101
+            "volume": 122
         }
     ],
     options: [
-        "선이 얼마나 예쁜 색상인지가 결정",
-        "최소 3개 이상의 뚜렷한 저점/고점 터치(3rd Touch)가 발생하여 반등/저항이 확인되었을 때 시장이 신뢰함",
-        "최대한 가파른 각도로 90도 가깝게 그려질 것",
-        "보조지표와 전혀 무관하게 차트 끝자락만 연결"
+        "차트상 선이 정배열로 정돈되어 그려질 때",
+        "최소 3개 이상의 뚜렷한 저점/고점 터치 확인 시",
+        "가파른 각도로 90도에 가깝게 작도될 때",
+        "보조지표와 결합하여 수평으로 그려질 때"
     ],
     correctIndex: 1,
     explanation: "두 점만으로도 선을 그릴 수 있지만, 3번째 터치(3rd Touch)에서 정확한 지지나 저항을 보이고 반등해 주는 순간부터 시장 참여자들이 공식 인지하는 신뢰도 높은 추세선이 됩니다."
@@ -1448,7 +1448,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 216,
             "low": 204,
             "close": 206,
-            "volume": 102
+            "volume": 115
         },
         {
             "time": "Day 2",
@@ -1456,7 +1456,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 208,
             "low": 198,
             "close": 200,
-            "volume": 92
+            "volume": 100
         },
         {
             "time": "Day 3",
@@ -1464,7 +1464,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 202,
             "low": 196,
             "close": 197,
-            "volume": 110
+            "volume": 124
         }
     ],
     drawings: [
@@ -1481,10 +1481,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "다시 지지선 위로 회복해 줄 것이라는 희망을 품고 원금의 절반을 더 투입해 강하게 물타기(추가 매수)한다.",
-        "거래량을 동반하여 종가 기준으로 중요 지지선 지지에 실패하고 붕괴(Breakdown)되었으므로 원칙에 따라 즉시 전량 손절하여 추가적인 연쇄 폭락 리스크를 차단한다.",
-        "손절매를 지연시키며 가격이 160달러선까지 더 떨어져도 물타지 않고 기도만 한다.",
-        "오히려 추가로 고배율 롱(매수) 포지션을 잡는다."
+        "추가 물타기를 위해 자금을 동원하여 평단가 관리",
+        "중요 지지선 붕괴(Breakdown) 확인 후 즉시 전량 손절",
+        "지속 하락 시 추가 평단가 관리를 위해 매수 유보",
+        "하방 이탈 시 즉시 반대 고배율 롱 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "거래량이 동반된 장대음봉으로 주요 지지선 아래에서 종가가 결정되는 이탈 마감은 매수 지지 세력의 패배이자 추세 붕괴(Breakdown)의 신호입니다. 이 시점에서 물타기를 하거나 존버를 하면 파산적인 하락 조정을 겪을 수 있으므로 즉시 룰에 근거한 '전량 손절'을 집행해야 계좌를 살릴 수 있습니다."
@@ -1503,7 +1503,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 292,
             "low": 278,
             "close": 288,
-            "volume": 93
+            "volume": 98
         },
         {
             "time": "Day 2",
@@ -1511,7 +1511,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 314,
             "low": 286,
             "close": 310,
-            "volume": 111
+            "volume": 88
         },
         {
             "time": "Day 3",
@@ -1519,7 +1519,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 312,
             "low": 298,
             "close": 300,
-            "volume": 120
+            "volume": 111
         }
     ],
     drawings: [
@@ -1536,10 +1536,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "가짜 돌파(휩소)의 징조이므로 즉시 전량 공매도(숏) 포지션에 몰빵한다.",
-        "돌파된 저항선이 새로운 지지선으로 역할 전환(Role Reversal)에 성공하는 모양새이므로, 300달러 지지선 바로 아래에 손절가(예: 294달러)를 타이트하게 잡고 매수(롱)로 눌림목 분할 진입한다.",
-        "추격 매수 기회를 완전히 날렸으므로 어떠한 주문도 넣지 않고 박스권 바닥까지 흘러내릴 때까지 무작정 기다린다.",
-        "320달러를 돌파할 때까지 시장가 추격 매수 100%를 집행한다."
+        "가짜 돌파(휩소) 판단에 따른 고배율 숏 진입",
+        "돌파 후 리테스트 성공 확인 시 지지선 눌림목 매수",
+        "추격 매수 기회 상실로 판단하고 거래 포기",
+        "320달러 추가 돌파를 타겟으로 시장가 추격 매수"
     ],
     correctIndex: 1,
     explanation: "강하게 돌파된 저항선은 룰 체인지에 의해 지지선으로 변합니다(역할 전환). 돌파 당시 추격 매수하기보다, 돌파된 선(300달러)으로 시세가 되돌아오는 리테스트(Retest) 시점에 저조한 거래량과 지지 캔들을 확인하고 손절선을 바로 밑에 설정하여 눌림목 진입하는 것이 리스크가 가장 적은 프로 트레이더의 정석입니다."
@@ -1558,7 +1558,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 196,
             "low": 160,
             "close": 176,
-            "volume": 81
+            "volume": 80
         },
         {
             "time": "Day 2",
@@ -1566,7 +1566,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 182,
             "low": 160,
             "close": 168,
-            "volume": 109
+            "volume": 106
         },
         {
             "time": "Day 3",
@@ -1574,7 +1574,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 172,
             "low": 160,
             "close": 162,
-            "volume": 110
+            "volume": 121
         }
     ],
     drawings: [
@@ -1591,10 +1591,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "네, 세 번이나 지지했으므로 추가 상승 신호로 간주하고 풀매수로 대응한다.",
-        "아니오, 지선 근처에서 매수세(반등 동력)가 결여되어 고점이 계속 낮아지는 구조는 하방 붕괴(Breakdown) 확률이 압도적으로 높으므로, 매수를 절대 보류하고 확실한 돌파/이탈 방향이 드러날 때까지 관망해야 한다.",
-        "네, 오히려 지금 물타기 평단가를 획기적으로 낮추기 위해 투자 원금을 추가 납입한다.",
-        "추세와 무관하게 숏 포지션만 영구 유지한다."
+        "삼중 바닥 지지로 판단하고 매수 비중 대폭 확대",
+        "디센딩 수렴 확인 후 하방 이탈 위험 대비 관망",
+        "물타기 평단가 관리를 위해 매수 보증금 추가 투입",
+        "추세와 무관하게 숏 포지션으로 전환 후 무기한 보유"
     ],
     correctIndex: 1,
     explanation: "지지선 부근에서 고점이 점점 낮아지는 '디센딩' 형태는 매수 지원 강도가 둔화되고 매도 출하 공급이 가격을 계속 하방으로 압박하고 있음을 증명합니다. 지지 성공보다 지선 하방 붕괴 후 급락할 확률이 높으므로, 지지선이라는 명목만으로 함부로 매수 진입하지 말고 돌파/이탈 컨펌을 기다려 관망하는 것이 현명합니다."
@@ -1613,7 +1613,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 204,
             "low": 200,
             "close": 204,
-            "volume": 98
+            "volume": 97
         },
         {
             "time": "Day 2",
@@ -1621,7 +1621,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 220,
             "low": 204,
             "close": 218,
-            "volume": 113
+            "volume": 114
         },
         {
             "time": "Day 3",
@@ -1629,7 +1629,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 250,
             "low": 218,
             "close": 248,
-            "volume": 95
+            "volume": 117
         },
         {
             "time": "Day 4",
@@ -1637,7 +1637,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 250,
             "low": 228,
             "close": 230,
-            "volume": 102
+            "volume": 97
         }
     ],
     drawings: [
@@ -1673,10 +1673,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세가 완전히 죽었으므로 모든 가상자산을 즉시 전량 시장가 손절 처리하고 다신 쳐다보지 않는다.",
-        "단기 가속 추세선 이탈로 상승 속도가 제어 및 하향 조정에 들어갔으므로, 보유 물량의 50%를 익절하여 이익을 확보하고, 나머지 물량은 완만한 장기 추세선 지지 여부를 지켜보며 리스크를 분산한다.",
-        "단기선 붕괴는 무의미하므로 레버리지를 써서 꼭대기에서 물타기 100% 매수를 때린다.",
-        "장기 추세선마저 붕괴될 때까지 신규 매수만 반복한다."
+        "추세 붕괴 판단에 따른 전량 손절 및 영구 이탈",
+        "가속 추세 이탈에 따른 50% 분할 익절 및 분산",
+        "단기 지지선 붕괴를 무시한 고배율 물타기 매수",
+        "장기 추세선까지 조정을 대비한 신규 매수 대기"
     ],
     correctIndex: 1,
     explanation: "가파르게 우상향하던 가속 추세선(Accelerated Trendline)이 하방 돌파되는 것은 기존 폭등 랠리의 속도가 둔화되고 완만한 본래 장기 추세선(장기 매물대)을 향해 정상적인 가격 조정을 받기 시작했음을 뜻합니다. 따라서 물량의 50%가량을 털어 수익을 실현하고 남은 물량으로 장기 추세선의 3rd Touch 지지 성공 여부를 테스트하는 것이 리스크 관리의 기본입니다."
@@ -1695,7 +1695,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 180,
             "low": 160,
             "close": 176,
-            "volume": 96
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -1703,7 +1703,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 198,
             "low": 176,
             "close": 190,
-            "volume": 90
+            "volume": 106
         },
         {
             "time": "Day 3",
@@ -1711,7 +1711,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 192,
             "low": 180,
             "close": 184,
-            "volume": 119
+            "volume": 113
         }
     ],
     drawings: [
@@ -1736,10 +1736,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "손절 라인 없이, 184달러에서 1차 매수를 전액 투입하고 반등을 기도한다.",
-        "추세선이 확실히 유효하다고 증명되는 3rd Touch 지점이므로, 184달러선 부근에서 분할 매수를 실행하되 손절가는 추세선 라인 직하방인 178달러선 밑에 짧게 걸어두어 손실폭은 극단적으로 최소화하고 상방 기대치(전고점 이상)는 크게 열어두는 매매를 집행한다.",
-        "추세선이 깨질 것을 100% 확신하고 무조건 숏을 잡는다.",
-        "어떠한 주문도 없이 220달러까지 돌파 랠리가 끝날 때까지 관망한다."
+        "손절 라인 없이 지정가로 1차 매수 몰빵 진입",
+        "3rd Touch 타점 진입 및 추세선 하단 칼손절 셋업",
+        "하방 붕괴 예상을 통한 고배율 숏 즉각 진입",
+        "목표가 터치 시까지 무작정 대기 후 추격 매수"
     ],
     correctIndex: 1,
     explanation: "추세선 상의 3번째 지지 포인트(3rd Touch)는 추세 신뢰도가 형성되는 대단히 성공률 높은 정석적 눌림목 타점입니다. 진입 가격과 손절 라인(추세선 이탈가)의 거리가 매우 가깝기 때문에 기대 수익 대비 잃을 금액이 매우 적어 프로 트레이더들이 가장 선호하는 칼손절 매수 스팟입니다."
@@ -1758,7 +1758,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 444,
             "low": 417,
             "close": 435,
-            "volume": 106
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -1766,7 +1766,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 447,
             "low": 429,
             "close": 432,
-            "volume": 94
+            "volume": 107
         },
         {
             "time": "Day 3",
@@ -1774,7 +1774,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 468,
             "low": 429,
             "close": 462,
-            "volume": 89
+            "volume": 93
         },
         {
             "time": "Day 4",
@@ -1782,7 +1782,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 465,
             "low": 447,
             "close": 453,
-            "volume": 371
+            "volume": 416
         },
         {
             "time": "Day 5",
@@ -1790,7 +1790,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 459,
             "low": 450,
             "close": 456,
-            "volume": 333
+            "volume": 403
         }
     ],
     drawings: [
@@ -1811,10 +1811,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "돌파봉 꼭대기에서 뇌동매매 추격 매수",
-        "돌파된 저항선(450달러)이 지지선으로 역할 전환(Retest)에 성공할 때 눌림목 진입",
-        "420달러까지 떨어질 때까지 무작정 대기",
-        "돌파했으므로 이제 급락할 것이라 가정하고 숏 진입"
+        "돌파 시점에 시장가로 즉시 진입하는 추격 매수",
+        "돌파 후 저항선의 지지선 전환(Retest) 확인 시 진입",
+        "이전 최저가 부근인 420달러 조정 시까지 대기 매수",
+        "돌파 후 즉시 단기 조정을 예상한 역추세 숏 진입"
     ],
     correctIndex: 1,
     explanation: "저항선이 강하게 뚫리면 역할 전환(Role Reversal)에 의해 신규 지지선으로 바뀝니다. 돌파 시점에 뇌동매매하기보다는 돌파된 선 부근으로 삼성전자 주가가 눌려 지지(Retest)를 완성할 때 진입하는 것이 리스크 대비 기대 수익이 큽니다."
@@ -1841,7 +1841,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 330,
             "low": 306,
             "close": 324,
-            "volume": 109
+            "volume": 93
         },
         {
             "time": "W-3",
@@ -1849,7 +1849,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 327,
             "low": 315,
             "close": 318,
-            "volume": 101
+            "volume": 99
         },
         {
             "time": "W-2",
@@ -1857,7 +1857,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 345,
             "low": 321,
             "close": 339,
-            "volume": 112
+            "volume": 97
         },
         {
             "time": "Today",
@@ -1865,7 +1865,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 342,
             "low": 309,
             "close": 312,
-            "volume": 110
+            "volume": 134
         }
     ],
     drawings: [
@@ -1890,10 +1890,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세선의 이탈은 아무 영향이 없으므로 추가 홀딩",
-        "상승 추세 붕괴(Breakdown) - 하락 반전 가능성이 커지므로 비중 축소 및 손절 검토",
-        "일시적인 휩소이므로 전재산 물타기 기회",
-        "채널 상단 저항선에 부딪힌 것이므로 즉시 매수"
+        "추세선 이탈은 영향이 없으므로 비중 유지",
+        "상승 추세 붕괴로 하락 반전 대비 비중 축소",
+        "일시적인 속임수이므로 추가 불타기 진입",
+        "채널 상단 도달에 따른 즉각적인 매수 대응"
     ],
     correctIndex: 1,
     explanation: "신뢰받던 우상향 상승 추세선 하방으로 캔들의 종가가 이탈 마감하는 것은 매수 중심의 시장 주도권이 붕괴했음을 뜻합니다. 지지를 잃은 하락 가속화 리스크에 대비해야 합니다."
@@ -1912,7 +1912,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 306,
             "low": 297,
             "close": 303,
-            "volume": 106
+            "volume": 98
         },
         {
             "time": "Day 2",
@@ -1920,7 +1920,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 324,
             "low": 303,
             "close": 321,
-            "volume": 93
+            "volume": 120
         },
         {
             "time": "Day 3",
@@ -1928,7 +1928,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 327,
             "low": 312,
             "close": 315,
-            "volume": 93
+            "volume": 107
         },
         {
             "time": "Day 4",
@@ -1936,7 +1936,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 345,
             "low": 315,
             "close": 342,
-            "volume": 120
+            "volume": 122
         },
         {
             "time": "Day 5",
@@ -1944,7 +1944,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 348,
             "low": 336,
             "close": 339,
-            "volume": 103
+            "volume": 105
         }
     ],
     drawings: [
@@ -1973,10 +1973,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "채널을 뚫고 끝없이 오를 것으로 믿고 레버리지를 써서 풀매수",
-        "채널 상단 부근이므로 이익 실현(분할 익절)을 하거나 하방 숏 반등 매매를 노려보며 신규 매수는 대기",
-        "채널 중간 이하로 떨어질 때까지 전량 시장가 매수",
-        "채널 붕괴이므로 무조건 전량 손절"
+        "채널 상방 돌파를 예상한 고배율 레버리지 매수",
+        "채널 상단 저항에 따른 분할 익절 및 대기",
+        "채널 중간 조정 시 지정을 통한 시장가 추격",
+        "채널 붕괴 신호에 따른 전량 기계적 손절"
     ],
     correctIndex: 1,
     explanation: "상승 채널이라고 해도 상단 저항선에 닿으면 다시 채널 하단이나 중심선까지 조정을 받을 가능성이 매우 큽니다. 따라서 고점 영역에서의 추격매수를 금지하고, 기존 포지션을 분할 익절하는 기회로 삼아야 합니다."
@@ -1995,7 +1995,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 303,
             "low": 300,
             "close": 303,
-            "volume": 91
+            "volume": 83
         },
         {
             "time": "Day 2",
@@ -2003,14 +2003,14 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 315,
             "low": 306,
             "close": 312,
-            "volume": 119
+            "volume": 112
         }
     ],
     options: [
-        "선이 얼마나 예쁜 색상인지가 결정",
-        "최소 3개 이상의 뚜렷한 저점/고점 터치(3rd Touch)가 발생하여 반등/저항이 확인되었을 때 시장이 신뢰함",
-        "최대한 가파른 각도로 90도 가깝게 그려질 것",
-        "보조지표와 전혀 무관하게 차트 끝자락만 연결"
+        "차트상 선이 정배열로 정돈되어 그려질 때",
+        "최소 3개 이상의 뚜렷한 저점/고점 터치 확인 시",
+        "가파른 각도로 90도에 가깝게 작도될 때",
+        "보조지표와 결합하여 수평으로 그려질 때"
     ],
     correctIndex: 1,
     explanation: "두 점만으로도 선을 그릴 수 있지만, 3번째 터치(3rd Touch)에서 정확한 지지나 저항을 보이고 반등해 주는 순간부터 시장 참여자들이 공식 인지하는 신뢰도 높은 추세선이 됩니다."
@@ -2029,7 +2029,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 324,
             "low": 306,
             "close": 309,
-            "volume": 114
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -2037,7 +2037,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 312,
             "low": 297,
             "close": 300,
-            "volume": 106
+            "volume": 113
         },
         {
             "time": "Day 3",
@@ -2045,7 +2045,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 303,
             "low": 294,
             "close": 295.5,
-            "volume": 121
+            "volume": 107
         }
     ],
     drawings: [
@@ -2062,10 +2062,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "다시 지지선 위로 회복해 줄 것이라는 희망을 품고 원금의 절반을 더 투입해 강하게 물타기(추가 매수)한다.",
-        "거래량을 동반하여 종가 기준으로 중요 지지선 지지에 실패하고 붕괴(Breakdown)되었으므로 원칙에 따라 즉시 전량 손절하여 추가적인 연쇄 폭락 리스크를 차단한다.",
-        "손절매를 지연시키며 가격이 240달러선까지 더 떨어져도 물타지 않고 기도만 한다.",
-        "오히려 추가로 고배율 롱(매수) 포지션을 잡는다."
+        "추가 물타기를 위해 자금을 동원하여 평단가 관리",
+        "중요 지지선 붕괴(Breakdown) 확인 후 즉시 전량 손절",
+        "지속 하락 시 추가 평단가 관리를 위해 매수 유보",
+        "하방 이탈 시 즉시 반대 고배율 롱 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "거래량이 동반된 장대음봉으로 주요 지지선 아래에서 종가가 결정되는 이탈 마감은 매수 지지 세력의 패배이자 추세 붕괴(Breakdown)의 신호입니다. 이 시점에서 물타기를 하거나 존버를 하면 파산적인 하락 조정을 겪을 수 있으므로 즉시 룰에 근거한 '전량 손절'을 집행해야 계좌를 살릴 수 있습니다."
@@ -2084,7 +2084,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 438,
             "low": 417,
             "close": 432,
-            "volume": 99
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -2092,7 +2092,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 471,
             "low": 429,
             "close": 465,
-            "volume": 93
+            "volume": 84
         },
         {
             "time": "Day 3",
@@ -2100,7 +2100,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 468,
             "low": 447,
             "close": 450,
-            "volume": 103
+            "volume": 115
         }
     ],
     drawings: [
@@ -2117,10 +2117,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "가짜 돌파(휩소)의 징조이므로 즉시 전량 공매도(숏) 포지션에 몰빵한다.",
-        "돌파된 저항선이 새로운 지지선으로 역할 전환(Role Reversal)에 성공하는 모양새이므로, 450달러 지지선 바로 아래에 손절가(예: 441달러)를 타이트하게 잡고 매수(롱)로 눌림목 분할 진입한다.",
-        "추격 매수 기회를 완전히 날렸으므로 어떠한 주문도 넣지 않고 박스권 바닥까지 흘러내릴 때까지 무작정 기다린다.",
-        "480달러를 돌파할 때까지 시장가 추격 매수 100%를 집행한다."
+        "가짜 돌파(휩소) 판단에 따른 고배율 숏 진입",
+        "돌파 후 리테스트 성공 확인 시 지지선 눌림목 매수",
+        "추격 매수 기회 상실로 판단하고 거래 포기",
+        "480달러 추가 돌파를 타겟으로 시장가 추격 매수"
     ],
     correctIndex: 1,
     explanation: "강하게 돌파된 저항선은 룰 체인지에 의해 지지선으로 변합니다(역할 전환). 돌파 당시 추격 매수하기보다, 돌파된 선(450달러)으로 삼성전자 주가가 되돌아오는 리테스트(Retest) 시점에 저조한 거래량과 지지 캔들을 확인하고 손절선을 바로 밑에 설정하여 눌림목 진입하는 것이 리스크가 가장 적은 프로 트레이더의 정석입니다."
@@ -2139,7 +2139,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 294,
             "low": 240,
             "close": 264,
-            "volume": 99
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -2147,7 +2147,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 273,
             "low": 240,
             "close": 252,
-            "volume": 119
+            "volume": 113
         },
         {
             "time": "Day 3",
@@ -2155,7 +2155,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 258,
             "low": 240,
             "close": 243,
-            "volume": 118
+            "volume": 117
         }
     ],
     drawings: [
@@ -2172,10 +2172,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "네, 세 번이나 지지했으므로 추가 상승 신호로 간주하고 풀매수로 대응한다.",
-        "아니오, 지선 근처에서 매수세(반등 동력)가 결여되어 고점이 계속 낮아지는 구조는 하방 붕괴(Breakdown) 확률이 압도적으로 높으므로, 매수를 절대 보류하고 확실한 돌파/이탈 방향이 드러날 때까지 관망해야 한다.",
-        "네, 오히려 지금 물타기 평단가를 획기적으로 낮추기 위해 투자 원금을 추가 납입한다.",
-        "추세와 무관하게 숏 포지션만 영구 유지한다."
+        "삼중 바닥 지지로 판단하고 매수 비중 대폭 확대",
+        "디센딩 수렴 확인 후 하방 이탈 위험 대비 관망",
+        "물타기 평단가 관리를 위해 매수 보증금 추가 투입",
+        "추세와 무관하게 숏 포지션으로 전환 후 무기한 보유"
     ],
     correctIndex: 1,
     explanation: "지지선 부근에서 고점이 점점 낮아지는 '디센딩' 형태는 매수 지원 강도가 둔화되고 매도 출하 공급이 가격을 계속 하방으로 압박하고 있음을 증명합니다. 지지 성공보다 지선 하방 붕괴 후 급락할 확률이 높으므로, 지지선이라는 명목만으로 함부로 매수 진입하지 말고 돌파/이탈 컨펌을 기다려 관망하는 것이 현명합니다."
@@ -2194,7 +2194,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 306,
             "low": 300,
             "close": 306,
-            "volume": 87
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -2202,7 +2202,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 330,
             "low": 306,
             "close": 327,
-            "volume": 117
+            "volume": 103
         },
         {
             "time": "Day 3",
@@ -2210,7 +2210,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 375,
             "low": 327,
             "close": 372,
-            "volume": 96
+            "volume": 101
         },
         {
             "time": "Day 4",
@@ -2218,7 +2218,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 375,
             "low": 342,
             "close": 345,
-            "volume": 105
+            "volume": 99
         }
     ],
     drawings: [
@@ -2254,10 +2254,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세가 완전히 죽었으므로 모든 국내 주식을 즉시 전량 시장가 손절 처리하고 다신 쳐다보지 않는다.",
-        "단기 가속 추세선 이탈로 상승 속도가 제어 및 하향 조정에 들어갔으므로, 보유 물량의 50%를 익절하여 이익을 확보하고, 나머지 물량은 완만한 장기 추세선 지지 여부를 지켜보며 리스크를 분산한다.",
-        "단기선 붕괴는 무의미하므로 레버리지를 써서 꼭대기에서 물타기 100% 매수를 때린다.",
-        "장기 추세선마저 붕괴될 때까지 신규 매수만 반복한다."
+        "추세 붕괴 판단에 따른 전량 손절 및 영구 이탈",
+        "가속 추세 이탈에 따른 50% 분할 익절 및 분산",
+        "단기 지지선 붕괴를 무시한 고배율 물타기 매수",
+        "장기 추세선까지 조정을 대비한 신규 매수 대기"
     ],
     correctIndex: 1,
     explanation: "가파르게 우상향하던 가속 추세선(Accelerated Trendline)이 하방 돌파되는 것은 기존 폭등 랠리의 속도가 둔화되고 완만한 본래 장기 추세선(장기 매물대)을 향해 정상적인 가격 조정을 받기 시작했음을 뜻합니다. 따라서 물량의 50%가량을 털어 수익을 실현하고 남은 물량으로 장기 추세선의 3rd Touch 지지 성공 여부를 테스트하는 것이 리스크 관리의 기본입니다."
@@ -2276,7 +2276,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 270,
             "low": 240,
             "close": 264,
-            "volume": 106
+            "volume": 101
         },
         {
             "time": "Day 2",
@@ -2284,7 +2284,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 297,
             "low": 264,
             "close": 285,
-            "volume": 109
+            "volume": 107
         },
         {
             "time": "Day 3",
@@ -2292,7 +2292,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 288,
             "low": 270,
             "close": 276,
-            "volume": 127
+            "volume": 90
         }
     ],
     drawings: [
@@ -2317,10 +2317,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "손절 라인 없이, 276달러에서 1차 매수를 전액 투입하고 반등을 기도한다.",
-        "추세선이 확실히 유효하다고 증명되는 3rd Touch 지점이므로, 276달러선 부근에서 분할 매수를 실행하되 손절가는 추세선 라인 직하방인 267달러선 밑에 짧게 걸어두어 손실폭은 극단적으로 최소화하고 상방 기대치(전고점 이상)는 크게 열어두는 매매를 집행한다.",
-        "추세선이 깨질 것을 100% 확신하고 무조건 숏을 잡는다.",
-        "어떠한 주문도 없이 330달러까지 돌파 랠리가 끝날 때까지 관망한다."
+        "손절 라인 없이 지정가로 1차 매수 몰빵 진입",
+        "3rd Touch 타점 진입 및 추세선 하단 칼손절 셋업",
+        "하방 붕괴 예상을 통한 고배율 숏 즉각 진입",
+        "목표가 터치 시까지 무작정 대기 후 추격 매수"
     ],
     correctIndex: 1,
     explanation: "추세선 상의 3번째 지지 포인트(3rd Touch)는 추세 신뢰도가 형성되는 대단히 성공률 높은 정석적 눌림목 타점입니다. 진입 가격과 손절 라인(추세선 이탈가)의 거리가 매우 가깝기 때문에 기대 수익 대비 잃을 금액이 매우 적어 프로 트레이더들이 가장 선호하는 칼손절 매수 스팟입니다."
@@ -2339,7 +2339,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 740,
             "low": 695,
             "close": 725,
-            "volume": 96
+            "volume": 117
         },
         {
             "time": "Day 2",
@@ -2347,7 +2347,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 745,
             "low": 715,
             "close": 720,
-            "volume": 107
+            "volume": 118
         },
         {
             "time": "Day 3",
@@ -2355,7 +2355,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 780,
             "low": 715,
             "close": 770,
-            "volume": 97
+            "volume": 102
         },
         {
             "time": "Day 4",
@@ -2363,7 +2363,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 775,
             "low": 745,
             "close": 755,
-            "volume": 385
+            "volume": 361
         },
         {
             "time": "Day 5",
@@ -2371,7 +2371,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 765,
             "low": 750,
             "close": 760,
-            "volume": 417
+            "volume": 357
         }
     ],
     drawings: [
@@ -2392,10 +2392,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "돌파봉 꼭대기에서 뇌동매매 추격 매수",
-        "돌파된 저항선(750달러)이 지지선으로 역할 전환(Retest)에 성공할 때 눌림목 진입",
-        "700달러까지 떨어질 때까지 무작정 대기",
-        "돌파했으므로 이제 급락할 것이라 가정하고 숏 진입"
+        "돌파 시점에 시장가로 즉시 진입하는 추격 매수",
+        "돌파 후 저항선의 지지선 전환(Retest) 확인 시 진입",
+        "이전 최저가 부근인 700달러 조정 시까지 대기 매수",
+        "돌파 후 즉시 단기 조정을 예상한 역추세 숏 진입"
     ],
     correctIndex: 1,
     explanation: "저항선이 강하게 뚫리면 역할 전환(Role Reversal)에 의해 신규 지지선으로 바뀝니다. 돌파 시점에 뇌동매매하기보다는 돌파된 선 부근으로 테슬라 주가가 눌려 지지(Retest)를 완성할 때 진입하는 것이 리스크 대비 기대 수익이 큽니다."
@@ -2414,7 +2414,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 525,
             "low": 500,
             "close": 515,
-            "volume": 119
+            "volume": 86
         },
         {
             "time": "W-4",
@@ -2422,7 +2422,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 550,
             "low": 510,
             "close": 540,
-            "volume": 110
+            "volume": 111
         },
         {
             "time": "W-3",
@@ -2430,7 +2430,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 545,
             "low": 525,
             "close": 530,
-            "volume": 97
+            "volume": 120
         },
         {
             "time": "W-2",
@@ -2438,7 +2438,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 575,
             "low": 535,
             "close": 565,
-            "volume": 114
+            "volume": 103
         },
         {
             "time": "Today",
@@ -2446,7 +2446,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 570,
             "low": 515,
             "close": 520,
-            "volume": 122
+            "volume": 107
         }
     ],
     drawings: [
@@ -2471,10 +2471,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세선의 이탈은 아무 영향이 없으므로 추가 홀딩",
-        "상승 추세 붕괴(Breakdown) - 하락 반전 가능성이 커지므로 비중 축소 및 손절 검토",
-        "일시적인 휩소이므로 전재산 물타기 기회",
-        "채널 상단 저항선에 부딪힌 것이므로 즉시 매수"
+        "추세선 이탈은 영향이 없으므로 비중 유지",
+        "상승 추세 붕괴로 하락 반전 대비 비중 축소",
+        "일시적인 속임수이므로 추가 불타기 진입",
+        "채널 상단 도달에 따른 즉각적인 매수 대응"
     ],
     correctIndex: 1,
     explanation: "신뢰받던 우상향 상승 추세선 하방으로 캔들의 종가가 이탈 마감하는 것은 매수 중심의 시장 주도권이 붕괴했음을 뜻합니다. 지지를 잃은 하락 가속화 리스크에 대비해야 합니다."
@@ -2493,7 +2493,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 510,
             "low": 495,
             "close": 505,
-            "volume": 99
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -2501,7 +2501,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 540,
             "low": 505,
             "close": 535,
-            "volume": 89
+            "volume": 123
         },
         {
             "time": "Day 3",
@@ -2509,7 +2509,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 545,
             "low": 520,
             "close": 525,
-            "volume": 90
+            "volume": 110
         },
         {
             "time": "Day 4",
@@ -2517,7 +2517,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 575,
             "low": 525,
             "close": 570,
-            "volume": 93
+            "volume": 112
         },
         {
             "time": "Day 5",
@@ -2554,10 +2554,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "채널을 뚫고 끝없이 오를 것으로 믿고 레버리지를 써서 풀매수",
-        "채널 상단 부근이므로 이익 실현(분할 익절)을 하거나 하방 숏 반등 매매를 노려보며 신규 매수는 대기",
-        "채널 중간 이하로 떨어질 때까지 전량 시장가 매수",
-        "채널 붕괴이므로 무조건 전량 손절"
+        "채널 상방 돌파를 예상한 고배율 레버리지 매수",
+        "채널 상단 저항에 따른 분할 익절 및 대기",
+        "채널 중간 조정 시 지정을 통한 시장가 추격",
+        "채널 붕괴 신호에 따른 전량 기계적 손절"
     ],
     correctIndex: 1,
     explanation: "상승 채널이라고 해도 상단 저항선에 닿으면 다시 채널 하단이나 중심선까지 조정을 받을 가능성이 매우 큽니다. 따라서 고점 영역에서의 추격매수를 금지하고, 기존 포지션을 분할 익절하는 기회로 삼아야 합니다."
@@ -2576,7 +2576,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 505,
             "low": 500,
             "close": 505,
-            "volume": 85
+            "volume": 84
         },
         {
             "time": "Day 2",
@@ -2584,14 +2584,14 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 525,
             "low": 510,
             "close": 520,
-            "volume": 89
+            "volume": 114
         }
     ],
     options: [
-        "선이 얼마나 예쁜 색상인지가 결정",
-        "최소 3개 이상의 뚜렷한 저점/고점 터치(3rd Touch)가 발생하여 반등/저항이 확인되었을 때 시장이 신뢰함",
-        "최대한 가파른 각도로 90도 가깝게 그려질 것",
-        "보조지표와 전혀 무관하게 차트 끝자락만 연결"
+        "차트상 선이 정배열로 정돈되어 그려질 때",
+        "최소 3개 이상의 뚜렷한 저점/고점 터치 확인 시",
+        "가파른 각도로 90도에 가깝게 작도될 때",
+        "보조지표와 결합하여 수평으로 그려질 때"
     ],
     correctIndex: 1,
     explanation: "두 점만으로도 선을 그릴 수 있지만, 3번째 터치(3rd Touch)에서 정확한 지지나 저항을 보이고 반등해 주는 순간부터 시장 참여자들이 공식 인지하는 신뢰도 높은 추세선이 됩니다."
@@ -2610,7 +2610,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 540,
             "low": 510,
             "close": 515,
-            "volume": 95
+            "volume": 101
         },
         {
             "time": "Day 2",
@@ -2618,7 +2618,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 520,
             "low": 495,
             "close": 500,
-            "volume": 107
+            "volume": 88
         },
         {
             "time": "Day 3",
@@ -2626,7 +2626,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 505,
             "low": 490,
             "close": 492.5,
-            "volume": 88
+            "volume": 92
         }
     ],
     drawings: [
@@ -2643,10 +2643,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "다시 지지선 위로 회복해 줄 것이라는 희망을 품고 원금의 절반을 더 투입해 강하게 물타기(추가 매수)한다.",
-        "거래량을 동반하여 종가 기준으로 중요 지지선 지지에 실패하고 붕괴(Breakdown)되었으므로 원칙에 따라 즉시 전량 손절하여 추가적인 연쇄 폭락 리스크를 차단한다.",
-        "손절매를 지연시키며 가격이 400달러선까지 더 떨어져도 물타지 않고 기도만 한다.",
-        "오히려 추가로 고배율 롱(매수) 포지션을 잡는다."
+        "추가 물타기를 위해 자금을 동원하여 평단가 관리",
+        "중요 지지선 붕괴(Breakdown) 확인 후 즉시 전량 손절",
+        "지속 하락 시 추가 평단가 관리를 위해 매수 유보",
+        "하방 이탈 시 즉시 반대 고배율 롱 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "거래량이 동반된 장대음봉으로 주요 지지선 아래에서 종가가 결정되는 이탈 마감은 매수 지지 세력의 패배이자 추세 붕괴(Breakdown)의 신호입니다. 이 시점에서 물타기를 하거나 존버를 하면 파산적인 하락 조정을 겪을 수 있으므로 즉시 룰에 근거한 '전량 손절'을 집행해야 계좌를 살릴 수 있습니다."
@@ -2665,7 +2665,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 730,
             "low": 695,
             "close": 720,
-            "volume": 110
+            "volume": 96
         },
         {
             "time": "Day 2",
@@ -2673,7 +2673,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 785,
             "low": 715,
             "close": 775,
-            "volume": 98
+            "volume": 102
         },
         {
             "time": "Day 3",
@@ -2681,7 +2681,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 780,
             "low": 745,
             "close": 750,
-            "volume": 96
+            "volume": 97
         }
     ],
     drawings: [
@@ -2698,10 +2698,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "가짜 돌파(휩소)의 징조이므로 즉시 전량 공매도(숏) 포지션에 몰빵한다.",
-        "돌파된 저항선이 새로운 지지선으로 역할 전환(Role Reversal)에 성공하는 모양새이므로, 750달러 지지선 바로 아래에 손절가(예: 735달러)를 타이트하게 잡고 매수(롱)로 눌림목 분할 진입한다.",
-        "추격 매수 기회를 완전히 날렸으므로 어떠한 주문도 넣지 않고 박스권 바닥까지 흘러내릴 때까지 무작정 기다린다.",
-        "800달러를 돌파할 때까지 시장가 추격 매수 100%를 집행한다."
+        "가짜 돌파(휩소) 판단에 따른 고배율 숏 진입",
+        "돌파 후 리테스트 성공 확인 시 지지선 눌림목 매수",
+        "추격 매수 기회 상실로 판단하고 거래 포기",
+        "800달러 추가 돌파를 타겟으로 시장가 추격 매수"
     ],
     correctIndex: 1,
     explanation: "강하게 돌파된 저항선은 룰 체인지에 의해 지지선으로 변합니다(역할 전환). 돌파 당시 추격 매수하기보다, 돌파된 선(750달러)으로 테슬라 주가가 되돌아오는 리테스트(Retest) 시점에 저조한 거래량과 지지 캔들을 확인하고 손절선을 바로 밑에 설정하여 눌림목 진입하는 것이 리스크가 가장 적은 프로 트레이더의 정석입니다."
@@ -2720,7 +2720,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 490,
             "low": 400,
             "close": 440,
-            "volume": 114
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -2728,7 +2728,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 455,
             "low": 400,
             "close": 420,
-            "volume": 85
+            "volume": 103
         },
         {
             "time": "Day 3",
@@ -2736,7 +2736,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 430,
             "low": 400,
             "close": 405,
-            "volume": 116
+            "volume": 115
         }
     ],
     drawings: [
@@ -2753,10 +2753,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "네, 세 번이나 지지했으므로 추가 상승 신호로 간주하고 풀매수로 대응한다.",
-        "아니오, 지선 근처에서 매수세(반등 동력)가 결여되어 고점이 계속 낮아지는 구조는 하방 붕괴(Breakdown) 확률이 압도적으로 높으므로, 매수를 절대 보류하고 확실한 돌파/이탈 방향이 드러날 때까지 관망해야 한다.",
-        "네, 오히려 지금 물타기 평단가를 획기적으로 낮추기 위해 투자 원금을 추가 납입한다.",
-        "추세와 무관하게 숏 포지션만 영구 유지한다."
+        "삼중 바닥 지지로 판단하고 매수 비중 대폭 확대",
+        "디센딩 수렴 확인 후 하방 이탈 위험 대비 관망",
+        "물타기 평단가 관리를 위해 매수 보증금 추가 투입",
+        "추세와 무관하게 숏 포지션으로 전환 후 무기한 보유"
     ],
     correctIndex: 1,
     explanation: "지지선 부근에서 고점이 점점 낮아지는 '디센딩' 형태는 매수 지원 강도가 둔화되고 매도 출하 공급이 가격을 계속 하방으로 압박하고 있음을 증명합니다. 지지 성공보다 지선 하방 붕괴 후 급락할 확률이 높으므로, 지지선이라는 명목만으로 함부로 매수 진입하지 말고 돌파/이탈 컨펌을 기다려 관망하는 것이 현명합니다."
@@ -2775,7 +2775,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 510,
             "low": 500,
             "close": 510,
-            "volume": 85
+            "volume": 81
         },
         {
             "time": "Day 2",
@@ -2783,7 +2783,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 550,
             "low": 510,
             "close": 545,
-            "volume": 103
+            "volume": 120
         },
         {
             "time": "Day 3",
@@ -2791,7 +2791,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 625,
             "low": 545,
             "close": 620,
-            "volume": 108
+            "volume": 88
         },
         {
             "time": "Day 4",
@@ -2799,7 +2799,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 625,
             "low": 570,
             "close": 575,
-            "volume": 105
+            "volume": 128
         }
     ],
     drawings: [
@@ -2835,10 +2835,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세가 완전히 죽었으므로 모든 해외 주식을 즉시 전량 시장가 손절 처리하고 다신 쳐다보지 않는다.",
-        "단기 가속 추세선 이탈로 상승 속도가 제어 및 하향 조정에 들어갔으므로, 보유 물량의 50%를 익절하여 이익을 확보하고, 나머지 물량은 완만한 장기 추세선 지지 여부를 지켜보며 리스크를 분산한다.",
-        "단기선 붕괴는 무의미하므로 레버리지를 써서 꼭대기에서 물타기 100% 매수를 때린다.",
-        "장기 추세선마저 붕괴될 때까지 신규 매수만 반복한다."
+        "추세 붕괴 판단에 따른 전량 손절 및 영구 이탈",
+        "가속 추세 이탈에 따른 50% 분할 익절 및 분산",
+        "단기 지지선 붕괴를 무시한 고배율 물타기 매수",
+        "장기 추세선까지 조정을 대비한 신규 매수 대기"
     ],
     correctIndex: 1,
     explanation: "가파르게 우상향하던 가속 추세선(Accelerated Trendline)이 하방 돌파되는 것은 기존 폭등 랠리의 속도가 둔화되고 완만한 본래 장기 추세선(장기 매물대)을 향해 정상적인 가격 조정을 받기 시작했음을 뜻합니다. 따라서 물량의 50%가량을 털어 수익을 실현하고 남은 물량으로 장기 추세선의 3rd Touch 지지 성공 여부를 테스트하는 것이 리스크 관리의 기본입니다."
@@ -2857,7 +2857,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 450,
             "low": 400,
             "close": 440,
-            "volume": 109
+            "volume": 81
         },
         {
             "time": "Day 2",
@@ -2865,7 +2865,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 495,
             "low": 440,
             "close": 475,
-            "volume": 119
+            "volume": 122
         },
         {
             "time": "Day 3",
@@ -2873,7 +2873,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 480,
             "low": 450,
             "close": 460,
-            "volume": 110
+            "volume": 105
         }
     ],
     drawings: [
@@ -2898,10 +2898,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "손절 라인 없이, 460달러에서 1차 매수를 전액 투입하고 반등을 기도한다.",
-        "추세선이 확실히 유효하다고 증명되는 3rd Touch 지점이므로, 460달러선 부근에서 분할 매수를 실행하되 손절가는 추세선 라인 직하방인 445달러선 밑에 짧게 걸어두어 손실폭은 극단적으로 최소화하고 상방 기대치(전고점 이상)는 크게 열어두는 매매를 집행한다.",
-        "추세선이 깨질 것을 100% 확신하고 무조건 숏을 잡는다.",
-        "어떠한 주문도 없이 550달러까지 돌파 랠리가 끝날 때까지 관망한다."
+        "손절 라인 없이 지정가로 1차 매수 몰빵 진입",
+        "3rd Touch 타점 진입 및 추세선 하단 칼손절 셋업",
+        "하방 붕괴 예상을 통한 고배율 숏 즉각 진입",
+        "목표가 터치 시까지 무작정 대기 후 추격 매수"
     ],
     correctIndex: 1,
     explanation: "추세선 상의 3번째 지지 포인트(3rd Touch)는 추세 신뢰도가 형성되는 대단히 성공률 높은 정석적 눌림목 타점입니다. 진입 가격과 손절 라인(추세선 이탈가)의 거리가 매우 가깝기 때문에 기대 수익 대비 잃을 금액이 매우 적어 프로 트레이더들이 가장 선호하는 칼손절 매수 스팟입니다."
@@ -2920,7 +2920,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1184,
             "low": 1112,
             "close": 1160,
-            "volume": 114
+            "volume": 106
         },
         {
             "time": "Day 2",
@@ -2928,7 +2928,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1192,
             "low": 1144,
             "close": 1152,
-            "volume": 114
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -2936,7 +2936,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1248,
             "low": 1144,
             "close": 1232,
-            "volume": 119
+            "volume": 108
         },
         {
             "time": "Day 4",
@@ -2944,7 +2944,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1240,
             "low": 1192,
             "close": 1208,
-            "volume": 345
+            "volume": 353
         },
         {
             "time": "Day 5",
@@ -2952,7 +2952,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1224,
             "low": 1200,
             "close": 1216,
-            "volume": 334
+            "volume": 402
         }
     ],
     drawings: [
@@ -2973,10 +2973,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "돌파봉 꼭대기에서 뇌동매매 추격 매수",
-        "돌파된 저항선(1,200달러)이 지지선으로 역할 전환(Retest)에 성공할 때 눌림목 진입",
-        "1,120달러까지 떨어질 때까지 무작정 대기",
-        "돌파했으므로 이제 급락할 것이라 가정하고 숏 진입"
+        "돌파 시점에 시장가로 즉시 진입하는 추격 매수",
+        "돌파 후 저항선의 지지선 전환(Retest) 확인 시 진입",
+        "이전 최저가 부근인 1,120달러 조정 시까지 대기 매수",
+        "돌파 후 즉시 단기 조정을 예상한 역추세 숏 진입"
     ],
     correctIndex: 1,
     explanation: "저항선이 강하게 뚫리면 역할 전환(Role Reversal)에 의해 신규 지지선으로 바뀝니다. 돌파 시점에 뇌동매매하기보다는 돌파된 선 부근으로 애플 주가가 눌려 지지(Retest)를 완성할 때 진입하는 것이 리스크 대비 기대 수익이 큽니다."
@@ -2995,7 +2995,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 840,
             "low": 800,
             "close": 824,
-            "volume": 118
+            "volume": 104
         },
         {
             "time": "W-4",
@@ -3003,7 +3003,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 880,
             "low": 816,
             "close": 864,
-            "volume": 100
+            "volume": 122
         },
         {
             "time": "W-3",
@@ -3011,7 +3011,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 872,
             "low": 840,
             "close": 848,
-            "volume": 124
+            "volume": 120
         },
         {
             "time": "W-2",
@@ -3019,7 +3019,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 920,
             "low": 856,
             "close": 904,
-            "volume": 125
+            "volume": 126
         },
         {
             "time": "Today",
@@ -3027,7 +3027,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 912,
             "low": 824,
             "close": 832,
-            "volume": 129
+            "volume": 99
         }
     ],
     drawings: [
@@ -3052,10 +3052,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세선의 이탈은 아무 영향이 없으므로 추가 홀딩",
-        "상승 추세 붕괴(Breakdown) - 하락 반전 가능성이 커지므로 비중 축소 및 손절 검토",
-        "일시적인 휩소이므로 전재산 물타기 기회",
-        "채널 상단 저항선에 부딪힌 것이므로 즉시 매수"
+        "추세선 이탈은 영향이 없으므로 비중 유지",
+        "상승 추세 붕괴로 하락 반전 대비 비중 축소",
+        "일시적인 속임수이므로 추가 불타기 진입",
+        "채널 상단 도달에 따른 즉각적인 매수 대응"
     ],
     correctIndex: 1,
     explanation: "신뢰받던 우상향 상승 추세선 하방으로 캔들의 종가가 이탈 마감하는 것은 매수 중심의 시장 주도권이 붕괴했음을 뜻합니다. 지지를 잃은 하락 가속화 리스크에 대비해야 합니다."
@@ -3074,7 +3074,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 816,
             "low": 792,
             "close": 808,
-            "volume": 93
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -3082,7 +3082,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 864,
             "low": 808,
             "close": 856,
-            "volume": 86
+            "volume": 108
         },
         {
             "time": "Day 3",
@@ -3090,7 +3090,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 872,
             "low": 832,
             "close": 840,
-            "volume": 123
+            "volume": 107
         },
         {
             "time": "Day 4",
@@ -3098,7 +3098,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 920,
             "low": 840,
             "close": 912,
-            "volume": 103
+            "volume": 109
         },
         {
             "time": "Day 5",
@@ -3106,7 +3106,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 928,
             "low": 896,
             "close": 904,
-            "volume": 98
+            "volume": 135
         }
     ],
     drawings: [
@@ -3135,10 +3135,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "채널을 뚫고 끝없이 오를 것으로 믿고 레버리지를 써서 풀매수",
-        "채널 상단 부근이므로 이익 실현(분할 익절)을 하거나 하방 숏 반등 매매를 노려보며 신규 매수는 대기",
-        "채널 중간 이하로 떨어질 때까지 전량 시장가 매수",
-        "채널 붕괴이므로 무조건 전량 손절"
+        "채널 상방 돌파를 예상한 고배율 레버리지 매수",
+        "채널 상단 저항에 따른 분할 익절 및 대기",
+        "채널 중간 조정 시 지정을 통한 시장가 추격",
+        "채널 붕괴 신호에 따른 전량 기계적 손절"
     ],
     correctIndex: 1,
     explanation: "상승 채널이라고 해도 상단 저항선에 닿으면 다시 채널 하단이나 중심선까지 조정을 받을 가능성이 매우 큽니다. 따라서 고점 영역에서의 추격매수를 금지하고, 기존 포지션을 분할 익절하는 기회로 삼아야 합니다."
@@ -3157,7 +3157,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 808,
             "low": 800,
             "close": 808,
-            "volume": 115
+            "volume": 96
         },
         {
             "time": "Day 2",
@@ -3165,14 +3165,14 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 840,
             "low": 816,
             "close": 832,
-            "volume": 91
+            "volume": 113
         }
     ],
     options: [
-        "선이 얼마나 예쁜 색상인지가 결정",
-        "최소 3개 이상의 뚜렷한 저점/고점 터치(3rd Touch)가 발생하여 반등/저항이 확인되었을 때 시장이 신뢰함",
-        "최대한 가파른 각도로 90도 가깝게 그려질 것",
-        "보조지표와 전혀 무관하게 차트 끝자락만 연결"
+        "차트상 선이 정배열로 정돈되어 그려질 때",
+        "최소 3개 이상의 뚜렷한 저점/고점 터치 확인 시",
+        "가파른 각도로 90도에 가깝게 작도될 때",
+        "보조지표와 결합하여 수평으로 그려질 때"
     ],
     correctIndex: 1,
     explanation: "두 점만으로도 선을 그릴 수 있지만, 3번째 터치(3rd Touch)에서 정확한 지지나 저항을 보이고 반등해 주는 순간부터 시장 참여자들이 공식 인지하는 신뢰도 높은 추세선이 됩니다."
@@ -3191,7 +3191,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 864,
             "low": 816,
             "close": 824,
-            "volume": 104
+            "volume": 90
         },
         {
             "time": "Day 2",
@@ -3199,7 +3199,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 832,
             "low": 792,
             "close": 800,
-            "volume": 90
+            "volume": 95
         },
         {
             "time": "Day 3",
@@ -3207,7 +3207,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 808,
             "low": 784,
             "close": 788,
-            "volume": 95
+            "volume": 96
         }
     ],
     drawings: [
@@ -3224,10 +3224,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "다시 지지선 위로 회복해 줄 것이라는 희망을 품고 원금의 절반을 더 투입해 강하게 물타기(추가 매수)한다.",
-        "거래량을 동반하여 종가 기준으로 중요 지지선 지지에 실패하고 붕괴(Breakdown)되었으므로 원칙에 따라 즉시 전량 손절하여 추가적인 연쇄 폭락 리스크를 차단한다.",
-        "손절매를 지연시키며 가격이 640달러선까지 더 떨어져도 물타지 않고 기도만 한다.",
-        "오히려 추가로 고배율 롱(매수) 포지션을 잡는다."
+        "추가 물타기를 위해 자금을 동원하여 평단가 관리",
+        "중요 지지선 붕괴(Breakdown) 확인 후 즉시 전량 손절",
+        "지속 하락 시 추가 평단가 관리를 위해 매수 유보",
+        "하방 이탈 시 즉시 반대 고배율 롱 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "거래량이 동반된 장대음봉으로 주요 지지선 아래에서 종가가 결정되는 이탈 마감은 매수 지지 세력의 패배이자 추세 붕괴(Breakdown)의 신호입니다. 이 시점에서 물타기를 하거나 존버를 하면 파산적인 하락 조정을 겪을 수 있으므로 즉시 룰에 근거한 '전량 손절'을 집행해야 계좌를 살릴 수 있습니다."
@@ -3246,7 +3246,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1168,
             "low": 1112,
             "close": 1152,
-            "volume": 99
+            "volume": 83
         },
         {
             "time": "Day 2",
@@ -3254,7 +3254,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1256,
             "low": 1144,
             "close": 1240,
-            "volume": 112
+            "volume": 100
         },
         {
             "time": "Day 3",
@@ -3262,7 +3262,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1248,
             "low": 1192,
             "close": 1200,
-            "volume": 107
+            "volume": 92
         }
     ],
     drawings: [
@@ -3279,10 +3279,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "가짜 돌파(휩소)의 징조이므로 즉시 전량 공매도(숏) 포지션에 몰빵한다.",
-        "돌파된 저항선이 새로운 지지선으로 역할 전환(Role Reversal)에 성공하는 모양새이므로, 1,200달러 지지선 바로 아래에 손절가(예: 1,176달러)를 타이트하게 잡고 매수(롱)로 눌림목 분할 진입한다.",
-        "추격 매수 기회를 완전히 날렸으므로 어떠한 주문도 넣지 않고 박스권 바닥까지 흘러내릴 때까지 무작정 기다린다.",
-        "1,280달러를 돌파할 때까지 시장가 추격 매수 100%를 집행한다."
+        "가짜 돌파(휩소) 판단에 따른 고배율 숏 진입",
+        "돌파 후 리테스트 성공 확인 시 지지선 눌림목 매수",
+        "추격 매수 기회 상실로 판단하고 거래 포기",
+        "1,280달러 추가 돌파를 타겟으로 시장가 추격 매수"
     ],
     correctIndex: 1,
     explanation: "강하게 돌파된 저항선은 룰 체인지에 의해 지지선으로 변합니다(역할 전환). 돌파 당시 추격 매수하기보다, 돌파된 선(1,200달러)으로 애플 주가가 되돌아오는 리테스트(Retest) 시점에 저조한 거래량과 지지 캔들을 확인하고 손절선을 바로 밑에 설정하여 눌림목 진입하는 것이 리스크가 가장 적은 프로 트레이더의 정석입니다."
@@ -3301,7 +3301,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 784,
             "low": 640,
             "close": 704,
-            "volume": 114
+            "volume": 95
         },
         {
             "time": "Day 2",
@@ -3309,7 +3309,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 728,
             "low": 640,
             "close": 672,
-            "volume": 117
+            "volume": 108
         },
         {
             "time": "Day 3",
@@ -3317,7 +3317,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 688,
             "low": 640,
             "close": 648,
-            "volume": 101
+            "volume": 112
         }
     ],
     drawings: [
@@ -3334,10 +3334,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "네, 세 번이나 지지했으므로 추가 상승 신호로 간주하고 풀매수로 대응한다.",
-        "아니오, 지선 근처에서 매수세(반등 동력)가 결여되어 고점이 계속 낮아지는 구조는 하방 붕괴(Breakdown) 확률이 압도적으로 높으므로, 매수를 절대 보류하고 확실한 돌파/이탈 방향이 드러날 때까지 관망해야 한다.",
-        "네, 오히려 지금 물타기 평단가를 획기적으로 낮추기 위해 투자 원금을 추가 납입한다.",
-        "추세와 무관하게 숏 포지션만 영구 유지한다."
+        "삼중 바닥 지지로 판단하고 매수 비중 대폭 확대",
+        "디센딩 수렴 확인 후 하방 이탈 위험 대비 관망",
+        "물타기 평단가 관리를 위해 매수 보증금 추가 투입",
+        "추세와 무관하게 숏 포지션으로 전환 후 무기한 보유"
     ],
     correctIndex: 1,
     explanation: "지지선 부근에서 고점이 점점 낮아지는 '디센딩' 형태는 매수 지원 강도가 둔화되고 매도 출하 공급이 가격을 계속 하방으로 압박하고 있음을 증명합니다. 지지 성공보다 지선 하방 붕괴 후 급락할 확률이 높으므로, 지지선이라는 명목만으로 함부로 매수 진입하지 말고 돌파/이탈 컨펌을 기다려 관망하는 것이 현명합니다."
@@ -3356,7 +3356,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 816,
             "low": 800,
             "close": 816,
-            "volume": 83
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -3364,7 +3364,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 880,
             "low": 816,
             "close": 872,
-            "volume": 90
+            "volume": 84
         },
         {
             "time": "Day 3",
@@ -3372,7 +3372,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1000,
             "low": 872,
             "close": 992,
-            "volume": 90
+            "volume": 118
         },
         {
             "time": "Day 4",
@@ -3380,7 +3380,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1000,
             "low": 912,
             "close": 920,
-            "volume": 127
+            "volume": 114
         }
     ],
     drawings: [
@@ -3416,10 +3416,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세가 완전히 죽었으므로 모든 미국 주식을 즉시 전량 시장가 손절 처리하고 다신 쳐다보지 않는다.",
-        "단기 가속 추세선 이탈로 상승 속도가 제어 및 하향 조정에 들어갔으므로, 보유 물량의 50%를 익절하여 이익을 확보하고, 나머지 물량은 완만한 장기 추세선 지지 여부를 지켜보며 리스크를 분산한다.",
-        "단기선 붕괴는 무의미하므로 레버리지를 써서 꼭대기에서 물타기 100% 매수를 때린다.",
-        "장기 추세선마저 붕괴될 때까지 신규 매수만 반복한다."
+        "추세 붕괴 판단에 따른 전량 손절 및 영구 이탈",
+        "가속 추세 이탈에 따른 50% 분할 익절 및 분산",
+        "단기 지지선 붕괴를 무시한 고배율 물타기 매수",
+        "장기 추세선까지 조정을 대비한 신규 매수 대기"
     ],
     correctIndex: 1,
     explanation: "가파르게 우상향하던 가속 추세선(Accelerated Trendline)이 하방 돌파되는 것은 기존 폭등 랠리의 속도가 둔화되고 완만한 본래 장기 추세선(장기 매물대)을 향해 정상적인 가격 조정을 받기 시작했음을 뜻합니다. 따라서 물량의 50%가량을 털어 수익을 실현하고 남은 물량으로 장기 추세선의 3rd Touch 지지 성공 여부를 테스트하는 것이 리스크 관리의 기본입니다."
@@ -3438,7 +3438,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 720,
             "low": 640,
             "close": 704,
-            "volume": 85
+            "volume": 104
         },
         {
             "time": "Day 2",
@@ -3446,7 +3446,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 792,
             "low": 704,
             "close": 760,
-            "volume": 119
+            "volume": 115
         },
         {
             "time": "Day 3",
@@ -3454,7 +3454,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 768,
             "low": 720,
             "close": 736,
-            "volume": 104
+            "volume": 93
         }
     ],
     drawings: [
@@ -3479,10 +3479,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "손절 라인 없이, 736달러에서 1차 매수를 전액 투입하고 반등을 기도한다.",
-        "추세선이 확실히 유효하다고 증명되는 3rd Touch 지점이므로, 736달러선 부근에서 분할 매수를 실행하되 손절가는 추세선 라인 직하방인 712달러선 밑에 짧게 걸어두어 손실폭은 극단적으로 최소화하고 상방 기대치(전고점 이상)는 크게 열어두는 매매를 집행한다.",
-        "추세선이 깨질 것을 100% 확신하고 무조건 숏을 잡는다.",
-        "어떠한 주문도 없이 880달러까지 돌파 랠리가 끝날 때까지 관망한다."
+        "손절 라인 없이 지정가로 1차 매수 몰빵 진입",
+        "3rd Touch 타점 진입 및 추세선 하단 칼손절 셋업",
+        "하방 붕괴 예상을 통한 고배율 숏 즉각 진입",
+        "목표가 터치 시까지 무작정 대기 후 추격 매수"
     ],
     correctIndex: 1,
     explanation: "추세선 상의 3번째 지지 포인트(3rd Touch)는 추세 신뢰도가 형성되는 대단히 성공률 높은 정석적 눌림목 타점입니다. 진입 가격과 손절 라인(추세선 이탈가)의 거리가 매우 가깝기 때문에 기대 수익 대비 잃을 금액이 매우 적어 프로 트레이더들이 가장 선호하는 칼손절 매수 스팟입니다."
@@ -3501,7 +3501,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1480,
             "low": 1390,
             "close": 1450,
-            "volume": 80
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -3509,7 +3509,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1490,
             "low": 1430,
             "close": 1440,
-            "volume": 95
+            "volume": 122
         },
         {
             "time": "Day 3",
@@ -3517,7 +3517,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1560,
             "low": 1430,
             "close": 1540,
-            "volume": 123
+            "volume": 95
         },
         {
             "time": "Day 4",
@@ -3525,7 +3525,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1550,
             "low": 1490,
             "close": 1510,
-            "volume": 354
+            "volume": 341
         },
         {
             "time": "Day 5",
@@ -3533,7 +3533,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1530,
             "low": 1500,
             "close": 1520,
-            "volume": 376
+            "volume": 387
         }
     ],
     drawings: [
@@ -3554,10 +3554,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "돌파봉 꼭대기에서 뇌동매매 추격 매수",
-        "돌파된 저항선(1,500달러)이 지지선으로 역할 전환(Retest)에 성공할 때 눌림목 진입",
-        "1,400달러까지 떨어질 때까지 무작정 대기",
-        "돌파했으므로 이제 급락할 것이라 가정하고 숏 진입"
+        "돌파 시점에 시장가로 즉시 진입하는 추격 매수",
+        "돌파 후 저항선의 지지선 전환(Retest) 확인 시 진입",
+        "이전 최저가 부근인 1,400달러 조정 시까지 대기 매수",
+        "돌파 후 즉시 단기 조정을 예상한 역추세 숏 진입"
     ],
     correctIndex: 1,
     explanation: "저항선이 강하게 뚫리면 역할 전환(Role Reversal)에 의해 신규 지지선으로 바뀝니다. 돌파 시점에 뇌동매매하기보다는 돌파된 선 부근으로 나스닥 시세가 눌려 지지(Retest)를 완성할 때 진입하는 것이 리스크 대비 기대 수익이 큽니다."
@@ -3576,7 +3576,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1050,
             "low": 1000,
             "close": 1030,
-            "volume": 115
+            "volume": 112
         },
         {
             "time": "W-4",
@@ -3584,7 +3584,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1100,
             "low": 1020,
             "close": 1080,
-            "volume": 96
+            "volume": 115
         },
         {
             "time": "W-3",
@@ -3592,7 +3592,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1090,
             "low": 1050,
             "close": 1060,
-            "volume": 109
+            "volume": 88
         },
         {
             "time": "W-2",
@@ -3600,7 +3600,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1150,
             "low": 1070,
             "close": 1130,
-            "volume": 121
+            "volume": 114
         },
         {
             "time": "Today",
@@ -3608,7 +3608,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1140,
             "low": 1030,
             "close": 1040,
-            "volume": 113
+            "volume": 118
         }
     ],
     drawings: [
@@ -3633,10 +3633,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세선의 이탈은 아무 영향이 없으므로 추가 홀딩",
-        "상승 추세 붕괴(Breakdown) - 하락 반전 가능성이 커지므로 비중 축소 및 손절 검토",
-        "일시적인 휩소이므로 전재산 물타기 기회",
-        "채널 상단 저항선에 부딪힌 것이므로 즉시 매수"
+        "추세선 이탈은 영향이 없으므로 비중 유지",
+        "상승 추세 붕괴로 하락 반전 대비 비중 축소",
+        "일시적인 속임수이므로 추가 불타기 진입",
+        "채널 상단 도달에 따른 즉각적인 매수 대응"
     ],
     correctIndex: 1,
     explanation: "신뢰받던 우상향 상승 추세선 하방으로 캔들의 종가가 이탈 마감하는 것은 매수 중심의 시장 주도권이 붕괴했음을 뜻합니다. 지지를 잃은 하락 가속화 리스크에 대비해야 합니다."
@@ -3655,7 +3655,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1020,
             "low": 990,
             "close": 1010,
-            "volume": 107
+            "volume": 86
         },
         {
             "time": "Day 2",
@@ -3663,7 +3663,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1080,
             "low": 1010,
             "close": 1070,
-            "volume": 116
+            "volume": 95
         },
         {
             "time": "Day 3",
@@ -3671,7 +3671,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1090,
             "low": 1040,
             "close": 1050,
-            "volume": 126
+            "volume": 101
         },
         {
             "time": "Day 4",
@@ -3679,7 +3679,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1150,
             "low": 1050,
             "close": 1140,
-            "volume": 106
+            "volume": 92
         },
         {
             "time": "Day 5",
@@ -3687,7 +3687,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1160,
             "low": 1120,
             "close": 1130,
-            "volume": 109
+            "volume": 99
         }
     ],
     drawings: [
@@ -3716,10 +3716,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "채널을 뚫고 끝없이 오를 것으로 믿고 레버리지를 써서 풀매수",
-        "채널 상단 부근이므로 이익 실현(분할 익절)을 하거나 하방 숏 반등 매매를 노려보며 신규 매수는 대기",
-        "채널 중간 이하로 떨어질 때까지 전량 시장가 매수",
-        "채널 붕괴이므로 무조건 전량 손절"
+        "채널 상방 돌파를 예상한 고배율 레버리지 매수",
+        "채널 상단 저항에 따른 분할 익절 및 대기",
+        "채널 중간 조정 시 지정을 통한 시장가 추격",
+        "채널 붕괴 신호에 따른 전량 기계적 손절"
     ],
     correctIndex: 1,
     explanation: "상승 채널이라고 해도 상단 저항선에 닿으면 다시 채널 하단이나 중심선까지 조정을 받을 가능성이 매우 큽니다. 따라서 고점 영역에서의 추격매수를 금지하고, 기존 포지션을 분할 익절하는 기회로 삼아야 합니다."
@@ -3738,7 +3738,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1010,
             "low": 1000,
             "close": 1010,
-            "volume": 102
+            "volume": 101
         },
         {
             "time": "Day 2",
@@ -3746,14 +3746,14 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1050,
             "low": 1020,
             "close": 1040,
-            "volume": 103
+            "volume": 90
         }
     ],
     options: [
-        "선이 얼마나 예쁜 색상인지가 결정",
-        "최소 3개 이상의 뚜렷한 저점/고점 터치(3rd Touch)가 발생하여 반등/저항이 확인되었을 때 시장이 신뢰함",
-        "최대한 가파른 각도로 90도 가깝게 그려질 것",
-        "보조지표와 전혀 무관하게 차트 끝자락만 연결"
+        "차트상 선이 정배열로 정돈되어 그려질 때",
+        "최소 3개 이상의 뚜렷한 저점/고점 터치 확인 시",
+        "가파른 각도로 90도에 가깝게 작도될 때",
+        "보조지표와 결합하여 수평으로 그려질 때"
     ],
     correctIndex: 1,
     explanation: "두 점만으로도 선을 그릴 수 있지만, 3번째 터치(3rd Touch)에서 정확한 지지나 저항을 보이고 반등해 주는 순간부터 시장 참여자들이 공식 인지하는 신뢰도 높은 추세선이 됩니다."
@@ -3772,7 +3772,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1080,
             "low": 1020,
             "close": 1030,
-            "volume": 109
+            "volume": 113
         },
         {
             "time": "Day 2",
@@ -3780,7 +3780,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1040,
             "low": 990,
             "close": 1000,
-            "volume": 103
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -3788,7 +3788,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1010,
             "low": 980,
             "close": 985,
-            "volume": 119
+            "volume": 123
         }
     ],
     drawings: [
@@ -3805,10 +3805,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "다시 지지선 위로 회복해 줄 것이라는 희망을 품고 원금의 절반을 더 투입해 강하게 물타기(추가 매수)한다.",
-        "거래량을 동반하여 종가 기준으로 중요 지지선 지지에 실패하고 붕괴(Breakdown)되었으므로 원칙에 따라 즉시 전량 손절하여 추가적인 연쇄 폭락 리스크를 차단한다.",
-        "손절매를 지연시키며 가격이 800달러선까지 더 떨어져도 물타지 않고 기도만 한다.",
-        "오히려 추가로 고배율 롱(매수) 포지션을 잡는다."
+        "추가 물타기를 위해 자금을 동원하여 평단가 관리",
+        "중요 지지선 붕괴(Breakdown) 확인 후 즉시 전량 손절",
+        "지속 하락 시 추가 평단가 관리를 위해 매수 유보",
+        "하방 이탈 시 즉시 반대 고배율 롱 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "거래량이 동반된 장대음봉으로 주요 지지선 아래에서 종가가 결정되는 이탈 마감은 매수 지지 세력의 패배이자 추세 붕괴(Breakdown)의 신호입니다. 이 시점에서 물타기를 하거나 존버를 하면 파산적인 하락 조정을 겪을 수 있으므로 즉시 룰에 근거한 '전량 손절'을 집행해야 계좌를 살릴 수 있습니다."
@@ -3827,7 +3827,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1460,
             "low": 1390,
             "close": 1440,
-            "volume": 116
+            "volume": 107
         },
         {
             "time": "Day 2",
@@ -3835,7 +3835,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1570,
             "low": 1430,
             "close": 1550,
-            "volume": 106
+            "volume": 92
         },
         {
             "time": "Day 3",
@@ -3843,7 +3843,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1560,
             "low": 1490,
             "close": 1500,
-            "volume": 94
+            "volume": 105
         }
     ],
     drawings: [
@@ -3860,10 +3860,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "가짜 돌파(휩소)의 징조이므로 즉시 전량 공매도(숏) 포지션에 몰빵한다.",
-        "돌파된 저항선이 새로운 지지선으로 역할 전환(Role Reversal)에 성공하는 모양새이므로, 1,500달러 지지선 바로 아래에 손절가(예: 1,470달러)를 타이트하게 잡고 매수(롱)로 눌림목 분할 진입한다.",
-        "추격 매수 기회를 완전히 날렸으므로 어떠한 주문도 넣지 않고 박스권 바닥까지 흘러내릴 때까지 무작정 기다린다.",
-        "1,600달러를 돌파할 때까지 시장가 추격 매수 100%를 집행한다."
+        "가짜 돌파(휩소) 판단에 따른 고배율 숏 진입",
+        "돌파 후 리테스트 성공 확인 시 지지선 눌림목 매수",
+        "추격 매수 기회 상실로 판단하고 거래 포기",
+        "1,600달러 추가 돌파를 타겟으로 시장가 추격 매수"
     ],
     correctIndex: 1,
     explanation: "강하게 돌파된 저항선은 룰 체인지에 의해 지지선으로 변합니다(역할 전환). 돌파 당시 추격 매수하기보다, 돌파된 선(1,500달러)으로 나스닥 시세가 되돌아오는 리테스트(Retest) 시점에 저조한 거래량과 지지 캔들을 확인하고 손절선을 바로 밑에 설정하여 눌림목 진입하는 것이 리스크가 가장 적은 프로 트레이더의 정석입니다."
@@ -3882,7 +3882,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 980,
             "low": 800,
             "close": 880,
-            "volume": 108
+            "volume": 105
         },
         {
             "time": "Day 2",
@@ -3890,7 +3890,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 910,
             "low": 800,
             "close": 840,
-            "volume": 122
+            "volume": 84
         },
         {
             "time": "Day 3",
@@ -3898,7 +3898,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 860,
             "low": 800,
             "close": 810,
-            "volume": 103
+            "volume": 88
         }
     ],
     drawings: [
@@ -3915,10 +3915,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "네, 세 번이나 지지했으므로 추가 상승 신호로 간주하고 풀매수로 대응한다.",
-        "아니오, 지선 근처에서 매수세(반등 동력)가 결여되어 고점이 계속 낮아지는 구조는 하방 붕괴(Breakdown) 확률이 압도적으로 높으므로, 매수를 절대 보류하고 확실한 돌파/이탈 방향이 드러날 때까지 관망해야 한다.",
-        "네, 오히려 지금 물타기 평단가를 획기적으로 낮추기 위해 투자 원금을 추가 납입한다.",
-        "추세와 무관하게 숏 포지션만 영구 유지한다."
+        "삼중 바닥 지지로 판단하고 매수 비중 대폭 확대",
+        "디센딩 수렴 확인 후 하방 이탈 위험 대비 관망",
+        "물타기 평단가 관리를 위해 매수 보증금 추가 투입",
+        "추세와 무관하게 숏 포지션으로 전환 후 무기한 보유"
     ],
     correctIndex: 1,
     explanation: "지지선 부근에서 고점이 점점 낮아지는 '디센딩' 형태는 매수 지원 강도가 둔화되고 매도 출하 공급이 가격을 계속 하방으로 압박하고 있음을 증명합니다. 지지 성공보다 지선 하방 붕괴 후 급락할 확률이 높으므로, 지지선이라는 명목만으로 함부로 매수 진입하지 말고 돌파/이탈 컨펌을 기다려 관망하는 것이 현명합니다."
@@ -3937,7 +3937,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1020,
             "low": 1000,
             "close": 1020,
-            "volume": 106
+            "volume": 90
         },
         {
             "time": "Day 2",
@@ -3945,7 +3945,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1100,
             "low": 1020,
             "close": 1090,
-            "volume": 107
+            "volume": 95
         },
         {
             "time": "Day 3",
@@ -3953,7 +3953,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1250,
             "low": 1090,
             "close": 1240,
-            "volume": 116
+            "volume": 117
         },
         {
             "time": "Day 4",
@@ -3961,7 +3961,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1250,
             "low": 1140,
             "close": 1150,
-            "volume": 99
+            "volume": 108
         }
     ],
     drawings: [
@@ -3997,10 +3997,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세가 완전히 죽었으므로 모든 지수 선물을 즉시 전량 시장가 손절 처리하고 다신 쳐다보지 않는다.",
-        "단기 가속 추세선 이탈로 상승 속도가 제어 및 하향 조정에 들어갔으므로, 보유 물량의 50%를 익절하여 이익을 확보하고, 나머지 물량은 완만한 장기 추세선 지지 여부를 지켜보며 리스크를 분산한다.",
-        "단기선 붕괴는 무의미하므로 레버리지를 써서 꼭대기에서 물타기 100% 매수를 때린다.",
-        "장기 추세선마저 붕괴될 때까지 신규 매수만 반복한다."
+        "추세 붕괴 판단에 따른 전량 손절 및 영구 이탈",
+        "가속 추세 이탈에 따른 50% 분할 익절 및 분산",
+        "단기 지지선 붕괴를 무시한 고배율 물타기 매수",
+        "장기 추세선까지 조정을 대비한 신규 매수 대기"
     ],
     correctIndex: 1,
     explanation: "가파르게 우상향하던 가속 추세선(Accelerated Trendline)이 하방 돌파되는 것은 기존 폭등 랠리의 속도가 둔화되고 완만한 본래 장기 추세선(장기 매물대)을 향해 정상적인 가격 조정을 받기 시작했음을 뜻합니다. 따라서 물량의 50%가량을 털어 수익을 실현하고 남은 물량으로 장기 추세선의 3rd Touch 지지 성공 여부를 테스트하는 것이 리스크 관리의 기본입니다."
@@ -4019,7 +4019,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 900,
             "low": 800,
             "close": 880,
-            "volume": 103
+            "volume": 95
         },
         {
             "time": "Day 2",
@@ -4027,7 +4027,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 990,
             "low": 880,
             "close": 950,
-            "volume": 90
+            "volume": 102
         },
         {
             "time": "Day 3",
@@ -4035,7 +4035,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 960,
             "low": 900,
             "close": 920,
-            "volume": 122
+            "volume": 102
         }
     ],
     drawings: [
@@ -4060,10 +4060,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "손절 라인 없이, 920달러에서 1차 매수를 전액 투입하고 반등을 기도한다.",
-        "추세선이 확실히 유효하다고 증명되는 3rd Touch 지점이므로, 920달러선 부근에서 분할 매수를 실행하되 손절가는 추세선 라인 직하방인 890달러선 밑에 짧게 걸어두어 손실폭은 극단적으로 최소화하고 상방 기대치(전고점 이상)는 크게 열어두는 매매를 집행한다.",
-        "추세선이 깨질 것을 100% 확신하고 무조건 숏을 잡는다.",
-        "어떠한 주문도 없이 1,100달러까지 돌파 랠리가 끝날 때까지 관망한다."
+        "손절 라인 없이 지정가로 1차 매수 몰빵 진입",
+        "3rd Touch 타점 진입 및 추세선 하단 칼손절 셋업",
+        "하방 붕괴 예상을 통한 고배율 숏 즉각 진입",
+        "목표가 터치 시까지 무작정 대기 후 추격 매수"
     ],
     correctIndex: 1,
     explanation: "추세선 상의 3번째 지지 포인트(3rd Touch)는 추세 신뢰도가 형성되는 대단히 성공률 높은 정석적 눌림목 타점입니다. 진입 가격과 손절 라인(추세선 이탈가)의 거리가 매우 가깝기 때문에 기대 수익 대비 잃을 금액이 매우 적어 프로 트레이더들이 가장 선호하는 칼손절 매수 스팟입니다."
@@ -4082,7 +4082,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1776,
             "low": 1668,
             "close": 1740,
-            "volume": 86
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -4090,7 +4090,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1788,
             "low": 1716,
             "close": 1728,
-            "volume": 116
+            "volume": 104
         },
         {
             "time": "Day 3",
@@ -4098,7 +4098,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1872,
             "low": 1716,
             "close": 1848,
-            "volume": 122
+            "volume": 116
         },
         {
             "time": "Day 4",
@@ -4106,7 +4106,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1860,
             "low": 1788,
             "close": 1812,
-            "volume": 411
+            "volume": 339
         },
         {
             "time": "Day 5",
@@ -4114,7 +4114,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1836,
             "low": 1800,
             "close": 1824,
-            "volume": 343
+            "volume": 347
         }
     ],
     drawings: [
@@ -4135,10 +4135,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "돌파봉 꼭대기에서 뇌동매매 추격 매수",
-        "돌파된 저항선(1,800달러)이 지지선으로 역할 전환(Retest)에 성공할 때 눌림목 진입",
-        "1,680달러까지 떨어질 때까지 무작정 대기",
-        "돌파했으므로 이제 급락할 것이라 가정하고 숏 진입"
+        "돌파 시점에 시장가로 즉시 진입하는 추격 매수",
+        "돌파 후 저항선의 지지선 전환(Retest) 확인 시 진입",
+        "이전 최저가 부근인 1,680달러 조정 시까지 대기 매수",
+        "돌파 후 즉시 단기 조정을 예상한 역추세 숏 진입"
     ],
     correctIndex: 1,
     explanation: "저항선이 강하게 뚫리면 역할 전환(Role Reversal)에 의해 신규 지지선으로 바뀝니다. 돌파 시점에 뇌동매매하기보다는 돌파된 선 부근으로 엔비디아 주가가 눌려 지지(Retest)를 완성할 때 진입하는 것이 리스크 대비 기대 수익이 큽니다."
@@ -4157,7 +4157,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1260,
             "low": 1200,
             "close": 1236,
-            "volume": 116
+            "volume": 105
         },
         {
             "time": "W-4",
@@ -4165,7 +4165,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1320,
             "low": 1224,
             "close": 1296,
-            "volume": 110
+            "volume": 107
         },
         {
             "time": "W-3",
@@ -4173,7 +4173,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1308,
             "low": 1260,
             "close": 1272,
-            "volume": 92
+            "volume": 111
         },
         {
             "time": "W-2",
@@ -4181,7 +4181,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1380,
             "low": 1284,
             "close": 1356,
-            "volume": 128
+            "volume": 118
         },
         {
             "time": "Today",
@@ -4189,7 +4189,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1368,
             "low": 1236,
             "close": 1248,
-            "volume": 130
+            "volume": 128
         }
     ],
     drawings: [
@@ -4214,10 +4214,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세선의 이탈은 아무 영향이 없으므로 추가 홀딩",
-        "상승 추세 붕괴(Breakdown) - 하락 반전 가능성이 커지므로 비중 축소 및 손절 검토",
-        "일시적인 휩소이므로 전재산 물타기 기회",
-        "채널 상단 저항선에 부딪힌 것이므로 즉시 매수"
+        "추세선 이탈은 영향이 없으므로 비중 유지",
+        "상승 추세 붕괴로 하락 반전 대비 비중 축소",
+        "일시적인 속임수이므로 추가 불타기 진입",
+        "채널 상단 도달에 따른 즉각적인 매수 대응"
     ],
     correctIndex: 1,
     explanation: "신뢰받던 우상향 상승 추세선 하방으로 캔들의 종가가 이탈 마감하는 것은 매수 중심의 시장 주도권이 붕괴했음을 뜻합니다. 지지를 잃은 하락 가속화 리스크에 대비해야 합니다."
@@ -4236,7 +4236,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1224,
             "low": 1188,
             "close": 1212,
-            "volume": 98
+            "volume": 89
         },
         {
             "time": "Day 2",
@@ -4244,7 +4244,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1296,
             "low": 1212,
             "close": 1284,
-            "volume": 111
+            "volume": 95
         },
         {
             "time": "Day 3",
@@ -4252,7 +4252,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1308,
             "low": 1248,
             "close": 1260,
-            "volume": 118
+            "volume": 93
         },
         {
             "time": "Day 4",
@@ -4260,7 +4260,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1380,
             "low": 1260,
             "close": 1368,
-            "volume": 129
+            "volume": 118
         },
         {
             "time": "Day 5",
@@ -4268,7 +4268,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1392,
             "low": 1344,
             "close": 1356,
-            "volume": 121
+            "volume": 130
         }
     ],
     drawings: [
@@ -4297,10 +4297,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "채널을 뚫고 끝없이 오를 것으로 믿고 레버리지를 써서 풀매수",
-        "채널 상단 부근이므로 이익 실현(분할 익절)을 하거나 하방 숏 반등 매매를 노려보며 신규 매수는 대기",
-        "채널 중간 이하로 떨어질 때까지 전량 시장가 매수",
-        "채널 붕괴이므로 무조건 전량 손절"
+        "채널 상방 돌파를 예상한 고배율 레버리지 매수",
+        "채널 상단 저항에 따른 분할 익절 및 대기",
+        "채널 중간 조정 시 지정을 통한 시장가 추격",
+        "채널 붕괴 신호에 따른 전량 기계적 손절"
     ],
     correctIndex: 1,
     explanation: "상승 채널이라고 해도 상단 저항선에 닿으면 다시 채널 하단이나 중심선까지 조정을 받을 가능성이 매우 큽니다. 따라서 고점 영역에서의 추격매수를 금지하고, 기존 포지션을 분할 익절하는 기회로 삼아야 합니다."
@@ -4319,7 +4319,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1212,
             "low": 1200,
             "close": 1212,
-            "volume": 98
+            "volume": 83
         },
         {
             "time": "Day 2",
@@ -4327,14 +4327,14 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1260,
             "low": 1224,
             "close": 1248,
-            "volume": 86
+            "volume": 100
         }
     ],
     options: [
-        "선이 얼마나 예쁜 색상인지가 결정",
-        "최소 3개 이상의 뚜렷한 저점/고점 터치(3rd Touch)가 발생하여 반등/저항이 확인되었을 때 시장이 신뢰함",
-        "최대한 가파른 각도로 90도 가깝게 그려질 것",
-        "보조지표와 전혀 무관하게 차트 끝자락만 연결"
+        "차트상 선이 정배열로 정돈되어 그려질 때",
+        "최소 3개 이상의 뚜렷한 저점/고점 터치 확인 시",
+        "가파른 각도로 90도에 가깝게 작도될 때",
+        "보조지표와 결합하여 수평으로 그려질 때"
     ],
     correctIndex: 1,
     explanation: "두 점만으로도 선을 그릴 수 있지만, 3번째 터치(3rd Touch)에서 정확한 지지나 저항을 보이고 반등해 주는 순간부터 시장 참여자들이 공식 인지하는 신뢰도 높은 추세선이 됩니다."
@@ -4353,7 +4353,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1296,
             "low": 1224,
             "close": 1236,
-            "volume": 119
+            "volume": 115
         },
         {
             "time": "Day 2",
@@ -4361,7 +4361,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1248,
             "low": 1188,
             "close": 1200,
-            "volume": 90
+            "volume": 95
         },
         {
             "time": "Day 3",
@@ -4369,7 +4369,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1212,
             "low": 1176,
             "close": 1182,
-            "volume": 93
+            "volume": 94
         }
     ],
     drawings: [
@@ -4386,10 +4386,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "다시 지지선 위로 회복해 줄 것이라는 희망을 품고 원금의 절반을 더 투입해 강하게 물타기(추가 매수)한다.",
-        "거래량을 동반하여 종가 기준으로 중요 지지선 지지에 실패하고 붕괴(Breakdown)되었으므로 원칙에 따라 즉시 전량 손절하여 추가적인 연쇄 폭락 리스크를 차단한다.",
-        "손절매를 지연시키며 가격이 960달러선까지 더 떨어져도 물타지 않고 기도만 한다.",
-        "오히려 추가로 고배율 롱(매수) 포지션을 잡는다."
+        "추가 물타기를 위해 자금을 동원하여 평단가 관리",
+        "중요 지지선 붕괴(Breakdown) 확인 후 즉시 전량 손절",
+        "지속 하락 시 추가 평단가 관리를 위해 매수 유보",
+        "하방 이탈 시 즉시 반대 고배율 롱 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "거래량이 동반된 장대음봉으로 주요 지지선 아래에서 종가가 결정되는 이탈 마감은 매수 지지 세력의 패배이자 추세 붕괴(Breakdown)의 신호입니다. 이 시점에서 물타기를 하거나 존버를 하면 파산적인 하락 조정을 겪을 수 있으므로 즉시 룰에 근거한 '전량 손절'을 집행해야 계좌를 살릴 수 있습니다."
@@ -4408,7 +4408,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1752,
             "low": 1668,
             "close": 1728,
-            "volume": 101
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -4416,7 +4416,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1884,
             "low": 1716,
             "close": 1860,
-            "volume": 121
+            "volume": 102
         },
         {
             "time": "Day 3",
@@ -4424,7 +4424,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1872,
             "low": 1788,
             "close": 1800,
-            "volume": 90
+            "volume": 91
         }
     ],
     drawings: [
@@ -4441,10 +4441,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "가짜 돌파(휩소)의 징조이므로 즉시 전량 공매도(숏) 포지션에 몰빵한다.",
-        "돌파된 저항선이 새로운 지지선으로 역할 전환(Role Reversal)에 성공하는 모양새이므로, 1,800달러 지지선 바로 아래에 손절가(예: 1,764달러)를 타이트하게 잡고 매수(롱)로 눌림목 분할 진입한다.",
-        "추격 매수 기회를 완전히 날렸으므로 어떠한 주문도 넣지 않고 박스권 바닥까지 흘러내릴 때까지 무작정 기다린다.",
-        "1,920달러를 돌파할 때까지 시장가 추격 매수 100%를 집행한다."
+        "가짜 돌파(휩소) 판단에 따른 고배율 숏 진입",
+        "돌파 후 리테스트 성공 확인 시 지지선 눌림목 매수",
+        "추격 매수 기회 상실로 판단하고 거래 포기",
+        "1,920달러 추가 돌파를 타겟으로 시장가 추격 매수"
     ],
     correctIndex: 1,
     explanation: "강하게 돌파된 저항선은 룰 체인지에 의해 지지선으로 변합니다(역할 전환). 돌파 당시 추격 매수하기보다, 돌파된 선(1,800달러)으로 엔비디아 주가가 되돌아오는 리테스트(Retest) 시점에 저조한 거래량과 지지 캔들을 확인하고 손절선을 바로 밑에 설정하여 눌림목 진입하는 것이 리스크가 가장 적은 프로 트레이더의 정석입니다."
@@ -4463,7 +4463,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1176,
             "low": 960,
             "close": 1056,
-            "volume": 100
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -4471,7 +4471,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1092,
             "low": 960,
             "close": 1008,
-            "volume": 114
+            "volume": 87
         },
         {
             "time": "Day 3",
@@ -4479,7 +4479,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1032,
             "low": 960,
             "close": 972,
-            "volume": 115
+            "volume": 93
         }
     ],
     drawings: [
@@ -4496,10 +4496,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "네, 세 번이나 지지했으므로 추가 상승 신호로 간주하고 풀매수로 대응한다.",
-        "아니오, 지선 근처에서 매수세(반등 동력)가 결여되어 고점이 계속 낮아지는 구조는 하방 붕괴(Breakdown) 확률이 압도적으로 높으므로, 매수를 절대 보류하고 확실한 돌파/이탈 방향이 드러날 때까지 관망해야 한다.",
-        "네, 오히려 지금 물타기 평단가를 획기적으로 낮추기 위해 투자 원금을 추가 납입한다.",
-        "추세와 무관하게 숏 포지션만 영구 유지한다."
+        "삼중 바닥 지지로 판단하고 매수 비중 대폭 확대",
+        "디센딩 수렴 확인 후 하방 이탈 위험 대비 관망",
+        "물타기 평단가 관리를 위해 매수 보증금 추가 투입",
+        "추세와 무관하게 숏 포지션으로 전환 후 무기한 보유"
     ],
     correctIndex: 1,
     explanation: "지지선 부근에서 고점이 점점 낮아지는 '디센딩' 형태는 매수 지원 강도가 둔화되고 매도 출하 공급이 가격을 계속 하방으로 압박하고 있음을 증명합니다. 지지 성공보다 지선 하방 붕괴 후 급락할 확률이 높으므로, 지지선이라는 명목만으로 함부로 매수 진입하지 말고 돌파/이탈 컨펌을 기다려 관망하는 것이 현명합니다."
@@ -4518,7 +4518,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1224,
             "low": 1200,
             "close": 1224,
-            "volume": 81
+            "volume": 85
         },
         {
             "time": "Day 2",
@@ -4526,7 +4526,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1320,
             "low": 1224,
             "close": 1308,
-            "volume": 95
+            "volume": 94
         },
         {
             "time": "Day 3",
@@ -4534,7 +4534,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1500,
             "low": 1308,
             "close": 1488,
-            "volume": 111
+            "volume": 93
         },
         {
             "time": "Day 4",
@@ -4542,7 +4542,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1500,
             "low": 1368,
             "close": 1380,
-            "volume": 128
+            "volume": 129
         }
     ],
     drawings: [
@@ -4578,10 +4578,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세가 완전히 죽었으므로 모든 성장주을 즉시 전량 시장가 손절 처리하고 다신 쳐다보지 않는다.",
-        "단기 가속 추세선 이탈로 상승 속도가 제어 및 하향 조정에 들어갔으므로, 보유 물량의 50%를 익절하여 이익을 확보하고, 나머지 물량은 완만한 장기 추세선 지지 여부를 지켜보며 리스크를 분산한다.",
-        "단기선 붕괴는 무의미하므로 레버리지를 써서 꼭대기에서 물타기 100% 매수를 때린다.",
-        "장기 추세선마저 붕괴될 때까지 신규 매수만 반복한다."
+        "추세 붕괴 판단에 따른 전량 손절 및 영구 이탈",
+        "가속 추세 이탈에 따른 50% 분할 익절 및 분산",
+        "단기 지지선 붕괴를 무시한 고배율 물타기 매수",
+        "장기 추세선까지 조정을 대비한 신규 매수 대기"
     ],
     correctIndex: 1,
     explanation: "가파르게 우상향하던 가속 추세선(Accelerated Trendline)이 하방 돌파되는 것은 기존 폭등 랠리의 속도가 둔화되고 완만한 본래 장기 추세선(장기 매물대)을 향해 정상적인 가격 조정을 받기 시작했음을 뜻합니다. 따라서 물량의 50%가량을 털어 수익을 실현하고 남은 물량으로 장기 추세선의 3rd Touch 지지 성공 여부를 테스트하는 것이 리스크 관리의 기본입니다."
@@ -4600,7 +4600,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1080,
             "low": 960,
             "close": 1056,
-            "volume": 119
+            "volume": 95
         },
         {
             "time": "Day 2",
@@ -4608,7 +4608,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1188,
             "low": 1056,
             "close": 1140,
-            "volume": 110
+            "volume": 87
         },
         {
             "time": "Day 3",
@@ -4616,7 +4616,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1152,
             "low": 1080,
             "close": 1104,
-            "volume": 95
+            "volume": 91
         }
     ],
     drawings: [
@@ -4641,10 +4641,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "손절 라인 없이, 1,104달러에서 1차 매수를 전액 투입하고 반등을 기도한다.",
-        "추세선이 확실히 유효하다고 증명되는 3rd Touch 지점이므로, 1,104달러선 부근에서 분할 매수를 실행하되 손절가는 추세선 라인 직하방인 1,068달러선 밑에 짧게 걸어두어 손실폭은 극단적으로 최소화하고 상방 기대치(전고점 이상)는 크게 열어두는 매매를 집행한다.",
-        "추세선이 깨질 것을 100% 확신하고 무조건 숏을 잡는다.",
-        "어떠한 주문도 없이 1,320달러까지 돌파 랠리가 끝날 때까지 관망한다."
+        "손절 라인 없이 지정가로 1차 매수 몰빵 진입",
+        "3rd Touch 타점 진입 및 추세선 하단 칼손절 셋업",
+        "하방 붕괴 예상을 통한 고배율 숏 즉각 진입",
+        "목표가 터치 시까지 무작정 대기 후 추격 매수"
     ],
     correctIndex: 1,
     explanation: "추세선 상의 3번째 지지 포인트(3rd Touch)는 추세 신뢰도가 형성되는 대단히 성공률 높은 정석적 눌림목 타점입니다. 진입 가격과 손절 라인(추세선 이탈가)의 거리가 매우 가깝기 때문에 기대 수익 대비 잃을 금액이 매우 적어 프로 트레이더들이 가장 선호하는 칼손절 매수 스팟입니다."
@@ -4663,7 +4663,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2960,
             "low": 2780,
             "close": 2900,
-            "volume": 107
+            "volume": 90
         },
         {
             "time": "Day 2",
@@ -4671,7 +4671,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2980,
             "low": 2860,
             "close": 2880,
-            "volume": 115
+            "volume": 117
         },
         {
             "time": "Day 3",
@@ -4679,7 +4679,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 3120,
             "low": 2860,
             "close": 3080,
-            "volume": 88
+            "volume": 123
         },
         {
             "time": "Day 4",
@@ -4687,7 +4687,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 3100,
             "low": 2980,
             "close": 3020,
-            "volume": 330
+            "volume": 378
         },
         {
             "time": "Day 5",
@@ -4695,7 +4695,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 3060,
             "low": 3000,
             "close": 3040,
-            "volume": 410
+            "volume": 369
         }
     ],
     drawings: [
@@ -4716,10 +4716,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "돌파봉 꼭대기에서 뇌동매매 추격 매수",
-        "돌파된 저항선(3,000달러)이 지지선으로 역할 전환(Retest)에 성공할 때 눌림목 진입",
-        "2,800달러까지 떨어질 때까지 무작정 대기",
-        "돌파했으므로 이제 급락할 것이라 가정하고 숏 진입"
+        "돌파 시점에 시장가로 즉시 진입하는 추격 매수",
+        "돌파 후 저항선의 지지선 전환(Retest) 확인 시 진입",
+        "이전 최저가 부근인 2,800달러 조정 시까지 대기 매수",
+        "돌파 후 즉시 단기 조정을 예상한 역추세 숏 진입"
     ],
     correctIndex: 1,
     explanation: "저항선이 강하게 뚫리면 역할 전환(Role Reversal)에 의해 신규 지지선으로 바뀝니다. 돌파 시점에 뇌동매매하기보다는 돌파된 선 부근으로 리플 시세가 눌려 지지(Retest)를 완성할 때 진입하는 것이 리스크 대비 기대 수익이 큽니다."
@@ -4738,7 +4738,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2100,
             "low": 2000,
             "close": 2060,
-            "volume": 81
+            "volume": 93
         },
         {
             "time": "W-4",
@@ -4746,7 +4746,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2200,
             "low": 2040,
             "close": 2160,
-            "volume": 101
+            "volume": 108
         },
         {
             "time": "W-3",
@@ -4754,7 +4754,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2180,
             "low": 2100,
             "close": 2120,
-            "volume": 99
+            "volume": 111
         },
         {
             "time": "W-2",
@@ -4762,7 +4762,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2300,
             "low": 2140,
             "close": 2260,
-            "volume": 126
+            "volume": 118
         },
         {
             "time": "Today",
@@ -4770,7 +4770,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2280,
             "low": 2060,
             "close": 2080,
-            "volume": 117
+            "volume": 112
         }
     ],
     drawings: [
@@ -4795,10 +4795,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세선의 이탈은 아무 영향이 없으므로 추가 홀딩",
-        "상승 추세 붕괴(Breakdown) - 하락 반전 가능성이 커지므로 비중 축소 및 손절 검토",
-        "일시적인 휩소이므로 전재산 물타기 기회",
-        "채널 상단 저항선에 부딪힌 것이므로 즉시 매수"
+        "추세선 이탈은 영향이 없으므로 비중 유지",
+        "상승 추세 붕괴로 하락 반전 대비 비중 축소",
+        "일시적인 속임수이므로 추가 불타기 진입",
+        "채널 상단 도달에 따른 즉각적인 매수 대응"
     ],
     correctIndex: 1,
     explanation: "신뢰받던 우상향 상승 추세선 하방으로 캔들의 종가가 이탈 마감하는 것은 매수 중심의 시장 주도권이 붕괴했음을 뜻합니다. 지지를 잃은 하락 가속화 리스크에 대비해야 합니다."
@@ -4817,7 +4817,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2040,
             "low": 1980,
             "close": 2020,
-            "volume": 100
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -4825,7 +4825,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2160,
             "low": 2020,
             "close": 2140,
-            "volume": 93
+            "volume": 90
         },
         {
             "time": "Day 3",
@@ -4833,7 +4833,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2180,
             "low": 2080,
             "close": 2100,
-            "volume": 104
+            "volume": 89
         },
         {
             "time": "Day 4",
@@ -4841,7 +4841,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2300,
             "low": 2100,
             "close": 2280,
-            "volume": 114
+            "volume": 102
         },
         {
             "time": "Day 5",
@@ -4849,7 +4849,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2320,
             "low": 2240,
             "close": 2260,
-            "volume": 101
+            "volume": 114
         }
     ],
     drawings: [
@@ -4878,10 +4878,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "채널을 뚫고 끝없이 오를 것으로 믿고 레버리지를 써서 풀매수",
-        "채널 상단 부근이므로 이익 실현(분할 익절)을 하거나 하방 숏 반등 매매를 노려보며 신규 매수는 대기",
-        "채널 중간 이하로 떨어질 때까지 전량 시장가 매수",
-        "채널 붕괴이므로 무조건 전량 손절"
+        "채널 상방 돌파를 예상한 고배율 레버리지 매수",
+        "채널 상단 저항에 따른 분할 익절 및 대기",
+        "채널 중간 조정 시 지정을 통한 시장가 추격",
+        "채널 붕괴 신호에 따른 전량 기계적 손절"
     ],
     correctIndex: 1,
     explanation: "상승 채널이라고 해도 상단 저항선에 닿으면 다시 채널 하단이나 중심선까지 조정을 받을 가능성이 매우 큽니다. 따라서 고점 영역에서의 추격매수를 금지하고, 기존 포지션을 분할 익절하는 기회로 삼아야 합니다."
@@ -4900,7 +4900,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2020,
             "low": 2000,
             "close": 2020,
-            "volume": 112
+            "volume": 84
         },
         {
             "time": "Day 2",
@@ -4912,10 +4912,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "선이 얼마나 예쁜 색상인지가 결정",
-        "최소 3개 이상의 뚜렷한 저점/고점 터치(3rd Touch)가 발생하여 반등/저항이 확인되었을 때 시장이 신뢰함",
-        "최대한 가파른 각도로 90도 가깝게 그려질 것",
-        "보조지표와 전혀 무관하게 차트 끝자락만 연결"
+        "차트상 선이 정배열로 정돈되어 그려질 때",
+        "최소 3개 이상의 뚜렷한 저점/고점 터치 확인 시",
+        "가파른 각도로 90도에 가깝게 작도될 때",
+        "보조지표와 결합하여 수평으로 그려질 때"
     ],
     correctIndex: 1,
     explanation: "두 점만으로도 선을 그릴 수 있지만, 3번째 터치(3rd Touch)에서 정확한 지지나 저항을 보이고 반등해 주는 순간부터 시장 참여자들이 공식 인지하는 신뢰도 높은 추세선이 됩니다."
@@ -4934,7 +4934,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2160,
             "low": 2040,
             "close": 2060,
-            "volume": 81
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -4942,7 +4942,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2080,
             "low": 1980,
             "close": 2000,
-            "volume": 93
+            "volume": 108
         },
         {
             "time": "Day 3",
@@ -4950,7 +4950,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2020,
             "low": 1960,
             "close": 1970,
-            "volume": 111
+            "volume": 113
         }
     ],
     drawings: [
@@ -4967,10 +4967,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "다시 지지선 위로 회복해 줄 것이라는 희망을 품고 원금의 절반을 더 투입해 강하게 물타기(추가 매수)한다.",
-        "거래량을 동반하여 종가 기준으로 중요 지지선 지지에 실패하고 붕괴(Breakdown)되었으므로 원칙에 따라 즉시 전량 손절하여 추가적인 연쇄 폭락 리스크를 차단한다.",
-        "손절매를 지연시키며 가격이 1,600달러선까지 더 떨어져도 물타지 않고 기도만 한다.",
-        "오히려 추가로 고배율 롱(매수) 포지션을 잡는다."
+        "추가 물타기를 위해 자금을 동원하여 평단가 관리",
+        "중요 지지선 붕괴(Breakdown) 확인 후 즉시 전량 손절",
+        "지속 하락 시 추가 평단가 관리를 위해 매수 유보",
+        "하방 이탈 시 즉시 반대 고배율 롱 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "거래량이 동반된 장대음봉으로 주요 지지선 아래에서 종가가 결정되는 이탈 마감은 매수 지지 세력의 패배이자 추세 붕괴(Breakdown)의 신호입니다. 이 시점에서 물타기를 하거나 존버를 하면 파산적인 하락 조정을 겪을 수 있으므로 즉시 룰에 근거한 '전량 손절'을 집행해야 계좌를 살릴 수 있습니다."
@@ -4989,7 +4989,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2920,
             "low": 2780,
             "close": 2880,
-            "volume": 103
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -4997,7 +4997,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 3140,
             "low": 2860,
             "close": 3100,
-            "volume": 115
+            "volume": 120
         },
         {
             "time": "Day 3",
@@ -5005,7 +5005,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 3120,
             "low": 2980,
             "close": 3000,
-            "volume": 127
+            "volume": 117
         }
     ],
     drawings: [
@@ -5022,10 +5022,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "가짜 돌파(휩소)의 징조이므로 즉시 전량 공매도(숏) 포지션에 몰빵한다.",
-        "돌파된 저항선이 새로운 지지선으로 역할 전환(Role Reversal)에 성공하는 모양새이므로, 3,000달러 지지선 바로 아래에 손절가(예: 2,940달러)를 타이트하게 잡고 매수(롱)로 눌림목 분할 진입한다.",
-        "추격 매수 기회를 완전히 날렸으므로 어떠한 주문도 넣지 않고 박스권 바닥까지 흘러내릴 때까지 무작정 기다린다.",
-        "3,200달러를 돌파할 때까지 시장가 추격 매수 100%를 집행한다."
+        "가짜 돌파(휩소) 판단에 따른 고배율 숏 진입",
+        "돌파 후 리테스트 성공 확인 시 지지선 눌림목 매수",
+        "추격 매수 기회 상실로 판단하고 거래 포기",
+        "3,200달러 추가 돌파를 타겟으로 시장가 추격 매수"
     ],
     correctIndex: 1,
     explanation: "강하게 돌파된 저항선은 룰 체인지에 의해 지지선으로 변합니다(역할 전환). 돌파 당시 추격 매수하기보다, 돌파된 선(3,000달러)으로 리플 시세가 되돌아오는 리테스트(Retest) 시점에 저조한 거래량과 지지 캔들을 확인하고 손절선을 바로 밑에 설정하여 눌림목 진입하는 것이 리스크가 가장 적은 프로 트레이더의 정석입니다."
@@ -5044,7 +5044,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1960,
             "low": 1600,
             "close": 1760,
-            "volume": 113
+            "volume": 94
         },
         {
             "time": "Day 2",
@@ -5052,7 +5052,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1820,
             "low": 1600,
             "close": 1680,
-            "volume": 93
+            "volume": 100
         },
         {
             "time": "Day 3",
@@ -5060,7 +5060,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1720,
             "low": 1600,
             "close": 1620,
-            "volume": 94
+            "volume": 102
         }
     ],
     drawings: [
@@ -5077,10 +5077,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "네, 세 번이나 지지했으므로 추가 상승 신호로 간주하고 풀매수로 대응한다.",
-        "아니오, 지선 근처에서 매수세(반등 동력)가 결여되어 고점이 계속 낮아지는 구조는 하방 붕괴(Breakdown) 확률이 압도적으로 높으므로, 매수를 절대 보류하고 확실한 돌파/이탈 방향이 드러날 때까지 관망해야 한다.",
-        "네, 오히려 지금 물타기 평단가를 획기적으로 낮추기 위해 투자 원금을 추가 납입한다.",
-        "추세와 무관하게 숏 포지션만 영구 유지한다."
+        "삼중 바닥 지지로 판단하고 매수 비중 대폭 확대",
+        "디센딩 수렴 확인 후 하방 이탈 위험 대비 관망",
+        "물타기 평단가 관리를 위해 매수 보증금 추가 투입",
+        "추세와 무관하게 숏 포지션으로 전환 후 무기한 보유"
     ],
     correctIndex: 1,
     explanation: "지지선 부근에서 고점이 점점 낮아지는 '디센딩' 형태는 매수 지원 강도가 둔화되고 매도 출하 공급이 가격을 계속 하방으로 압박하고 있음을 증명합니다. 지지 성공보다 지선 하방 붕괴 후 급락할 확률이 높으므로, 지지선이라는 명목만으로 함부로 매수 진입하지 말고 돌파/이탈 컨펌을 기다려 관망하는 것이 현명합니다."
@@ -5099,7 +5099,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2040,
             "low": 2000,
             "close": 2040,
-            "volume": 96
+            "volume": 81
         },
         {
             "time": "Day 2",
@@ -5107,7 +5107,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2200,
             "low": 2040,
             "close": 2180,
-            "volume": 84
+            "volume": 90
         },
         {
             "time": "Day 3",
@@ -5115,7 +5115,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2500,
             "low": 2180,
             "close": 2480,
-            "volume": 114
+            "volume": 110
         },
         {
             "time": "Day 4",
@@ -5123,7 +5123,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 2500,
             "low": 2280,
             "close": 2300,
-            "volume": 125
+            "volume": 116
         }
     ],
     drawings: [
@@ -5159,10 +5159,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세가 완전히 죽었으므로 모든 메이저 코인을 즉시 전량 시장가 손절 처리하고 다신 쳐다보지 않는다.",
-        "단기 가속 추세선 이탈로 상승 속도가 제어 및 하향 조정에 들어갔으므로, 보유 물량의 50%를 익절하여 이익을 확보하고, 나머지 물량은 완만한 장기 추세선 지지 여부를 지켜보며 리스크를 분산한다.",
-        "단기선 붕괴는 무의미하므로 레버리지를 써서 꼭대기에서 물타기 100% 매수를 때린다.",
-        "장기 추세선마저 붕괴될 때까지 신규 매수만 반복한다."
+        "추세 붕괴 판단에 따른 전량 손절 및 영구 이탈",
+        "가속 추세 이탈에 따른 50% 분할 익절 및 분산",
+        "단기 지지선 붕괴를 무시한 고배율 물타기 매수",
+        "장기 추세선까지 조정을 대비한 신규 매수 대기"
     ],
     correctIndex: 1,
     explanation: "가파르게 우상향하던 가속 추세선(Accelerated Trendline)이 하방 돌파되는 것은 기존 폭등 랠리의 속도가 둔화되고 완만한 본래 장기 추세선(장기 매물대)을 향해 정상적인 가격 조정을 받기 시작했음을 뜻합니다. 따라서 물량의 50%가량을 털어 수익을 실현하고 남은 물량으로 장기 추세선의 3rd Touch 지지 성공 여부를 테스트하는 것이 리스크 관리의 기본입니다."
@@ -5181,7 +5181,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1800,
             "low": 1600,
             "close": 1760,
-            "volume": 109
+            "volume": 81
         },
         {
             "time": "Day 2",
@@ -5189,7 +5189,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1980,
             "low": 1760,
             "close": 1900,
-            "volume": 97
+            "volume": 94
         },
         {
             "time": "Day 3",
@@ -5197,7 +5197,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 1920,
             "low": 1800,
             "close": 1840,
-            "volume": 103
+            "volume": 95
         }
     ],
     drawings: [
@@ -5222,10 +5222,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "손절 라인 없이, 1,840달러에서 1차 매수를 전액 투입하고 반등을 기도한다.",
-        "추세선이 확실히 유효하다고 증명되는 3rd Touch 지점이므로, 1,840달러선 부근에서 분할 매수를 실행하되 손절가는 추세선 라인 직하방인 1,780달러선 밑에 짧게 걸어두어 손실폭은 극단적으로 최소화하고 상방 기대치(전고점 이상)는 크게 열어두는 매매를 집행한다.",
-        "추세선이 깨질 것을 100% 확신하고 무조건 숏을 잡는다.",
-        "어떠한 주문도 없이 2,200달러까지 돌파 랠리가 끝날 때까지 관망한다."
+        "손절 라인 없이 지정가로 1차 매수 몰빵 진입",
+        "3rd Touch 타점 진입 및 추세선 하단 칼손절 셋업",
+        "하방 붕괴 예상을 통한 고배율 숏 즉각 진입",
+        "목표가 터치 시까지 무작정 대기 후 추격 매수"
     ],
     correctIndex: 1,
     explanation: "추세선 상의 3번째 지지 포인트(3rd Touch)는 추세 신뢰도가 형성되는 대단히 성공률 높은 정석적 눌림목 타점입니다. 진입 가격과 손절 라인(추세선 이탈가)의 거리가 매우 가깝기 때문에 기대 수익 대비 잃을 금액이 매우 적어 프로 트레이더들이 가장 선호하는 칼손절 매수 스팟입니다."
@@ -5244,7 +5244,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 7400,
             "low": 6950,
             "close": 7250,
-            "volume": 85
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -5252,7 +5252,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 7450,
             "low": 7150,
             "close": 7200,
-            "volume": 110
+            "volume": 122
         },
         {
             "time": "Day 3",
@@ -5260,7 +5260,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 7800,
             "low": 7150,
             "close": 7700,
-            "volume": 99
+            "volume": 96
         },
         {
             "time": "Day 4",
@@ -5268,7 +5268,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 7750,
             "low": 7450,
             "close": 7550,
-            "volume": 416
+            "volume": 332
         },
         {
             "time": "Day 5",
@@ -5276,7 +5276,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 7650,
             "low": 7500,
             "close": 7600,
-            "volume": 407
+            "volume": 336
         }
     ],
     drawings: [
@@ -5297,10 +5297,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "돌파봉 꼭대기에서 뇌동매매 추격 매수",
-        "돌파된 저항선(7,500달러)이 지지선으로 역할 전환(Retest)에 성공할 때 눌림목 진입",
-        "7,000달러까지 떨어질 때까지 무작정 대기",
-        "돌파했으므로 이제 급락할 것이라 가정하고 숏 진입"
+        "돌파 시점에 시장가로 즉시 진입하는 추격 매수",
+        "돌파 후 저항선의 지지선 전환(Retest) 확인 시 진입",
+        "이전 최저가 부근인 7,000달러 조정 시까지 대기 매수",
+        "돌파 후 즉시 단기 조정을 예상한 역추세 숏 진입"
     ],
     correctIndex: 1,
     explanation: "저항선이 강하게 뚫리면 역할 전환(Role Reversal)에 의해 신규 지지선으로 바뀝니다. 돌파 시점에 뇌동매매하기보다는 돌파된 선 부근으로 골드 가격가 눌려 지지(Retest)를 완성할 때 진입하는 것이 리스크 대비 기대 수익이 큽니다."
@@ -5319,7 +5319,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5250,
             "low": 5000,
             "close": 5150,
-            "volume": 115
+            "volume": 82
         },
         {
             "time": "W-4",
@@ -5327,7 +5327,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5500,
             "low": 5100,
             "close": 5400,
-            "volume": 93
+            "volume": 111
         },
         {
             "time": "W-3",
@@ -5335,7 +5335,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5450,
             "low": 5250,
             "close": 5300,
-            "volume": 111
+            "volume": 89
         },
         {
             "time": "W-2",
@@ -5343,7 +5343,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5750,
             "low": 5350,
             "close": 5650,
-            "volume": 112
+            "volume": 114
         },
         {
             "time": "Today",
@@ -5351,7 +5351,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5700,
             "low": 5150,
             "close": 5200,
-            "volume": 101
+            "volume": 117
         }
     ],
     drawings: [
@@ -5376,10 +5376,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세선의 이탈은 아무 영향이 없으므로 추가 홀딩",
-        "상승 추세 붕괴(Breakdown) - 하락 반전 가능성이 커지므로 비중 축소 및 손절 검토",
-        "일시적인 휩소이므로 전재산 물타기 기회",
-        "채널 상단 저항선에 부딪힌 것이므로 즉시 매수"
+        "추세선 이탈은 영향이 없으므로 비중 유지",
+        "상승 추세 붕괴로 하락 반전 대비 비중 축소",
+        "일시적인 속임수이므로 추가 불타기 진입",
+        "채널 상단 도달에 따른 즉각적인 매수 대응"
     ],
     correctIndex: 1,
     explanation: "신뢰받던 우상향 상승 추세선 하방으로 캔들의 종가가 이탈 마감하는 것은 매수 중심의 시장 주도권이 붕괴했음을 뜻합니다. 지지를 잃은 하락 가속화 리스크에 대비해야 합니다."
@@ -5398,7 +5398,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5100,
             "low": 4950,
             "close": 5050,
-            "volume": 83
+            "volume": 97
         },
         {
             "time": "Day 2",
@@ -5406,7 +5406,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5400,
             "low": 5050,
             "close": 5350,
-            "volume": 110
+            "volume": 107
         },
         {
             "time": "Day 3",
@@ -5414,7 +5414,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5450,
             "low": 5200,
             "close": 5250,
-            "volume": 106
+            "volume": 123
         },
         {
             "time": "Day 4",
@@ -5422,7 +5422,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5750,
             "low": 5250,
             "close": 5700,
-            "volume": 98
+            "volume": 96
         },
         {
             "time": "Day 5",
@@ -5430,7 +5430,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5800,
             "low": 5600,
             "close": 5650,
-            "volume": 135
+            "volume": 97
         }
     ],
     drawings: [
@@ -5459,10 +5459,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "채널을 뚫고 끝없이 오를 것으로 믿고 레버리지를 써서 풀매수",
-        "채널 상단 부근이므로 이익 실현(분할 익절)을 하거나 하방 숏 반등 매매를 노려보며 신규 매수는 대기",
-        "채널 중간 이하로 떨어질 때까지 전량 시장가 매수",
-        "채널 붕괴이므로 무조건 전량 손절"
+        "채널 상방 돌파를 예상한 고배율 레버리지 매수",
+        "채널 상단 저항에 따른 분할 익절 및 대기",
+        "채널 중간 조정 시 지정을 통한 시장가 추격",
+        "채널 붕괴 신호에 따른 전량 기계적 손절"
     ],
     correctIndex: 1,
     explanation: "상승 채널이라고 해도 상단 저항선에 닿으면 다시 채널 하단이나 중심선까지 조정을 받을 가능성이 매우 큽니다. 따라서 고점 영역에서의 추격매수를 금지하고, 기존 포지션을 분할 익절하는 기회로 삼아야 합니다."
@@ -5481,7 +5481,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5050,
             "low": 5000,
             "close": 5050,
-            "volume": 85
+            "volume": 94
         },
         {
             "time": "Day 2",
@@ -5489,14 +5489,14 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5250,
             "low": 5100,
             "close": 5200,
-            "volume": 110
+            "volume": 122
         }
     ],
     options: [
-        "선이 얼마나 예쁜 색상인지가 결정",
-        "최소 3개 이상의 뚜렷한 저점/고점 터치(3rd Touch)가 발생하여 반등/저항이 확인되었을 때 시장이 신뢰함",
-        "최대한 가파른 각도로 90도 가깝게 그려질 것",
-        "보조지표와 전혀 무관하게 차트 끝자락만 연결"
+        "차트상 선이 정배열로 정돈되어 그려질 때",
+        "최소 3개 이상의 뚜렷한 저점/고점 터치 확인 시",
+        "가파른 각도로 90도에 가깝게 작도될 때",
+        "보조지표와 결합하여 수평으로 그려질 때"
     ],
     correctIndex: 1,
     explanation: "두 점만으로도 선을 그릴 수 있지만, 3번째 터치(3rd Touch)에서 정확한 지지나 저항을 보이고 반등해 주는 순간부터 시장 참여자들이 공식 인지하는 신뢰도 높은 추세선이 됩니다."
@@ -5515,7 +5515,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5400,
             "low": 5100,
             "close": 5150,
-            "volume": 101
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -5523,7 +5523,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5200,
             "low": 4950,
             "close": 5000,
-            "volume": 101
+            "volume": 100
         },
         {
             "time": "Day 3",
@@ -5531,7 +5531,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5050,
             "low": 4900,
             "close": 4925,
-            "volume": 125
+            "volume": 102
         }
     ],
     drawings: [
@@ -5548,10 +5548,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "다시 지지선 위로 회복해 줄 것이라는 희망을 품고 원금의 절반을 더 투입해 강하게 물타기(추가 매수)한다.",
-        "거래량을 동반하여 종가 기준으로 중요 지지선 지지에 실패하고 붕괴(Breakdown)되었으므로 원칙에 따라 즉시 전량 손절하여 추가적인 연쇄 폭락 리스크를 차단한다.",
-        "손절매를 지연시키며 가격이 4,000달러선까지 더 떨어져도 물타지 않고 기도만 한다.",
-        "오히려 추가로 고배율 롱(매수) 포지션을 잡는다."
+        "추가 물타기를 위해 자금을 동원하여 평단가 관리",
+        "중요 지지선 붕괴(Breakdown) 확인 후 즉시 전량 손절",
+        "지속 하락 시 추가 평단가 관리를 위해 매수 유보",
+        "하방 이탈 시 즉시 반대 고배율 롱 포지션 진입"
     ],
     correctIndex: 1,
     explanation: "거래량이 동반된 장대음봉으로 주요 지지선 아래에서 종가가 결정되는 이탈 마감은 매수 지지 세력의 패배이자 추세 붕괴(Breakdown)의 신호입니다. 이 시점에서 물타기를 하거나 존버를 하면 파산적인 하락 조정을 겪을 수 있으므로 즉시 룰에 근거한 '전량 손절'을 집행해야 계좌를 살릴 수 있습니다."
@@ -5570,7 +5570,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 7300,
             "low": 6950,
             "close": 7200,
-            "volume": 89
+            "volume": 112
         },
         {
             "time": "Day 2",
@@ -5578,7 +5578,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 7850,
             "low": 7150,
             "close": 7750,
-            "volume": 120
+            "volume": 109
         },
         {
             "time": "Day 3",
@@ -5586,7 +5586,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 7800,
             "low": 7450,
             "close": 7500,
-            "volume": 127
+            "volume": 96
         }
     ],
     drawings: [
@@ -5603,10 +5603,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "가짜 돌파(휩소)의 징조이므로 즉시 전량 공매도(숏) 포지션에 몰빵한다.",
-        "돌파된 저항선이 새로운 지지선으로 역할 전환(Role Reversal)에 성공하는 모양새이므로, 7,500달러 지지선 바로 아래에 손절가(예: 7,350달러)를 타이트하게 잡고 매수(롱)로 눌림목 분할 진입한다.",
-        "추격 매수 기회를 완전히 날렸으므로 어떠한 주문도 넣지 않고 박스권 바닥까지 흘러내릴 때까지 무작정 기다린다.",
-        "8,000달러를 돌파할 때까지 시장가 추격 매수 100%를 집행한다."
+        "가짜 돌파(휩소) 판단에 따른 고배율 숏 진입",
+        "돌파 후 리테스트 성공 확인 시 지지선 눌림목 매수",
+        "추격 매수 기회 상실로 판단하고 거래 포기",
+        "8,000달러 추가 돌파를 타겟으로 시장가 추격 매수"
     ],
     correctIndex: 1,
     explanation: "강하게 돌파된 저항선은 룰 체인지에 의해 지지선으로 변합니다(역할 전환). 돌파 당시 추격 매수하기보다, 돌파된 선(7,500달러)으로 골드 가격가 되돌아오는 리테스트(Retest) 시점에 저조한 거래량과 지지 캔들을 확인하고 손절선을 바로 밑에 설정하여 눌림목 진입하는 것이 리스크가 가장 적은 프로 트레이더의 정석입니다."
@@ -5625,7 +5625,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 4900,
             "low": 4000,
             "close": 4400,
-            "volume": 82
+            "volume": 117
         },
         {
             "time": "Day 2",
@@ -5633,7 +5633,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 4550,
             "low": 4000,
             "close": 4200,
-            "volume": 90
+            "volume": 115
         },
         {
             "time": "Day 3",
@@ -5641,7 +5641,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 4300,
             "low": 4000,
             "close": 4050,
-            "volume": 112
+            "volume": 96
         }
     ],
     drawings: [
@@ -5658,10 +5658,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "네, 세 번이나 지지했으므로 추가 상승 신호로 간주하고 풀매수로 대응한다.",
-        "아니오, 지선 근처에서 매수세(반등 동력)가 결여되어 고점이 계속 낮아지는 구조는 하방 붕괴(Breakdown) 확률이 압도적으로 높으므로, 매수를 절대 보류하고 확실한 돌파/이탈 방향이 드러날 때까지 관망해야 한다.",
-        "네, 오히려 지금 물타기 평단가를 획기적으로 낮추기 위해 투자 원금을 추가 납입한다.",
-        "추세와 무관하게 숏 포지션만 영구 유지한다."
+        "삼중 바닥 지지로 판단하고 매수 비중 대폭 확대",
+        "디센딩 수렴 확인 후 하방 이탈 위험 대비 관망",
+        "물타기 평단가 관리를 위해 매수 보증금 추가 투입",
+        "추세와 무관하게 숏 포지션으로 전환 후 무기한 보유"
     ],
     correctIndex: 1,
     explanation: "지지선 부근에서 고점이 점점 낮아지는 '디센딩' 형태는 매수 지원 강도가 둔화되고 매도 출하 공급이 가격을 계속 하방으로 압박하고 있음을 증명합니다. 지지 성공보다 지선 하방 붕괴 후 급락할 확률이 높으므로, 지지선이라는 명목만으로 함부로 매수 진입하지 말고 돌파/이탈 컨펌을 기다려 관망하는 것이 현명합니다."
@@ -5680,7 +5680,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5100,
             "low": 5000,
             "close": 5100,
-            "volume": 95
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -5688,7 +5688,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 5500,
             "low": 5100,
             "close": 5450,
-            "volume": 100
+            "volume": 118
         },
         {
             "time": "Day 3",
@@ -5704,7 +5704,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 6250,
             "low": 5700,
             "close": 5750,
-            "volume": 122
+            "volume": 110
         }
     ],
     drawings: [
@@ -5740,10 +5740,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "추세가 완전히 죽었으므로 모든 원자재을 즉시 전량 시장가 손절 처리하고 다신 쳐다보지 않는다.",
-        "단기 가속 추세선 이탈로 상승 속도가 제어 및 하향 조정에 들어갔으므로, 보유 물량의 50%를 익절하여 이익을 확보하고, 나머지 물량은 완만한 장기 추세선 지지 여부를 지켜보며 리스크를 분산한다.",
-        "단기선 붕괴는 무의미하므로 레버리지를 써서 꼭대기에서 물타기 100% 매수를 때린다.",
-        "장기 추세선마저 붕괴될 때까지 신규 매수만 반복한다."
+        "추세 붕괴 판단에 따른 전량 손절 및 영구 이탈",
+        "가속 추세 이탈에 따른 50% 분할 익절 및 분산",
+        "단기 지지선 붕괴를 무시한 고배율 물타기 매수",
+        "장기 추세선까지 조정을 대비한 신규 매수 대기"
     ],
     correctIndex: 1,
     explanation: "가파르게 우상향하던 가속 추세선(Accelerated Trendline)이 하방 돌파되는 것은 기존 폭등 랠리의 속도가 둔화되고 완만한 본래 장기 추세선(장기 매물대)을 향해 정상적인 가격 조정을 받기 시작했음을 뜻합니다. 따라서 물량의 50%가량을 털어 수익을 실현하고 남은 물량으로 장기 추세선의 3rd Touch 지지 성공 여부를 테스트하는 것이 리스크 관리의 기본입니다."
@@ -5762,7 +5762,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 4500,
             "low": 4000,
             "close": 4400,
-            "volume": 102
+            "volume": 105
         },
         {
             "time": "Day 2",
@@ -5770,7 +5770,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 4950,
             "low": 4400,
             "close": 4750,
-            "volume": 99
+            "volume": 118
         },
         {
             "time": "Day 3",
@@ -5778,7 +5778,7 @@ export const quizzes_market_structure: QuizItem[] = [
             "high": 4800,
             "low": 4500,
             "close": 4600,
-            "volume": 99
+            "volume": 125
         }
     ],
     drawings: [
@@ -5803,10 +5803,10 @@ export const quizzes_market_structure: QuizItem[] = [
         }
     ],
     options: [
-        "손절 라인 없이, 4,600달러에서 1차 매수를 전액 투입하고 반등을 기도한다.",
-        "추세선이 확실히 유효하다고 증명되는 3rd Touch 지점이므로, 4,600달러선 부근에서 분할 매수를 실행하되 손절가는 추세선 라인 직하방인 4,450달러선 밑에 짧게 걸어두어 손실폭은 극단적으로 최소화하고 상방 기대치(전고점 이상)는 크게 열어두는 매매를 집행한다.",
-        "추세선이 깨질 것을 100% 확신하고 무조건 숏을 잡는다.",
-        "어떠한 주문도 없이 5,500달러까지 돌파 랠리가 끝날 때까지 관망한다."
+        "손절 라인 없이 지정가로 1차 매수 몰빵 진입",
+        "3rd Touch 타점 진입 및 추세선 하단 칼손절 셋업",
+        "하방 붕괴 예상을 통한 고배율 숏 즉각 진입",
+        "목표가 터치 시까지 무작정 대기 후 추격 매수"
     ],
     correctIndex: 1,
     explanation: "추세선 상의 3번째 지지 포인트(3rd Touch)는 추세 신뢰도가 형성되는 대단히 성공률 높은 정석적 눌림목 타점입니다. 진입 가격과 손절 라인(추세선 이탈가)의 거리가 매우 가깝기 때문에 기대 수익 대비 잃을 금액이 매우 적어 프로 트레이더들이 가장 선호하는 칼손절 매수 스팟입니다."

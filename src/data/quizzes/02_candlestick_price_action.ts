@@ -15,7 +15,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 122,
             "low": 118,
             "close": 119,
-            "volume": 95
+            "volume": 86
         },
         {
             "time": "10:15",
@@ -23,7 +23,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 120,
             "low": 113,
             "close": 114,
-            "volume": 84
+            "volume": 123
         },
         {
             "time": "10:30",
@@ -31,7 +31,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 115,
             "low": 108,
             "close": 109,
-            "volume": 111
+            "volume": 127
         },
         {
             "time": "10:45",
@@ -39,7 +39,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 110,
             "low": 101,
             "close": 102,
-            "volume": 101
+            "volume": 96
         },
         {
             "time": "11:00",
@@ -47,14 +47,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 103,
             "low": 90,
             "close": 101,
-            "volume": 131
+            "volume": 113
         }
     ],
     options: [
-        "역망치형 (Inverted Hammer) - 추가 폭락 경고이므로 공매도",
-        "망치형 (Hammer) - 저가 매수세 유입, 지지 여부 확인 후 매수 대기",
-        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형으로 관망",
-        "하락 장악형 (Bearish Engulfing) - 매도세 장악으로 즉시 손절"
+        "역망치형 (Inverted Hammer) - 하락 경고 및 공매도 대기",
+        "망치형 (Hammer) - 저점 지지 및 분할 매수 대기",
+        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형 및 관망",
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 및 즉시 손절"
     ],
     correctIndex: 1,
     explanation: "마지막 캔들은 아래꼬리가 긴 '망치형(Hammer)' 캔들로 하락 압력을 이겨내고 저가 매수세가 밀어 올렸음을 의미하는 대표적 상승 전환 신호입니다. 지지를 확인한 뒤 분할 매수 관점으로 대기해야 합니다."
@@ -73,7 +73,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 108,
             "low": 99,
             "close": 105,
-            "volume": 97
+            "volume": 106
         },
         {
             "time": "Day 2",
@@ -81,7 +81,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 115,
             "low": 104,
             "close": 112,
-            "volume": 122
+            "volume": 87
         },
         {
             "time": "Day 3",
@@ -89,7 +89,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 125,
             "low": 111,
             "close": 123,
-            "volume": 127
+            "volume": 100
         },
         {
             "time": "Day 4",
@@ -97,7 +97,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 128,
             "low": 120,
             "close": 126,
-            "volume": 118
+            "volume": 120
         },
         {
             "time": "Day 5",
@@ -105,14 +105,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 145,
             "low": 125,
             "close": 127,
-            "volume": 105
+            "volume": 102
         }
     ],
     options: [
-        "유성형 (Shooting Star) - 고점 부근에서 강력한 저항/매도세 출현, 하락 전환 예고",
-        "망치형 (Hammer) - 추가 상승 랠리를 뜻하므로 시장가 풀매수",
-        "상승 장악형 (Bullish Engulfing) - 전일 몸통을 감쌌으므로 홀딩",
-        "도지 (Doji) - 추세 지속을 의미하므로 관망"
+        "유성형 (Shooting Star) - 고점 저항 및 하락 전환 예고",
+        "망치형 (Hammer) - 저점 매수세 유입 및 상승 랠리 기대",
+        "상승 장악형 (Bullish Engulfing) - 추세 반전 및 홀딩 유도",
+        "도지 (Doji) - 추세 지속 가능성 및 일시 관망"
     ],
     correctIndex: 0,
     explanation: "급등세 끝에서 위꼬리가 몸통보다 훨씬 길게 솟아오른 캔들은 '유성형(Shooting Star)'입니다. 장중 상승 시도를 강력한 차익 실현 및 매도 압력이 짓눌렀음을 보여주며, 하락 추세 전환의 강력한 경고 시그널입니다."
@@ -131,7 +131,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 100,
             "low": 95,
             "close": 96,
-            "volume": 106
+            "volume": 86
         },
         {
             "time": "Day 2",
@@ -139,7 +139,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 97,
             "low": 92,
             "close": 93,
-            "volume": 114
+            "volume": 100
         },
         {
             "time": "Day 3",
@@ -147,7 +147,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 95,
             "low": 88,
             "close": 89,
-            "volume": 119
+            "volume": 118
         },
         {
             "time": "Day 4",
@@ -155,14 +155,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 102,
             "low": 86,
             "close": 101,
-            "volume": 105
+            "volume": 98
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 매우 낮은 신뢰도",
-        "상승 장악형 (Bullish Engulfing) - 강력한 매수세 전환 신호로 신뢰도 높음",
-        "상승 관통형 (Piercing Line) - 중간 수준의 전환 신호",
-        "석별의 정 (Evening Star) - 상승 추세가 꺾이는 신호"
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 신뢰도 낮음",
+        "상승 장악형 (Bullish Engulfing) - 매수 전환 신뢰도 높음",
+        "상승 관통형 (Piercing Line) - 중간 강도의 반전 신호",
+        "석별형 (Evening Star) - 상승 추세 종결 신호"
     ],
     correctIndex: 1,
     explanation: "전일의 하락 음봉 몸통을 다음 날의 장대 양봉이 완전히 덮어버리는 형태를 '상승 장악형(Bullish Engulfing)' 패턴이라고 합니다. 하락 추세 끝에서 나타날 경우 단기 하락세가 종료되고 강력한 매수세가 들어왔음을 뜻해 전환 신뢰도가 매우 높습니다."
@@ -181,7 +181,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 125,
             "low": 119,
             "close": 124,
-            "volume": 118
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -189,7 +189,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 130,
             "low": 123,
             "close": 129,
-            "volume": 89
+            "volume": 88
         },
         {
             "time": "Day 3",
@@ -197,14 +197,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 131,
             "low": 115,
             "close": 116,
-            "volume": 108
+            "volume": 103
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 고점에서 하락 전환 예고",
+        "하락 장악형 (Bearish Engulfing) - 고점 하락 전환 예고",
         "상승 장악형 (Bullish Engulfing) - 고점 돌파 랠리 예고",
-        "하락 잉태형 (Harami) - 하락세 둔화",
-        "샛별형 (Morning Star) - 바닥권 상승 반전"
+        "하락 잉태형 (Harami) - 기존 하락세의 일시 둔화",
+        "샛별형 (Morning Star) - 바닥권 상승 반전 예고"
     ],
     correctIndex: 0,
     explanation: "고점에서 직전 양봉을 음봉이 감싸 안은 형태는 '하락 장악형(Bearish Engulfing)'입니다. 매수 세력을 매도 공급이 압도했다는 명백한 증거로, 주가 추세가 하락으로 반전할 리스크가 큽니다."
@@ -223,7 +223,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 125,
             "low": 119,
             "close": 124,
-            "volume": 100
+            "volume": 84
         },
         {
             "time": "Day 2",
@@ -231,7 +231,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 135,
             "low": 123,
             "close": 134,
-            "volume": 98
+            "volume": 115
         },
         {
             "time": "Day 3",
@@ -239,7 +239,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 148,
             "low": 133,
             "close": 146,
-            "volume": 114
+            "volume": 97
         },
         {
             "time": "Day 4",
@@ -247,7 +247,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 151,
             "low": 140,
             "close": 147,
-            "volume": 110
+            "volume": 128
         },
         {
             "time": "Day 5",
@@ -255,14 +255,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 143,
             "low": 135,
             "close": 136,
-            "volume": 108
+            "volume": 130
         }
     ],
     options: [
-        "추가 상승 랠리를 기대하며 비중을 늘려 전액 추격 매수(롱)한다.",
-        "하락이 휩소(속임수)일 가능성이 높으므로 레버리지를 2배로 올려 추가 매수한다.",
-        "행잉맨 패턴 뒤 음봉 갭하락으로 하락 전환(Bearish Reversal)이 컨펌되었으므로, 리스크 관리를 위해 보유 비중을 전량 매도하거나 최소 50% 이상 익절(또는 손절)한다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다."
+        "상승 랠리를 기대로 보유 비중 확대 및 추격 매수",
+        "일시적 속임수(휩소) 판단으로 추가 레버리지 매수",
+        "행잉맨 출현 후 갭하락에 따른 전량 또는 일부 정리",
+        "조치 없이 전고점 돌파 시까지 무기한 관망 및 홀딩"
     ],
     correctIndex: 2,
     explanation: "고가권에서 나타난 행잉맨(Hanging Man)은 잠재적 하락 전환 신호이며, 특히 다음날 갭하락 음봉으로 직전 행잉맨의 저가를 깨고 내려가는 움직임은 강력한 하락 컨펌 시그널입니다. 따라서 이 시점에서는 즉시 비중을 전량 정리하거나 최소 절반 이상 매도하여 리스크를 통제하는 것이 정석입니다."
@@ -281,7 +281,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 185,
             "low": 174,
             "close": 182,
-            "volume": 90
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -289,7 +289,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 195,
             "low": 180,
             "close": 193,
-            "volume": 110
+            "volume": 85
         },
         {
             "time": "Day 3",
@@ -297,7 +297,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 202,
             "low": 190,
             "close": 191,
-            "volume": 102
+            "volume": 104
         },
         {
             "time": "Day 4",
@@ -305,7 +305,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 201,
             "low": 188,
             "close": 189,
-            "volume": 95
+            "volume": 111
         }
     ],
     drawings: [
@@ -322,10 +322,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "저항선을 뚫고 신고가를 쓸 것이 100% 확실하므로 전재산을 추가 불타기(매수)한다.",
-        "박스권 상단 저항 돌파에 실패하고 매도 세력에 짓눌리는 유성형 캔들이 나타났으므로, 최소 50% 이상 분할 익절하여 이익을 보존하거나 전량 청산 후 박스권 하단 지지를 확인한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "시세를 이탈하여 다른 잡코인을 시장가 매수한다."
+        "신고가 갱신을 예상한 전재산 추가 불타기",
+        "저항 돌파 실패 신호 확인 후 분할 익절 및 관망",
+        "손익 평단가 부근이므로 추가 손절 없이 방치",
+        "거래를 종료하고 다른 신규 급등주를 시장가 추격"
     ],
     correctIndex: 1,
     explanation: "박스권 상단 저항선(200달러)에 부딪히며 나타난 유성형(Shooting Star) 연속 출현은 저항 돌파 실패와 차익 실현 세력의 강력한 등장을 경고하는 캔들 신호입니다. 돌파를 확신하기보다는 리스크 관리 관점에서 물량을 축소(50% 분할 익절)하거나 전량 매도하여 이익을 확정 짓는 것이 현명합니다."
@@ -344,7 +344,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 111,
             "low": 104,
             "close": 105,
-            "volume": 90
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -352,7 +352,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 106,
             "low": 97,
             "close": 98,
-            "volume": 84
+            "volume": 88
         },
         {
             "time": "Day 3",
@@ -360,14 +360,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 101,
             "low": 91,
             "close": 100,
-            "volume": 89
+            "volume": 94
         }
     ],
     options: [
-        "아직 완벽한 상승 장악형이 아니므로 매수를 절대 금지하고 하락에 공매도를 가속화한다.",
-        "관통형 패턴의 지지 성공 가능성을 감안하여 1차 매수로 분할 진입하되, 당일 양봉의 최저점(91달러) 바로 아래에 강제 손절 주문을 설정하고 대응한다.",
-        "손절매 없이 100% 비중으로 시장가 풀매수를 집행한다.",
-        "조정을 기다려 80달러선까지 아무 주문 없이 관망만 유지한다."
+        "상승 모멘텀 미달로 매수 보류 및 하방 숏 포지션 진입",
+        "관통형 확인 후 분할 매수 및 당일 최저점 손절 설정",
+        "손절 라인 설정 없이 100% 비중 시장가 매수 집행",
+        "조정을 대기하며 예약 주문 없이 무작정 관망 유지"
     ],
     correctIndex: 1,
     explanation: "전일 음봉의 50% 이상을 당일 양봉 몸통으로 관통해 올린 '관통형(Piercing Line)'은 하락 모멘텀이 쇠퇴하고 저가 매수세가 우위를 점하기 시작했음을 뜻하는 바닥 신호입니다. 이 패턴 확인 후 진입할 시에는 손절 한도를 당일 최저점(91달러) 밑에 가깝게 설정할 수 있어 매우 유리한 리스크 대비 기대수익 매매가 성립됩니다."
@@ -386,7 +386,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 183,
             "low": 177,
             "close": 178.5,
-            "volume": 110
+            "volume": 100
         },
         {
             "time": "10:15",
@@ -394,7 +394,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 180,
             "low": 169.5,
             "close": 171,
-            "volume": 108
+            "volume": 88
         },
         {
             "time": "10:30",
@@ -402,7 +402,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 172.5,
             "low": 162,
             "close": 163.5,
-            "volume": 92
+            "volume": 124
         },
         {
             "time": "10:45",
@@ -410,7 +410,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 165,
             "low": 151.5,
             "close": 153,
-            "volume": 124
+            "volume": 128
         },
         {
             "time": "11:00",
@@ -418,14 +418,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 154.5,
             "low": 135,
             "close": 151.5,
-            "volume": 134
+            "volume": 121
         }
     ],
     options: [
-        "역망치형 (Inverted Hammer) - 추가 폭락 경고이므로 공매도",
-        "망치형 (Hammer) - 저가 매수세 유입, 지지 여부 확인 후 매수 대기",
-        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형으로 관망",
-        "하락 장악형 (Bearish Engulfing) - 매도세 장악으로 즉시 손절"
+        "역망치형 (Inverted Hammer) - 하락 경고 및 공매도 대기",
+        "망치형 (Hammer) - 저점 지지 및 분할 매수 대기",
+        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형 및 관망",
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 및 즉시 손절"
     ],
     correctIndex: 1,
     explanation: "마지막 캔들은 아래꼬리가 긴 '망치형(Hammer)' 캔들로 하락 압력을 이겨내고 저가 매수세가 밀어 올렸음을 의미하는 대표적 상승 전환 신호입니다. 지지를 확인한 뒤 분할 매수 관점으로 대기해야 합니다."
@@ -444,7 +444,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 162,
             "low": 148.5,
             "close": 157.5,
-            "volume": 93
+            "volume": 113
         },
         {
             "time": "Day 2",
@@ -452,7 +452,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 172.5,
             "low": 156,
             "close": 168,
-            "volume": 118
+            "volume": 102
         },
         {
             "time": "Day 3",
@@ -460,7 +460,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 187.5,
             "low": 166.5,
             "close": 184.5,
-            "volume": 105
+            "volume": 103
         },
         {
             "time": "Day 4",
@@ -468,7 +468,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 192,
             "low": 180,
             "close": 189,
-            "volume": 114
+            "volume": 103
         },
         {
             "time": "Day 5",
@@ -480,10 +480,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "유성형 (Shooting Star) - 고점 부근에서 강력한 저항/매도세 출현, 하락 전환 예고",
-        "망치형 (Hammer) - 추가 상승 랠리를 뜻하므로 시장가 풀매수",
-        "상승 장악형 (Bullish Engulfing) - 전일 몸통을 감쌌으므로 홀딩",
-        "도지 (Doji) - 추세 지속을 의미하므로 관망"
+        "유성형 (Shooting Star) - 고점 저항 및 하락 전환 예고",
+        "망치형 (Hammer) - 저점 매수세 유입 및 상승 랠리 기대",
+        "상승 장악형 (Bullish Engulfing) - 추세 반전 및 홀딩 유도",
+        "도지 (Doji) - 추세 지속 가능성 및 일시 관망"
     ],
     correctIndex: 0,
     explanation: "급등세 끝에서 위꼬리가 몸통보다 훨씬 길게 솟아오른 캔들은 '유성형(Shooting Star)'입니다. 장중 상승 시도를 강력한 차익 실현 및 매도 압력이 짓눌렀음을 보여주며, 하락 추세 전환의 강력한 경고 시그널입니다."
@@ -502,7 +502,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 150,
             "low": 142.5,
             "close": 144,
-            "volume": 110
+            "volume": 89
         },
         {
             "time": "Day 2",
@@ -510,7 +510,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 145.5,
             "low": 138,
             "close": 139.5,
-            "volume": 85
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -518,7 +518,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 142.5,
             "low": 132,
             "close": 133.5,
-            "volume": 92
+            "volume": 126
         },
         {
             "time": "Day 4",
@@ -526,14 +526,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 153,
             "low": 129,
             "close": 151.5,
-            "volume": 125
+            "volume": 105
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 매우 낮은 신뢰도",
-        "상승 장악형 (Bullish Engulfing) - 강력한 매수세 전환 신호로 신뢰도 높음",
-        "상승 관통형 (Piercing Line) - 중간 수준의 전환 신호",
-        "석별의 정 (Evening Star) - 상승 추세가 꺾이는 신호"
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 신뢰도 낮음",
+        "상승 장악형 (Bullish Engulfing) - 매수 전환 신뢰도 높음",
+        "상승 관통형 (Piercing Line) - 중간 강도의 반전 신호",
+        "석별형 (Evening Star) - 상승 추세 종결 신호"
     ],
     correctIndex: 1,
     explanation: "전일의 하락 음봉 몸통을 다음 날의 장대 양봉이 완전히 덮어버리는 형태를 '상승 장악형(Bullish Engulfing)' 패턴이라고 합니다. 하락 추세 끝에서 나타날 경우 단기 하락세가 종료되고 강력한 매수세가 들어왔음을 뜻해 전환 신뢰도가 매우 높습니다."
@@ -552,7 +552,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 187.5,
             "low": 178.5,
             "close": 186,
-            "volume": 98
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -560,7 +560,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 195,
             "low": 184.5,
             "close": 193.5,
-            "volume": 108
+            "volume": 121
         },
         {
             "time": "Day 3",
@@ -568,14 +568,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 196.5,
             "low": 172.5,
             "close": 174,
-            "volume": 112
+            "volume": 127
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 고점에서 하락 전환 예고",
+        "하락 장악형 (Bearish Engulfing) - 고점 하락 전환 예고",
         "상승 장악형 (Bullish Engulfing) - 고점 돌파 랠리 예고",
-        "하락 잉태형 (Harami) - 하락세 둔화",
-        "샛별형 (Morning Star) - 바닥권 상승 반전"
+        "하락 잉태형 (Harami) - 기존 하락세의 일시 둔화",
+        "샛별형 (Morning Star) - 바닥권 상승 반전 예고"
     ],
     correctIndex: 0,
     explanation: "고점에서 직전 양봉을 음봉이 감싸 안은 형태는 '하락 장악형(Bearish Engulfing)'입니다. 매수 세력을 매도 공급이 압도했다는 명백한 증거로, 코인 가격 추세가 하락으로 반전할 리스크가 큽니다."
@@ -594,7 +594,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 187.5,
             "low": 178.5,
             "close": 186,
-            "volume": 86
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -602,7 +602,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 202.5,
             "low": 184.5,
             "close": 201,
-            "volume": 85
+            "volume": 106
         },
         {
             "time": "Day 3",
@@ -610,7 +610,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 222,
             "low": 199.5,
             "close": 219,
-            "volume": 117
+            "volume": 120
         },
         {
             "time": "Day 4",
@@ -618,7 +618,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 226.5,
             "low": 210,
             "close": 220.5,
-            "volume": 124
+            "volume": 115
         },
         {
             "time": "Day 5",
@@ -626,14 +626,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 214.5,
             "low": 202.5,
             "close": 204,
-            "volume": 106
+            "volume": 131
         }
     ],
     options: [
-        "추가 상승 랠리를 기대하며 비중을 늘려 전액 추격 매수(롱)한다.",
-        "하락이 휩소(속임수)일 가능성이 높으므로 레버리지를 2배로 올려 추가 매수한다.",
-        "행잉맨 패턴 뒤 음봉 갭하락으로 하락 전환(Bearish Reversal)이 컨펌되었으므로, 리스크 관리를 위해 보유 비중을 전량 매도하거나 최소 50% 이상 익절(또는 손절)한다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다."
+        "상승 랠리를 기대로 보유 비중 확대 및 추격 매수",
+        "일시적 속임수(휩소) 판단으로 추가 레버리지 매수",
+        "행잉맨 출현 후 갭하락에 따른 전량 또는 일부 정리",
+        "조치 없이 전고점 돌파 시까지 무기한 관망 및 홀딩"
     ],
     correctIndex: 2,
     explanation: "고가권에서 나타난 행잉맨(Hanging Man)은 잠재적 하락 전환 신호이며, 특히 다음날 갭하락 음봉으로 직전 행잉맨의 저가를 깨고 내려가는 움직임은 강력한 하락 컨펌 시그널입니다. 따라서 이 시점에서는 즉시 비중을 전량 정리하거나 최소 절반 이상 매도하여 리스크를 통제하는 것이 정석입니다."
@@ -652,7 +652,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 277.5,
             "low": 261,
             "close": 273,
-            "volume": 97
+            "volume": 112
         },
         {
             "time": "Day 2",
@@ -660,7 +660,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 292.5,
             "low": 270,
             "close": 289.5,
-            "volume": 96
+            "volume": 102
         },
         {
             "time": "Day 3",
@@ -668,7 +668,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 303,
             "low": 285,
             "close": 286.5,
-            "volume": 109
+            "volume": 94
         },
         {
             "time": "Day 4",
@@ -676,7 +676,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 301.5,
             "low": 282,
             "close": 283.5,
-            "volume": 118
+            "volume": 111
         }
     ],
     drawings: [
@@ -693,10 +693,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "저항선을 뚫고 신고가를 쓸 것이 100% 확실하므로 전재산을 추가 불타기(매수)한다.",
-        "박스권 상단 저항 돌파에 실패하고 매도 세력에 짓눌리는 유성형 캔들이 나타났으므로, 최소 50% 이상 분할 익절하여 이익을 보존하거나 전량 청산 후 박스권 하단 지지를 확인한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "시세를 이탈하여 다른 잡코인을 시장가 매수한다."
+        "신고가 갱신을 예상한 전재산 추가 불타기",
+        "저항 돌파 실패 신호 확인 후 분할 익절 및 관망",
+        "손익 평단가 부근이므로 추가 손절 없이 방치",
+        "거래를 종료하고 다른 신규 급등주를 시장가 추격"
     ],
     correctIndex: 1,
     explanation: "박스권 상단 저항선(300달러)에 부딪히며 나타난 유성형(Shooting Star) 연속 출현은 저항 돌파 실패와 차익 실현 세력의 강력한 등장을 경고하는 캔들 신호입니다. 돌파를 확신하기보다는 리스크 관리 관점에서 물량을 축소(50% 분할 익절)하거나 전량 매도하여 이익을 확정 짓는 것이 현명합니다."
@@ -715,7 +715,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 166.5,
             "low": 156,
             "close": 157.5,
-            "volume": 116
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -731,14 +731,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 151.5,
             "low": 136.5,
             "close": 150,
-            "volume": 91
+            "volume": 104
         }
     ],
     options: [
-        "아직 완벽한 상승 장악형이 아니므로 매수를 절대 금지하고 하락에 공매도를 가속화한다.",
-        "관통형 패턴의 지지 성공 가능성을 감안하여 1차 매수로 분할 진입하되, 당일 양봉의 최저점(136.50달러) 바로 아래에 강제 손절 주문을 설정하고 대응한다.",
-        "손절매 없이 100% 비중으로 시장가 풀매수를 집행한다.",
-        "조정을 기다려 120달러선까지 아무 주문 없이 관망만 유지한다."
+        "상승 모멘텀 미달로 매수 보류 및 하방 숏 포지션 진입",
+        "관통형 확인 후 분할 매수 및 당일 최저점 손절 설정",
+        "손절 라인 설정 없이 100% 비중 시장가 매수 집행",
+        "조정을 대기하며 예약 주문 없이 무작정 관망 유지"
     ],
     correctIndex: 1,
     explanation: "전일 음봉의 50% 이상을 당일 양봉 몸통으로 관통해 올린 '관통형(Piercing Line)'은 하락 모멘텀이 쇠퇴하고 저가 매수세가 우위를 점하기 시작했음을 뜻하는 바닥 신호입니다. 이 패턴 확인 후 진입할 시에는 손절 한도를 당일 최저점(136.50달러) 밑에 가깝게 설정할 수 있어 매우 유리한 리스크 대비 기대수익 매매가 성립됩니다."
@@ -757,7 +757,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 244,
             "low": 236,
             "close": 238,
-            "volume": 90
+            "volume": 92
         },
         {
             "time": "10:15",
@@ -765,7 +765,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 240,
             "low": 226,
             "close": 228,
-            "volume": 106
+            "volume": 97
         },
         {
             "time": "10:30",
@@ -773,7 +773,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 230,
             "low": 216,
             "close": 218,
-            "volume": 92
+            "volume": 113
         },
         {
             "time": "10:45",
@@ -781,7 +781,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 220,
             "low": 202,
             "close": 204,
-            "volume": 130
+            "volume": 108
         },
         {
             "time": "11:00",
@@ -789,14 +789,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 206,
             "low": 180,
             "close": 202,
-            "volume": 123
+            "volume": 116
         }
     ],
     options: [
-        "역망치형 (Inverted Hammer) - 추가 폭락 경고이므로 공매도",
-        "망치형 (Hammer) - 저가 매수세 유입, 지지 여부 확인 후 매수 대기",
-        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형으로 관망",
-        "하락 장악형 (Bearish Engulfing) - 매도세 장악으로 즉시 손절"
+        "역망치형 (Inverted Hammer) - 하락 경고 및 공매도 대기",
+        "망치형 (Hammer) - 저점 지지 및 분할 매수 대기",
+        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형 및 관망",
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 및 즉시 손절"
     ],
     correctIndex: 1,
     explanation: "마지막 캔들은 아래꼬리가 긴 '망치형(Hammer)' 캔들로 하락 압력을 이겨내고 저가 매수세가 밀어 올렸음을 의미하는 대표적 상승 전환 신호입니다. 지지를 확인한 뒤 분할 매수 관점으로 대기해야 합니다."
@@ -815,7 +815,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 216,
             "low": 198,
             "close": 210,
-            "volume": 95
+            "volume": 113
         },
         {
             "time": "Day 2",
@@ -823,7 +823,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 230,
             "low": 208,
             "close": 224,
-            "volume": 86
+            "volume": 102
         },
         {
             "time": "Day 3",
@@ -831,7 +831,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 250,
             "low": 222,
             "close": 246,
-            "volume": 100
+            "volume": 124
         },
         {
             "time": "Day 4",
@@ -839,7 +839,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 256,
             "low": 240,
             "close": 252,
-            "volume": 127
+            "volume": 94
         },
         {
             "time": "Day 5",
@@ -847,14 +847,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 290,
             "low": 250,
             "close": 254,
-            "volume": 97
+            "volume": 100
         }
     ],
     options: [
-        "유성형 (Shooting Star) - 고점 부근에서 강력한 저항/매도세 출현, 하락 전환 예고",
-        "망치형 (Hammer) - 추가 상승 랠리를 뜻하므로 시장가 풀매수",
-        "상승 장악형 (Bullish Engulfing) - 전일 몸통을 감쌌으므로 홀딩",
-        "도지 (Doji) - 추세 지속을 의미하므로 관망"
+        "유성형 (Shooting Star) - 고점 저항 및 하락 전환 예고",
+        "망치형 (Hammer) - 저점 매수세 유입 및 상승 랠리 기대",
+        "상승 장악형 (Bullish Engulfing) - 추세 반전 및 홀딩 유도",
+        "도지 (Doji) - 추세 지속 가능성 및 일시 관망"
     ],
     correctIndex: 0,
     explanation: "급등세 끝에서 위꼬리가 몸통보다 훨씬 길게 솟아오른 캔들은 '유성형(Shooting Star)'입니다. 장중 상승 시도를 강력한 차익 실현 및 매도 압력이 짓눌렀음을 보여주며, 하락 추세 전환의 강력한 경고 시그널입니다."
@@ -873,7 +873,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 200,
             "low": 190,
             "close": 192,
-            "volume": 103
+            "volume": 118
         },
         {
             "time": "Day 2",
@@ -881,7 +881,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 194,
             "low": 184,
             "close": 186,
-            "volume": 99
+            "volume": 118
         },
         {
             "time": "Day 3",
@@ -889,7 +889,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 190,
             "low": 176,
             "close": 178,
-            "volume": 105
+            "volume": 90
         },
         {
             "time": "Day 4",
@@ -897,14 +897,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 204,
             "low": 172,
             "close": 202,
-            "volume": 111
+            "volume": 104
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 매우 낮은 신뢰도",
-        "상승 장악형 (Bullish Engulfing) - 강력한 매수세 전환 신호로 신뢰도 높음",
-        "상승 관통형 (Piercing Line) - 중간 수준의 전환 신호",
-        "석별의 정 (Evening Star) - 상승 추세가 꺾이는 신호"
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 신뢰도 낮음",
+        "상승 장악형 (Bullish Engulfing) - 매수 전환 신뢰도 높음",
+        "상승 관통형 (Piercing Line) - 중간 강도의 반전 신호",
+        "석별형 (Evening Star) - 상승 추세 종결 신호"
     ],
     correctIndex: 1,
     explanation: "전일의 하락 음봉 몸통을 다음 날의 장대 양봉이 완전히 덮어버리는 형태를 '상승 장악형(Bullish Engulfing)' 패턴이라고 합니다. 하락 추세 끝에서 나타날 경우 단기 하락세가 종료되고 강력한 매수세가 들어왔음을 뜻해 전환 신뢰도가 매우 높습니다."
@@ -923,7 +923,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 250,
             "low": 238,
             "close": 248,
-            "volume": 109
+            "volume": 117
         },
         {
             "time": "Day 2",
@@ -931,7 +931,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 260,
             "low": 246,
             "close": 258,
-            "volume": 88
+            "volume": 104
         },
         {
             "time": "Day 3",
@@ -939,14 +939,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 262,
             "low": 230,
             "close": 232,
-            "volume": 101
+            "volume": 125
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 고점에서 하락 전환 예고",
+        "하락 장악형 (Bearish Engulfing) - 고점 하락 전환 예고",
         "상승 장악형 (Bullish Engulfing) - 고점 돌파 랠리 예고",
-        "하락 잉태형 (Harami) - 하락세 둔화",
-        "샛별형 (Morning Star) - 바닥권 상승 반전"
+        "하락 잉태형 (Harami) - 기존 하락세의 일시 둔화",
+        "샛별형 (Morning Star) - 바닥권 상승 반전 예고"
     ],
     correctIndex: 0,
     explanation: "고점에서 직전 양봉을 음봉이 감싸 안은 형태는 '하락 장악형(Bearish Engulfing)'입니다. 매수 세력을 매도 공급이 압도했다는 명백한 증거로, 시세 추세가 하락으로 반전할 리스크가 큽니다."
@@ -965,7 +965,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 250,
             "low": 238,
             "close": 248,
-            "volume": 104
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -973,7 +973,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 270,
             "low": 246,
             "close": 268,
-            "volume": 115
+            "volume": 89
         },
         {
             "time": "Day 3",
@@ -981,7 +981,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 296,
             "low": 266,
             "close": 292,
-            "volume": 94
+            "volume": 100
         },
         {
             "time": "Day 4",
@@ -989,7 +989,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 302,
             "low": 280,
             "close": 294,
-            "volume": 98
+            "volume": 116
         },
         {
             "time": "Day 5",
@@ -997,14 +997,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 286,
             "low": 270,
             "close": 272,
-            "volume": 124
+            "volume": 118
         }
     ],
     options: [
-        "추가 상승 랠리를 기대하며 비중을 늘려 전액 추격 매수(롱)한다.",
-        "하락이 휩소(속임수)일 가능성이 높으므로 레버리지를 2배로 올려 추가 매수한다.",
-        "행잉맨 패턴 뒤 음봉 갭하락으로 하락 전환(Bearish Reversal)이 컨펌되었으므로, 리스크 관리를 위해 보유 비중을 전량 매도하거나 최소 50% 이상 익절(또는 손절)한다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다."
+        "상승 랠리를 기대로 보유 비중 확대 및 추격 매수",
+        "일시적 속임수(휩소) 판단으로 추가 레버리지 매수",
+        "행잉맨 출현 후 갭하락에 따른 전량 또는 일부 정리",
+        "조치 없이 전고점 돌파 시까지 무기한 관망 및 홀딩"
     ],
     correctIndex: 2,
     explanation: "고가권에서 나타난 행잉맨(Hanging Man)은 잠재적 하락 전환 신호이며, 특히 다음날 갭하락 음봉으로 직전 행잉맨의 저가를 깨고 내려가는 움직임은 강력한 하락 컨펌 시그널입니다. 따라서 이 시점에서는 즉시 비중을 전량 정리하거나 최소 절반 이상 매도하여 리스크를 통제하는 것이 정석입니다."
@@ -1023,7 +1023,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 370,
             "low": 348,
             "close": 364,
-            "volume": 89
+            "volume": 82
         },
         {
             "time": "Day 2",
@@ -1031,7 +1031,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 390,
             "low": 360,
             "close": 386,
-            "volume": 105
+            "volume": 107
         },
         {
             "time": "Day 3",
@@ -1039,7 +1039,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 404,
             "low": 380,
             "close": 382,
-            "volume": 92
+            "volume": 88
         },
         {
             "time": "Day 4",
@@ -1047,7 +1047,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 402,
             "low": 376,
             "close": 378,
-            "volume": 120
+            "volume": 95
         }
     ],
     drawings: [
@@ -1064,10 +1064,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "저항선을 뚫고 신고가를 쓸 것이 100% 확실하므로 전재산을 추가 불타기(매수)한다.",
-        "박스권 상단 저항 돌파에 실패하고 매도 세력에 짓눌리는 유성형 캔들이 나타났으므로, 최소 50% 이상 분할 익절하여 이익을 보존하거나 전량 청산 후 박스권 하단 지지를 확인한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "시세를 이탈하여 다른 잡코인을 시장가 매수한다."
+        "신고가 갱신을 예상한 전재산 추가 불타기",
+        "저항 돌파 실패 신호 확인 후 분할 익절 및 관망",
+        "손익 평단가 부근이므로 추가 손절 없이 방치",
+        "거래를 종료하고 다른 신규 급등주를 시장가 추격"
     ],
     correctIndex: 1,
     explanation: "박스권 상단 저항선(400달러)에 부딪히며 나타난 유성형(Shooting Star) 연속 출현은 저항 돌파 실패와 차익 실현 세력의 강력한 등장을 경고하는 캔들 신호입니다. 돌파를 확신하기보다는 리스크 관리 관점에서 물량을 축소(50% 분할 익절)하거나 전량 매도하여 이익을 확정 짓는 것이 현명합니다."
@@ -1086,7 +1086,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 222,
             "low": 208,
             "close": 210,
-            "volume": 112
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -1094,7 +1094,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 212,
             "low": 194,
             "close": 196,
-            "volume": 106
+            "volume": 113
         },
         {
             "time": "Day 3",
@@ -1102,14 +1102,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 202,
             "low": 182,
             "close": 200,
-            "volume": 111
+            "volume": 104
         }
     ],
     options: [
-        "아직 완벽한 상승 장악형이 아니므로 매수를 절대 금지하고 하락에 공매도를 가속화한다.",
-        "관통형 패턴의 지지 성공 가능성을 감안하여 1차 매수로 분할 진입하되, 당일 양봉의 최저점(182달러) 바로 아래에 강제 손절 주문을 설정하고 대응한다.",
-        "손절매 없이 100% 비중으로 시장가 풀매수를 집행한다.",
-        "조정을 기다려 160달러선까지 아무 주문 없이 관망만 유지한다."
+        "상승 모멘텀 미달로 매수 보류 및 하방 숏 포지션 진입",
+        "관통형 확인 후 분할 매수 및 당일 최저점 손절 설정",
+        "손절 라인 설정 없이 100% 비중 시장가 매수 집행",
+        "조정을 대기하며 예약 주문 없이 무작정 관망 유지"
     ],
     correctIndex: 1,
     explanation: "전일 음봉의 50% 이상을 당일 양봉 몸통으로 관통해 올린 '관통형(Piercing Line)'은 하락 모멘텀이 쇠퇴하고 저가 매수세가 우위를 점하기 시작했음을 뜻하는 바닥 신호입니다. 이 패턴 확인 후 진입할 시에는 손절 한도를 당일 최저점(182달러) 밑에 가깝게 설정할 수 있어 매우 유리한 리스크 대비 기대수익 매매가 성립됩니다."
@@ -1128,7 +1128,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 366,
             "low": 354,
             "close": 357,
-            "volume": 83
+            "volume": 98
         },
         {
             "time": "10:15",
@@ -1136,7 +1136,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 360,
             "low": 339,
             "close": 342,
-            "volume": 108
+            "volume": 112
         },
         {
             "time": "10:30",
@@ -1144,7 +1144,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 345,
             "low": 324,
             "close": 327,
-            "volume": 99
+            "volume": 94
         },
         {
             "time": "10:45",
@@ -1152,7 +1152,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 330,
             "low": 303,
             "close": 306,
-            "volume": 131
+            "volume": 94
         },
         {
             "time": "11:00",
@@ -1160,14 +1160,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 309,
             "low": 270,
             "close": 303,
-            "volume": 103
+            "volume": 118
         }
     ],
     options: [
-        "역망치형 (Inverted Hammer) - 추가 폭락 경고이므로 공매도",
-        "망치형 (Hammer) - 저가 매수세 유입, 지지 여부 확인 후 매수 대기",
-        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형으로 관망",
-        "하락 장악형 (Bearish Engulfing) - 매도세 장악으로 즉시 손절"
+        "역망치형 (Inverted Hammer) - 하락 경고 및 공매도 대기",
+        "망치형 (Hammer) - 저점 지지 및 분할 매수 대기",
+        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형 및 관망",
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 및 즉시 손절"
     ],
     correctIndex: 1,
     explanation: "마지막 캔들은 아래꼬리가 긴 '망치형(Hammer)' 캔들로 하락 압력을 이겨내고 저가 매수세가 밀어 올렸음을 의미하는 대표적 상승 전환 신호입니다. 지지를 확인한 뒤 분할 매수 관점으로 대기해야 합니다."
@@ -1186,7 +1186,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 324,
             "low": 297,
             "close": 315,
-            "volume": 85
+            "volume": 90
         },
         {
             "time": "Day 2",
@@ -1194,7 +1194,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 345,
             "low": 312,
             "close": 336,
-            "volume": 104
+            "volume": 102
         },
         {
             "time": "Day 3",
@@ -1202,7 +1202,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 375,
             "low": 333,
             "close": 369,
-            "volume": 103
+            "volume": 117
         },
         {
             "time": "Day 4",
@@ -1210,7 +1210,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 384,
             "low": 360,
             "close": 378,
-            "volume": 108
+            "volume": 95
         },
         {
             "time": "Day 5",
@@ -1218,14 +1218,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 435,
             "low": 375,
             "close": 381,
-            "volume": 104
+            "volume": 129
         }
     ],
     options: [
-        "유성형 (Shooting Star) - 고점 부근에서 강력한 저항/매도세 출현, 하락 전환 예고",
-        "망치형 (Hammer) - 추가 상승 랠리를 뜻하므로 시장가 풀매수",
-        "상승 장악형 (Bullish Engulfing) - 전일 몸통을 감쌌으므로 홀딩",
-        "도지 (Doji) - 추세 지속을 의미하므로 관망"
+        "유성형 (Shooting Star) - 고점 저항 및 하락 전환 예고",
+        "망치형 (Hammer) - 저점 매수세 유입 및 상승 랠리 기대",
+        "상승 장악형 (Bullish Engulfing) - 추세 반전 및 홀딩 유도",
+        "도지 (Doji) - 추세 지속 가능성 및 일시 관망"
     ],
     correctIndex: 0,
     explanation: "급등세 끝에서 위꼬리가 몸통보다 훨씬 길게 솟아오른 캔들은 '유성형(Shooting Star)'입니다. 장중 상승 시도를 강력한 차익 실현 및 매도 압력이 짓눌렀음을 보여주며, 하락 추세 전환의 강력한 경고 시그널입니다."
@@ -1244,7 +1244,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 300,
             "low": 285,
             "close": 288,
-            "volume": 119
+            "volume": 90
         },
         {
             "time": "Day 2",
@@ -1252,7 +1252,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 291,
             "low": 276,
             "close": 279,
-            "volume": 92
+            "volume": 104
         },
         {
             "time": "Day 3",
@@ -1260,7 +1260,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 285,
             "low": 264,
             "close": 267,
-            "volume": 126
+            "volume": 92
         },
         {
             "time": "Day 4",
@@ -1268,14 +1268,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 306,
             "low": 258,
             "close": 303,
-            "volume": 119
+            "volume": 107
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 매우 낮은 신뢰도",
-        "상승 장악형 (Bullish Engulfing) - 강력한 매수세 전환 신호로 신뢰도 높음",
-        "상승 관통형 (Piercing Line) - 중간 수준의 전환 신호",
-        "석별의 정 (Evening Star) - 상승 추세가 꺾이는 신호"
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 신뢰도 낮음",
+        "상승 장악형 (Bullish Engulfing) - 매수 전환 신뢰도 높음",
+        "상승 관통형 (Piercing Line) - 중간 강도의 반전 신호",
+        "석별형 (Evening Star) - 상승 추세 종결 신호"
     ],
     correctIndex: 1,
     explanation: "전일의 하락 음봉 몸통을 다음 날의 장대 양봉이 완전히 덮어버리는 형태를 '상승 장악형(Bullish Engulfing)' 패턴이라고 합니다. 하락 추세 끝에서 나타날 경우 단기 하락세가 종료되고 강력한 매수세가 들어왔음을 뜻해 전환 신뢰도가 매우 높습니다."
@@ -1294,7 +1294,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 375,
             "low": 357,
             "close": 372,
-            "volume": 85
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -1302,7 +1302,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 390,
             "low": 369,
             "close": 387,
-            "volume": 98
+            "volume": 95
         },
         {
             "time": "Day 3",
@@ -1310,14 +1310,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 393,
             "low": 345,
             "close": 348,
-            "volume": 96
+            "volume": 89
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 고점에서 하락 전환 예고",
+        "하락 장악형 (Bearish Engulfing) - 고점 하락 전환 예고",
         "상승 장악형 (Bullish Engulfing) - 고점 돌파 랠리 예고",
-        "하락 잉태형 (Harami) - 하락세 둔화",
-        "샛별형 (Morning Star) - 바닥권 상승 반전"
+        "하락 잉태형 (Harami) - 기존 하락세의 일시 둔화",
+        "샛별형 (Morning Star) - 바닥권 상승 반전 예고"
     ],
     correctIndex: 0,
     explanation: "고점에서 직전 양봉을 음봉이 감싸 안은 형태는 '하락 장악형(Bearish Engulfing)'입니다. 매수 세력을 매도 공급이 압도했다는 명백한 증거로, 삼성전자 주가 추세가 하락으로 반전할 리스크가 큽니다."
@@ -1336,7 +1336,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 375,
             "low": 357,
             "close": 372,
-            "volume": 102
+            "volume": 85
         },
         {
             "time": "Day 2",
@@ -1344,7 +1344,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 405,
             "low": 369,
             "close": 402,
-            "volume": 123
+            "volume": 119
         },
         {
             "time": "Day 3",
@@ -1352,7 +1352,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 444,
             "low": 399,
             "close": 438,
-            "volume": 124
+            "volume": 108
         },
         {
             "time": "Day 4",
@@ -1368,14 +1368,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 429,
             "low": 405,
             "close": 408,
-            "volume": 97
+            "volume": 100
         }
     ],
     options: [
-        "추가 상승 랠리를 기대하며 비중을 늘려 전액 추격 매수(롱)한다.",
-        "하락이 휩소(속임수)일 가능성이 높으므로 레버리지를 2배로 올려 추가 매수한다.",
-        "행잉맨 패턴 뒤 음봉 갭하락으로 하락 전환(Bearish Reversal)이 컨펌되었으므로, 리스크 관리를 위해 보유 비중을 전량 매도하거나 최소 50% 이상 익절(또는 손절)한다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다."
+        "상승 랠리를 기대로 보유 비중 확대 및 추격 매수",
+        "일시적 속임수(휩소) 판단으로 추가 레버리지 매수",
+        "행잉맨 출현 후 갭하락에 따른 전량 또는 일부 정리",
+        "조치 없이 전고점 돌파 시까지 무기한 관망 및 홀딩"
     ],
     correctIndex: 2,
     explanation: "고가권에서 나타난 행잉맨(Hanging Man)은 잠재적 하락 전환 신호이며, 특히 다음날 갭하락 음봉으로 직전 행잉맨의 저가를 깨고 내려가는 움직임은 강력한 하락 컨펌 시그널입니다. 따라서 이 시점에서는 즉시 비중을 전량 정리하거나 최소 절반 이상 매도하여 리스크를 통제하는 것이 정석입니다."
@@ -1394,7 +1394,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 555,
             "low": 522,
             "close": 546,
-            "volume": 97
+            "volume": 106
         },
         {
             "time": "Day 2",
@@ -1402,7 +1402,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 585,
             "low": 540,
             "close": 579,
-            "volume": 101
+            "volume": 121
         },
         {
             "time": "Day 3",
@@ -1410,7 +1410,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 606,
             "low": 570,
             "close": 573,
-            "volume": 88
+            "volume": 97
         },
         {
             "time": "Day 4",
@@ -1418,7 +1418,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 603,
             "low": 564,
             "close": 567,
-            "volume": 100
+            "volume": 102
         }
     ],
     drawings: [
@@ -1435,10 +1435,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "저항선을 뚫고 신고가를 쓸 것이 100% 확실하므로 전재산을 추가 불타기(매수)한다.",
-        "박스권 상단 저항 돌파에 실패하고 매도 세력에 짓눌리는 유성형 캔들이 나타났으므로, 최소 50% 이상 분할 익절하여 이익을 보존하거나 전량 청산 후 박스권 하단 지지를 확인한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "시세를 이탈하여 다른 잡코인을 시장가 매수한다."
+        "신고가 갱신을 예상한 전재산 추가 불타기",
+        "저항 돌파 실패 신호 확인 후 분할 익절 및 관망",
+        "손익 평단가 부근이므로 추가 손절 없이 방치",
+        "거래를 종료하고 다른 신규 급등주를 시장가 추격"
     ],
     correctIndex: 1,
     explanation: "박스권 상단 저항선(600달러)에 부딪히며 나타난 유성형(Shooting Star) 연속 출현은 저항 돌파 실패와 차익 실현 세력의 강력한 등장을 경고하는 캔들 신호입니다. 돌파를 확신하기보다는 리스크 관리 관점에서 물량을 축소(50% 분할 익절)하거나 전량 매도하여 이익을 확정 짓는 것이 현명합니다."
@@ -1457,7 +1457,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 333,
             "low": 312,
             "close": 315,
-            "volume": 117
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -1465,7 +1465,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 318,
             "low": 291,
             "close": 294,
-            "volume": 90
+            "volume": 99
         },
         {
             "time": "Day 3",
@@ -1473,14 +1473,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 303,
             "low": 273,
             "close": 300,
-            "volume": 114
+            "volume": 93
         }
     ],
     options: [
-        "아직 완벽한 상승 장악형이 아니므로 매수를 절대 금지하고 하락에 공매도를 가속화한다.",
-        "관통형 패턴의 지지 성공 가능성을 감안하여 1차 매수로 분할 진입하되, 당일 양봉의 최저점(273달러) 바로 아래에 강제 손절 주문을 설정하고 대응한다.",
-        "손절매 없이 100% 비중으로 시장가 풀매수를 집행한다.",
-        "조정을 기다려 240달러선까지 아무 주문 없이 관망만 유지한다."
+        "상승 모멘텀 미달로 매수 보류 및 하방 숏 포지션 진입",
+        "관통형 확인 후 분할 매수 및 당일 최저점 손절 설정",
+        "손절 라인 설정 없이 100% 비중 시장가 매수 집행",
+        "조정을 대기하며 예약 주문 없이 무작정 관망 유지"
     ],
     correctIndex: 1,
     explanation: "전일 음봉의 50% 이상을 당일 양봉 몸통으로 관통해 올린 '관통형(Piercing Line)'은 하락 모멘텀이 쇠퇴하고 저가 매수세가 우위를 점하기 시작했음을 뜻하는 바닥 신호입니다. 이 패턴 확인 후 진입할 시에는 손절 한도를 당일 최저점(273달러) 밑에 가깝게 설정할 수 있어 매우 유리한 리스크 대비 기대수익 매매가 성립됩니다."
@@ -1499,7 +1499,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 610,
             "low": 590,
             "close": 595,
-            "volume": 111
+            "volume": 115
         },
         {
             "time": "10:15",
@@ -1507,7 +1507,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 600,
             "low": 565,
             "close": 570,
-            "volume": 117
+            "volume": 119
         },
         {
             "time": "10:30",
@@ -1515,7 +1515,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 575,
             "low": 540,
             "close": 545,
-            "volume": 127
+            "volume": 89
         },
         {
             "time": "10:45",
@@ -1523,7 +1523,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 550,
             "low": 505,
             "close": 510,
-            "volume": 104
+            "volume": 130
         },
         {
             "time": "11:00",
@@ -1531,14 +1531,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 515,
             "low": 450,
             "close": 505,
-            "volume": 112
+            "volume": 102
         }
     ],
     options: [
-        "역망치형 (Inverted Hammer) - 추가 폭락 경고이므로 공매도",
-        "망치형 (Hammer) - 저가 매수세 유입, 지지 여부 확인 후 매수 대기",
-        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형으로 관망",
-        "하락 장악형 (Bearish Engulfing) - 매도세 장악으로 즉시 손절"
+        "역망치형 (Inverted Hammer) - 하락 경고 및 공매도 대기",
+        "망치형 (Hammer) - 저점 지지 및 분할 매수 대기",
+        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형 및 관망",
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 및 즉시 손절"
     ],
     correctIndex: 1,
     explanation: "마지막 캔들은 아래꼬리가 긴 '망치형(Hammer)' 캔들로 하락 압력을 이겨내고 저가 매수세가 밀어 올렸음을 의미하는 대표적 상승 전환 신호입니다. 지지를 확인한 뒤 분할 매수 관점으로 대기해야 합니다."
@@ -1557,7 +1557,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 540,
             "low": 495,
             "close": 525,
-            "volume": 107
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -1573,7 +1573,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 625,
             "low": 555,
             "close": 615,
-            "volume": 98
+            "volume": 105
         },
         {
             "time": "Day 4",
@@ -1581,7 +1581,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 640,
             "low": 600,
             "close": 630,
-            "volume": 108
+            "volume": 128
         },
         {
             "time": "Day 5",
@@ -1589,14 +1589,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 725,
             "low": 625,
             "close": 635,
-            "volume": 107
+            "volume": 120
         }
     ],
     options: [
-        "유성형 (Shooting Star) - 고점 부근에서 강력한 저항/매도세 출현, 하락 전환 예고",
-        "망치형 (Hammer) - 추가 상승 랠리를 뜻하므로 시장가 풀매수",
-        "상승 장악형 (Bullish Engulfing) - 전일 몸통을 감쌌으므로 홀딩",
-        "도지 (Doji) - 추세 지속을 의미하므로 관망"
+        "유성형 (Shooting Star) - 고점 저항 및 하락 전환 예고",
+        "망치형 (Hammer) - 저점 매수세 유입 및 상승 랠리 기대",
+        "상승 장악형 (Bullish Engulfing) - 추세 반전 및 홀딩 유도",
+        "도지 (Doji) - 추세 지속 가능성 및 일시 관망"
     ],
     correctIndex: 0,
     explanation: "급등세 끝에서 위꼬리가 몸통보다 훨씬 길게 솟아오른 캔들은 '유성형(Shooting Star)'입니다. 장중 상승 시도를 강력한 차익 실현 및 매도 압력이 짓눌렀음을 보여주며, 하락 추세 전환의 강력한 경고 시그널입니다."
@@ -1615,7 +1615,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 500,
             "low": 475,
             "close": 480,
-            "volume": 83
+            "volume": 94
         },
         {
             "time": "Day 2",
@@ -1623,7 +1623,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 485,
             "low": 460,
             "close": 465,
-            "volume": 95
+            "volume": 117
         },
         {
             "time": "Day 3",
@@ -1631,7 +1631,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 475,
             "low": 440,
             "close": 445,
-            "volume": 100
+            "volume": 123
         },
         {
             "time": "Day 4",
@@ -1639,14 +1639,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 510,
             "low": 430,
             "close": 505,
-            "volume": 114
+            "volume": 102
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 매우 낮은 신뢰도",
-        "상승 장악형 (Bullish Engulfing) - 강력한 매수세 전환 신호로 신뢰도 높음",
-        "상승 관통형 (Piercing Line) - 중간 수준의 전환 신호",
-        "석별의 정 (Evening Star) - 상승 추세가 꺾이는 신호"
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 신뢰도 낮음",
+        "상승 장악형 (Bullish Engulfing) - 매수 전환 신뢰도 높음",
+        "상승 관통형 (Piercing Line) - 중간 강도의 반전 신호",
+        "석별형 (Evening Star) - 상승 추세 종결 신호"
     ],
     correctIndex: 1,
     explanation: "전일의 하락 음봉 몸통을 다음 날의 장대 양봉이 완전히 덮어버리는 형태를 '상승 장악형(Bullish Engulfing)' 패턴이라고 합니다. 하락 추세 끝에서 나타날 경우 단기 하락세가 종료되고 강력한 매수세가 들어왔음을 뜻해 전환 신뢰도가 매우 높습니다."
@@ -1673,7 +1673,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 650,
             "low": 615,
             "close": 645,
-            "volume": 116
+            "volume": 106
         },
         {
             "time": "Day 3",
@@ -1681,14 +1681,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 655,
             "low": 575,
             "close": 580,
-            "volume": 120
+            "volume": 91
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 고점에서 하락 전환 예고",
+        "하락 장악형 (Bearish Engulfing) - 고점 하락 전환 예고",
         "상승 장악형 (Bullish Engulfing) - 고점 돌파 랠리 예고",
-        "하락 잉태형 (Harami) - 하락세 둔화",
-        "샛별형 (Morning Star) - 바닥권 상승 반전"
+        "하락 잉태형 (Harami) - 기존 하락세의 일시 둔화",
+        "샛별형 (Morning Star) - 바닥권 상승 반전 예고"
     ],
     correctIndex: 0,
     explanation: "고점에서 직전 양봉을 음봉이 감싸 안은 형태는 '하락 장악형(Bearish Engulfing)'입니다. 매수 세력을 매도 공급이 압도했다는 명백한 증거로, 테슬라 주가 추세가 하락으로 반전할 리스크가 큽니다."
@@ -1707,7 +1707,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 625,
             "low": 595,
             "close": 620,
-            "volume": 106
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -1715,7 +1715,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 675,
             "low": 615,
             "close": 670,
-            "volume": 94
+            "volume": 103
         },
         {
             "time": "Day 3",
@@ -1723,7 +1723,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 740,
             "low": 665,
             "close": 730,
-            "volume": 100
+            "volume": 117
         },
         {
             "time": "Day 4",
@@ -1731,7 +1731,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 755,
             "low": 700,
             "close": 735,
-            "volume": 105
+            "volume": 122
         },
         {
             "time": "Day 5",
@@ -1739,14 +1739,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 715,
             "low": 675,
             "close": 680,
-            "volume": 114
+            "volume": 111
         }
     ],
     options: [
-        "추가 상승 랠리를 기대하며 비중을 늘려 전액 추격 매수(롱)한다.",
-        "하락이 휩소(속임수)일 가능성이 높으므로 레버리지를 2배로 올려 추가 매수한다.",
-        "행잉맨 패턴 뒤 음봉 갭하락으로 하락 전환(Bearish Reversal)이 컨펌되었으므로, 리스크 관리를 위해 보유 비중을 전량 매도하거나 최소 50% 이상 익절(또는 손절)한다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다."
+        "상승 랠리를 기대로 보유 비중 확대 및 추격 매수",
+        "일시적 속임수(휩소) 판단으로 추가 레버리지 매수",
+        "행잉맨 출현 후 갭하락에 따른 전량 또는 일부 정리",
+        "조치 없이 전고점 돌파 시까지 무기한 관망 및 홀딩"
     ],
     correctIndex: 2,
     explanation: "고가권에서 나타난 행잉맨(Hanging Man)은 잠재적 하락 전환 신호이며, 특히 다음날 갭하락 음봉으로 직전 행잉맨의 저가를 깨고 내려가는 움직임은 강력한 하락 컨펌 시그널입니다. 따라서 이 시점에서는 즉시 비중을 전량 정리하거나 최소 절반 이상 매도하여 리스크를 통제하는 것이 정석입니다."
@@ -1765,7 +1765,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 925,
             "low": 870,
             "close": 910,
-            "volume": 80
+            "volume": 101
         },
         {
             "time": "Day 2",
@@ -1773,7 +1773,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 975,
             "low": 900,
             "close": 965,
-            "volume": 115
+            "volume": 122
         },
         {
             "time": "Day 3",
@@ -1781,7 +1781,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1010,
             "low": 950,
             "close": 955,
-            "volume": 102
+            "volume": 101
         },
         {
             "time": "Day 4",
@@ -1789,7 +1789,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1005,
             "low": 940,
             "close": 945,
-            "volume": 118
+            "volume": 106
         }
     ],
     drawings: [
@@ -1806,10 +1806,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "저항선을 뚫고 신고가를 쓸 것이 100% 확실하므로 전재산을 추가 불타기(매수)한다.",
-        "박스권 상단 저항 돌파에 실패하고 매도 세력에 짓눌리는 유성형 캔들이 나타났으므로, 최소 50% 이상 분할 익절하여 이익을 보존하거나 전량 청산 후 박스권 하단 지지를 확인한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "시세를 이탈하여 다른 잡코인을 시장가 매수한다."
+        "신고가 갱신을 예상한 전재산 추가 불타기",
+        "저항 돌파 실패 신호 확인 후 분할 익절 및 관망",
+        "손익 평단가 부근이므로 추가 손절 없이 방치",
+        "거래를 종료하고 다른 신규 급등주를 시장가 추격"
     ],
     correctIndex: 1,
     explanation: "박스권 상단 저항선(1,000달러)에 부딪히며 나타난 유성형(Shooting Star) 연속 출현은 저항 돌파 실패와 차익 실현 세력의 강력한 등장을 경고하는 캔들 신호입니다. 돌파를 확신하기보다는 리스크 관리 관점에서 물량을 축소(50% 분할 익절)하거나 전량 매도하여 이익을 확정 짓는 것이 현명합니다."
@@ -1836,7 +1836,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 530,
             "low": 485,
             "close": 490,
-            "volume": 96
+            "volume": 106
         },
         {
             "time": "Day 3",
@@ -1844,14 +1844,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 505,
             "low": 455,
             "close": 500,
-            "volume": 89
+            "volume": 95
         }
     ],
     options: [
-        "아직 완벽한 상승 장악형이 아니므로 매수를 절대 금지하고 하락에 공매도를 가속화한다.",
-        "관통형 패턴의 지지 성공 가능성을 감안하여 1차 매수로 분할 진입하되, 당일 양봉의 최저점(455달러) 바로 아래에 강제 손절 주문을 설정하고 대응한다.",
-        "손절매 없이 100% 비중으로 시장가 풀매수를 집행한다.",
-        "조정을 기다려 400달러선까지 아무 주문 없이 관망만 유지한다."
+        "상승 모멘텀 미달로 매수 보류 및 하방 숏 포지션 진입",
+        "관통형 확인 후 분할 매수 및 당일 최저점 손절 설정",
+        "손절 라인 설정 없이 100% 비중 시장가 매수 집행",
+        "조정을 대기하며 예약 주문 없이 무작정 관망 유지"
     ],
     correctIndex: 1,
     explanation: "전일 음봉의 50% 이상을 당일 양봉 몸통으로 관통해 올린 '관통형(Piercing Line)'은 하락 모멘텀이 쇠퇴하고 저가 매수세가 우위를 점하기 시작했음을 뜻하는 바닥 신호입니다. 이 패턴 확인 후 진입할 시에는 손절 한도를 당일 최저점(455달러) 밑에 가깝게 설정할 수 있어 매우 유리한 리스크 대비 기대수익 매매가 성립됩니다."
@@ -1870,7 +1870,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 976,
             "low": 944,
             "close": 952,
-            "volume": 102
+            "volume": 119
         },
         {
             "time": "10:15",
@@ -1878,7 +1878,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 960,
             "low": 904,
             "close": 912,
-            "volume": 112
+            "volume": 95
         },
         {
             "time": "10:30",
@@ -1886,7 +1886,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 920,
             "low": 864,
             "close": 872,
-            "volume": 91
+            "volume": 98
         },
         {
             "time": "10:45",
@@ -1894,7 +1894,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 880,
             "low": 808,
             "close": 816,
-            "volume": 100
+            "volume": 109
         },
         {
             "time": "11:00",
@@ -1902,14 +1902,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 824,
             "low": 720,
             "close": 808,
-            "volume": 116
+            "volume": 113
         }
     ],
     options: [
-        "역망치형 (Inverted Hammer) - 추가 폭락 경고이므로 공매도",
-        "망치형 (Hammer) - 저가 매수세 유입, 지지 여부 확인 후 매수 대기",
-        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형으로 관망",
-        "하락 장악형 (Bearish Engulfing) - 매도세 장악으로 즉시 손절"
+        "역망치형 (Inverted Hammer) - 하락 경고 및 공매도 대기",
+        "망치형 (Hammer) - 저점 지지 및 분할 매수 대기",
+        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형 및 관망",
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 및 즉시 손절"
     ],
     correctIndex: 1,
     explanation: "마지막 캔들은 아래꼬리가 긴 '망치형(Hammer)' 캔들로 하락 압력을 이겨내고 저가 매수세가 밀어 올렸음을 의미하는 대표적 상승 전환 신호입니다. 지지를 확인한 뒤 분할 매수 관점으로 대기해야 합니다."
@@ -1928,7 +1928,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 864,
             "low": 792,
             "close": 840,
-            "volume": 90
+            "volume": 107
         },
         {
             "time": "Day 2",
@@ -1936,7 +1936,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 920,
             "low": 832,
             "close": 896,
-            "volume": 89
+            "volume": 111
         },
         {
             "time": "Day 3",
@@ -1944,7 +1944,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1000,
             "low": 888,
             "close": 984,
-            "volume": 100
+            "volume": 114
         },
         {
             "time": "Day 4",
@@ -1952,7 +1952,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1024,
             "low": 960,
             "close": 1008,
-            "volume": 94
+            "volume": 116
         },
         {
             "time": "Day 5",
@@ -1960,14 +1960,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1160,
             "low": 1000,
             "close": 1016,
-            "volume": 102
+            "volume": 99
         }
     ],
     options: [
-        "유성형 (Shooting Star) - 고점 부근에서 강력한 저항/매도세 출현, 하락 전환 예고",
-        "망치형 (Hammer) - 추가 상승 랠리를 뜻하므로 시장가 풀매수",
-        "상승 장악형 (Bullish Engulfing) - 전일 몸통을 감쌌으므로 홀딩",
-        "도지 (Doji) - 추세 지속을 의미하므로 관망"
+        "유성형 (Shooting Star) - 고점 저항 및 하락 전환 예고",
+        "망치형 (Hammer) - 저점 매수세 유입 및 상승 랠리 기대",
+        "상승 장악형 (Bullish Engulfing) - 추세 반전 및 홀딩 유도",
+        "도지 (Doji) - 추세 지속 가능성 및 일시 관망"
     ],
     correctIndex: 0,
     explanation: "급등세 끝에서 위꼬리가 몸통보다 훨씬 길게 솟아오른 캔들은 '유성형(Shooting Star)'입니다. 장중 상승 시도를 강력한 차익 실현 및 매도 압력이 짓눌렀음을 보여주며, 하락 추세 전환의 강력한 경고 시그널입니다."
@@ -1986,7 +1986,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 800,
             "low": 760,
             "close": 768,
-            "volume": 81
+            "volume": 94
         },
         {
             "time": "Day 2",
@@ -1994,7 +1994,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 776,
             "low": 736,
             "close": 744,
-            "volume": 109
+            "volume": 98
         },
         {
             "time": "Day 3",
@@ -2002,7 +2002,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 760,
             "low": 704,
             "close": 712,
-            "volume": 114
+            "volume": 89
         },
         {
             "time": "Day 4",
@@ -2010,14 +2010,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 816,
             "low": 688,
             "close": 808,
-            "volume": 114
+            "volume": 110
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 매우 낮은 신뢰도",
-        "상승 장악형 (Bullish Engulfing) - 강력한 매수세 전환 신호로 신뢰도 높음",
-        "상승 관통형 (Piercing Line) - 중간 수준의 전환 신호",
-        "석별의 정 (Evening Star) - 상승 추세가 꺾이는 신호"
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 신뢰도 낮음",
+        "상승 장악형 (Bullish Engulfing) - 매수 전환 신뢰도 높음",
+        "상승 관통형 (Piercing Line) - 중간 강도의 반전 신호",
+        "석별형 (Evening Star) - 상승 추세 종결 신호"
     ],
     correctIndex: 1,
     explanation: "전일의 하락 음봉 몸통을 다음 날의 장대 양봉이 완전히 덮어버리는 형태를 '상승 장악형(Bullish Engulfing)' 패턴이라고 합니다. 하락 추세 끝에서 나타날 경우 단기 하락세가 종료되고 강력한 매수세가 들어왔음을 뜻해 전환 신뢰도가 매우 높습니다."
@@ -2036,7 +2036,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1000,
             "low": 952,
             "close": 992,
-            "volume": 90
+            "volume": 88
         },
         {
             "time": "Day 2",
@@ -2044,7 +2044,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1040,
             "low": 984,
             "close": 1032,
-            "volume": 85
+            "volume": 106
         },
         {
             "time": "Day 3",
@@ -2052,14 +2052,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1048,
             "low": 920,
             "close": 928,
-            "volume": 99
+            "volume": 123
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 고점에서 하락 전환 예고",
+        "하락 장악형 (Bearish Engulfing) - 고점 하락 전환 예고",
         "상승 장악형 (Bullish Engulfing) - 고점 돌파 랠리 예고",
-        "하락 잉태형 (Harami) - 하락세 둔화",
-        "샛별형 (Morning Star) - 바닥권 상승 반전"
+        "하락 잉태형 (Harami) - 기존 하락세의 일시 둔화",
+        "샛별형 (Morning Star) - 바닥권 상승 반전 예고"
     ],
     correctIndex: 0,
     explanation: "고점에서 직전 양봉을 음봉이 감싸 안은 형태는 '하락 장악형(Bearish Engulfing)'입니다. 매수 세력을 매도 공급이 압도했다는 명백한 증거로, 애플 주가 추세가 하락으로 반전할 리스크가 큽니다."
@@ -2078,7 +2078,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1000,
             "low": 952,
             "close": 992,
-            "volume": 104
+            "volume": 106
         },
         {
             "time": "Day 2",
@@ -2086,7 +2086,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1080,
             "low": 984,
             "close": 1072,
-            "volume": 92
+            "volume": 119
         },
         {
             "time": "Day 3",
@@ -2094,7 +2094,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1184,
             "low": 1064,
             "close": 1168,
-            "volume": 123
+            "volume": 113
         },
         {
             "time": "Day 4",
@@ -2102,7 +2102,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1208,
             "low": 1120,
             "close": 1176,
-            "volume": 123
+            "volume": 109
         },
         {
             "time": "Day 5",
@@ -2110,14 +2110,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1144,
             "low": 1080,
             "close": 1088,
-            "volume": 99
+            "volume": 119
         }
     ],
     options: [
-        "추가 상승 랠리를 기대하며 비중을 늘려 전액 추격 매수(롱)한다.",
-        "하락이 휩소(속임수)일 가능성이 높으므로 레버리지를 2배로 올려 추가 매수한다.",
-        "행잉맨 패턴 뒤 음봉 갭하락으로 하락 전환(Bearish Reversal)이 컨펌되었으므로, 리스크 관리를 위해 보유 비중을 전량 매도하거나 최소 50% 이상 익절(또는 손절)한다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다."
+        "상승 랠리를 기대로 보유 비중 확대 및 추격 매수",
+        "일시적 속임수(휩소) 판단으로 추가 레버리지 매수",
+        "행잉맨 출현 후 갭하락에 따른 전량 또는 일부 정리",
+        "조치 없이 전고점 돌파 시까지 무기한 관망 및 홀딩"
     ],
     correctIndex: 2,
     explanation: "고가권에서 나타난 행잉맨(Hanging Man)은 잠재적 하락 전환 신호이며, 특히 다음날 갭하락 음봉으로 직전 행잉맨의 저가를 깨고 내려가는 움직임은 강력한 하락 컨펌 시그널입니다. 따라서 이 시점에서는 즉시 비중을 전량 정리하거나 최소 절반 이상 매도하여 리스크를 통제하는 것이 정석입니다."
@@ -2136,7 +2136,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1480,
             "low": 1392,
             "close": 1456,
-            "volume": 96
+            "volume": 112
         },
         {
             "time": "Day 2",
@@ -2144,7 +2144,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1560,
             "low": 1440,
             "close": 1544,
-            "volume": 89
+            "volume": 92
         },
         {
             "time": "Day 3",
@@ -2152,7 +2152,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1616,
             "low": 1520,
             "close": 1528,
-            "volume": 127
+            "volume": 123
         },
         {
             "time": "Day 4",
@@ -2160,7 +2160,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1608,
             "low": 1504,
             "close": 1512,
-            "volume": 119
+            "volume": 104
         }
     ],
     drawings: [
@@ -2177,10 +2177,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "저항선을 뚫고 신고가를 쓸 것이 100% 확실하므로 전재산을 추가 불타기(매수)한다.",
-        "박스권 상단 저항 돌파에 실패하고 매도 세력에 짓눌리는 유성형 캔들이 나타났으므로, 최소 50% 이상 분할 익절하여 이익을 보존하거나 전량 청산 후 박스권 하단 지지를 확인한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "시세를 이탈하여 다른 잡코인을 시장가 매수한다."
+        "신고가 갱신을 예상한 전재산 추가 불타기",
+        "저항 돌파 실패 신호 확인 후 분할 익절 및 관망",
+        "손익 평단가 부근이므로 추가 손절 없이 방치",
+        "거래를 종료하고 다른 신규 급등주를 시장가 추격"
     ],
     correctIndex: 1,
     explanation: "박스권 상단 저항선(1,600달러)에 부딪히며 나타난 유성형(Shooting Star) 연속 출현은 저항 돌파 실패와 차익 실현 세력의 강력한 등장을 경고하는 캔들 신호입니다. 돌파를 확신하기보다는 리스크 관리 관점에서 물량을 축소(50% 분할 익절)하거나 전량 매도하여 이익을 확정 짓는 것이 현명합니다."
@@ -2199,7 +2199,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 888,
             "low": 832,
             "close": 840,
-            "volume": 100
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -2207,7 +2207,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 848,
             "low": 776,
             "close": 784,
-            "volume": 120
+            "volume": 109
         },
         {
             "time": "Day 3",
@@ -2215,14 +2215,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 808,
             "low": 728,
             "close": 800,
-            "volume": 119
+            "volume": 109
         }
     ],
     options: [
-        "아직 완벽한 상승 장악형이 아니므로 매수를 절대 금지하고 하락에 공매도를 가속화한다.",
-        "관통형 패턴의 지지 성공 가능성을 감안하여 1차 매수로 분할 진입하되, 당일 양봉의 최저점(728달러) 바로 아래에 강제 손절 주문을 설정하고 대응한다.",
-        "손절매 없이 100% 비중으로 시장가 풀매수를 집행한다.",
-        "조정을 기다려 640달러선까지 아무 주문 없이 관망만 유지한다."
+        "상승 모멘텀 미달로 매수 보류 및 하방 숏 포지션 진입",
+        "관통형 확인 후 분할 매수 및 당일 최저점 손절 설정",
+        "손절 라인 설정 없이 100% 비중 시장가 매수 집행",
+        "조정을 대기하며 예약 주문 없이 무작정 관망 유지"
     ],
     correctIndex: 1,
     explanation: "전일 음봉의 50% 이상을 당일 양봉 몸통으로 관통해 올린 '관통형(Piercing Line)'은 하락 모멘텀이 쇠퇴하고 저가 매수세가 우위를 점하기 시작했음을 뜻하는 바닥 신호입니다. 이 패턴 확인 후 진입할 시에는 손절 한도를 당일 최저점(728달러) 밑에 가깝게 설정할 수 있어 매우 유리한 리스크 대비 기대수익 매매가 성립됩니다."
@@ -2241,7 +2241,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1220,
             "low": 1180,
             "close": 1190,
-            "volume": 101
+            "volume": 88
         },
         {
             "time": "10:15",
@@ -2249,7 +2249,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1200,
             "low": 1130,
             "close": 1140,
-            "volume": 95
+            "volume": 104
         },
         {
             "time": "10:30",
@@ -2257,7 +2257,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1150,
             "low": 1080,
             "close": 1090,
-            "volume": 127
+            "volume": 116
         },
         {
             "time": "10:45",
@@ -2265,7 +2265,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1100,
             "low": 1010,
             "close": 1020,
-            "volume": 94
+            "volume": 100
         },
         {
             "time": "11:00",
@@ -2273,14 +2273,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1030,
             "low": 900,
             "close": 1010,
-            "volume": 131
+            "volume": 105
         }
     ],
     options: [
-        "역망치형 (Inverted Hammer) - 추가 폭락 경고이므로 공매도",
-        "망치형 (Hammer) - 저가 매수세 유입, 지지 여부 확인 후 매수 대기",
-        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형으로 관망",
-        "하락 장악형 (Bearish Engulfing) - 매도세 장악으로 즉시 손절"
+        "역망치형 (Inverted Hammer) - 하락 경고 및 공매도 대기",
+        "망치형 (Hammer) - 저점 지지 및 분할 매수 대기",
+        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형 및 관망",
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 및 즉시 손절"
     ],
     correctIndex: 1,
     explanation: "마지막 캔들은 아래꼬리가 긴 '망치형(Hammer)' 캔들로 하락 압력을 이겨내고 저가 매수세가 밀어 올렸음을 의미하는 대표적 상승 전환 신호입니다. 지지를 확인한 뒤 분할 매수 관점으로 대기해야 합니다."
@@ -2299,7 +2299,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1080,
             "low": 990,
             "close": 1050,
-            "volume": 81
+            "volume": 112
         },
         {
             "time": "Day 2",
@@ -2307,7 +2307,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1150,
             "low": 1040,
             "close": 1120,
-            "volume": 96
+            "volume": 93
         },
         {
             "time": "Day 3",
@@ -2315,7 +2315,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1250,
             "low": 1110,
             "close": 1230,
-            "volume": 101
+            "volume": 109
         },
         {
             "time": "Day 4",
@@ -2323,7 +2323,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1280,
             "low": 1200,
             "close": 1260,
-            "volume": 93
+            "volume": 125
         },
         {
             "time": "Day 5",
@@ -2331,14 +2331,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1450,
             "low": 1250,
             "close": 1270,
-            "volume": 110
+            "volume": 127
         }
     ],
     options: [
-        "유성형 (Shooting Star) - 고점 부근에서 강력한 저항/매도세 출현, 하락 전환 예고",
-        "망치형 (Hammer) - 추가 상승 랠리를 뜻하므로 시장가 풀매수",
-        "상승 장악형 (Bullish Engulfing) - 전일 몸통을 감쌌으므로 홀딩",
-        "도지 (Doji) - 추세 지속을 의미하므로 관망"
+        "유성형 (Shooting Star) - 고점 저항 및 하락 전환 예고",
+        "망치형 (Hammer) - 저점 매수세 유입 및 상승 랠리 기대",
+        "상승 장악형 (Bullish Engulfing) - 추세 반전 및 홀딩 유도",
+        "도지 (Doji) - 추세 지속 가능성 및 일시 관망"
     ],
     correctIndex: 0,
     explanation: "급등세 끝에서 위꼬리가 몸통보다 훨씬 길게 솟아오른 캔들은 '유성형(Shooting Star)'입니다. 장중 상승 시도를 강력한 차익 실현 및 매도 압력이 짓눌렀음을 보여주며, 하락 추세 전환의 강력한 경고 시그널입니다."
@@ -2357,7 +2357,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1000,
             "low": 950,
             "close": 960,
-            "volume": 96
+            "volume": 85
         },
         {
             "time": "Day 2",
@@ -2365,7 +2365,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 970,
             "low": 920,
             "close": 930,
-            "volume": 122
+            "volume": 89
         },
         {
             "time": "Day 3",
@@ -2373,7 +2373,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 950,
             "low": 880,
             "close": 890,
-            "volume": 91
+            "volume": 101
         },
         {
             "time": "Day 4",
@@ -2381,14 +2381,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1020,
             "low": 860,
             "close": 1010,
-            "volume": 121
+            "volume": 111
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 매우 낮은 신뢰도",
-        "상승 장악형 (Bullish Engulfing) - 강력한 매수세 전환 신호로 신뢰도 높음",
-        "상승 관통형 (Piercing Line) - 중간 수준의 전환 신호",
-        "석별의 정 (Evening Star) - 상승 추세가 꺾이는 신호"
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 신뢰도 낮음",
+        "상승 장악형 (Bullish Engulfing) - 매수 전환 신뢰도 높음",
+        "상승 관통형 (Piercing Line) - 중간 강도의 반전 신호",
+        "석별형 (Evening Star) - 상승 추세 종결 신호"
     ],
     correctIndex: 1,
     explanation: "전일의 하락 음봉 몸통을 다음 날의 장대 양봉이 완전히 덮어버리는 형태를 '상승 장악형(Bullish Engulfing)' 패턴이라고 합니다. 하락 추세 끝에서 나타날 경우 단기 하락세가 종료되고 강력한 매수세가 들어왔음을 뜻해 전환 신뢰도가 매우 높습니다."
@@ -2407,7 +2407,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1250,
             "low": 1190,
             "close": 1240,
-            "volume": 91
+            "volume": 85
         },
         {
             "time": "Day 2",
@@ -2415,7 +2415,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1300,
             "low": 1230,
             "close": 1290,
-            "volume": 107
+            "volume": 98
         },
         {
             "time": "Day 3",
@@ -2423,14 +2423,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1310,
             "low": 1150,
             "close": 1160,
-            "volume": 104
+            "volume": 127
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 고점에서 하락 전환 예고",
+        "하락 장악형 (Bearish Engulfing) - 고점 하락 전환 예고",
         "상승 장악형 (Bullish Engulfing) - 고점 돌파 랠리 예고",
-        "하락 잉태형 (Harami) - 하락세 둔화",
-        "샛별형 (Morning Star) - 바닥권 상승 반전"
+        "하락 잉태형 (Harami) - 기존 하락세의 일시 둔화",
+        "샛별형 (Morning Star) - 바닥권 상승 반전 예고"
     ],
     correctIndex: 0,
     explanation: "고점에서 직전 양봉을 음봉이 감싸 안은 형태는 '하락 장악형(Bearish Engulfing)'입니다. 매수 세력을 매도 공급이 압도했다는 명백한 증거로, 나스닥 시세 추세가 하락으로 반전할 리스크가 큽니다."
@@ -2449,7 +2449,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1250,
             "low": 1190,
             "close": 1240,
-            "volume": 99
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -2457,7 +2457,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1350,
             "low": 1230,
             "close": 1340,
-            "volume": 98
+            "volume": 87
         },
         {
             "time": "Day 3",
@@ -2465,7 +2465,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1480,
             "low": 1330,
             "close": 1460,
-            "volume": 100
+            "volume": 99
         },
         {
             "time": "Day 4",
@@ -2473,7 +2473,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1510,
             "low": 1400,
             "close": 1470,
-            "volume": 110
+            "volume": 97
         },
         {
             "time": "Day 5",
@@ -2481,14 +2481,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1430,
             "low": 1350,
             "close": 1360,
-            "volume": 106
+            "volume": 104
         }
     ],
     options: [
-        "추가 상승 랠리를 기대하며 비중을 늘려 전액 추격 매수(롱)한다.",
-        "하락이 휩소(속임수)일 가능성이 높으므로 레버리지를 2배로 올려 추가 매수한다.",
-        "행잉맨 패턴 뒤 음봉 갭하락으로 하락 전환(Bearish Reversal)이 컨펌되었으므로, 리스크 관리를 위해 보유 비중을 전량 매도하거나 최소 50% 이상 익절(또는 손절)한다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다."
+        "상승 랠리를 기대로 보유 비중 확대 및 추격 매수",
+        "일시적 속임수(휩소) 판단으로 추가 레버리지 매수",
+        "행잉맨 출현 후 갭하락에 따른 전량 또는 일부 정리",
+        "조치 없이 전고점 돌파 시까지 무기한 관망 및 홀딩"
     ],
     correctIndex: 2,
     explanation: "고가권에서 나타난 행잉맨(Hanging Man)은 잠재적 하락 전환 신호이며, 특히 다음날 갭하락 음봉으로 직전 행잉맨의 저가를 깨고 내려가는 움직임은 강력한 하락 컨펌 시그널입니다. 따라서 이 시점에서는 즉시 비중을 전량 정리하거나 최소 절반 이상 매도하여 리스크를 통제하는 것이 정석입니다."
@@ -2507,7 +2507,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1850,
             "low": 1740,
             "close": 1820,
-            "volume": 106
+            "volume": 97
         },
         {
             "time": "Day 2",
@@ -2515,7 +2515,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1950,
             "low": 1800,
             "close": 1930,
-            "volume": 85
+            "volume": 97
         },
         {
             "time": "Day 3",
@@ -2523,7 +2523,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2020,
             "low": 1900,
             "close": 1910,
-            "volume": 116
+            "volume": 107
         },
         {
             "time": "Day 4",
@@ -2531,7 +2531,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2010,
             "low": 1880,
             "close": 1890,
-            "volume": 120
+            "volume": 118
         }
     ],
     drawings: [
@@ -2548,10 +2548,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "저항선을 뚫고 신고가를 쓸 것이 100% 확실하므로 전재산을 추가 불타기(매수)한다.",
-        "박스권 상단 저항 돌파에 실패하고 매도 세력에 짓눌리는 유성형 캔들이 나타났으므로, 최소 50% 이상 분할 익절하여 이익을 보존하거나 전량 청산 후 박스권 하단 지지를 확인한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "시세를 이탈하여 다른 잡코인을 시장가 매수한다."
+        "신고가 갱신을 예상한 전재산 추가 불타기",
+        "저항 돌파 실패 신호 확인 후 분할 익절 및 관망",
+        "손익 평단가 부근이므로 추가 손절 없이 방치",
+        "거래를 종료하고 다른 신규 급등주를 시장가 추격"
     ],
     correctIndex: 1,
     explanation: "박스권 상단 저항선(2,000달러)에 부딪히며 나타난 유성형(Shooting Star) 연속 출현은 저항 돌파 실패와 차익 실현 세력의 강력한 등장을 경고하는 캔들 신호입니다. 돌파를 확신하기보다는 리스크 관리 관점에서 물량을 축소(50% 분할 익절)하거나 전량 매도하여 이익을 확정 짓는 것이 현명합니다."
@@ -2570,7 +2570,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1110,
             "low": 1040,
             "close": 1050,
-            "volume": 104
+            "volume": 101
         },
         {
             "time": "Day 2",
@@ -2578,7 +2578,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1060,
             "low": 970,
             "close": 980,
-            "volume": 88
+            "volume": 87
         },
         {
             "time": "Day 3",
@@ -2586,14 +2586,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1010,
             "low": 910,
             "close": 1000,
-            "volume": 115
+            "volume": 89
         }
     ],
     options: [
-        "아직 완벽한 상승 장악형이 아니므로 매수를 절대 금지하고 하락에 공매도를 가속화한다.",
-        "관통형 패턴의 지지 성공 가능성을 감안하여 1차 매수로 분할 진입하되, 당일 양봉의 최저점(910달러) 바로 아래에 강제 손절 주문을 설정하고 대응한다.",
-        "손절매 없이 100% 비중으로 시장가 풀매수를 집행한다.",
-        "조정을 기다려 800달러선까지 아무 주문 없이 관망만 유지한다."
+        "상승 모멘텀 미달로 매수 보류 및 하방 숏 포지션 진입",
+        "관통형 확인 후 분할 매수 및 당일 최저점 손절 설정",
+        "손절 라인 설정 없이 100% 비중 시장가 매수 집행",
+        "조정을 대기하며 예약 주문 없이 무작정 관망 유지"
     ],
     correctIndex: 1,
     explanation: "전일 음봉의 50% 이상을 당일 양봉 몸통으로 관통해 올린 '관통형(Piercing Line)'은 하락 모멘텀이 쇠퇴하고 저가 매수세가 우위를 점하기 시작했음을 뜻하는 바닥 신호입니다. 이 패턴 확인 후 진입할 시에는 손절 한도를 당일 최저점(910달러) 밑에 가깝게 설정할 수 있어 매우 유리한 리스크 대비 기대수익 매매가 성립됩니다."
@@ -2620,7 +2620,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1440,
             "low": 1356,
             "close": 1368,
-            "volume": 98
+            "volume": 85
         },
         {
             "time": "10:30",
@@ -2628,7 +2628,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1380,
             "low": 1296,
             "close": 1308,
-            "volume": 95
+            "volume": 97
         },
         {
             "time": "10:45",
@@ -2636,7 +2636,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1320,
             "low": 1212,
             "close": 1224,
-            "volume": 93
+            "volume": 130
         },
         {
             "time": "11:00",
@@ -2644,14 +2644,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1236,
             "low": 1080,
             "close": 1212,
-            "volume": 109
+            "volume": 96
         }
     ],
     options: [
-        "역망치형 (Inverted Hammer) - 추가 폭락 경고이므로 공매도",
-        "망치형 (Hammer) - 저가 매수세 유입, 지지 여부 확인 후 매수 대기",
-        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형으로 관망",
-        "하락 장악형 (Bearish Engulfing) - 매도세 장악으로 즉시 손절"
+        "역망치형 (Inverted Hammer) - 하락 경고 및 공매도 대기",
+        "망치형 (Hammer) - 저점 지지 및 분할 매수 대기",
+        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형 및 관망",
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 및 즉시 손절"
     ],
     correctIndex: 1,
     explanation: "마지막 캔들은 아래꼬리가 긴 '망치형(Hammer)' 캔들로 하락 압력을 이겨내고 저가 매수세가 밀어 올렸음을 의미하는 대표적 상승 전환 신호입니다. 지지를 확인한 뒤 분할 매수 관점으로 대기해야 합니다."
@@ -2670,7 +2670,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1296,
             "low": 1188,
             "close": 1260,
-            "volume": 93
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -2678,7 +2678,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1380,
             "low": 1248,
             "close": 1344,
-            "volume": 110
+            "volume": 120
         },
         {
             "time": "Day 3",
@@ -2686,7 +2686,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1500,
             "low": 1332,
             "close": 1476,
-            "volume": 91
+            "volume": 113
         },
         {
             "time": "Day 4",
@@ -2694,7 +2694,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1536,
             "low": 1440,
             "close": 1512,
-            "volume": 108
+            "volume": 92
         },
         {
             "time": "Day 5",
@@ -2702,14 +2702,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1740,
             "low": 1500,
             "close": 1524,
-            "volume": 107
+            "volume": 115
         }
     ],
     options: [
-        "유성형 (Shooting Star) - 고점 부근에서 강력한 저항/매도세 출현, 하락 전환 예고",
-        "망치형 (Hammer) - 추가 상승 랠리를 뜻하므로 시장가 풀매수",
-        "상승 장악형 (Bullish Engulfing) - 전일 몸통을 감쌌으므로 홀딩",
-        "도지 (Doji) - 추세 지속을 의미하므로 관망"
+        "유성형 (Shooting Star) - 고점 저항 및 하락 전환 예고",
+        "망치형 (Hammer) - 저점 매수세 유입 및 상승 랠리 기대",
+        "상승 장악형 (Bullish Engulfing) - 추세 반전 및 홀딩 유도",
+        "도지 (Doji) - 추세 지속 가능성 및 일시 관망"
     ],
     correctIndex: 0,
     explanation: "급등세 끝에서 위꼬리가 몸통보다 훨씬 길게 솟아오른 캔들은 '유성형(Shooting Star)'입니다. 장중 상승 시도를 강력한 차익 실현 및 매도 압력이 짓눌렀음을 보여주며, 하락 추세 전환의 강력한 경고 시그널입니다."
@@ -2728,7 +2728,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1200,
             "low": 1140,
             "close": 1152,
-            "volume": 110
+            "volume": 112
         },
         {
             "time": "Day 2",
@@ -2736,7 +2736,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1164,
             "low": 1104,
             "close": 1116,
-            "volume": 106
+            "volume": 99
         },
         {
             "time": "Day 3",
@@ -2744,7 +2744,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1140,
             "low": 1056,
             "close": 1068,
-            "volume": 114
+            "volume": 100
         },
         {
             "time": "Day 4",
@@ -2752,14 +2752,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1224,
             "low": 1032,
             "close": 1212,
-            "volume": 94
+            "volume": 108
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 매우 낮은 신뢰도",
-        "상승 장악형 (Bullish Engulfing) - 강력한 매수세 전환 신호로 신뢰도 높음",
-        "상승 관통형 (Piercing Line) - 중간 수준의 전환 신호",
-        "석별의 정 (Evening Star) - 상승 추세가 꺾이는 신호"
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 신뢰도 낮음",
+        "상승 장악형 (Bullish Engulfing) - 매수 전환 신뢰도 높음",
+        "상승 관통형 (Piercing Line) - 중간 강도의 반전 신호",
+        "석별형 (Evening Star) - 상승 추세 종결 신호"
     ],
     correctIndex: 1,
     explanation: "전일의 하락 음봉 몸통을 다음 날의 장대 양봉이 완전히 덮어버리는 형태를 '상승 장악형(Bullish Engulfing)' 패턴이라고 합니다. 하락 추세 끝에서 나타날 경우 단기 하락세가 종료되고 강력한 매수세가 들어왔음을 뜻해 전환 신뢰도가 매우 높습니다."
@@ -2778,7 +2778,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1500,
             "low": 1428,
             "close": 1488,
-            "volume": 97
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -2786,7 +2786,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1560,
             "low": 1476,
             "close": 1548,
-            "volume": 118
+            "volume": 117
         },
         {
             "time": "Day 3",
@@ -2794,14 +2794,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1572,
             "low": 1380,
             "close": 1392,
-            "volume": 113
+            "volume": 94
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 고점에서 하락 전환 예고",
+        "하락 장악형 (Bearish Engulfing) - 고점 하락 전환 예고",
         "상승 장악형 (Bullish Engulfing) - 고점 돌파 랠리 예고",
-        "하락 잉태형 (Harami) - 하락세 둔화",
-        "샛별형 (Morning Star) - 바닥권 상승 반전"
+        "하락 잉태형 (Harami) - 기존 하락세의 일시 둔화",
+        "샛별형 (Morning Star) - 바닥권 상승 반전 예고"
     ],
     correctIndex: 0,
     explanation: "고점에서 직전 양봉을 음봉이 감싸 안은 형태는 '하락 장악형(Bearish Engulfing)'입니다. 매수 세력을 매도 공급이 압도했다는 명백한 증거로, 엔비디아 주가 추세가 하락으로 반전할 리스크가 큽니다."
@@ -2820,7 +2820,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1500,
             "low": 1428,
             "close": 1488,
-            "volume": 82
+            "volume": 95
         },
         {
             "time": "Day 2",
@@ -2836,7 +2836,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1776,
             "low": 1596,
             "close": 1752,
-            "volume": 122
+            "volume": 104
         },
         {
             "time": "Day 4",
@@ -2844,7 +2844,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1812,
             "low": 1680,
             "close": 1764,
-            "volume": 114
+            "volume": 123
         },
         {
             "time": "Day 5",
@@ -2852,14 +2852,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1716,
             "low": 1620,
             "close": 1632,
-            "volume": 134
+            "volume": 127
         }
     ],
     options: [
-        "추가 상승 랠리를 기대하며 비중을 늘려 전액 추격 매수(롱)한다.",
-        "하락이 휩소(속임수)일 가능성이 높으므로 레버리지를 2배로 올려 추가 매수한다.",
-        "행잉맨 패턴 뒤 음봉 갭하락으로 하락 전환(Bearish Reversal)이 컨펌되었으므로, 리스크 관리를 위해 보유 비중을 전량 매도하거나 최소 50% 이상 익절(또는 손절)한다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다."
+        "상승 랠리를 기대로 보유 비중 확대 및 추격 매수",
+        "일시적 속임수(휩소) 판단으로 추가 레버리지 매수",
+        "행잉맨 출현 후 갭하락에 따른 전량 또는 일부 정리",
+        "조치 없이 전고점 돌파 시까지 무기한 관망 및 홀딩"
     ],
     correctIndex: 2,
     explanation: "고가권에서 나타난 행잉맨(Hanging Man)은 잠재적 하락 전환 신호이며, 특히 다음날 갭하락 음봉으로 직전 행잉맨의 저가를 깨고 내려가는 움직임은 강력한 하락 컨펌 시그널입니다. 따라서 이 시점에서는 즉시 비중을 전량 정리하거나 최소 절반 이상 매도하여 리스크를 통제하는 것이 정석입니다."
@@ -2878,7 +2878,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2220,
             "low": 2088,
             "close": 2184,
-            "volume": 106
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -2886,7 +2886,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2340,
             "low": 2160,
             "close": 2316,
-            "volume": 92
+            "volume": 111
         },
         {
             "time": "Day 3",
@@ -2894,7 +2894,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2424,
             "low": 2280,
             "close": 2292,
-            "volume": 102
+            "volume": 125
         },
         {
             "time": "Day 4",
@@ -2902,7 +2902,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2412,
             "low": 2256,
             "close": 2268,
-            "volume": 117
+            "volume": 121
         }
     ],
     drawings: [
@@ -2919,10 +2919,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "저항선을 뚫고 신고가를 쓸 것이 100% 확실하므로 전재산을 추가 불타기(매수)한다.",
-        "박스권 상단 저항 돌파에 실패하고 매도 세력에 짓눌리는 유성형 캔들이 나타났으므로, 최소 50% 이상 분할 익절하여 이익을 보존하거나 전량 청산 후 박스권 하단 지지를 확인한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "시세를 이탈하여 다른 잡코인을 시장가 매수한다."
+        "신고가 갱신을 예상한 전재산 추가 불타기",
+        "저항 돌파 실패 신호 확인 후 분할 익절 및 관망",
+        "손익 평단가 부근이므로 추가 손절 없이 방치",
+        "거래를 종료하고 다른 신규 급등주를 시장가 추격"
     ],
     correctIndex: 1,
     explanation: "박스권 상단 저항선(2,400달러)에 부딪히며 나타난 유성형(Shooting Star) 연속 출현은 저항 돌파 실패와 차익 실현 세력의 강력한 등장을 경고하는 캔들 신호입니다. 돌파를 확신하기보다는 리스크 관리 관점에서 물량을 축소(50% 분할 익절)하거나 전량 매도하여 이익을 확정 짓는 것이 현명합니다."
@@ -2941,7 +2941,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1332,
             "low": 1248,
             "close": 1260,
-            "volume": 86
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -2949,7 +2949,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1272,
             "low": 1164,
             "close": 1176,
-            "volume": 100
+            "volume": 108
         },
         {
             "time": "Day 3",
@@ -2957,14 +2957,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1212,
             "low": 1092,
             "close": 1200,
-            "volume": 97
+            "volume": 125
         }
     ],
     options: [
-        "아직 완벽한 상승 장악형이 아니므로 매수를 절대 금지하고 하락에 공매도를 가속화한다.",
-        "관통형 패턴의 지지 성공 가능성을 감안하여 1차 매수로 분할 진입하되, 당일 양봉의 최저점(1,092달러) 바로 아래에 강제 손절 주문을 설정하고 대응한다.",
-        "손절매 없이 100% 비중으로 시장가 풀매수를 집행한다.",
-        "조정을 기다려 960달러선까지 아무 주문 없이 관망만 유지한다."
+        "상승 모멘텀 미달로 매수 보류 및 하방 숏 포지션 진입",
+        "관통형 확인 후 분할 매수 및 당일 최저점 손절 설정",
+        "손절 라인 설정 없이 100% 비중 시장가 매수 집행",
+        "조정을 대기하며 예약 주문 없이 무작정 관망 유지"
     ],
     correctIndex: 1,
     explanation: "전일 음봉의 50% 이상을 당일 양봉 몸통으로 관통해 올린 '관통형(Piercing Line)'은 하락 모멘텀이 쇠퇴하고 저가 매수세가 우위를 점하기 시작했음을 뜻하는 바닥 신호입니다. 이 패턴 확인 후 진입할 시에는 손절 한도를 당일 최저점(1,092달러) 밑에 가깝게 설정할 수 있어 매우 유리한 리스크 대비 기대수익 매매가 성립됩니다."
@@ -2983,7 +2983,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2440,
             "low": 2360,
             "close": 2380,
-            "volume": 110
+            "volume": 99
         },
         {
             "time": "10:15",
@@ -2991,7 +2991,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2400,
             "low": 2260,
             "close": 2280,
-            "volume": 112
+            "volume": 92
         },
         {
             "time": "10:30",
@@ -2999,7 +2999,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2300,
             "low": 2160,
             "close": 2180,
-            "volume": 94
+            "volume": 123
         },
         {
             "time": "10:45",
@@ -3007,7 +3007,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2200,
             "low": 2020,
             "close": 2040,
-            "volume": 92
+            "volume": 124
         },
         {
             "time": "11:00",
@@ -3019,10 +3019,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "역망치형 (Inverted Hammer) - 추가 폭락 경고이므로 공매도",
-        "망치형 (Hammer) - 저가 매수세 유입, 지지 여부 확인 후 매수 대기",
-        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형으로 관망",
-        "하락 장악형 (Bearish Engulfing) - 매도세 장악으로 즉시 손절"
+        "역망치형 (Inverted Hammer) - 하락 경고 및 공매도 대기",
+        "망치형 (Hammer) - 저점 지지 및 분할 매수 대기",
+        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형 및 관망",
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 및 즉시 손절"
     ],
     correctIndex: 1,
     explanation: "마지막 캔들은 아래꼬리가 긴 '망치형(Hammer)' 캔들로 하락 압력을 이겨내고 저가 매수세가 밀어 올렸음을 의미하는 대표적 상승 전환 신호입니다. 지지를 확인한 뒤 분할 매수 관점으로 대기해야 합니다."
@@ -3041,7 +3041,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2160,
             "low": 1980,
             "close": 2100,
-            "volume": 85
+            "volume": 118
         },
         {
             "time": "Day 2",
@@ -3049,7 +3049,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2300,
             "low": 2080,
             "close": 2240,
-            "volume": 112
+            "volume": 84
         },
         {
             "time": "Day 3",
@@ -3057,7 +3057,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2500,
             "low": 2220,
             "close": 2460,
-            "volume": 104
+            "volume": 98
         },
         {
             "time": "Day 4",
@@ -3065,7 +3065,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2560,
             "low": 2400,
             "close": 2520,
-            "volume": 104
+            "volume": 128
         },
         {
             "time": "Day 5",
@@ -3077,10 +3077,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "유성형 (Shooting Star) - 고점 부근에서 강력한 저항/매도세 출현, 하락 전환 예고",
-        "망치형 (Hammer) - 추가 상승 랠리를 뜻하므로 시장가 풀매수",
-        "상승 장악형 (Bullish Engulfing) - 전일 몸통을 감쌌으므로 홀딩",
-        "도지 (Doji) - 추세 지속을 의미하므로 관망"
+        "유성형 (Shooting Star) - 고점 저항 및 하락 전환 예고",
+        "망치형 (Hammer) - 저점 매수세 유입 및 상승 랠리 기대",
+        "상승 장악형 (Bullish Engulfing) - 추세 반전 및 홀딩 유도",
+        "도지 (Doji) - 추세 지속 가능성 및 일시 관망"
     ],
     correctIndex: 0,
     explanation: "급등세 끝에서 위꼬리가 몸통보다 훨씬 길게 솟아오른 캔들은 '유성형(Shooting Star)'입니다. 장중 상승 시도를 강력한 차익 실현 및 매도 압력이 짓눌렀음을 보여주며, 하락 추세 전환의 강력한 경고 시그널입니다."
@@ -3099,7 +3099,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2000,
             "low": 1900,
             "close": 1920,
-            "volume": 109
+            "volume": 106
         },
         {
             "time": "Day 2",
@@ -3107,7 +3107,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1940,
             "low": 1840,
             "close": 1860,
-            "volume": 97
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -3115,7 +3115,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 1900,
             "low": 1760,
             "close": 1780,
-            "volume": 96
+            "volume": 92
         },
         {
             "time": "Day 4",
@@ -3123,14 +3123,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2040,
             "low": 1720,
             "close": 2020,
-            "volume": 103
+            "volume": 126
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 매우 낮은 신뢰도",
-        "상승 장악형 (Bullish Engulfing) - 강력한 매수세 전환 신호로 신뢰도 높음",
-        "상승 관통형 (Piercing Line) - 중간 수준의 전환 신호",
-        "석별의 정 (Evening Star) - 상승 추세가 꺾이는 신호"
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 신뢰도 낮음",
+        "상승 장악형 (Bullish Engulfing) - 매수 전환 신뢰도 높음",
+        "상승 관통형 (Piercing Line) - 중간 강도의 반전 신호",
+        "석별형 (Evening Star) - 상승 추세 종결 신호"
     ],
     correctIndex: 1,
     explanation: "전일의 하락 음봉 몸통을 다음 날의 장대 양봉이 완전히 덮어버리는 형태를 '상승 장악형(Bullish Engulfing)' 패턴이라고 합니다. 하락 추세 끝에서 나타날 경우 단기 하락세가 종료되고 강력한 매수세가 들어왔음을 뜻해 전환 신뢰도가 매우 높습니다."
@@ -3149,7 +3149,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2500,
             "low": 2380,
             "close": 2480,
-            "volume": 112
+            "volume": 80
         },
         {
             "time": "Day 2",
@@ -3157,7 +3157,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2600,
             "low": 2460,
             "close": 2580,
-            "volume": 93
+            "volume": 118
         },
         {
             "time": "Day 3",
@@ -3165,14 +3165,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2620,
             "low": 2300,
             "close": 2320,
-            "volume": 93
+            "volume": 103
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 고점에서 하락 전환 예고",
+        "하락 장악형 (Bearish Engulfing) - 고점 하락 전환 예고",
         "상승 장악형 (Bullish Engulfing) - 고점 돌파 랠리 예고",
-        "하락 잉태형 (Harami) - 하락세 둔화",
-        "샛별형 (Morning Star) - 바닥권 상승 반전"
+        "하락 잉태형 (Harami) - 기존 하락세의 일시 둔화",
+        "샛별형 (Morning Star) - 바닥권 상승 반전 예고"
     ],
     correctIndex: 0,
     explanation: "고점에서 직전 양봉을 음봉이 감싸 안은 형태는 '하락 장악형(Bearish Engulfing)'입니다. 매수 세력을 매도 공급이 압도했다는 명백한 증거로, 리플 시세 추세가 하락으로 반전할 리스크가 큽니다."
@@ -3191,7 +3191,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2500,
             "low": 2380,
             "close": 2480,
-            "volume": 96
+            "volume": 97
         },
         {
             "time": "Day 2",
@@ -3199,7 +3199,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2700,
             "low": 2460,
             "close": 2680,
-            "volume": 116
+            "volume": 103
         },
         {
             "time": "Day 3",
@@ -3215,7 +3215,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 3020,
             "low": 2800,
             "close": 2940,
-            "volume": 121
+            "volume": 114
         },
         {
             "time": "Day 5",
@@ -3223,14 +3223,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2860,
             "low": 2700,
             "close": 2720,
-            "volume": 133
+            "volume": 96
         }
     ],
     options: [
-        "추가 상승 랠리를 기대하며 비중을 늘려 전액 추격 매수(롱)한다.",
-        "하락이 휩소(속임수)일 가능성이 높으므로 레버리지를 2배로 올려 추가 매수한다.",
-        "행잉맨 패턴 뒤 음봉 갭하락으로 하락 전환(Bearish Reversal)이 컨펌되었으므로, 리스크 관리를 위해 보유 비중을 전량 매도하거나 최소 50% 이상 익절(또는 손절)한다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다."
+        "상승 랠리를 기대로 보유 비중 확대 및 추격 매수",
+        "일시적 속임수(휩소) 판단으로 추가 레버리지 매수",
+        "행잉맨 출현 후 갭하락에 따른 전량 또는 일부 정리",
+        "조치 없이 전고점 돌파 시까지 무기한 관망 및 홀딩"
     ],
     correctIndex: 2,
     explanation: "고가권에서 나타난 행잉맨(Hanging Man)은 잠재적 하락 전환 신호이며, 특히 다음날 갭하락 음봉으로 직전 행잉맨의 저가를 깨고 내려가는 움직임은 강력한 하락 컨펌 시그널입니다. 따라서 이 시점에서는 즉시 비중을 전량 정리하거나 최소 절반 이상 매도하여 리스크를 통제하는 것이 정석입니다."
@@ -3249,7 +3249,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 3700,
             "low": 3480,
             "close": 3640,
-            "volume": 116
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -3257,7 +3257,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 3900,
             "low": 3600,
             "close": 3860,
-            "volume": 99
+            "volume": 93
         },
         {
             "time": "Day 3",
@@ -3265,7 +3265,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 4040,
             "low": 3800,
             "close": 3820,
-            "volume": 123
+            "volume": 102
         },
         {
             "time": "Day 4",
@@ -3273,7 +3273,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 4020,
             "low": 3760,
             "close": 3780,
-            "volume": 109
+            "volume": 107
         }
     ],
     drawings: [
@@ -3290,10 +3290,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "저항선을 뚫고 신고가를 쓸 것이 100% 확실하므로 전재산을 추가 불타기(매수)한다.",
-        "박스권 상단 저항 돌파에 실패하고 매도 세력에 짓눌리는 유성형 캔들이 나타났으므로, 최소 50% 이상 분할 익절하여 이익을 보존하거나 전량 청산 후 박스권 하단 지지를 확인한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "시세를 이탈하여 다른 잡코인을 시장가 매수한다."
+        "신고가 갱신을 예상한 전재산 추가 불타기",
+        "저항 돌파 실패 신호 확인 후 분할 익절 및 관망",
+        "손익 평단가 부근이므로 추가 손절 없이 방치",
+        "거래를 종료하고 다른 신규 급등주를 시장가 추격"
     ],
     correctIndex: 1,
     explanation: "박스권 상단 저항선(4,000달러)에 부딪히며 나타난 유성형(Shooting Star) 연속 출현은 저항 돌파 실패와 차익 실현 세력의 강력한 등장을 경고하는 캔들 신호입니다. 돌파를 확신하기보다는 리스크 관리 관점에서 물량을 축소(50% 분할 익절)하거나 전량 매도하여 이익을 확정 짓는 것이 현명합니다."
@@ -3312,7 +3312,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2220,
             "low": 2080,
             "close": 2100,
-            "volume": 93
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -3320,7 +3320,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2120,
             "low": 1940,
             "close": 1960,
-            "volume": 123
+            "volume": 114
         },
         {
             "time": "Day 3",
@@ -3328,14 +3328,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 2020,
             "low": 1820,
             "close": 2000,
-            "volume": 101
+            "volume": 91
         }
     ],
     options: [
-        "아직 완벽한 상승 장악형이 아니므로 매수를 절대 금지하고 하락에 공매도를 가속화한다.",
-        "관통형 패턴의 지지 성공 가능성을 감안하여 1차 매수로 분할 진입하되, 당일 양봉의 최저점(1,820달러) 바로 아래에 강제 손절 주문을 설정하고 대응한다.",
-        "손절매 없이 100% 비중으로 시장가 풀매수를 집행한다.",
-        "조정을 기다려 1,600달러선까지 아무 주문 없이 관망만 유지한다."
+        "상승 모멘텀 미달로 매수 보류 및 하방 숏 포지션 진입",
+        "관통형 확인 후 분할 매수 및 당일 최저점 손절 설정",
+        "손절 라인 설정 없이 100% 비중 시장가 매수 집행",
+        "조정을 대기하며 예약 주문 없이 무작정 관망 유지"
     ],
     correctIndex: 1,
     explanation: "전일 음봉의 50% 이상을 당일 양봉 몸통으로 관통해 올린 '관통형(Piercing Line)'은 하락 모멘텀이 쇠퇴하고 저가 매수세가 우위를 점하기 시작했음을 뜻하는 바닥 신호입니다. 이 패턴 확인 후 진입할 시에는 손절 한도를 당일 최저점(1,820달러) 밑에 가깝게 설정할 수 있어 매우 유리한 리스크 대비 기대수익 매매가 성립됩니다."
@@ -3354,7 +3354,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 6100,
             "low": 5900,
             "close": 5950,
-            "volume": 93
+            "volume": 82
         },
         {
             "time": "10:15",
@@ -3362,7 +3362,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 6000,
             "low": 5650,
             "close": 5700,
-            "volume": 111
+            "volume": 86
         },
         {
             "time": "10:30",
@@ -3370,7 +3370,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 5750,
             "low": 5400,
             "close": 5450,
-            "volume": 95
+            "volume": 121
         },
         {
             "time": "10:45",
@@ -3378,7 +3378,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 5500,
             "low": 5050,
             "close": 5100,
-            "volume": 101
+            "volume": 123
         },
         {
             "time": "11:00",
@@ -3386,14 +3386,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 5150,
             "low": 4500,
             "close": 5050,
-            "volume": 108
+            "volume": 102
         }
     ],
     options: [
-        "역망치형 (Inverted Hammer) - 추가 폭락 경고이므로 공매도",
-        "망치형 (Hammer) - 저가 매수세 유입, 지지 여부 확인 후 매수 대기",
-        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형으로 관망",
-        "하락 장악형 (Bearish Engulfing) - 매도세 장악으로 즉시 손절"
+        "역망치형 (Inverted Hammer) - 하락 경고 및 공매도 대기",
+        "망치형 (Hammer) - 저점 지지 및 분할 매수 대기",
+        "도지 (Doji) - 매수세와 매도세의 팽팽한 균형 및 관망",
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 및 즉시 손절"
     ],
     correctIndex: 1,
     explanation: "마지막 캔들은 아래꼬리가 긴 '망치형(Hammer)' 캔들로 하락 압력을 이겨내고 저가 매수세가 밀어 올렸음을 의미하는 대표적 상승 전환 신호입니다. 지지를 확인한 뒤 분할 매수 관점으로 대기해야 합니다."
@@ -3412,7 +3412,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 5400,
             "low": 4950,
             "close": 5250,
-            "volume": 94
+            "volume": 106
         },
         {
             "time": "Day 2",
@@ -3420,7 +3420,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 5750,
             "low": 5200,
             "close": 5600,
-            "volume": 92
+            "volume": 97
         },
         {
             "time": "Day 3",
@@ -3428,7 +3428,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 6250,
             "low": 5550,
             "close": 6150,
-            "volume": 116
+            "volume": 113
         },
         {
             "time": "Day 4",
@@ -3436,7 +3436,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 6400,
             "low": 6000,
             "close": 6300,
-            "volume": 105
+            "volume": 119
         },
         {
             "time": "Day 5",
@@ -3444,14 +3444,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 7250,
             "low": 6250,
             "close": 6350,
-            "volume": 130
+            "volume": 106
         }
     ],
     options: [
-        "유성형 (Shooting Star) - 고점 부근에서 강력한 저항/매도세 출현, 하락 전환 예고",
-        "망치형 (Hammer) - 추가 상승 랠리를 뜻하므로 시장가 풀매수",
-        "상승 장악형 (Bullish Engulfing) - 전일 몸통을 감쌌으므로 홀딩",
-        "도지 (Doji) - 추세 지속을 의미하므로 관망"
+        "유성형 (Shooting Star) - 고점 저항 및 하락 전환 예고",
+        "망치형 (Hammer) - 저점 매수세 유입 및 상승 랠리 기대",
+        "상승 장악형 (Bullish Engulfing) - 추세 반전 및 홀딩 유도",
+        "도지 (Doji) - 추세 지속 가능성 및 일시 관망"
     ],
     correctIndex: 0,
     explanation: "급등세 끝에서 위꼬리가 몸통보다 훨씬 길게 솟아오른 캔들은 '유성형(Shooting Star)'입니다. 장중 상승 시도를 강력한 차익 실현 및 매도 압력이 짓눌렀음을 보여주며, 하락 추세 전환의 강력한 경고 시그널입니다."
@@ -3470,7 +3470,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 5000,
             "low": 4750,
             "close": 4800,
-            "volume": 114
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -3478,7 +3478,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 4850,
             "low": 4600,
             "close": 4650,
-            "volume": 119
+            "volume": 98
         },
         {
             "time": "Day 3",
@@ -3486,7 +3486,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 4750,
             "low": 4400,
             "close": 4450,
-            "volume": 101
+            "volume": 112
         },
         {
             "time": "Day 4",
@@ -3494,14 +3494,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 5100,
             "low": 4300,
             "close": 5050,
-            "volume": 117
+            "volume": 108
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 매우 낮은 신뢰도",
-        "상승 장악형 (Bullish Engulfing) - 강력한 매수세 전환 신호로 신뢰도 높음",
-        "상승 관통형 (Piercing Line) - 중간 수준의 전환 신호",
-        "석별의 정 (Evening Star) - 상승 추세가 꺾이는 신호"
+        "하락 장악형 (Bearish Engulfing) - 추세 반전 신뢰도 낮음",
+        "상승 장악형 (Bullish Engulfing) - 매수 전환 신뢰도 높음",
+        "상승 관통형 (Piercing Line) - 중간 강도의 반전 신호",
+        "석별형 (Evening Star) - 상승 추세 종결 신호"
     ],
     correctIndex: 1,
     explanation: "전일의 하락 음봉 몸통을 다음 날의 장대 양봉이 완전히 덮어버리는 형태를 '상승 장악형(Bullish Engulfing)' 패턴이라고 합니다. 하락 추세 끝에서 나타날 경우 단기 하락세가 종료되고 강력한 매수세가 들어왔음을 뜻해 전환 신뢰도가 매우 높습니다."
@@ -3520,7 +3520,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 6250,
             "low": 5950,
             "close": 6200,
-            "volume": 116
+            "volume": 89
         },
         {
             "time": "Day 2",
@@ -3528,7 +3528,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 6500,
             "low": 6150,
             "close": 6450,
-            "volume": 119
+            "volume": 123
         },
         {
             "time": "Day 3",
@@ -3536,14 +3536,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 6550,
             "low": 5750,
             "close": 5800,
-            "volume": 116
+            "volume": 89
         }
     ],
     options: [
-        "하락 장악형 (Bearish Engulfing) - 고점에서 하락 전환 예고",
+        "하락 장악형 (Bearish Engulfing) - 고점 하락 전환 예고",
         "상승 장악형 (Bullish Engulfing) - 고점 돌파 랠리 예고",
-        "하락 잉태형 (Harami) - 하락세 둔화",
-        "샛별형 (Morning Star) - 바닥권 상승 반전"
+        "하락 잉태형 (Harami) - 기존 하락세의 일시 둔화",
+        "샛별형 (Morning Star) - 바닥권 상승 반전 예고"
     ],
     correctIndex: 0,
     explanation: "고점에서 직전 양봉을 음봉이 감싸 안은 형태는 '하락 장악형(Bearish Engulfing)'입니다. 매수 세력을 매도 공급이 압도했다는 명백한 증거로, 골드 가격 추세가 하락으로 반전할 리스크가 큽니다."
@@ -3562,7 +3562,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 6250,
             "low": 5950,
             "close": 6200,
-            "volume": 97
+            "volume": 112
         },
         {
             "time": "Day 2",
@@ -3570,7 +3570,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 6750,
             "low": 6150,
             "close": 6700,
-            "volume": 89
+            "volume": 105
         },
         {
             "time": "Day 3",
@@ -3578,7 +3578,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 7400,
             "low": 6650,
             "close": 7300,
-            "volume": 96
+            "volume": 89
         },
         {
             "time": "Day 4",
@@ -3586,7 +3586,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 7550,
             "low": 7000,
             "close": 7350,
-            "volume": 119
+            "volume": 127
         },
         {
             "time": "Day 5",
@@ -3594,14 +3594,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 7150,
             "low": 6750,
             "close": 6800,
-            "volume": 126
+            "volume": 114
         }
     ],
     options: [
-        "추가 상승 랠리를 기대하며 비중을 늘려 전액 추격 매수(롱)한다.",
-        "하락이 휩소(속임수)일 가능성이 높으므로 레버리지를 2배로 올려 추가 매수한다.",
-        "행잉맨 패턴 뒤 음봉 갭하락으로 하락 전환(Bearish Reversal)이 컨펌되었으므로, 리스크 관리를 위해 보유 비중을 전량 매도하거나 최소 50% 이상 익절(또는 손절)한다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다."
+        "상승 랠리를 기대로 보유 비중 확대 및 추격 매수",
+        "일시적 속임수(휩소) 판단으로 추가 레버리지 매수",
+        "행잉맨 출현 후 갭하락에 따른 전량 또는 일부 정리",
+        "조치 없이 전고점 돌파 시까지 무기한 관망 및 홀딩"
     ],
     correctIndex: 2,
     explanation: "고가권에서 나타난 행잉맨(Hanging Man)은 잠재적 하락 전환 신호이며, 특히 다음날 갭하락 음봉으로 직전 행잉맨의 저가를 깨고 내려가는 움직임은 강력한 하락 컨펌 시그널입니다. 따라서 이 시점에서는 즉시 비중을 전량 정리하거나 최소 절반 이상 매도하여 리스크를 통제하는 것이 정석입니다."
@@ -3620,7 +3620,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 9250,
             "low": 8700,
             "close": 9100,
-            "volume": 116
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -3628,7 +3628,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 9750,
             "low": 9000,
             "close": 9650,
-            "volume": 101
+            "volume": 110
         },
         {
             "time": "Day 3",
@@ -3636,7 +3636,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 10100,
             "low": 9500,
             "close": 9550,
-            "volume": 117
+            "volume": 110
         },
         {
             "time": "Day 4",
@@ -3644,7 +3644,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 10050,
             "low": 9400,
             "close": 9450,
-            "volume": 99
+            "volume": 123
         }
     ],
     drawings: [
@@ -3661,10 +3661,10 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
         }
     ],
     options: [
-        "저항선을 뚫고 신고가를 쓸 것이 100% 확실하므로 전재산을 추가 불타기(매수)한다.",
-        "박스권 상단 저항 돌파에 실패하고 매도 세력에 짓눌리는 유성형 캔들이 나타났으므로, 최소 50% 이상 분할 익절하여 이익을 보존하거나 전량 청산 후 박스권 하단 지지를 확인한다.",
-        "손익 평단가 부근이므로 추가 손절매 주문을 전혀 설정하지 않고 관망한다.",
-        "시세를 이탈하여 다른 잡코인을 시장가 매수한다."
+        "신고가 갱신을 예상한 전재산 추가 불타기",
+        "저항 돌파 실패 신호 확인 후 분할 익절 및 관망",
+        "손익 평단가 부근이므로 추가 손절 없이 방치",
+        "거래를 종료하고 다른 신규 급등주를 시장가 추격"
     ],
     correctIndex: 1,
     explanation: "박스권 상단 저항선(10,000달러)에 부딪히며 나타난 유성형(Shooting Star) 연속 출현은 저항 돌파 실패와 차익 실현 세력의 강력한 등장을 경고하는 캔들 신호입니다. 돌파를 확신하기보다는 리스크 관리 관점에서 물량을 축소(50% 분할 익절)하거나 전량 매도하여 이익을 확정 짓는 것이 현명합니다."
@@ -3683,7 +3683,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 5550,
             "low": 5200,
             "close": 5250,
-            "volume": 107
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -3691,7 +3691,7 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 5300,
             "low": 4850,
             "close": 4900,
-            "volume": 97
+            "volume": 91
         },
         {
             "time": "Day 3",
@@ -3699,14 +3699,14 @@ export const quizzes_candlestick_price_action: QuizItem[] = [
             "high": 5050,
             "low": 4550,
             "close": 5000,
-            "volume": 116
+            "volume": 91
         }
     ],
     options: [
-        "아직 완벽한 상승 장악형이 아니므로 매수를 절대 금지하고 하락에 공매도를 가속화한다.",
-        "관통형 패턴의 지지 성공 가능성을 감안하여 1차 매수로 분할 진입하되, 당일 양봉의 최저점(4,550달러) 바로 아래에 강제 손절 주문을 설정하고 대응한다.",
-        "손절매 없이 100% 비중으로 시장가 풀매수를 집행한다.",
-        "조정을 기다려 4,000달러선까지 아무 주문 없이 관망만 유지한다."
+        "상승 모멘텀 미달로 매수 보류 및 하방 숏 포지션 진입",
+        "관통형 확인 후 분할 매수 및 당일 최저점 손절 설정",
+        "손절 라인 설정 없이 100% 비중 시장가 매수 집행",
+        "조정을 대기하며 예약 주문 없이 무작정 관망 유지"
     ],
     correctIndex: 1,
     explanation: "전일 음봉의 50% 이상을 당일 양봉 몸통으로 관통해 올린 '관통형(Piercing Line)'은 하락 모멘텀이 쇠퇴하고 저가 매수세가 우위를 점하기 시작했음을 뜻하는 바닥 신호입니다. 이 패턴 확인 후 진입할 시에는 손절 한도를 당일 최저점(4,550달러) 밑에 가깝게 설정할 수 있어 매우 유리한 리스크 대비 기대수익 매매가 성립됩니다."

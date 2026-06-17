@@ -15,7 +15,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 112,
             "low": 98,
             "close": 100,
-            "volume": 96
+            "volume": 108
         },
         {
             "time": "D-3",
@@ -23,7 +23,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 104,
             "low": 96,
             "close": 98,
-            "volume": 94
+            "volume": 112
         },
         {
             "time": "D-2",
@@ -31,7 +31,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 101,
             "low": 92,
             "close": 94,
-            "volume": 91
+            "volume": 127
         },
         {
             "time": "D-1",
@@ -39,7 +39,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 97,
             "low": 93,
             "close": 96,
-            "volume": 118
+            "volume": 127
         },
         {
             "time": "Today",
@@ -47,14 +47,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 99,
             "low": 95,
             "close": 98,
-            "volume": 115
+            "volume": 113
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 공매도 포지션 구축",
-        "상승 다이버전스 (Bullish Divergence) - 주가 하락 관성이 둔화되고 매수 압력이 쌓여 반등이 임박했다는 강한 매수 시그널",
-        "데드 크로스 (Death Cross) - 하락 탈출",
-        "과매수 붕괴 시그널 - 무조건 매도"
+        "하락 다이버전스 - 가격 상승 둔화에 따른 공매도",
+        "상승 다이버전스 - 하락 둔화 및 반등 신호로 매수",
+        "데드 크로스 - 이평선 하방 교차에 따른 관망",
+        "과매수 이탈 시그널 - 단기 반등에 따른 매수"
     ],
     correctIndex: 1,
     explanation: "주가의 가격 저점은 낮아지나 보조지표(RSI)의 운동 저점이 높아지는 현상을 '상승 다이버전스(Bullish Divergence)'라고 합니다. 이는 하방 에너지의 실질적 소멸과 상승 압력의 내부 응축을 의미하는 기술적 분석에서 가장 신뢰도 높은 추세 전환 시그널입니다."
@@ -73,7 +73,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 120,
             "low": 99,
             "close": 118,
-            "volume": 92
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -81,7 +81,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 122,
             "low": 115,
             "close": 120,
-            "volume": 94
+            "volume": 111
         },
         {
             "time": "Day 3",
@@ -89,14 +89,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 135,
             "low": 119,
             "close": 133,
-            "volume": 116
+            "volume": 95
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 매수 동력이 크게 꺾이고 고점 붕괴가 임박했으므로 보유 물량 익절 및 매수 중단",
-        "상승 다이버전스 (Bullish Divergence) - 추가 급등 찬스이므로 풀매수",
-        "골든크로스 상승 - 영원한 보유",
-        "볼린저 밴드 지지 반등"
+        "하락 다이버전스 - 매수 둔화 및 하락 우려로 익절",
+        "상승 다이버전스 - 추가 급등 기대로 신규 매수",
+        "골든 크로스 - 추세 강화에 따른 홀딩",
+        "볼린저 밴드 스퀴즈 - 변동성 수축 후 돌파"
     ],
     correctIndex: 0,
     explanation: "주가는 계속 고점을 높이고 있으나 보조지표의 고점은 꺾여 낮아지는 현상을 '하락 다이버전스(Bearish Divergence)'라고 합니다. 이는 매수세의 힘이 표면적인 가격 상승에 비해 실질적으로 빠르게 축소되고 있음을 경고하며, 조만간 큰 급락이 발생할 확률이 높습니다."
@@ -115,7 +115,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 102,
             "low": 98,
             "close": 99,
-            "volume": 95
+            "volume": 96
         },
         {
             "time": "Day 2",
@@ -123,7 +123,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 104,
             "low": 99,
             "close": 103,
-            "volume": 91
+            "volume": 93
         },
         {
             "time": "Day 3",
@@ -131,14 +131,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 110,
             "low": 103,
             "close": 109,
-            "volume": 102
+            "volume": 113
         }
     ],
     options: [
-        "데드 크로스 (Death Cross) - 강한 매도 시그널",
-        "골든 크로스 (Golden Cross) - 단기 추세가 중장기 평균 시세를 뚫어 상승 추세 전환을 알리는 매수 시그널",
-        "볼린저 스퀴즈 (Bollinger Squeeze)",
-        "다이버전스 수렴"
+        "데드 크로스 - 단기 이평의 하방 교차로 매도 신호",
+        "골든 크로스 - 단기 이평의 상방 교차로 매수 신호",
+        "볼린저 스퀴즈 - 변동성 수축 및 돌파 신호",
+        "다이버전스 수렴 - 지표와 가격의 동반 횡보"
     ],
     correctIndex: 1,
     explanation: "단기 이평선이 장기 이평선을 위로 치고 올라가는 현상을 '골든 크로스(Golden Cross)'라고 합니다. 이는 최근 매수 평단가가 장기 평균가보다 확연히 높아졌음을 시사하며, 상승 추세가 본 궤도에 올랐음을 입증해 줍니다."
@@ -157,7 +157,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 101,
             "low": 99,
             "close": 100,
-            "volume": 93
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -173,14 +173,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 100,
             "low": 99,
             "close": 100,
-            "volume": 93
+            "volume": 99
         }
     ],
     options: [
-        "변동성이 영구적으로 사멸하여 주가가 상장폐지된다",
-        "강한 수축(Squeeze) 뒤에는 반드시 변동성의 폭발적인 팽창(Expansion) 랠리가 뒤따르므로, 밴드 상방/하방 이탈 방향으로 큰 추세가 분출된다",
-        "주가가 무조건 절반으로 폭락한다",
-        "이평선들이 전부 수평으로 정렬하여 추세가 완전히 고정된다"
+        "변동성 사멸로 인한 장기 횡보 및 거래 정지",
+        "밴드 스퀴즈 후 변동성 팽창에 따른 추세 분출",
+        "주가의 하방 붕괴로 인한 강한 하락 파동 시작",
+        "이평선들의 수평 정렬에 따른 완전한 추세 고정"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 수축(Squeeze)은 시장의 숨 고르기 및 힘 모으기를 뜻합니다. 에너지가 최대한 압축된 후에는 밴드 상단 혹은 하단선을 이탈하며 매우 거대한 변동성 팽창(Expansion) 추세가 시작되므로, 방향성을 유심히 지켜봐야 합니다."
@@ -199,7 +199,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 110,
             "low": 88,
             "close": 105,
-            "volume": 82
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -207,14 +207,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 107,
             "low": 98,
             "close": 100,
-            "volume": 90
+            "volume": 121
         }
     ],
     options: [
-        "추세가 완전히 꺾인 하락 전환 신호이므로 즉시 전량 매도 및 손절 처리한다.",
-        "히든 상승 다이버전스는 강력한 '기존 상승 추세 지속(Trend Continuation)'을 뜻하므로, 98달러선 아래에 손절가를 잡고 우호적인 평단가에 추가 매수 혹은 신규 롱 진입을 실행한다.",
-        "RSI가 과매도에 가까워졌으므로 거래소 계좌를 정지하고 관망한다.",
-        "손절 라인 없이 무제한 레버리지 롱으로 맞선다."
+        "하락 전환 신호로 판단하여 전량 즉시 손절",
+        "추세 지속 신호 기대로 지선 부근 추가/신규 매수",
+        "지표 과매수 판단에 따른 계좌 거래 정지",
+        "손절 설정 없이 무제한 레버리지 롱 대응"
     ],
     correctIndex: 1,
     explanation: "주가의 저점은 높아지는데 보조지표(RSI 등)의 저점은 낮아지는 형태는 '히든 상승 다이버전스'입니다. 이는 기존의 강력한 상승 트렌드 내부에서 일시 조정을 겪는 매수자들이 활기차게 물량을 주워 담아 다음 상승 랠리를 추진한다는 신호이므로, 짧은 손절 라인(98달러)을 설정하고 매수 비중을 태우기 가장 적합한 정석 타점입니다."
@@ -233,7 +233,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 102,
             "low": 90,
             "close": 91,
-            "volume": 91
+            "volume": 82
         },
         {
             "time": "Hour 2",
@@ -241,14 +241,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 92,
             "low": 80,
             "close": 82,
-            "volume": 92
+            "volume": 108
         }
     ],
     options: [
-        "15분 봉 단기 음봉이 쏟아지고 있으므로 1시간 봉의 반전 신호는 완전 무시하고 숏으로 스위칭한다.",
-        "시간 프레임이 클수록 다이버전스 신호의 성공 확률과 신뢰도가 월등히 높으므로, 큰 방향성(상승 반전)을 설정한 뒤 15분 봉 단기 차트에서 음봉 캔들의 크기가 축소되고 지지 단기 캔들이 형성될 때 분할로 매수 진입한다.",
-        "생각하기 귀찮으므로 시장가 100% 비중으로 즉시 롱 포지션을 진입한다.",
-        "두 지표가 충돌하므로 모든 주문을 취소하고 잡코인을 도박식으로 산다."
+        "단기 음봉 관성 기대로 즉각 숏 포지션 진입",
+        "큰 시간 프레임의 상승 다이버전스 타점 매수",
+        "지표 충돌로 판단하고 시장가 즉시 롱 진입",
+        "변동성 기대로 무작정 도박성 잡코인 진입"
     ],
     correctIndex: 1,
     explanation: "큰 프레임(1시간 봉)의 다이버전스가 주는 중장기 추세 신뢰도는 작은 프레임의 단기 노이즈보다 압도적으로 강력합니다. 단, 진입 시 타이밍의 정밀도를 높이기 위해 소파동(15분 봉)의 하락 동력이 꺾이고 지지해 주는 단기 확인 캔들이 나오는 찰나에 롱 포지션 타이밍을 잡는 것이 멀티 타임프레임 정석 매매입니다."
@@ -267,7 +267,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 205,
             "low": 179,
             "close": 200,
-            "volume": 97
+            "volume": 82
         },
         {
             "time": "Day 2",
@@ -275,14 +275,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 222,
             "low": 198,
             "close": 220,
-            "volume": 113
+            "volume": 88
         }
     ],
     options: [
-        "추가 폭등이 쏟아질 대세 상승 장이므로 전액 추가 불타기(매수)한다.",
-        "가격 상승 이면에서 실제 매수 엔진의 강도(모멘텀)가 약화되는 하락 다이버전스 경고음이 울렸으므로, 리스크 관리를 위해 보유 포지션의 최소 50% 이상을 분할 익절하여 이익을 확정하고 추가 상승 욕심을 덜어낸다.",
-        "익절 라인을 전혀 설정하지 않고 관망한다.",
-        "무조건 숏 10배로 스위칭 매도 베팅한다."
+        "추세 지속 확신으로 보유 비중 추가 불타기",
+        "상승 모멘텀 약화 다이버전스 확인 후 50% 익절",
+        "익절 설정 없이 전고점 도달 시까지 홀딩",
+        "고점 붕괴 기대로 숏 포지션 10배 베팅"
     ],
     correctIndex: 1,
     explanation: "주가는 올라가나 모멘텀 지표인 MACD 오실레이터 고점이 낮아지는 현상은 대표적인 하락 다이버전스로, 매수 에너지가 속 빈 강정처럼 쇠퇴하고 있어 언제든 급격한 폭락 조정이 발생할 수 있는 고위험 신호입니다. 이 시점에는 탐욕을 통제하고 물량의 50% 이상을 분할 매도하여 현금을 챙기는 것이 원칙입니다."
@@ -301,7 +301,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 106,
             "low": 99,
             "close": 100,
-            "volume": 100
+            "volume": 84
         },
         {
             "time": "Day 2",
@@ -309,14 +309,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 101,
             "low": 95,
             "close": 96,
-            "volume": 92
+            "volume": 104
         }
     ],
     options: [
-        "이평선 데드크로스 직전이고 지지선 붕괴는 하락 가속화 리스크가 가득한 위험 경보이므로, 희망 회로를 끄고 보유 포지션을 즉시 전량 손절/매도하여 소중한 원금을 대피시킨다.",
-        "대이평선 지지력을 믿고 추가 매수로 물을 크게 탄다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다.",
-        "계좌 청산가가 도달할 때까지 무제한 보유한다."
+        "지지선 이탈 및 데드크로스 확인 즉시 손절",
+        "이평선 지지력을 믿고 하방 물타기 추가 매수",
+        "하락 조정 후 반등 기대로 무기한 홀딩 관망",
+        "청산가 도달 시까지 어떠한 대응 없이 방치"
     ],
     correctIndex: 0,
     explanation: "20일선과 50일선의 데드크로스 임박 수렴 상태에서 가격이 지지선마저 무너뜨린 것은 하락 가속화 추세가 폭발하기 직전인 매우 위험한 기술적 상태입니다. 하락 추세가 본격 정배열(하락 정배열)화 되기 전에 즉시 전량 손절하고 시장 밖에서 피신해 있는 것이 계좌의 영구 파산을 막는 유일한 생존 규칙입니다."
@@ -335,7 +335,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 103,
             "low": 97,
             "close": 101,
-            "volume": 112
+            "volume": 101
         },
         {
             "time": "Week 2",
@@ -343,14 +343,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 102,
             "low": 99,
             "close": 100,
-            "volume": 102
+            "volume": 95
         }
     ],
     options: [
-        "박스권 폭이 극도로 좁아졌으므로 향후에도 변동성 없이 계속 잔잔하게 기어갈 것이다.",
-        "상단과 하단 밴드가 맞닿을 정도로 에너지가 응축 수렴된 상태이며, 조만간 변동성이 사방으로 대폭발(상방 또는 하방으로 강력한 추세 이탈)할 것임을 예고하므로, 밴드 이탈 방향으로 돌파 진입 시나리오를 세운다.",
-        "스퀴즈는 지표 오작동이므로 볼린저 밴드를 지우고 다른 차트를 켠다.",
-        "중심선 부근에서 고배율 레버리지로 대기 주문 매수를 무조건 지른다."
+        "박스권 변동성 부재 기대로 장기 무대응 관망",
+        "에너지 수축 스퀴즈 확인 후 밴드 이탈 돌파 대기",
+        "지표 신뢰 불가 판단으로 볼린저 밴드 지표 삭제",
+        "중심선 지지로 판단하여 고배율 매수 대기 주문"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 폭이 극도로 좁아지는 스퀴즈(Squeeze) 현상은 시장의 표준편차 변동성이 임계치까지 압축 수렴되었음을 알려줍니다. 에너지 압축 뒤에는 항상 폭발적인 가격 분출(상방/하방 이탈)이 뒤따르므로, 밴드를 뚫고 거래량이 실려 돌파 마감하는 방향으로 추세 추종 시나리오를 설계해야 합니다."
@@ -369,7 +369,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 102,
             "low": 90,
             "close": 91,
-            "volume": 110
+            "volume": 90
         },
         {
             "time": "Day 2",
@@ -377,14 +377,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 96,
             "low": 95,
             "close": 95,
-            "volume": 119
+            "volume": 84
         }
     ],
     options: [
-        "일반 상승 다이버전스 - 하락 추세의 최종 종결 신호이므로 즉각 공매도를 잡는다.",
-        "히든 상승 다이버전스 - 기존의 상승 추세 진행 동력이 눌림목에서 견고하게 유지되고 있음을 뜻하므로, 95달러선 아래에 손절을 짧게 걸고 롱(매수) 진입 타점으로 활용한다.",
-        "일반 하락 다이버전스 - 상승 추세가 파괴되었으므로 모든 포지션을 비운다.",
-        "지표가 오작동하는 휩소 구간이므로 무조건 횡보에 베팅한다."
+        "일반 상승 다이버전스 - 추세 종결로 즉각 공매도",
+        "히든 상승 다이버전스 - 지선 눌림목 롱 진입 활용",
+        "일반 하락 다이버전스 - 모든 매수 포지션 정리",
+        "지표 오작동 휩소 구간 판단으로 양방향 관망"
     ],
     correctIndex: 1,
     explanation: "가격의 저점은 높아졌는데(Higher Low) 모멘텀 지표의 저점은 낮아지는 현상은 '히든 상승 다이버전스(Hidden Bullish Divergence)'입니다. 이는 추세 반전이 아닌 **기존 강세 추세 지속**을 뜻하며, 조정 눌림목이 완성되고 다음 상승 랠리를 준비한다는 최고의 매수 신호 중 하나입니다."
@@ -406,10 +406,10 @@ export const quizzes_technical_indicators: QuizItem[] = [
         }
     ],
     options: [
-        "오직 트위터나 뉴스 호재 찌라시 하나만 보고 즉시 시장가로 대량 매수한다.",
-        "주요 수평 지지선(S/R) + 200일 장기 이평선(EMA) 지지 중첩 + 1시간 봉 RSI 상승 다이버전스 발생 + 아래꼬리가 긴 핀바 캔들 종가 마감 등 독립적인 분석 근거들이 한 가격대에 포개질 때 진입한다.",
-        "RSI 과매수 상태에서 볼린저 밴드 상단을 뚫을 때 무조건 롱을 탄다.",
-        "아무 근거 없이 감정이 이끄는 대로 본능적으로 레버리지를 조절한다."
+        "트위터 및 뉴스의 호재 찌라시 확인 즉시 추격",
+        "지지선+이평선+다이버전스+아래꼬리 등 분석 중첩 시",
+        "RSI 과매수 영역 진입 즉시 롱 포지션 진입",
+        "독립적 분석 없이 오직 보조지표의 단일 수치 신호"
     ],
     correctIndex: 1,
     explanation: "다중 컨플루언스(Confluence)는 독립적인 기술적 근거들이 동일한 특정 가격 구역에 중첩되는 현상입니다. 지지 저항, 이평선, 보조지표 다이버전스, 캔들 가격행동(Rejection 핀바)이 한 곳에 묶여 매수 자리를 형성할 때 매매를 실행하면, 높은 신뢰도와 좁은 손절 라인 덕분에 장기 기대값이 극대화됩니다."
@@ -428,7 +428,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 168,
             "low": 147,
             "close": 150,
-            "volume": 81
+            "volume": 83
         },
         {
             "time": "D-3",
@@ -436,7 +436,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 156,
             "low": 144,
             "close": 147,
-            "volume": 90
+            "volume": 120
         },
         {
             "time": "D-2",
@@ -444,7 +444,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 151.5,
             "low": 138,
             "close": 141,
-            "volume": 125
+            "volume": 110
         },
         {
             "time": "D-1",
@@ -452,7 +452,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 145.5,
             "low": 139.5,
             "close": 144,
-            "volume": 94
+            "volume": 118
         },
         {
             "time": "Today",
@@ -460,14 +460,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 148.5,
             "low": 142.5,
             "close": 147,
-            "volume": 125
+            "volume": 107
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 공매도 포지션 구축",
-        "상승 다이버전스 (Bullish Divergence) - 코인 가격 하락 관성이 둔화되고 매수 압력이 쌓여 반등이 임박했다는 강한 매수 시그널",
-        "데드 크로스 (Death Cross) - 하락 탈출",
-        "과매수 붕괴 시그널 - 무조건 매도"
+        "하락 다이버전스 - 가격 상승 둔화에 따른 공매도",
+        "상승 다이버전스 - 하락 둔화 및 반등 신호로 매수",
+        "데드 크로스 - 이평선 하방 교차에 따른 관망",
+        "과매수 이탈 시그널 - 단기 반등에 따른 매수"
     ],
     correctIndex: 1,
     explanation: "코인 가격의 가격 저점은 낮아지나 보조지표(RSI)의 운동 저점이 높아지는 현상을 '상승 다이버전스(Bullish Divergence)'라고 합니다. 이는 하방 에너지의 실질적 소멸과 상승 압력의 내부 응축을 의미하는 기술적 분석에서 가장 신뢰도 높은 추세 전환 시그널입니다."
@@ -486,7 +486,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 180,
             "low": 148.5,
             "close": 177,
-            "volume": 84
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -494,7 +494,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 183,
             "low": 172.5,
             "close": 180,
-            "volume": 119
+            "volume": 120
         },
         {
             "time": "Day 3",
@@ -502,14 +502,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 202.5,
             "low": 178.5,
             "close": 199.5,
-            "volume": 116
+            "volume": 107
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 매수 동력이 크게 꺾이고 고점 붕괴가 임박했으므로 보유 물량 익절 및 매수 중단",
-        "상승 다이버전스 (Bullish Divergence) - 추가 급등 찬스이므로 풀매수",
-        "골든크로스 상승 - 영원한 보유",
-        "볼린저 밴드 지지 반등"
+        "하락 다이버전스 - 매수 둔화 및 하락 우려로 익절",
+        "상승 다이버전스 - 추가 급등 기대로 신규 매수",
+        "골든 크로스 - 추세 강화에 따른 홀딩",
+        "볼린저 밴드 스퀴즈 - 변동성 수축 후 돌파"
     ],
     correctIndex: 0,
     explanation: "코인 가격는 계속 고점을 높이고 있으나 보조지표의 고점은 꺾여 낮아지는 현상을 '하락 다이버전스(Bearish Divergence)'라고 합니다. 이는 매수세의 힘이 표면적인 가격 상승에 비해 실질적으로 빠르게 축소되고 있음을 경고하며, 조만간 큰 급락이 발생할 확률이 높습니다."
@@ -528,7 +528,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 153,
             "low": 147,
             "close": 148.5,
-            "volume": 100
+            "volume": 109
         },
         {
             "time": "Day 2",
@@ -536,7 +536,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 156,
             "low": 148.5,
             "close": 154.5,
-            "volume": 102
+            "volume": 116
         },
         {
             "time": "Day 3",
@@ -544,14 +544,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 165,
             "low": 154.5,
             "close": 163.5,
-            "volume": 95
+            "volume": 121
         }
     ],
     options: [
-        "데드 크로스 (Death Cross) - 강한 매도 시그널",
-        "골든 크로스 (Golden Cross) - 단기 추세가 중장기 평균 시세를 뚫어 상승 추세 전환을 알리는 매수 시그널",
-        "볼린저 스퀴즈 (Bollinger Squeeze)",
-        "다이버전스 수렴"
+        "데드 크로스 - 단기 이평의 하방 교차로 매도 신호",
+        "골든 크로스 - 단기 이평의 상방 교차로 매수 신호",
+        "볼린저 스퀴즈 - 변동성 수축 및 돌파 신호",
+        "다이버전스 수렴 - 지표와 가격의 동반 횡보"
     ],
     correctIndex: 1,
     explanation: "단기 이평선이 장기 이평선을 위로 치고 올라가는 현상을 '골든 크로스(Golden Cross)'라고 합니다. 이는 최근 매수 평단가가 장기 평균가보다 확연히 높아졌음을 시사하며, 상승 추세가 본 궤도에 올랐음을 입증해 줍니다."
@@ -570,7 +570,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 151.5,
             "low": 148.5,
             "close": 150,
-            "volume": 114
+            "volume": 112
         },
         {
             "time": "Day 2",
@@ -578,7 +578,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 150,
             "low": 148.5,
             "close": 148.5,
-            "volume": 99
+            "volume": 98
         },
         {
             "time": "Day 3",
@@ -586,14 +586,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 150,
             "low": 148.5,
             "close": 150,
-            "volume": 100
+            "volume": 103
         }
     ],
     options: [
-        "변동성이 영구적으로 사멸하여 코인 가격가 상장폐지된다",
-        "강한 수축(Squeeze) 뒤에는 반드시 변동성의 폭발적인 팽창(Expansion) 랠리가 뒤따르므로, 밴드 상방/하방 이탈 방향으로 큰 추세가 분출된다",
-        "코인 가격가 무조건 절반으로 폭락한다",
-        "이평선들이 전부 수평으로 정렬하여 추세가 완전히 고정된다"
+        "변동성 사멸로 인한 장기 횡보 및 거래 정지",
+        "밴드 스퀴즈 후 변동성 팽창에 따른 추세 분출",
+        "코인 가격의 하방 붕괴로 인한 강한 하락 파동 시작",
+        "이평선들의 수평 정렬에 따른 완전한 추세 고정"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 수축(Squeeze)은 시장의 숨 고르기 및 힘 모으기를 뜻합니다. 에너지가 최대한 압축된 후에는 밴드 상단 혹은 하단선을 이탈하며 매우 거대한 변동성 팽창(Expansion) 추세가 시작되므로, 방향성을 유심히 지켜봐야 합니다."
@@ -612,7 +612,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 165,
             "low": 132,
             "close": 157.5,
-            "volume": 100
+            "volume": 95
         },
         {
             "time": "Day 2",
@@ -620,14 +620,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 160.5,
             "low": 147,
             "close": 150,
-            "volume": 97
+            "volume": 87
         }
     ],
     options: [
-        "추세가 완전히 꺾인 하락 전환 신호이므로 즉시 전량 매도 및 손절 처리한다.",
-        "히든 상승 다이버전스는 강력한 '기존 상승 추세 지속(Trend Continuation)'을 뜻하므로, 147달러선 아래에 손절가를 잡고 우호적인 평단가에 추가 매수 혹은 신규 롱 진입을 실행한다.",
-        "RSI가 과매도에 가까워졌으므로 거래소 계좌를 정지하고 관망한다.",
-        "손절 라인 없이 무제한 레버리지 롱으로 맞선다."
+        "하락 전환 신호로 판단하여 전량 즉시 손절",
+        "추세 지속 신호 기대로 지선 부근 추가/신규 매수",
+        "지표 과매수 판단에 따른 계좌 거래 정지",
+        "손절 설정 없이 무제한 레버리지 롱 대응"
     ],
     correctIndex: 1,
     explanation: "코인 가격의 저점은 높아지는데 보조지표(RSI 등)의 저점은 낮아지는 형태는 '히든 상승 다이버전스'입니다. 이는 기존의 강력한 상승 트렌드 내부에서 일시 조정을 겪는 매수자들이 활기차게 물량을 주워 담아 다음 상승 랠리를 추진한다는 신호이므로, 짧은 손절 라인(147달러)을 설정하고 매수 비중을 태우기 가장 적합한 정석 타점입니다."
@@ -646,7 +646,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 153,
             "low": 135,
             "close": 136.5,
-            "volume": 86
+            "volume": 105
         },
         {
             "time": "Hour 2",
@@ -654,14 +654,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 138,
             "low": 120,
             "close": 123,
-            "volume": 114
+            "volume": 87
         }
     ],
     options: [
-        "15분 봉 단기 음봉이 쏟아지고 있으므로 1시간 봉의 반전 신호는 완전 무시하고 숏으로 스위칭한다.",
-        "시간 프레임이 클수록 다이버전스 신호의 성공 확률과 신뢰도가 월등히 높으므로, 큰 방향성(상승 반전)을 설정한 뒤 15분 봉 단기 차트에서 음봉 캔들의 크기가 축소되고 지지 단기 캔들이 형성될 때 분할로 매수 진입한다.",
-        "생각하기 귀찮으므로 시장가 100% 비중으로 즉시 롱 포지션을 진입한다.",
-        "두 지표가 충돌하므로 모든 주문을 취소하고 잡코인을 도박식으로 산다."
+        "단기 음봉 관성 기대로 즉각 숏 포지션 진입",
+        "큰 시간 프레임의 상승 다이버전스 타점 매수",
+        "지표 충돌로 판단하고 시장가 즉시 롱 진입",
+        "변동성 기대로 무작정 도박성 잡코인 진입"
     ],
     correctIndex: 1,
     explanation: "큰 프레임(1시간 봉)의 다이버전스가 주는 중장기 추세 신뢰도는 작은 프레임의 단기 노이즈보다 압도적으로 강력합니다. 단, 진입 시 타이밍의 정밀도를 높이기 위해 소파동(15분 봉)의 하락 동력이 꺾이고 지지해 주는 단기 확인 캔들이 나오는 찰나에 롱 포지션 타이밍을 잡는 것이 멀티 타임프레임 정석 매매입니다."
@@ -680,7 +680,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 307.5,
             "low": 268.5,
             "close": 300,
-            "volume": 88
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -688,14 +688,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 333,
             "low": 297,
             "close": 330,
-            "volume": 123
+            "volume": 122
         }
     ],
     options: [
-        "추가 폭등이 쏟아질 대세 상승 장이므로 전액 추가 불타기(매수)한다.",
-        "가격 상승 이면에서 실제 매수 엔진의 강도(모멘텀)가 약화되는 하락 다이버전스 경고음이 울렸으므로, 리스크 관리를 위해 보유 포지션의 최소 50% 이상을 분할 익절하여 이익을 확정하고 추가 상승 욕심을 덜어낸다.",
-        "익절 라인을 전혀 설정하지 않고 관망한다.",
-        "무조건 숏 10배로 스위칭 매도 베팅한다."
+        "추세 지속 확신으로 보유 비중 추가 불타기",
+        "상승 모멘텀 약화 다이버전스 확인 후 50% 익절",
+        "익절 설정 없이 전고점 도달 시까지 홀딩",
+        "고점 붕괴 기대로 숏 포지션 10배 베팅"
     ],
     correctIndex: 1,
     explanation: "코인 가격는 올라가나 모멘텀 지표인 MACD 오실레이터 고점이 낮아지는 현상은 대표적인 하락 다이버전스로, 매수 에너지가 속 빈 강정처럼 쇠퇴하고 있어 언제든 급격한 폭락 조정이 발생할 수 있는 고위험 신호입니다. 이 시점에는 탐욕을 통제하고 물량의 50% 이상을 분할 매도하여 현금을 챙기는 것이 원칙입니다."
@@ -714,7 +714,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 159,
             "low": 148.5,
             "close": 150,
-            "volume": 91
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -722,14 +722,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 151.5,
             "low": 142.5,
             "close": 144,
-            "volume": 84
+            "volume": 93
         }
     ],
     options: [
-        "이평선 데드크로스 직전이고 지지선 붕괴는 하락 가속화 리스크가 가득한 위험 경보이므로, 희망 회로를 끄고 보유 포지션을 즉시 전량 손절/매도하여 소중한 원금을 대피시킨다.",
-        "대이평선 지지력을 믿고 추가 매수로 물을 크게 탄다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다.",
-        "계좌 청산가가 도달할 때까지 무제한 보유한다."
+        "지지선 이탈 및 데드크로스 확인 즉시 손절",
+        "이평선 지지력을 믿고 하방 물타기 추가 매수",
+        "하락 조정 후 반등 기대로 무기한 홀딩 관망",
+        "청산가 도달 시까지 어떠한 대응 없이 방치"
     ],
     correctIndex: 0,
     explanation: "20일선과 50일선의 데드크로스 임박 수렴 상태에서 가격이 지지선마저 무너뜨린 것은 하락 가속화 추세가 폭발하기 직전인 매우 위험한 기술적 상태입니다. 하락 추세가 본격 정배열(하락 정배열)화 되기 전에 즉시 전량 손절하고 시장 밖에서 피신해 있는 것이 계좌의 영구 파산을 막는 유일한 생존 규칙입니다."
@@ -748,7 +748,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 154.5,
             "low": 145.5,
             "close": 151.5,
-            "volume": 80
+            "volume": 107
         },
         {
             "time": "Week 2",
@@ -756,14 +756,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 153,
             "low": 148.5,
             "close": 150,
-            "volume": 109
+            "volume": 106
         }
     ],
     options: [
-        "박스권 폭이 극도로 좁아졌으므로 향후에도 변동성 없이 계속 잔잔하게 기어갈 것이다.",
-        "상단과 하단 밴드가 맞닿을 정도로 에너지가 응축 수렴된 상태이며, 조만간 변동성이 사방으로 대폭발(상방 또는 하방으로 강력한 추세 이탈)할 것임을 예고하므로, 밴드 이탈 방향으로 돌파 진입 시나리오를 세운다.",
-        "스퀴즈는 지표 오작동이므로 볼린저 밴드를 지우고 다른 차트를 켠다.",
-        "중심선 부근에서 고배율 레버리지로 대기 주문 매수를 무조건 지른다."
+        "박스권 변동성 부재 기대로 장기 무대응 관망",
+        "에너지 수축 스퀴즈 확인 후 밴드 이탈 돌파 대기",
+        "지표 신뢰 불가 판단으로 볼린저 밴드 지표 삭제",
+        "중심선 지지로 판단하여 고배율 매수 대기 주문"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 폭이 극도로 좁아지는 스퀴즈(Squeeze) 현상은 시장의 표준편차 변동성이 임계치까지 압축 수렴되었음을 알려줍니다. 에너지 압축 뒤에는 항상 폭발적인 가격 분출(상방/하방 이탈)이 뒤따르므로, 밴드를 뚫고 거래량이 실려 돌파 마감하는 방향으로 추세 추종 시나리오를 설계해야 합니다."
@@ -782,7 +782,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 153,
             "low": 135,
             "close": 136.5,
-            "volume": 101
+            "volume": 97
         },
         {
             "time": "Day 2",
@@ -790,14 +790,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 144,
             "low": 142.5,
             "close": 142.5,
-            "volume": 113
+            "volume": 103
         }
     ],
     options: [
-        "일반 상승 다이버전스 - 하락 추세의 최종 종결 신호이므로 즉각 공매도를 잡는다.",
-        "히든 상승 다이버전스 - 기존의 상승 추세 진행 동력이 눌림목에서 견고하게 유지되고 있음을 뜻하므로, 142.50달러선 아래에 손절을 짧게 걸고 롱(매수) 진입 타점으로 활용한다.",
-        "일반 하락 다이버전스 - 상승 추세가 파괴되었으므로 모든 포지션을 비운다.",
-        "지표가 오작동하는 휩소 구간이므로 무조건 횡보에 베팅한다."
+        "일반 상승 다이버전스 - 추세 종결로 즉각 공매도",
+        "히든 상승 다이버전스 - 지선 눌림목 롱 진입 활용",
+        "일반 하락 다이버전스 - 모든 매수 포지션 정리",
+        "지표 오작동 휩소 구간 판단으로 양방향 관망"
     ],
     correctIndex: 1,
     explanation: "가격의 저점은 높아졌는데(Higher Low) 모멘텀 지표의 저점은 낮아지는 현상은 '히든 상승 다이버전스(Hidden Bullish Divergence)'입니다. 이는 추세 반전이 아닌 **기존 강세 추세 지속**을 뜻하며, 조정 눌림목이 완성되고 다음 상승 랠리를 준비한다는 최고의 매수 신호 중 하나입니다."
@@ -819,10 +819,10 @@ export const quizzes_technical_indicators: QuizItem[] = [
         }
     ],
     options: [
-        "오직 트위터나 뉴스 호재 찌라시 하나만 보고 즉시 시장가로 대량 매수한다.",
-        "주요 수평 지지선(S/R) + 200일 장기 이평선(EMA) 지지 중첩 + 1시간 봉 RSI 상승 다이버전스 발생 + 아래꼬리가 긴 핀바 캔들 종가 마감 등 독립적인 분석 근거들이 한 가격대에 포개질 때 진입한다.",
-        "RSI 과매수 상태에서 볼린저 밴드 상단을 뚫을 때 무조건 롱을 탄다.",
-        "아무 근거 없이 감정이 이끄는 대로 본능적으로 레버리지를 조절한다."
+        "트위터 및 뉴스의 호재 찌라시 확인 즉시 추격",
+        "지지선+이평선+다이버전스+아래꼬리 등 분석 중첩 시",
+        "RSI 과매수 영역 진입 즉시 롱 포지션 진입",
+        "독립적 분석 없이 오직 보조지표의 단일 수치 신호"
     ],
     correctIndex: 1,
     explanation: "다중 컨플루언스(Confluence)는 독립적인 기술적 근거들이 동일한 특정 가격 구역에 중첩되는 현상입니다. 지지 저항, 이평선, 보조지표 다이버전스, 캔들 가격행동(Rejection 핀바)이 한 곳에 묶여 매수 자리를 형성할 때 매매를 실행하면, 높은 신뢰도와 좁은 손절 라인 덕분에 장기 기대값이 극대화됩니다."
@@ -841,7 +841,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 224,
             "low": 196,
             "close": 200,
-            "volume": 95
+            "volume": 93
         },
         {
             "time": "D-3",
@@ -849,7 +849,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 208,
             "low": 192,
             "close": 196,
-            "volume": 95
+            "volume": 111
         },
         {
             "time": "D-2",
@@ -857,7 +857,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 202,
             "low": 184,
             "close": 188,
-            "volume": 123
+            "volume": 118
         },
         {
             "time": "D-1",
@@ -865,7 +865,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 194,
             "low": 186,
             "close": 192,
-            "volume": 113
+            "volume": 95
         },
         {
             "time": "Today",
@@ -873,14 +873,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 198,
             "low": 190,
             "close": 196,
-            "volume": 99
+            "volume": 128
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 공매도 포지션 구축",
-        "상승 다이버전스 (Bullish Divergence) - 시세 하락 관성이 둔화되고 매수 압력이 쌓여 반등이 임박했다는 강한 매수 시그널",
-        "데드 크로스 (Death Cross) - 하락 탈출",
-        "과매수 붕괴 시그널 - 무조건 매도"
+        "하락 다이버전스 - 가격 상승 둔화에 따른 공매도",
+        "상승 다이버전스 - 하락 둔화 및 반등 신호로 매수",
+        "데드 크로스 - 이평선 하방 교차에 따른 관망",
+        "과매수 이탈 시그널 - 단기 반등에 따른 매수"
     ],
     correctIndex: 1,
     explanation: "시세의 가격 저점은 낮아지나 보조지표(RSI)의 운동 저점이 높아지는 현상을 '상승 다이버전스(Bullish Divergence)'라고 합니다. 이는 하방 에너지의 실질적 소멸과 상승 압력의 내부 응축을 의미하는 기술적 분석에서 가장 신뢰도 높은 추세 전환 시그널입니다."
@@ -899,7 +899,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 240,
             "low": 198,
             "close": 236,
-            "volume": 115
+            "volume": 104
         },
         {
             "time": "Day 2",
@@ -907,7 +907,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 244,
             "low": 230,
             "close": 240,
-            "volume": 95
+            "volume": 97
         },
         {
             "time": "Day 3",
@@ -915,14 +915,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 270,
             "low": 238,
             "close": 266,
-            "volume": 115
+            "volume": 127
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 매수 동력이 크게 꺾이고 고점 붕괴가 임박했으므로 보유 물량 익절 및 매수 중단",
-        "상승 다이버전스 (Bullish Divergence) - 추가 급등 찬스이므로 풀매수",
-        "골든크로스 상승 - 영원한 보유",
-        "볼린저 밴드 지지 반등"
+        "하락 다이버전스 - 매수 둔화 및 하락 우려로 익절",
+        "상승 다이버전스 - 추가 급등 기대로 신규 매수",
+        "골든 크로스 - 추세 강화에 따른 홀딩",
+        "볼린저 밴드 스퀴즈 - 변동성 수축 후 돌파"
     ],
     correctIndex: 0,
     explanation: "시세는 계속 고점을 높이고 있으나 보조지표의 고점은 꺾여 낮아지는 현상을 '하락 다이버전스(Bearish Divergence)'라고 합니다. 이는 매수세의 힘이 표면적인 가격 상승에 비해 실질적으로 빠르게 축소되고 있음을 경고하며, 조만간 큰 급락이 발생할 확률이 높습니다."
@@ -941,7 +941,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 204,
             "low": 196,
             "close": 198,
-            "volume": 108
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -949,7 +949,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 208,
             "low": 198,
             "close": 206,
-            "volume": 102
+            "volume": 91
         },
         {
             "time": "Day 3",
@@ -957,14 +957,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 220,
             "low": 206,
             "close": 218,
-            "volume": 98
+            "volume": 107
         }
     ],
     options: [
-        "데드 크로스 (Death Cross) - 강한 매도 시그널",
-        "골든 크로스 (Golden Cross) - 단기 추세가 중장기 평균 시세를 뚫어 상승 추세 전환을 알리는 매수 시그널",
-        "볼린저 스퀴즈 (Bollinger Squeeze)",
-        "다이버전스 수렴"
+        "데드 크로스 - 단기 이평의 하방 교차로 매도 신호",
+        "골든 크로스 - 단기 이평의 상방 교차로 매수 신호",
+        "볼린저 스퀴즈 - 변동성 수축 및 돌파 신호",
+        "다이버전스 수렴 - 지표와 가격의 동반 횡보"
     ],
     correctIndex: 1,
     explanation: "단기 이평선이 장기 이평선을 위로 치고 올라가는 현상을 '골든 크로스(Golden Cross)'라고 합니다. 이는 최근 매수 평단가가 장기 평균가보다 확연히 높아졌음을 시사하며, 상승 추세가 본 궤도에 올랐음을 입증해 줍니다."
@@ -983,7 +983,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 202,
             "low": 198,
             "close": 200,
-            "volume": 84
+            "volume": 115
         },
         {
             "time": "Day 2",
@@ -991,7 +991,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 200,
             "low": 198,
             "close": 198,
-            "volume": 85
+            "volume": 105
         },
         {
             "time": "Day 3",
@@ -999,14 +999,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 200,
             "low": 198,
             "close": 200,
-            "volume": 111
+            "volume": 96
         }
     ],
     options: [
-        "변동성이 영구적으로 사멸하여 시세가 상장폐지된다",
-        "강한 수축(Squeeze) 뒤에는 반드시 변동성의 폭발적인 팽창(Expansion) 랠리가 뒤따르므로, 밴드 상방/하방 이탈 방향으로 큰 추세가 분출된다",
-        "시세가 무조건 절반으로 폭락한다",
-        "이평선들이 전부 수평으로 정렬하여 추세가 완전히 고정된다"
+        "변동성 사멸로 인한 장기 횡보 및 거래 정지",
+        "밴드 스퀴즈 후 변동성 팽창에 따른 추세 분출",
+        "시세의 하방 붕괴로 인한 강한 하락 파동 시작",
+        "이평선들의 수평 정렬에 따른 완전한 추세 고정"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 수축(Squeeze)은 시장의 숨 고르기 및 힘 모으기를 뜻합니다. 에너지가 최대한 압축된 후에는 밴드 상단 혹은 하단선을 이탈하며 매우 거대한 변동성 팽창(Expansion) 추세가 시작되므로, 방향성을 유심히 지켜봐야 합니다."
@@ -1025,7 +1025,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 220,
             "low": 176,
             "close": 210,
-            "volume": 86
+            "volume": 99
         },
         {
             "time": "Day 2",
@@ -1033,14 +1033,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 214,
             "low": 196,
             "close": 200,
-            "volume": 98
+            "volume": 91
         }
     ],
     options: [
-        "추세가 완전히 꺾인 하락 전환 신호이므로 즉시 전량 매도 및 손절 처리한다.",
-        "히든 상승 다이버전스는 강력한 '기존 상승 추세 지속(Trend Continuation)'을 뜻하므로, 196달러선 아래에 손절가를 잡고 우호적인 평단가에 추가 매수 혹은 신규 롱 진입을 실행한다.",
-        "RSI가 과매도에 가까워졌으므로 거래소 계좌를 정지하고 관망한다.",
-        "손절 라인 없이 무제한 레버리지 롱으로 맞선다."
+        "하락 전환 신호로 판단하여 전량 즉시 손절",
+        "추세 지속 신호 기대로 지선 부근 추가/신규 매수",
+        "지표 과매수 판단에 따른 계좌 거래 정지",
+        "손절 설정 없이 무제한 레버리지 롱 대응"
     ],
     correctIndex: 1,
     explanation: "시세의 저점은 높아지는데 보조지표(RSI 등)의 저점은 낮아지는 형태는 '히든 상승 다이버전스'입니다. 이는 기존의 강력한 상승 트렌드 내부에서 일시 조정을 겪는 매수자들이 활기차게 물량을 주워 담아 다음 상승 랠리를 추진한다는 신호이므로, 짧은 손절 라인(196달러)을 설정하고 매수 비중을 태우기 가장 적합한 정석 타점입니다."
@@ -1059,7 +1059,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 204,
             "low": 180,
             "close": 182,
-            "volume": 117
+            "volume": 110
         },
         {
             "time": "Hour 2",
@@ -1067,14 +1067,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 184,
             "low": 160,
             "close": 164,
-            "volume": 90
+            "volume": 100
         }
     ],
     options: [
-        "15분 봉 단기 음봉이 쏟아지고 있으므로 1시간 봉의 반전 신호는 완전 무시하고 숏으로 스위칭한다.",
-        "시간 프레임이 클수록 다이버전스 신호의 성공 확률과 신뢰도가 월등히 높으므로, 큰 방향성(상승 반전)을 설정한 뒤 15분 봉 단기 차트에서 음봉 캔들의 크기가 축소되고 지지 단기 캔들이 형성될 때 분할로 매수 진입한다.",
-        "생각하기 귀찮으므로 시장가 100% 비중으로 즉시 롱 포지션을 진입한다.",
-        "두 지표가 충돌하므로 모든 주문을 취소하고 잡코인을 도박식으로 산다."
+        "단기 음봉 관성 기대로 즉각 숏 포지션 진입",
+        "큰 시간 프레임의 상승 다이버전스 타점 매수",
+        "지표 충돌로 판단하고 시장가 즉시 롱 진입",
+        "변동성 기대로 무작정 도박성 잡코인 진입"
     ],
     correctIndex: 1,
     explanation: "큰 프레임(1시간 봉)의 다이버전스가 주는 중장기 추세 신뢰도는 작은 프레임의 단기 노이즈보다 압도적으로 강력합니다. 단, 진입 시 타이밍의 정밀도를 높이기 위해 소파동(15분 봉)의 하락 동력이 꺾이고 지지해 주는 단기 확인 캔들이 나오는 찰나에 롱 포지션 타이밍을 잡는 것이 멀티 타임프레임 정석 매매입니다."
@@ -1093,7 +1093,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 410,
             "low": 358,
             "close": 400,
-            "volume": 81
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -1101,14 +1101,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 444,
             "low": 396,
             "close": 440,
-            "volume": 86
+            "volume": 104
         }
     ],
     options: [
-        "추가 폭등이 쏟아질 대세 상승 장이므로 전액 추가 불타기(매수)한다.",
-        "가격 상승 이면에서 실제 매수 엔진의 강도(모멘텀)가 약화되는 하락 다이버전스 경고음이 울렸으므로, 리스크 관리를 위해 보유 포지션의 최소 50% 이상을 분할 익절하여 이익을 확정하고 추가 상승 욕심을 덜어낸다.",
-        "익절 라인을 전혀 설정하지 않고 관망한다.",
-        "무조건 숏 10배로 스위칭 매도 베팅한다."
+        "추세 지속 확신으로 보유 비중 추가 불타기",
+        "상승 모멘텀 약화 다이버전스 확인 후 50% 익절",
+        "익절 설정 없이 전고점 도달 시까지 홀딩",
+        "고점 붕괴 기대로 숏 포지션 10배 베팅"
     ],
     correctIndex: 1,
     explanation: "시세는 올라가나 모멘텀 지표인 MACD 오실레이터 고점이 낮아지는 현상은 대표적인 하락 다이버전스로, 매수 에너지가 속 빈 강정처럼 쇠퇴하고 있어 언제든 급격한 폭락 조정이 발생할 수 있는 고위험 신호입니다. 이 시점에는 탐욕을 통제하고 물량의 50% 이상을 분할 매도하여 현금을 챙기는 것이 원칙입니다."
@@ -1127,7 +1127,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 212,
             "low": 198,
             "close": 200,
-            "volume": 88
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -1135,14 +1135,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 202,
             "low": 190,
             "close": 192,
-            "volume": 94
+            "volume": 92
         }
     ],
     options: [
-        "이평선 데드크로스 직전이고 지지선 붕괴는 하락 가속화 리스크가 가득한 위험 경보이므로, 희망 회로를 끄고 보유 포지션을 즉시 전량 손절/매도하여 소중한 원금을 대피시킨다.",
-        "대이평선 지지력을 믿고 추가 매수로 물을 크게 탄다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다.",
-        "계좌 청산가가 도달할 때까지 무제한 보유한다."
+        "지지선 이탈 및 데드크로스 확인 즉시 손절",
+        "이평선 지지력을 믿고 하방 물타기 추가 매수",
+        "하락 조정 후 반등 기대로 무기한 홀딩 관망",
+        "청산가 도달 시까지 어떠한 대응 없이 방치"
     ],
     correctIndex: 0,
     explanation: "20일선과 50일선의 데드크로스 임박 수렴 상태에서 가격이 지지선마저 무너뜨린 것은 하락 가속화 추세가 폭발하기 직전인 매우 위험한 기술적 상태입니다. 하락 추세가 본격 정배열(하락 정배열)화 되기 전에 즉시 전량 손절하고 시장 밖에서 피신해 있는 것이 계좌의 영구 파산을 막는 유일한 생존 규칙입니다."
@@ -1161,7 +1161,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 206,
             "low": 194,
             "close": 202,
-            "volume": 97
+            "volume": 96
         },
         {
             "time": "Week 2",
@@ -1169,14 +1169,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 204,
             "low": 198,
             "close": 200,
-            "volume": 107
+            "volume": 101
         }
     ],
     options: [
-        "박스권 폭이 극도로 좁아졌으므로 향후에도 변동성 없이 계속 잔잔하게 기어갈 것이다.",
-        "상단과 하단 밴드가 맞닿을 정도로 에너지가 응축 수렴된 상태이며, 조만간 변동성이 사방으로 대폭발(상방 또는 하방으로 강력한 추세 이탈)할 것임을 예고하므로, 밴드 이탈 방향으로 돌파 진입 시나리오를 세운다.",
-        "스퀴즈는 지표 오작동이므로 볼린저 밴드를 지우고 다른 차트를 켠다.",
-        "중심선 부근에서 고배율 레버리지로 대기 주문 매수를 무조건 지른다."
+        "박스권 변동성 부재 기대로 장기 무대응 관망",
+        "에너지 수축 스퀴즈 확인 후 밴드 이탈 돌파 대기",
+        "지표 신뢰 불가 판단으로 볼린저 밴드 지표 삭제",
+        "중심선 지지로 판단하여 고배율 매수 대기 주문"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 폭이 극도로 좁아지는 스퀴즈(Squeeze) 현상은 시장의 표준편차 변동성이 임계치까지 압축 수렴되었음을 알려줍니다. 에너지 압축 뒤에는 항상 폭발적인 가격 분출(상방/하방 이탈)이 뒤따르므로, 밴드를 뚫고 거래량이 실려 돌파 마감하는 방향으로 추세 추종 시나리오를 설계해야 합니다."
@@ -1195,7 +1195,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 204,
             "low": 180,
             "close": 182,
-            "volume": 114
+            "volume": 107
         },
         {
             "time": "Day 2",
@@ -1203,14 +1203,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 192,
             "low": 190,
             "close": 190,
-            "volume": 113
+            "volume": 95
         }
     ],
     options: [
-        "일반 상승 다이버전스 - 하락 추세의 최종 종결 신호이므로 즉각 공매도를 잡는다.",
-        "히든 상승 다이버전스 - 기존의 상승 추세 진행 동력이 눌림목에서 견고하게 유지되고 있음을 뜻하므로, 190달러선 아래에 손절을 짧게 걸고 롱(매수) 진입 타점으로 활용한다.",
-        "일반 하락 다이버전스 - 상승 추세가 파괴되었으므로 모든 포지션을 비운다.",
-        "지표가 오작동하는 휩소 구간이므로 무조건 횡보에 베팅한다."
+        "일반 상승 다이버전스 - 추세 종결로 즉각 공매도",
+        "히든 상승 다이버전스 - 지선 눌림목 롱 진입 활용",
+        "일반 하락 다이버전스 - 모든 매수 포지션 정리",
+        "지표 오작동 휩소 구간 판단으로 양방향 관망"
     ],
     correctIndex: 1,
     explanation: "가격의 저점은 높아졌는데(Higher Low) 모멘텀 지표의 저점은 낮아지는 현상은 '히든 상승 다이버전스(Hidden Bullish Divergence)'입니다. 이는 추세 반전이 아닌 **기존 강세 추세 지속**을 뜻하며, 조정 눌림목이 완성되고 다음 상승 랠리를 준비한다는 최고의 매수 신호 중 하나입니다."
@@ -1232,10 +1232,10 @@ export const quizzes_technical_indicators: QuizItem[] = [
         }
     ],
     options: [
-        "오직 트위터나 뉴스 호재 찌라시 하나만 보고 즉시 시장가로 대량 매수한다.",
-        "주요 수평 지지선(S/R) + 200일 장기 이평선(EMA) 지지 중첩 + 1시간 봉 RSI 상승 다이버전스 발생 + 아래꼬리가 긴 핀바 캔들 종가 마감 등 독립적인 분석 근거들이 한 가격대에 포개질 때 진입한다.",
-        "RSI 과매수 상태에서 볼린저 밴드 상단을 뚫을 때 무조건 롱을 탄다.",
-        "아무 근거 없이 감정이 이끄는 대로 본능적으로 레버리지를 조절한다."
+        "트위터 및 뉴스의 호재 찌라시 확인 즉시 추격",
+        "지지선+이평선+다이버전스+아래꼬리 등 분석 중첩 시",
+        "RSI 과매수 영역 진입 즉시 롱 포지션 진입",
+        "독립적 분석 없이 오직 보조지표의 단일 수치 신호"
     ],
     correctIndex: 1,
     explanation: "다중 컨플루언스(Confluence)는 독립적인 기술적 근거들이 동일한 특정 가격 구역에 중첩되는 현상입니다. 지지 저항, 이평선, 보조지표 다이버전스, 캔들 가격행동(Rejection 핀바)이 한 곳에 묶여 매수 자리를 형성할 때 매매를 실행하면, 높은 신뢰도와 좁은 손절 라인 덕분에 장기 기대값이 극대화됩니다."
@@ -1254,7 +1254,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 336,
             "low": 294,
             "close": 300,
-            "volume": 93
+            "volume": 110
         },
         {
             "time": "D-3",
@@ -1270,7 +1270,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 303,
             "low": 276,
             "close": 282,
-            "volume": 108
+            "volume": 123
         },
         {
             "time": "D-1",
@@ -1278,7 +1278,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 291,
             "low": 279,
             "close": 288,
-            "volume": 101
+            "volume": 112
         },
         {
             "time": "Today",
@@ -1286,14 +1286,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 297,
             "low": 285,
             "close": 294,
-            "volume": 120
+            "volume": 134
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 공매도 포지션 구축",
-        "상승 다이버전스 (Bullish Divergence) - 삼성전자 주가 하락 관성이 둔화되고 매수 압력이 쌓여 반등이 임박했다는 강한 매수 시그널",
-        "데드 크로스 (Death Cross) - 하락 탈출",
-        "과매수 붕괴 시그널 - 무조건 매도"
+        "하락 다이버전스 - 가격 상승 둔화에 따른 공매도",
+        "상승 다이버전스 - 하락 둔화 및 반등 신호로 매수",
+        "데드 크로스 - 이평선 하방 교차에 따른 관망",
+        "과매수 이탈 시그널 - 단기 반등에 따른 매수"
     ],
     correctIndex: 1,
     explanation: "삼성전자 주가의 가격 저점은 낮아지나 보조지표(RSI)의 운동 저점이 높아지는 현상을 '상승 다이버전스(Bullish Divergence)'라고 합니다. 이는 하방 에너지의 실질적 소멸과 상승 압력의 내부 응축을 의미하는 기술적 분석에서 가장 신뢰도 높은 추세 전환 시그널입니다."
@@ -1312,7 +1312,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 360,
             "low": 297,
             "close": 354,
-            "volume": 115
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -1320,7 +1320,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 366,
             "low": 345,
             "close": 360,
-            "volume": 116
+            "volume": 101
         },
         {
             "time": "Day 3",
@@ -1328,14 +1328,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 405,
             "low": 357,
             "close": 399,
-            "volume": 88
+            "volume": 112
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 매수 동력이 크게 꺾이고 고점 붕괴가 임박했으므로 보유 물량 익절 및 매수 중단",
-        "상승 다이버전스 (Bullish Divergence) - 추가 급등 찬스이므로 풀매수",
-        "골든크로스 상승 - 영원한 보유",
-        "볼린저 밴드 지지 반등"
+        "하락 다이버전스 - 매수 둔화 및 하락 우려로 익절",
+        "상승 다이버전스 - 추가 급등 기대로 신규 매수",
+        "골든 크로스 - 추세 강화에 따른 홀딩",
+        "볼린저 밴드 스퀴즈 - 변동성 수축 후 돌파"
     ],
     correctIndex: 0,
     explanation: "삼성전자 주가는 계속 고점을 높이고 있으나 보조지표의 고점은 꺾여 낮아지는 현상을 '하락 다이버전스(Bearish Divergence)'라고 합니다. 이는 매수세의 힘이 표면적인 가격 상승에 비해 실질적으로 빠르게 축소되고 있음을 경고하며, 조만간 큰 급락이 발생할 확률이 높습니다."
@@ -1354,7 +1354,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 306,
             "low": 294,
             "close": 297,
-            "volume": 112
+            "volume": 105
         },
         {
             "time": "Day 2",
@@ -1362,7 +1362,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 312,
             "low": 297,
             "close": 309,
-            "volume": 118
+            "volume": 87
         },
         {
             "time": "Day 3",
@@ -1370,14 +1370,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 330,
             "low": 309,
             "close": 327,
-            "volume": 125
+            "volume": 88
         }
     ],
     options: [
-        "데드 크로스 (Death Cross) - 강한 매도 시그널",
-        "골든 크로스 (Golden Cross) - 단기 추세가 중장기 평균 시세를 뚫어 상승 추세 전환을 알리는 매수 시그널",
-        "볼린저 스퀴즈 (Bollinger Squeeze)",
-        "다이버전스 수렴"
+        "데드 크로스 - 단기 이평의 하방 교차로 매도 신호",
+        "골든 크로스 - 단기 이평의 상방 교차로 매수 신호",
+        "볼린저 스퀴즈 - 변동성 수축 및 돌파 신호",
+        "다이버전스 수렴 - 지표와 가격의 동반 횡보"
     ],
     correctIndex: 1,
     explanation: "단기 이평선이 장기 이평선을 위로 치고 올라가는 현상을 '골든 크로스(Golden Cross)'라고 합니다. 이는 최근 매수 평단가가 장기 평균가보다 확연히 높아졌음을 시사하며, 상승 추세가 본 궤도에 올랐음을 입증해 줍니다."
@@ -1396,7 +1396,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 303,
             "low": 297,
             "close": 300,
-            "volume": 104
+            "volume": 100
         },
         {
             "time": "Day 2",
@@ -1404,7 +1404,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 300,
             "low": 297,
             "close": 297,
-            "volume": 86
+            "volume": 103
         },
         {
             "time": "Day 3",
@@ -1412,14 +1412,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 300,
             "low": 297,
             "close": 300,
-            "volume": 116
+            "volume": 127
         }
     ],
     options: [
-        "변동성이 영구적으로 사멸하여 삼성전자 주가가 상장폐지된다",
-        "강한 수축(Squeeze) 뒤에는 반드시 변동성의 폭발적인 팽창(Expansion) 랠리가 뒤따르므로, 밴드 상방/하방 이탈 방향으로 큰 추세가 분출된다",
-        "삼성전자 주가가 무조건 절반으로 폭락한다",
-        "이평선들이 전부 수평으로 정렬하여 추세가 완전히 고정된다"
+        "변동성 사멸로 인한 장기 횡보 및 거래 정지",
+        "밴드 스퀴즈 후 변동성 팽창에 따른 추세 분출",
+        "삼성전자 주가의 하방 붕괴로 인한 강한 하락 파동 시작",
+        "이평선들의 수평 정렬에 따른 완전한 추세 고정"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 수축(Squeeze)은 시장의 숨 고르기 및 힘 모으기를 뜻합니다. 에너지가 최대한 압축된 후에는 밴드 상단 혹은 하단선을 이탈하며 매우 거대한 변동성 팽창(Expansion) 추세가 시작되므로, 방향성을 유심히 지켜봐야 합니다."
@@ -1438,7 +1438,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 330,
             "low": 264,
             "close": 315,
-            "volume": 84
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -1446,14 +1446,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 321,
             "low": 294,
             "close": 300,
-            "volume": 85
+            "volume": 104
         }
     ],
     options: [
-        "추세가 완전히 꺾인 하락 전환 신호이므로 즉시 전량 매도 및 손절 처리한다.",
-        "히든 상승 다이버전스는 강력한 '기존 상승 추세 지속(Trend Continuation)'을 뜻하므로, 294달러선 아래에 손절가를 잡고 우호적인 평단가에 추가 매수 혹은 신규 롱 진입을 실행한다.",
-        "RSI가 과매도에 가까워졌으므로 거래소 계좌를 정지하고 관망한다.",
-        "손절 라인 없이 무제한 레버리지 롱으로 맞선다."
+        "하락 전환 신호로 판단하여 전량 즉시 손절",
+        "추세 지속 신호 기대로 지선 부근 추가/신규 매수",
+        "지표 과매수 판단에 따른 계좌 거래 정지",
+        "손절 설정 없이 무제한 레버리지 롱 대응"
     ],
     correctIndex: 1,
     explanation: "삼성전자 주가의 저점은 높아지는데 보조지표(RSI 등)의 저점은 낮아지는 형태는 '히든 상승 다이버전스'입니다. 이는 기존의 강력한 상승 트렌드 내부에서 일시 조정을 겪는 매수자들이 활기차게 물량을 주워 담아 다음 상승 랠리를 추진한다는 신호이므로, 짧은 손절 라인(294달러)을 설정하고 매수 비중을 태우기 가장 적합한 정석 타점입니다."
@@ -1472,7 +1472,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 306,
             "low": 270,
             "close": 273,
-            "volume": 93
+            "volume": 114
         },
         {
             "time": "Hour 2",
@@ -1480,14 +1480,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 276,
             "low": 240,
             "close": 246,
-            "volume": 116
+            "volume": 117
         }
     ],
     options: [
-        "15분 봉 단기 음봉이 쏟아지고 있으므로 1시간 봉의 반전 신호는 완전 무시하고 숏으로 스위칭한다.",
-        "시간 프레임이 클수록 다이버전스 신호의 성공 확률과 신뢰도가 월등히 높으므로, 큰 방향성(상승 반전)을 설정한 뒤 15분 봉 단기 차트에서 음봉 캔들의 크기가 축소되고 지지 단기 캔들이 형성될 때 분할로 매수 진입한다.",
-        "생각하기 귀찮으므로 시장가 100% 비중으로 즉시 롱 포지션을 진입한다.",
-        "두 지표가 충돌하므로 모든 주문을 취소하고 잡코인을 도박식으로 산다."
+        "단기 음봉 관성 기대로 즉각 숏 포지션 진입",
+        "큰 시간 프레임의 상승 다이버전스 타점 매수",
+        "지표 충돌로 판단하고 시장가 즉시 롱 진입",
+        "변동성 기대로 무작정 도박성 잡코인 진입"
     ],
     correctIndex: 1,
     explanation: "큰 프레임(1시간 봉)의 다이버전스가 주는 중장기 추세 신뢰도는 작은 프레임의 단기 노이즈보다 압도적으로 강력합니다. 단, 진입 시 타이밍의 정밀도를 높이기 위해 소파동(15분 봉)의 하락 동력이 꺾이고 지지해 주는 단기 확인 캔들이 나오는 찰나에 롱 포지션 타이밍을 잡는 것이 멀티 타임프레임 정석 매매입니다."
@@ -1506,7 +1506,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 615,
             "low": 537,
             "close": 600,
-            "volume": 119
+            "volume": 106
         },
         {
             "time": "Day 2",
@@ -1514,14 +1514,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 666,
             "low": 594,
             "close": 660,
-            "volume": 119
+            "volume": 85
         }
     ],
     options: [
-        "추가 폭등이 쏟아질 대세 상승 장이므로 전액 추가 불타기(매수)한다.",
-        "가격 상승 이면에서 실제 매수 엔진의 강도(모멘텀)가 약화되는 하락 다이버전스 경고음이 울렸으므로, 리스크 관리를 위해 보유 포지션의 최소 50% 이상을 분할 익절하여 이익을 확정하고 추가 상승 욕심을 덜어낸다.",
-        "익절 라인을 전혀 설정하지 않고 관망한다.",
-        "무조건 숏 10배로 스위칭 매도 베팅한다."
+        "추세 지속 확신으로 보유 비중 추가 불타기",
+        "상승 모멘텀 약화 다이버전스 확인 후 50% 익절",
+        "익절 설정 없이 전고점 도달 시까지 홀딩",
+        "고점 붕괴 기대로 숏 포지션 10배 베팅"
     ],
     correctIndex: 1,
     explanation: "삼성전자 주가는 올라가나 모멘텀 지표인 MACD 오실레이터 고점이 낮아지는 현상은 대표적인 하락 다이버전스로, 매수 에너지가 속 빈 강정처럼 쇠퇴하고 있어 언제든 급격한 폭락 조정이 발생할 수 있는 고위험 신호입니다. 이 시점에는 탐욕을 통제하고 물량의 50% 이상을 분할 매도하여 현금을 챙기는 것이 원칙입니다."
@@ -1540,7 +1540,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 318,
             "low": 297,
             "close": 300,
-            "volume": 93
+            "volume": 89
         },
         {
             "time": "Day 2",
@@ -1548,14 +1548,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 303,
             "low": 285,
             "close": 288,
-            "volume": 112
+            "volume": 91
         }
     ],
     options: [
-        "이평선 데드크로스 직전이고 지지선 붕괴는 하락 가속화 리스크가 가득한 위험 경보이므로, 희망 회로를 끄고 보유 포지션을 즉시 전량 손절/매도하여 소중한 원금을 대피시킨다.",
-        "대이평선 지지력을 믿고 추가 매수로 물을 크게 탄다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다.",
-        "계좌 청산가가 도달할 때까지 무제한 보유한다."
+        "지지선 이탈 및 데드크로스 확인 즉시 손절",
+        "이평선 지지력을 믿고 하방 물타기 추가 매수",
+        "하락 조정 후 반등 기대로 무기한 홀딩 관망",
+        "청산가 도달 시까지 어떠한 대응 없이 방치"
     ],
     correctIndex: 0,
     explanation: "20일선과 50일선의 데드크로스 임박 수렴 상태에서 가격이 지지선마저 무너뜨린 것은 하락 가속화 추세가 폭발하기 직전인 매우 위험한 기술적 상태입니다. 하락 추세가 본격 정배열(하락 정배열)화 되기 전에 즉시 전량 손절하고 시장 밖에서 피신해 있는 것이 계좌의 영구 파산을 막는 유일한 생존 규칙입니다."
@@ -1574,7 +1574,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 309,
             "low": 291,
             "close": 303,
-            "volume": 99
+            "volume": 104
         },
         {
             "time": "Week 2",
@@ -1582,14 +1582,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 306,
             "low": 297,
             "close": 300,
-            "volume": 119
+            "volume": 91
         }
     ],
     options: [
-        "박스권 폭이 극도로 좁아졌으므로 향후에도 변동성 없이 계속 잔잔하게 기어갈 것이다.",
-        "상단과 하단 밴드가 맞닿을 정도로 에너지가 응축 수렴된 상태이며, 조만간 변동성이 사방으로 대폭발(상방 또는 하방으로 강력한 추세 이탈)할 것임을 예고하므로, 밴드 이탈 방향으로 돌파 진입 시나리오를 세운다.",
-        "스퀴즈는 지표 오작동이므로 볼린저 밴드를 지우고 다른 차트를 켠다.",
-        "중심선 부근에서 고배율 레버리지로 대기 주문 매수를 무조건 지른다."
+        "박스권 변동성 부재 기대로 장기 무대응 관망",
+        "에너지 수축 스퀴즈 확인 후 밴드 이탈 돌파 대기",
+        "지표 신뢰 불가 판단으로 볼린저 밴드 지표 삭제",
+        "중심선 지지로 판단하여 고배율 매수 대기 주문"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 폭이 극도로 좁아지는 스퀴즈(Squeeze) 현상은 시장의 표준편차 변동성이 임계치까지 압축 수렴되었음을 알려줍니다. 에너지 압축 뒤에는 항상 폭발적인 가격 분출(상방/하방 이탈)이 뒤따르므로, 밴드를 뚫고 거래량이 실려 돌파 마감하는 방향으로 추세 추종 시나리오를 설계해야 합니다."
@@ -1608,7 +1608,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 306,
             "low": 270,
             "close": 273,
-            "volume": 94
+            "volume": 106
         },
         {
             "time": "Day 2",
@@ -1616,14 +1616,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 288,
             "low": 285,
             "close": 285,
-            "volume": 86
+            "volume": 106
         }
     ],
     options: [
-        "일반 상승 다이버전스 - 하락 추세의 최종 종결 신호이므로 즉각 공매도를 잡는다.",
-        "히든 상승 다이버전스 - 기존의 상승 추세 진행 동력이 눌림목에서 견고하게 유지되고 있음을 뜻하므로, 285달러선 아래에 손절을 짧게 걸고 롱(매수) 진입 타점으로 활용한다.",
-        "일반 하락 다이버전스 - 상승 추세가 파괴되었으므로 모든 포지션을 비운다.",
-        "지표가 오작동하는 휩소 구간이므로 무조건 횡보에 베팅한다."
+        "일반 상승 다이버전스 - 추세 종결로 즉각 공매도",
+        "히든 상승 다이버전스 - 지선 눌림목 롱 진입 활용",
+        "일반 하락 다이버전스 - 모든 매수 포지션 정리",
+        "지표 오작동 휩소 구간 판단으로 양방향 관망"
     ],
     correctIndex: 1,
     explanation: "가격의 저점은 높아졌는데(Higher Low) 모멘텀 지표의 저점은 낮아지는 현상은 '히든 상승 다이버전스(Hidden Bullish Divergence)'입니다. 이는 추세 반전이 아닌 **기존 강세 추세 지속**을 뜻하며, 조정 눌림목이 완성되고 다음 상승 랠리를 준비한다는 최고의 매수 신호 중 하나입니다."
@@ -1645,10 +1645,10 @@ export const quizzes_technical_indicators: QuizItem[] = [
         }
     ],
     options: [
-        "오직 트위터나 뉴스 호재 찌라시 하나만 보고 즉시 시장가로 대량 매수한다.",
-        "주요 수평 지지선(S/R) + 200일 장기 이평선(EMA) 지지 중첩 + 1시간 봉 RSI 상승 다이버전스 발생 + 아래꼬리가 긴 핀바 캔들 종가 마감 등 독립적인 분석 근거들이 한 가격대에 포개질 때 진입한다.",
-        "RSI 과매수 상태에서 볼린저 밴드 상단을 뚫을 때 무조건 롱을 탄다.",
-        "아무 근거 없이 감정이 이끄는 대로 본능적으로 레버리지를 조절한다."
+        "트위터 및 뉴스의 호재 찌라시 확인 즉시 추격",
+        "지지선+이평선+다이버전스+아래꼬리 등 분석 중첩 시",
+        "RSI 과매수 영역 진입 즉시 롱 포지션 진입",
+        "독립적 분석 없이 오직 보조지표의 단일 수치 신호"
     ],
     correctIndex: 1,
     explanation: "다중 컨플루언스(Confluence)는 독립적인 기술적 근거들이 동일한 특정 가격 구역에 중첩되는 현상입니다. 지지 저항, 이평선, 보조지표 다이버전스, 캔들 가격행동(Rejection 핀바)이 한 곳에 묶여 매수 자리를 형성할 때 매매를 실행하면, 높은 신뢰도와 좁은 손절 라인 덕분에 장기 기대값이 극대화됩니다."
@@ -1667,7 +1667,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 560,
             "low": 490,
             "close": 500,
-            "volume": 103
+            "volume": 108
         },
         {
             "time": "D-3",
@@ -1675,7 +1675,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 520,
             "low": 480,
             "close": 490,
-            "volume": 110
+            "volume": 120
         },
         {
             "time": "D-2",
@@ -1683,7 +1683,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 505,
             "low": 460,
             "close": 470,
-            "volume": 116
+            "volume": 126
         },
         {
             "time": "D-1",
@@ -1691,7 +1691,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 485,
             "low": 465,
             "close": 480,
-            "volume": 106
+            "volume": 104
         },
         {
             "time": "Today",
@@ -1699,14 +1699,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 495,
             "low": 475,
             "close": 490,
-            "volume": 100
+            "volume": 126
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 공매도 포지션 구축",
-        "상승 다이버전스 (Bullish Divergence) - 테슬라 주가 하락 관성이 둔화되고 매수 압력이 쌓여 반등이 임박했다는 강한 매수 시그널",
-        "데드 크로스 (Death Cross) - 하락 탈출",
-        "과매수 붕괴 시그널 - 무조건 매도"
+        "하락 다이버전스 - 가격 상승 둔화에 따른 공매도",
+        "상승 다이버전스 - 하락 둔화 및 반등 신호로 매수",
+        "데드 크로스 - 이평선 하방 교차에 따른 관망",
+        "과매수 이탈 시그널 - 단기 반등에 따른 매수"
     ],
     correctIndex: 1,
     explanation: "테슬라 주가의 가격 저점은 낮아지나 보조지표(RSI)의 운동 저점이 높아지는 현상을 '상승 다이버전스(Bullish Divergence)'라고 합니다. 이는 하방 에너지의 실질적 소멸과 상승 압력의 내부 응축을 의미하는 기술적 분석에서 가장 신뢰도 높은 추세 전환 시그널입니다."
@@ -1725,7 +1725,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 600,
             "low": 495,
             "close": 590,
-            "volume": 88
+            "volume": 106
         },
         {
             "time": "Day 2",
@@ -1741,14 +1741,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 675,
             "low": 595,
             "close": 665,
-            "volume": 116
+            "volume": 123
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 매수 동력이 크게 꺾이고 고점 붕괴가 임박했으므로 보유 물량 익절 및 매수 중단",
-        "상승 다이버전스 (Bullish Divergence) - 추가 급등 찬스이므로 풀매수",
-        "골든크로스 상승 - 영원한 보유",
-        "볼린저 밴드 지지 반등"
+        "하락 다이버전스 - 매수 둔화 및 하락 우려로 익절",
+        "상승 다이버전스 - 추가 급등 기대로 신규 매수",
+        "골든 크로스 - 추세 강화에 따른 홀딩",
+        "볼린저 밴드 스퀴즈 - 변동성 수축 후 돌파"
     ],
     correctIndex: 0,
     explanation: "테슬라 주가는 계속 고점을 높이고 있으나 보조지표의 고점은 꺾여 낮아지는 현상을 '하락 다이버전스(Bearish Divergence)'라고 합니다. 이는 매수세의 힘이 표면적인 가격 상승에 비해 실질적으로 빠르게 축소되고 있음을 경고하며, 조만간 큰 급락이 발생할 확률이 높습니다."
@@ -1767,7 +1767,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 510,
             "low": 490,
             "close": 495,
-            "volume": 102
+            "volume": 90
         },
         {
             "time": "Day 2",
@@ -1775,7 +1775,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 520,
             "low": 495,
             "close": 515,
-            "volume": 92
+            "volume": 84
         },
         {
             "time": "Day 3",
@@ -1783,14 +1783,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 550,
             "low": 515,
             "close": 545,
-            "volume": 104
+            "volume": 89
         }
     ],
     options: [
-        "데드 크로스 (Death Cross) - 강한 매도 시그널",
-        "골든 크로스 (Golden Cross) - 단기 추세가 중장기 평균 시세를 뚫어 상승 추세 전환을 알리는 매수 시그널",
-        "볼린저 스퀴즈 (Bollinger Squeeze)",
-        "다이버전스 수렴"
+        "데드 크로스 - 단기 이평의 하방 교차로 매도 신호",
+        "골든 크로스 - 단기 이평의 상방 교차로 매수 신호",
+        "볼린저 스퀴즈 - 변동성 수축 및 돌파 신호",
+        "다이버전스 수렴 - 지표와 가격의 동반 횡보"
     ],
     correctIndex: 1,
     explanation: "단기 이평선이 장기 이평선을 위로 치고 올라가는 현상을 '골든 크로스(Golden Cross)'라고 합니다. 이는 최근 매수 평단가가 장기 평균가보다 확연히 높아졌음을 시사하며, 상승 추세가 본 궤도에 올랐음을 입증해 줍니다."
@@ -1809,7 +1809,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 505,
             "low": 495,
             "close": 500,
-            "volume": 114
+            "volume": 118
         },
         {
             "time": "Day 2",
@@ -1817,7 +1817,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 500,
             "low": 495,
             "close": 495,
-            "volume": 100
+            "volume": 121
         },
         {
             "time": "Day 3",
@@ -1825,14 +1825,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 500,
             "low": 495,
             "close": 500,
-            "volume": 111
+            "volume": 103
         }
     ],
     options: [
-        "변동성이 영구적으로 사멸하여 테슬라 주가가 상장폐지된다",
-        "강한 수축(Squeeze) 뒤에는 반드시 변동성의 폭발적인 팽창(Expansion) 랠리가 뒤따르므로, 밴드 상방/하방 이탈 방향으로 큰 추세가 분출된다",
-        "테슬라 주가가 무조건 절반으로 폭락한다",
-        "이평선들이 전부 수평으로 정렬하여 추세가 완전히 고정된다"
+        "변동성 사멸로 인한 장기 횡보 및 거래 정지",
+        "밴드 스퀴즈 후 변동성 팽창에 따른 추세 분출",
+        "테슬라 주가의 하방 붕괴로 인한 강한 하락 파동 시작",
+        "이평선들의 수평 정렬에 따른 완전한 추세 고정"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 수축(Squeeze)은 시장의 숨 고르기 및 힘 모으기를 뜻합니다. 에너지가 최대한 압축된 후에는 밴드 상단 혹은 하단선을 이탈하며 매우 거대한 변동성 팽창(Expansion) 추세가 시작되므로, 방향성을 유심히 지켜봐야 합니다."
@@ -1851,7 +1851,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 550,
             "low": 440,
             "close": 525,
-            "volume": 109
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -1859,14 +1859,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 535,
             "low": 490,
             "close": 500,
-            "volume": 96
+            "volume": 119
         }
     ],
     options: [
-        "추세가 완전히 꺾인 하락 전환 신호이므로 즉시 전량 매도 및 손절 처리한다.",
-        "히든 상승 다이버전스는 강력한 '기존 상승 추세 지속(Trend Continuation)'을 뜻하므로, 490달러선 아래에 손절가를 잡고 우호적인 평단가에 추가 매수 혹은 신규 롱 진입을 실행한다.",
-        "RSI가 과매도에 가까워졌으므로 거래소 계좌를 정지하고 관망한다.",
-        "손절 라인 없이 무제한 레버리지 롱으로 맞선다."
+        "하락 전환 신호로 판단하여 전량 즉시 손절",
+        "추세 지속 신호 기대로 지선 부근 추가/신규 매수",
+        "지표 과매수 판단에 따른 계좌 거래 정지",
+        "손절 설정 없이 무제한 레버리지 롱 대응"
     ],
     correctIndex: 1,
     explanation: "테슬라 주가의 저점은 높아지는데 보조지표(RSI 등)의 저점은 낮아지는 형태는 '히든 상승 다이버전스'입니다. 이는 기존의 강력한 상승 트렌드 내부에서 일시 조정을 겪는 매수자들이 활기차게 물량을 주워 담아 다음 상승 랠리를 추진한다는 신호이므로, 짧은 손절 라인(490달러)을 설정하고 매수 비중을 태우기 가장 적합한 정석 타점입니다."
@@ -1885,7 +1885,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 510,
             "low": 450,
             "close": 455,
-            "volume": 109
+            "volume": 97
         },
         {
             "time": "Hour 2",
@@ -1893,14 +1893,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 460,
             "low": 400,
             "close": 410,
-            "volume": 117
+            "volume": 108
         }
     ],
     options: [
-        "15분 봉 단기 음봉이 쏟아지고 있으므로 1시간 봉의 반전 신호는 완전 무시하고 숏으로 스위칭한다.",
-        "시간 프레임이 클수록 다이버전스 신호의 성공 확률과 신뢰도가 월등히 높으므로, 큰 방향성(상승 반전)을 설정한 뒤 15분 봉 단기 차트에서 음봉 캔들의 크기가 축소되고 지지 단기 캔들이 형성될 때 분할로 매수 진입한다.",
-        "생각하기 귀찮으므로 시장가 100% 비중으로 즉시 롱 포지션을 진입한다.",
-        "두 지표가 충돌하므로 모든 주문을 취소하고 잡코인을 도박식으로 산다."
+        "단기 음봉 관성 기대로 즉각 숏 포지션 진입",
+        "큰 시간 프레임의 상승 다이버전스 타점 매수",
+        "지표 충돌로 판단하고 시장가 즉시 롱 진입",
+        "변동성 기대로 무작정 도박성 잡코인 진입"
     ],
     correctIndex: 1,
     explanation: "큰 프레임(1시간 봉)의 다이버전스가 주는 중장기 추세 신뢰도는 작은 프레임의 단기 노이즈보다 압도적으로 강력합니다. 단, 진입 시 타이밍의 정밀도를 높이기 위해 소파동(15분 봉)의 하락 동력이 꺾이고 지지해 주는 단기 확인 캔들이 나오는 찰나에 롱 포지션 타이밍을 잡는 것이 멀티 타임프레임 정석 매매입니다."
@@ -1919,7 +1919,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1025,
             "low": 895,
             "close": 1000,
-            "volume": 116
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -1927,14 +1927,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1110,
             "low": 990,
             "close": 1100,
-            "volume": 115
+            "volume": 114
         }
     ],
     options: [
-        "추가 폭등이 쏟아질 대세 상승 장이므로 전액 추가 불타기(매수)한다.",
-        "가격 상승 이면에서 실제 매수 엔진의 강도(모멘텀)가 약화되는 하락 다이버전스 경고음이 울렸으므로, 리스크 관리를 위해 보유 포지션의 최소 50% 이상을 분할 익절하여 이익을 확정하고 추가 상승 욕심을 덜어낸다.",
-        "익절 라인을 전혀 설정하지 않고 관망한다.",
-        "무조건 숏 10배로 스위칭 매도 베팅한다."
+        "추세 지속 확신으로 보유 비중 추가 불타기",
+        "상승 모멘텀 약화 다이버전스 확인 후 50% 익절",
+        "익절 설정 없이 전고점 도달 시까지 홀딩",
+        "고점 붕괴 기대로 숏 포지션 10배 베팅"
     ],
     correctIndex: 1,
     explanation: "테슬라 주가는 올라가나 모멘텀 지표인 MACD 오실레이터 고점이 낮아지는 현상은 대표적인 하락 다이버전스로, 매수 에너지가 속 빈 강정처럼 쇠퇴하고 있어 언제든 급격한 폭락 조정이 발생할 수 있는 고위험 신호입니다. 이 시점에는 탐욕을 통제하고 물량의 50% 이상을 분할 매도하여 현금을 챙기는 것이 원칙입니다."
@@ -1953,7 +1953,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 530,
             "low": 495,
             "close": 500,
-            "volume": 109
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -1961,14 +1961,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 505,
             "low": 475,
             "close": 480,
-            "volume": 103
+            "volume": 115
         }
     ],
     options: [
-        "이평선 데드크로스 직전이고 지지선 붕괴는 하락 가속화 리스크가 가득한 위험 경보이므로, 희망 회로를 끄고 보유 포지션을 즉시 전량 손절/매도하여 소중한 원금을 대피시킨다.",
-        "대이평선 지지력을 믿고 추가 매수로 물을 크게 탄다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다.",
-        "계좌 청산가가 도달할 때까지 무제한 보유한다."
+        "지지선 이탈 및 데드크로스 확인 즉시 손절",
+        "이평선 지지력을 믿고 하방 물타기 추가 매수",
+        "하락 조정 후 반등 기대로 무기한 홀딩 관망",
+        "청산가 도달 시까지 어떠한 대응 없이 방치"
     ],
     correctIndex: 0,
     explanation: "20일선과 50일선의 데드크로스 임박 수렴 상태에서 가격이 지지선마저 무너뜨린 것은 하락 가속화 추세가 폭발하기 직전인 매우 위험한 기술적 상태입니다. 하락 추세가 본격 정배열(하락 정배열)화 되기 전에 즉시 전량 손절하고 시장 밖에서 피신해 있는 것이 계좌의 영구 파산을 막는 유일한 생존 규칙입니다."
@@ -1987,7 +1987,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 515,
             "low": 485,
             "close": 505,
-            "volume": 97
+            "volume": 103
         },
         {
             "time": "Week 2",
@@ -1995,14 +1995,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 510,
             "low": 495,
             "close": 500,
-            "volume": 121
+            "volume": 87
         }
     ],
     options: [
-        "박스권 폭이 극도로 좁아졌으므로 향후에도 변동성 없이 계속 잔잔하게 기어갈 것이다.",
-        "상단과 하단 밴드가 맞닿을 정도로 에너지가 응축 수렴된 상태이며, 조만간 변동성이 사방으로 대폭발(상방 또는 하방으로 강력한 추세 이탈)할 것임을 예고하므로, 밴드 이탈 방향으로 돌파 진입 시나리오를 세운다.",
-        "스퀴즈는 지표 오작동이므로 볼린저 밴드를 지우고 다른 차트를 켠다.",
-        "중심선 부근에서 고배율 레버리지로 대기 주문 매수를 무조건 지른다."
+        "박스권 변동성 부재 기대로 장기 무대응 관망",
+        "에너지 수축 스퀴즈 확인 후 밴드 이탈 돌파 대기",
+        "지표 신뢰 불가 판단으로 볼린저 밴드 지표 삭제",
+        "중심선 지지로 판단하여 고배율 매수 대기 주문"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 폭이 극도로 좁아지는 스퀴즈(Squeeze) 현상은 시장의 표준편차 변동성이 임계치까지 압축 수렴되었음을 알려줍니다. 에너지 압축 뒤에는 항상 폭발적인 가격 분출(상방/하방 이탈)이 뒤따르므로, 밴드를 뚫고 거래량이 실려 돌파 마감하는 방향으로 추세 추종 시나리오를 설계해야 합니다."
@@ -2021,7 +2021,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 510,
             "low": 450,
             "close": 455,
-            "volume": 88
+            "volume": 99
         },
         {
             "time": "Day 2",
@@ -2029,14 +2029,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 480,
             "low": 475,
             "close": 475,
-            "volume": 104
+            "volume": 105
         }
     ],
     options: [
-        "일반 상승 다이버전스 - 하락 추세의 최종 종결 신호이므로 즉각 공매도를 잡는다.",
-        "히든 상승 다이버전스 - 기존의 상승 추세 진행 동력이 눌림목에서 견고하게 유지되고 있음을 뜻하므로, 475달러선 아래에 손절을 짧게 걸고 롱(매수) 진입 타점으로 활용한다.",
-        "일반 하락 다이버전스 - 상승 추세가 파괴되었으므로 모든 포지션을 비운다.",
-        "지표가 오작동하는 휩소 구간이므로 무조건 횡보에 베팅한다."
+        "일반 상승 다이버전스 - 추세 종결로 즉각 공매도",
+        "히든 상승 다이버전스 - 지선 눌림목 롱 진입 활용",
+        "일반 하락 다이버전스 - 모든 매수 포지션 정리",
+        "지표 오작동 휩소 구간 판단으로 양방향 관망"
     ],
     correctIndex: 1,
     explanation: "가격의 저점은 높아졌는데(Higher Low) 모멘텀 지표의 저점은 낮아지는 현상은 '히든 상승 다이버전스(Hidden Bullish Divergence)'입니다. 이는 추세 반전이 아닌 **기존 강세 추세 지속**을 뜻하며, 조정 눌림목이 완성되고 다음 상승 랠리를 준비한다는 최고의 매수 신호 중 하나입니다."
@@ -2058,10 +2058,10 @@ export const quizzes_technical_indicators: QuizItem[] = [
         }
     ],
     options: [
-        "오직 트위터나 뉴스 호재 찌라시 하나만 보고 즉시 시장가로 대량 매수한다.",
-        "주요 수평 지지선(S/R) + 200일 장기 이평선(EMA) 지지 중첩 + 1시간 봉 RSI 상승 다이버전스 발생 + 아래꼬리가 긴 핀바 캔들 종가 마감 등 독립적인 분석 근거들이 한 가격대에 포개질 때 진입한다.",
-        "RSI 과매수 상태에서 볼린저 밴드 상단을 뚫을 때 무조건 롱을 탄다.",
-        "아무 근거 없이 감정이 이끄는 대로 본능적으로 레버리지를 조절한다."
+        "트위터 및 뉴스의 호재 찌라시 확인 즉시 추격",
+        "지지선+이평선+다이버전스+아래꼬리 등 분석 중첩 시",
+        "RSI 과매수 영역 진입 즉시 롱 포지션 진입",
+        "독립적 분석 없이 오직 보조지표의 단일 수치 신호"
     ],
     correctIndex: 1,
     explanation: "다중 컨플루언스(Confluence)는 독립적인 기술적 근거들이 동일한 특정 가격 구역에 중첩되는 현상입니다. 지지 저항, 이평선, 보조지표 다이버전스, 캔들 가격행동(Rejection 핀바)이 한 곳에 묶여 매수 자리를 형성할 때 매매를 실행하면, 높은 신뢰도와 좁은 손절 라인 덕분에 장기 기대값이 극대화됩니다."
@@ -2080,7 +2080,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 896,
             "low": 784,
             "close": 800,
-            "volume": 95
+            "volume": 102
         },
         {
             "time": "D-3",
@@ -2088,7 +2088,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 832,
             "low": 768,
             "close": 784,
-            "volume": 109
+            "volume": 111
         },
         {
             "time": "D-2",
@@ -2096,7 +2096,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 808,
             "low": 736,
             "close": 752,
-            "volume": 97
+            "volume": 113
         },
         {
             "time": "D-1",
@@ -2104,7 +2104,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 776,
             "low": 744,
             "close": 768,
-            "volume": 105
+            "volume": 104
         },
         {
             "time": "Today",
@@ -2112,14 +2112,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 792,
             "low": 760,
             "close": 784,
-            "volume": 122
+            "volume": 135
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 공매도 포지션 구축",
-        "상승 다이버전스 (Bullish Divergence) - 애플 주가 하락 관성이 둔화되고 매수 압력이 쌓여 반등이 임박했다는 강한 매수 시그널",
-        "데드 크로스 (Death Cross) - 하락 탈출",
-        "과매수 붕괴 시그널 - 무조건 매도"
+        "하락 다이버전스 - 가격 상승 둔화에 따른 공매도",
+        "상승 다이버전스 - 하락 둔화 및 반등 신호로 매수",
+        "데드 크로스 - 이평선 하방 교차에 따른 관망",
+        "과매수 이탈 시그널 - 단기 반등에 따른 매수"
     ],
     correctIndex: 1,
     explanation: "애플 주가의 가격 저점은 낮아지나 보조지표(RSI)의 운동 저점이 높아지는 현상을 '상승 다이버전스(Bullish Divergence)'라고 합니다. 이는 하방 에너지의 실질적 소멸과 상승 압력의 내부 응축을 의미하는 기술적 분석에서 가장 신뢰도 높은 추세 전환 시그널입니다."
@@ -2138,7 +2138,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 960,
             "low": 792,
             "close": 944,
-            "volume": 81
+            "volume": 90
         },
         {
             "time": "Day 2",
@@ -2146,7 +2146,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 976,
             "low": 920,
             "close": 960,
-            "volume": 113
+            "volume": 101
         },
         {
             "time": "Day 3",
@@ -2154,14 +2154,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1080,
             "low": 952,
             "close": 1064,
-            "volume": 89
+            "volume": 123
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 매수 동력이 크게 꺾이고 고점 붕괴가 임박했으므로 보유 물량 익절 및 매수 중단",
-        "상승 다이버전스 (Bullish Divergence) - 추가 급등 찬스이므로 풀매수",
-        "골든크로스 상승 - 영원한 보유",
-        "볼린저 밴드 지지 반등"
+        "하락 다이버전스 - 매수 둔화 및 하락 우려로 익절",
+        "상승 다이버전스 - 추가 급등 기대로 신규 매수",
+        "골든 크로스 - 추세 강화에 따른 홀딩",
+        "볼린저 밴드 스퀴즈 - 변동성 수축 후 돌파"
     ],
     correctIndex: 0,
     explanation: "애플 주가는 계속 고점을 높이고 있으나 보조지표의 고점은 꺾여 낮아지는 현상을 '하락 다이버전스(Bearish Divergence)'라고 합니다. 이는 매수세의 힘이 표면적인 가격 상승에 비해 실질적으로 빠르게 축소되고 있음을 경고하며, 조만간 큰 급락이 발생할 확률이 높습니다."
@@ -2180,7 +2180,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 816,
             "low": 784,
             "close": 792,
-            "volume": 102
+            "volume": 113
         },
         {
             "time": "Day 2",
@@ -2188,7 +2188,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 832,
             "low": 792,
             "close": 824,
-            "volume": 87
+            "volume": 84
         },
         {
             "time": "Day 3",
@@ -2196,14 +2196,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 880,
             "low": 824,
             "close": 872,
-            "volume": 107
+            "volume": 92
         }
     ],
     options: [
-        "데드 크로스 (Death Cross) - 강한 매도 시그널",
-        "골든 크로스 (Golden Cross) - 단기 추세가 중장기 평균 시세를 뚫어 상승 추세 전환을 알리는 매수 시그널",
-        "볼린저 스퀴즈 (Bollinger Squeeze)",
-        "다이버전스 수렴"
+        "데드 크로스 - 단기 이평의 하방 교차로 매도 신호",
+        "골든 크로스 - 단기 이평의 상방 교차로 매수 신호",
+        "볼린저 스퀴즈 - 변동성 수축 및 돌파 신호",
+        "다이버전스 수렴 - 지표와 가격의 동반 횡보"
     ],
     correctIndex: 1,
     explanation: "단기 이평선이 장기 이평선을 위로 치고 올라가는 현상을 '골든 크로스(Golden Cross)'라고 합니다. 이는 최근 매수 평단가가 장기 평균가보다 확연히 높아졌음을 시사하며, 상승 추세가 본 궤도에 올랐음을 입증해 줍니다."
@@ -2222,7 +2222,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 808,
             "low": 792,
             "close": 800,
-            "volume": 91
+            "volume": 111
         },
         {
             "time": "Day 2",
@@ -2230,7 +2230,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 800,
             "low": 792,
             "close": 792,
-            "volume": 120
+            "volume": 91
         },
         {
             "time": "Day 3",
@@ -2238,14 +2238,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 800,
             "low": 792,
             "close": 800,
-            "volume": 96
+            "volume": 94
         }
     ],
     options: [
-        "변동성이 영구적으로 사멸하여 애플 주가가 상장폐지된다",
-        "강한 수축(Squeeze) 뒤에는 반드시 변동성의 폭발적인 팽창(Expansion) 랠리가 뒤따르므로, 밴드 상방/하방 이탈 방향으로 큰 추세가 분출된다",
-        "애플 주가가 무조건 절반으로 폭락한다",
-        "이평선들이 전부 수평으로 정렬하여 추세가 완전히 고정된다"
+        "변동성 사멸로 인한 장기 횡보 및 거래 정지",
+        "밴드 스퀴즈 후 변동성 팽창에 따른 추세 분출",
+        "애플 주가의 하방 붕괴로 인한 강한 하락 파동 시작",
+        "이평선들의 수평 정렬에 따른 완전한 추세 고정"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 수축(Squeeze)은 시장의 숨 고르기 및 힘 모으기를 뜻합니다. 에너지가 최대한 압축된 후에는 밴드 상단 혹은 하단선을 이탈하며 매우 거대한 변동성 팽창(Expansion) 추세가 시작되므로, 방향성을 유심히 지켜봐야 합니다."
@@ -2264,7 +2264,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 880,
             "low": 704,
             "close": 840,
-            "volume": 87
+            "volume": 118
         },
         {
             "time": "Day 2",
@@ -2272,14 +2272,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 856,
             "low": 784,
             "close": 800,
-            "volume": 98
+            "volume": 119
         }
     ],
     options: [
-        "추세가 완전히 꺾인 하락 전환 신호이므로 즉시 전량 매도 및 손절 처리한다.",
-        "히든 상승 다이버전스는 강력한 '기존 상승 추세 지속(Trend Continuation)'을 뜻하므로, 784달러선 아래에 손절가를 잡고 우호적인 평단가에 추가 매수 혹은 신규 롱 진입을 실행한다.",
-        "RSI가 과매도에 가까워졌으므로 거래소 계좌를 정지하고 관망한다.",
-        "손절 라인 없이 무제한 레버리지 롱으로 맞선다."
+        "하락 전환 신호로 판단하여 전량 즉시 손절",
+        "추세 지속 신호 기대로 지선 부근 추가/신규 매수",
+        "지표 과매수 판단에 따른 계좌 거래 정지",
+        "손절 설정 없이 무제한 레버리지 롱 대응"
     ],
     correctIndex: 1,
     explanation: "애플 주가의 저점은 높아지는데 보조지표(RSI 등)의 저점은 낮아지는 형태는 '히든 상승 다이버전스'입니다. 이는 기존의 강력한 상승 트렌드 내부에서 일시 조정을 겪는 매수자들이 활기차게 물량을 주워 담아 다음 상승 랠리를 추진한다는 신호이므로, 짧은 손절 라인(784달러)을 설정하고 매수 비중을 태우기 가장 적합한 정석 타점입니다."
@@ -2298,7 +2298,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 816,
             "low": 720,
             "close": 728,
-            "volume": 81
+            "volume": 104
         },
         {
             "time": "Hour 2",
@@ -2306,14 +2306,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 736,
             "low": 640,
             "close": 656,
-            "volume": 93
+            "volume": 120
         }
     ],
     options: [
-        "15분 봉 단기 음봉이 쏟아지고 있으므로 1시간 봉의 반전 신호는 완전 무시하고 숏으로 스위칭한다.",
-        "시간 프레임이 클수록 다이버전스 신호의 성공 확률과 신뢰도가 월등히 높으므로, 큰 방향성(상승 반전)을 설정한 뒤 15분 봉 단기 차트에서 음봉 캔들의 크기가 축소되고 지지 단기 캔들이 형성될 때 분할로 매수 진입한다.",
-        "생각하기 귀찮으므로 시장가 100% 비중으로 즉시 롱 포지션을 진입한다.",
-        "두 지표가 충돌하므로 모든 주문을 취소하고 잡코인을 도박식으로 산다."
+        "단기 음봉 관성 기대로 즉각 숏 포지션 진입",
+        "큰 시간 프레임의 상승 다이버전스 타점 매수",
+        "지표 충돌로 판단하고 시장가 즉시 롱 진입",
+        "변동성 기대로 무작정 도박성 잡코인 진입"
     ],
     correctIndex: 1,
     explanation: "큰 프레임(1시간 봉)의 다이버전스가 주는 중장기 추세 신뢰도는 작은 프레임의 단기 노이즈보다 압도적으로 강력합니다. 단, 진입 시 타이밍의 정밀도를 높이기 위해 소파동(15분 봉)의 하락 동력이 꺾이고 지지해 주는 단기 확인 캔들이 나오는 찰나에 롱 포지션 타이밍을 잡는 것이 멀티 타임프레임 정석 매매입니다."
@@ -2332,7 +2332,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1640,
             "low": 1432,
             "close": 1600,
-            "volume": 103
+            "volume": 89
         },
         {
             "time": "Day 2",
@@ -2340,14 +2340,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1776,
             "low": 1584,
             "close": 1760,
-            "volume": 90
+            "volume": 119
         }
     ],
     options: [
-        "추가 폭등이 쏟아질 대세 상승 장이므로 전액 추가 불타기(매수)한다.",
-        "가격 상승 이면에서 실제 매수 엔진의 강도(모멘텀)가 약화되는 하락 다이버전스 경고음이 울렸으므로, 리스크 관리를 위해 보유 포지션의 최소 50% 이상을 분할 익절하여 이익을 확정하고 추가 상승 욕심을 덜어낸다.",
-        "익절 라인을 전혀 설정하지 않고 관망한다.",
-        "무조건 숏 10배로 스위칭 매도 베팅한다."
+        "추세 지속 확신으로 보유 비중 추가 불타기",
+        "상승 모멘텀 약화 다이버전스 확인 후 50% 익절",
+        "익절 설정 없이 전고점 도달 시까지 홀딩",
+        "고점 붕괴 기대로 숏 포지션 10배 베팅"
     ],
     correctIndex: 1,
     explanation: "애플 주가는 올라가나 모멘텀 지표인 MACD 오실레이터 고점이 낮아지는 현상은 대표적인 하락 다이버전스로, 매수 에너지가 속 빈 강정처럼 쇠퇴하고 있어 언제든 급격한 폭락 조정이 발생할 수 있는 고위험 신호입니다. 이 시점에는 탐욕을 통제하고 물량의 50% 이상을 분할 매도하여 현금을 챙기는 것이 원칙입니다."
@@ -2366,7 +2366,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 848,
             "low": 792,
             "close": 800,
-            "volume": 103
+            "volume": 109
         },
         {
             "time": "Day 2",
@@ -2374,14 +2374,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 808,
             "low": 760,
             "close": 768,
-            "volume": 123
+            "volume": 101
         }
     ],
     options: [
-        "이평선 데드크로스 직전이고 지지선 붕괴는 하락 가속화 리스크가 가득한 위험 경보이므로, 희망 회로를 끄고 보유 포지션을 즉시 전량 손절/매도하여 소중한 원금을 대피시킨다.",
-        "대이평선 지지력을 믿고 추가 매수로 물을 크게 탄다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다.",
-        "계좌 청산가가 도달할 때까지 무제한 보유한다."
+        "지지선 이탈 및 데드크로스 확인 즉시 손절",
+        "이평선 지지력을 믿고 하방 물타기 추가 매수",
+        "하락 조정 후 반등 기대로 무기한 홀딩 관망",
+        "청산가 도달 시까지 어떠한 대응 없이 방치"
     ],
     correctIndex: 0,
     explanation: "20일선과 50일선의 데드크로스 임박 수렴 상태에서 가격이 지지선마저 무너뜨린 것은 하락 가속화 추세가 폭발하기 직전인 매우 위험한 기술적 상태입니다. 하락 추세가 본격 정배열(하락 정배열)화 되기 전에 즉시 전량 손절하고 시장 밖에서 피신해 있는 것이 계좌의 영구 파산을 막는 유일한 생존 규칙입니다."
@@ -2400,7 +2400,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 824,
             "low": 776,
             "close": 808,
-            "volume": 110
+            "volume": 111
         },
         {
             "time": "Week 2",
@@ -2408,14 +2408,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 816,
             "low": 792,
             "close": 800,
-            "volume": 87
+            "volume": 94
         }
     ],
     options: [
-        "박스권 폭이 극도로 좁아졌으므로 향후에도 변동성 없이 계속 잔잔하게 기어갈 것이다.",
-        "상단과 하단 밴드가 맞닿을 정도로 에너지가 응축 수렴된 상태이며, 조만간 변동성이 사방으로 대폭발(상방 또는 하방으로 강력한 추세 이탈)할 것임을 예고하므로, 밴드 이탈 방향으로 돌파 진입 시나리오를 세운다.",
-        "스퀴즈는 지표 오작동이므로 볼린저 밴드를 지우고 다른 차트를 켠다.",
-        "중심선 부근에서 고배율 레버리지로 대기 주문 매수를 무조건 지른다."
+        "박스권 변동성 부재 기대로 장기 무대응 관망",
+        "에너지 수축 스퀴즈 확인 후 밴드 이탈 돌파 대기",
+        "지표 신뢰 불가 판단으로 볼린저 밴드 지표 삭제",
+        "중심선 지지로 판단하여 고배율 매수 대기 주문"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 폭이 극도로 좁아지는 스퀴즈(Squeeze) 현상은 시장의 표준편차 변동성이 임계치까지 압축 수렴되었음을 알려줍니다. 에너지 압축 뒤에는 항상 폭발적인 가격 분출(상방/하방 이탈)이 뒤따르므로, 밴드를 뚫고 거래량이 실려 돌파 마감하는 방향으로 추세 추종 시나리오를 설계해야 합니다."
@@ -2434,7 +2434,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 816,
             "low": 720,
             "close": 728,
-            "volume": 99
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -2442,14 +2442,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 768,
             "low": 760,
             "close": 760,
-            "volume": 95
+            "volume": 107
         }
     ],
     options: [
-        "일반 상승 다이버전스 - 하락 추세의 최종 종결 신호이므로 즉각 공매도를 잡는다.",
-        "히든 상승 다이버전스 - 기존의 상승 추세 진행 동력이 눌림목에서 견고하게 유지되고 있음을 뜻하므로, 760달러선 아래에 손절을 짧게 걸고 롱(매수) 진입 타점으로 활용한다.",
-        "일반 하락 다이버전스 - 상승 추세가 파괴되었으므로 모든 포지션을 비운다.",
-        "지표가 오작동하는 휩소 구간이므로 무조건 횡보에 베팅한다."
+        "일반 상승 다이버전스 - 추세 종결로 즉각 공매도",
+        "히든 상승 다이버전스 - 지선 눌림목 롱 진입 활용",
+        "일반 하락 다이버전스 - 모든 매수 포지션 정리",
+        "지표 오작동 휩소 구간 판단으로 양방향 관망"
     ],
     correctIndex: 1,
     explanation: "가격의 저점은 높아졌는데(Higher Low) 모멘텀 지표의 저점은 낮아지는 현상은 '히든 상승 다이버전스(Hidden Bullish Divergence)'입니다. 이는 추세 반전이 아닌 **기존 강세 추세 지속**을 뜻하며, 조정 눌림목이 완성되고 다음 상승 랠리를 준비한다는 최고의 매수 신호 중 하나입니다."
@@ -2471,10 +2471,10 @@ export const quizzes_technical_indicators: QuizItem[] = [
         }
     ],
     options: [
-        "오직 트위터나 뉴스 호재 찌라시 하나만 보고 즉시 시장가로 대량 매수한다.",
-        "주요 수평 지지선(S/R) + 200일 장기 이평선(EMA) 지지 중첩 + 1시간 봉 RSI 상승 다이버전스 발생 + 아래꼬리가 긴 핀바 캔들 종가 마감 등 독립적인 분석 근거들이 한 가격대에 포개질 때 진입한다.",
-        "RSI 과매수 상태에서 볼린저 밴드 상단을 뚫을 때 무조건 롱을 탄다.",
-        "아무 근거 없이 감정이 이끄는 대로 본능적으로 레버리지를 조절한다."
+        "트위터 및 뉴스의 호재 찌라시 확인 즉시 추격",
+        "지지선+이평선+다이버전스+아래꼬리 등 분석 중첩 시",
+        "RSI 과매수 영역 진입 즉시 롱 포지션 진입",
+        "독립적 분석 없이 오직 보조지표의 단일 수치 신호"
     ],
     correctIndex: 1,
     explanation: "다중 컨플루언스(Confluence)는 독립적인 기술적 근거들이 동일한 특정 가격 구역에 중첩되는 현상입니다. 지지 저항, 이평선, 보조지표 다이버전스, 캔들 가격행동(Rejection 핀바)이 한 곳에 묶여 매수 자리를 형성할 때 매매를 실행하면, 높은 신뢰도와 좁은 손절 라인 덕분에 장기 기대값이 극대화됩니다."
@@ -2493,7 +2493,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1120,
             "low": 980,
             "close": 1000,
-            "volume": 103
+            "volume": 97
         },
         {
             "time": "D-3",
@@ -2501,7 +2501,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1040,
             "low": 960,
             "close": 980,
-            "volume": 102
+            "volume": 95
         },
         {
             "time": "D-2",
@@ -2509,7 +2509,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1010,
             "low": 920,
             "close": 940,
-            "volume": 118
+            "volume": 97
         },
         {
             "time": "D-1",
@@ -2517,7 +2517,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 970,
             "low": 930,
             "close": 960,
-            "volume": 124
+            "volume": 125
         },
         {
             "time": "Today",
@@ -2525,14 +2525,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 990,
             "low": 950,
             "close": 980,
-            "volume": 112
+            "volume": 113
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 공매도 포지션 구축",
-        "상승 다이버전스 (Bullish Divergence) - 나스닥 시세 하락 관성이 둔화되고 매수 압력이 쌓여 반등이 임박했다는 강한 매수 시그널",
-        "데드 크로스 (Death Cross) - 하락 탈출",
-        "과매수 붕괴 시그널 - 무조건 매도"
+        "하락 다이버전스 - 가격 상승 둔화에 따른 공매도",
+        "상승 다이버전스 - 하락 둔화 및 반등 신호로 매수",
+        "데드 크로스 - 이평선 하방 교차에 따른 관망",
+        "과매수 이탈 시그널 - 단기 반등에 따른 매수"
     ],
     correctIndex: 1,
     explanation: "나스닥 시세의 가격 저점은 낮아지나 보조지표(RSI)의 운동 저점이 높아지는 현상을 '상승 다이버전스(Bullish Divergence)'라고 합니다. 이는 하방 에너지의 실질적 소멸과 상승 압력의 내부 응축을 의미하는 기술적 분석에서 가장 신뢰도 높은 추세 전환 시그널입니다."
@@ -2551,7 +2551,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1200,
             "low": 990,
             "close": 1180,
-            "volume": 115
+            "volume": 87
         },
         {
             "time": "Day 2",
@@ -2559,7 +2559,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1220,
             "low": 1150,
             "close": 1200,
-            "volume": 109
+            "volume": 108
         },
         {
             "time": "Day 3",
@@ -2567,14 +2567,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1350,
             "low": 1190,
             "close": 1330,
-            "volume": 125
+            "volume": 93
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 매수 동력이 크게 꺾이고 고점 붕괴가 임박했으므로 보유 물량 익절 및 매수 중단",
-        "상승 다이버전스 (Bullish Divergence) - 추가 급등 찬스이므로 풀매수",
-        "골든크로스 상승 - 영원한 보유",
-        "볼린저 밴드 지지 반등"
+        "하락 다이버전스 - 매수 둔화 및 하락 우려로 익절",
+        "상승 다이버전스 - 추가 급등 기대로 신규 매수",
+        "골든 크로스 - 추세 강화에 따른 홀딩",
+        "볼린저 밴드 스퀴즈 - 변동성 수축 후 돌파"
     ],
     correctIndex: 0,
     explanation: "나스닥 시세는 계속 고점을 높이고 있으나 보조지표의 고점은 꺾여 낮아지는 현상을 '하락 다이버전스(Bearish Divergence)'라고 합니다. 이는 매수세의 힘이 표면적인 가격 상승에 비해 실질적으로 빠르게 축소되고 있음을 경고하며, 조만간 큰 급락이 발생할 확률이 높습니다."
@@ -2593,7 +2593,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1020,
             "low": 980,
             "close": 990,
-            "volume": 116
+            "volume": 84
         },
         {
             "time": "Day 2",
@@ -2601,7 +2601,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1040,
             "low": 990,
             "close": 1030,
-            "volume": 122
+            "volume": 119
         },
         {
             "time": "Day 3",
@@ -2609,14 +2609,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1100,
             "low": 1030,
             "close": 1090,
-            "volume": 94
+            "volume": 106
         }
     ],
     options: [
-        "데드 크로스 (Death Cross) - 강한 매도 시그널",
-        "골든 크로스 (Golden Cross) - 단기 추세가 중장기 평균 시세를 뚫어 상승 추세 전환을 알리는 매수 시그널",
-        "볼린저 스퀴즈 (Bollinger Squeeze)",
-        "다이버전스 수렴"
+        "데드 크로스 - 단기 이평의 하방 교차로 매도 신호",
+        "골든 크로스 - 단기 이평의 상방 교차로 매수 신호",
+        "볼린저 스퀴즈 - 변동성 수축 및 돌파 신호",
+        "다이버전스 수렴 - 지표와 가격의 동반 횡보"
     ],
     correctIndex: 1,
     explanation: "단기 이평선이 장기 이평선을 위로 치고 올라가는 현상을 '골든 크로스(Golden Cross)'라고 합니다. 이는 최근 매수 평단가가 장기 평균가보다 확연히 높아졌음을 시사하며, 상승 추세가 본 궤도에 올랐음을 입증해 줍니다."
@@ -2635,7 +2635,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1010,
             "low": 990,
             "close": 1000,
-            "volume": 90
+            "volume": 82
         },
         {
             "time": "Day 2",
@@ -2643,7 +2643,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1000,
             "low": 990,
             "close": 990,
-            "volume": 84
+            "volume": 109
         },
         {
             "time": "Day 3",
@@ -2651,14 +2651,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1000,
             "low": 990,
             "close": 1000,
-            "volume": 115
+            "volume": 104
         }
     ],
     options: [
-        "변동성이 영구적으로 사멸하여 나스닥 시세가 상장폐지된다",
-        "강한 수축(Squeeze) 뒤에는 반드시 변동성의 폭발적인 팽창(Expansion) 랠리가 뒤따르므로, 밴드 상방/하방 이탈 방향으로 큰 추세가 분출된다",
-        "나스닥 시세가 무조건 절반으로 폭락한다",
-        "이평선들이 전부 수평으로 정렬하여 추세가 완전히 고정된다"
+        "변동성 사멸로 인한 장기 횡보 및 거래 정지",
+        "밴드 스퀴즈 후 변동성 팽창에 따른 추세 분출",
+        "나스닥 시세의 하방 붕괴로 인한 강한 하락 파동 시작",
+        "이평선들의 수평 정렬에 따른 완전한 추세 고정"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 수축(Squeeze)은 시장의 숨 고르기 및 힘 모으기를 뜻합니다. 에너지가 최대한 압축된 후에는 밴드 상단 혹은 하단선을 이탈하며 매우 거대한 변동성 팽창(Expansion) 추세가 시작되므로, 방향성을 유심히 지켜봐야 합니다."
@@ -2677,7 +2677,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1100,
             "low": 880,
             "close": 1050,
-            "volume": 114
+            "volume": 89
         },
         {
             "time": "Day 2",
@@ -2685,14 +2685,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1070,
             "low": 980,
             "close": 1000,
-            "volume": 94
+            "volume": 111
         }
     ],
     options: [
-        "추세가 완전히 꺾인 하락 전환 신호이므로 즉시 전량 매도 및 손절 처리한다.",
-        "히든 상승 다이버전스는 강력한 '기존 상승 추세 지속(Trend Continuation)'을 뜻하므로, 980달러선 아래에 손절가를 잡고 우호적인 평단가에 추가 매수 혹은 신규 롱 진입을 실행한다.",
-        "RSI가 과매도에 가까워졌으므로 거래소 계좌를 정지하고 관망한다.",
-        "손절 라인 없이 무제한 레버리지 롱으로 맞선다."
+        "하락 전환 신호로 판단하여 전량 즉시 손절",
+        "추세 지속 신호 기대로 지선 부근 추가/신규 매수",
+        "지표 과매수 판단에 따른 계좌 거래 정지",
+        "손절 설정 없이 무제한 레버리지 롱 대응"
     ],
     correctIndex: 1,
     explanation: "나스닥 시세의 저점은 높아지는데 보조지표(RSI 등)의 저점은 낮아지는 형태는 '히든 상승 다이버전스'입니다. 이는 기존의 강력한 상승 트렌드 내부에서 일시 조정을 겪는 매수자들이 활기차게 물량을 주워 담아 다음 상승 랠리를 추진한다는 신호이므로, 짧은 손절 라인(980달러)을 설정하고 매수 비중을 태우기 가장 적합한 정석 타점입니다."
@@ -2711,7 +2711,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1020,
             "low": 900,
             "close": 910,
-            "volume": 88
+            "volume": 83
         },
         {
             "time": "Hour 2",
@@ -2719,14 +2719,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 920,
             "low": 800,
             "close": 820,
-            "volume": 89
+            "volume": 113
         }
     ],
     options: [
-        "15분 봉 단기 음봉이 쏟아지고 있으므로 1시간 봉의 반전 신호는 완전 무시하고 숏으로 스위칭한다.",
-        "시간 프레임이 클수록 다이버전스 신호의 성공 확률과 신뢰도가 월등히 높으므로, 큰 방향성(상승 반전)을 설정한 뒤 15분 봉 단기 차트에서 음봉 캔들의 크기가 축소되고 지지 단기 캔들이 형성될 때 분할로 매수 진입한다.",
-        "생각하기 귀찮으므로 시장가 100% 비중으로 즉시 롱 포지션을 진입한다.",
-        "두 지표가 충돌하므로 모든 주문을 취소하고 잡코인을 도박식으로 산다."
+        "단기 음봉 관성 기대로 즉각 숏 포지션 진입",
+        "큰 시간 프레임의 상승 다이버전스 타점 매수",
+        "지표 충돌로 판단하고 시장가 즉시 롱 진입",
+        "변동성 기대로 무작정 도박성 잡코인 진입"
     ],
     correctIndex: 1,
     explanation: "큰 프레임(1시간 봉)의 다이버전스가 주는 중장기 추세 신뢰도는 작은 프레임의 단기 노이즈보다 압도적으로 강력합니다. 단, 진입 시 타이밍의 정밀도를 높이기 위해 소파동(15분 봉)의 하락 동력이 꺾이고 지지해 주는 단기 확인 캔들이 나오는 찰나에 롱 포지션 타이밍을 잡는 것이 멀티 타임프레임 정석 매매입니다."
@@ -2745,7 +2745,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2050,
             "low": 1790,
             "close": 2000,
-            "volume": 117
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -2753,14 +2753,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2220,
             "low": 1980,
             "close": 2200,
-            "volume": 92
+            "volume": 105
         }
     ],
     options: [
-        "추가 폭등이 쏟아질 대세 상승 장이므로 전액 추가 불타기(매수)한다.",
-        "가격 상승 이면에서 실제 매수 엔진의 강도(모멘텀)가 약화되는 하락 다이버전스 경고음이 울렸으므로, 리스크 관리를 위해 보유 포지션의 최소 50% 이상을 분할 익절하여 이익을 확정하고 추가 상승 욕심을 덜어낸다.",
-        "익절 라인을 전혀 설정하지 않고 관망한다.",
-        "무조건 숏 10배로 스위칭 매도 베팅한다."
+        "추세 지속 확신으로 보유 비중 추가 불타기",
+        "상승 모멘텀 약화 다이버전스 확인 후 50% 익절",
+        "익절 설정 없이 전고점 도달 시까지 홀딩",
+        "고점 붕괴 기대로 숏 포지션 10배 베팅"
     ],
     correctIndex: 1,
     explanation: "나스닥 시세는 올라가나 모멘텀 지표인 MACD 오실레이터 고점이 낮아지는 현상은 대표적인 하락 다이버전스로, 매수 에너지가 속 빈 강정처럼 쇠퇴하고 있어 언제든 급격한 폭락 조정이 발생할 수 있는 고위험 신호입니다. 이 시점에는 탐욕을 통제하고 물량의 50% 이상을 분할 매도하여 현금을 챙기는 것이 원칙입니다."
@@ -2779,7 +2779,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1060,
             "low": 990,
             "close": 1000,
-            "volume": 95
+            "volume": 86
         },
         {
             "time": "Day 2",
@@ -2787,14 +2787,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1010,
             "low": 950,
             "close": 960,
-            "volume": 115
+            "volume": 108
         }
     ],
     options: [
-        "이평선 데드크로스 직전이고 지지선 붕괴는 하락 가속화 리스크가 가득한 위험 경보이므로, 희망 회로를 끄고 보유 포지션을 즉시 전량 손절/매도하여 소중한 원금을 대피시킨다.",
-        "대이평선 지지력을 믿고 추가 매수로 물을 크게 탄다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다.",
-        "계좌 청산가가 도달할 때까지 무제한 보유한다."
+        "지지선 이탈 및 데드크로스 확인 즉시 손절",
+        "이평선 지지력을 믿고 하방 물타기 추가 매수",
+        "하락 조정 후 반등 기대로 무기한 홀딩 관망",
+        "청산가 도달 시까지 어떠한 대응 없이 방치"
     ],
     correctIndex: 0,
     explanation: "20일선과 50일선의 데드크로스 임박 수렴 상태에서 가격이 지지선마저 무너뜨린 것은 하락 가속화 추세가 폭발하기 직전인 매우 위험한 기술적 상태입니다. 하락 추세가 본격 정배열(하락 정배열)화 되기 전에 즉시 전량 손절하고 시장 밖에서 피신해 있는 것이 계좌의 영구 파산을 막는 유일한 생존 규칙입니다."
@@ -2813,7 +2813,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1030,
             "low": 970,
             "close": 1010,
-            "volume": 114
+            "volume": 86
         },
         {
             "time": "Week 2",
@@ -2821,14 +2821,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1020,
             "low": 990,
             "close": 1000,
-            "volume": 110
+            "volume": 116
         }
     ],
     options: [
-        "박스권 폭이 극도로 좁아졌으므로 향후에도 변동성 없이 계속 잔잔하게 기어갈 것이다.",
-        "상단과 하단 밴드가 맞닿을 정도로 에너지가 응축 수렴된 상태이며, 조만간 변동성이 사방으로 대폭발(상방 또는 하방으로 강력한 추세 이탈)할 것임을 예고하므로, 밴드 이탈 방향으로 돌파 진입 시나리오를 세운다.",
-        "스퀴즈는 지표 오작동이므로 볼린저 밴드를 지우고 다른 차트를 켠다.",
-        "중심선 부근에서 고배율 레버리지로 대기 주문 매수를 무조건 지른다."
+        "박스권 변동성 부재 기대로 장기 무대응 관망",
+        "에너지 수축 스퀴즈 확인 후 밴드 이탈 돌파 대기",
+        "지표 신뢰 불가 판단으로 볼린저 밴드 지표 삭제",
+        "중심선 지지로 판단하여 고배율 매수 대기 주문"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 폭이 극도로 좁아지는 스퀴즈(Squeeze) 현상은 시장의 표준편차 변동성이 임계치까지 압축 수렴되었음을 알려줍니다. 에너지 압축 뒤에는 항상 폭발적인 가격 분출(상방/하방 이탈)이 뒤따르므로, 밴드를 뚫고 거래량이 실려 돌파 마감하는 방향으로 추세 추종 시나리오를 설계해야 합니다."
@@ -2847,7 +2847,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1020,
             "low": 900,
             "close": 910,
-            "volume": 112
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -2855,14 +2855,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 960,
             "low": 950,
             "close": 950,
-            "volume": 121
+            "volume": 97
         }
     ],
     options: [
-        "일반 상승 다이버전스 - 하락 추세의 최종 종결 신호이므로 즉각 공매도를 잡는다.",
-        "히든 상승 다이버전스 - 기존의 상승 추세 진행 동력이 눌림목에서 견고하게 유지되고 있음을 뜻하므로, 950달러선 아래에 손절을 짧게 걸고 롱(매수) 진입 타점으로 활용한다.",
-        "일반 하락 다이버전스 - 상승 추세가 파괴되었으므로 모든 포지션을 비운다.",
-        "지표가 오작동하는 휩소 구간이므로 무조건 횡보에 베팅한다."
+        "일반 상승 다이버전스 - 추세 종결로 즉각 공매도",
+        "히든 상승 다이버전스 - 지선 눌림목 롱 진입 활용",
+        "일반 하락 다이버전스 - 모든 매수 포지션 정리",
+        "지표 오작동 휩소 구간 판단으로 양방향 관망"
     ],
     correctIndex: 1,
     explanation: "가격의 저점은 높아졌는데(Higher Low) 모멘텀 지표의 저점은 낮아지는 현상은 '히든 상승 다이버전스(Hidden Bullish Divergence)'입니다. 이는 추세 반전이 아닌 **기존 강세 추세 지속**을 뜻하며, 조정 눌림목이 완성되고 다음 상승 랠리를 준비한다는 최고의 매수 신호 중 하나입니다."
@@ -2884,10 +2884,10 @@ export const quizzes_technical_indicators: QuizItem[] = [
         }
     ],
     options: [
-        "오직 트위터나 뉴스 호재 찌라시 하나만 보고 즉시 시장가로 대량 매수한다.",
-        "주요 수평 지지선(S/R) + 200일 장기 이평선(EMA) 지지 중첩 + 1시간 봉 RSI 상승 다이버전스 발생 + 아래꼬리가 긴 핀바 캔들 종가 마감 등 독립적인 분석 근거들이 한 가격대에 포개질 때 진입한다.",
-        "RSI 과매수 상태에서 볼린저 밴드 상단을 뚫을 때 무조건 롱을 탄다.",
-        "아무 근거 없이 감정이 이끄는 대로 본능적으로 레버리지를 조절한다."
+        "트위터 및 뉴스의 호재 찌라시 확인 즉시 추격",
+        "지지선+이평선+다이버전스+아래꼬리 등 분석 중첩 시",
+        "RSI 과매수 영역 진입 즉시 롱 포지션 진입",
+        "독립적 분석 없이 오직 보조지표의 단일 수치 신호"
     ],
     correctIndex: 1,
     explanation: "다중 컨플루언스(Confluence)는 독립적인 기술적 근거들이 동일한 특정 가격 구역에 중첩되는 현상입니다. 지지 저항, 이평선, 보조지표 다이버전스, 캔들 가격행동(Rejection 핀바)이 한 곳에 묶여 매수 자리를 형성할 때 매매를 실행하면, 높은 신뢰도와 좁은 손절 라인 덕분에 장기 기대값이 극대화됩니다."
@@ -2906,7 +2906,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1344,
             "low": 1176,
             "close": 1200,
-            "volume": 116
+            "volume": 83
         },
         {
             "time": "D-3",
@@ -2914,7 +2914,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1248,
             "low": 1152,
             "close": 1176,
-            "volume": 116
+            "volume": 95
         },
         {
             "time": "D-2",
@@ -2922,7 +2922,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1212,
             "low": 1104,
             "close": 1128,
-            "volume": 112
+            "volume": 102
         },
         {
             "time": "D-1",
@@ -2930,7 +2930,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1164,
             "low": 1116,
             "close": 1152,
-            "volume": 121
+            "volume": 124
         },
         {
             "time": "Today",
@@ -2938,14 +2938,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1188,
             "low": 1140,
             "close": 1176,
-            "volume": 104
+            "volume": 109
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 공매도 포지션 구축",
-        "상승 다이버전스 (Bullish Divergence) - 엔비디아 주가 하락 관성이 둔화되고 매수 압력이 쌓여 반등이 임박했다는 강한 매수 시그널",
-        "데드 크로스 (Death Cross) - 하락 탈출",
-        "과매수 붕괴 시그널 - 무조건 매도"
+        "하락 다이버전스 - 가격 상승 둔화에 따른 공매도",
+        "상승 다이버전스 - 하락 둔화 및 반등 신호로 매수",
+        "데드 크로스 - 이평선 하방 교차에 따른 관망",
+        "과매수 이탈 시그널 - 단기 반등에 따른 매수"
     ],
     correctIndex: 1,
     explanation: "엔비디아 주가의 가격 저점은 낮아지나 보조지표(RSI)의 운동 저점이 높아지는 현상을 '상승 다이버전스(Bullish Divergence)'라고 합니다. 이는 하방 에너지의 실질적 소멸과 상승 압력의 내부 응축을 의미하는 기술적 분석에서 가장 신뢰도 높은 추세 전환 시그널입니다."
@@ -2964,7 +2964,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1440,
             "low": 1188,
             "close": 1416,
-            "volume": 111
+            "volume": 94
         },
         {
             "time": "Day 2",
@@ -2972,7 +2972,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1464,
             "low": 1380,
             "close": 1440,
-            "volume": 105
+            "volume": 97
         },
         {
             "time": "Day 3",
@@ -2980,14 +2980,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1620,
             "low": 1428,
             "close": 1596,
-            "volume": 123
+            "volume": 104
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 매수 동력이 크게 꺾이고 고점 붕괴가 임박했으므로 보유 물량 익절 및 매수 중단",
-        "상승 다이버전스 (Bullish Divergence) - 추가 급등 찬스이므로 풀매수",
-        "골든크로스 상승 - 영원한 보유",
-        "볼린저 밴드 지지 반등"
+        "하락 다이버전스 - 매수 둔화 및 하락 우려로 익절",
+        "상승 다이버전스 - 추가 급등 기대로 신규 매수",
+        "골든 크로스 - 추세 강화에 따른 홀딩",
+        "볼린저 밴드 스퀴즈 - 변동성 수축 후 돌파"
     ],
     correctIndex: 0,
     explanation: "엔비디아 주가는 계속 고점을 높이고 있으나 보조지표의 고점은 꺾여 낮아지는 현상을 '하락 다이버전스(Bearish Divergence)'라고 합니다. 이는 매수세의 힘이 표면적인 가격 상승에 비해 실질적으로 빠르게 축소되고 있음을 경고하며, 조만간 큰 급락이 발생할 확률이 높습니다."
@@ -3006,7 +3006,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1224,
             "low": 1176,
             "close": 1188,
-            "volume": 88
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -3014,7 +3014,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1248,
             "low": 1188,
             "close": 1236,
-            "volume": 102
+            "volume": 95
         },
         {
             "time": "Day 3",
@@ -3022,14 +3022,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1320,
             "low": 1236,
             "close": 1308,
-            "volume": 122
+            "volume": 99
         }
     ],
     options: [
-        "데드 크로스 (Death Cross) - 강한 매도 시그널",
-        "골든 크로스 (Golden Cross) - 단기 추세가 중장기 평균 시세를 뚫어 상승 추세 전환을 알리는 매수 시그널",
-        "볼린저 스퀴즈 (Bollinger Squeeze)",
-        "다이버전스 수렴"
+        "데드 크로스 - 단기 이평의 하방 교차로 매도 신호",
+        "골든 크로스 - 단기 이평의 상방 교차로 매수 신호",
+        "볼린저 스퀴즈 - 변동성 수축 및 돌파 신호",
+        "다이버전스 수렴 - 지표와 가격의 동반 횡보"
     ],
     correctIndex: 1,
     explanation: "단기 이평선이 장기 이평선을 위로 치고 올라가는 현상을 '골든 크로스(Golden Cross)'라고 합니다. 이는 최근 매수 평단가가 장기 평균가보다 확연히 높아졌음을 시사하며, 상승 추세가 본 궤도에 올랐음을 입증해 줍니다."
@@ -3048,7 +3048,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1212,
             "low": 1188,
             "close": 1200,
-            "volume": 105
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -3056,7 +3056,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1200,
             "low": 1188,
             "close": 1188,
-            "volume": 118
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -3064,14 +3064,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1200,
             "low": 1188,
             "close": 1200,
-            "volume": 102
+            "volume": 108
         }
     ],
     options: [
-        "변동성이 영구적으로 사멸하여 엔비디아 주가가 상장폐지된다",
-        "강한 수축(Squeeze) 뒤에는 반드시 변동성의 폭발적인 팽창(Expansion) 랠리가 뒤따르므로, 밴드 상방/하방 이탈 방향으로 큰 추세가 분출된다",
-        "엔비디아 주가가 무조건 절반으로 폭락한다",
-        "이평선들이 전부 수평으로 정렬하여 추세가 완전히 고정된다"
+        "변동성 사멸로 인한 장기 횡보 및 거래 정지",
+        "밴드 스퀴즈 후 변동성 팽창에 따른 추세 분출",
+        "엔비디아 주가의 하방 붕괴로 인한 강한 하락 파동 시작",
+        "이평선들의 수평 정렬에 따른 완전한 추세 고정"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 수축(Squeeze)은 시장의 숨 고르기 및 힘 모으기를 뜻합니다. 에너지가 최대한 압축된 후에는 밴드 상단 혹은 하단선을 이탈하며 매우 거대한 변동성 팽창(Expansion) 추세가 시작되므로, 방향성을 유심히 지켜봐야 합니다."
@@ -3090,7 +3090,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1320,
             "low": 1056,
             "close": 1260,
-            "volume": 83
+            "volume": 117
         },
         {
             "time": "Day 2",
@@ -3098,14 +3098,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1284,
             "low": 1176,
             "close": 1200,
-            "volume": 102
+            "volume": 111
         }
     ],
     options: [
-        "추세가 완전히 꺾인 하락 전환 신호이므로 즉시 전량 매도 및 손절 처리한다.",
-        "히든 상승 다이버전스는 강력한 '기존 상승 추세 지속(Trend Continuation)'을 뜻하므로, 1,176달러선 아래에 손절가를 잡고 우호적인 평단가에 추가 매수 혹은 신규 롱 진입을 실행한다.",
-        "RSI가 과매도에 가까워졌으므로 거래소 계좌를 정지하고 관망한다.",
-        "손절 라인 없이 무제한 레버리지 롱으로 맞선다."
+        "하락 전환 신호로 판단하여 전량 즉시 손절",
+        "추세 지속 신호 기대로 지선 부근 추가/신규 매수",
+        "지표 과매수 판단에 따른 계좌 거래 정지",
+        "손절 설정 없이 무제한 레버리지 롱 대응"
     ],
     correctIndex: 1,
     explanation: "엔비디아 주가의 저점은 높아지는데 보조지표(RSI 등)의 저점은 낮아지는 형태는 '히든 상승 다이버전스'입니다. 이는 기존의 강력한 상승 트렌드 내부에서 일시 조정을 겪는 매수자들이 활기차게 물량을 주워 담아 다음 상승 랠리를 추진한다는 신호이므로, 짧은 손절 라인(1,176달러)을 설정하고 매수 비중을 태우기 가장 적합한 정석 타점입니다."
@@ -3124,7 +3124,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1224,
             "low": 1080,
             "close": 1092,
-            "volume": 97
+            "volume": 103
         },
         {
             "time": "Hour 2",
@@ -3132,14 +3132,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1104,
             "low": 960,
             "close": 984,
-            "volume": 97
+            "volume": 105
         }
     ],
     options: [
-        "15분 봉 단기 음봉이 쏟아지고 있으므로 1시간 봉의 반전 신호는 완전 무시하고 숏으로 스위칭한다.",
-        "시간 프레임이 클수록 다이버전스 신호의 성공 확률과 신뢰도가 월등히 높으므로, 큰 방향성(상승 반전)을 설정한 뒤 15분 봉 단기 차트에서 음봉 캔들의 크기가 축소되고 지지 단기 캔들이 형성될 때 분할로 매수 진입한다.",
-        "생각하기 귀찮으므로 시장가 100% 비중으로 즉시 롱 포지션을 진입한다.",
-        "두 지표가 충돌하므로 모든 주문을 취소하고 잡코인을 도박식으로 산다."
+        "단기 음봉 관성 기대로 즉각 숏 포지션 진입",
+        "큰 시간 프레임의 상승 다이버전스 타점 매수",
+        "지표 충돌로 판단하고 시장가 즉시 롱 진입",
+        "변동성 기대로 무작정 도박성 잡코인 진입"
     ],
     correctIndex: 1,
     explanation: "큰 프레임(1시간 봉)의 다이버전스가 주는 중장기 추세 신뢰도는 작은 프레임의 단기 노이즈보다 압도적으로 강력합니다. 단, 진입 시 타이밍의 정밀도를 높이기 위해 소파동(15분 봉)의 하락 동력이 꺾이고 지지해 주는 단기 확인 캔들이 나오는 찰나에 롱 포지션 타이밍을 잡는 것이 멀티 타임프레임 정석 매매입니다."
@@ -3158,7 +3158,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2460,
             "low": 2148,
             "close": 2400,
-            "volume": 116
+            "volume": 96
         },
         {
             "time": "Day 2",
@@ -3166,14 +3166,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2664,
             "low": 2376,
             "close": 2640,
-            "volume": 116
+            "volume": 121
         }
     ],
     options: [
-        "추가 폭등이 쏟아질 대세 상승 장이므로 전액 추가 불타기(매수)한다.",
-        "가격 상승 이면에서 실제 매수 엔진의 강도(모멘텀)가 약화되는 하락 다이버전스 경고음이 울렸으므로, 리스크 관리를 위해 보유 포지션의 최소 50% 이상을 분할 익절하여 이익을 확정하고 추가 상승 욕심을 덜어낸다.",
-        "익절 라인을 전혀 설정하지 않고 관망한다.",
-        "무조건 숏 10배로 스위칭 매도 베팅한다."
+        "추세 지속 확신으로 보유 비중 추가 불타기",
+        "상승 모멘텀 약화 다이버전스 확인 후 50% 익절",
+        "익절 설정 없이 전고점 도달 시까지 홀딩",
+        "고점 붕괴 기대로 숏 포지션 10배 베팅"
     ],
     correctIndex: 1,
     explanation: "엔비디아 주가는 올라가나 모멘텀 지표인 MACD 오실레이터 고점이 낮아지는 현상은 대표적인 하락 다이버전스로, 매수 에너지가 속 빈 강정처럼 쇠퇴하고 있어 언제든 급격한 폭락 조정이 발생할 수 있는 고위험 신호입니다. 이 시점에는 탐욕을 통제하고 물량의 50% 이상을 분할 매도하여 현금을 챙기는 것이 원칙입니다."
@@ -3192,7 +3192,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1272,
             "low": 1188,
             "close": 1200,
-            "volume": 119
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -3200,14 +3200,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1212,
             "low": 1140,
             "close": 1152,
-            "volume": 122
+            "volume": 93
         }
     ],
     options: [
-        "이평선 데드크로스 직전이고 지지선 붕괴는 하락 가속화 리스크가 가득한 위험 경보이므로, 희망 회로를 끄고 보유 포지션을 즉시 전량 손절/매도하여 소중한 원금을 대피시킨다.",
-        "대이평선 지지력을 믿고 추가 매수로 물을 크게 탄다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다.",
-        "계좌 청산가가 도달할 때까지 무제한 보유한다."
+        "지지선 이탈 및 데드크로스 확인 즉시 손절",
+        "이평선 지지력을 믿고 하방 물타기 추가 매수",
+        "하락 조정 후 반등 기대로 무기한 홀딩 관망",
+        "청산가 도달 시까지 어떠한 대응 없이 방치"
     ],
     correctIndex: 0,
     explanation: "20일선과 50일선의 데드크로스 임박 수렴 상태에서 가격이 지지선마저 무너뜨린 것은 하락 가속화 추세가 폭발하기 직전인 매우 위험한 기술적 상태입니다. 하락 추세가 본격 정배열(하락 정배열)화 되기 전에 즉시 전량 손절하고 시장 밖에서 피신해 있는 것이 계좌의 영구 파산을 막는 유일한 생존 규칙입니다."
@@ -3226,7 +3226,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1236,
             "low": 1164,
             "close": 1212,
-            "volume": 99
+            "volume": 87
         },
         {
             "time": "Week 2",
@@ -3234,14 +3234,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1224,
             "low": 1188,
             "close": 1200,
-            "volume": 99
+            "volume": 86
         }
     ],
     options: [
-        "박스권 폭이 극도로 좁아졌으므로 향후에도 변동성 없이 계속 잔잔하게 기어갈 것이다.",
-        "상단과 하단 밴드가 맞닿을 정도로 에너지가 응축 수렴된 상태이며, 조만간 변동성이 사방으로 대폭발(상방 또는 하방으로 강력한 추세 이탈)할 것임을 예고하므로, 밴드 이탈 방향으로 돌파 진입 시나리오를 세운다.",
-        "스퀴즈는 지표 오작동이므로 볼린저 밴드를 지우고 다른 차트를 켠다.",
-        "중심선 부근에서 고배율 레버리지로 대기 주문 매수를 무조건 지른다."
+        "박스권 변동성 부재 기대로 장기 무대응 관망",
+        "에너지 수축 스퀴즈 확인 후 밴드 이탈 돌파 대기",
+        "지표 신뢰 불가 판단으로 볼린저 밴드 지표 삭제",
+        "중심선 지지로 판단하여 고배율 매수 대기 주문"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 폭이 극도로 좁아지는 스퀴즈(Squeeze) 현상은 시장의 표준편차 변동성이 임계치까지 압축 수렴되었음을 알려줍니다. 에너지 압축 뒤에는 항상 폭발적인 가격 분출(상방/하방 이탈)이 뒤따르므로, 밴드를 뚫고 거래량이 실려 돌파 마감하는 방향으로 추세 추종 시나리오를 설계해야 합니다."
@@ -3260,7 +3260,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1224,
             "low": 1080,
             "close": 1092,
-            "volume": 80
+            "volume": 90
         },
         {
             "time": "Day 2",
@@ -3268,14 +3268,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1152,
             "low": 1140,
             "close": 1140,
-            "volume": 118
+            "volume": 109
         }
     ],
     options: [
-        "일반 상승 다이버전스 - 하락 추세의 최종 종결 신호이므로 즉각 공매도를 잡는다.",
-        "히든 상승 다이버전스 - 기존의 상승 추세 진행 동력이 눌림목에서 견고하게 유지되고 있음을 뜻하므로, 1,140달러선 아래에 손절을 짧게 걸고 롱(매수) 진입 타점으로 활용한다.",
-        "일반 하락 다이버전스 - 상승 추세가 파괴되었으므로 모든 포지션을 비운다.",
-        "지표가 오작동하는 휩소 구간이므로 무조건 횡보에 베팅한다."
+        "일반 상승 다이버전스 - 추세 종결로 즉각 공매도",
+        "히든 상승 다이버전스 - 지선 눌림목 롱 진입 활용",
+        "일반 하락 다이버전스 - 모든 매수 포지션 정리",
+        "지표 오작동 휩소 구간 판단으로 양방향 관망"
     ],
     correctIndex: 1,
     explanation: "가격의 저점은 높아졌는데(Higher Low) 모멘텀 지표의 저점은 낮아지는 현상은 '히든 상승 다이버전스(Hidden Bullish Divergence)'입니다. 이는 추세 반전이 아닌 **기존 강세 추세 지속**을 뜻하며, 조정 눌림목이 완성되고 다음 상승 랠리를 준비한다는 최고의 매수 신호 중 하나입니다."
@@ -3297,10 +3297,10 @@ export const quizzes_technical_indicators: QuizItem[] = [
         }
     ],
     options: [
-        "오직 트위터나 뉴스 호재 찌라시 하나만 보고 즉시 시장가로 대량 매수한다.",
-        "주요 수평 지지선(S/R) + 200일 장기 이평선(EMA) 지지 중첩 + 1시간 봉 RSI 상승 다이버전스 발생 + 아래꼬리가 긴 핀바 캔들 종가 마감 등 독립적인 분석 근거들이 한 가격대에 포개질 때 진입한다.",
-        "RSI 과매수 상태에서 볼린저 밴드 상단을 뚫을 때 무조건 롱을 탄다.",
-        "아무 근거 없이 감정이 이끄는 대로 본능적으로 레버리지를 조절한다."
+        "트위터 및 뉴스의 호재 찌라시 확인 즉시 추격",
+        "지지선+이평선+다이버전스+아래꼬리 등 분석 중첩 시",
+        "RSI 과매수 영역 진입 즉시 롱 포지션 진입",
+        "독립적 분석 없이 오직 보조지표의 단일 수치 신호"
     ],
     correctIndex: 1,
     explanation: "다중 컨플루언스(Confluence)는 독립적인 기술적 근거들이 동일한 특정 가격 구역에 중첩되는 현상입니다. 지지 저항, 이평선, 보조지표 다이버전스, 캔들 가격행동(Rejection 핀바)이 한 곳에 묶여 매수 자리를 형성할 때 매매를 실행하면, 높은 신뢰도와 좁은 손절 라인 덕분에 장기 기대값이 극대화됩니다."
@@ -3319,7 +3319,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2240,
             "low": 1960,
             "close": 2000,
-            "volume": 87
+            "volume": 98
         },
         {
             "time": "D-3",
@@ -3327,7 +3327,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2080,
             "low": 1920,
             "close": 1960,
-            "volume": 106
+            "volume": 120
         },
         {
             "time": "D-2",
@@ -3335,7 +3335,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2020,
             "low": 1840,
             "close": 1880,
-            "volume": 98
+            "volume": 99
         },
         {
             "time": "D-1",
@@ -3343,7 +3343,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1940,
             "low": 1860,
             "close": 1920,
-            "volume": 128
+            "volume": 126
         },
         {
             "time": "Today",
@@ -3351,14 +3351,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1980,
             "low": 1900,
             "close": 1960,
-            "volume": 116
+            "volume": 125
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 공매도 포지션 구축",
-        "상승 다이버전스 (Bullish Divergence) - 리플 시세 하락 관성이 둔화되고 매수 압력이 쌓여 반등이 임박했다는 강한 매수 시그널",
-        "데드 크로스 (Death Cross) - 하락 탈출",
-        "과매수 붕괴 시그널 - 무조건 매도"
+        "하락 다이버전스 - 가격 상승 둔화에 따른 공매도",
+        "상승 다이버전스 - 하락 둔화 및 반등 신호로 매수",
+        "데드 크로스 - 이평선 하방 교차에 따른 관망",
+        "과매수 이탈 시그널 - 단기 반등에 따른 매수"
     ],
     correctIndex: 1,
     explanation: "리플 시세의 가격 저점은 낮아지나 보조지표(RSI)의 운동 저점이 높아지는 현상을 '상승 다이버전스(Bullish Divergence)'라고 합니다. 이는 하방 에너지의 실질적 소멸과 상승 압력의 내부 응축을 의미하는 기술적 분석에서 가장 신뢰도 높은 추세 전환 시그널입니다."
@@ -3377,7 +3377,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2400,
             "low": 1980,
             "close": 2360,
-            "volume": 93
+            "volume": 111
         },
         {
             "time": "Day 2",
@@ -3385,7 +3385,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2440,
             "low": 2300,
             "close": 2400,
-            "volume": 112
+            "volume": 94
         },
         {
             "time": "Day 3",
@@ -3393,14 +3393,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2700,
             "low": 2380,
             "close": 2660,
-            "volume": 125
+            "volume": 91
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 매수 동력이 크게 꺾이고 고점 붕괴가 임박했으므로 보유 물량 익절 및 매수 중단",
-        "상승 다이버전스 (Bullish Divergence) - 추가 급등 찬스이므로 풀매수",
-        "골든크로스 상승 - 영원한 보유",
-        "볼린저 밴드 지지 반등"
+        "하락 다이버전스 - 매수 둔화 및 하락 우려로 익절",
+        "상승 다이버전스 - 추가 급등 기대로 신규 매수",
+        "골든 크로스 - 추세 강화에 따른 홀딩",
+        "볼린저 밴드 스퀴즈 - 변동성 수축 후 돌파"
     ],
     correctIndex: 0,
     explanation: "리플 시세는 계속 고점을 높이고 있으나 보조지표의 고점은 꺾여 낮아지는 현상을 '하락 다이버전스(Bearish Divergence)'라고 합니다. 이는 매수세의 힘이 표면적인 가격 상승에 비해 실질적으로 빠르게 축소되고 있음을 경고하며, 조만간 큰 급락이 발생할 확률이 높습니다."
@@ -3419,7 +3419,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2040,
             "low": 1960,
             "close": 1980,
-            "volume": 117
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -3427,7 +3427,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2080,
             "low": 1980,
             "close": 2060,
-            "volume": 86
+            "volume": 109
         },
         {
             "time": "Day 3",
@@ -3435,14 +3435,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2200,
             "low": 2060,
             "close": 2180,
-            "volume": 101
+            "volume": 123
         }
     ],
     options: [
-        "데드 크로스 (Death Cross) - 강한 매도 시그널",
-        "골든 크로스 (Golden Cross) - 단기 추세가 중장기 평균 시세를 뚫어 상승 추세 전환을 알리는 매수 시그널",
-        "볼린저 스퀴즈 (Bollinger Squeeze)",
-        "다이버전스 수렴"
+        "데드 크로스 - 단기 이평의 하방 교차로 매도 신호",
+        "골든 크로스 - 단기 이평의 상방 교차로 매수 신호",
+        "볼린저 스퀴즈 - 변동성 수축 및 돌파 신호",
+        "다이버전스 수렴 - 지표와 가격의 동반 횡보"
     ],
     correctIndex: 1,
     explanation: "단기 이평선이 장기 이평선을 위로 치고 올라가는 현상을 '골든 크로스(Golden Cross)'라고 합니다. 이는 최근 매수 평단가가 장기 평균가보다 확연히 높아졌음을 시사하며, 상승 추세가 본 궤도에 올랐음을 입증해 줍니다."
@@ -3461,7 +3461,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2020,
             "low": 1980,
             "close": 2000,
-            "volume": 102
+            "volume": 109
         },
         {
             "time": "Day 2",
@@ -3469,7 +3469,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2000,
             "low": 1980,
             "close": 1980,
-            "volume": 109
+            "volume": 120
         },
         {
             "time": "Day 3",
@@ -3477,14 +3477,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2000,
             "low": 1980,
             "close": 2000,
-            "volume": 121
+            "volume": 104
         }
     ],
     options: [
-        "변동성이 영구적으로 사멸하여 리플 시세가 상장폐지된다",
-        "강한 수축(Squeeze) 뒤에는 반드시 변동성의 폭발적인 팽창(Expansion) 랠리가 뒤따르므로, 밴드 상방/하방 이탈 방향으로 큰 추세가 분출된다",
-        "리플 시세가 무조건 절반으로 폭락한다",
-        "이평선들이 전부 수평으로 정렬하여 추세가 완전히 고정된다"
+        "변동성 사멸로 인한 장기 횡보 및 거래 정지",
+        "밴드 스퀴즈 후 변동성 팽창에 따른 추세 분출",
+        "리플 시세의 하방 붕괴로 인한 강한 하락 파동 시작",
+        "이평선들의 수평 정렬에 따른 완전한 추세 고정"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 수축(Squeeze)은 시장의 숨 고르기 및 힘 모으기를 뜻합니다. 에너지가 최대한 압축된 후에는 밴드 상단 혹은 하단선을 이탈하며 매우 거대한 변동성 팽창(Expansion) 추세가 시작되므로, 방향성을 유심히 지켜봐야 합니다."
@@ -3503,7 +3503,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2200,
             "low": 1760,
             "close": 2100,
-            "volume": 93
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -3511,14 +3511,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2140,
             "low": 1960,
             "close": 2000,
-            "volume": 119
+            "volume": 103
         }
     ],
     options: [
-        "추세가 완전히 꺾인 하락 전환 신호이므로 즉시 전량 매도 및 손절 처리한다.",
-        "히든 상승 다이버전스는 강력한 '기존 상승 추세 지속(Trend Continuation)'을 뜻하므로, 1,960달러선 아래에 손절가를 잡고 우호적인 평단가에 추가 매수 혹은 신규 롱 진입을 실행한다.",
-        "RSI가 과매도에 가까워졌으므로 거래소 계좌를 정지하고 관망한다.",
-        "손절 라인 없이 무제한 레버리지 롱으로 맞선다."
+        "하락 전환 신호로 판단하여 전량 즉시 손절",
+        "추세 지속 신호 기대로 지선 부근 추가/신규 매수",
+        "지표 과매수 판단에 따른 계좌 거래 정지",
+        "손절 설정 없이 무제한 레버리지 롱 대응"
     ],
     correctIndex: 1,
     explanation: "리플 시세의 저점은 높아지는데 보조지표(RSI 등)의 저점은 낮아지는 형태는 '히든 상승 다이버전스'입니다. 이는 기존의 강력한 상승 트렌드 내부에서 일시 조정을 겪는 매수자들이 활기차게 물량을 주워 담아 다음 상승 랠리를 추진한다는 신호이므로, 짧은 손절 라인(1,960달러)을 설정하고 매수 비중을 태우기 가장 적합한 정석 타점입니다."
@@ -3537,7 +3537,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2040,
             "low": 1800,
             "close": 1820,
-            "volume": 91
+            "volume": 81
         },
         {
             "time": "Hour 2",
@@ -3545,14 +3545,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1840,
             "low": 1600,
             "close": 1640,
-            "volume": 120
+            "volume": 112
         }
     ],
     options: [
-        "15분 봉 단기 음봉이 쏟아지고 있으므로 1시간 봉의 반전 신호는 완전 무시하고 숏으로 스위칭한다.",
-        "시간 프레임이 클수록 다이버전스 신호의 성공 확률과 신뢰도가 월등히 높으므로, 큰 방향성(상승 반전)을 설정한 뒤 15분 봉 단기 차트에서 음봉 캔들의 크기가 축소되고 지지 단기 캔들이 형성될 때 분할로 매수 진입한다.",
-        "생각하기 귀찮으므로 시장가 100% 비중으로 즉시 롱 포지션을 진입한다.",
-        "두 지표가 충돌하므로 모든 주문을 취소하고 잡코인을 도박식으로 산다."
+        "단기 음봉 관성 기대로 즉각 숏 포지션 진입",
+        "큰 시간 프레임의 상승 다이버전스 타점 매수",
+        "지표 충돌로 판단하고 시장가 즉시 롱 진입",
+        "변동성 기대로 무작정 도박성 잡코인 진입"
     ],
     correctIndex: 1,
     explanation: "큰 프레임(1시간 봉)의 다이버전스가 주는 중장기 추세 신뢰도는 작은 프레임의 단기 노이즈보다 압도적으로 강력합니다. 단, 진입 시 타이밍의 정밀도를 높이기 위해 소파동(15분 봉)의 하락 동력이 꺾이고 지지해 주는 단기 확인 캔들이 나오는 찰나에 롱 포지션 타이밍을 잡는 것이 멀티 타임프레임 정석 매매입니다."
@@ -3571,7 +3571,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 4100,
             "low": 3580,
             "close": 4000,
-            "volume": 101
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -3579,14 +3579,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 4440,
             "low": 3960,
             "close": 4400,
-            "volume": 119
+            "volume": 122
         }
     ],
     options: [
-        "추가 폭등이 쏟아질 대세 상승 장이므로 전액 추가 불타기(매수)한다.",
-        "가격 상승 이면에서 실제 매수 엔진의 강도(모멘텀)가 약화되는 하락 다이버전스 경고음이 울렸으므로, 리스크 관리를 위해 보유 포지션의 최소 50% 이상을 분할 익절하여 이익을 확정하고 추가 상승 욕심을 덜어낸다.",
-        "익절 라인을 전혀 설정하지 않고 관망한다.",
-        "무조건 숏 10배로 스위칭 매도 베팅한다."
+        "추세 지속 확신으로 보유 비중 추가 불타기",
+        "상승 모멘텀 약화 다이버전스 확인 후 50% 익절",
+        "익절 설정 없이 전고점 도달 시까지 홀딩",
+        "고점 붕괴 기대로 숏 포지션 10배 베팅"
     ],
     correctIndex: 1,
     explanation: "리플 시세는 올라가나 모멘텀 지표인 MACD 오실레이터 고점이 낮아지는 현상은 대표적인 하락 다이버전스로, 매수 에너지가 속 빈 강정처럼 쇠퇴하고 있어 언제든 급격한 폭락 조정이 발생할 수 있는 고위험 신호입니다. 이 시점에는 탐욕을 통제하고 물량의 50% 이상을 분할 매도하여 현금을 챙기는 것이 원칙입니다."
@@ -3605,7 +3605,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2120,
             "low": 1980,
             "close": 2000,
-            "volume": 85
+            "volume": 95
         },
         {
             "time": "Day 2",
@@ -3613,14 +3613,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2020,
             "low": 1900,
             "close": 1920,
-            "volume": 106
+            "volume": 92
         }
     ],
     options: [
-        "이평선 데드크로스 직전이고 지지선 붕괴는 하락 가속화 리스크가 가득한 위험 경보이므로, 희망 회로를 끄고 보유 포지션을 즉시 전량 손절/매도하여 소중한 원금을 대피시킨다.",
-        "대이평선 지지력을 믿고 추가 매수로 물을 크게 탄다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다.",
-        "계좌 청산가가 도달할 때까지 무제한 보유한다."
+        "지지선 이탈 및 데드크로스 확인 즉시 손절",
+        "이평선 지지력을 믿고 하방 물타기 추가 매수",
+        "하락 조정 후 반등 기대로 무기한 홀딩 관망",
+        "청산가 도달 시까지 어떠한 대응 없이 방치"
     ],
     correctIndex: 0,
     explanation: "20일선과 50일선의 데드크로스 임박 수렴 상태에서 가격이 지지선마저 무너뜨린 것은 하락 가속화 추세가 폭발하기 직전인 매우 위험한 기술적 상태입니다. 하락 추세가 본격 정배열(하락 정배열)화 되기 전에 즉시 전량 손절하고 시장 밖에서 피신해 있는 것이 계좌의 영구 파산을 막는 유일한 생존 규칙입니다."
@@ -3639,7 +3639,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2060,
             "low": 1940,
             "close": 2020,
-            "volume": 107
+            "volume": 91
         },
         {
             "time": "Week 2",
@@ -3647,14 +3647,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2040,
             "low": 1980,
             "close": 2000,
-            "volume": 84
+            "volume": 117
         }
     ],
     options: [
-        "박스권 폭이 극도로 좁아졌으므로 향후에도 변동성 없이 계속 잔잔하게 기어갈 것이다.",
-        "상단과 하단 밴드가 맞닿을 정도로 에너지가 응축 수렴된 상태이며, 조만간 변동성이 사방으로 대폭발(상방 또는 하방으로 강력한 추세 이탈)할 것임을 예고하므로, 밴드 이탈 방향으로 돌파 진입 시나리오를 세운다.",
-        "스퀴즈는 지표 오작동이므로 볼린저 밴드를 지우고 다른 차트를 켠다.",
-        "중심선 부근에서 고배율 레버리지로 대기 주문 매수를 무조건 지른다."
+        "박스권 변동성 부재 기대로 장기 무대응 관망",
+        "에너지 수축 스퀴즈 확인 후 밴드 이탈 돌파 대기",
+        "지표 신뢰 불가 판단으로 볼린저 밴드 지표 삭제",
+        "중심선 지지로 판단하여 고배율 매수 대기 주문"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 폭이 극도로 좁아지는 스퀴즈(Squeeze) 현상은 시장의 표준편차 변동성이 임계치까지 압축 수렴되었음을 알려줍니다. 에너지 압축 뒤에는 항상 폭발적인 가격 분출(상방/하방 이탈)이 뒤따르므로, 밴드를 뚫고 거래량이 실려 돌파 마감하는 방향으로 추세 추종 시나리오를 설계해야 합니다."
@@ -3673,7 +3673,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 2040,
             "low": 1800,
             "close": 1820,
-            "volume": 114
+            "volume": 111
         },
         {
             "time": "Day 2",
@@ -3681,14 +3681,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 1920,
             "low": 1900,
             "close": 1900,
-            "volume": 91
+            "volume": 121
         }
     ],
     options: [
-        "일반 상승 다이버전스 - 하락 추세의 최종 종결 신호이므로 즉각 공매도를 잡는다.",
-        "히든 상승 다이버전스 - 기존의 상승 추세 진행 동력이 눌림목에서 견고하게 유지되고 있음을 뜻하므로, 1,900달러선 아래에 손절을 짧게 걸고 롱(매수) 진입 타점으로 활용한다.",
-        "일반 하락 다이버전스 - 상승 추세가 파괴되었으므로 모든 포지션을 비운다.",
-        "지표가 오작동하는 휩소 구간이므로 무조건 횡보에 베팅한다."
+        "일반 상승 다이버전스 - 추세 종결로 즉각 공매도",
+        "히든 상승 다이버전스 - 지선 눌림목 롱 진입 활용",
+        "일반 하락 다이버전스 - 모든 매수 포지션 정리",
+        "지표 오작동 휩소 구간 판단으로 양방향 관망"
     ],
     correctIndex: 1,
     explanation: "가격의 저점은 높아졌는데(Higher Low) 모멘텀 지표의 저점은 낮아지는 현상은 '히든 상승 다이버전스(Hidden Bullish Divergence)'입니다. 이는 추세 반전이 아닌 **기존 강세 추세 지속**을 뜻하며, 조정 눌림목이 완성되고 다음 상승 랠리를 준비한다는 최고의 매수 신호 중 하나입니다."
@@ -3710,10 +3710,10 @@ export const quizzes_technical_indicators: QuizItem[] = [
         }
     ],
     options: [
-        "오직 트위터나 뉴스 호재 찌라시 하나만 보고 즉시 시장가로 대량 매수한다.",
-        "주요 수평 지지선(S/R) + 200일 장기 이평선(EMA) 지지 중첩 + 1시간 봉 RSI 상승 다이버전스 발생 + 아래꼬리가 긴 핀바 캔들 종가 마감 등 독립적인 분석 근거들이 한 가격대에 포개질 때 진입한다.",
-        "RSI 과매수 상태에서 볼린저 밴드 상단을 뚫을 때 무조건 롱을 탄다.",
-        "아무 근거 없이 감정이 이끄는 대로 본능적으로 레버리지를 조절한다."
+        "트위터 및 뉴스의 호재 찌라시 확인 즉시 추격",
+        "지지선+이평선+다이버전스+아래꼬리 등 분석 중첩 시",
+        "RSI 과매수 영역 진입 즉시 롱 포지션 진입",
+        "독립적 분석 없이 오직 보조지표의 단일 수치 신호"
     ],
     correctIndex: 1,
     explanation: "다중 컨플루언스(Confluence)는 독립적인 기술적 근거들이 동일한 특정 가격 구역에 중첩되는 현상입니다. 지지 저항, 이평선, 보조지표 다이버전스, 캔들 가격행동(Rejection 핀바)이 한 곳에 묶여 매수 자리를 형성할 때 매매를 실행하면, 높은 신뢰도와 좁은 손절 라인 덕분에 장기 기대값이 극대화됩니다."
@@ -3732,7 +3732,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5600,
             "low": 4900,
             "close": 5000,
-            "volume": 92
+            "volume": 111
         },
         {
             "time": "D-3",
@@ -3740,7 +3740,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5200,
             "low": 4800,
             "close": 4900,
-            "volume": 121
+            "volume": 105
         },
         {
             "time": "D-2",
@@ -3748,7 +3748,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5050,
             "low": 4600,
             "close": 4700,
-            "volume": 103
+            "volume": 110
         },
         {
             "time": "D-1",
@@ -3756,7 +3756,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 4850,
             "low": 4650,
             "close": 4800,
-            "volume": 118
+            "volume": 126
         },
         {
             "time": "Today",
@@ -3764,14 +3764,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 4950,
             "low": 4750,
             "close": 4900,
-            "volume": 130
+            "volume": 110
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 공매도 포지션 구축",
-        "상승 다이버전스 (Bullish Divergence) - 골드 가격 하락 관성이 둔화되고 매수 압력이 쌓여 반등이 임박했다는 강한 매수 시그널",
-        "데드 크로스 (Death Cross) - 하락 탈출",
-        "과매수 붕괴 시그널 - 무조건 매도"
+        "하락 다이버전스 - 가격 상승 둔화에 따른 공매도",
+        "상승 다이버전스 - 하락 둔화 및 반등 신호로 매수",
+        "데드 크로스 - 이평선 하방 교차에 따른 관망",
+        "과매수 이탈 시그널 - 단기 반등에 따른 매수"
     ],
     correctIndex: 1,
     explanation: "골드 가격의 가격 저점은 낮아지나 보조지표(RSI)의 운동 저점이 높아지는 현상을 '상승 다이버전스(Bullish Divergence)'라고 합니다. 이는 하방 에너지의 실질적 소멸과 상승 압력의 내부 응축을 의미하는 기술적 분석에서 가장 신뢰도 높은 추세 전환 시그널입니다."
@@ -3790,7 +3790,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 6000,
             "low": 4950,
             "close": 5900,
-            "volume": 116
+            "volume": 112
         },
         {
             "time": "Day 2",
@@ -3798,7 +3798,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 6100,
             "low": 5750,
             "close": 6000,
-            "volume": 86
+            "volume": 121
         },
         {
             "time": "Day 3",
@@ -3806,14 +3806,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 6750,
             "low": 5950,
             "close": 6650,
-            "volume": 117
+            "volume": 92
         }
     ],
     options: [
-        "하락 다이버전스 (Bearish Divergence) - 매수 동력이 크게 꺾이고 고점 붕괴가 임박했으므로 보유 물량 익절 및 매수 중단",
-        "상승 다이버전스 (Bullish Divergence) - 추가 급등 찬스이므로 풀매수",
-        "골든크로스 상승 - 영원한 보유",
-        "볼린저 밴드 지지 반등"
+        "하락 다이버전스 - 매수 둔화 및 하락 우려로 익절",
+        "상승 다이버전스 - 추가 급등 기대로 신규 매수",
+        "골든 크로스 - 추세 강화에 따른 홀딩",
+        "볼린저 밴드 스퀴즈 - 변동성 수축 후 돌파"
     ],
     correctIndex: 0,
     explanation: "골드 가격는 계속 고점을 높이고 있으나 보조지표의 고점은 꺾여 낮아지는 현상을 '하락 다이버전스(Bearish Divergence)'라고 합니다. 이는 매수세의 힘이 표면적인 가격 상승에 비해 실질적으로 빠르게 축소되고 있음을 경고하며, 조만간 큰 급락이 발생할 확률이 높습니다."
@@ -3832,7 +3832,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5100,
             "low": 4900,
             "close": 4950,
-            "volume": 100
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -3840,7 +3840,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5200,
             "low": 4950,
             "close": 5150,
-            "volume": 92
+            "volume": 109
         },
         {
             "time": "Day 3",
@@ -3848,14 +3848,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5500,
             "low": 5150,
             "close": 5450,
-            "volume": 112
+            "volume": 107
         }
     ],
     options: [
-        "데드 크로스 (Death Cross) - 강한 매도 시그널",
-        "골든 크로스 (Golden Cross) - 단기 추세가 중장기 평균 시세를 뚫어 상승 추세 전환을 알리는 매수 시그널",
-        "볼린저 스퀴즈 (Bollinger Squeeze)",
-        "다이버전스 수렴"
+        "데드 크로스 - 단기 이평의 하방 교차로 매도 신호",
+        "골든 크로스 - 단기 이평의 상방 교차로 매수 신호",
+        "볼린저 스퀴즈 - 변동성 수축 및 돌파 신호",
+        "다이버전스 수렴 - 지표와 가격의 동반 횡보"
     ],
     correctIndex: 1,
     explanation: "단기 이평선이 장기 이평선을 위로 치고 올라가는 현상을 '골든 크로스(Golden Cross)'라고 합니다. 이는 최근 매수 평단가가 장기 평균가보다 확연히 높아졌음을 시사하며, 상승 추세가 본 궤도에 올랐음을 입증해 줍니다."
@@ -3874,7 +3874,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5050,
             "low": 4950,
             "close": 5000,
-            "volume": 80
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -3882,7 +3882,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5000,
             "low": 4950,
             "close": 4950,
-            "volume": 120
+            "volume": 118
         },
         {
             "time": "Day 3",
@@ -3890,14 +3890,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5000,
             "low": 4950,
             "close": 5000,
-            "volume": 109
+            "volume": 123
         }
     ],
     options: [
-        "변동성이 영구적으로 사멸하여 골드 가격가 상장폐지된다",
-        "강한 수축(Squeeze) 뒤에는 반드시 변동성의 폭발적인 팽창(Expansion) 랠리가 뒤따르므로, 밴드 상방/하방 이탈 방향으로 큰 추세가 분출된다",
-        "골드 가격가 무조건 절반으로 폭락한다",
-        "이평선들이 전부 수평으로 정렬하여 추세가 완전히 고정된다"
+        "변동성 사멸로 인한 장기 횡보 및 거래 정지",
+        "밴드 스퀴즈 후 변동성 팽창에 따른 추세 분출",
+        "골드 가격의 하방 붕괴로 인한 강한 하락 파동 시작",
+        "이평선들의 수평 정렬에 따른 완전한 추세 고정"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 수축(Squeeze)은 시장의 숨 고르기 및 힘 모으기를 뜻합니다. 에너지가 최대한 압축된 후에는 밴드 상단 혹은 하단선을 이탈하며 매우 거대한 변동성 팽창(Expansion) 추세가 시작되므로, 방향성을 유심히 지켜봐야 합니다."
@@ -3924,14 +3924,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5350,
             "low": 4900,
             "close": 5000,
-            "volume": 116
+            "volume": 112
         }
     ],
     options: [
-        "추세가 완전히 꺾인 하락 전환 신호이므로 즉시 전량 매도 및 손절 처리한다.",
-        "히든 상승 다이버전스는 강력한 '기존 상승 추세 지속(Trend Continuation)'을 뜻하므로, 4,900달러선 아래에 손절가를 잡고 우호적인 평단가에 추가 매수 혹은 신규 롱 진입을 실행한다.",
-        "RSI가 과매도에 가까워졌으므로 거래소 계좌를 정지하고 관망한다.",
-        "손절 라인 없이 무제한 레버리지 롱으로 맞선다."
+        "하락 전환 신호로 판단하여 전량 즉시 손절",
+        "추세 지속 신호 기대로 지선 부근 추가/신규 매수",
+        "지표 과매수 판단에 따른 계좌 거래 정지",
+        "손절 설정 없이 무제한 레버리지 롱 대응"
     ],
     correctIndex: 1,
     explanation: "골드 가격의 저점은 높아지는데 보조지표(RSI 등)의 저점은 낮아지는 형태는 '히든 상승 다이버전스'입니다. 이는 기존의 강력한 상승 트렌드 내부에서 일시 조정을 겪는 매수자들이 활기차게 물량을 주워 담아 다음 상승 랠리를 추진한다는 신호이므로, 짧은 손절 라인(4,900달러)을 설정하고 매수 비중을 태우기 가장 적합한 정석 타점입니다."
@@ -3950,7 +3950,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5100,
             "low": 4500,
             "close": 4550,
-            "volume": 117
+            "volume": 80
         },
         {
             "time": "Hour 2",
@@ -3958,14 +3958,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 4600,
             "low": 4000,
             "close": 4100,
-            "volume": 99
+            "volume": 115
         }
     ],
     options: [
-        "15분 봉 단기 음봉이 쏟아지고 있으므로 1시간 봉의 반전 신호는 완전 무시하고 숏으로 스위칭한다.",
-        "시간 프레임이 클수록 다이버전스 신호의 성공 확률과 신뢰도가 월등히 높으므로, 큰 방향성(상승 반전)을 설정한 뒤 15분 봉 단기 차트에서 음봉 캔들의 크기가 축소되고 지지 단기 캔들이 형성될 때 분할로 매수 진입한다.",
-        "생각하기 귀찮으므로 시장가 100% 비중으로 즉시 롱 포지션을 진입한다.",
-        "두 지표가 충돌하므로 모든 주문을 취소하고 잡코인을 도박식으로 산다."
+        "단기 음봉 관성 기대로 즉각 숏 포지션 진입",
+        "큰 시간 프레임의 상승 다이버전스 타점 매수",
+        "지표 충돌로 판단하고 시장가 즉시 롱 진입",
+        "변동성 기대로 무작정 도박성 잡코인 진입"
     ],
     correctIndex: 1,
     explanation: "큰 프레임(1시간 봉)의 다이버전스가 주는 중장기 추세 신뢰도는 작은 프레임의 단기 노이즈보다 압도적으로 강력합니다. 단, 진입 시 타이밍의 정밀도를 높이기 위해 소파동(15분 봉)의 하락 동력이 꺾이고 지지해 주는 단기 확인 캔들이 나오는 찰나에 롱 포지션 타이밍을 잡는 것이 멀티 타임프레임 정석 매매입니다."
@@ -3984,7 +3984,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 10250,
             "low": 8950,
             "close": 10000,
-            "volume": 91
+            "volume": 89
         },
         {
             "time": "Day 2",
@@ -3992,14 +3992,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 11100,
             "low": 9900,
             "close": 11000,
-            "volume": 85
+            "volume": 95
         }
     ],
     options: [
-        "추가 폭등이 쏟아질 대세 상승 장이므로 전액 추가 불타기(매수)한다.",
-        "가격 상승 이면에서 실제 매수 엔진의 강도(모멘텀)가 약화되는 하락 다이버전스 경고음이 울렸으므로, 리스크 관리를 위해 보유 포지션의 최소 50% 이상을 분할 익절하여 이익을 확정하고 추가 상승 욕심을 덜어낸다.",
-        "익절 라인을 전혀 설정하지 않고 관망한다.",
-        "무조건 숏 10배로 스위칭 매도 베팅한다."
+        "추세 지속 확신으로 보유 비중 추가 불타기",
+        "상승 모멘텀 약화 다이버전스 확인 후 50% 익절",
+        "익절 설정 없이 전고점 도달 시까지 홀딩",
+        "고점 붕괴 기대로 숏 포지션 10배 베팅"
     ],
     correctIndex: 1,
     explanation: "골드 가격는 올라가나 모멘텀 지표인 MACD 오실레이터 고점이 낮아지는 현상은 대표적인 하락 다이버전스로, 매수 에너지가 속 빈 강정처럼 쇠퇴하고 있어 언제든 급격한 폭락 조정이 발생할 수 있는 고위험 신호입니다. 이 시점에는 탐욕을 통제하고 물량의 50% 이상을 분할 매도하여 현금을 챙기는 것이 원칙입니다."
@@ -4018,7 +4018,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5300,
             "low": 4950,
             "close": 5000,
-            "volume": 87
+            "volume": 105
         },
         {
             "time": "Day 2",
@@ -4026,14 +4026,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5050,
             "low": 4750,
             "close": 4800,
-            "volume": 113
+            "volume": 102
         }
     ],
     options: [
-        "이평선 데드크로스 직전이고 지지선 붕괴는 하락 가속화 리스크가 가득한 위험 경보이므로, 희망 회로를 끄고 보유 포지션을 즉시 전량 손절/매도하여 소중한 원금을 대피시킨다.",
-        "대이평선 지지력을 믿고 추가 매수로 물을 크게 탄다.",
-        "아무 조치 없이 하락 추세가 다시 전고점을 뚫을 때까지 무기한 관망한다.",
-        "계좌 청산가가 도달할 때까지 무제한 보유한다."
+        "지지선 이탈 및 데드크로스 확인 즉시 손절",
+        "이평선 지지력을 믿고 하방 물타기 추가 매수",
+        "하락 조정 후 반등 기대로 무기한 홀딩 관망",
+        "청산가 도달 시까지 어떠한 대응 없이 방치"
     ],
     correctIndex: 0,
     explanation: "20일선과 50일선의 데드크로스 임박 수렴 상태에서 가격이 지지선마저 무너뜨린 것은 하락 가속화 추세가 폭발하기 직전인 매우 위험한 기술적 상태입니다. 하락 추세가 본격 정배열(하락 정배열)화 되기 전에 즉시 전량 손절하고 시장 밖에서 피신해 있는 것이 계좌의 영구 파산을 막는 유일한 생존 규칙입니다."
@@ -4052,7 +4052,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5150,
             "low": 4850,
             "close": 5050,
-            "volume": 118
+            "volume": 91
         },
         {
             "time": "Week 2",
@@ -4060,14 +4060,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5100,
             "low": 4950,
             "close": 5000,
-            "volume": 109
+            "volume": 88
         }
     ],
     options: [
-        "박스권 폭이 극도로 좁아졌으므로 향후에도 변동성 없이 계속 잔잔하게 기어갈 것이다.",
-        "상단과 하단 밴드가 맞닿을 정도로 에너지가 응축 수렴된 상태이며, 조만간 변동성이 사방으로 대폭발(상방 또는 하방으로 강력한 추세 이탈)할 것임을 예고하므로, 밴드 이탈 방향으로 돌파 진입 시나리오를 세운다.",
-        "스퀴즈는 지표 오작동이므로 볼린저 밴드를 지우고 다른 차트를 켠다.",
-        "중심선 부근에서 고배율 레버리지로 대기 주문 매수를 무조건 지른다."
+        "박스권 변동성 부재 기대로 장기 무대응 관망",
+        "에너지 수축 스퀴즈 확인 후 밴드 이탈 돌파 대기",
+        "지표 신뢰 불가 판단으로 볼린저 밴드 지표 삭제",
+        "중심선 지지로 판단하여 고배율 매수 대기 주문"
     ],
     correctIndex: 1,
     explanation: "볼린저 밴드의 폭이 극도로 좁아지는 스퀴즈(Squeeze) 현상은 시장의 표준편차 변동성이 임계치까지 압축 수렴되었음을 알려줍니다. 에너지 압축 뒤에는 항상 폭발적인 가격 분출(상방/하방 이탈)이 뒤따르므로, 밴드를 뚫고 거래량이 실려 돌파 마감하는 방향으로 추세 추종 시나리오를 설계해야 합니다."
@@ -4086,7 +4086,7 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 5100,
             "low": 4500,
             "close": 4550,
-            "volume": 85
+            "volume": 94
         },
         {
             "time": "Day 2",
@@ -4094,14 +4094,14 @@ export const quizzes_technical_indicators: QuizItem[] = [
             "high": 4800,
             "low": 4750,
             "close": 4750,
-            "volume": 93
+            "volume": 121
         }
     ],
     options: [
-        "일반 상승 다이버전스 - 하락 추세의 최종 종결 신호이므로 즉각 공매도를 잡는다.",
-        "히든 상승 다이버전스 - 기존의 상승 추세 진행 동력이 눌림목에서 견고하게 유지되고 있음을 뜻하므로, 4,750달러선 아래에 손절을 짧게 걸고 롱(매수) 진입 타점으로 활용한다.",
-        "일반 하락 다이버전스 - 상승 추세가 파괴되었으므로 모든 포지션을 비운다.",
-        "지표가 오작동하는 휩소 구간이므로 무조건 횡보에 베팅한다."
+        "일반 상승 다이버전스 - 추세 종결로 즉각 공매도",
+        "히든 상승 다이버전스 - 지선 눌림목 롱 진입 활용",
+        "일반 하락 다이버전스 - 모든 매수 포지션 정리",
+        "지표 오작동 휩소 구간 판단으로 양방향 관망"
     ],
     correctIndex: 1,
     explanation: "가격의 저점은 높아졌는데(Higher Low) 모멘텀 지표의 저점은 낮아지는 현상은 '히든 상승 다이버전스(Hidden Bullish Divergence)'입니다. 이는 추세 반전이 아닌 **기존 강세 추세 지속**을 뜻하며, 조정 눌림목이 완성되고 다음 상승 랠리를 준비한다는 최고의 매수 신호 중 하나입니다."
@@ -4123,10 +4123,10 @@ export const quizzes_technical_indicators: QuizItem[] = [
         }
     ],
     options: [
-        "오직 트위터나 뉴스 호재 찌라시 하나만 보고 즉시 시장가로 대량 매수한다.",
-        "주요 수평 지지선(S/R) + 200일 장기 이평선(EMA) 지지 중첩 + 1시간 봉 RSI 상승 다이버전스 발생 + 아래꼬리가 긴 핀바 캔들 종가 마감 등 독립적인 분석 근거들이 한 가격대에 포개질 때 진입한다.",
-        "RSI 과매수 상태에서 볼린저 밴드 상단을 뚫을 때 무조건 롱을 탄다.",
-        "아무 근거 없이 감정이 이끄는 대로 본능적으로 레버리지를 조절한다."
+        "트위터 및 뉴스의 호재 찌라시 확인 즉시 추격",
+        "지지선+이평선+다이버전스+아래꼬리 등 분석 중첩 시",
+        "RSI 과매수 영역 진입 즉시 롱 포지션 진입",
+        "독립적 분석 없이 오직 보조지표의 단일 수치 신호"
     ],
     correctIndex: 1,
     explanation: "다중 컨플루언스(Confluence)는 독립적인 기술적 근거들이 동일한 특정 가격 구역에 중첩되는 현상입니다. 지지 저항, 이평선, 보조지표 다이버전스, 캔들 가격행동(Rejection 핀바)이 한 곳에 묶여 매수 자리를 형성할 때 매매를 실행하면, 높은 신뢰도와 좁은 손절 라인 덕분에 장기 기대값이 극대화됩니다."

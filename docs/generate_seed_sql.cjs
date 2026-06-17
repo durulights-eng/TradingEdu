@@ -3,7 +3,7 @@ const path = require('path');
 
 try {
   const quizzesDir = path.join(__dirname, '../src/data/quizzes');
-  const files = fs.readdirSync(quizzesDir).filter(f => f.endsWith('.ts') && f !== 'types.ts' && f !== 'index.ts');
+  const files = fs.readdirSync(quizzesDir).filter(f => f.endsWith('.ts') && f !== 'types.ts' && f !== 'index.ts' && f !== 'base_quizzes.ts');
 
   console.log(`Found ${files.length} modular quiz files to parse.`);
 

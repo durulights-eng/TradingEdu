@@ -15,7 +15,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 152,
             "low": 135,
             "close": 140,
-            "volume": 90
+            "volume": 94
         },
         {
             "time": "Day 2",
@@ -23,7 +23,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 147,
             "low": 139,
             "close": 145,
-            "volume": 103
+            "volume": 101
         },
         {
             "time": "Day 3",
@@ -31,7 +31,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 146,
             "low": 128,
             "close": 130,
-            "volume": 96
+            "volume": 103
         },
         {
             "time": "Day 4",
@@ -39,7 +39,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 138,
             "low": 129,
             "close": 136,
-            "volume": 119
+            "volume": 131
         },
         {
             "time": "Day 5",
@@ -47,7 +47,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 137,
             "low": 118,
             "close": 120,
-            "volume": 118
+            "volume": 107
         }
     ],
     drawings: [
@@ -76,10 +76,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "추세 추종 매매 - 강력한 대세 상승 국면이므로 장기 보유",
-        "채널 하단 반등 매매 - 하락 채널 하단 지지선 터치 시 단기 기술적 반등을 노리는 역추세 매매 (타이트한 손절 필수)",
-        "양방향 물타기 매매 - 손절 없이 끝까지 평단가 낮추기",
-        "돌파 매매 - 채널의 하방 붕괴를 확정했으므로 매수"
+        "추세 추종 매매 - 대세 상승이므로 장기 보유",
+        "채널 하단 반등 매매 - 단기 역추세 매수 대응",
+        "양방향 물타기 매매 - 평단가를 낮춰 탈출 대기",
+        "돌파 매매 - 채널 하방 붕괴 확정 시 매수 대응"
     ],
     correctIndex: 1,
     explanation: "가격이 평행한 하락 터널 내에서 움직이는 '하향 평행 채널(Descending Channel)'입니다. 채널 하단 라인 터치 시에는 기술적 단기 반등이 자주 출현하므로, 손절선을 짧게 잡고 반등 타점을 노리는 역추세(Counter-trend) 트레이딩이 가능합니다."
@@ -98,7 +98,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 101,
             "low": 88,
             "close": 89,
-            "volume": 115
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -106,7 +106,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 90,
             "low": 75,
             "close": 76,
-            "volume": 96
+            "volume": 16
         },
         {
             "time": "Day 3",
@@ -114,14 +114,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 77,
             "low": 62,
             "close": 63,
-            "volume": 110
+            "volume": 33
         }
     ],
     options: [
-        "즉각적으로 V자 반등을 하여 엄청난 수익이 난다",
-        "강력한 추세 폭락 국면에서는 RSI 지표가 바닥권(10~20)에 오랜 기간 머문 채(고착화) 주가는 끝없이 지하로 흘러내리는 리스크가 존재한다 (지표 고착화 오류)",
-        "거래량이 바로 소멸하여 거래 정지가 된다",
-        "주가가 즉시 박스권 횡보를 개시한다"
+        "하락 추세 즉시 종료 및 V자 상승 반등 성공",
+        "강력한 하락장에서의 지표 과매도 고착화 리스크",
+        "거래량 급감으로 인한 호가 정지 및 상장 폐지",
+        "주가의 즉각적인 박스권 횡보 및 변동성 축소"
     ],
     correctIndex: 1,
     explanation: "RSI 30 이하 과매도 영역은 반등 신호이기도 하지만, 추세가 지나치게 강력한 하락장일 때는 지표만 과매도 구역에 쳐박힌 채 가격은 계속 급락하는 '과매도 고착화(Oversold Embedded)' 상태가 이어집니다. 다이버전스나 캔들 반전형 확인 없이 수치만 보고 들어가는 매수는 깡통으로 가는 지름길입니다."
@@ -140,7 +140,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 108,
             "low": 99,
             "close": 106,
-            "volume": 97
+            "volume": 112
         },
         {
             "time": "Day 2",
@@ -148,7 +148,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 112,
             "low": 102,
             "close": 104,
-            "volume": 117
+            "volume": 111
         },
         {
             "time": "Day 3",
@@ -185,10 +185,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "채널 내에 가격이 있으므로 100달러 부근에서 즉시 풀배팅 매수를 강행한다.",
-        "채널 미드라인(중심선)을 지지하지 못하고 이탈한 뒤 저항으로 확인된 상태이므로, 채널 하단 지지선(약 94달러 구역)까지 가격이 추가 밀릴 위험이 큽니다. 따라서 매수 진입을 전면 보류하고 채널 하단선 안착 및 지지 컨펌 시까지 대기한다.",
-        "하방 휩소로 확신하고 추가 신용 매수를 결행한다.",
-        "무관한 숏 베팅을 걸고 관망한다."
+        "채널 내 유지를 기대로 지정가 즉시 매수",
+        "중심선 저항 확인 후 채널 하단 안착 대기",
+        "하방 휩소 판단에 따른 레버리지 추가 매수",
+        "추세와 무관한 숏 포지션 구축 후 관망"
     ],
     correctIndex: 1,
     explanation: "상승 평행 채널에서 미드라인(Mid-line)은 매우 중요한 심리적 지지와 저항선입니다. 미드라인이 저항선으로 뒤바뀌어 음봉으로 흘러내리는 경우 높은 확률로 채널 하단 경계선까지 가격이 조정을 받게 되므로, 중심선 저항 확인 시점에서는 섣부른 매수 진입을 피하고 채널 하단의 명확한 반등 타점을 유도해야 합니다."
@@ -207,7 +207,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 115,
             "low": 99,
             "close": 112,
-            "volume": 88
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -215,7 +215,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 128,
             "low": 110,
             "close": 125,
-            "volume": 103
+            "volume": 84
         },
         {
             "time": "Day 3",
@@ -223,14 +223,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 139,
             "low": 122,
             "close": 136,
-            "volume": 95
+            "volume": 97
         }
     ],
     options: [
-        "RSI 과매수 수치만 맹신하여 시장가로 고배율 숏(공매도) 포지션을 무리하게 잡는다.",
-        "강력한 원웨이 폭주 장세에서는 섣부른 역추세 숏 진입을 금지하고, 기존 롱 포지션 보유자는 최고점 대비 일정 하락폭(예: 5% 조정) 이탈 시 익절 처리되도록 추적 손절매(Trailing Stop) 기준선을 계속 위로 끌어 올리며 추세를 끝까지 향유한다.",
-        "상승폭이 아까우므로 즉시 모든 포지션을 시장가로 급하게 전량 매도하고 매매를 끝낸다.",
-        "손절매 가격을 지우고 아무 주문도 없이 방치한다."
+        "과매수 도달 판단에 따른 고배율 숏 무리한 진입",
+        "추종 손절매(Trailing Stop)를 통한 수익 극대화",
+        "상승폭 만족에 따른 즉각적인 전량 시장가 익절",
+        "손절 가격을 해제하고 시세 지속 시까지 방치"
     ],
     correctIndex: 1,
     explanation: "강세 추세가 지나치게 강할 경우 볼린저 밴드 상단을 타고 오르는 밴드워크 현상과 RSI 과매수 현상이 영구 유지될 수 있습니다. 이때 단순 과매수 수치를 이유로 숏 포지션을 잡으면 파산합니다. 기존 매수 포지션의 익절선(Trailing Stop)을 상향 관리하여 추세 상승 이익을 극대화하고 신규 진입은 자제하는 것이 정석 리스크 관리입니다."
@@ -249,7 +249,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 228,
             "low": 202.5,
             "close": 210,
-            "volume": 103
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -257,7 +257,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 220.5,
             "low": 208.5,
             "close": 217.5,
-            "volume": 94
+            "volume": 112
         },
         {
             "time": "Day 3",
@@ -265,7 +265,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 219,
             "low": 192,
             "close": 195,
-            "volume": 127
+            "volume": 120
         },
         {
             "time": "Day 4",
@@ -273,7 +273,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 207,
             "low": 193.5,
             "close": 204,
-            "volume": 93
+            "volume": 106
         },
         {
             "time": "Day 5",
@@ -281,7 +281,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 205.5,
             "low": 177,
             "close": 180,
-            "volume": 99
+            "volume": 133
         }
     ],
     drawings: [
@@ -310,10 +310,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "추세 추종 매매 - 강력한 대세 상승 국면이므로 장기 보유",
-        "채널 하단 반등 매매 - 하락 채널 하단 지지선 터치 시 단기 기술적 반등을 노리는 역추세 매매 (타이트한 손절 필수)",
-        "양방향 물타기 매매 - 손절 없이 끝까지 평단가 낮추기",
-        "돌파 매매 - 채널의 하방 붕괴를 확정했으므로 매수"
+        "추세 추종 매매 - 대세 상승이므로 장기 보유",
+        "채널 하단 반등 매매 - 단기 역추세 매수 대응",
+        "양방향 물타기 매매 - 평단가를 낮춰 탈출 대기",
+        "돌파 매매 - 채널 하방 붕괴 확정 시 매수 대응"
     ],
     correctIndex: 1,
     explanation: "가격이 평행한 하락 터널 내에서 움직이는 '하향 평행 채널(Descending Channel)'입니다. 채널 하단 라인 터치 시에는 기술적 단기 반등이 자주 출현하므로, 손절선을 짧게 잡고 반등 타점을 노리는 역추세(Counter-trend) 트레이딩이 가능합니다."
@@ -332,7 +332,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 151.5,
             "low": 132,
             "close": 133.5,
-            "volume": 109
+            "volume": 119
         },
         {
             "time": "Day 2",
@@ -340,7 +340,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 135,
             "low": 112.5,
             "close": 114,
-            "volume": 104
+            "volume": 15
         },
         {
             "time": "Day 3",
@@ -348,14 +348,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 115.5,
             "low": 93,
             "close": 94.5,
-            "volume": 88
+            "volume": 15
         }
     ],
     options: [
-        "즉각적으로 V자 반등을 하여 엄청난 수익이 난다",
-        "강력한 추세 폭락 국면에서는 RSI 지표가 바닥권(10~20)에 오랜 기간 머문 채(고착화) 코인 가격는 끝없이 지하로 흘러내리는 리스크가 존재한다 (지표 고착화 오류)",
-        "거래량이 바로 소멸하여 거래 정지가 된다",
-        "코인 가격가 즉시 박스권 횡보를 개시한다"
+        "하락 추세 즉시 종료 및 V자 상승 반등 성공",
+        "강력한 하락장에서의 지표 과매도 고착화 리스크",
+        "거래량 급감으로 인한 호가 정지 및 상장 폐지",
+        "코인 가격의 즉각적인 박스권 횡보 및 변동성 축소"
     ],
     correctIndex: 1,
     explanation: "RSI 30 이하 과매도 영역은 반등 신호이기도 하지만, 추세가 지나치게 강력한 하락장일 때는 지표만 과매도 구역에 쳐박힌 채 가격은 계속 급락하는 '과매도 고착화(Oversold Embedded)' 상태가 이어집니다. 다이버전스나 캔들 반전형 확인 없이 수치만 보고 들어가는 매수는 깡통으로 가는 지름길입니다."
@@ -374,7 +374,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 162,
             "low": 148.5,
             "close": 159,
-            "volume": 116
+            "volume": 88
         },
         {
             "time": "Day 2",
@@ -382,7 +382,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 168,
             "low": 153,
             "close": 156,
-            "volume": 88
+            "volume": 109
         },
         {
             "time": "Day 3",
@@ -390,7 +390,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 159,
             "low": 147,
             "close": 150,
-            "volume": 96
+            "volume": 104
         }
     ],
     drawings: [
@@ -419,10 +419,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "채널 내에 가격이 있으므로 150달러 부근에서 즉시 풀배팅 매수를 강행한다.",
-        "채널 미드라인(중심선)을 지지하지 못하고 이탈한 뒤 저항으로 확인된 상태이므로, 채널 하단 지지선(약 141달러 구역)까지 가격이 추가 밀릴 위험이 큽니다. 따라서 매수 진입을 전면 보류하고 채널 하단선 안착 및 지지 컨펌 시까지 대기한다.",
-        "하방 휩소로 확신하고 추가 신용 매수를 결행한다.",
-        "무관한 숏 베팅을 걸고 관망한다."
+        "채널 내 유지를 기대로 지정가 즉시 매수",
+        "중심선 저항 확인 후 채널 하단 안착 대기",
+        "하방 휩소 판단에 따른 레버리지 추가 매수",
+        "추세와 무관한 숏 포지션 구축 후 관망"
     ],
     correctIndex: 1,
     explanation: "상승 평행 채널에서 미드라인(Mid-line)은 매우 중요한 심리적 지지와 저항선입니다. 미드라인이 저항선으로 뒤바뀌어 음봉으로 흘러내리는 경우 높은 확률로 채널 하단 경계선까지 가격이 조정을 받게 되므로, 중심선 저항 확인 시점에서는 섣부른 매수 진입을 피하고 채널 하단의 명확한 반등 타점을 유도해야 합니다."
@@ -441,7 +441,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 172.5,
             "low": 148.5,
             "close": 168,
-            "volume": 103
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -449,7 +449,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 192,
             "low": 165,
             "close": 187.5,
-            "volume": 116
+            "volume": 93
         },
         {
             "time": "Day 3",
@@ -457,14 +457,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 208.5,
             "low": 183,
             "close": 204,
-            "volume": 124
+            "volume": 122
         }
     ],
     options: [
-        "RSI 과매수 수치만 맹신하여 시장가로 고배율 숏(공매도) 포지션을 무리하게 잡는다.",
-        "강력한 원웨이 폭주 장세에서는 섣부른 역추세 숏 진입을 금지하고, 기존 롱 포지션 보유자는 최고점 대비 일정 하락폭(예: 5% 조정) 이탈 시 익절 처리되도록 추적 손절매(Trailing Stop) 기준선을 계속 위로 끌어 올리며 추세를 끝까지 향유한다.",
-        "상승폭이 아까우므로 즉시 모든 포지션을 시장가로 급하게 전량 매도하고 매매를 끝낸다.",
-        "손절매 가격을 지우고 아무 주문도 없이 방치한다."
+        "과매수 도달 판단에 따른 고배율 숏 무리한 진입",
+        "추종 손절매(Trailing Stop)를 통한 수익 극대화",
+        "상승폭 만족에 따른 즉각적인 전량 시장가 익절",
+        "손절 가격을 해제하고 시세 지속 시까지 방치"
     ],
     correctIndex: 1,
     explanation: "강세 추세가 지나치게 강할 경우 볼린저 밴드 상단을 타고 오르는 밴드워크 현상과 RSI 과매수 현상이 영구 유지될 수 있습니다. 이때 단순 과매수 수치를 이유로 숏 포지션을 잡으면 파산합니다. 기존 매수 포지션의 익절선(Trailing Stop)을 상향 관리하여 추세 상승 이익을 극대화하고 신규 진입은 자제하는 것이 정석 리스크 관리입니다."
@@ -483,7 +483,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 304,
             "low": 270,
             "close": 280,
-            "volume": 115
+            "volume": 117
         },
         {
             "time": "Day 2",
@@ -491,7 +491,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 294,
             "low": 278,
             "close": 290,
-            "volume": 105
+            "volume": 113
         },
         {
             "time": "Day 3",
@@ -499,7 +499,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 292,
             "low": 256,
             "close": 260,
-            "volume": 122
+            "volume": 114
         },
         {
             "time": "Day 4",
@@ -507,7 +507,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 276,
             "low": 258,
             "close": 272,
-            "volume": 104
+            "volume": 131
         },
         {
             "time": "Day 5",
@@ -515,7 +515,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 274,
             "low": 236,
             "close": 240,
-            "volume": 130
+            "volume": 132
         }
     ],
     drawings: [
@@ -544,10 +544,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "추세 추종 매매 - 강력한 대세 상승 국면이므로 장기 보유",
-        "채널 하단 반등 매매 - 하락 채널 하단 지지선 터치 시 단기 기술적 반등을 노리는 역추세 매매 (타이트한 손절 필수)",
-        "양방향 물타기 매매 - 손절 없이 끝까지 평단가 낮추기",
-        "돌파 매매 - 채널의 하방 붕괴를 확정했으므로 매수"
+        "추세 추종 매매 - 대세 상승이므로 장기 보유",
+        "채널 하단 반등 매매 - 단기 역추세 매수 대응",
+        "양방향 물타기 매매 - 평단가를 낮춰 탈출 대기",
+        "돌파 매매 - 채널 하방 붕괴 확정 시 매수 대응"
     ],
     correctIndex: 1,
     explanation: "가격이 평행한 하락 터널 내에서 움직이는 '하향 평행 채널(Descending Channel)'입니다. 채널 하단 라인 터치 시에는 기술적 단기 반등이 자주 출현하므로, 손절선을 짧게 잡고 반등 타점을 노리는 역추세(Counter-trend) 트레이딩이 가능합니다."
@@ -566,7 +566,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 202,
             "low": 176,
             "close": 178,
-            "volume": 98
+            "volume": 99
         },
         {
             "time": "Day 2",
@@ -574,7 +574,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 180,
             "low": 150,
             "close": 152,
-            "volume": 108
+            "volume": 16
         },
         {
             "time": "Day 3",
@@ -582,14 +582,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 154,
             "low": 124,
             "close": 126,
-            "volume": 124
+            "volume": 23
         }
     ],
     options: [
-        "즉각적으로 V자 반등을 하여 엄청난 수익이 난다",
-        "강력한 추세 폭락 국면에서는 RSI 지표가 바닥권(10~20)에 오랜 기간 머문 채(고착화) 시세는 끝없이 지하로 흘러내리는 리스크가 존재한다 (지표 고착화 오류)",
-        "거래량이 바로 소멸하여 거래 정지가 된다",
-        "시세가 즉시 박스권 횡보를 개시한다"
+        "하락 추세 즉시 종료 및 V자 상승 반등 성공",
+        "강력한 하락장에서의 지표 과매도 고착화 리스크",
+        "거래량 급감으로 인한 호가 정지 및 상장 폐지",
+        "시세의 즉각적인 박스권 횡보 및 변동성 축소"
     ],
     correctIndex: 1,
     explanation: "RSI 30 이하 과매도 영역은 반등 신호이기도 하지만, 추세가 지나치게 강력한 하락장일 때는 지표만 과매도 구역에 쳐박힌 채 가격은 계속 급락하는 '과매도 고착화(Oversold Embedded)' 상태가 이어집니다. 다이버전스나 캔들 반전형 확인 없이 수치만 보고 들어가는 매수는 깡통으로 가는 지름길입니다."
@@ -608,7 +608,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 216,
             "low": 198,
             "close": 212,
-            "volume": 113
+            "volume": 114
         },
         {
             "time": "Day 2",
@@ -616,7 +616,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 224,
             "low": 204,
             "close": 208,
-            "volume": 122
+            "volume": 118
         },
         {
             "time": "Day 3",
@@ -624,7 +624,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 212,
             "low": 196,
             "close": 200,
-            "volume": 92
+            "volume": 113
         }
     ],
     drawings: [
@@ -653,10 +653,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "채널 내에 가격이 있으므로 200달러 부근에서 즉시 풀배팅 매수를 강행한다.",
-        "채널 미드라인(중심선)을 지지하지 못하고 이탈한 뒤 저항으로 확인된 상태이므로, 채널 하단 지지선(약 188달러 구역)까지 가격이 추가 밀릴 위험이 큽니다. 따라서 매수 진입을 전면 보류하고 채널 하단선 안착 및 지지 컨펌 시까지 대기한다.",
-        "하방 휩소로 확신하고 추가 신용 매수를 결행한다.",
-        "무관한 숏 베팅을 걸고 관망한다."
+        "채널 내 유지를 기대로 지정가 즉시 매수",
+        "중심선 저항 확인 후 채널 하단 안착 대기",
+        "하방 휩소 판단에 따른 레버리지 추가 매수",
+        "추세와 무관한 숏 포지션 구축 후 관망"
     ],
     correctIndex: 1,
     explanation: "상승 평행 채널에서 미드라인(Mid-line)은 매우 중요한 심리적 지지와 저항선입니다. 미드라인이 저항선으로 뒤바뀌어 음봉으로 흘러내리는 경우 높은 확률로 채널 하단 경계선까지 가격이 조정을 받게 되므로, 중심선 저항 확인 시점에서는 섣부른 매수 진입을 피하고 채널 하단의 명확한 반등 타점을 유도해야 합니다."
@@ -675,7 +675,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 230,
             "low": 198,
             "close": 224,
-            "volume": 96
+            "volume": 109
         },
         {
             "time": "Day 2",
@@ -683,7 +683,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 256,
             "low": 220,
             "close": 250,
-            "volume": 107
+            "volume": 122
         },
         {
             "time": "Day 3",
@@ -691,14 +691,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 278,
             "low": 244,
             "close": 272,
-            "volume": 108
+            "volume": 105
         }
     ],
     options: [
-        "RSI 과매수 수치만 맹신하여 시장가로 고배율 숏(공매도) 포지션을 무리하게 잡는다.",
-        "강력한 원웨이 폭주 장세에서는 섣부른 역추세 숏 진입을 금지하고, 기존 롱 포지션 보유자는 최고점 대비 일정 하락폭(예: 5% 조정) 이탈 시 익절 처리되도록 추적 손절매(Trailing Stop) 기준선을 계속 위로 끌어 올리며 추세를 끝까지 향유한다.",
-        "상승폭이 아까우므로 즉시 모든 포지션을 시장가로 급하게 전량 매도하고 매매를 끝낸다.",
-        "손절매 가격을 지우고 아무 주문도 없이 방치한다."
+        "과매수 도달 판단에 따른 고배율 숏 무리한 진입",
+        "추종 손절매(Trailing Stop)를 통한 수익 극대화",
+        "상승폭 만족에 따른 즉각적인 전량 시장가 익절",
+        "손절 가격을 해제하고 시세 지속 시까지 방치"
     ],
     correctIndex: 1,
     explanation: "강세 추세가 지나치게 강할 경우 볼린저 밴드 상단을 타고 오르는 밴드워크 현상과 RSI 과매수 현상이 영구 유지될 수 있습니다. 이때 단순 과매수 수치를 이유로 숏 포지션을 잡으면 파산합니다. 기존 매수 포지션의 익절선(Trailing Stop)을 상향 관리하여 추세 상승 이익을 극대화하고 신규 진입은 자제하는 것이 정석 리스크 관리입니다."
@@ -717,7 +717,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 456,
             "low": 405,
             "close": 420,
-            "volume": 113
+            "volume": 94
         },
         {
             "time": "Day 2",
@@ -725,7 +725,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 441,
             "low": 417,
             "close": 435,
-            "volume": 94
+            "volume": 93
         },
         {
             "time": "Day 3",
@@ -733,7 +733,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 438,
             "low": 384,
             "close": 390,
-            "volume": 91
+            "volume": 115
         },
         {
             "time": "Day 4",
@@ -741,7 +741,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 414,
             "low": 387,
             "close": 408,
-            "volume": 119
+            "volume": 102
         },
         {
             "time": "Day 5",
@@ -749,7 +749,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 411,
             "low": 354,
             "close": 360,
-            "volume": 131
+            "volume": 134
         }
     ],
     drawings: [
@@ -778,10 +778,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "추세 추종 매매 - 강력한 대세 상승 국면이므로 장기 보유",
-        "채널 하단 반등 매매 - 하락 채널 하단 지지선 터치 시 단기 기술적 반등을 노리는 역추세 매매 (타이트한 손절 필수)",
-        "양방향 물타기 매매 - 손절 없이 끝까지 평단가 낮추기",
-        "돌파 매매 - 채널의 하방 붕괴를 확정했으므로 매수"
+        "추세 추종 매매 - 대세 상승이므로 장기 보유",
+        "채널 하단 반등 매매 - 단기 역추세 매수 대응",
+        "양방향 물타기 매매 - 평단가를 낮춰 탈출 대기",
+        "돌파 매매 - 채널 하방 붕괴 확정 시 매수 대응"
     ],
     correctIndex: 1,
     explanation: "가격이 평행한 하락 터널 내에서 움직이는 '하향 평행 채널(Descending Channel)'입니다. 채널 하단 라인 터치 시에는 기술적 단기 반등이 자주 출현하므로, 손절선을 짧게 잡고 반등 타점을 노리는 역추세(Counter-trend) 트레이딩이 가능합니다."
@@ -800,7 +800,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 303,
             "low": 264,
             "close": 267,
-            "volume": 115
+            "volume": 93
         },
         {
             "time": "Day 2",
@@ -808,7 +808,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 270,
             "low": 225,
             "close": 228,
-            "volume": 99
+            "volume": 33
         },
         {
             "time": "Day 3",
@@ -816,14 +816,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 231,
             "low": 186,
             "close": 189,
-            "volume": 124
+            "volume": 34
         }
     ],
     options: [
-        "즉각적으로 V자 반등을 하여 엄청난 수익이 난다",
-        "강력한 추세 폭락 국면에서는 RSI 지표가 바닥권(10~20)에 오랜 기간 머문 채(고착화) 삼성전자 주가는 끝없이 지하로 흘러내리는 리스크가 존재한다 (지표 고착화 오류)",
-        "거래량이 바로 소멸하여 거래 정지가 된다",
-        "삼성전자 주가가 즉시 박스권 횡보를 개시한다"
+        "하락 추세 즉시 종료 및 V자 상승 반등 성공",
+        "강력한 하락장에서의 지표 과매도 고착화 리스크",
+        "거래량 급감으로 인한 호가 정지 및 상장 폐지",
+        "삼성전자 주가의 즉각적인 박스권 횡보 및 변동성 축소"
     ],
     correctIndex: 1,
     explanation: "RSI 30 이하 과매도 영역은 반등 신호이기도 하지만, 추세가 지나치게 강력한 하락장일 때는 지표만 과매도 구역에 쳐박힌 채 가격은 계속 급락하는 '과매도 고착화(Oversold Embedded)' 상태가 이어집니다. 다이버전스나 캔들 반전형 확인 없이 수치만 보고 들어가는 매수는 깡통으로 가는 지름길입니다."
@@ -842,7 +842,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 324,
             "low": 297,
             "close": 318,
-            "volume": 114
+            "volume": 94
         },
         {
             "time": "Day 2",
@@ -850,7 +850,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 336,
             "low": 306,
             "close": 312,
-            "volume": 95
+            "volume": 120
         },
         {
             "time": "Day 3",
@@ -858,7 +858,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 318,
             "low": 294,
             "close": 300,
-            "volume": 95
+            "volume": 110
         }
     ],
     drawings: [
@@ -887,10 +887,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "채널 내에 가격이 있으므로 300달러 부근에서 즉시 풀배팅 매수를 강행한다.",
-        "채널 미드라인(중심선)을 지지하지 못하고 이탈한 뒤 저항으로 확인된 상태이므로, 채널 하단 지지선(약 282달러 구역)까지 가격이 추가 밀릴 위험이 큽니다. 따라서 매수 진입을 전면 보류하고 채널 하단선 안착 및 지지 컨펌 시까지 대기한다.",
-        "하방 휩소로 확신하고 추가 신용 매수를 결행한다.",
-        "무관한 숏 베팅을 걸고 관망한다."
+        "채널 내 유지를 기대로 지정가 즉시 매수",
+        "중심선 저항 확인 후 채널 하단 안착 대기",
+        "하방 휩소 판단에 따른 레버리지 추가 매수",
+        "추세와 무관한 숏 포지션 구축 후 관망"
     ],
     correctIndex: 1,
     explanation: "상승 평행 채널에서 미드라인(Mid-line)은 매우 중요한 심리적 지지와 저항선입니다. 미드라인이 저항선으로 뒤바뀌어 음봉으로 흘러내리는 경우 높은 확률로 채널 하단 경계선까지 가격이 조정을 받게 되므로, 중심선 저항 확인 시점에서는 섣부른 매수 진입을 피하고 채널 하단의 명확한 반등 타점을 유도해야 합니다."
@@ -909,7 +909,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 345,
             "low": 297,
             "close": 336,
-            "volume": 94
+            "volume": 116
         },
         {
             "time": "Day 2",
@@ -917,7 +917,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 384,
             "low": 330,
             "close": 375,
-            "volume": 104
+            "volume": 114
         },
         {
             "time": "Day 3",
@@ -925,14 +925,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 417,
             "low": 366,
             "close": 408,
-            "volume": 101
+            "volume": 104
         }
     ],
     options: [
-        "RSI 과매수 수치만 맹신하여 시장가로 고배율 숏(공매도) 포지션을 무리하게 잡는다.",
-        "강력한 원웨이 폭주 장세에서는 섣부른 역추세 숏 진입을 금지하고, 기존 롱 포지션 보유자는 최고점 대비 일정 하락폭(예: 5% 조정) 이탈 시 익절 처리되도록 추적 손절매(Trailing Stop) 기준선을 계속 위로 끌어 올리며 추세를 끝까지 향유한다.",
-        "상승폭이 아까우므로 즉시 모든 포지션을 시장가로 급하게 전량 매도하고 매매를 끝낸다.",
-        "손절매 가격을 지우고 아무 주문도 없이 방치한다."
+        "과매수 도달 판단에 따른 고배율 숏 무리한 진입",
+        "추종 손절매(Trailing Stop)를 통한 수익 극대화",
+        "상승폭 만족에 따른 즉각적인 전량 시장가 익절",
+        "손절 가격을 해제하고 시세 지속 시까지 방치"
     ],
     correctIndex: 1,
     explanation: "강세 추세가 지나치게 강할 경우 볼린저 밴드 상단을 타고 오르는 밴드워크 현상과 RSI 과매수 현상이 영구 유지될 수 있습니다. 이때 단순 과매수 수치를 이유로 숏 포지션을 잡으면 파산합니다. 기존 매수 포지션의 익절선(Trailing Stop)을 상향 관리하여 추세 상승 이익을 극대화하고 신규 진입은 자제하는 것이 정석 리스크 관리입니다."
@@ -951,7 +951,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 760,
             "low": 675,
             "close": 700,
-            "volume": 100
+            "volume": 90
         },
         {
             "time": "Day 2",
@@ -959,7 +959,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 735,
             "low": 695,
             "close": 725,
-            "volume": 107
+            "volume": 118
         },
         {
             "time": "Day 3",
@@ -967,7 +967,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 730,
             "low": 640,
             "close": 650,
-            "volume": 89
+            "volume": 115
         },
         {
             "time": "Day 4",
@@ -975,7 +975,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 690,
             "low": 645,
             "close": 680,
-            "volume": 106
+            "volume": 122
         },
         {
             "time": "Day 5",
@@ -983,7 +983,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 685,
             "low": 590,
             "close": 600,
-            "volume": 119
+            "volume": 105
         }
     ],
     drawings: [
@@ -1012,10 +1012,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "추세 추종 매매 - 강력한 대세 상승 국면이므로 장기 보유",
-        "채널 하단 반등 매매 - 하락 채널 하단 지지선 터치 시 단기 기술적 반등을 노리는 역추세 매매 (타이트한 손절 필수)",
-        "양방향 물타기 매매 - 손절 없이 끝까지 평단가 낮추기",
-        "돌파 매매 - 채널의 하방 붕괴를 확정했으므로 매수"
+        "추세 추종 매매 - 대세 상승이므로 장기 보유",
+        "채널 하단 반등 매매 - 단기 역추세 매수 대응",
+        "양방향 물타기 매매 - 평단가를 낮춰 탈출 대기",
+        "돌파 매매 - 채널 하방 붕괴 확정 시 매수 대응"
     ],
     correctIndex: 1,
     explanation: "가격이 평행한 하락 터널 내에서 움직이는 '하향 평행 채널(Descending Channel)'입니다. 채널 하단 라인 터치 시에는 기술적 단기 반등이 자주 출현하므로, 손절선을 짧게 잡고 반등 타점을 노리는 역추세(Counter-trend) 트레이딩이 가능합니다."
@@ -1034,7 +1034,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 505,
             "low": 440,
             "close": 445,
-            "volume": 119
+            "volume": 111
         },
         {
             "time": "Day 2",
@@ -1042,7 +1042,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 450,
             "low": 375,
             "close": 380,
-            "volume": 111
+            "volume": 34
         },
         {
             "time": "Day 3",
@@ -1050,14 +1050,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 385,
             "low": 310,
             "close": 315,
-            "volume": 108
+            "volume": 17
         }
     ],
     options: [
-        "즉각적으로 V자 반등을 하여 엄청난 수익이 난다",
-        "강력한 추세 폭락 국면에서는 RSI 지표가 바닥권(10~20)에 오랜 기간 머문 채(고착화) 테슬라 주가는 끝없이 지하로 흘러내리는 리스크가 존재한다 (지표 고착화 오류)",
-        "거래량이 바로 소멸하여 거래 정지가 된다",
-        "테슬라 주가가 즉시 박스권 횡보를 개시한다"
+        "하락 추세 즉시 종료 및 V자 상승 반등 성공",
+        "강력한 하락장에서의 지표 과매도 고착화 리스크",
+        "거래량 급감으로 인한 호가 정지 및 상장 폐지",
+        "테슬라 주가의 즉각적인 박스권 횡보 및 변동성 축소"
     ],
     correctIndex: 1,
     explanation: "RSI 30 이하 과매도 영역은 반등 신호이기도 하지만, 추세가 지나치게 강력한 하락장일 때는 지표만 과매도 구역에 쳐박힌 채 가격은 계속 급락하는 '과매도 고착화(Oversold Embedded)' 상태가 이어집니다. 다이버전스나 캔들 반전형 확인 없이 수치만 보고 들어가는 매수는 깡통으로 가는 지름길입니다."
@@ -1076,7 +1076,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 540,
             "low": 495,
             "close": 530,
-            "volume": 112
+            "volume": 81
         },
         {
             "time": "Day 2",
@@ -1084,7 +1084,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 560,
             "low": 510,
             "close": 520,
-            "volume": 110
+            "volume": 114
         },
         {
             "time": "Day 3",
@@ -1092,7 +1092,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 530,
             "low": 490,
             "close": 500,
-            "volume": 122
+            "volume": 113
         }
     ],
     drawings: [
@@ -1121,10 +1121,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "채널 내에 가격이 있으므로 500달러 부근에서 즉시 풀배팅 매수를 강행한다.",
-        "채널 미드라인(중심선)을 지지하지 못하고 이탈한 뒤 저항으로 확인된 상태이므로, 채널 하단 지지선(약 470달러 구역)까지 가격이 추가 밀릴 위험이 큽니다. 따라서 매수 진입을 전면 보류하고 채널 하단선 안착 및 지지 컨펌 시까지 대기한다.",
-        "하방 휩소로 확신하고 추가 신용 매수를 결행한다.",
-        "무관한 숏 베팅을 걸고 관망한다."
+        "채널 내 유지를 기대로 지정가 즉시 매수",
+        "중심선 저항 확인 후 채널 하단 안착 대기",
+        "하방 휩소 판단에 따른 레버리지 추가 매수",
+        "추세와 무관한 숏 포지션 구축 후 관망"
     ],
     correctIndex: 1,
     explanation: "상승 평행 채널에서 미드라인(Mid-line)은 매우 중요한 심리적 지지와 저항선입니다. 미드라인이 저항선으로 뒤바뀌어 음봉으로 흘러내리는 경우 높은 확률로 채널 하단 경계선까지 가격이 조정을 받게 되므로, 중심선 저항 확인 시점에서는 섣부른 매수 진입을 피하고 채널 하단의 명확한 반등 타점을 유도해야 합니다."
@@ -1143,7 +1143,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 575,
             "low": 495,
             "close": 560,
-            "volume": 93
+            "volume": 103
         },
         {
             "time": "Day 2",
@@ -1151,7 +1151,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 640,
             "low": 550,
             "close": 625,
-            "volume": 93
+            "volume": 85
         },
         {
             "time": "Day 3",
@@ -1159,14 +1159,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 695,
             "low": 610,
             "close": 680,
-            "volume": 122
+            "volume": 111
         }
     ],
     options: [
-        "RSI 과매수 수치만 맹신하여 시장가로 고배율 숏(공매도) 포지션을 무리하게 잡는다.",
-        "강력한 원웨이 폭주 장세에서는 섣부른 역추세 숏 진입을 금지하고, 기존 롱 포지션 보유자는 최고점 대비 일정 하락폭(예: 5% 조정) 이탈 시 익절 처리되도록 추적 손절매(Trailing Stop) 기준선을 계속 위로 끌어 올리며 추세를 끝까지 향유한다.",
-        "상승폭이 아까우므로 즉시 모든 포지션을 시장가로 급하게 전량 매도하고 매매를 끝낸다.",
-        "손절매 가격을 지우고 아무 주문도 없이 방치한다."
+        "과매수 도달 판단에 따른 고배율 숏 무리한 진입",
+        "추종 손절매(Trailing Stop)를 통한 수익 극대화",
+        "상승폭 만족에 따른 즉각적인 전량 시장가 익절",
+        "손절 가격을 해제하고 시세 지속 시까지 방치"
     ],
     correctIndex: 1,
     explanation: "강세 추세가 지나치게 강할 경우 볼린저 밴드 상단을 타고 오르는 밴드워크 현상과 RSI 과매수 현상이 영구 유지될 수 있습니다. 이때 단순 과매수 수치를 이유로 숏 포지션을 잡으면 파산합니다. 기존 매수 포지션의 익절선(Trailing Stop)을 상향 관리하여 추세 상승 이익을 극대화하고 신규 진입은 자제하는 것이 정석 리스크 관리입니다."
@@ -1185,7 +1185,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1216,
             "low": 1080,
             "close": 1120,
-            "volume": 82
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -1193,7 +1193,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1176,
             "low": 1112,
             "close": 1160,
-            "volume": 122
+            "volume": 98
         },
         {
             "time": "Day 3",
@@ -1201,7 +1201,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1168,
             "low": 1024,
             "close": 1040,
-            "volume": 111
+            "volume": 106
         },
         {
             "time": "Day 4",
@@ -1209,7 +1209,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1104,
             "low": 1032,
             "close": 1088,
-            "volume": 129
+            "volume": 125
         },
         {
             "time": "Day 5",
@@ -1217,7 +1217,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1096,
             "low": 944,
             "close": 960,
-            "volume": 120
+            "volume": 105
         }
     ],
     drawings: [
@@ -1246,10 +1246,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "추세 추종 매매 - 강력한 대세 상승 국면이므로 장기 보유",
-        "채널 하단 반등 매매 - 하락 채널 하단 지지선 터치 시 단기 기술적 반등을 노리는 역추세 매매 (타이트한 손절 필수)",
-        "양방향 물타기 매매 - 손절 없이 끝까지 평단가 낮추기",
-        "돌파 매매 - 채널의 하방 붕괴를 확정했으므로 매수"
+        "추세 추종 매매 - 대세 상승이므로 장기 보유",
+        "채널 하단 반등 매매 - 단기 역추세 매수 대응",
+        "양방향 물타기 매매 - 평단가를 낮춰 탈출 대기",
+        "돌파 매매 - 채널 하방 붕괴 확정 시 매수 대응"
     ],
     correctIndex: 1,
     explanation: "가격이 평행한 하락 터널 내에서 움직이는 '하향 평행 채널(Descending Channel)'입니다. 채널 하단 라인 터치 시에는 기술적 단기 반등이 자주 출현하므로, 손절선을 짧게 잡고 반등 타점을 노리는 역추세(Counter-trend) 트레이딩이 가능합니다."
@@ -1268,7 +1268,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 808,
             "low": 704,
             "close": 712,
-            "volume": 91
+            "volume": 95
         },
         {
             "time": "Day 2",
@@ -1276,7 +1276,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 720,
             "low": 600,
             "close": 608,
-            "volume": 109
+            "volume": 20
         },
         {
             "time": "Day 3",
@@ -1284,14 +1284,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 616,
             "low": 496,
             "close": 504,
-            "volume": 95
+            "volume": 23
         }
     ],
     options: [
-        "즉각적으로 V자 반등을 하여 엄청난 수익이 난다",
-        "강력한 추세 폭락 국면에서는 RSI 지표가 바닥권(10~20)에 오랜 기간 머문 채(고착화) 애플 주가는 끝없이 지하로 흘러내리는 리스크가 존재한다 (지표 고착화 오류)",
-        "거래량이 바로 소멸하여 거래 정지가 된다",
-        "애플 주가가 즉시 박스권 횡보를 개시한다"
+        "하락 추세 즉시 종료 및 V자 상승 반등 성공",
+        "강력한 하락장에서의 지표 과매도 고착화 리스크",
+        "거래량 급감으로 인한 호가 정지 및 상장 폐지",
+        "애플 주가의 즉각적인 박스권 횡보 및 변동성 축소"
     ],
     correctIndex: 1,
     explanation: "RSI 30 이하 과매도 영역은 반등 신호이기도 하지만, 추세가 지나치게 강력한 하락장일 때는 지표만 과매도 구역에 쳐박힌 채 가격은 계속 급락하는 '과매도 고착화(Oversold Embedded)' 상태가 이어집니다. 다이버전스나 캔들 반전형 확인 없이 수치만 보고 들어가는 매수는 깡통으로 가는 지름길입니다."
@@ -1310,7 +1310,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 864,
             "low": 792,
             "close": 848,
-            "volume": 102
+            "volume": 94
         },
         {
             "time": "Day 2",
@@ -1318,7 +1318,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 896,
             "low": 816,
             "close": 832,
-            "volume": 88
+            "volume": 123
         },
         {
             "time": "Day 3",
@@ -1355,10 +1355,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "채널 내에 가격이 있으므로 800달러 부근에서 즉시 풀배팅 매수를 강행한다.",
-        "채널 미드라인(중심선)을 지지하지 못하고 이탈한 뒤 저항으로 확인된 상태이므로, 채널 하단 지지선(약 752달러 구역)까지 가격이 추가 밀릴 위험이 큽니다. 따라서 매수 진입을 전면 보류하고 채널 하단선 안착 및 지지 컨펌 시까지 대기한다.",
-        "하방 휩소로 확신하고 추가 신용 매수를 결행한다.",
-        "무관한 숏 베팅을 걸고 관망한다."
+        "채널 내 유지를 기대로 지정가 즉시 매수",
+        "중심선 저항 확인 후 채널 하단 안착 대기",
+        "하방 휩소 판단에 따른 레버리지 추가 매수",
+        "추세와 무관한 숏 포지션 구축 후 관망"
     ],
     correctIndex: 1,
     explanation: "상승 평행 채널에서 미드라인(Mid-line)은 매우 중요한 심리적 지지와 저항선입니다. 미드라인이 저항선으로 뒤바뀌어 음봉으로 흘러내리는 경우 높은 확률로 채널 하단 경계선까지 가격이 조정을 받게 되므로, 중심선 저항 확인 시점에서는 섣부른 매수 진입을 피하고 채널 하단의 명확한 반등 타점을 유도해야 합니다."
@@ -1377,7 +1377,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 920,
             "low": 792,
             "close": 896,
-            "volume": 90
+            "volume": 80
         },
         {
             "time": "Day 2",
@@ -1385,7 +1385,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1024,
             "low": 880,
             "close": 1000,
-            "volume": 108
+            "volume": 87
         },
         {
             "time": "Day 3",
@@ -1393,14 +1393,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1112,
             "low": 976,
             "close": 1088,
-            "volume": 120
+            "volume": 103
         }
     ],
     options: [
-        "RSI 과매수 수치만 맹신하여 시장가로 고배율 숏(공매도) 포지션을 무리하게 잡는다.",
-        "강력한 원웨이 폭주 장세에서는 섣부른 역추세 숏 진입을 금지하고, 기존 롱 포지션 보유자는 최고점 대비 일정 하락폭(예: 5% 조정) 이탈 시 익절 처리되도록 추적 손절매(Trailing Stop) 기준선을 계속 위로 끌어 올리며 추세를 끝까지 향유한다.",
-        "상승폭이 아까우므로 즉시 모든 포지션을 시장가로 급하게 전량 매도하고 매매를 끝낸다.",
-        "손절매 가격을 지우고 아무 주문도 없이 방치한다."
+        "과매수 도달 판단에 따른 고배율 숏 무리한 진입",
+        "추종 손절매(Trailing Stop)를 통한 수익 극대화",
+        "상승폭 만족에 따른 즉각적인 전량 시장가 익절",
+        "손절 가격을 해제하고 시세 지속 시까지 방치"
     ],
     correctIndex: 1,
     explanation: "강세 추세가 지나치게 강할 경우 볼린저 밴드 상단을 타고 오르는 밴드워크 현상과 RSI 과매수 현상이 영구 유지될 수 있습니다. 이때 단순 과매수 수치를 이유로 숏 포지션을 잡으면 파산합니다. 기존 매수 포지션의 익절선(Trailing Stop)을 상향 관리하여 추세 상승 이익을 극대화하고 신규 진입은 자제하는 것이 정석 리스크 관리입니다."
@@ -1419,7 +1419,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1520,
             "low": 1350,
             "close": 1400,
-            "volume": 118
+            "volume": 102
         },
         {
             "time": "Day 2",
@@ -1427,7 +1427,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1470,
             "low": 1390,
             "close": 1450,
-            "volume": 122
+            "volume": 116
         },
         {
             "time": "Day 3",
@@ -1435,7 +1435,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1460,
             "low": 1280,
             "close": 1300,
-            "volume": 121
+            "volume": 112
         },
         {
             "time": "Day 4",
@@ -1443,7 +1443,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1380,
             "low": 1290,
             "close": 1360,
-            "volume": 108
+            "volume": 93
         },
         {
             "time": "Day 5",
@@ -1451,7 +1451,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1370,
             "low": 1180,
             "close": 1200,
-            "volume": 106
+            "volume": 134
         }
     ],
     drawings: [
@@ -1480,10 +1480,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "추세 추종 매매 - 강력한 대세 상승 국면이므로 장기 보유",
-        "채널 하단 반등 매매 - 하락 채널 하단 지지선 터치 시 단기 기술적 반등을 노리는 역추세 매매 (타이트한 손절 필수)",
-        "양방향 물타기 매매 - 손절 없이 끝까지 평단가 낮추기",
-        "돌파 매매 - 채널의 하방 붕괴를 확정했으므로 매수"
+        "추세 추종 매매 - 대세 상승이므로 장기 보유",
+        "채널 하단 반등 매매 - 단기 역추세 매수 대응",
+        "양방향 물타기 매매 - 평단가를 낮춰 탈출 대기",
+        "돌파 매매 - 채널 하방 붕괴 확정 시 매수 대응"
     ],
     correctIndex: 1,
     explanation: "가격이 평행한 하락 터널 내에서 움직이는 '하향 평행 채널(Descending Channel)'입니다. 채널 하단 라인 터치 시에는 기술적 단기 반등이 자주 출현하므로, 손절선을 짧게 잡고 반등 타점을 노리는 역추세(Counter-trend) 트레이딩이 가능합니다."
@@ -1502,7 +1502,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1010,
             "low": 880,
             "close": 890,
-            "volume": 85
+            "volume": 88
         },
         {
             "time": "Day 2",
@@ -1510,7 +1510,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 900,
             "low": 750,
             "close": 760,
-            "volume": 93
+            "volume": 22
         },
         {
             "time": "Day 3",
@@ -1518,14 +1518,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 770,
             "low": 620,
             "close": 630,
-            "volume": 108
+            "volume": 23
         }
     ],
     options: [
-        "즉각적으로 V자 반등을 하여 엄청난 수익이 난다",
-        "강력한 추세 폭락 국면에서는 RSI 지표가 바닥권(10~20)에 오랜 기간 머문 채(고착화) 나스닥 시세는 끝없이 지하로 흘러내리는 리스크가 존재한다 (지표 고착화 오류)",
-        "거래량이 바로 소멸하여 거래 정지가 된다",
-        "나스닥 시세가 즉시 박스권 횡보를 개시한다"
+        "하락 추세 즉시 종료 및 V자 상승 반등 성공",
+        "강력한 하락장에서의 지표 과매도 고착화 리스크",
+        "거래량 급감으로 인한 호가 정지 및 상장 폐지",
+        "나스닥 시세의 즉각적인 박스권 횡보 및 변동성 축소"
     ],
     correctIndex: 1,
     explanation: "RSI 30 이하 과매도 영역은 반등 신호이기도 하지만, 추세가 지나치게 강력한 하락장일 때는 지표만 과매도 구역에 쳐박힌 채 가격은 계속 급락하는 '과매도 고착화(Oversold Embedded)' 상태가 이어집니다. 다이버전스나 캔들 반전형 확인 없이 수치만 보고 들어가는 매수는 깡통으로 가는 지름길입니다."
@@ -1544,7 +1544,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1080,
             "low": 990,
             "close": 1060,
-            "volume": 109
+            "volume": 105
         },
         {
             "time": "Day 2",
@@ -1552,7 +1552,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1120,
             "low": 1020,
             "close": 1040,
-            "volume": 111
+            "volume": 97
         },
         {
             "time": "Day 3",
@@ -1560,7 +1560,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1060,
             "low": 980,
             "close": 1000,
-            "volume": 103
+            "volume": 92
         }
     ],
     drawings: [
@@ -1589,10 +1589,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "채널 내에 가격이 있으므로 1,000달러 부근에서 즉시 풀배팅 매수를 강행한다.",
-        "채널 미드라인(중심선)을 지지하지 못하고 이탈한 뒤 저항으로 확인된 상태이므로, 채널 하단 지지선(약 940달러 구역)까지 가격이 추가 밀릴 위험이 큽니다. 따라서 매수 진입을 전면 보류하고 채널 하단선 안착 및 지지 컨펌 시까지 대기한다.",
-        "하방 휩소로 확신하고 추가 신용 매수를 결행한다.",
-        "무관한 숏 베팅을 걸고 관망한다."
+        "채널 내 유지를 기대로 지정가 즉시 매수",
+        "중심선 저항 확인 후 채널 하단 안착 대기",
+        "하방 휩소 판단에 따른 레버리지 추가 매수",
+        "추세와 무관한 숏 포지션 구축 후 관망"
     ],
     correctIndex: 1,
     explanation: "상승 평행 채널에서 미드라인(Mid-line)은 매우 중요한 심리적 지지와 저항선입니다. 미드라인이 저항선으로 뒤바뀌어 음봉으로 흘러내리는 경우 높은 확률로 채널 하단 경계선까지 가격이 조정을 받게 되므로, 중심선 저항 확인 시점에서는 섣부른 매수 진입을 피하고 채널 하단의 명확한 반등 타점을 유도해야 합니다."
@@ -1611,7 +1611,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1150,
             "low": 990,
             "close": 1120,
-            "volume": 100
+            "volume": 91
         },
         {
             "time": "Day 2",
@@ -1619,7 +1619,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1280,
             "low": 1100,
             "close": 1250,
-            "volume": 95
+            "volume": 87
         },
         {
             "time": "Day 3",
@@ -1627,14 +1627,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1390,
             "low": 1220,
             "close": 1360,
-            "volume": 102
+            "volume": 120
         }
     ],
     options: [
-        "RSI 과매수 수치만 맹신하여 시장가로 고배율 숏(공매도) 포지션을 무리하게 잡는다.",
-        "강력한 원웨이 폭주 장세에서는 섣부른 역추세 숏 진입을 금지하고, 기존 롱 포지션 보유자는 최고점 대비 일정 하락폭(예: 5% 조정) 이탈 시 익절 처리되도록 추적 손절매(Trailing Stop) 기준선을 계속 위로 끌어 올리며 추세를 끝까지 향유한다.",
-        "상승폭이 아까우므로 즉시 모든 포지션을 시장가로 급하게 전량 매도하고 매매를 끝낸다.",
-        "손절매 가격을 지우고 아무 주문도 없이 방치한다."
+        "과매수 도달 판단에 따른 고배율 숏 무리한 진입",
+        "추종 손절매(Trailing Stop)를 통한 수익 극대화",
+        "상승폭 만족에 따른 즉각적인 전량 시장가 익절",
+        "손절 가격을 해제하고 시세 지속 시까지 방치"
     ],
     correctIndex: 1,
     explanation: "강세 추세가 지나치게 강할 경우 볼린저 밴드 상단을 타고 오르는 밴드워크 현상과 RSI 과매수 현상이 영구 유지될 수 있습니다. 이때 단순 과매수 수치를 이유로 숏 포지션을 잡으면 파산합니다. 기존 매수 포지션의 익절선(Trailing Stop)을 상향 관리하여 추세 상승 이익을 극대화하고 신규 진입은 자제하는 것이 정석 리스크 관리입니다."
@@ -1653,7 +1653,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1824,
             "low": 1620,
             "close": 1680,
-            "volume": 94
+            "volume": 88
         },
         {
             "time": "Day 2",
@@ -1661,7 +1661,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1764,
             "low": 1668,
             "close": 1740,
-            "volume": 97
+            "volume": 110
         },
         {
             "time": "Day 3",
@@ -1669,7 +1669,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1752,
             "low": 1536,
             "close": 1560,
-            "volume": 121
+            "volume": 110
         },
         {
             "time": "Day 4",
@@ -1677,7 +1677,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1656,
             "low": 1548,
             "close": 1632,
-            "volume": 112
+            "volume": 119
         },
         {
             "time": "Day 5",
@@ -1685,7 +1685,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1644,
             "low": 1416,
             "close": 1440,
-            "volume": 117
+            "volume": 111
         }
     ],
     drawings: [
@@ -1714,10 +1714,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "추세 추종 매매 - 강력한 대세 상승 국면이므로 장기 보유",
-        "채널 하단 반등 매매 - 하락 채널 하단 지지선 터치 시 단기 기술적 반등을 노리는 역추세 매매 (타이트한 손절 필수)",
-        "양방향 물타기 매매 - 손절 없이 끝까지 평단가 낮추기",
-        "돌파 매매 - 채널의 하방 붕괴를 확정했으므로 매수"
+        "추세 추종 매매 - 대세 상승이므로 장기 보유",
+        "채널 하단 반등 매매 - 단기 역추세 매수 대응",
+        "양방향 물타기 매매 - 평단가를 낮춰 탈출 대기",
+        "돌파 매매 - 채널 하방 붕괴 확정 시 매수 대응"
     ],
     correctIndex: 1,
     explanation: "가격이 평행한 하락 터널 내에서 움직이는 '하향 평행 채널(Descending Channel)'입니다. 채널 하단 라인 터치 시에는 기술적 단기 반등이 자주 출현하므로, 손절선을 짧게 잡고 반등 타점을 노리는 역추세(Counter-trend) 트레이딩이 가능합니다."
@@ -1736,7 +1736,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1212,
             "low": 1056,
             "close": 1068,
-            "volume": 97
+            "volume": 107
         },
         {
             "time": "Day 2",
@@ -1744,7 +1744,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1080,
             "low": 900,
             "close": 912,
-            "volume": 100
+            "volume": 34
         },
         {
             "time": "Day 3",
@@ -1752,14 +1752,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 924,
             "low": 744,
             "close": 756,
-            "volume": 122
+            "volume": 16
         }
     ],
     options: [
-        "즉각적으로 V자 반등을 하여 엄청난 수익이 난다",
-        "강력한 추세 폭락 국면에서는 RSI 지표가 바닥권(10~20)에 오랜 기간 머문 채(고착화) 엔비디아 주가는 끝없이 지하로 흘러내리는 리스크가 존재한다 (지표 고착화 오류)",
-        "거래량이 바로 소멸하여 거래 정지가 된다",
-        "엔비디아 주가가 즉시 박스권 횡보를 개시한다"
+        "하락 추세 즉시 종료 및 V자 상승 반등 성공",
+        "강력한 하락장에서의 지표 과매도 고착화 리스크",
+        "거래량 급감으로 인한 호가 정지 및 상장 폐지",
+        "엔비디아 주가의 즉각적인 박스권 횡보 및 변동성 축소"
     ],
     correctIndex: 1,
     explanation: "RSI 30 이하 과매도 영역은 반등 신호이기도 하지만, 추세가 지나치게 강력한 하락장일 때는 지표만 과매도 구역에 쳐박힌 채 가격은 계속 급락하는 '과매도 고착화(Oversold Embedded)' 상태가 이어집니다. 다이버전스나 캔들 반전형 확인 없이 수치만 보고 들어가는 매수는 깡통으로 가는 지름길입니다."
@@ -1778,7 +1778,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1296,
             "low": 1188,
             "close": 1272,
-            "volume": 89
+            "volume": 92
         },
         {
             "time": "Day 2",
@@ -1786,7 +1786,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1344,
             "low": 1224,
             "close": 1248,
-            "volume": 107
+            "volume": 110
         },
         {
             "time": "Day 3",
@@ -1794,7 +1794,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1272,
             "low": 1176,
             "close": 1200,
-            "volume": 118
+            "volume": 112
         }
     ],
     drawings: [
@@ -1823,10 +1823,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "채널 내에 가격이 있으므로 1,200달러 부근에서 즉시 풀배팅 매수를 강행한다.",
-        "채널 미드라인(중심선)을 지지하지 못하고 이탈한 뒤 저항으로 확인된 상태이므로, 채널 하단 지지선(약 1,128달러 구역)까지 가격이 추가 밀릴 위험이 큽니다. 따라서 매수 진입을 전면 보류하고 채널 하단선 안착 및 지지 컨펌 시까지 대기한다.",
-        "하방 휩소로 확신하고 추가 신용 매수를 결행한다.",
-        "무관한 숏 베팅을 걸고 관망한다."
+        "채널 내 유지를 기대로 지정가 즉시 매수",
+        "중심선 저항 확인 후 채널 하단 안착 대기",
+        "하방 휩소 판단에 따른 레버리지 추가 매수",
+        "추세와 무관한 숏 포지션 구축 후 관망"
     ],
     correctIndex: 1,
     explanation: "상승 평행 채널에서 미드라인(Mid-line)은 매우 중요한 심리적 지지와 저항선입니다. 미드라인이 저항선으로 뒤바뀌어 음봉으로 흘러내리는 경우 높은 확률로 채널 하단 경계선까지 가격이 조정을 받게 되므로, 중심선 저항 확인 시점에서는 섣부른 매수 진입을 피하고 채널 하단의 명확한 반등 타점을 유도해야 합니다."
@@ -1845,7 +1845,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1380,
             "low": 1188,
             "close": 1344,
-            "volume": 97
+            "volume": 112
         },
         {
             "time": "Day 2",
@@ -1853,7 +1853,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1536,
             "low": 1320,
             "close": 1500,
-            "volume": 106
+            "volume": 101
         },
         {
             "time": "Day 3",
@@ -1861,14 +1861,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1668,
             "low": 1464,
             "close": 1632,
-            "volume": 95
+            "volume": 114
         }
     ],
     options: [
-        "RSI 과매수 수치만 맹신하여 시장가로 고배율 숏(공매도) 포지션을 무리하게 잡는다.",
-        "강력한 원웨이 폭주 장세에서는 섣부른 역추세 숏 진입을 금지하고, 기존 롱 포지션 보유자는 최고점 대비 일정 하락폭(예: 5% 조정) 이탈 시 익절 처리되도록 추적 손절매(Trailing Stop) 기준선을 계속 위로 끌어 올리며 추세를 끝까지 향유한다.",
-        "상승폭이 아까우므로 즉시 모든 포지션을 시장가로 급하게 전량 매도하고 매매를 끝낸다.",
-        "손절매 가격을 지우고 아무 주문도 없이 방치한다."
+        "과매수 도달 판단에 따른 고배율 숏 무리한 진입",
+        "추종 손절매(Trailing Stop)를 통한 수익 극대화",
+        "상승폭 만족에 따른 즉각적인 전량 시장가 익절",
+        "손절 가격을 해제하고 시세 지속 시까지 방치"
     ],
     correctIndex: 1,
     explanation: "강세 추세가 지나치게 강할 경우 볼린저 밴드 상단을 타고 오르는 밴드워크 현상과 RSI 과매수 현상이 영구 유지될 수 있습니다. 이때 단순 과매수 수치를 이유로 숏 포지션을 잡으면 파산합니다. 기존 매수 포지션의 익절선(Trailing Stop)을 상향 관리하여 추세 상승 이익을 극대화하고 신규 진입은 자제하는 것이 정석 리스크 관리입니다."
@@ -1887,7 +1887,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 3040,
             "low": 2700,
             "close": 2800,
-            "volume": 96
+            "volume": 87
         },
         {
             "time": "Day 2",
@@ -1895,7 +1895,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 2940,
             "low": 2780,
             "close": 2900,
-            "volume": 87
+            "volume": 119
         },
         {
             "time": "Day 3",
@@ -1903,7 +1903,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 2920,
             "low": 2560,
             "close": 2600,
-            "volume": 124
+            "volume": 125
         },
         {
             "time": "Day 4",
@@ -1911,7 +1911,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 2760,
             "low": 2580,
             "close": 2720,
-            "volume": 129
+            "volume": 119
         },
         {
             "time": "Day 5",
@@ -1919,7 +1919,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 2740,
             "low": 2360,
             "close": 2400,
-            "volume": 111
+            "volume": 100
         }
     ],
     drawings: [
@@ -1948,10 +1948,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "추세 추종 매매 - 강력한 대세 상승 국면이므로 장기 보유",
-        "채널 하단 반등 매매 - 하락 채널 하단 지지선 터치 시 단기 기술적 반등을 노리는 역추세 매매 (타이트한 손절 필수)",
-        "양방향 물타기 매매 - 손절 없이 끝까지 평단가 낮추기",
-        "돌파 매매 - 채널의 하방 붕괴를 확정했으므로 매수"
+        "추세 추종 매매 - 대세 상승이므로 장기 보유",
+        "채널 하단 반등 매매 - 단기 역추세 매수 대응",
+        "양방향 물타기 매매 - 평단가를 낮춰 탈출 대기",
+        "돌파 매매 - 채널 하방 붕괴 확정 시 매수 대응"
     ],
     correctIndex: 1,
     explanation: "가격이 평행한 하락 터널 내에서 움직이는 '하향 평행 채널(Descending Channel)'입니다. 채널 하단 라인 터치 시에는 기술적 단기 반등이 자주 출현하므로, 손절선을 짧게 잡고 반등 타점을 노리는 역추세(Counter-trend) 트레이딩이 가능합니다."
@@ -1970,7 +1970,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 2020,
             "low": 1760,
             "close": 1780,
-            "volume": 94
+            "volume": 108
         },
         {
             "time": "Day 2",
@@ -1978,7 +1978,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1800,
             "low": 1500,
             "close": 1520,
-            "volume": 85
+            "volume": 34
         },
         {
             "time": "Day 3",
@@ -1986,14 +1986,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 1540,
             "low": 1240,
             "close": 1260,
-            "volume": 99
+            "volume": 16
         }
     ],
     options: [
-        "즉각적으로 V자 반등을 하여 엄청난 수익이 난다",
-        "강력한 추세 폭락 국면에서는 RSI 지표가 바닥권(10~20)에 오랜 기간 머문 채(고착화) 리플 시세는 끝없이 지하로 흘러내리는 리스크가 존재한다 (지표 고착화 오류)",
-        "거래량이 바로 소멸하여 거래 정지가 된다",
-        "리플 시세가 즉시 박스권 횡보를 개시한다"
+        "하락 추세 즉시 종료 및 V자 상승 반등 성공",
+        "강력한 하락장에서의 지표 과매도 고착화 리스크",
+        "거래량 급감으로 인한 호가 정지 및 상장 폐지",
+        "리플 시세의 즉각적인 박스권 횡보 및 변동성 축소"
     ],
     correctIndex: 1,
     explanation: "RSI 30 이하 과매도 영역은 반등 신호이기도 하지만, 추세가 지나치게 강력한 하락장일 때는 지표만 과매도 구역에 쳐박힌 채 가격은 계속 급락하는 '과매도 고착화(Oversold Embedded)' 상태가 이어집니다. 다이버전스나 캔들 반전형 확인 없이 수치만 보고 들어가는 매수는 깡통으로 가는 지름길입니다."
@@ -2012,7 +2012,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 2160,
             "low": 1980,
             "close": 2120,
-            "volume": 92
+            "volume": 118
         },
         {
             "time": "Day 2",
@@ -2020,7 +2020,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 2240,
             "low": 2040,
             "close": 2080,
-            "volume": 84
+            "volume": 89
         },
         {
             "time": "Day 3",
@@ -2028,7 +2028,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 2120,
             "low": 1960,
             "close": 2000,
-            "volume": 91
+            "volume": 89
         }
     ],
     drawings: [
@@ -2057,10 +2057,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "채널 내에 가격이 있으므로 2,000달러 부근에서 즉시 풀배팅 매수를 강행한다.",
-        "채널 미드라인(중심선)을 지지하지 못하고 이탈한 뒤 저항으로 확인된 상태이므로, 채널 하단 지지선(약 1,880달러 구역)까지 가격이 추가 밀릴 위험이 큽니다. 따라서 매수 진입을 전면 보류하고 채널 하단선 안착 및 지지 컨펌 시까지 대기한다.",
-        "하방 휩소로 확신하고 추가 신용 매수를 결행한다.",
-        "무관한 숏 베팅을 걸고 관망한다."
+        "채널 내 유지를 기대로 지정가 즉시 매수",
+        "중심선 저항 확인 후 채널 하단 안착 대기",
+        "하방 휩소 판단에 따른 레버리지 추가 매수",
+        "추세와 무관한 숏 포지션 구축 후 관망"
     ],
     correctIndex: 1,
     explanation: "상승 평행 채널에서 미드라인(Mid-line)은 매우 중요한 심리적 지지와 저항선입니다. 미드라인이 저항선으로 뒤바뀌어 음봉으로 흘러내리는 경우 높은 확률로 채널 하단 경계선까지 가격이 조정을 받게 되므로, 중심선 저항 확인 시점에서는 섣부른 매수 진입을 피하고 채널 하단의 명확한 반등 타점을 유도해야 합니다."
@@ -2079,7 +2079,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 2300,
             "low": 1980,
             "close": 2240,
-            "volume": 91
+            "volume": 94
         },
         {
             "time": "Day 2",
@@ -2087,7 +2087,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 2560,
             "low": 2200,
             "close": 2500,
-            "volume": 84
+            "volume": 107
         },
         {
             "time": "Day 3",
@@ -2095,14 +2095,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 2780,
             "low": 2440,
             "close": 2720,
-            "volume": 103
+            "volume": 88
         }
     ],
     options: [
-        "RSI 과매수 수치만 맹신하여 시장가로 고배율 숏(공매도) 포지션을 무리하게 잡는다.",
-        "강력한 원웨이 폭주 장세에서는 섣부른 역추세 숏 진입을 금지하고, 기존 롱 포지션 보유자는 최고점 대비 일정 하락폭(예: 5% 조정) 이탈 시 익절 처리되도록 추적 손절매(Trailing Stop) 기준선을 계속 위로 끌어 올리며 추세를 끝까지 향유한다.",
-        "상승폭이 아까우므로 즉시 모든 포지션을 시장가로 급하게 전량 매도하고 매매를 끝낸다.",
-        "손절매 가격을 지우고 아무 주문도 없이 방치한다."
+        "과매수 도달 판단에 따른 고배율 숏 무리한 진입",
+        "추종 손절매(Trailing Stop)를 통한 수익 극대화",
+        "상승폭 만족에 따른 즉각적인 전량 시장가 익절",
+        "손절 가격을 해제하고 시세 지속 시까지 방치"
     ],
     correctIndex: 1,
     explanation: "강세 추세가 지나치게 강할 경우 볼린저 밴드 상단을 타고 오르는 밴드워크 현상과 RSI 과매수 현상이 영구 유지될 수 있습니다. 이때 단순 과매수 수치를 이유로 숏 포지션을 잡으면 파산합니다. 기존 매수 포지션의 익절선(Trailing Stop)을 상향 관리하여 추세 상승 이익을 극대화하고 신규 진입은 자제하는 것이 정석 리스크 관리입니다."
@@ -2121,7 +2121,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 7600,
             "low": 6750,
             "close": 7000,
-            "volume": 97
+            "volume": 101
         },
         {
             "time": "Day 2",
@@ -2129,7 +2129,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 7350,
             "low": 6950,
             "close": 7250,
-            "volume": 116
+            "volume": 119
         },
         {
             "time": "Day 3",
@@ -2137,7 +2137,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 7300,
             "low": 6400,
             "close": 6500,
-            "volume": 118
+            "volume": 122
         },
         {
             "time": "Day 4",
@@ -2145,7 +2145,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 6900,
             "low": 6450,
             "close": 6800,
-            "volume": 107
+            "volume": 119
         },
         {
             "time": "Day 5",
@@ -2153,7 +2153,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 6850,
             "low": 5900,
             "close": 6000,
-            "volume": 114
+            "volume": 108
         }
     ],
     drawings: [
@@ -2182,10 +2182,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "추세 추종 매매 - 강력한 대세 상승 국면이므로 장기 보유",
-        "채널 하단 반등 매매 - 하락 채널 하단 지지선 터치 시 단기 기술적 반등을 노리는 역추세 매매 (타이트한 손절 필수)",
-        "양방향 물타기 매매 - 손절 없이 끝까지 평단가 낮추기",
-        "돌파 매매 - 채널의 하방 붕괴를 확정했으므로 매수"
+        "추세 추종 매매 - 대세 상승이므로 장기 보유",
+        "채널 하단 반등 매매 - 단기 역추세 매수 대응",
+        "양방향 물타기 매매 - 평단가를 낮춰 탈출 대기",
+        "돌파 매매 - 채널 하방 붕괴 확정 시 매수 대응"
     ],
     correctIndex: 1,
     explanation: "가격이 평행한 하락 터널 내에서 움직이는 '하향 평행 채널(Descending Channel)'입니다. 채널 하단 라인 터치 시에는 기술적 단기 반등이 자주 출현하므로, 손절선을 짧게 잡고 반등 타점을 노리는 역추세(Counter-trend) 트레이딩이 가능합니다."
@@ -2204,7 +2204,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 5050,
             "low": 4400,
             "close": 4450,
-            "volume": 112
+            "volume": 110
         },
         {
             "time": "Day 2",
@@ -2212,7 +2212,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 4500,
             "low": 3750,
             "close": 3800,
-            "volume": 100
+            "volume": 25
         },
         {
             "time": "Day 3",
@@ -2220,14 +2220,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 3850,
             "low": 3100,
             "close": 3150,
-            "volume": 109
+            "volume": 34
         }
     ],
     options: [
-        "즉각적으로 V자 반등을 하여 엄청난 수익이 난다",
-        "강력한 추세 폭락 국면에서는 RSI 지표가 바닥권(10~20)에 오랜 기간 머문 채(고착화) 골드 가격는 끝없이 지하로 흘러내리는 리스크가 존재한다 (지표 고착화 오류)",
-        "거래량이 바로 소멸하여 거래 정지가 된다",
-        "골드 가격가 즉시 박스권 횡보를 개시한다"
+        "하락 추세 즉시 종료 및 V자 상승 반등 성공",
+        "강력한 하락장에서의 지표 과매도 고착화 리스크",
+        "거래량 급감으로 인한 호가 정지 및 상장 폐지",
+        "골드 가격의 즉각적인 박스권 횡보 및 변동성 축소"
     ],
     correctIndex: 1,
     explanation: "RSI 30 이하 과매도 영역은 반등 신호이기도 하지만, 추세가 지나치게 강력한 하락장일 때는 지표만 과매도 구역에 쳐박힌 채 가격은 계속 급락하는 '과매도 고착화(Oversold Embedded)' 상태가 이어집니다. 다이버전스나 캔들 반전형 확인 없이 수치만 보고 들어가는 매수는 깡통으로 가는 지름길입니다."
@@ -2246,7 +2246,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 5400,
             "low": 4950,
             "close": 5300,
-            "volume": 117
+            "volume": 82
         },
         {
             "time": "Day 2",
@@ -2254,7 +2254,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 5600,
             "low": 5100,
             "close": 5200,
-            "volume": 85
+            "volume": 123
         },
         {
             "time": "Day 3",
@@ -2262,7 +2262,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 5300,
             "low": 4900,
             "close": 5000,
-            "volume": 100
+            "volume": 119
         }
     ],
     drawings: [
@@ -2291,10 +2291,10 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
         }
     ],
     options: [
-        "채널 내에 가격이 있으므로 5,000달러 부근에서 즉시 풀배팅 매수를 강행한다.",
-        "채널 미드라인(중심선)을 지지하지 못하고 이탈한 뒤 저항으로 확인된 상태이므로, 채널 하단 지지선(약 4,700달러 구역)까지 가격이 추가 밀릴 위험이 큽니다. 따라서 매수 진입을 전면 보류하고 채널 하단선 안착 및 지지 컨펌 시까지 대기한다.",
-        "하방 휩소로 확신하고 추가 신용 매수를 결행한다.",
-        "무관한 숏 베팅을 걸고 관망한다."
+        "채널 내 유지를 기대로 지정가 즉시 매수",
+        "중심선 저항 확인 후 채널 하단 안착 대기",
+        "하방 휩소 판단에 따른 레버리지 추가 매수",
+        "추세와 무관한 숏 포지션 구축 후 관망"
     ],
     correctIndex: 1,
     explanation: "상승 평행 채널에서 미드라인(Mid-line)은 매우 중요한 심리적 지지와 저항선입니다. 미드라인이 저항선으로 뒤바뀌어 음봉으로 흘러내리는 경우 높은 확률로 채널 하단 경계선까지 가격이 조정을 받게 되므로, 중심선 저항 확인 시점에서는 섣부른 매수 진입을 피하고 채널 하단의 명확한 반등 타점을 유도해야 합니다."
@@ -2313,7 +2313,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 5750,
             "low": 4950,
             "close": 5600,
-            "volume": 118
+            "volume": 97
         },
         {
             "time": "Day 2",
@@ -2321,7 +2321,7 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 6400,
             "low": 5500,
             "close": 6250,
-            "volume": 94
+            "volume": 117
         },
         {
             "time": "Day 3",
@@ -2329,14 +2329,14 @@ export const quizzes_multitimeframe_regime: QuizItem[] = [
             "high": 6950,
             "low": 6100,
             "close": 6800,
-            "volume": 115
+            "volume": 121
         }
     ],
     options: [
-        "RSI 과매수 수치만 맹신하여 시장가로 고배율 숏(공매도) 포지션을 무리하게 잡는다.",
-        "강력한 원웨이 폭주 장세에서는 섣부른 역추세 숏 진입을 금지하고, 기존 롱 포지션 보유자는 최고점 대비 일정 하락폭(예: 5% 조정) 이탈 시 익절 처리되도록 추적 손절매(Trailing Stop) 기준선을 계속 위로 끌어 올리며 추세를 끝까지 향유한다.",
-        "상승폭이 아까우므로 즉시 모든 포지션을 시장가로 급하게 전량 매도하고 매매를 끝낸다.",
-        "손절매 가격을 지우고 아무 주문도 없이 방치한다."
+        "과매수 도달 판단에 따른 고배율 숏 무리한 진입",
+        "추종 손절매(Trailing Stop)를 통한 수익 극대화",
+        "상승폭 만족에 따른 즉각적인 전량 시장가 익절",
+        "손절 가격을 해제하고 시세 지속 시까지 방치"
     ],
     correctIndex: 1,
     explanation: "강세 추세가 지나치게 강할 경우 볼린저 밴드 상단을 타고 오르는 밴드워크 현상과 RSI 과매수 현상이 영구 유지될 수 있습니다. 이때 단순 과매수 수치를 이유로 숏 포지션을 잡으면 파산합니다. 기존 매수 포지션의 익절선(Trailing Stop)을 상향 관리하여 추세 상승 이익을 극대화하고 신규 진입은 자제하는 것이 정석 리스크 관리입니다."
