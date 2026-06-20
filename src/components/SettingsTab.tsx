@@ -42,11 +42,11 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onL
   };
 
   const handleShowTerms = () => {
-    window.open('https://chartmon.vercel.app/terms.html', '_system');
+    window.open('https://chartmon.app/terms.html', '_system');
   };
 
   const handleShowPrivacy = () => {
-    window.open('https://chartmon.vercel.app/privacy.html', '_system');
+    window.open('https://chartmon.app/privacy.html', '_system');
   };
 
   return (
