@@ -137,6 +137,7 @@ export const App: React.FC = () => {
   const [isDailyReview, setIsDailyReview] = useState<boolean>(false);
   const [sessionAnswers, setSessionAnswers] = useState<SessionAnswer[]>([]);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isGuestMode, setIsGuestMode] = useState<boolean>(false);
 
   const [quizzesList, setQuizzesList] = useState<QuizItem[]>(quizzes);
   const [currentView, setCurrentView] = useState<ViewMode>('dashboard');
@@ -933,7 +934,7 @@ export const App: React.FC = () => {
     );
   }
 
-  if (isSupabaseConfigured && !userId) {
+  if (isSupabaseConfigured && !userId && !isGuestMode) {
     return (
       <div className="welcome-screen">
         <div className="welcome-logo-container">
@@ -992,6 +993,29 @@ export const App: React.FC = () => {
               <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.4-3.4C17.96 1.19 15.24 0 12 0 9.3 0 7.02 1.9 5.02 4.88l3.2 2.48c.75-2.27 2.88-3.96 5.38-3.96z"/>
             </svg>
             Google 계정으로 시작하기
+          </button>
+          
+          <button 
+            className="guest-login-btn" 
+            onClick={() => setIsGuestMode(true)}
+            style={{
+              marginTop: '12px',
+              background: 'transparent',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              color: '#94a3b8',
+              width: '100%',
+              padding: '12px',
+              borderRadius: '12px',
+              fontSize: '14px',
+              fontWeight: '600',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px'
+            }}
+          >
+            로그인 없이 게스트로 시작하기
           </button>
         </div>
 

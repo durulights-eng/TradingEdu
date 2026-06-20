@@ -1,4 +1,4 @@
-package com.tradingedu.app;
+package com.chartmon.app;
 
 import com.getcapacitor.BridgeActivity;
 
