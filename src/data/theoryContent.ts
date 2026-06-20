@@ -41,8 +41,8 @@ export const theoryDocuments: Record<string, TheoryDocument> = {
         checkpoints: ['몸통 대비 위·아래 꼬리 길이', '종가가 전체 범위의 어느 위치에서 끝났는지', '이전 5~20개 캔들의 방향과 변동성'],
         example: '고가 105, 저가 95, 시가 97, 종가 103이라면 매도세가 95까지 밀었지만 매수세가 대부분을 회복한 강한 종가다. 다만 바로 위에 장기 저항이 있다면 추격 매수보다 저항 돌파 확인이 먼저다.',
         caution: '캔들 한 개만 보고 다음 봉의 방향을 확정하지 않는다.',
-        diagram: 'candles',
-        diagramCaption: '양봉과 음봉의 OHLC 구조. 몸통과 꼬리는 구간 내 힘의 이동을 보여준다.'
+        diagram: 'ohlc',
+        diagramCaption: '양봉과 음봉의 OHLC 구조와 실제 주가 흐름(O➔H➔L➔C)의 캔들 합산 원리.'
       },
       {
         title: '2. 시간봉 선택과 노이즈',

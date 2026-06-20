@@ -67,7 +67,7 @@ export const SkillRadarChart: React.FC<SkillRadarChartProps> = ({ drillStats, pe
     ctx.lineWidth = 1;
     const gridLevels = [33, 66, 100];
     gridLevels.forEach(level => {
-      ctx.strokeStyle = level === 100 ? '#cbd5e1' : '#e2e8f0';
+      ctx.strokeStyle = level === 100 ? 'rgba(148, 163, 184, 0.24)' : 'rgba(148, 163, 184, 0.12)';
       ctx.beginPath();
       for (let i = 0; i < 8; i++) {
         const pt = getVertexPosition(i, level);
@@ -82,7 +82,7 @@ export const SkillRadarChart: React.FC<SkillRadarChartProps> = ({ drillStats, pe
     });
 
     // 2. Draw Spoke Lines from Center to Vertices
-    ctx.strokeStyle = '#e2e8f0';
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.12)';
     ctx.lineWidth = 1;
     for (let i = 0; i < 8; i++) {
       const pt = getVertexPosition(i, 100);
@@ -93,11 +93,11 @@ export const SkillRadarChart: React.FC<SkillRadarChartProps> = ({ drillStats, pe
     }
 
     // 3. Draw the Filled Skill Area with Shadow Glow
-    ctx.fillStyle = 'rgba(90, 82, 229, 0.16)';
-    ctx.strokeStyle = '#5a52e5';
+    ctx.fillStyle = 'rgba(124, 108, 250, 0.16)';
+    ctx.strokeStyle = '#7c6cfa';
     ctx.lineWidth = 2.5;
 
-    ctx.shadowColor = 'rgba(90, 82, 229, 0.25)';
+    ctx.shadowColor = 'rgba(124, 108, 250, 0.25)';
     ctx.shadowBlur = 6;
     ctx.shadowOffsetX = 0;
     ctx.shadowOffsetY = 2;
@@ -127,7 +127,7 @@ export const SkillRadarChart: React.FC<SkillRadarChartProps> = ({ drillStats, pe
       
       // Outer ring
       ctx.fillStyle = '#ffffff';
-      ctx.strokeStyle = '#5a52e5';
+      ctx.strokeStyle = '#7c6cfa';
       ctx.lineWidth = 1.5;
       ctx.beginPath();
       ctx.arc(pt.x, pt.y, 4.5, 0, 2 * Math.PI);
@@ -135,7 +135,7 @@ export const SkillRadarChart: React.FC<SkillRadarChartProps> = ({ drillStats, pe
       ctx.stroke();
 
       // Inner solid center
-      ctx.fillStyle = '#5a52e5';
+      ctx.fillStyle = '#7c6cfa';
       ctx.beginPath();
       ctx.arc(pt.x, pt.y, 2, 0, 2 * Math.PI);
       ctx.fill();
@@ -143,7 +143,7 @@ export const SkillRadarChart: React.FC<SkillRadarChartProps> = ({ drillStats, pe
 
     // 5. Draw Labels
     ctx.font = 'bold 9px Inter, system-ui, -apple-system, sans-serif';
-    ctx.fillStyle = '#475569'; // Slate-600 for clean readable text
+    ctx.fillStyle = '#8b99aa'; // slate-400 for dark theme readability
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 

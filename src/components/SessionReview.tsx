@@ -54,7 +54,7 @@ export const SessionReview: React.FC<SessionReviewProps> = ({ session, allQuizze
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
             <div style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', marginBottom: '4px' }}>
-              {session.type === 'daily' ? '데일리 트레이닝' : '실전 훈련'} · {session.date}
+              {session.type === 'daily' ? '일일 훈련' : '실전 훈련'} · {session.date}
             </div>
             <div style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text-primary)' }}>
               세션 오답노트
@@ -199,7 +199,7 @@ export const SessionReview: React.FC<SessionReviewProps> = ({ session, allQuizze
 
                   {/* Explanation */}
                   <div style={{
-                    background: 'rgba(90, 82, 229, 0.04)',
+                    background: 'var(--color-brand-glow)',
                     borderLeft: '3px solid var(--color-brand)',
                     borderRadius: '6px',
                     padding: '10px 12px',

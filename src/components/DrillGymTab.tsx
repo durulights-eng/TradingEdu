@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { BookOpen, Play, Lock, Trophy, ArrowLeft } from 'lucide-react';
+import { BookOpen, Play, Lock, Trophy } from 'lucide-react';
 import { TheoryReader } from './TheoryReader';
 import { GlossaryViewer } from './GlossaryViewer';
+import { theoryDocuments } from '../data/theoryContent';
 
 import type { CategoryStat } from '../lib/ratingEngine';
 
@@ -18,6 +19,7 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
 }) => {
   const [subView, setSubView] = useState<'gym' | 'library' | 'dictionary'>('gym');
   const [activeTheory, setActiveTheory] = useState<string | null>(null);
+  const [entrySource, setEntrySource] = useState<'gym' | 'library'>('library');
 
   const drills = [
     {
@@ -146,24 +148,42 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
   ];
 
   return (
-    <div className="drill-gym-wrapper" style={{ padding: '24px 20px', paddingBottom: '90px' }}>
+    <div className="drill-gym-wrapper">
       {/* Sub navigation header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '12px' }}>
-        <h2 style={{ fontSize: '18px', fontWeight: 800, margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Trophy size={20} style={{ color: 'var(--color-brand)' }} />
-          <span>
-            {subView === 'gym' ? '실전 차트 훈련소' : subView === 'library' ? '이론 백과' : '용어 사전'}
-          </span>
-        </h2>
-        
-        <div style={{ display: 'flex', gap: '6px' }}>
-          {subView !== 'gym' && (
+      {activeTheory === null && (
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '12px' }}>
+          <h2 style={{ fontSize: '18px', fontWeight: 800, margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Trophy size={20} style={{ color: 'var(--color-brand)' }} />
+            <span>
+              {subView === 'gym' ? '실전 차트 훈련소' : subView === 'library' ? '이론 백과' : '용어 사전'}
+            </span>
+          </h2>
+          
+          <div style={{ display: 'flex', gap: '6px' }}>
+            {subView !== 'gym' && (
+              <button 
+                onClick={() => { setSubView('gym'); setActiveTheory(null); }}
+                style={{
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  border: '1px solid var(--border-color)',
+                  color: 'var(--text-secondary)',
+                  padding: '6px 12px',
+                  borderRadius: '16px',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s'
+                }}
+              >
+                🏋️ 훈련소
+              </button>
+            )}
             <button 
-              onClick={() => { setSubView('gym'); setActiveTheory(null); }}
+              onClick={() => { setEntrySource('library'); setSubView('library'); setActiveTheory(null); }}
               style={{
-                background: 'rgba(255, 255, 255, 0.03)',
-                border: '1px solid var(--border-color)',
-                color: 'var(--text-secondary)',
+                background: subView === 'library' ? 'rgba(59, 130, 246, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                border: subView === 'library' ? '1px solid rgba(59, 130, 246, 0.4)' : '1px solid var(--border-color)',
+                color: subView === 'library' ? 'var(--color-brand)' : 'var(--text-secondary)',
                 padding: '6px 12px',
                 borderRadius: '16px',
                 fontSize: '11px',
@@ -172,43 +192,27 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
                 transition: 'all 0.2s'
               }}
             >
-              🏋️ 훈련소
+              📚 이론 백과
             </button>
-          )}
-          <button 
-            onClick={() => { setSubView('library'); setActiveTheory(null); }}
-            style={{
-              background: subView === 'library' ? 'rgba(59, 130, 246, 0.15)' : 'rgba(255, 255, 255, 0.03)',
-              border: subView === 'library' ? '1px solid rgba(59, 130, 246, 0.4)' : '1px solid var(--border-color)',
-              color: subView === 'library' ? 'var(--color-brand)' : 'var(--text-secondary)',
-              padding: '6px 12px',
-              borderRadius: '16px',
-              fontSize: '11px',
-              fontWeight: 700,
-              cursor: 'pointer',
-              transition: 'all 0.2s'
-            }}
-          >
-            📚 이론 백과
-          </button>
-          <button 
-            onClick={() => { setSubView('dictionary'); setActiveTheory(null); }}
-            style={{
-              background: subView === 'dictionary' ? 'rgba(59, 130, 246, 0.15)' : 'rgba(255, 255, 255, 0.03)',
-              border: subView === 'dictionary' ? '1px solid rgba(59, 130, 246, 0.4)' : '1px solid var(--border-color)',
-              color: subView === 'dictionary' ? 'var(--color-brand)' : 'var(--text-secondary)',
-              padding: '6px 12px',
-              borderRadius: '16px',
-              fontSize: '11px',
-              fontWeight: 700,
-              cursor: 'pointer',
-              transition: 'all 0.2s'
-            }}
-          >
-            📖 용어 사전
-          </button>
+            <button 
+              onClick={() => { setSubView('dictionary'); setActiveTheory(null); }}
+              style={{
+                background: subView === 'dictionary' ? 'rgba(59, 130, 246, 0.15)' : 'rgba(255, 255, 255, 0.03)',
+                border: subView === 'dictionary' ? '1px solid rgba(59, 130, 246, 0.4)' : '1px solid var(--border-color)',
+                color: subView === 'dictionary' ? 'var(--color-brand)' : 'var(--text-secondary)',
+                padding: '6px 12px',
+                borderRadius: '16px',
+                fontSize: '11px',
+                fontWeight: 700,
+                cursor: 'pointer',
+                transition: 'all 0.2s'
+              }}
+            >
+              📖 용어 사전
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* View router */}
       {subView === 'gym' && (
@@ -297,6 +301,7 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
                 <div style={{ display: 'flex', gap: '8px', marginTop: '4px' }}>
                   <button 
                     onClick={() => {
+                      setEntrySource('gym');
                       setSubView('library');
                       setActiveTheory(d.file);
                     }}
@@ -360,58 +365,53 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
                 트레이딩 핵심 이론 백과
               </h2>
               <div className="modules-list" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {theoryModulesList.map((tm) => (
-                  <div 
-                    key={tm.id} 
-                    className="module-card"
-                    onClick={() => setActiveTheory(tm.file)}
-                    style={{
-                      cursor: 'pointer',
-                      padding: '18px 20px',
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      transition: 'all 0.2s',
-                      borderRadius: '16px',
-                      border: '1px solid var(--border-color)',
-                      background: 'linear-gradient(135deg, rgba(255,255,255,0.01) 0%, rgba(22, 26, 37, 0.4) 100%)'
-                    }}
-                    onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--color-brand)'}
-                    onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-color)'}
-                  >
-                    <div>
-                      <h3 style={{ fontSize: '15px', fontWeight: 800, marginBottom: '6px', color: 'var(--text-primary)' }}>{tm.title}</h3>
-                      <p style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>{tm.desc}</p>
+                {theoryModulesList.map((tm) => {
+                  const doc = theoryDocuments[tm.file];
+                  return (
+                    <div 
+                      key={tm.id} 
+                      className="module-card"
+                      onClick={() => setActiveTheory(tm.file)}
+                      style={{
+                        borderRadius: '16px',
+                        border: '1px solid var(--border-color)',
+                        background: 'linear-gradient(135deg, rgba(255,255,255,0.01) 0%, rgba(22, 26, 37, 0.4) 100%)'
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--color-brand)'}
+                      onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-color)'}
+                    >
+                      <div className="module-card-body">
+                        <h3 className="module-card-title">{tm.title}</h3>
+                        <p className="module-card-desc">
+                          {doc?.subtitle || tm.desc}
+                        </p>
+                        <div className="module-card-footer">
+                          <span className="category-tag">{tm.category}</span>
+                          {doc && (
+                            <div className="module-card-meta">
+                              <span>약 {doc.readingMinutes}분</span>
+                              <span>·</span>
+                              <span>{doc.sections.length}개 실전 단원</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                    <span className="category-tag" style={{ background: 'rgba(59, 130, 246, 0.1)', color: 'var(--color-brand)', fontSize: '11px', fontWeight: 700, padding: '4px 8px', borderRadius: '6px', flexShrink: 0 }}>
-                      {tm.category}
-                    </span>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <button 
-                onClick={() => setActiveTheory(null)}
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  gap: '6px', 
-                  background: 'none', 
-                  border: 'none', 
-                  color: 'var(--text-secondary)', 
-                  cursor: 'pointer', 
-                  fontSize: '14px', 
-                  fontWeight: 600,
-                  marginBottom: '16px',
-                  alignSelf: 'flex-start'
-                }}
-              >
-                <ArrowLeft size={18} />
-                <span>이론 목록으로 돌아가기</span>
-              </button>
-              <TheoryReader theoryFile={activeTheory} onBack={() => setActiveTheory(null)} />
+              <TheoryReader 
+                theoryFile={activeTheory} 
+                onBack={() => {
+                  setActiveTheory(null);
+                  if (entrySource === 'gym') {
+                    setSubView('gym');
+                  }
+                }} 
+              />
             </div>
           )}
         </div>

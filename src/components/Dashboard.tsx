@@ -42,8 +42,8 @@ const renderSkillAnalysisFeedback = (drillStats: Record<string, CategoryStat>, x
   if (attempts === 0) {
     return (
       <div style={{
-        background: 'rgba(90, 82, 229, 0.03)',
-        border: '1px solid rgba(90, 82, 229, 0.12)',
+        background: 'var(--color-brand-glow)',
+        border: '1px solid rgba(124, 108, 250, 0.12)',
         borderRadius: '14px',
         padding: '16px',
         textAlign: 'center',
@@ -51,7 +51,7 @@ const renderSkillAnalysisFeedback = (drillStats: Record<string, CategoryStat>, x
         fontSize: '12px',
         lineHeight: '1.5'
       }}>
-        💡 <strong>데일리 트레이닝</strong> 또는 <strong>실전 훈련</strong>을 진행하여 데이터를 축적하면, 여기에 나만의 강점/약점 분석 및 보완 학습 추천 리포트가 생성됩니다.
+        💡 <strong>일일 맞춤 훈련</strong> 또는 <strong>실전 훈련</strong>을 진행하여 데이터를 축적하면, 여기에 나만의 강점/약점 분석 및 보완 학습 추천 리포트가 생성됩니다.
       </div>
     );
   }
@@ -77,8 +77,8 @@ const renderSkillAnalysisFeedback = (drillStats: Record<string, CategoryStat>, x
   if (!strongest) {
     return (
       <div style={{
-        background: 'rgba(90, 82, 229, 0.03)',
-        border: '1px solid rgba(90, 82, 229, 0.12)',
+        background: 'var(--color-brand-glow)',
+        border: '1px solid rgba(124, 108, 250, 0.12)',
         borderRadius: '14px',
         padding: '16px',
         textAlign: 'center',
@@ -329,7 +329,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         }}>
           <h2 style={{ color: 'var(--color-bullish)', fontSize: '18px', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Star size={18} fill="var(--color-bullish)" />
-            오늘의 데일리 트레이닝 완료!
+            오늘의 일일 훈련 완료!
           </h2>
           <p style={{ margin: '10px 0 16px 0', fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
             오늘의 맞춤형 차트 학습 15문제를 모두 완수하셨습니다. (+30 XP 보너스 획득)
@@ -347,7 +347,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             justifyContent: 'center'
           }}>
             <Play size={16} fill="currentColor" />
-            데일리 트레이닝 복습하기 (+5 XP)
+            일일 훈련 복습하기 (+5 XP)
           </button>
         </div>
       ) : (
@@ -360,7 +360,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         }}>
           <h2 style={{ fontSize: '18px', fontWeight: 800 }}>하루 15분, 실전 차트 근육 키우기 💪</h2>
           <p style={{ margin: '10px 0 16px 0', fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
-            실전 차트 데이터로 구성된 15개의 데일리 훈련을 풀고 연속 스트릭 보너스(+30 XP)를 획득해 보세요.
+            실전 차트 데이터로 구성된 15개의 일일 맞춤 문제를 풀고 연속 스트릭 보너스(+30 XP)를 획득해 보세요.
           </p>
           <button className="btn-primary" onClick={onStartDailyQuiz} style={{ 
             fontWeight: 700, 
@@ -373,7 +373,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             justifyContent: 'center'
           }}>
             <Play size={16} fill="currentColor" />
-            오늘의 데일리 트레이닝 시작 (15문제)
+            오늘의 일일 훈련 시작 (15문제)
           </button>
         </div>
       )}
@@ -525,7 +525,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                       height: '36px',
                       borderRadius: '10px',
                       background: session.type === 'daily' 
-                        ? 'rgba(90, 82, 229, 0.08)' 
+                        ? 'rgba(124, 108, 250, 0.12)' 
                         : 'rgba(16, 185, 129, 0.08)',
                       display: 'flex',
                       alignItems: 'center',
@@ -539,7 +539,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                     </div>
                     <div style={{ minWidth: 0 }}>
                       <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)' }}>
-                        {session.type === 'daily' ? '데일리 트레이닝' : '실전 훈련'}
+                        {session.type === 'daily' ? '일일 훈련' : '실전 훈련'}
                       </div>
                       <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px' }}>
                         {session.date} · 정답률 {accuracy}% ({session.correctCount}/{session.totalCount})

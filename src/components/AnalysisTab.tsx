@@ -23,7 +23,7 @@ const getSkillAnalysisFeedback = (drillStats: Record<string, CategoryStat>) => {
   const attempts = Object.values(drillStats).reduce((sum, s) => sum + s.attempts, 0);
   if (attempts === 0) {
     return (
-      <span>데일리 트레이닝과 실전 훈련을 거듭할수록 분석 데이터가 정교해집니다.</span>
+      <span>일일 맞춤 훈련과 실전 훈련을 거듭할수록 분석 데이터가 정교해집니다.</span>
     );
   }
 
@@ -177,7 +177,7 @@ export const AnalysisTab: React.FC<AnalysisTabProps> = ({
 
           {/* Analysis Feedback */}
           <div style={{
-            background: 'rgba(90, 82, 229, 0.04)',
+            background: 'var(--color-brand-glow)',
             borderLeft: '3px solid var(--color-brand)',
             borderRadius: '6px',
             padding: '10px 12px',
@@ -252,7 +252,7 @@ export const AnalysisTab: React.FC<AnalysisTabProps> = ({
                       height: '36px',
                       borderRadius: '10px',
                       background: session.type === 'daily' 
-                        ? 'rgba(90, 82, 229, 0.08)' 
+                        ? 'rgba(124, 108, 250, 0.12)' 
                         : 'rgba(16, 185, 129, 0.08)',
                       display: 'flex',
                       alignItems: 'center',
@@ -266,7 +266,7 @@ export const AnalysisTab: React.FC<AnalysisTabProps> = ({
                     </div>
                     <div style={{ minWidth: 0 }}>
                       <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-primary)' }}>
-                        {session.type === 'daily' ? '데일리 트레이닝' : '실전 훈련'}
+                        {session.type === 'daily' ? '일일 훈련' : '실전 훈련'}
                       </div>
                       <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px' }}>
                         {session.date} · 정답률 {accuracy}% ({session.correctCount}/{session.totalCount})

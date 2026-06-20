@@ -1,6 +1,7 @@
 import React from 'react';
 
 export type TheoryDiagramType =
+  | 'ohlc'
   | 'candles'
   | 'support-resistance'
   | 'market-structure'
@@ -21,6 +22,41 @@ const Grid = () => (
   <>
     {[40, 80, 120, 160].map(y => <line key={`h-${y}`} x1="18" y1={y} x2="402" y2={y} className="theory-grid-line" />)}
     {[70, 130, 190, 250, 310, 370].map(x => <line key={`v-${x}`} x1={x} y1="18" x2={x} y2="188" className="theory-grid-line" />)}
+  </>
+);
+
+const Ohlc = () => (
+  <>
+    <Grid />
+    {/* Bullish Candle */}
+    <line x1="74" y1="36" x2="74" y2="170" className="bull-stroke" />
+    <rect x="52" y="72" width="44" height="62" rx="3" className="bull-fill" />
+    <text x="74" y="26" textAnchor="middle">고가 (H)</text>
+    <text x="74" y="184" textAnchor="middle">저가 (L)</text>
+    <text x="74" y="66" textAnchor="middle">종가 (C)</text>
+    <text x="74" y="149" textAnchor="middle">시가 (O)</text>
+
+    {/* Bearish Candle */}
+    <line x1="194" y1="34" x2="194" y2="174" className="bear-stroke" />
+    <rect x="172" y="70" width="44" height="70" rx="3" className="bear-fill" />
+    <text x="194" y="26" textAnchor="middle">고가 (H)</text>
+    <text x="194" y="184" textAnchor="middle">저가 (L)</text>
+    <text x="194" y="64" textAnchor="middle">시가 (O)</text>
+    <text x="194" y="155" textAnchor="middle">종가 (C)</text>
+
+    {/* Price Path (OHLC Concept) */}
+    <path d="M 285 130 C 305 170, 310 30, 335 40 C 355 60, 360 160, 385 90" fill="none" stroke="var(--color-brand)" strokeWidth="2.5" strokeDasharray="5 4" />
+    <circle cx="285" cy="130" r="4.5" className="accent-dot" />
+    <text x="285" y="120" textAnchor="middle">시 (O)</text>
+
+    <circle cx="335" cy="40" r="4.5" className="bear-dot" />
+    <text x="335" y="28" textAnchor="middle">고 (H)</text>
+
+    <circle cx="360" cy="140" r="4.5" className="bull-dot" />
+    <text x="360" y="156" textAnchor="middle">저 (L)</text>
+
+    <circle cx="385" cy="90" r="4.5" className="accent-dot" />
+    <text x="385" y="80" textAnchor="middle">종 (C)</text>
   </>
 );
 
@@ -165,7 +201,7 @@ const Journal = () => (
 
 export const TheoryDiagram: React.FC<TheoryDiagramProps> = ({ type, caption }) => {
   const diagrams: Record<TheoryDiagramType, React.ReactNode> = {
-    candles: <Candles />, 'support-resistance': <SupportResistance />, 'market-structure': <MarketStructure />,
+    ohlc: <Ohlc />, candles: <Candles />, 'support-resistance': <SupportResistance />, 'market-structure': <MarketStructure />,
     breakout: <Breakout />, volume: <Volume />, indicator: <Indicator />, multitimeframe: <MultiTimeframe />,
     'risk-reward': <RiskReward />, execution: <Execution />, journal: <Journal />,
   };

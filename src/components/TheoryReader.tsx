@@ -33,13 +33,18 @@ export const TheoryReader: React.FC<TheoryReaderProps> = ({ theoryFile, onBack, 
         </button>
       )}
 
-      <header className="theory-reader-header">
-        <span className="theory-category-label">{document.category}</span>
-        <h1>{document.title}</h1>
-        <p>{document.subtitle}</p>
-        <div className="theory-meta-row">
-          <span><Clock3 size={15} /> 약 {document.readingMinutes}분</span>
-          <span><BookOpen size={15} /> {document.sections.length}개 실전 단원</span>
+      <header className="theory-reader-header" style={{ paddingBottom: '14px', marginBottom: '16px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '8px' }}>
+          <span className="theory-category-label" style={{ fontSize: '11.5px', fontWeight: 800 }}>{document.category}</span>
+          <div className="theory-meta-row" style={{ marginTop: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '11px', color: 'var(--text-muted)', fontWeight: 700 }}>
+              <Clock3 size={13} /> 약 {document.readingMinutes}분
+            </span>
+            <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>·</span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '11px', color: 'var(--text-muted)', fontWeight: 700 }}>
+              <BookOpen size={13} /> {document.sections.length}개 단원
+            </span>
+          </div>
         </div>
       </header>
 

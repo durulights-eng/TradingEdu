@@ -677,7 +677,7 @@ export const App: React.FC = () => {
 
       if (isDailyReview) {
         // Daily Review completion: skip ELO rating and session history update
-        let msg = `🎉 데일리 복습 완료!\n- 정답률: ${Math.round((sessionCorrectAnswers / activeQuizList.length) * 100)}% (${sessionCorrectAnswers}/${activeQuizList.length} 정답)\n- 획득 경험치: +${sessionXp} XP\n🎁 복습 완료 보너스 (+5 XP) 추가 지급!`;
+        let msg = `🎉 일일 훈련 복습 완료!\n- 정답률: ${Math.round((sessionCorrectAnswers / activeQuizList.length) * 100)}% (${sessionCorrectAnswers}/${activeQuizList.length} 정답)\n- 획득 경험치: +${sessionXp} XP\n🎁 복습 완료 보너스 (+5 XP) 추가 지급!`;
         alert(msg);
       } else {
         // ELO Rating and Skill Proficiency processing
@@ -711,7 +711,7 @@ export const App: React.FC = () => {
 
         // Feedback alert
         let msg = isDailySession
-          ? `🎉 오늘의 데일리 트레이닝 완료! (+${sessionXp} XP 획득)\n📈 트레이더 레이팅: ${ratingState.overallRating} → ${nextRatingState.overallRating} RP (${eloDiffStr} RP)`
+          ? `🎉 오늘의 일일 훈련 완료! (+${sessionXp} XP 획득)\n📈 트레이더 레이팅: ${ratingState.overallRating} → ${nextRatingState.overallRating} RP (${eloDiffStr} RP)`
           : `🎯 실전 훈련 완료!\n- 정답률: ${Math.round((sessionCorrectAnswers / activeQuizList.length) * 100)}% (${sessionCorrectAnswers}/${activeQuizList.length} 정답)\n- 획득 경험치: +${sessionXp} XP\n📈 트레이더 레이팅: ${ratingState.overallRating} → ${nextRatingState.overallRating} RP (${eloDiffStr} RP)`;
 
         if (isDailySession && dailyBonusAwarded) {
@@ -959,7 +959,7 @@ export const App: React.FC = () => {
                 <Flame size={16} fill="currentColor" />
               </div>
               <div>
-                <div className="welcome-feature-title">매일 새로운 데일리 세션</div>
+                <div className="welcome-feature-title">매일 제공되는 일일 맞춤 훈련</div>
                 <div className="welcome-feature-desc">하루 한 번, 꾸준한 주식 차트 읽기 연습으로 스트릭을 유지하고 경험치를 쌓아 등급을 올리세요.</div>
               </div>
             </div>
@@ -985,11 +985,17 @@ export const App: React.FC = () => {
 
   return (
     <div className="app-container">
-      {/* Top Header Section */}
       {currentView !== 'quiz' && (
         <header>
-          <div className="logo-section" onClick={() => { setCurrentView('dashboard'); }} style={{ cursor: 'pointer' }}>
-            <h1>ChartMon</h1>
+          <div className="logo-section" onClick={() => { setCurrentView('dashboard'); }} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--color-brand)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 17L12 22L22 17" stroke="#8b5cf6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="#a78bfa" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <circle cx="9" cy="7" r="1" fill="#50e3c2"/>
+              <circle cx="15" cy="7" r="1" fill="#50e3c2"/>
+            </svg>
+            <h1 className="logo-text">ChartMon</h1>
           </div>
           <div className="stats-bar">
             <div className="stat-item streak" title="연속 활성 일수">
@@ -1068,7 +1074,7 @@ export const App: React.FC = () => {
             className={`tab-btn ${currentView === 'dashboard' ? 'active' : ''}`}
           >
             <Play size={20} />
-            <span>데일리</span>
+            <span>일일 훈련</span>
           </button>
           <button
             onClick={() => { setCurrentView('settings'); }}
@@ -1090,7 +1096,7 @@ export const App: React.FC = () => {
               <h3 className="app-modal-title">오늘의 훈련 시작</h3>
               <p className="app-modal-desc">
                 새로운 하루가 시작되었습니다!<br />
-                오늘의 데일리 트레이닝 세션(15문제)을 지금 바로 시작하시겠습니까?
+                오늘의 일일 맞춤 훈련(15문제)을 지금 바로 시작하시겠습니까?
               </p>
             </div>
             <div className="app-modal-actions">

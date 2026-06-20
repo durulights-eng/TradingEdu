@@ -77,7 +77,7 @@ function App() {
         </nav>
         <a className="nav-cta" href="#diagnosis">
           <Play size={16} />
-          15초 진단
+          15초 무료 진단
         </a>
       </header>
 
@@ -99,7 +99,7 @@ function App() {
           </p>
           <div className="hero-actions">
             <a className="primary-button" href="#diagnosis">
-              내 약점 15초 진단
+              내 약점 15초 진단하기
               <ArrowRight size={18} />
             </a>
             <a className="secondary-button" href="#system">
@@ -109,7 +109,7 @@ function App() {
           </div>
           <div className="trust-row">
             <span>
-              <Timer size={15} /> 매일 15문제 트레이닝
+              <Timer size={15} /> 매일 15분 트레이닝
             </span>
             <span>
               <Radar size={15} /> 실시간 실력 ELO 레이팅
@@ -172,7 +172,7 @@ function App() {
 
       <section className="metric-band" aria-label="핵심 지표">
         <div>
-          <strong>15문제</strong>
+          <strong>15분</strong>
           <span>매일 맞춤 트레이닝</span>
         </div>
         <div>
@@ -362,7 +362,7 @@ function App() {
       </article>
       <article className="review-card">
         <div className="review-rating">⭐⭐⭐⭐⭐</div>
-        <p className="review-text">"이론 책을 수십 권 읽어도 실전에선 맨날 흔들렸는데, 게임처럼 매일 15문제씩 ELO 레이팅 올리면서 연습하니까 부담 없고 너무 재밌습니다. 특히 8축 레이더 차트로 제 약점이 리스크 관리라는 걸 팩트로 알게 되었네요."</p>
+        <p className="review-text">"이론 책을 수십 권 읽어도 실전에선 맨날 흔들렸는데, 게임처럼 매일 15분씩 ELO 레이팅 올리면서 연습하니까 부담 없고 너무 재밌습니다. 특히 8축 레이더 차트로 제 약점이 리스크 관리라는 걸 팩트로 알게 되었네요."</p>
         <div className="review-author">
           <strong>가상자산 투자자 정모씨</strong>
           <span>레이팅 1580 RP</span>
@@ -375,7 +375,7 @@ function App() {
       <section className="final-cta" id="download">
         <Zap size={28} />
         <h2>잃고 나서 복기하지 말고, 잃기 전에 훈련하세요.</h2>
-        <p>15초 진단 결과를 토대로 앱에서 본인의 취약점 분석 리포트와 매일 맞춤 트레이닝을 이어받습니다.</p>
+        <p>15초 실력 진단 결과를 바탕으로, 앱에서 상세한 취약점 분석 리포트와 일일 맞춤 훈련을 이어받습니다.</p>
         <a className="primary-button" href="https://play.google.com/store" target="_blank" rel="noreferrer">
           Google Play로 이동
           <ArrowRight size={18} />
