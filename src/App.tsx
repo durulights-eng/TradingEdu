@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Capacitor } from '@capacitor/core';
 import { quizzes, getTradingTier, getLocalDateString, getYesterdayDateString, isOlderThanYesterday } from './data/quizzes';
 import type { QuizItem } from './data/quizzes';
 import { Dashboard } from './components/Dashboard';
@@ -352,6 +353,55 @@ export const App: React.FC = () => {
     };
   }, []);
 
+  // Handle Capacitor Deep Link for Native Platforms (OAuth redirects)
+  useEffect(() => {
+    let active = true;
+
+    if (Capacitor.isNativePlatform()) {
+      const setupDeepLink = async () => {
+        try {
+          const { App: CapApp } = await import('@capacitor/app');
+          
+          CapApp.addListener('appUrlOpen', async (data: any) => {
+            if (!active) return;
+            console.log('App opened with URL:', data.url);
+            
+            try {
+              const url = new URL(data.url);
+              const hash = url.hash;
+              if (hash) {
+                const params = new URLSearchParams(hash.substring(1));
+                const access_token = params.get('access_token');
+                const refresh_token = params.get('refresh_token');
+
+                if (access_token && refresh_token) {
+                  const { error } = await supabase.auth.setSession({
+                    access_token,
+                    refresh_token
+                  });
+                  if (error) {
+                    console.error('ChartMon DeepLink: Error setting session:', error.message);
+                    alert(`자동 로그인 실패: ${error.message}`);
+                  }
+                }
+              }
+            } catch (err: any) {
+              console.error('ChartMon DeepLink: Failed to parse URL:', err);
+            }
+          });
+        } catch (err) {
+          console.error('ChartMon DeepLink: Failed to load @capacitor/app plugin', err);
+        }
+      };
+
+      setupDeepLink();
+    }
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
   // Sync state changes with LocalStorage and Supabase (upsert)
   const updateStats = async (
     newXp: number,
@@ -406,10 +456,15 @@ export const App: React.FC = () => {
   const handleGoogleLogin = async () => {
     if (!isSupabaseConfigured) return;
     try {
+      const isNative = Capacitor.isNativePlatform();
+      const redirectTo = isNative
+        ? 'com.chartmon.app://login-callback'
+        : window.location.origin + window.location.pathname;
+
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: window.location.origin + window.location.pathname
+          redirectTo
         }
       });
       if (error) {
@@ -722,16 +777,139 @@ export const App: React.FC = () => {
         alignItems: 'center',
         justifyContent: 'center',
         minHeight: '100vh',
-        background: '#0f172a',
+        background: 'radial-gradient(circle at center, #1e293b 0%, #0f172a 100%)',
         color: '#fff',
-        fontFamily: 'var(--font-main)'
+        fontFamily: 'var(--font-main)',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
+        {/* Glow effect in background */}
         <div style={{
-          fontSize: '32px',
-          marginBottom: '16px',
-          animation: 'spin 1.5s linear infinite'
-        }}>🔄</div>
-        <p style={{ fontSize: '14px', color: '#94a3b8' }}>차트몬 학습 데이터 불러오는 중...</p>
+          position: 'absolute',
+          width: '300px',
+          height: '300px',
+          background: 'rgba(59, 130, 246, 0.15)',
+          borderRadius: '50%',
+          filter: 'blur(80px)',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: 1
+        }} />
+
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          zIndex: 2,
+          textAlign: 'center',
+          padding: '0 24px'
+        }}>
+          {/* Logo container */}
+          <div style={{
+            position: 'relative',
+            width: '96px',
+            height: '96px',
+            borderRadius: '24px',
+            background: 'linear-gradient(135deg, #1e1b4b 0%, #311042 100%)',
+            border: '2px solid rgba(139, 92, 246, 0.3)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: '24px',
+            boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(139, 92, 246, 0.2)',
+            animation: 'pulse 2s infinite ease-in-out'
+          }}>
+            {/* Custom SVG logo representing a cute chart monster */}
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 17L12 22L22 17" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              {/* Eyes */}
+              <circle cx="9" cy="7" r="1.5" fill="#50e3c2"/>
+              <circle cx="15" cy="7" r="1.5" fill="#50e3c2"/>
+            </svg>
+          </div>
+
+          {/* Title */}
+          <h1 style={{
+            fontSize: '36px',
+            fontWeight: '800',
+            letterSpacing: '-0.05em',
+            margin: '0 0 8px 0',
+            background: 'linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #8b5cf6 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            textShadow: '0 4px 12px rgba(59, 130, 246, 0.1)'
+          }}>
+            ChartMon
+          </h1>
+
+          {/* Subtitle */}
+          <p style={{
+            fontSize: '18px',
+            fontWeight: '600',
+            color: '#e2e8f0',
+            margin: '0 0 12px 0',
+            letterSpacing: '-0.02em'
+          }}>
+            나만의 AI 차트 선생님
+          </p>
+
+          {/* Promotional description */}
+          <p style={{
+            fontSize: '13px',
+            color: '#94a3b8',
+            margin: '0 0 32px 0',
+            maxWidth: '280px',
+            lineHeight: '1.6',
+            fontWeight: '400'
+          }}>
+            매일 15분, 실제 차트 데이터를 분석하며 실전 트레이딩 감각을 키워보세요.
+          </p>
+
+          {/* Sleek Progress / Loading indicator */}
+          <div style={{
+            width: '180px',
+            height: '4px',
+            background: '#1e293b',
+            borderRadius: '2px',
+            overflow: 'hidden',
+            marginBottom: '16px'
+          }}>
+            <div style={{
+              height: '100%',
+              width: '50%',
+              background: 'linear-gradient(90deg, #38bdf8, #8b5cf6)',
+              borderRadius: '2px',
+              animation: 'loadingProgress 1.8s infinite ease-in-out'
+            }} />
+          </div>
+
+          <p style={{
+            fontSize: '11px',
+            color: '#64748b',
+            letterSpacing: '0.05em',
+            textTransform: 'uppercase',
+            margin: 0
+          }}>
+            Loading system data...
+          </p>
+        </div>
+
+        {/* Global style overrides for the custom animations */}
+        <style dangerouslySetInnerHTML={{__html: `
+          @keyframes loadingProgress {
+            0% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+          }
+          @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(139, 92, 246, 0.2); }
+            50% { transform: scale(1.03); box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.6), 0 0 25px 5px rgba(139, 92, 246, 0.4); }
+            100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(139, 92, 246, 0.2); }
+          }
+        `}} />
       </div>
     );
   }
@@ -741,7 +919,14 @@ export const App: React.FC = () => {
       <div className="welcome-screen">
         <div className="welcome-logo-container">
           <div className="welcome-logo-icon">
-            <Award size={40} color="#fff" />
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 17L12 22L22 17" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              {/* Eyes */}
+              <circle cx="9" cy="7" r="1.5" fill="#50e3c2"/>
+              <circle cx="15" cy="7" r="1.5" fill="#50e3c2"/>
+            </svg>
           </div>
           <h2 className="welcome-title">ChartMon</h2>
           <p className="welcome-subtitle">하루 15분 차트 트레이딩 실전 훈련</p>

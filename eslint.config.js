@@ -11,6 +11,7 @@ export default defineConfig([
     'admin/dist',
     'node_modules',
     'admin/node_modules',
+    'landing',
     'android',
     'android/app/build',
     'android/**/build/**',

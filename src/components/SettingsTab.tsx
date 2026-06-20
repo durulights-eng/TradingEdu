@@ -42,11 +42,11 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onL
   };
 
   const handleShowTerms = () => {
-    alert('이용약관\n\n본 앱(ChartMon)은 차트 분석 학습을 위한 교육용 앱입니다.\n\n1. 본 앱의 콘텐츠는 교육 목적으로만 제공되며, 실제 투자 조언이 아닙니다.\n2. 사용자의 학습 데이터는 서비스 개선을 위해 익명으로 활용될 수 있습니다.\n3. 앱 내 표시되는 차트 데이터는 과거 실제 데이터를 기반으로 하되 교육 목적으로 가공되었습니다.\n4. 본 서비스를 통해 발생하는 투자 손실에 대해 개발자는 책임을 지지 않습니다.\n\n최종 업데이트: 2026년 6월');
+    window.open('https://chartmon.vercel.app/terms.html', '_system');
   };
 
   const handleShowPrivacy = () => {
-    alert('개인정보 처리방침\n\n1. 수집하는 정보: 학습 기록, 퀴즈 정답률, 세션 히스토리\n2. 수집 목적: 맞춤형 학습 경험 제공 및 실력 분석\n3. 보관 기간: 계정 삭제 시까지\n4. 제3자 제공: 제공하지 않음\n5. 개인정보 삭제: 설정 > 계정 삭제를 통해 모든 데이터 즉시 삭제 가능\n\n문의: chartmon.app@gmail.com\n최종 업데이트: 2026년 6월');
+    window.open('https://chartmon.vercel.app/privacy.html', '_system');
   };
 
   return (

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">TradingEdu</string>
-    <string name="title_activity_main">TradingEdu</string>
+    <string name="app_name">차트몬</string>
+    <string name="title_activity_main">차트몬</string>
     <string name="package_name">com.tradingedu.app</string>
     <string name="custom_url_scheme">com.tradingedu.app</string>
 </resources>
