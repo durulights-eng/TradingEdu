@@ -853,7 +853,7 @@ export const App: React.FC = () => {
             margin: '0 0 12px 0',
             letterSpacing: '-0.02em'
           }}>
-            나만의 AI 차트 선생님
+            나만의 AI 주식 차트 선생님
           </p>
 
           {/* Promotional description */}
@@ -865,7 +865,7 @@ export const App: React.FC = () => {
             lineHeight: '1.6',
             fontWeight: '400'
           }}>
-            매일 15분, 실제 차트 데이터를 분석하며 실전 트레이딩 감각을 키워보세요.
+            매일 15분, 실제 주식 차트 데이터를 분석하며 실전 트레이딩 감각을 키워보세요.
           </p>
 
           {/* Sleek Progress / Loading indicator */}
@@ -929,7 +929,7 @@ export const App: React.FC = () => {
             </svg>
           </div>
           <h2 className="welcome-title">ChartMon</h2>
-          <p className="welcome-subtitle">하루 15분 차트 트레이딩 실전 훈련</p>
+          <p className="welcome-subtitle">하루 15분 주식 차트 트레이딩 실전 훈련</p>
         </div>
 
         <div className="welcome-card">
@@ -939,8 +939,8 @@ export const App: React.FC = () => {
                 <Play size={16} fill="currentColor" />
               </div>
               <div>
-                <div className="welcome-feature-title">실제 차트 데이터 기반 퀴즈</div>
-                <div className="welcome-feature-desc">과거 실제 금융 차트를 분석하며 올바른 매매 결정을 내리는 훈련을 합니다.</div>
+                <div className="welcome-feature-title">실제 주식 차트 데이터 기반 퀴즈</div>
+                <div className="welcome-feature-desc">과거 실제 주식 차트를 분석하며 올바른 매매 결정을 내리는 훈련을 합니다.</div>
               </div>
             </div>
 
@@ -960,7 +960,7 @@ export const App: React.FC = () => {
               </div>
               <div>
                 <div className="welcome-feature-title">매일 새로운 데일리 세션</div>
-                <div className="welcome-feature-desc">하루 한 번, 꾸준한 차트 읽기 연습으로 스트릭을 유지하고 경험치를 쌓아 등급을 올리세요.</div>
+                <div className="welcome-feature-desc">하루 한 번, 꾸준한 주식 차트 읽기 연습으로 스트릭을 유지하고 경험치를 쌓아 등급을 올리세요.</div>
               </div>
             </div>
           </div>

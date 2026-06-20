@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 import {
   Activity,
   ArrowRight,
-  BadgeCheck,
   BarChart3,
   Brain,
   Check,
@@ -44,7 +43,7 @@ const resultMap: Record<Habit, { title: string; survival: string; training: stri
     note: '상승 캔들만 보고 따라붙는 습관이 가장 큰 리스크입니다.',
   },
   stop: {
-    title: '손절 지연형 차트 분석가',
+    title: '손절 지연형 주식 차트 분석가',
     survival: '27%',
     training: '무효화 라인·리테스트 판단 훈련',
     note: '분석은 하지만 진입 후 판단 기준이 흐려지는 패턴입니다.',
@@ -66,7 +65,8 @@ function App() {
   const diagnosisCompleted = quizCompleted && habit !== null;
 
   return (
-    <main>
+    <>
+      <main>
       <header className="site-nav">
         <a className="brand-mark" href="#top" aria-label="ChartMon">
           <span className="brand-symbol">
@@ -77,7 +77,6 @@ function App() {
         <nav className="nav-links" aria-label="주요 섹션">
           <a href="#diagnosis">무료 진단</a>
           <a href="#system">훈련 시스템</a>
-          <a href="#pricing">요금제</a>
         </nav>
         <a className="nav-cta" href="#diagnosis">
           <Play size={16} />
@@ -89,17 +88,17 @@ function App() {
         <div className="hero-copy">
           <div className="eyebrow">
             <Sparkles size={16} />
-            이 차트, 3초 안에 함정이 보이나요?
+            이 주식 차트, 3초 안에 함정이 보이나요?
           </div>
           <h1>
-            차트 공부했는데도
+            주식 차트 공부했는데도
             <br />
             매수 버튼 앞에서
             <span> 흔들리나요?</span>
           </h1>
           <p className="hero-subcopy">
-            책으로 배운 패턴은 실전 차트에서 자주 배신합니다. ChartMon은 가짜 돌파, 손절 지연,
-            포지션 사이징 실수를 매일 문제로 찔러주는 차트 트레이닝 앱입니다.
+            책으로 배운 패턴은 실전 주식 차트에서 자주 배신합니다. ChartMon은 가짜 돌파, 손절 지연,
+            포지션 사이징 실수를 매일 문제로 찔러주는 주식 차트 트레이닝 앱입니다.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href="#diagnosis">
@@ -197,17 +196,17 @@ function App() {
         <div className="section-heading">
           <span className="section-kicker">Free Skill Check</span>
           <h2>틀리면 운이 나쁜 게 아니라, 반복되는 습관이 보입니다.</h2>
-          <p>차트 한 문제와 매매 습관 하나만으로도 지금 가장 먼저 고쳐야 할 훈련이 드러납니다.</p>
+          <p>주식 차트 한 문제와 매매 습관 하나만으로도 지금 가장 먼저 고쳐야 할 훈련이 드러납니다.</p>
         </div>
 
         <div className="diagnosis-layout">
           <article className="quiz-stage">
             <div className="stage-label">
               <span>Step 01</span>
-              <strong>3초 차트 판단</strong>
+              <strong>3초 주식 차트 판단</strong>
             </div>
             <div className="mini-chart">
-              <svg viewBox="0 0 520 240" aria-label="가짜 돌파 차트">
+              <svg viewBox="0 0 520 240" aria-label="가짜 돌파 주식 차트">
                 <defs>
                   <linearGradient id="priceGlow" x1="0" x2="1">
                     <stop offset="0" stopColor="#23d18b" />
@@ -275,7 +274,7 @@ function App() {
               <strong>{diagnosisCompleted ? result.survival : '--'}</strong>
             </div>
             <h3>{diagnosisCompleted ? result.title : '진단을 완료하면 결과가 열립니다'}</h3>
-            <p>{diagnosisCompleted ? result.note : '차트 판단과 습관 응답을 합쳐 맞춤 훈련 패키지를 생성합니다.'}</p>
+            <p>{diagnosisCompleted ? result.note : '주식 차트 판단과 습관 응답을 합쳐 맞춤 훈련 패키지를 생성합니다.'}</p>
             <div className="training-prescription">
               <Target size={18} />
               <span>{diagnosisCompleted ? result.training : '맞춤 훈련 생성 대기 중'}</span>
@@ -291,7 +290,7 @@ function App() {
       <section className="system-section" id="system">
         <div className="section-heading align-left">
           <span className="section-kicker">Training System</span>
-          <h2>문제 풀이가 아니라, 차트 판단 근육을 만드는 구조.</h2>
+          <h2>문제 풀이가 아니라, 주식 차트 판단 근육을 만드는 구조.</h2>
         </div>
         <div className="feature-grid">
           <article>
@@ -341,31 +340,40 @@ function App() {
         </div>
       </section>
 
-      <section className="pricing-section" id="pricing">
-        <div className="pricing-copy">
-          <span className="section-kicker">Pricing</span>
-          <h2>무료 진단으로 시작하고, 매일 훈련으로 전환.</h2>
-          <p>처음엔 무료로 약점을 확인하고, 매일 15문제로 가짜 돌파와 리스크 실수를 줄여갑니다.</p>
+  <section className="reviews-section" id="reviews">
+    <div className="section-heading">
+      <span className="section-kicker">User Reviews</span>
+      <h2>실전 훈련으로 나쁜 매매 습관을 극복한 트레이더들</h2>
+      <p>ChartMon을 통해 뇌동매매와 손절 지연을 극복하고, 안정적인 수익 모델을 찾아가고 있습니다.</p>
+    </div>
+    <div className="reviews-grid">
+      <article className="review-card">
+        <div className="review-rating">⭐⭐⭐⭐⭐</div>
+        <p className="review-text">"매번 돌파인 줄 알고 샀다가 꼭대기에서 물리던 고질병이 있었는데, 앱에서 가짜 돌파 휩소 문제를 계속 풀다 보니 진입 전에 거래량과 캔들 꼬리를 한 번 더 확인하는 습관이 완전히 몸에 뱄습니다."</p>
+        <div className="review-author">
+          <strong>전업 트레이더 L씨</strong>
+          <span>레이팅 1720 RP</span>
         </div>
-        <div className="pricing-table">
-          <article>
-            <h3>Basic</h3>
-            <strong>0원</strong>
-            <p>매일 3회 데일리 퀴즈와 기초 이론</p>
-            <a href="#download">무료 시작</a>
-          </article>
-          <article className="featured-plan">
-            <div className="plan-badge">
-              <BadgeCheck size={15} />
-              추천
-            </div>
-            <h3>Premium</h3>
-            <strong>월 9,900원</strong>
-            <p>무제한 드릴, 오답 패키지, 심화 패턴 분석</p>
-            <a href="#download">훈련 패키지 받기</a>
-          </article>
+      </article>
+      <article className="review-card">
+        <div className="review-rating">⭐⭐⭐⭐⭐</div>
+        <p className="review-text">"작도는 잘하는데 막상 진입하면 손절가를 뒤로 미루다가 크게 깨지곤 했습니다. 앱의 리스크 관리 훈련에서 2% 고정 손실 계산과 무효화 라인 리테스트 문제를 매일 푸니, 이제 칼손절이 두렵지 않습니다."</p>
+        <div className="review-author">
+          <strong>직장인 투자자 K씨</strong>
+          <span>레이팅 1450 RP</span>
         </div>
-      </section>
+      </article>
+      <article className="review-card">
+        <div className="review-rating">⭐⭐⭐⭐⭐</div>
+        <p className="review-text">"이론 책을 수십 권 읽어도 실전에선 맨날 흔들렸는데, 게임처럼 매일 15문제씩 ELO 레이팅 올리면서 연습하니까 부담 없고 너무 재밌습니다. 특히 8축 레이더 차트로 제 약점이 리스크 관리라는 걸 팩트로 알게 되었네요."</p>
+        <div className="review-author">
+          <strong>가상자산 투자자 정모씨</strong>
+          <span>레이팅 1580 RP</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
 
       <section className="final-cta" id="download">
         <Zap size={28} />
@@ -377,6 +385,44 @@ function App() {
         </a>
       </section>
     </main>
+
+    <footer className="site-footer">
+      <div className="footer-container">
+        <div className="footer-brand">
+          <div className="brand-mark">
+            <span className="brand-symbol">
+              <LineChart size={18} />
+            </span>
+            <span>ChartMon</span>
+          </div>
+          <p className="footer-tagline">나만의 AI 주식 차트 선생님, 차트몬</p>
+          <p className="footer-contact">문의: <a href="mailto:chartmon.app@gmail.com">chartmon.app@gmail.com</a></p>
+        </div>
+        
+        <div className="footer-links-group">
+          <div className="footer-links-col">
+            <h4>서비스</h4>
+            <a href="#diagnosis">무료 약점 진단</a>
+            <a href="#system">훈련 시스템 소개</a>
+          </div>
+          <div className="footer-links-col">
+            <h4>고객지원 & 법적고지</h4>
+            <a href="/terms.html" target="_blank" rel="noreferrer">이용약관</a>
+            <a href="/privacy.html" target="_blank" rel="noreferrer">개인정보 처리방침</a>
+          </div>
+        </div>
+      </div>
+      
+      <div className="footer-bottom">
+        <p className="footer-disclaimer">
+          <strong>투자 면책 고지</strong>: 차트몬에서 제공하는 모든 퀴즈, 주식 차트 해설 및 정보는 오직 교육 및 모의 분석 훈련 목적으로만 제공됩니다. 실제 어떠한 주식, 가상자산, 금융 상품의 매수/매도 권유나 투자 조언이 아니며, 본 정보를 참고한 모든 거래에 따른 투자 결과 및 손실에 대한 책임은 이용자 본인에게 귀속됩니다.
+        </p>
+        <p className="footer-copyright">
+          &copy; {new Date().getFullYear()} ChartMon. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </>
   );
 }
 
