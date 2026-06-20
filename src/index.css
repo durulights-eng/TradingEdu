@@ -117,7 +117,16 @@ header {
   background: none;
   -webkit-text-fill-color: currentColor;
   display: inline-block;
-  transition: var(--transition-smooth);
+  transition: opacity 0.25s ease, max-width 0.25s ease, margin-left 0.25s ease;
+  opacity: 1;
+  max-width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+header.scrolled .logo-section h1.logo-text {
+  opacity: 0;
+  max-width: 0;
 }
 
 .stats-bar {
@@ -1527,9 +1536,6 @@ canvas {
 }
 
 @media (max-width: 560px) {
-  .logo-section h1.logo-text {
-    display: none;
-  }
   .drill-gym-wrapper {
     padding: 16px 12px 90px;
   }

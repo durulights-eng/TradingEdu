@@ -136,6 +136,7 @@ export const App: React.FC = () => {
   const [isDailySession, setIsDailySession] = useState<boolean>(false);
   const [isDailyReview, setIsDailyReview] = useState<boolean>(false);
   const [sessionAnswers, setSessionAnswers] = useState<SessionAnswer[]>([]);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   const [quizzesList, setQuizzesList] = useState<QuizItem[]>(quizzes);
   const [currentView, setCurrentView] = useState<ViewMode>('dashboard');
@@ -349,6 +350,18 @@ export const App: React.FC = () => {
     };
   }, []);
 
+  // Listen to window scroll events to toggle scrolled state for top-header
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Handle Capacitor Deep Link for Native Platforms (OAuth redirects)
   useEffect(() => {
@@ -992,7 +1005,7 @@ export const App: React.FC = () => {
   return (
     <div className="app-container">
       {currentView !== 'quiz' && (
-        <header>
+        <header className={isScrolled ? 'scrolled' : ''}>
           <div className="logo-section" onClick={() => { setCurrentView('dashboard'); }} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
               <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--color-brand)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>

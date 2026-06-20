@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Settings, Bell, BellOff, FileText, Shield, LogOut, Trash2, Info, Smartphone, ChevronRight } from 'lucide-react';
+import { Capacitor } from '@capacitor/core';
+import { LocalNotifications } from '@capacitor/local-notifications';
 
 interface SettingsTabProps {
   userId: string | null;
@@ -13,10 +15,81 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onL
     return localStorage.getItem('chartmon_notifications_enabled') !== 'false';
   });
 
-  const handleToggleNotifications = () => {
+  const scheduleDailyReminder = async () => {
+    const check = await LocalNotifications.checkPermissions();
+    let granted = check.display === 'granted';
+    if (!granted) {
+      const request = await LocalNotifications.requestPermissions();
+      granted = request.display === 'granted';
+    }
+    
+    if (!granted) {
+      throw new Error('알림 권한이 허용되지 않았습니다. 기기 설정에서 알림 권한을 허용해 주세요.');
+    }
+
+    // Cancel existing reminder to avoid duplication
+    await LocalNotifications.cancel({
+      notifications: [{ id: 101 }]
+    });
+
+    // Schedule everyday at 21:00 (9:00 PM)
+    await LocalNotifications.schedule({
+      notifications: [
+        {
+          title: '오늘의 차트 훈련 🔥',
+          body: '오늘의 데일리 차트 훈련 세션을 풀고 스트릭(Streak) 연속 활성을 이어가세요!',
+          id: 101,
+          schedule: {
+            on: {
+              hour: 21,
+              minute: 0
+            },
+            repeats: true
+          }
+        }
+      ]
+    });
+  };
+
+  const cancelDailyReminder = async () => {
+    try {
+      await LocalNotifications.cancel({
+        notifications: [{ id: 101 }]
+      });
+    } catch (e) {
+      console.error('Failed to cancel notifications', e);
+    }
+  };
+
+  const handleToggleNotifications = async () => {
     const next = !notificationsEnabled;
-    setNotificationsEnabled(next);
-    localStorage.setItem('chartmon_notifications_enabled', String(next));
+    
+    if (Capacitor.isNativePlatform()) {
+      if (next) {
+        try {
+          await scheduleDailyReminder();
+          setNotificationsEnabled(true);
+          localStorage.setItem('chartmon_notifications_enabled', 'true');
+          alert('매일 오후 9시에 학습 리마인더 알림을 보내드립니다! 🔔');
+        } catch (err: any) {
+          alert(err.message || '알림 설정 중 오류가 발생했습니다.');
+        }
+      } else {
+        await cancelDailyReminder();
+        setNotificationsEnabled(false);
+        localStorage.setItem('chartmon_notifications_enabled', 'false');
+        alert('학습 리마인더 알림이 해제되었습니다.');
+      }
+    } else {
+      // Web browser mode fallback
+      setNotificationsEnabled(next);
+      localStorage.setItem('chartmon_notifications_enabled', String(next));
+      if (next) {
+        alert('리마인더 알림이 활성화되었습니다. (실제 알림은 모바일 앱 기기에서 동작합니다)');
+      } else {
+        alert('리마인더 알림이 비활성화되었습니다.');
+      }
+    }
   };
 
   const handleLogout = () => {
