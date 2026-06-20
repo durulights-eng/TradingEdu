@@ -8,7 +8,6 @@ import {
   ChevronRight,
   Flame,
   Gauge,
-  LineChart,
   Play,
   Radar,
   ShieldAlert,
@@ -69,9 +68,7 @@ function App() {
       <main>
       <header className="site-nav">
         <a className="brand-mark" href="#top" aria-label="ChartMon">
-          <span className="brand-symbol">
-            <LineChart size={18} />
-          </span>
+          <img src="/icon.svg" className="brand-logo" alt="ChartMon" />
           <span>ChartMon</span>
         </a>
         <nav className="nav-links" aria-label="주요 섹션">
@@ -97,8 +94,8 @@ function App() {
             <span> 흔들리나요?</span>
           </h1>
           <p className="hero-subcopy">
-            책으로 배운 패턴은 실전 주식 차트에서 자주 배신합니다. ChartMon은 가짜 돌파, 손절 지연,
-            포지션 사이징 실수를 매일 문제로 찔러주는 주식 차트 트레이닝 앱입니다.
+            책으로 배운 단순 패턴은 실전 주식 차트에서 무너지기 쉽습니다. 차트몬은 가짜 돌파, 손절 지연,
+            포지션 사이징 등 치명적인 매매 실수를 직관적인 퀴즈로 바로잡아 주는 주식 차트 트레이닝 앱입니다.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href="#diagnosis">
@@ -112,13 +109,13 @@ function App() {
           </div>
           <div className="trust-row">
             <span>
-              <Timer size={15} /> 15문제 데일리
+              <Timer size={15} /> 매일 15문제 트레이닝
             </span>
             <span>
-              <Radar size={15} /> ELO 레이팅
+              <Radar size={15} /> 실시간 실력 ELO 레이팅
             </span>
             <span>
-              <Flame size={15} /> 스트릭 습관화
+              <Flame size={15} /> 매일 훈련 습관화
             </span>
           </div>
         </div>
@@ -176,10 +173,10 @@ function App() {
       <section className="metric-band" aria-label="핵심 지표">
         <div>
           <strong>15문제</strong>
-          <span>하루 맞춤 퀴즈</span>
+          <span>매일 맞춤 트레이닝</span>
         </div>
         <div>
-          <strong>8축</strong>
+          <strong>8대 지표</strong>
           <span>스킬 레이더 분석</span>
         </div>
         <div>
@@ -188,7 +185,7 @@ function App() {
         </div>
         <div>
           <strong>10초</strong>
-          <span>약점 진단 테스트</span>
+          <span>초고속 약점 진단</span>
         </div>
       </section>
 
@@ -318,24 +315,24 @@ function App() {
 
       <section className="shortform-section">
         <div className="section-heading">
-          <span className="section-kicker">Shorts Funnel</span>
-          <h2>개미가 자주 당하는 장면만 골라 훈련합니다.</h2>
+          <span className="section-kicker">Shorts Training</span>
+          <h2>개인 투자자가 가장 취약한 실전 패턴만 골라 훈련합니다.</h2>
         </div>
         <div className="shortform-grid">
           <article>
             <span>01</span>
             <h3>쌍바닥의 함정</h3>
-            <p>W자 패턴만 보고 들어갔다가 전저점 이탈 휩소에 당하는 장면으로 진입.</p>
+            <p>쌍바닥 지지만 믿고 진입했다가 직전 저점 지지 붕괴(휩소)에 무너지는 패턴을 극복합니다.</p>
           </article>
           <article>
             <span>02</span>
-            <h3>RSI 과매도 지옥</h3>
-            <p>RSI 30만 믿고 매수한 뒤 밴드워크로 무너지는 상황을 보여줍니다.</p>
+            <h3>과매도 구간의 함정</h3>
+            <p>RSI가 과매도(30 이하)라는 것만 믿고 성급히 매수했다가 바닥이 뚫리는 패턴을 교정합니다.</p>
           </article>
           <article>
             <span>03</span>
             <h3>승률 90%가 파산하는 이유</h3>
-            <p>작은 수익 열 번보다 큰 손실 한 번이 계좌를 망치는 구조를 자극합니다.</p>
+            <p>작은 수익을 아무리 많이 누적해도 단 한 번의 대형 손실로 계좌가 망가지는 구조적 한계를 깨닫게 합니다.</p>
           </article>
         </div>
       </section>
@@ -377,8 +374,8 @@ function App() {
 
       <section className="final-cta" id="download">
         <Zap size={28} />
-        <h2>오늘부터 손실을 복기 말고, 미리 훈련하세요.</h2>
-        <p>15초 무료 진단 결과를 앱에서 이어받아 하루 15문제 맞춤 훈련으로 연결합니다.</p>
+        <h2>잃고 나서 복기하지 말고, 잃기 전에 훈련하세요.</h2>
+        <p>15초 진단 결과를 토대로 앱에서 본인의 취약점 분석 리포트와 매일 맞춤 트레이닝을 이어받습니다.</p>
         <a className="primary-button" href="https://play.google.com/store" target="_blank" rel="noreferrer">
           Google Play로 이동
           <ArrowRight size={18} />
@@ -390,13 +387,12 @@ function App() {
       <div className="footer-container">
         <div className="footer-brand">
           <div className="brand-mark">
-            <span className="brand-symbol">
-              <LineChart size={18} />
-            </span>
+            <img src="/icon.svg" className="brand-logo" alt="ChartMon" />
             <span>ChartMon</span>
           </div>
           <p className="footer-tagline">나만의 AI 주식 차트 선생님, 차트몬</p>
-          <p className="footer-contact">문의: <a href="mailto:chartmon.app@gmail.com">chartmon.app@gmail.com</a></p>
+          <p className="footer-company" style={{ fontSize: '13px', color: 'var(--color-text-muted)', marginTop: '4px' }}>사이스페이스(주)</p>
+          <p className="footer-contact">문의: <a href="mailto:contact@42space.net">contact@42space.net</a></p>
         </div>
         
         <div className="footer-links-group">
@@ -418,7 +414,7 @@ function App() {
           <strong>투자 면책 고지</strong>: 차트몬에서 제공하는 모든 퀴즈, 주식 차트 해설 및 정보는 오직 교육 및 모의 분석 훈련 목적으로만 제공됩니다. 실제 어떠한 주식, 가상자산, 금융 상품의 매수/매도 권유나 투자 조언이 아니며, 본 정보를 참고한 모든 거래에 따른 투자 결과 및 손실에 대한 책임은 이용자 본인에게 귀속됩니다.
         </p>
         <p className="footer-copyright">
-          &copy; {new Date().getFullYear()} ChartMon. All rights reserved.
+          &copy; {new Date().getFullYear()} 사이스페이스(주). All rights reserved.
         </p>
       </div>
     </footer>

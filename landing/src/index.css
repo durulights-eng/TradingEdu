@@ -81,16 +81,12 @@ main {
   font-weight: 800;
 }
 
-.brand-symbol {
-  display: grid;
+.brand-logo {
+  display: block;
   width: 34px;
   height: 34px;
-  place-items: center;
-  border: 1px solid rgba(35, 209, 139, 0.45);
   border-radius: 8px;
-  color: #07110d;
-  background: linear-gradient(135deg, var(--green), var(--cyan));
-  box-shadow: 0 0 30px rgba(35, 209, 139, 0.22);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.25);
 }
 
 .nav-links {
