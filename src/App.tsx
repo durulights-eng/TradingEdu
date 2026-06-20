@@ -144,6 +144,7 @@ export const App: React.FC = () => {
   const [userId, setUserId] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [isInitialized, setIsInitialized] = useState<boolean>(false);
+  const [isProfileLoading, setIsProfileLoading] = useState<boolean>(isSupabaseConfigured);
   const [hasAutoStartedDaily, setHasAutoStartedDaily] = useState<boolean>(false);
   const [showDailyPrompt, setShowDailyPrompt] = useState<boolean>(false);
 
@@ -152,6 +153,7 @@ export const App: React.FC = () => {
     let authListenerSubscription: any = null;
 
     async function syncUserProfile(user: any) {
+      setIsProfileLoading(true);
       setUserId(user.id);
       setUserEmail(user.email || 'Authenticated User');
       try {
@@ -209,8 +211,9 @@ export const App: React.FC = () => {
           localStorage.setItem('chartmon_drill_stats', JSON.stringify(parsedRating));
           if (profileActiveDate) localStorage.setItem('chartmon_last_active', profileActiveDate);
           if (profileDailyCompletedDate) localStorage.setItem('chartmon_last_daily_completed', profileDailyCompletedDate);
-        } else {
-          // If profile does not exist, initialize it with current local/default states
+        } else if (error && error.code === 'PGRST116') {
+          // PGRST116 is 'The query returned 0 rows' (profile doesn't exist yet)
+          // Initialize it with current local/default states
           const localStreak = Number(localStorage.getItem('chartmon_streak')) || 0;
           const localXp = Number(localStorage.getItem('chartmon_xp')) || 0;
           const localCompleted = JSON.parse(localStorage.getItem('chartmon_completed') || '[]');
@@ -228,9 +231,14 @@ export const App: React.FC = () => {
             drill_stats: localDrillStats,
             updated_at: new Date().toISOString()
           });
+        } else {
+          // A transient network/database error, do not overwrite the profile!
+          console.error('ChartMon: Fetch profile database error.', error);
         }
       } catch (e) {
         console.error('ChartMon: Sync user profile error.', e);
+      } finally {
+        setIsProfileLoading(false);
       }
     }
 
@@ -297,20 +305,6 @@ export const App: React.FC = () => {
         } catch (e) {
           console.error('ChartMon: Supabase load quizzes failed, using local.', e);
         }
-
-        // 2. Load authenticated user profile
-        try {
-          const { data: { session } } = await supabase.auth.getSession();
-          const user = session?.user || null;
-          if (user) {
-            await syncUserProfile(user);
-          } else {
-            checkLocalStreak();
-          }
-        } catch (e) {
-          console.error('ChartMon: Profile loading failed.', e);
-          checkLocalStreak();
-        }
       } else {
         checkLocalStreak();
       }
@@ -319,10 +313,10 @@ export const App: React.FC = () => {
 
     // Auth listener setup
     if (isSupabaseConfigured) {
-      const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-        if (event === 'SIGNED_IN' && session?.user) {
+      const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
+        if (session?.user) {
           await syncUserProfile(session.user);
-        } else if (event === 'SIGNED_OUT') {
+        } else {
           setUserId(null);
           setUserEmail(null);
           // Reset stats to guest defaults on sign out
@@ -339,6 +333,8 @@ export const App: React.FC = () => {
           localStorage.removeItem('chartmon_drill_stats');
           localStorage.removeItem('chartmon_last_active');
           localStorage.removeItem('chartmon_last_daily_completed');
+
+          setIsProfileLoading(false);
         }
       });
       authListenerSubscription = subscription;
@@ -352,6 +348,7 @@ export const App: React.FC = () => {
       }
     };
   }, []);
+
 
   // Handle Capacitor Deep Link for Native Platforms (OAuth redirects)
   useEffect(() => {
@@ -539,16 +536,25 @@ export const App: React.FC = () => {
     setCurrentView('quiz');
   };
 
+  // Reset daily auto-start check when userId changes (e.g. login/logout)
+  useEffect(() => {
+    setHasAutoStartedDaily(false);
+  }, [userId]);
+
   // Auto-start daily training if not completed today on initial load
   useEffect(() => {
-    if (isInitialized && !hasAutoStartedDaily) {
+    if (isSupabaseConfigured && !userId) {
+      return;
+    }
+
+    if (isInitialized && !isProfileLoading && !hasAutoStartedDaily) {
       const today = getLocalDateString();
       if (lastDailyCompletedDate !== today) {
         setShowDailyPrompt(true);
       }
       setHasAutoStartedDaily(true);
     }
-  }, [isInitialized, lastDailyCompletedDate, hasAutoStartedDaily]);
+  }, [isInitialized, isProfileLoading, userId, lastDailyCompletedDate, hasAutoStartedDaily]);
 
   const startDrill = (categoryOrFile: string) => {
     const SKILL_TO_THEORY_MAP: Record<string, string> = {
