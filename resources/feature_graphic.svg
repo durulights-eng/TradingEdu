@@ -1,0 +1,56 @@
+<svg width="1024" height="500" viewBox="0 0 1024 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="1024" height="500" fill="url(#bg-gradient)"/>
+  
+  <!-- Decorative blurred background glow -->
+  <circle cx="220" cy="250" r="250" fill="url(#radial-glow)" filter="url(#blur-large)" opacity="0.2"/>
+  
+  <!-- Logo from icon.svg (3D platforms + eyes) -->
+  <g transform="translate(220, 250) scale(13.5) translate(-12, -12)">
+    <!-- Bottom layer -->
+    <path d="M2 17L12 22L22 17" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Middle layer -->
+    <path d="M2 12L12 17L22 12" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Top layer -->
+    <path d="M12 2L2 7L12 12L22 7Z" fill="#1e1b4b" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Cute glowing eyes -->
+    <circle cx="9" cy="7" r="1.5" fill="#50e3c2" filter="url(#glow)"/>
+    <circle cx="15" cy="7" r="1.5" fill="#50e3c2" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Text "ChartMon" and subtitle -->
+  <text x="440" y="240" fill="url(#title-gradient)" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="88" letter-spacing="-0.04em">ChartMon</text>
+  <text x="445" y="305" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="30" letter-spacing="-0.02em">나만의 AI 차트 선생님</text>
+
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </radialGradient>
+    
+    <!-- Radial Glow behind logo -->
+    <radialGradient id="radial-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="title-gradient" x1="440" y1="180" x2="850" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <!-- Glowing Eye Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="0.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Background Blur Filter -->
+    <filter id="blur-large" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60" />
+    </filter>
+  </defs>
+</svg>

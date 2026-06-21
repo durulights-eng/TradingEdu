@@ -67,6 +67,8 @@ create table if not exists public.profiles (
     last_active_date text,                    -- 마지막 활성/학습 날짜 (YYYY-MM-DD)
     last_daily_completed_date text,           -- 마지막 데일리 트레이닝 완료 날짜 (YYYY-MM-DD)
     drill_stats jsonb default '{}'::jsonb not null, -- 드릴 유형별 진행도/정답률 통계
+    is_premium boolean default false not null,      -- 프리미엄(PRO) 구독 권한 여부
+    premium_until timestamp with time zone,         -- 프리미엄 구독 만료 시점
     updated_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
 
