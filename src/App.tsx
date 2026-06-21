@@ -9,6 +9,7 @@ import { supabase, isSupabaseConfigured } from './lib/supabaseClient';
 import { DrillGymTab } from './components/DrillGymTab';
 import { SettingsTab } from './components/SettingsTab';
 import { WelcomeOnboarding } from './components/WelcomeOnboarding';
+import { PremiumPlansModal } from './components/PremiumPlansModal';
 
 type ViewMode = 'dashboard' | 'quiz' | 'drill' | 'settings';
 
@@ -113,6 +114,31 @@ export const App: React.FC = () => {
     return localStorage.getItem('chartmon_onboarding_completed') !== 'true';
   });
 
+  const [isPremium, setIsPremium] = useState<boolean>(() => {
+    return localStorage.getItem('chartmon_is_premium') === 'true';
+  });
+  const [showPremiumModal, setShowPremiumModal] = useState<boolean>(false);
+  const [dailyDrillCount, setDailyDrillCount] = useState<number>(() => {
+    const today = getLocalDateString();
+    const lastDrill = localStorage.getItem('chartmon_last_drill_date') || '';
+    if (lastDrill !== today) {
+      localStorage.setItem('chartmon_last_drill_date', today);
+      localStorage.setItem('chartmon_daily_drill_count', '0');
+      return 0;
+    }
+    return Number(localStorage.getItem('chartmon_daily_drill_count')) || 0;
+  });
+
+  useEffect(() => {
+    const today = getLocalDateString();
+    const lastDrill = localStorage.getItem('chartmon_last_drill_date') || '';
+    if (lastDrill !== today) {
+      localStorage.setItem('chartmon_last_drill_date', today);
+      localStorage.setItem('chartmon_daily_drill_count', '0');
+      setDailyDrillCount(0);
+    }
+  }, []);
+
   useEffect(() => {
     const handleShowExplanation = (e: Event) => {
       const customEvent = e as CustomEvent<{ term: string; definition: string }>;
@@ -215,6 +241,7 @@ export const App: React.FC = () => {
           const profileActiveDate = profile.last_active_date || null;
           const profileDailyCompletedDate = profile.last_daily_completed_date || null;
           const profileDrillStats = profile.drill_stats || {};
+          const profileIsPremium = profile.is_premium || false;
           const parsedRating = parseSavedRatingState(
             typeof profileDrillStats === 'string' ? profileDrillStats : JSON.stringify(profileDrillStats)
           );
@@ -236,6 +263,7 @@ export const App: React.FC = () => {
                 last_active_date: profileActiveDate,
                 last_daily_completed_date: profileDailyCompletedDate,
                 drill_stats: parsedRating,
+                is_premium: profileIsPremium,
                 updated_at: new Date().toISOString()
               });
             } catch (err) {
@@ -249,11 +277,13 @@ export const App: React.FC = () => {
           setLastActiveDate(profileActiveDate);
           setLastDailyCompletedDate(profileDailyCompletedDate);
           setRatingState(parsedRating);
+          setIsPremium(profileIsPremium);
 
           localStorage.setItem('chartmon_streak', String(finalStreak));
           localStorage.setItem('chartmon_xp', String(profileXp));
           localStorage.setItem('chartmon_completed', JSON.stringify(profileCompleted));
           localStorage.setItem('chartmon_drill_stats', JSON.stringify(parsedRating));
+          localStorage.setItem('chartmon_is_premium', String(profileIsPremium));
           if (profileActiveDate) localStorage.setItem('chartmon_last_active', profileActiveDate);
           if (profileDailyCompletedDate) localStorage.setItem('chartmon_last_daily_completed', profileDailyCompletedDate);
         } else if (error && error.code === 'PGRST116') {
@@ -264,6 +294,7 @@ export const App: React.FC = () => {
           const localCompleted = JSON.parse(localStorage.getItem('chartmon_completed') || '[]');
           const localDrillStatsStr = localStorage.getItem('chartmon_drill_stats');
           const localDrillStats = parseSavedRatingState(localDrillStatsStr);
+          const localIsPremium = localStorage.getItem('chartmon_is_premium') === 'true';
 
           await supabase.from('profiles').upsert({
             id: user.id,
@@ -274,6 +305,7 @@ export const App: React.FC = () => {
             last_active_date: localStorage.getItem('chartmon_last_active'),
             last_daily_completed_date: localStorage.getItem('chartmon_last_daily_completed'),
             drill_stats: localDrillStats,
+            is_premium: localIsPremium,
             updated_at: new Date().toISOString()
           });
         } else {
@@ -302,10 +334,16 @@ export const App: React.FC = () => {
       // 1. Fetch quizzes from Supabase
       if (isSupabaseConfigured) {
         try {
-          const { data, error } = await supabase
+          const fetchPromise = supabase
             .from('quizzes')
             .select('*')
             .order('id', { ascending: true });
+
+          const timeoutPromise = new Promise<any>((_, reject) =>
+            setTimeout(() => reject(new Error('Supabase request timeout')), 3000)
+          );
+
+          const { data, error } = await Promise.race([fetchPromise, timeoutPromise]) as any;
           
           if (!error && data && data.length > 0) {
             const DATABASE_CATEGORY_MAP: Record<string, string> = {
@@ -328,7 +366,7 @@ export const App: React.FC = () => {
               '08_risk_management.md': '09_risk_position_management.md'
             };
 
-            const formatted: QuizItem[] = data.map(q => {
+            const formatted: QuizItem[] = data.map((q: any) => {
               const mappedCategory = DATABASE_CATEGORY_MAP[q.category] || q.category;
               const mappedTheoryRef = THEORY_REF_MAP[q.theory_ref] || q.theory_ref;
               return {
@@ -348,7 +386,8 @@ export const App: React.FC = () => {
             setQuizzesList(formatted);
           }
         } catch (e) {
-          console.error('ChartMon: Supabase load quizzes failed, using local.', e);
+          console.error('ChartMon: Supabase load quizzes failed or timed out, using local fallback.', e);
+          checkLocalStreak();
         }
       } else {
         checkLocalStreak();
@@ -499,6 +538,7 @@ export const App: React.FC = () => {
           last_active_date: newActiveDate,
           last_daily_completed_date: newDailyCompletedDate,
           drill_stats: newRatingState,
+          is_premium: isPremium,
           updated_at: new Date().toISOString()
         });
       } catch (e) {
@@ -555,6 +595,23 @@ export const App: React.FC = () => {
       alert('계정이 성공적으로 삭제되었습니다.');
     } catch (e: any) {
       alert(`계정 삭제 처리 중 오류가 발생했습니다: ${e.message}`);
+    }
+  };
+
+  const handlePaymentSuccess = async () => {
+    setIsPremium(true);
+    localStorage.setItem('chartmon_is_premium', 'true');
+    
+    if (isSupabaseConfigured && userId) {
+      try {
+        const { error } = await supabase
+          .from('profiles')
+          .update({ is_premium: true, updated_at: new Date().toISOString() })
+          .eq('id', userId);
+        if (error) throw error;
+      } catch (e) {
+        console.error('ChartMon: Failed to update is_premium on Supabase', e);
+      }
     }
   };
 
@@ -696,6 +753,23 @@ export const App: React.FC = () => {
       }
     }
 
+    // Premium validation
+    if (!isPremium) {
+      // Check if it's a premium module (anything other than 01 and 02)
+      const isPremiumDrill = theoryFile !== '01_chart_market_basics.md' && theoryFile !== '02_candlestick_price_action.md';
+      
+      if (isPremiumDrill) {
+        setShowPremiumModal(true);
+        return;
+      }
+
+      // Check daily limit (max 3 drills/gym training sessions)
+      if (dailyDrillCount >= 3) {
+        setShowPremiumModal(true);
+        return;
+      }
+    }
+
     // Filter quizzes by theoryRef
     const categoryQuizzes = quizzesList.filter(q => q.theoryRef === theoryFile);
     if (categoryQuizzes.length === 0) {
@@ -786,6 +860,13 @@ export const App: React.FC = () => {
     setSessionAnswers([]);
     setIsDailySession(false);
     setIsDailyReview(false);
+
+    if (!isPremium) {
+      const nextCount = dailyDrillCount + 1;
+      setDailyDrillCount(nextCount);
+      localStorage.setItem('chartmon_daily_drill_count', String(nextCount));
+    }
+
     setCurrentView('quiz');
   };
 
@@ -1234,6 +1315,8 @@ export const App: React.FC = () => {
             completedQuizzes={completedQuizzes}
             allQuizzes={quizzesList}
             xp={xp}
+            isPremium={isPremium}
+            onTriggerPremium={() => setShowPremiumModal(true)}
           />
         )}
 
@@ -1257,6 +1340,9 @@ export const App: React.FC = () => {
             onStartDrill={startDrill}
             xp={xp}
             drillStats={ratingState.categories}
+            isPremium={isPremium}
+            onTriggerPremium={() => setShowPremiumModal(true)}
+            dailyDrillCount={dailyDrillCount}
           />
         )}
 
@@ -1267,6 +1353,8 @@ export const App: React.FC = () => {
             onLogout={handleLogout}
             onDeleteAccount={handleDeleteAccount}
             onTestOnboarding={() => setShowOnboarding(true)}
+            isPremium={isPremium}
+            onTriggerPremium={() => setShowPremiumModal(true)}
           />
         )}
       </main>
@@ -1393,6 +1481,12 @@ export const App: React.FC = () => {
           {termExplanation?.definition}
         </p>
       </div>
+
+      <PremiumPlansModal 
+        isOpen={showPremiumModal} 
+        onClose={() => setShowPremiumModal(false)} 
+        onPaymentSuccess={handlePaymentSuccess} 
+      />
     </div>
   );
 };

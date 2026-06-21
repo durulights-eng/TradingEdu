@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Settings, Bell, BellOff, FileText, Shield, LogOut, Trash2, Info, Smartphone, ChevronRight, MessageSquare, Play } from 'lucide-react';
+import { Settings, Bell, BellOff, FileText, Shield, LogOut, Trash2, Info, Smartphone, ChevronRight, MessageSquare, Play, Sparkles } from 'lucide-react';
 import { Capacitor } from '@capacitor/core';
 import { LocalNotifications } from '@capacitor/local-notifications';
 import { NativeSettings, AndroidSettings, IOSSettings } from 'capacitor-native-settings';
@@ -10,9 +10,19 @@ interface SettingsTabProps {
   onLogout?: () => void;
   onDeleteAccount?: () => void;
   onTestOnboarding?: () => void;
+  isPremium: boolean;
+  onTriggerPremium: () => void;
 }
 
-export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onLogout, onDeleteAccount, onTestOnboarding }) => {
+export const SettingsTab: React.FC<SettingsTabProps> = ({
+  userId,
+  userEmail,
+  onLogout,
+  onDeleteAccount,
+  onTestOnboarding,
+  isPremium,
+  onTriggerPremium,
+}) => {
   const [notificationsEnabled, setNotificationsEnabled] = useState<boolean>(() => {
     return localStorage.getItem('chartmon_notifications_enabled') !== 'false';
   });
@@ -170,10 +180,40 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onL
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1 }}>
               <Smartphone size={18} style={{ color: 'var(--color-brand)', flexShrink: 0 }} />
               <div>
-                <div style={{ fontSize: '14px', fontWeight: 700 }}>
-                  {userId ? '구글 로그인 완료' : '게스트 모드'}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ fontSize: '14px', fontWeight: 700 }}>
+                    {userId ? '구글 로그인 완료' : '게스트 모드'}
+                  </span>
+                  {isPremium ? (
+                    <span style={{
+                      background: 'linear-gradient(135deg, #ffdc80 0%, #ffba3a 100%)',
+                      color: '#05070b',
+                      fontSize: '10.5px',
+                      fontWeight: 800,
+                      padding: '2px 7px',
+                      borderRadius: '6px',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '2px',
+                      boxShadow: '0 2px 6px rgba(255, 186, 58, 0.25)'
+                    }}>
+                      <Sparkles size={10} fill="currentColor" />
+                      PRO
+                    </span>
+                  ) : (
+                    <span style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      color: 'var(--text-secondary)',
+                      fontSize: '10.5px',
+                      fontWeight: 700,
+                      padding: '2px 7px',
+                      borderRadius: '6px'
+                    }}>
+                      FREE
+                    </span>
+                  )}
                 </div>
-                <div style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '2px' }}>
+                <div style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '4px' }}>
                   {userId ? userEmail : '로그인 없이 학습 중입니다'}
                 </div>
               </div>
@@ -189,6 +229,59 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onL
           </div>
         </div>
       </div>
+
+      {/* Premium PRO Promotion Card */}
+      {!isPremium && (
+        <div 
+          onClick={onTriggerPremium}
+          style={{
+            background: 'linear-gradient(135deg, rgba(255, 186, 58, 0.12) 0%, rgba(255, 186, 58, 0.02) 100%)',
+            border: '1px solid rgba(255, 186, 58, 0.25)',
+            borderRadius: '20px',
+            padding: '18px 20px',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '12px',
+            boxShadow: '0 4px 15px rgba(255, 186, 58, 0.05)',
+            transition: 'transform 0.2s, border-color 0.2s',
+            marginTop: '-5px'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = '#ffba3a';
+            e.currentTarget.style.transform = 'translateY(-1px)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = 'rgba(255, 186, 58, 0.25)';
+            e.currentTarget.style.transform = 'none';
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <div style={{
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, #ffdc80 0%, #ffba3a 100%)',
+              color: '#05070b',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 4px 10px rgba(255, 186, 58, 0.25)',
+              flexShrink: 0
+            }}>
+              <Sparkles size={20} fill="currentColor" />
+            </div>
+            <div>
+              <strong style={{ fontSize: '13.5px', color: '#f8fafc', display: 'block', fontWeight: 800 }}>ChartMon PRO 멤버십 시작</strong>
+              <span style={{ fontSize: '11.5px', color: 'var(--text-secondary)', display: 'block', marginTop: '4px', lineHeight: 1.4 }}>
+                모든 훈련소 제한 해제 & 고급 이론 무제한 잠금 해제
+              </span>
+            </div>
+          </div>
+          <ChevronRight size={18} style={{ color: '#ffba3a', flexShrink: 0 }} />
+        </div>
+      )}
 
       {/* Notification Section */}
       <div className="settings-section">
@@ -281,7 +374,6 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onL
           <div className="settings-card">
             <button 
               className="settings-row" 
-              style={{ borderBottom: 'none' }} 
               onClick={onTestOnboarding}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -291,6 +383,19 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onL
                 </span>
               </div>
               <ChevronRight size={16} style={{ color: 'var(--color-brand)' }} />
+            </button>
+            <button 
+              className="settings-row" 
+              style={{ borderBottom: 'none' }} 
+              onClick={onTriggerPremium}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <Sparkles size={18} style={{ color: '#ffba3a' }} />
+                <span style={{ fontSize: '14px', fontWeight: 600, color: '#ffba3a' }}>
+                  프리미엄 구독 창 테스트
+                </span>
+              </div>
+              <ChevronRight size={16} style={{ color: '#ffba3a' }} />
             </button>
           </div>
         </div>

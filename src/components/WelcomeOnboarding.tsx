@@ -303,7 +303,7 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({ onClose })
               정밀 난이도 동적 매칭 시스템
             </h2>
             <p style={{ color: 'var(--text-secondary, #8b99aa)', fontSize: '14px', lineHeight: 1.6, marginBottom: '28px' }}>
-              나의 실력을 ELO 레이팅(RP)으로 측정하여 $\pm 200$ RP 범위 내의 최적화된 주식 차트 문제를 매칭합니다. 하루 15분, 차트 근육이 빠르게 강화됩니다.
+              나의 실력을 ELO 레이팅(RP)으로 측정하여 ±200 RP 범위 내의 최적화된 주식 차트 문제를 매칭합니다. 하루 15분, 차트 근육이 빠르게 강화됩니다.
             </p>
 
             {/* ELO Graph Widget */}
@@ -502,11 +502,11 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({ onClose })
               marginBottom: '16px'
             }}>
               <Award size={14} />
-              ChartMon PRO 무제한 체험
+              ChartMon PRO 혜택 안내
             </div>
             <h2 style={{ fontSize: '24px', fontWeight: 800, color: '#fff', marginBottom: '12px', letterSpacing: '-0.02em', lineHeight: 1.25 }}>
-              지금 첫 7일간<br />
-              PRO의 강력한 혜택을 무료로!
+              PRO 멤버십의<br />
+              강력한 혜택을 누려보세요!
             </h2>
             <p style={{ color: 'var(--text-secondary, #8b99aa)', fontSize: '14px', lineHeight: 1.6, marginBottom: '24px' }}>
               모든 트레이닝 드릴 제한 없는 패스권과 8개 심화 이론 모듈 잠금 해제 권한이 제공됩니다.
@@ -538,7 +538,7 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({ onClose })
                 zIndex: 0
               }} />
 
-              {/* Floating Badge (Crown) */}
+              {/* Floating Badge (Sparkles) */}
               <div style={{
                 animation: 'float-badge 3s ease-in-out infinite',
                 display: 'inline-flex',
@@ -548,9 +548,14 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({ onClose })
                 boxShadow: '0 4px 15px rgba(255, 186, 58, 0.4)',
                 marginBottom: '14px',
                 position: 'relative',
-                zIndex: 1
+                zIndex: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '40px',
+                height: '40px',
+                color: '#fff'
               }}>
-                <span style={{ fontSize: '20px', lineHeight: 1 }}>👑</span>
+                <Sparkles size={20} fill="currentColor" />
               </div>
 
               <div style={{ position: 'relative', zIndex: 1 }}>
@@ -572,8 +577,8 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({ onClose })
                 </div>
 
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontSize: '11px', color: 'var(--text-muted, #5a6577)', fontWeight: 600 }}>체험 기간 종료 후</span>
-                  <span style={{ fontSize: '14px', color: '#ffba3a', fontWeight: 800 }}>월 9,900원 (첫 7일 무료)</span>
+                  <span style={{ fontSize: '11px', color: 'var(--text-muted, #5a6577)', fontWeight: 600 }}>구독 금액</span>
+                  <span style={{ fontSize: '14px', color: '#ffba3a', fontWeight: 800 }}>월 14,900원 (3개월 패키지 시 월 9,967원 상당)</span>
                 </div>
               </div>
             </div>
@@ -627,7 +632,7 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({ onClose })
           onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
           onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
         >
-          <span>{currentStep === 4 ? '7일 무료 체험하고 시작하기' : '다음 단계로'}</span>
+          <span>{currentStep === 4 ? 'PRO 멤버십으로 시작하기' : '다음 단계로'}</span>
           <Play size={14} fill="currentColor" style={{ transform: 'rotate(0deg)' }} />
         </button>
       </div>

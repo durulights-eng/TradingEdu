@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookOpen, Play, Lock, Trophy } from 'lucide-react';
+import { BookOpen, Play, Lock, Trophy, Sparkles } from 'lucide-react';
 import { TheoryReader } from './TheoryReader';
 import { GlossaryViewer } from './GlossaryViewer';
 import { theoryDocuments } from '../data/theoryContent';
@@ -10,12 +10,18 @@ interface DrillGymTabProps {
   onStartDrill: (theoryFile: string) => void;
   xp: number;
   drillStats: Record<string, CategoryStat>;
+  isPremium: boolean;
+  onTriggerPremium: () => void;
+  dailyDrillCount: number;
 }
 
 export const DrillGymTab: React.FC<DrillGymTabProps> = ({
   onStartDrill,
   xp,
-  drillStats
+  drillStats,
+  isPremium,
+  onTriggerPremium,
+  dailyDrillCount
 }) => {
   const [subView, setSubView] = useState<'gym' | 'library' | 'dictionary'>('gym');
   const [activeTheory, setActiveTheory] = useState<string | null>(null);
@@ -147,6 +153,165 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
     { id: 10, title: '10. 심리, 루틴, 복기 습관', desc: 'FOMO 억제, 보복매매 차단, 매매일지 복기 루틴 구축', file: '10_psychology_routine_review.md', category: 'J. 심리, 루틴, 복기' }
   ];
 
+  const renderDrillCard = (d: typeof drills[0]) => {
+    const isLocked = xp < d.minXp;
+    const isDrillLockedByPremium = !isPremium && dailyDrillCount >= 3;
+    const stats = drillStats[d.skillCategory] || { level: 1, accuracy: 50, attempts: 0, drillSessionCount: 0 };
+
+    return (
+      <div 
+        key={d.id} 
+        style={{ 
+          background: d.gradient, 
+          border: `1px solid ${isLocked ? 'rgba(255, 255, 255, 0.05)' : d.borderColor}`,
+          borderRadius: '20px', 
+          padding: '20px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          gap: '16px',
+          position: 'relative',
+          opacity: isLocked ? 0.6 : 1,
+          transition: 'all 0.25s ease'
+        }}
+      >
+        {/* XP Lock Overlay Banner */}
+        {isLocked && (
+          <div style={{
+            position: 'absolute',
+            top: '12px',
+            right: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px',
+            background: 'rgba(255, 255, 255, 0.08)',
+            padding: '4px 8px',
+            borderRadius: '8px',
+            fontSize: '11px',
+            color: 'var(--text-secondary)',
+            fontWeight: 700
+          }}>
+            <Lock size={12} />
+            <span>{d.minXp} XP 해제</span>
+          </div>
+        )}
+
+        {/* Drill Title & Description */}
+        <div>
+          <h3 style={{ fontSize: '15px', fontWeight: 800, marginBottom: '6px', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+            {d.title}
+          </h3>
+          <p style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+            {d.desc}
+          </p>
+        </div>
+
+        {/* Statistics Row (Level, Accuracy, Attempts) */}
+        {!isLocked && (
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: '1fr 1.2fr 1fr', 
+            background: 'rgba(0, 0, 0, 0.2)', 
+            borderRadius: '12px', 
+            padding: '10px 8px',
+            textAlign: 'center',
+            fontSize: '11px'
+          }}>
+            <div>
+              <div style={{ color: 'var(--text-secondary)', marginBottom: '3px' }}>평가구분</div>
+              <div style={{ color: 'var(--color-brand)', fontWeight: 800, whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{d.skillCategory}</div>
+            </div>
+            <div style={{ borderLeft: '1px solid rgba(255,255,255,0.05)', borderRight: '1px solid rgba(255,255,255,0.05)' }}>
+              <div style={{ color: 'var(--text-secondary)', marginBottom: '3px' }}>평가숙련도</div>
+              <div style={{ color: 'var(--color-bullish)', fontWeight: 800 }}>{stats.accuracy}%</div>
+            </div>
+            <div>
+              <div style={{ color: 'var(--text-secondary)', marginBottom: '3px' }}>훈련 횟수</div>
+              <div style={{ color: 'var(--text-primary)', fontWeight: 800 }}>
+                {stats.drillSessionCount !== undefined ? stats.drillSessionCount : Math.floor(stats.attempts / 5)}회
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Action Buttons */}
+        <div style={{ display: 'flex', gap: '8px', marginTop: '4px' }}>
+          <button 
+            onClick={() => {
+              setEntrySource('gym');
+              setSubView('library');
+              setActiveTheory(d.file);
+            }}
+            style={{ 
+              flex: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '6px',
+              background: 'rgba(255, 255, 255, 0.05)',
+              border: '1px solid var(--border-color)',
+              color: 'var(--text-primary)',
+              borderRadius: '12px',
+              padding: '10px',
+              fontSize: '12.5px',
+              fontWeight: 700,
+              cursor: 'pointer',
+              transition: 'all 0.2s'
+            }}
+          >
+            <BookOpen size={14} />
+            <span>이론 보기</span>
+          </button>
+
+          <button 
+            onClick={() => {
+              if (isLocked) return;
+              if (isDrillLockedByPremium) {
+                onTriggerPremium();
+              } else {
+                onStartDrill(d.file);
+              }
+            }}
+            disabled={isLocked}
+            style={{ 
+              flex: 1.3,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '6px',
+              background: isLocked 
+                ? 'var(--bg-muted)' 
+                : (isDrillLockedByPremium 
+                  ? 'linear-gradient(135deg, #ffdc80 0%, #ffba3a 100%)' 
+                  : 'var(--color-brand)'),
+              border: isLocked ? '1px solid var(--border-color)' : 'none',
+              color: isLocked 
+                ? 'var(--text-muted)' 
+                : (isDrillLockedByPremium ? '#05070b' : '#fff'),
+              borderRadius: '12px',
+              padding: '10px',
+              fontSize: '12.5px',
+              fontWeight: 700,
+              cursor: isLocked ? 'not-allowed' : 'pointer',
+              transition: 'all 0.2s'
+            }}
+          >
+            {isLocked ? (
+              <Lock size={14} />
+            ) : isDrillLockedByPremium ? (
+              <Lock size={14} />
+            ) : (
+              <Play size={14} fill="currentColor" />
+            )}
+            <span>
+              {isLocked ? '잠김' : isDrillLockedByPremium ? '한도 초과' : '실전 훈련 시작'}
+            </span>
+          </button>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="drill-gym-wrapper">
       {/* Sub navigation header */}
@@ -216,143 +381,146 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
 
       {/* View router */}
       {subView === 'gym' && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
-          {drills.map((d) => {
-            const isLocked = xp < d.minXp;
-            const stats = drillStats[d.skillCategory] || { level: 1, accuracy: 50, attempts: 0, drillSessionCount: 0 };
-            
-            return (
-              <div 
-                key={d.id} 
-                style={{ 
-                  background: d.gradient, 
-                  border: `1px solid ${isLocked ? 'rgba(255, 255, 255, 0.05)' : d.borderColor}`,
-                  borderRadius: '20px', 
-                  padding: '20px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  gap: '16px',
-                  position: 'relative',
-                  opacity: isLocked ? 0.6 : 1,
-                  transition: 'all 0.25s ease'
-                }}
-              >
-                {/* Lock Overlay Banner */}
-                {isLocked && (
-                  <div style={{
-                    position: 'absolute',
-                    top: '12px',
-                    right: '12px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    background: 'rgba(255, 255, 255, 0.08)',
-                    padding: '4px 8px',
-                    borderRadius: '8px',
-                    fontSize: '11px',
-                    color: 'var(--text-secondary)',
-                    fontWeight: 700
-                  }}>
-                    <Lock size={12} />
-                    <span>{d.minXp} XP 해제</span>
-                  </div>
-                )}
-
-                {/* Drill Title & Description */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', width: '100%' }}>
+          {/* Daily Limit Banner */}
+          {!isPremium && dailyDrillCount >= 3 && (
+            <div style={{
+              background: 'linear-gradient(135deg, rgba(255, 186, 58, 0.12) 0%, rgba(255, 186, 58, 0.02) 100%)',
+              border: '1px solid rgba(255, 186, 58, 0.25)',
+              borderRadius: '16px',
+              padding: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '12px',
+              flexWrap: 'wrap',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.15)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1, minWidth: '240px' }}>
+                <span style={{ fontSize: '22px' }}>🔒</span>
                 <div>
-                  <h3 style={{ fontSize: '15px', fontWeight: 800, marginBottom: '6px', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    {d.title}
-                  </h3>
-                  <p style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
-                    {d.desc}
-                  </p>
-                </div>
-
-                {/* Statistics Row (Level, Accuracy, Attempts) */}
-                {!isLocked && (
-                  <div style={{ 
-                    display: 'grid', 
-                    gridTemplateColumns: '1fr 1.2fr 1fr', 
-                    background: 'rgba(0, 0, 0, 0.2)', 
-                    borderRadius: '12px', 
-                    padding: '10px 8px',
-                    textAlign: 'center',
-                    fontSize: '11px'
-                  }}>
-                    <div>
-                      <div style={{ color: 'var(--text-secondary)', marginBottom: '3px' }}>평가구분</div>
-                      <div style={{ color: 'var(--color-brand)', fontWeight: 800, whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{d.skillCategory}</div>
-                    </div>
-                    <div style={{ borderLeft: '1px solid rgba(255,255,255,0.05)', borderRight: '1px solid rgba(255,255,255,0.05)' }}>
-                      <div style={{ color: 'var(--text-secondary)', marginBottom: '3px' }}>평가숙련도</div>
-                      <div style={{ color: 'var(--color-bullish)', fontWeight: 800 }}>{stats.accuracy}%</div>
-                    </div>
-                    <div>
-                      <div style={{ color: 'var(--text-secondary)', marginBottom: '3px' }}>훈련 횟수</div>
-                      <div style={{ color: 'var(--text-primary)', fontWeight: 800 }}>
-                        {stats.drillSessionCount !== undefined ? stats.drillSessionCount : Math.floor(stats.attempts / 5)}회
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Action Buttons */}
-                <div style={{ display: 'flex', gap: '8px', marginTop: '4px' }}>
-                  <button 
-                    onClick={() => {
-                      setEntrySource('gym');
-                      setSubView('library');
-                      setActiveTheory(d.file);
-                    }}
-                    style={{ 
-                      flex: 1,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '6px',
-                      background: 'rgba(255, 255, 255, 0.05)',
-                      border: '1px solid var(--border-color)',
-                      color: 'var(--text-primary)',
-                      borderRadius: '12px',
-                      padding: '10px',
-                      fontSize: '12.5px',
-                      fontWeight: 700,
-                      cursor: 'pointer',
-                      transition: 'all 0.2s'
-                    }}
-                  >
-                    <BookOpen size={14} />
-                    <span>이론 보기</span>
-                  </button>
-
-                  <button 
-                    onClick={() => !isLocked && onStartDrill(d.file)}
-                    disabled={isLocked}
-                    style={{ 
-                      flex: 1.3,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '6px',
-                      background: isLocked ? 'var(--bg-muted)' : 'var(--color-brand)',
-                      border: isLocked ? '1px solid var(--border-color)' : 'none',
-                      color: isLocked ? 'var(--text-muted)' : '#fff',
-                      borderRadius: '12px',
-                      padding: '10px',
-                      fontSize: '12.5px',
-                      fontWeight: 700,
-                      cursor: isLocked ? 'not-allowed' : 'pointer',
-                      transition: 'all 0.2s'
-                    }}
-                  >
-                    {isLocked ? <Lock size={14} /> : <Play size={14} fill="currentColor" />}
-                    <span>{isLocked ? '잠김' : '실전 훈련 시작'}</span>
-                  </button>
+                  <strong style={{ color: '#ffba3a', fontSize: '13.5px', display: 'block', fontWeight: 800 }}>오늘의 무료 훈련 한도 초과 (3/3)</strong>
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '11.5px', display: 'block', marginTop: '2px', lineHeight: 1.4 }}>
+                    일일 무료 훈련 횟수를 모두 소모했습니다. PRO 멤버십을 시작하고 무제한 훈련 및 이론을 즐겨보세요!
+                  </span>
                 </div>
               </div>
-            );
-          })}
+              <button 
+                onClick={onTriggerPremium}
+                style={{
+                  background: 'linear-gradient(135deg, #ffdc80 0%, #ffba3a 100%)',
+                  color: '#05070b',
+                  border: 'none',
+                  borderRadius: '10px',
+                  padding: '8px 14px',
+                  fontSize: '12px',
+                  fontWeight: 800,
+                  cursor: 'pointer',
+                  boxShadow: '0 4px 12px rgba(255, 186, 58, 0.2)',
+                  transition: 'opacity 0.2s'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.opacity = '0.9'}
+                onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
+              >
+                PRO 업그레이드
+              </button>
+            </div>
+          )}
+
+          {/* 기초 실전 훈련 Section */}
+          <div>
+            <h3 style={{ fontSize: '13px', fontWeight: 800, color: 'var(--text-secondary)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <span>🟢 기초 실전 훈련</span>
+              <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 500 }}>(누구나 무료 이용 가능)</span>
+            </h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px', width: '100%' }}>
+              {drills.filter(d => d.id <= 2).map((d) => renderDrillCard(d))}
+            </div>
+          </div>
+
+          {/* 고급 실전 훈련 Section with Unified Paywall */}
+          <div style={{ position: 'relative', marginTop: '10px' }}>
+            <h3 style={{ fontSize: '13px', fontWeight: 800, color: '#ffba3a', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <span>🔥 고급 실전 훈련 (PRO)</span>
+              {!isPremium && <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 500 }}>(구독 시 무제한 잠금해제)</span>}
+            </h3>
+
+            <div style={{
+              filter: isPremium ? 'none' : 'blur(5px)',
+              pointerEvents: isPremium ? 'auto' : 'none',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+              gap: '16px',
+              width: '100%',
+              userSelect: isPremium ? 'auto' : 'none'
+            }}>
+              {drills.filter(d => d.id > 2).map((d) => renderDrillCard(d))}
+            </div>
+
+            {!isPremium && (
+              <div style={{
+                position: 'absolute',
+                top: '32px',
+                left: 0,
+                right: 0,
+                bottom: 0,
+                borderRadius: '20px',
+                background: 'rgba(12, 17, 25, 0.75)',
+                backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '24px 20px',
+                textAlign: 'center',
+                zIndex: 10,
+                border: '1px solid rgba(255, 255, 255, 0.05)',
+                boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+              }}>
+                <div style={{
+                  background: 'linear-gradient(135deg, rgba(255, 186, 58, 0.2) 0%, rgba(244, 63, 94, 0.2) 100%)',
+                  border: '1px solid rgba(255, 186, 58, 0.3)',
+                  borderRadius: '50%',
+                  width: '52px',
+                  height: '52px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '16px',
+                  boxShadow: '0 0 15px rgba(255, 186, 58, 0.2)'
+                }}>
+                  <Sparkles size={22} style={{ color: '#ffba3a' }} />
+                </div>
+                <h3 style={{ fontSize: '15px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>
+                  PRO 모드로 모든 고급 훈련 잠금해제
+                </h3>
+                <p style={{ fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '16px', maxWidth: '320px', lineHeight: 1.45 }}>
+                  지표 다이버전스, 멀티타임프레임 레짐 분석, 진입/청산 실행, 리스크 관리 등 8종의 실전 훈련을 무제한으로 학습하세요.
+                </p>
+                <button 
+                  onClick={onTriggerPremium}
+                  style={{
+                    background: 'linear-gradient(135deg, #ffdc80 0%, #ffba3a 100%)',
+                    color: '#05070b',
+                    border: 'none',
+                    padding: '10px 20px',
+                    borderRadius: '10px',
+                    fontWeight: 800,
+                    fontSize: '12px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    boxShadow: '0 4px 12px rgba(255, 186, 58, 0.25)'
+                  }}
+                >
+                  <Sparkles size={13} />
+                  PRO 멤버십 시작하기
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       )}
 
@@ -364,41 +532,184 @@ export const DrillGymTab: React.FC<DrillGymTabProps> = ({
                 <BookOpen size={20} style={{ color: 'var(--color-brand)' }} />
                 트레이딩 핵심 이론 백과
               </h2>
-              <div className="modules-list" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {theoryModulesList.map((tm) => {
-                  const doc = theoryDocuments[tm.file];
-                  return (
-                    <div 
-                      key={tm.id} 
-                      className="module-card"
-                      onClick={() => setActiveTheory(tm.file)}
-                      style={{
-                        borderRadius: '16px',
-                        border: '1px solid var(--border-color)',
-                        background: 'linear-gradient(135deg, rgba(255,255,255,0.01) 0%, rgba(22, 26, 37, 0.4) 100%)'
-                      }}
-                      onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--color-brand)'}
-                      onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-color)'}
-                    >
-                      <div className="module-card-body">
-                        <h3 className="module-card-title">{tm.title}</h3>
-                        <p className="module-card-desc">
-                          {doc?.subtitle || tm.desc}
-                        </p>
-                        <div className="module-card-footer">
-                          <span className="category-tag">{tm.category}</span>
-                          {doc && (
-                            <div className="module-card-meta">
-                              <span>약 {doc.readingMinutes}분</span>
-                              <span>·</span>
-                              <span>{doc.sections.length}개 실전 단원</span>
-                            </div>
-                          )}
+
+              {/* 기초 이론 Section */}
+              <div style={{ marginBottom: '24px' }}>
+                <h3 style={{ fontSize: '13px', fontWeight: 800, color: 'var(--text-secondary)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span>🟢 기초 이론 백과</span>
+                  <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 500 }}>(누구나 무료 보기 가능)</span>
+                </h3>
+                <div className="modules-list" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  {theoryModulesList.filter(tm => tm.id <= 2).map((tm) => {
+                    const doc = theoryDocuments[tm.file];
+                    return (
+                      <div 
+                        key={tm.id} 
+                        className="module-card"
+                        onClick={() => setActiveTheory(tm.file)}
+                        style={{
+                          borderRadius: '16px',
+                          border: '1px solid var(--border-color)',
+                          background: 'linear-gradient(135deg, rgba(255,255,255,0.01) 0%, rgba(22, 26, 37, 0.4) 100%)',
+                          position: 'relative',
+                          cursor: 'pointer'
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--color-brand)'}
+                        onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-color)'}
+                      >
+                        <div className="module-card-body">
+                          <h3 className="module-card-title" style={{ color: '#f8fafc' }}>
+                            {tm.title}
+                          </h3>
+                          <p className="module-card-desc">
+                            {doc?.subtitle || tm.desc}
+                          </p>
+                          <div className="module-card-footer">
+                            <span className="category-tag">{tm.category}</span>
+                            {doc && (
+                              <div className="module-card-meta">
+                                <span>약 {doc.readingMinutes}분</span>
+                                <span>·</span>
+                                <span>{doc.sections.length}개 실전 단원</span>
+                              </div>
+                            )}
+                          </div>
                         </div>
                       </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* 고급 이론 Section with Unified Paywall */}
+              <div style={{ position: 'relative' }}>
+                <h3 style={{ fontSize: '13px', fontWeight: 800, color: '#ffba3a', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span>🔥 고급 실전 이론 (PRO)</span>
+                  {!isPremium && <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 500 }}>(구독 시 무제한 잠금해제)</span>}
+                </h3>
+                
+                <div 
+                  className="modules-list" 
+                  style={{ 
+                    filter: isPremium ? 'none' : 'blur(5px)',
+                    pointerEvents: isPremium ? 'auto' : 'none',
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    gap: '12px',
+                    userSelect: isPremium ? 'auto' : 'none'
+                  }}
+                >
+                  {theoryModulesList.filter(tm => tm.id > 2).map((tm) => {
+                    const doc = theoryDocuments[tm.file];
+                    return (
+                      <div 
+                        key={tm.id} 
+                        className="module-card"
+                        onClick={() => {
+                          if (isPremium) {
+                            setActiveTheory(tm.file);
+                          }
+                        }}
+                        style={{
+                          borderRadius: '16px',
+                          border: '1px solid var(--border-color)',
+                          background: 'linear-gradient(135deg, rgba(255,255,255,0.01) 0%, rgba(22, 26, 37, 0.4) 100%)',
+                          position: 'relative',
+                          cursor: isPremium ? 'pointer' : 'default'
+                        }}
+                        onMouseEnter={(e) => {
+                          if (isPremium) e.currentTarget.style.borderColor = 'var(--color-brand)';
+                        }}
+                        onMouseLeave={(e) => {
+                          if (isPremium) e.currentTarget.style.borderColor = 'var(--border-color)';
+                        }}
+                      >
+                        <div className="module-card-body">
+                          <h3 className="module-card-title" style={{ color: '#f8fafc' }}>
+                            {tm.title}
+                          </h3>
+                          <p className="module-card-desc">
+                            {doc?.subtitle || tm.desc}
+                          </p>
+                          <div className="module-card-footer">
+                            <span className="category-tag">{tm.category}</span>
+                            {doc && (
+                              <div className="module-card-meta">
+                                <span>약 {doc.readingMinutes}분</span>
+                                <span>·</span>
+                                <span>{doc.sections.length}개 실전 단원</span>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {!isPremium && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '32px',
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    borderRadius: '20px',
+                    background: 'rgba(12, 17, 25, 0.75)',
+                    backdropFilter: 'blur(8px)',
+                    WebkitBackdropFilter: 'blur(8px)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '24px 20px',
+                    textAlign: 'center',
+                    zIndex: 10,
+                    border: '1px solid rgba(255, 255, 255, 0.05)',
+                    boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                  }}>
+                    <div style={{
+                      background: 'linear-gradient(135deg, rgba(255, 186, 58, 0.2) 0%, rgba(244, 63, 94, 0.2) 100%)',
+                      border: '1px solid rgba(255, 186, 58, 0.3)',
+                      borderRadius: '50%',
+                      width: '52px',
+                      height: '52px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '16px',
+                      boxShadow: '0 0 15px rgba(255, 186, 58, 0.2)'
+                    }}>
+                      <Sparkles size={22} style={{ color: '#ffba3a' }} />
                     </div>
-                  );
-                })}
+                    <h3 style={{ fontSize: '15px', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>
+                      PRO 모드로 모든 고급 이론 잠금해제
+                    </h3>
+                    <p style={{ fontSize: '12px', color: 'var(--text-secondary)', marginBottom: '16px', maxWidth: '320px', lineHeight: 1.45 }}>
+                      시장구조/SR 분석, 차트 패턴 돌파 매매, 거래량 유동성 스윕, 다이버전스 등 8가지 전문 이론 백과를 무제한 학습하세요.
+                    </p>
+                    <button 
+                      onClick={onTriggerPremium}
+                      style={{
+                        background: 'linear-gradient(135deg, #ffdc80 0%, #ffba3a 100%)',
+                        color: '#05070b',
+                        border: 'none',
+                        padding: '10px 20px',
+                        borderRadius: '10px',
+                        fontWeight: 800,
+                        fontSize: '12px',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        boxShadow: '0 4px 12px rgba(255, 186, 58, 0.25)'
+                      }}
+                    >
+                      <Sparkles size={13} />
+                      PRO 멤버십 시작하기
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           ) : (

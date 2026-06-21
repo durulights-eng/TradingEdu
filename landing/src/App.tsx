@@ -330,7 +330,7 @@ function App() {
                 <span style={{ fontSize: '18px' }}>🎁</span>
                 <div>
                   <strong style={{ color: 'var(--amber)', fontSize: '13px', display: 'block', fontWeight: 800 }}>
-                    신규 가입 혜택: 첫 7일간 PRO 멤버십 무료
+                    가입 혜택: PRO 멤버십 할인 이벤트 진행 중
                   </strong>
                   <span style={{ color: 'var(--muted)', fontSize: '11px', display: 'block', marginTop: '2px', lineHeight: 1.3 }}>
                     AI 실시간 ELO 1:1 맞춤형 난이도 튜닝 및 모든 강좌 무제한 액세스
@@ -341,7 +341,7 @@ function App() {
 
             <a className="download-button" href="#download">
               <Smartphone size={18} />
-              Google Play에서 {diagnosisCompleted ? '7일 무료 체험' : '무료 훈련'} 시작
+              Google Play에서 {diagnosisCompleted ? 'PRO 멤버십' : '무료 훈련'} 시작
             </a>
           </article>
         </div>
