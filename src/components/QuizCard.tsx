@@ -32,15 +32,11 @@ export const QuizCard: React.FC<QuizCardProps> = ({
   const handleSelect = (index: number) => {
     if (isChecked) return; // Cannot change after checking
     setSelectedOption(index);
-  };
 
-  const handleCheck = () => {
-    if (selectedOption === null || isChecked) return;
-
-    const correct = selectedOption === quiz.correctIndex;
+    const correct = index === quiz.correctIndex;
     setIsCorrect(correct);
     setIsChecked(true);
-    onAnswerChecked(correct, selectedOption);
+    onAnswerChecked(correct, index);
   };
 
   const optionLetters = ["A", "B", "C", "D"];
@@ -102,7 +98,15 @@ export const QuizCard: React.FC<QuizCardProps> = ({
         {quiz.options.map((option, idx) => {
           const isSelected = selectedOption === idx;
           let optionClass = "option-btn";
-          if (isSelected) optionClass += " selected";
+          if (isChecked) {
+            if (idx === quiz.correctIndex) {
+              optionClass += " correct";
+            } else if (isSelected) {
+              optionClass += " wrong";
+            }
+          } else if (isSelected) {
+            optionClass += " selected";
+          }
 
           return (
             <button
@@ -121,15 +125,18 @@ export const QuizCard: React.FC<QuizCardProps> = ({
       {/* Bottom Drawer for Feedback */}
       <div className={`action-drawer ${isChecked ? (isCorrect ? 'correct correct-animation' : 'incorrect incorrect-animation') : ''}`}>
         {!isChecked ? (
-          <>
-            <button
-              className="btn-drawer-action check"
-              onClick={handleCheck}
-              disabled={selectedOption === null}
-            >
-              정답 확인
-            </button>
-          </>
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            height: '48px', 
+            color: 'var(--text-secondary)', 
+            fontSize: '13px', 
+            fontWeight: 500,
+            letterSpacing: '-0.02em'
+          }}>
+            문제를 분석하고 위의 보기 중 정답을 선택하세요.
+          </div>
         ) : (
           <>
             <div className={`feedback-header ${isCorrect ? 'correct' : 'incorrect'}`}>

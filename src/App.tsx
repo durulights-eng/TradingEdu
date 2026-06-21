@@ -4,10 +4,11 @@ import { quizzes, getTradingTier, getLocalDateString, getYesterdayDateString, is
 import type { QuizItem } from './data/quizzes';
 import { Dashboard } from './components/Dashboard';
 import { QuizCard } from './components/QuizCard';
-import { Flame, Award, Play, Trophy, Settings } from 'lucide-react';
+import { Flame, Award, Play, Trophy, Settings, X } from 'lucide-react';
 import { supabase, isSupabaseConfigured } from './lib/supabaseClient';
 import { DrillGymTab } from './components/DrillGymTab';
 import { SettingsTab } from './components/SettingsTab';
+import { WelcomeOnboarding } from './components/WelcomeOnboarding';
 
 type ViewMode = 'dashboard' | 'quiz' | 'drill' | 'settings';
 
@@ -107,6 +108,48 @@ const getCategoryKey = (category: string): 'candle' | 'structure' | 'trend' | 'p
 
 
 export const App: React.FC = () => {
+  const [termExplanation, setTermExplanation] = useState<{ term: string; definition: string } | null>(null);
+  const [showOnboarding, setShowOnboarding] = useState<boolean>(() => {
+    return localStorage.getItem('chartmon_onboarding_completed') !== 'true';
+  });
+
+  useEffect(() => {
+    const handleShowExplanation = (e: Event) => {
+      const customEvent = e as CustomEvent<{ term: string; definition: string }>;
+      if (customEvent.detail) {
+        setTermExplanation(customEvent.detail);
+      }
+    };
+    window.addEventListener('show-term-explanation', handleShowExplanation);
+    return () => {
+      window.removeEventListener('show-term-explanation', handleShowExplanation);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (termExplanation) {
+      const timer = setTimeout(() => {
+        setTermExplanation(null);
+      }, 5000);
+
+      const handleGlobalClick = () => {
+        setTermExplanation(null);
+      };
+
+      const timeoutClick = setTimeout(() => {
+        window.addEventListener('click', handleGlobalClick);
+        window.addEventListener('touchstart', handleGlobalClick);
+      }, 100);
+
+      return () => {
+        clearTimeout(timer);
+        clearTimeout(timeoutClick);
+        window.removeEventListener('click', handleGlobalClick);
+        window.removeEventListener('touchstart', handleGlobalClick);
+      };
+    }
+  }, [termExplanation]);
+
   // Gamification states loaded from LocalStorage (or defaults)
   const [streak, setStreak] = useState<number>(() => {
     return Number(localStorage.getItem('chartmon_streak')) || 5;
@@ -516,17 +559,75 @@ export const App: React.FC = () => {
   };
 
   const startDailyTraining = () => {
-    // Select 15 quizzes: uncompleted first, then fill with completed (all shuffled)
-    const uncompleted = quizzesList.filter(q => !completedQuizzes.includes(q.id));
-    let selected: QuizItem[];
+    const userRating = ratingState.overallRating || 1000;
+    
+    // 1. Split quizzes into uncompleted and completed
+    const uncompletedPool = quizzesList.filter(q => !completedQuizzes.includes(q.id));
+    const completedPool = quizzesList.filter(q => completedQuizzes.includes(q.id));
+    
     const shuffle = (array: QuizItem[]) => [...array].sort(() => 0.5 - Math.random());
-    if (uncompleted.length >= 15) {
-      selected = shuffle(uncompleted).slice(0, 15);
+    
+    // 2. Select uncompleted quizzes with matching difficulty
+    // Target 1: Uncompleted within ±200 RP
+    let uncompletedSelected = uncompletedPool.filter(q => {
+      const qRating = 800 + ((q.difficulty || 3) - 1) * 200;
+      return Math.abs(qRating - userRating) <= 200;
+    });
+    
+    // Target 2: If we need more, expand to ±350 RP
+    if (uncompletedSelected.length < 15) {
+      const expanded = uncompletedPool.filter(q => {
+        const qRating = 800 + ((q.difficulty || 3) - 1) * 200;
+        const diff = Math.abs(qRating - userRating);
+        return diff > 200 && diff <= 350;
+      });
+      uncompletedSelected = [...uncompletedSelected, ...expanded];
+    }
+    
+    // Target 3: If still need more, fallback to any uncompleted
+    if (uncompletedSelected.length < 15) {
+      const rest = uncompletedPool.filter(q => {
+        const qRating = 800 + ((q.difficulty || 3) - 1) * 200;
+        return Math.abs(qRating - userRating) > 350;
+      });
+      uncompletedSelected = [...uncompletedSelected, ...rest];
+    }
+    
+    let selected: QuizItem[] = shuffle(uncompletedSelected);
+    
+    // 3. If total selected is less than 15, fill with completed quizzes matching difficulty
+    if (selected.length < 15) {
+      const neededCount = 15 - selected.length;
+      
+      // Completed Target 1: Completed within ±200 RP
+      let completedSelected = completedPool.filter(q => {
+        const qRating = 800 + ((q.difficulty || 3) - 1) * 200;
+        return Math.abs(qRating - userRating) <= 200;
+      });
+      
+      // Completed Target 2: Expanded ±350 RP
+      if (completedSelected.length < neededCount) {
+        const expanded = completedPool.filter(q => {
+          const qRating = 800 + ((q.difficulty || 3) - 1) * 200;
+          const diff = Math.abs(qRating - userRating);
+          return diff > 200 && diff <= 350;
+        });
+        completedSelected = [...completedSelected, ...expanded];
+      }
+      
+      // Completed Target 3: Any completed fallback
+      if (completedSelected.length < neededCount) {
+        const rest = completedPool.filter(q => {
+          const qRating = 800 + ((q.difficulty || 3) - 1) * 200;
+          return Math.abs(qRating - userRating) > 350;
+        });
+        completedSelected = [...completedSelected, ...rest];
+      }
+      
+      selected = [...selected, ...shuffle(completedSelected).slice(0, neededCount)];
     } else {
-      selected = [...uncompleted];
-      const completed = quizzesList.filter(q => completedQuizzes.includes(q.id));
-      selected = shuffle(selected); // Shuffle uncompleted too
-      selected = [...selected, ...shuffle(completed).slice(0, 15 - selected.length)];
+      // Just slice the first 15 (which is already shuffled)
+      selected = selected.slice(0, 15);
     }
 
     const today = getLocalDateString();
@@ -583,8 +684,16 @@ export const App: React.FC = () => {
     };
 
     let theoryFile = categoryOrFile;
+    let categoryName = categoryOrFile;
+    
     if (SKILL_TO_THEORY_MAP[categoryOrFile]) {
       theoryFile = SKILL_TO_THEORY_MAP[categoryOrFile];
+    } else {
+      // Find category key from theory file
+      const reverseMap = Object.entries(SKILL_TO_THEORY_MAP).find(([_, val]) => val === categoryOrFile);
+      if (reverseMap) {
+        categoryName = reverseMap[0];
+      }
     }
 
     // Filter quizzes by theoryRef
@@ -594,23 +703,78 @@ export const App: React.FC = () => {
       return;
     }
 
-    // Select 5 random/uncompleted quizzes from this category
-    const uncompleted = categoryQuizzes.filter(q => !completedQuizzes.includes(q.id));
-    let selected: QuizItem[];
+    const categoryRating = ratingState.categories[categoryName]?.rating || 1000;
+
+    // Split category quizzes into uncompleted and completed
+    const uncompletedPool = categoryQuizzes.filter(q => !completedQuizzes.includes(q.id));
+    const completedPool = categoryQuizzes.filter(q => completedQuizzes.includes(q.id));
     
-    // Shuffle helper
     const shuffle = (array: QuizItem[]) => [...array].sort(() => 0.5 - Math.random());
-    
-    if (uncompleted.length >= 5) {
-      selected = shuffle(uncompleted).slice(0, 5);
-    } else {
-      selected = [...uncompleted];
-      const completed = categoryQuizzes.filter(q => completedQuizzes.includes(q.id));
-      selected = [...selected, ...shuffle(completed).slice(0, 5 - selected.length)];
+
+    // Select uncompleted quizzes matching rating
+    // Target 1: Uncompleted within ±200 RP
+    let uncompletedSelected = uncompletedPool.filter(q => {
+      const qRating = 800 + ((q.difficulty || 3) - 1) * 200;
+      return Math.abs(qRating - categoryRating) <= 200;
+    });
+
+    // Target 2: Expand to ±350 RP
+    if (uncompletedSelected.length < 5) {
+      const expanded = uncompletedPool.filter(q => {
+        const qRating = 800 + ((q.difficulty || 3) - 1) * 200;
+        const diff = Math.abs(qRating - categoryRating);
+        return diff > 200 && diff <= 350;
+      });
+      uncompletedSelected = [...uncompletedSelected, ...expanded];
     }
 
-    // Fallback if there are fewer than 5 quizzes total in the database for this category
-    if (selected.length < 5 && categoryQuizzes.length > 0) {
+    // Target 3: Fallback to all uncompleted
+    if (uncompletedSelected.length < 5) {
+      const rest = uncompletedPool.filter(q => {
+        const qRating = 800 + ((q.difficulty || 3) - 1) * 200;
+        return Math.abs(qRating - categoryRating) > 350;
+      });
+      uncompletedSelected = [...uncompletedSelected, ...rest];
+    }
+
+    let selected: QuizItem[] = shuffle(uncompletedSelected);
+
+    // If less than 5, fill with completed quizzes matching rating
+    if (selected.length < 5) {
+      const neededCount = 5 - selected.length;
+
+      // Completed Target 1: Completed within ±200 RP
+      let completedSelected = completedPool.filter(q => {
+        const qRating = 800 + ((q.difficulty || 3) - 1) * 200;
+        return Math.abs(qRating - categoryRating) <= 200;
+      });
+
+      // Completed Target 2: Expanded ±350 RP
+      if (completedSelected.length < neededCount) {
+        const expanded = completedPool.filter(q => {
+          const qRating = 800 + ((q.difficulty || 3) - 1) * 200;
+          const diff = Math.abs(qRating - categoryRating);
+          return diff > 200 && diff <= 350;
+        });
+        completedSelected = [...completedSelected, ...expanded];
+      }
+
+      // Completed Target 3: All completed fallback
+      if (completedSelected.length < neededCount) {
+        const rest = completedPool.filter(q => {
+          const qRating = 800 + ((q.difficulty || 3) - 1) * 200;
+          return Math.abs(qRating - categoryRating) > 350;
+        });
+        completedSelected = [...completedSelected, ...rest];
+      }
+
+      selected = [...selected, ...shuffle(completedSelected).slice(0, neededCount)];
+    } else {
+      selected = selected.slice(0, 5);
+    }
+
+    // Ultimate fallback: if selected is still empty, fallback to categoryQuizzes
+    if (selected.length === 0 && categoryQuizzes.length > 0) {
       selected = shuffle(categoryQuizzes).slice(0, Math.min(5, categoryQuizzes.length));
     }
 
@@ -1026,6 +1190,10 @@ export const App: React.FC = () => {
     );
   }
 
+  if (showOnboarding) {
+    return <WelcomeOnboarding onClose={() => setShowOnboarding(false)} />;
+  }
+
   return (
     <div className="app-container">
       {currentView !== 'quiz' && (
@@ -1098,6 +1266,7 @@ export const App: React.FC = () => {
             userEmail={userEmail} 
             onLogout={handleLogout}
             onDeleteAccount={handleDeleteAccount}
+            onTestOnboarding={() => setShowOnboarding(true)}
           />
         )}
       </main>
@@ -1162,6 +1331,68 @@ export const App: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Terminology Explanation Slide-down Banner */}
+      <div 
+        style={{
+          position: 'fixed',
+          top: termExplanation ? '16px' : '-200px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: 'calc(100% - 32px)',
+          maxWidth: '480px',
+          background: 'rgba(15, 23, 42, 0.95)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          border: '1px solid rgba(124, 108, 250, 0.35)',
+          borderRadius: '16px',
+          padding: '14px 18px',
+          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5)',
+          zIndex: 99999,
+          transition: 'top 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '4px'
+        }}
+        onClick={(e) => {
+          // Prevent closing when clicking inside the banner itself
+          e.stopPropagation();
+        }}
+      >
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <strong style={{ color: '#60a5fa', fontSize: '14px', fontWeight: '800' }}>
+            {termExplanation?.term}
+          </strong>
+          <button 
+            onClick={() => setTermExplanation(null)}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              color: 'var(--text-secondary)',
+              cursor: 'pointer',
+              padding: '4px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '50%',
+              transition: 'background 0.2s'
+            }}
+            onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.08)'}
+            onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
+          >
+            <X size={16} />
+          </button>
+        </div>
+        <p style={{ 
+          color: '#cbd5e1', 
+          fontSize: '12.5px', 
+          lineHeight: '1.5',
+          margin: 0,
+          fontWeight: '500'
+        }}>
+          {termExplanation?.definition}
+        </p>
+      </div>
     </div>
   );
 };

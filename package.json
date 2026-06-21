@@ -19,6 +19,7 @@
     "@capacitor/core": "^8.4.0",
     "@capacitor/local-notifications": "^8.2.0",
     "@supabase/supabase-js": "^2.108.1",
+    "capacitor-native-settings": "^8.1.0",
     "lucide-react": "^1.18.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"

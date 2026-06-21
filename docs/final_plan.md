@@ -63,7 +63,7 @@
 
 ### 반영 파일
 * [src/components/SettingsTab.tsx](file:///d:/TradingEdu/src/components/SettingsTab.tsx)
-* `package.json` (`native-settings` 플러그인 추가 설치)
+* `package.json` (`capacitor-native-settings` 플러그인 추가 설치)
 
 ### 구현 상세
 1. **권한 상태 진단 (`LocalNotifications.checkPermissions()`)**:
@@ -73,14 +73,14 @@
    * **거부(`denied`) 상태**: 권한이 한 번 이상 거부된 상태이므로 시스템 팝업을 띄울 수 없습니다. 따라서 안내 모달("알림이 꺼져 있습니다. 설정 화면에서 알림 권한을 허용해 주세요.")을 보여준 후, 사용자가 확인을 누르면 **기기 내 앱 상세 설정 화면(App Settings)**으로 즉시 이동시킵니다.
    * **최초 상태 (`prompt` 또는 권한 요청 필요)**: `LocalNotifications.requestPermissions()`를 호출해 시스템 권한 팝업을 띄우고 결과에 따라 처리합니다.
 3. **설정 화면 이동 구현**:
-   * `@capacitor-community` 진영 및 산업 표준으로 사용되는 `native-settings` 라이브러리를 적용하여 Android 및 iOS의 앱 정보 상세 페이지로 링크합니다.
+   * `@capacitor-community` 진영 및 산업 표준으로 사용되는 `capacitor-native-settings` 라이브러리를 적용하여 Android 및 iOS의 앱 정보 상세 페이지로 링크합니다.
      ```typescript
-     import { NativeSettings, AndroidSettings, IOSSettings } from 'native-settings';
+     import { NativeSettings, AndroidSettings, IOSSettings } from 'capacitor-native-settings';
      
      // 설정으로 이동
      await NativeSettings.open({
-       option: AndroidSettings.ApplicationDetails,
-       // iOS의 경우 IOSSettings.App 자동 대응
+       optionAndroid: AndroidSettings.ApplicationDetails,
+       optionIOS: IOSSettings.App
      });
      ```
 

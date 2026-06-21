@@ -1,30 +1,57 @@
 import React, { useState } from 'react';
-import { Settings, Bell, BellOff, FileText, Shield, LogOut, Trash2, Info, Smartphone, ChevronRight } from 'lucide-react';
+import { Settings, Bell, BellOff, FileText, Shield, LogOut, Trash2, Info, Smartphone, ChevronRight, MessageSquare, Play } from 'lucide-react';
 import { Capacitor } from '@capacitor/core';
 import { LocalNotifications } from '@capacitor/local-notifications';
+import { NativeSettings, AndroidSettings, IOSSettings } from 'capacitor-native-settings';
 
 interface SettingsTabProps {
   userId: string | null;
   userEmail: string | null;
   onLogout?: () => void;
   onDeleteAccount?: () => void;
+  onTestOnboarding?: () => void;
 }
 
-export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onLogout, onDeleteAccount }) => {
+export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onLogout, onDeleteAccount, onTestOnboarding }) => {
   const [notificationsEnabled, setNotificationsEnabled] = useState<boolean>(() => {
     return localStorage.getItem('chartmon_notifications_enabled') !== 'false';
   });
 
   const scheduleDailyReminder = async () => {
     const check = await LocalNotifications.checkPermissions();
+    
+    if (check.display === 'denied') {
+      if (window.confirm('알림 권한이 거부되어 있습니다. 알림을 활성화하려면 앱 설정에서 알림 권한을 허용해 주세요. 설정 화면으로 이동하시겠습니까?')) {
+        try {
+          await NativeSettings.open({
+            optionAndroid: AndroidSettings.ApplicationDetails,
+            optionIOS: IOSSettings.App
+          });
+        } catch (err) {
+          console.error('Failed to open native settings', err);
+        }
+      }
+      throw new Error('settings_redirected');
+    }
+    
     let granted = check.display === 'granted';
     if (!granted) {
       const request = await LocalNotifications.requestPermissions();
       granted = request.display === 'granted';
-    }
-    
-    if (!granted) {
-      throw new Error('알림 권한이 허용되지 않았습니다. 기기 설정에서 알림 권한을 허용해 주세요.');
+      
+      if (!granted) {
+        if (window.confirm('알림 권한이 거부되었습니다. 리마인더를 사용하려면 앱 설정에서 알림 권한을 직접 허용해 주셔야 합니다. 설정 화면으로 이동하시겠습니까?')) {
+          try {
+            await NativeSettings.open({
+              optionAndroid: AndroidSettings.ApplicationDetails,
+              optionIOS: IOSSettings.App
+            });
+          } catch (err) {
+            console.error('Failed to open native settings', err);
+          }
+        }
+        throw new Error('settings_redirected');
+      }
     }
 
     // Cancel existing reminder to avoid duplication
@@ -72,7 +99,9 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onL
           localStorage.setItem('chartmon_notifications_enabled', 'true');
           alert('매일 오후 9시에 학습 리마인더 알림을 보내드립니다! 🔔');
         } catch (err: any) {
-          alert(err.message || '알림 설정 중 오류가 발생했습니다.');
+          if (err.message !== 'settings_redirected') {
+            alert(err.message || '알림 설정 중 오류가 발생했습니다.');
+          }
         }
       } else {
         await cancelDailyReminder();
@@ -120,6 +149,10 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onL
 
   const handleShowPrivacy = () => {
     window.open('https://chartmon.app/privacy.html', '_system');
+  };
+
+  const handleShowContact = () => {
+    window.open('https://chartmon.app/contact.html', '_system');
   };
 
   return (
@@ -203,6 +236,13 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onL
             </div>
             <ChevronRight size={16} style={{ color: 'var(--text-muted)' }} />
           </button>
+          <button className="settings-row" onClick={handleShowContact}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <MessageSquare size={18} style={{ color: 'var(--text-secondary)' }} />
+              <span style={{ fontSize: '14px', fontWeight: 600 }}>버그 제보 및 피드백</span>
+            </div>
+            <ChevronRight size={16} style={{ color: 'var(--text-muted)' }} />
+          </button>
           <button className="settings-row" style={{ borderBottom: 'none' }} onClick={() => {}}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <Info size={18} style={{ color: 'var(--text-secondary)' }} />
@@ -233,6 +273,28 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({ userId, userEmail, onL
           </button>
         </div>
       </div>
+
+      {/* Developer Settings Section */}
+      {onTestOnboarding && (
+        <div className="settings-section" style={{ marginTop: '10px' }}>
+          <div className="settings-section-title">개발자 도구</div>
+          <div className="settings-card">
+            <button 
+              className="settings-row" 
+              style={{ borderBottom: 'none' }} 
+              onClick={onTestOnboarding}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <Play size={18} style={{ color: 'var(--color-brand)' }} />
+                <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--color-brand)' }}>
+                  온보딩 애니메이션 테스트
+                </span>
+              </div>
+              <ChevronRight size={16} style={{ color: 'var(--color-brand)' }} />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

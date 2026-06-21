@@ -559,6 +559,30 @@ canvas {
   border-color: var(--color-brand);
 }
 
+.option-btn.correct {
+  border-color: var(--color-bullish);
+  background: rgba(35, 209, 139, 0.08);
+  box-shadow: 0 0 0 2px var(--color-bullish-glow);
+}
+
+.option-btn.correct .option-index {
+  background: var(--color-bullish);
+  color: #ffffff;
+  border-color: var(--color-bullish);
+}
+
+.option-btn.wrong {
+  border-color: var(--color-bearish);
+  background: rgba(255, 91, 103, 0.08);
+  box-shadow: 0 0 0 2px var(--color-bearish-glow);
+}
+
+.option-btn.wrong .option-index {
+  background: var(--color-bearish);
+  color: #ffffff;
+  border-color: var(--color-bearish);
+}
+
 .action-drawer {
   position: sticky;
   bottom: 0;

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>차트몬 - 문의 및 피드백</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.65);
+      --border: rgba(255, 255, 255, 0.08);
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #64748b;
+      --brand: #38bdf8;
+      --brand-glow: rgba(56, 189, 248, 0.2);
+      --success: #23d18b;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      background-color: var(--bg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 540px;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    h1 {
+      color: var(--text-primary);
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: var(--text-primary);
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: inherit;
+    }
+
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px var(--brand-glow);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%23cbd5e1' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      cursor: pointer;
+    }
+
+    textarea {
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--brand) 0%, #0284c7 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+      transition: all 0.2s;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .submit-btn:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(56, 189, 248, 0.3);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .success-container {
+      display: none;
+      text-align: center;
+      padding: 16px 0;
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .success-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(35, 209, 139, 0.1);
+      border: 1px solid rgba(35, 209, 139, 0.3);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--success);
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .success-title {
+      color: var(--text-primary);
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .success-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Form State -->
+    <div id="form-state">
+      <h1>문의 및 피드백</h1>
+      <p class="subtitle">차트몬을 이용하면서 개선하고 싶으신 점이나 버그 리포트를 접수해주시면 지체 없이 반영하도록 하겠습니다.</p>
+      
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="email">이메일 주소</label>
+          <input type="email" id="email" required placeholder="name@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="type">문의 유형</label>
+          <select id="type" required>
+            <option value="bug">버그 제보</option>
+            <option value="feature">기능 건의</option>
+            <option value="alliance">제휴 및 비즈니스 문의</option>
+            <option value="etc">기타 피드백</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">의견 및 문의 내용</label>
+          <textarea id="message" required rows="6" placeholder="구체적인 상황이나 재현 경로를 기재해주시면 버그 파악에 큰 도움이 됩니다."></textarea>
+        </div>
+
+        <button type="submit" id="submit-button" class="submit-btn">
+          피드백 제출하기
+        </button>
+      </form>
+    </div>
+
+    <!-- Success State -->
+    <div id="success-state" class="success-container">
+      <div class="success-icon">✓</div>
+      <h2 class="success-title">소중한 피드백이 접수되었습니다!</h2>
+      <p class="success-desc">보내주신 의견은 차트몬을 더욱 매끄럽고 똑똑한 트레이닝 앱으로 빌드하는 데 적극 활용하겠습니다. 감사합니다.</p>
+      <a href="https://chartmon.app" class="back-btn">랜딩페이지로 돌아가기</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    이메일 직접 접수: <a href="mailto:contact@42space.net">contact@42space.net</a>
+  </div>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      var email = document.getElementById('email').value;
+      var type = document.getElementById('type').value;
+      var message = document.getElementById('message').value;
+      var submitBtn = document.getElementById('submit-button');
+      
+      if (!email || !message) return;
+      
+      submitBtn.disabled = true;
+      submitBtn.innerText = '제출하는 중...';
+      
+      // Simulate submission delay
+      setTimeout(function() {
+        document.getElementById('form-state').style.display = 'none';
+        document.getElementById('success-state').style.display = 'block';
+      }, 1200);
+    });
+  </script>
+</body>
+</html>

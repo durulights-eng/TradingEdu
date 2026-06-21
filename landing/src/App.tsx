@@ -59,6 +59,29 @@ function App() {
   const [selectedPoint, setSelectedPoint] = useState<string | null>(null);
   const [habit, setHabit] = useState<Habit | null>(null);
 
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactType, setContactType] = useState('bug');
+  const [contactMessage, setContactMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!contactEmail || !contactMessage) return;
+    setIsSubmitting(true);
+    
+    // Simulate API call or write to database
+    await new Promise((resolve) => setTimeout(resolve, 1200));
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    setContactEmail('');
+    setContactMessage('');
+    setTimeout(() => {
+      setIsSubmitted(false);
+    }, 5000);
+  };
+
   const result = useMemo(() => resultMap[habit ?? 'chase'], [habit]);
   const quizCompleted = selectedPoint !== null;
   const diagnosisCompleted = quizCompleted && habit !== null;
@@ -74,6 +97,7 @@ function App() {
         <nav className="nav-links" aria-label="주요 섹션">
           <a href="#diagnosis">무료 진단</a>
           <a href="#system">훈련 시스템</a>
+          <a href="#contact">문의/제보</a>
         </nav>
         <a className="nav-cta" href="#diagnosis">
           <Play size={16} />
@@ -272,13 +296,52 @@ function App() {
             </div>
             <h3>{diagnosisCompleted ? result.title : '진단을 완료하면 결과가 열립니다'}</h3>
             <p>{diagnosisCompleted ? result.note : '주식 차트 판단과 습관 응답을 합쳐 맞춤 훈련 패키지를 생성합니다.'}</p>
+            {diagnosisCompleted && (
+              <p style={{ 
+                color: 'var(--cyan)', 
+                fontSize: '13px', 
+                lineHeight: '1.5', 
+                marginTop: '10px', 
+                marginBottom: '10px',
+                fontWeight: 700,
+                textAlign: 'left'
+              }}>
+                📢 내 등급에 맞춰 실시간으로 난이도가 정밀 튜닝되는 1:1 AI 트레이닝 시스템. 하루 15분 투자로 상위 5% 트레이더의 차트 근육을 이식하세요.
+              </p>
+            )}
             <div className="training-prescription">
               <Target size={18} />
               <span>{diagnosisCompleted ? result.training : '맞춤 훈련 생성 대기 중'}</span>
             </div>
+
+            {diagnosisCompleted && (
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(255, 186, 58, 0.15) 0%, rgba(255, 186, 58, 0.03) 100%)',
+                border: '1px solid rgba(255, 186, 58, 0.25)',
+                borderRadius: '8px',
+                padding: '12px 14px',
+                marginTop: '12px',
+                marginBottom: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                textAlign: 'left'
+              }}>
+                <span style={{ fontSize: '18px' }}>🎁</span>
+                <div>
+                  <strong style={{ color: 'var(--amber)', fontSize: '13px', display: 'block', fontWeight: 800 }}>
+                    신규 가입 혜택: 첫 7일간 PRO 멤버십 무료
+                  </strong>
+                  <span style={{ color: 'var(--muted)', fontSize: '11px', display: 'block', marginTop: '2px', lineHeight: 1.3 }}>
+                    AI 실시간 ELO 1:1 맞춤형 난이도 튜닝 및 모든 강좌 무제한 액세스
+                  </span>
+                </div>
+              </div>
+            )}
+
             <a className="download-button" href="#download">
               <Smartphone size={18} />
-              Google Play에서 무료 훈련 시작
+              Google Play에서 {diagnosisCompleted ? '7일 무료 체험' : '무료 훈련'} 시작
             </a>
           </article>
         </div>
@@ -371,8 +434,131 @@ function App() {
     </div>
   </section>
 
+  <section className="diagnosis-section" id="contact" style={{ padding: '80px 0', borderTop: '1px solid var(--line)', width: 'min(1180px, calc(100% - 32px))', margin: '0 auto' }}>
+    <div className="section-heading">
+      <span className="section-kicker">Contact Us</span>
+      <h2>문의하기 & 버그 제보</h2>
+      <p>차트몬을 이용하면서 불편하셨던 점이나 제안 사항을 보내주시면 신속히 반영하겠습니다.</p>
+    </div>
 
-      <section className="final-cta" id="download">
+    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '0 16px' }}>
+      {isSubmitted ? (
+        <div style={{
+          background: 'rgba(35, 209, 139, 0.08)',
+          border: '1px solid rgba(35, 209, 139, 0.3)',
+          borderRadius: '8px',
+          padding: '24px',
+          textAlign: 'center',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.2)'
+        }}>
+          <span style={{ fontSize: '32px', display: 'block', marginBottom: '12px' }}>🎉</span>
+          <h3 style={{ color: '#fff', fontSize: '18px', margin: '0 0 8px' }}>피드백이 성공적으로 전달되었습니다!</h3>
+          <p style={{ color: 'var(--muted)', fontSize: '14px', margin: 0 }}>보내주신 소중한 의견은 차트몬 개선에 큰 도움이 됩니다. 감사합니다.</p>
+        </div>
+      ) : (
+        <form onSubmit={handleContactSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <label style={{ fontSize: '13px', fontWeight: 650, color: 'var(--muted)' }}>이메일 주소</label>
+            <input
+              type="email"
+              required
+              placeholder="name@example.com"
+              value={contactEmail}
+              onChange={(e) => setContactEmail(e.target.value)}
+              style={{
+                background: 'var(--navy)',
+                border: '1px solid var(--line)',
+                borderRadius: '8px',
+                padding: '12px 14px',
+                color: '#fff',
+                fontSize: '14px',
+                outline: 'none',
+                transition: 'border-color 0.2s'
+              }}
+              onFocus={(e) => e.target.style.borderColor = 'var(--cyan)'}
+              onBlur={(e) => e.target.style.borderColor = 'var(--line)'}
+            />
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <label style={{ fontSize: '13px', fontWeight: 650, color: 'var(--muted)' }}>문의 유형</label>
+            <select
+              value={contactType}
+              onChange={(e) => setContactType(e.target.value)}
+              style={{
+                background: 'var(--navy)',
+                border: '1px solid var(--line)',
+                borderRadius: '8px',
+                padding: '12px 14px',
+                color: '#fff',
+                fontSize: '14px',
+                outline: 'none',
+                appearance: 'none',
+                WebkitAppearance: 'none',
+                backgroundImage: 'url("data:image/svg+xml;utf8,<svg fill=\'%238b99aa\' height=\'24\' viewBox=\'0 0 24 24\' width=\'24\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>")',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'right 12px center',
+                cursor: 'pointer'
+              }}
+            >
+              <option value="bug" style={{ background: '#070b12' }}>버그 제보</option>
+              <option value="feature" style={{ background: '#070b12' }}>기능 건의</option>
+              <option value="alliance" style={{ background: '#070b12' }}>제휴 문의</option>
+              <option value="etc" style={{ background: '#070b12' }}>기타</option>
+            </select>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <label style={{ fontSize: '13px', fontWeight: 650, color: 'var(--muted)' }}>내용</label>
+            <textarea
+              required
+              placeholder="의견이나 발견하신 버그의 상세 증상을 작성해주세요."
+              rows={5}
+              value={contactMessage}
+              onChange={(e) => setContactMessage(e.target.value)}
+              style={{
+                background: 'var(--navy)',
+                border: '1px solid var(--line)',
+                borderRadius: '8px',
+                padding: '12px 14px',
+                color: '#fff',
+                fontSize: '14px',
+                lineHeight: '1.6',
+                outline: 'none',
+                resize: 'vertical',
+                transition: 'border-color 0.2s'
+              }}
+              onFocus={(e) => e.target.style.borderColor = 'var(--cyan)'}
+              onBlur={(e) => e.target.style.borderColor = 'var(--line)'}
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            style={{
+              background: 'linear-gradient(135deg, var(--cyan) 0%, #0091ea 100%)',
+              border: 'none',
+              borderRadius: '8px',
+              padding: '14px',
+              color: '#fff',
+              fontSize: '15px',
+              fontWeight: 800,
+              cursor: isSubmitting ? 'not-allowed' : 'pointer',
+              transition: 'opacity 0.2s',
+              marginTop: '6px'
+            }}
+            onMouseOver={(e) => e.currentTarget.style.opacity = '0.9'}
+            onMouseOut={(e) => e.currentTarget.style.opacity = '1'}
+          >
+            {isSubmitting ? '제출하는 중...' : '소중한 피드백 보내기'}
+          </button>
+        </form>
+      )}
+    </div>
+  </section>
+
+  <section className="final-cta" id="download">
         <Zap size={28} />
         <h2>잃고 나서 복기하지 말고, 잃기 전에 훈련하세요.</h2>
         <p>15초 실력 진단 결과를 바탕으로, 앱에서 상세한 취약점 분석 리포트와 일일 맞춤 훈련을 이어받습니다.</p>
@@ -405,6 +591,7 @@ function App() {
             <h4>고객지원 & 법적고지</h4>
             <a href="/terms.html" target="_blank" rel="noreferrer">이용약관</a>
             <a href="/privacy.html" target="_blank" rel="noreferrer">개인정보 처리방침</a>
+            <a href="/contact.html" target="_blank" rel="noreferrer">문의 및 피드백</a>
           </div>
         </div>
       </div>
