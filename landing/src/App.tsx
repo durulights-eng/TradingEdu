@@ -345,25 +345,26 @@ const DrillFiveChart = ({ answerSelected }: { answerSelected: boolean }) => {
 
 // Review scroller columns static data
 const col1Reviews = [
-  { initial: 'L', name: '전업 트레이더 L씨', rating: '1720 RP · Diamond', headline: '"돌파 휩소에 당하던 나쁜 습관을 고쳤습니다"', text: '이전에는 장대양봉만 보이면 충동적으로 추격매수를 들어갔다가 꼭대기 매물에 물리곤 했습니다. 차트몬에서 휩소 판독 훈련을 집중적으로 풀면서, 이제는 진입 전에 거래량과 꼬리 캔들 비율을 머리보다 눈이 먼저 확인합니다.', grad: 'grad-cyan' },
-  { initial: 'A', name: '자영업자 A씨', rating: '1320 RP · Gold', headline: '"뇌동매매 습관이 완전히 잡혔습니다"', text: '매매 원칙은 알아도 막상 장 시작하면 뇌동매매 하던 습관이 완전히 잡혔습니다. 실제 캔들 백데이터로 매수 타점 퀴즈를 반복하니 장중에 흥분하지 않게 되네요.', grad: 'grad-green' },
-  { initial: 'B', name: '가상자산 트레이더 B씨', rating: '1650 RP · Platinum', headline: '"알트코인 추격매수 병 완치"', text: '급등하는 알트코인 추격매수해서 물리던 버릇을 고쳤습니다. 이제는 지지와 저항 지점이 완전히 이탈되는지, 캔들이 몸통으로 마감하는지 확인하는 습관이 완전히 박혔습니다.', grad: 'grad-cyan' },
-  { initial: 'J', name: '직장인 J씨', rating: '1280 RP · Gold', headline: '"제 진짜 차트 실력을 객관적으로 알게 됨"', text: '주식 공부를 많이 했다고 자부했는데, 실제 캔들 백데이터 퀴즈를 직접 풀어보니 제 오답률이 엄청났습니다. 약점 분석을 데이터로 보여주니 정신이 번쩍 드네요.', grad: 'grad-amber' }
+  { initial: '이', name: '이**', rating: '전업 트레이더 · 1720 RP', headline: '"돌파 휩소에 당하던 나쁜 습관을 고쳤습니다"', text: '이전에는 장대양봉만 보이면 충동적으로 추격매수를 들어갔다가 꼭대기 매물에 물리곤 했습니다. 차트몬에서 휩소 판독 훈련을 집중적으로 풀면서, 이제는 진입 전에 거래량과 꼬리 캔들 비율을 머리보다 눈이 먼저 확인합니다.', grad: 'grad-cyan' },
+  { initial: '김', name: '김**', rating: '자영업자 · 1320 RP', headline: '"뇌동매매 습관이 완전히 잡혔습니다"', text: '매매 원칙은 알아도 막상 장 시작하면 뇌동매매 하던 습관이 완전히 잡혔습니다. 실제 캔들 백데이터로 매수 타점 퀴즈를 반복하니 장중에 흥분하지 않게 되네요.', grad: 'grad-green' },
+  { initial: '박', name: '박**', rating: '가상자산 트레이더 · 1650 RP', headline: '"알트코인 추격매수 병 완치"', text: '급등하는 알트코인 추격매수해서 물리던 버릇을 고쳤습니다. 이제는 지지와 저항 지점이 완전히 이탈되는지, 캔들이 몸통으로 마감하는지 확인하는 습관이 완전히 박혔습니다.', grad: 'grad-cyan' },
+  { initial: '최', name: '최**', rating: '직장인 · 1280 RP', headline: '"제 진짜 차트 실력을 객관적으로 알게 됨"', text: '주식 공부를 많이 했다고 자부했는데, 실제 캔들 백데이터 퀴즈를 직접 풀어보니 제 오답률이 엄청났습니다. 약점 분석을 데이터로 보여주니 정신이 번쩍 드네요.', grad: 'grad-amber' }
 ];
 
 const col2Reviews = [
-  { initial: 'K', name: '직장인 투자자 K씨', rating: '1450 RP · Platinum', headline: '"기계적인 손절을 잡을 수 있게 되었습니다"', text: '머리로는 손절선을 그리면서도 막상 체결되면 물타기 하면서 손절 라인을 무한히 뒤로 미뤘습니다. 앱에서 제공하는 리스크 관리 퀴즈를 풀며 이제 기계적으로 버튼이 나갑니다.', grad: 'grad-green' },
-  { initial: 'S', name: '대학생 S씨', rating: '1150 RP · Silver', headline: '"지루하지 않게 패턴 학습이 가능합니다"', text: '개인 공부 시작하려는 입문자에게 최고의 앱입니다. 퀴즈 게임 같아서 지루하지 않게 다양한 차트 유형과 휩소 패턴을 빠르게 학습하고 익히고 있어요.', grad: 'grad-cyan' },
-  { initial: 'M', name: '전업 트레이더 M씨', rating: '1810 RP · Challenger', headline: '"차트 퀴즈 퀄리티가 상당합니다"', text: '실제 과거 캔들 백데이터를 기반으로 추출된 문제들이라 복습용으로 최고입니다. 고수 트레이더들도 휩소 필터링 감각을 리마인드하기 위해 매일 풀기 좋습니다.', grad: 'grad-amber' },
-  { initial: 'P', name: '주부 투자자 P씨', rating: '1390 RP · Gold', headline: '"RSI 과매도 지표 함정을 깨달았습니다"', text: '보조지표 과매도만 보고 성급하게 진입했다가 낭패를 본 적이 많았는데, 지표 맹점 훈련을 거치며 진짜 돌파와 속임수 반등을 구별하는 눈이 생겼습니다.', grad: 'cyan' }
+  { initial: '정', name: '정**', rating: '직장인 투자자 · 1450 RP', headline: '"기계적인 손절을 잡을 수 있게 되었습니다"', text: '머리로는 손절선을 그리면서도 막상 체결되면 물타기 하면서 손절 라인을 무한히 뒤로 미뤘습니다. 앱에서 제공하는 리스크 관리 퀴즈를 풀며 이제 기계적으로 버튼이 나갑니다.', grad: 'grad-green' },
+  { initial: '강', name: '강**', rating: '대학생 · 1150 RP', headline: '"지루하지 않게 패턴 학습이 가능합니다"', text: '개인 공부 시작하려는 입문자에게 최고의 앱입니다. 퀴즈 게임 같아서 지루하지 않게 다양한 차트 유형과 휩소 패턴을 빠르게 학습하고 익히고 있어요.', grad: 'grad-cyan' },
+  { initial: '윤', name: '윤**', rating: '전업 트레이더 · 1810 RP', headline: '"차트 퀴즈 퀄리티가 상당합니다"', text: '실제 과거 캔들 백데이터를 기반으로 추출된 문제들이라 복습용으로 최고입니다. 고수 트레이더들도 휩소 필터링 감각을 리마인드하기 위해 매일 풀기 좋습니다.', grad: 'grad-amber' },
+  { initial: '조', name: '조**', rating: '주부 투자자 · 1390 RP', headline: '"RSI 과매도 지표 함정을 깨달았습니다"', text: '보조지표 과매도만 보고 성급하게 진입했다가 낭패를 본 적이 많았는데, 지표 맹점 훈련을 거치며 진짜 돌파와 속임수 반등을 구별하는 눈이 생겼습니다.', grad: 'cyan' }
 ];
 
 const col3Reviews = [
-  { initial: '정', name: '가상자산 투자자 정모씨', rating: '1580 RP · Platinum', headline: '"이론과 실전 휩소의 차이를 느껴보세요"', text: '책으로 보던 깔끔한 이론과 달리 실전 캔들이 주는 노이즈와 휩소를 어떻게 대응할지 시뮬레이션해 줍니다. 학습 등급 오를 때의 성취감도 게임처럼 쏠쏠하네요.', grad: 'grad-amber' },
-  { initial: 'H', name: '퇴직 후 전업 H씨', rating: '1220 RP · Gold', headline: '"장중 심리 관리에 탁월합니다"', text: '차트 분석 능력도 중요하지만 장중에 흔들리는 멘탈을 매일 아침 트레이닝 팩으로 다잡을 수 있습니다. 뇌동매매 횟수가 이전 대비 80% 이상 확연히 줄어들었습니다.', grad: 'grad-cyan' },
-  { initial: 'Y', name: '직장인 Y씨', rating: '1510 RP · Platinum', headline: '"이론 백과의 가이드가 진짜 훌륭함"', text: '이론 백과 탭의 상세 해설과 깔끔한 작도 가이드라인이 책보다 훨씬 이해하기 편합니다. 어설픈 유튜브 강의나 책 여러 권 보는 것보다 차트몬이 확실하네요.', grad: 'grad-green' },
-  { initial: 'W', name: '트레이더 W씨', rating: '1690 RP · Platinum', headline: '"가짜 돌파 분별 드릴 실전 연동 최고"', text: '돌파 매매 시 가짜 돌파 분별 드릴이 실전에 바로 연동되어 큰 도움이 되었습니다. 손익비 중심의 트레이닝 구조라 초보나 전업 모두에게 강력히 추천합니다.', grad: 'grad-cyan' }
+  { initial: '임', name: '임**', rating: '가상자산 투자자 · 1580 RP', headline: '"이론과 실전 휩소의 차이를 느껴보세요"', text: '책으로 보던 깔끔한 이론과 달리 실전 캔들이 주는 노이즈와 휩소를 어떻게 대응할지 시뮬레이션해 줍니다. 학습 등급 오를 때의 성취감도 게임처럼 쏠쏠하네요.', grad: 'grad-amber' },
+  { initial: '한', name: '한**', rating: '퇴직 후 전업 · 1220 RP', headline: '"장중 심리 관리에 탁월합니다"', text: '차트 분석 능력도 중요하지만 장중에 흔들리는 멘탈을 매일 아침 트레이닝 팩으로 다잡을 수 있습니다. 뇌동매매 횟수가 이전 대비 80% 이상 확연히 줄어들었습니다.', grad: 'grad-cyan' },
+  { initial: '오', name: '오**', rating: '직장인 · 1510 RP', headline: '"이론 백과의 가이드가 진짜 훌륭함"', text: '이론 백과 탭의 상세 해설과 깔끔한 작도 가이드라인이 책보다 훨씬 이해하기 편합니다. 어설픈 유튜브 강의나 책 여러 권 보는 것보다 차트몬이 확실하네요.', grad: 'grad-green' },
+  { initial: '서', name: '서**', rating: '트레이더 · 1690 RP', headline: '"가짜 돌파 분별 드릴 실전 연동 최고"', text: '돌파 매매 시 가짜 돌파 분별 드릴이 실전에 바로 연동되어 큰 도움이 되었습니다. 손익비 중심의 트레이닝 구조라 초보나 전업 모두에게 강력히 추천합니다.', grad: 'grad-cyan' }
 ];
+
 
 // Scrolling review column sub-component
 const ScrollColumn = ({ reviews, direction, speedClass }: { reviews: typeof col1Reviews, direction: 'up' | 'down', speedClass: string }) => {
@@ -729,8 +730,7 @@ function App() {
             <h1>
               차트 이론을 외워도
               <br />
-              매수 버튼 앞에서
-              <span> 흔들리나요?</span>
+              매수 버튼 앞에서 <span style={{ whiteSpace: 'nowrap' }}>흔들리나요?</span>
             </h1>
             <p className="hero-subcopy">
               단순 지지와 저항 공식을 아는 것과, 실전 차트의 수많은 노이즈 속에서 휩소(Whipsaw)를 구별해내는 것은 다른 차원의 문제입니다.

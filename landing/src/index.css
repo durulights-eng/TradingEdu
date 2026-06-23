@@ -1295,6 +1295,8 @@ main {
 .sample-chart-svg {
   width: 100%;
   height: auto;
+  --red: #23d18b;
+  --green: #ff5b67;
 }
 
 .drill-options-grid {
