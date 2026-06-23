@@ -434,7 +434,7 @@ function App() {
   const [showReport, setShowReport] = useState<boolean>(false);
   const [showExplanation, setShowExplanation] = useState<boolean>(false);
   const [activeDrillTab, setActiveDrillTab] = useState<'explanation' | 'chart'>('explanation');
-  const [countdown, setCountdown] = useState<number>(5);
+  const [countdown, setCountdown] = useState<number>(3);
 
   const explanationTimeoutRef = useRef<any>(null);
   const nextQuestionTimeoutRef = useRef<any>(null);
@@ -450,10 +450,10 @@ function App() {
     explanationTimeoutRef.current = setTimeout(() => {
       setShowExplanation(true);
       setActiveDrillTab('explanation');
-      setCountdown(5);
+      setCountdown(3);
 
       if (drillIndex < 4) {
-        let currentCount = 5;
+        let currentCount = 3;
         countdownIntervalRef.current = setInterval(() => {
           currentCount -= 1;
           setCountdown(currentCount);
@@ -954,7 +954,7 @@ function App() {
                       <div className="action-buttons-group">
                         {drillIndex < 4 ? (
                           <button className="quiz-next-btn" onClick={goToNextDrill}>
-                            다음 문제 ({drillIndex + 2}/5) · {countdown}초 후 자동 이동
+                            다음 문제 ({drillIndex + 2}/5) · {countdown}초
                           </button>
                         ) : (
                           <button className="quiz-next-btn" onClick={() => setShowReport(true)}>

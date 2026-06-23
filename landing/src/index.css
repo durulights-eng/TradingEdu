@@ -2538,22 +2538,28 @@ main {
   justify-content: center;
   gap: 8px;
   min-height: 44px;
-  padding: 0 20px;
-  border-radius: 8px;
-  font-weight: 800;
-  font-size: 13px;
-  color: #03110c;
-  background: linear-gradient(135deg, var(--green), #69f0ae);
-  box-shadow: 0 8px 24px rgba(35, 209, 139, 0.16);
+  padding: 0 24px;
+  border-radius: 22px;
+  font-weight: 850;
+  font-size: 13.5px;
+  color: #04100d;
+  background: linear-gradient(135deg, var(--green) 0%, #52f2b3 100%);
+  box-shadow: 0 6px 20px rgba(35, 209, 139, 0.25);
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .quiz-next-btn:hover {
-  opacity: 0.92;
-  transform: translateY(-1px);
-  box-shadow: 0 10px 28px rgba(35, 209, 139, 0.28);
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 26px rgba(35, 209, 139, 0.4);
+  background: linear-gradient(135deg, #2ae097 0%, #6effc4 100%);
+}
+
+.quiz-next-btn:active {
+  transform: translateY(0.5px);
 }
 
 .action-buttons-group {
