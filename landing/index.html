@@ -18,7 +18,54 @@
     <title>ChartMon - 무료 주식 차트 실력 진단</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Premium dark-themed Loading State & Fallback metadata for Verification Crawlers -->
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #0f172a; color: #cbd5e1; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; box-sizing: border-box; text-align: center;">
+        
+        <!-- Logo & Spinner -->
+        <div style="margin-bottom: 30px;">
+          <img src="/icon.svg" alt="ChartMon Logo" style="width: 64px; height: 64px; margin-bottom: 12px;" />
+          <h1 style="font-size: 28px; font-weight: 800; color: #f8fafc; margin: 0; letter-spacing: -0.03em;">ChartMon</h1>
+          <p style="font-size: 15px; color: #94a3b8; margin: 8px 0 0 0;">나만의 AI 주식 차트 트레이너 (AI Stock Chart Trainer)</p>
+          <div style="margin: 20px auto 0 auto; width: 24px; height: 24px; border: 2px solid rgba(255,255,255,0.1); border-top-color: #10b981; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        </div>
+
+        <!-- Static details: Visually 100% hidden from users to prevent flashing, but fully readable in DOM for Google Verification bots -->
+        <div style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; font-size: 13px; line-height: 1.6; color: #94a3b8;">
+          <h2>About ChartMon (서비스 소개)</h2>
+          <p>
+            ChartMon is a candlestick trading training and simulation application. It helps users practice technical analysis of stock and coin charts using historical data. Users can solve daily quizzes, trace patterns, analyze their trading habits, and improve their decision-making skills in a simulated environment.
+            <br />
+            (차트몬은 주식 및 코인의 과거 차트 데이터를 활용해 캔들 매매를 시뮬레이션하고, 학습 성향을 분석해주는 교육용 차트 트레이닝 모바일 애플리케이션입니다.)
+          </p>
+
+          <h2>Google User Data Usage (구글 로그인 정보 이용 목적)</h2>
+          <p>
+            ChartMon requests Google authentication (Sign-in) to securely identify users and synchronize their training data (such as daily streaks, XP, solved quiz logs, and competitive ratings) across different mobile devices. Google user data is used solely for authentication and profile management, and is never shared with third parties.
+            <br />
+            (구글 로그인 정보는 사용자 식별 및 학습 정보의 기기 간 동기화 목적으로만 투명하게 사용되며, 제3자에게 배포되거나 타 목적으로 일체 사용되지 않습니다.)
+          </p>
+
+          <h2>Core Features (핵심 기능)</h2>
+          <ul>
+            <li><strong>Daily Routine (일일 맞춤 훈련)</strong>: Custom generated quizzes tailored to the user's trading rating.</li>
+            <li><strong>Drill Gym (테마별 훈련소)</strong>: Specialized focus packs on various patterns (breakouts, supports, indicators).</li>
+            <li><strong>Analytics (매매 능력 분석)</strong>: Account statistics mapping user weaknesses in key trading disciplines.</li>
+            <li><strong>Library (트레이더 이론 백과)</strong>: Conceptual guidebooks with hand-drawn trading diagrams.</li>
+          </ul>
+
+          <div>
+            <a href="/privacy.html">Privacy Policy (개인정보 처리방침)</a>
+            <span>|</span>
+            <a href="/terms.html">Terms of Service (이용약관)</a>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        @keyframes spin { to { transform: rotate(360deg); } }
+      </style>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
