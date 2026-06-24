@@ -1118,7 +1118,7 @@ export const App: React.FC = () => {
             margin: '0 0 12px 0',
             letterSpacing: '-0.02em'
           }}>
-            나만의 AI 주식 차트 선생님
+            나만의 AI 주식 차트 트레이너
           </p>
 
           {/* Promotional description */}

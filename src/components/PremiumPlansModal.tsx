@@ -188,7 +188,7 @@ export const PremiumPlansModal: React.FC<PremiumPlansModalProps> = ({
                 ChartMon <span style={{ color: '#ffba3a' }}>PRO</span>
               </h2>
               <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginTop: '4px', zIndex: 1, position: 'relative' }}>
-                나만의 AI 주식 차트 선생님, 모든 한계를 극복하세요
+                나만의 AI 주식 차트 트레이너, 모든 한계를 극복하세요
               </p>
             </div>
 

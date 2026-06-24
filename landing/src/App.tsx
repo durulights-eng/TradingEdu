@@ -1355,9 +1355,12 @@ function App() {
               <img src="/icon.svg" className="brand-logo" alt="ChartMon" />
               <span>ChartMon</span>
             </div>
-            <p className="footer-tagline">나만의 AI 주식 차트 선생님, 차트몬</p>
+            <p className="footer-tagline">나만의 AI 주식 차트 트레이너, 차트몬</p>
             <p className="footer-company" style={{ fontSize: '13px', color: 'var(--muted)', marginTop: '4px' }}>사이스페이스(주)</p>
             <p className="footer-contact">문의: <a href="mailto:contact@42space.net">contact@42space.net</a></p>
+            <p className="footer-oauth-info" style={{ fontSize: '11px', color: 'var(--muted)', marginTop: '12px', opacity: 0.6, lineHeight: '1.4', maxWidth: '320px' }}>
+              * 구글 로그인 정보는 사용자의 학습 기록, 스트릭, 랭킹(RP) 데이터의 안전한 연동 및 기기 간 동기화 목적으로만 사용됩니다.
+            </p>
           </div>
           
           <div className="footer-links-group">
