@@ -487,6 +487,7 @@ function App() {
 
   // App Features Showcase State & Autoplay
   const [activeFeature, setActiveFeature] = useState<'daily' | 'drills' | 'radar' | 'theory'>('daily');
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [autoplay, setAutoplay] = useState<boolean>(true);
 
   const featuresRef = useRef<HTMLDivElement>(null);
@@ -1330,6 +1331,121 @@ function App() {
               <ScrollColumn reviews={col2Reviews} direction="down" speedClass="col-down" />
               <ScrollColumn reviews={col3Reviews} direction="up" speedClass="col-up-slow" />
             </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="faq-section" id="faq" style={{
+          padding: '100px 20px',
+          maxWidth: '760px',
+          margin: '0 auto',
+          width: '100%',
+          boxSizing: 'border-box'
+        }}>
+          <div className="section-heading" style={{ textAlign: 'center', marginBottom: '56px' }}>
+            <span className="section-kicker" style={{ 
+              display: 'inline-block',
+              fontSize: '12px',
+              fontWeight: 700,
+              color: '#10b981',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              marginBottom: '12px'
+            }}>FAQ</span>
+            <h2 style={{ fontSize: '32px', fontWeight: 800, color: '#f8fafc', letterSpacing: '-0.03em', margin: '0 0 16px 0' }}>자주 묻는 질문</h2>
+            <p style={{ fontSize: '15px', color: '#64748b', margin: 0, lineHeight: '1.6' }}>차트몬 트레이너의 핵심 기능과 과학적인 차트 훈련 이론에 대한 답변입니다.</p>
+          </div>
+
+          <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
+            {[
+              {
+                q: "차트몬은 어떤 서비스인가요?",
+                a: "차트몬은 주식 및 가상자산의 실제 과거 캔들 데이터를 활용해 캔들 매매를 시뮬레이션하고, 개인의 트레이딩 성향을 분석해주는 교육용 AI 차트 훈련 플랫폼입니다. 단순 이론 암기가 아닌, 실전 차트 데이터의 다양한 변곡점 속에서 기계적인 리스크 관리와 진입 기준을 훈련하도록 설계되었습니다."
+              },
+              {
+                q: "트레이닝 점수(RP)와 리그 등급은 어떻게 결정되나요?",
+                a: "체계적인 실력 진단을 위해 체스나 e스포츠에서 검증된 ELO 기반의 RP(Rating Point) 레이팅 시스템을 도입했습니다. 사용자가 차트 퀴즈와 훈련을 해결할 때마다 실시간으로 점수가 갱신되며, 브론즈부터 마스터까지의 리그 티어를 통해 자신의 차트 분석 실력이 전 세계 트레이더들 사이에서 어느 수준인지 정량적으로 보여줍니다."
+              },
+              {
+                q: "AI 오답 분석 리포트는 어떤 피드백을 제공하나요?",
+                a: "유저의 거래 이력에서 캔들 분석력, 추세 추종 정확성, 진입 손익비 등 8가지 트레이딩 핵심 평가 지표를 분석합니다. 훈련 종료 시 사용자가 어떤 심리적 트랩(예: 돌파 휩소 속임수, 뇌동매매 등)에 취약한지 원인을 분석하고, 개인화된 최적의 오답 보완 코스를 처방전 형태로 설계해 줍니다."
+              },
+              {
+                q: "차트 데이터는 실제 시장 데이터를 사용하나요?",
+                a: "네, 100% 실제 데이터입니다. 차트몬의 모든 문제는 임의로 그려낸 가짜 차트가 아니라 비트코인, 이더리움 및 글로벌 주요 전통 자산의 수십만 개 실제 역사적 캔들 백데이터(Historical Candlestick Backdata)를 분석하여 제작되었습니다. 실제 주가 움직임 속의 거친 노이즈와 속임수 무빙을 그대로 재현하여 실감 나는 매매 훈련이 가능합니다."
+              }
+            ].map((faq, index) => {
+              const isOpen = expandedFaq === index;
+              return (
+                <div 
+                  key={index} 
+                  style={{
+                    borderBottom: '1px solid rgba(255, 255, 255, 0.04)',
+                    transition: 'border-color 0.2s ease'
+                  }}
+                >
+                  <button
+                    onClick={() => setExpandedFaq(isOpen ? null : index)}
+                    style={{
+                      width: '100%',
+                      padding: '24px 0',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      background: 'none',
+                      border: 'none',
+                      color: isOpen ? '#f8fafc' : '#cbd5e1',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      fontSize: '16px',
+                      fontWeight: 600,
+                      gap: '24px',
+                      transition: 'color 0.2s ease'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isOpen) e.currentTarget.style.color = '#f8fafc';
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isOpen) e.currentTarget.style.color = '#cbd5e1';
+                    }}
+                  >
+                    <span>{faq.q}</span>
+                    <span 
+                      style={{ 
+                        fontSize: '22px', 
+                        fontWeight: 300,
+                        color: isOpen ? '#10b981' : '#64748b',
+                        transform: isOpen ? 'rotate(45deg)' : 'rotate(0)',
+                        transition: 'transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease',
+                        display: 'inline-block',
+                        lineHeight: '1',
+                        userSelect: 'none'
+                      }}
+                    >
+                      +
+                    </span>
+                  </button>
+                  <div 
+                    style={{
+                      maxHeight: isOpen ? '200px' : '0',
+                      opacity: isOpen ? 1 : 0,
+                      overflow: 'hidden',
+                      transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)'
+                    }}
+                  >
+                    <p style={{ 
+                      margin: '0 0 24px 0', 
+                      fontSize: '14.5px', 
+                      color: '#94a3b8', 
+                      lineHeight: '1.7',
+                      textAlign: 'left'
+                    }}>
+                      {faq.a}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
 
