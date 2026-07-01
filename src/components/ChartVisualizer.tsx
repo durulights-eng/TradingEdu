@@ -121,11 +121,11 @@ export const ChartVisualizer: React.FC<ChartVisualizerProps> = ({ chartData, dra
           const y = topMargin + chartHeight - barHeight;
 
           const isBullish = candle.close >= candle.open;
-          // Swapped: isBullish (상승) = Red, !isBullish (하락) = Green
-          ctx.fillStyle = isBullish ? 'rgba(255, 91, 103, 0.16)' : 'rgba(35, 209, 139, 0.16)';
+          // Swapped: isBullish (상승) = Red, !isBullish (하락) = Blue
+          ctx.fillStyle = isBullish ? 'rgba(255, 91, 103, 0.16)' : 'rgba(59, 130, 246, 0.16)';
           ctx.fillRect(x - candleWidth / 2, y, candleWidth, barHeight);
 
-          ctx.strokeStyle = isBullish ? 'rgba(255, 91, 103, 0.45)' : 'rgba(35, 209, 139, 0.45)';
+          ctx.strokeStyle = isBullish ? 'rgba(255, 91, 103, 0.45)' : 'rgba(59, 130, 246, 0.45)';
           ctx.lineWidth = 0.8;
           ctx.strokeRect(x - candleWidth / 2, y, candleWidth, barHeight);
         });
@@ -140,8 +140,8 @@ export const ChartVisualizer: React.FC<ChartVisualizerProps> = ({ chartData, dra
         const yLow = getYPixel(candle.low);
 
         const isBullish = candle.close >= candle.open;
-        // Swapped: isBullish (상승) = Red, !isBullish (하락) = Green
-        const color = isBullish ? '#ff5b67' : '#23d18b';
+        // Swapped: isBullish (상승) = Red, !isBullish (하락) = Blue
+        const color = isBullish ? '#ff5b67' : '#3b82f6';
 
         ctx.strokeStyle = color;
         ctx.fillStyle = color;

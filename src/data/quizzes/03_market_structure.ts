@@ -859,7 +859,7 @@ export const quizzes_market_structure: QuizItem[] = [
     categoryKey: "structure",
     difficulty: 4,
     theoryRef: "03_market_structure.md",
-    question: "오랫동안 지켜지던 핵심 지지선인 150달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 98.7.50달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
+    question: "오랫동안 지켜지던 핵심 지지선인 150달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 147.75달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
     chartData: [
         {
             "time": "Day 1",
@@ -895,7 +895,7 @@ export const quizzes_market_structure: QuizItem[] = [
                     "y": 150
                 }
             ],
-            "label": "중요 지지선 (100)",
+            "label": "중요 지지선 (150)",
             "color": "#10b981"
         }
     ],
@@ -1440,7 +1440,7 @@ export const quizzes_market_structure: QuizItem[] = [
     categoryKey: "structure",
     difficulty: 4,
     theoryRef: "03_market_structure.md",
-    question: "오랫동안 지켜지던 핵심 지지선인 200달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 98.10달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
+    question: "오랫동안 지켜지던 핵심 지지선인 200달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 197달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
     chartData: [
         {
             "time": "Day 1",
@@ -1476,7 +1476,7 @@ export const quizzes_market_structure: QuizItem[] = [
                     "y": 200
                 }
             ],
-            "label": "중요 지지선 (100)",
+            "label": "중요 지지선 (200)",
             "color": "#10b981"
         }
     ],
@@ -2021,7 +2021,7 @@ export const quizzes_market_structure: QuizItem[] = [
     categoryKey: "structure",
     difficulty: 4,
     theoryRef: "03_market_structure.md",
-    question: "오랫동안 지켜지던 핵심 지지선인 300달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 98.15달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
+    question: "오랫동안 지켜지던 핵심 지지선인 300달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 295.5달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
     chartData: [
         {
             "time": "Day 1",
@@ -2057,7 +2057,7 @@ export const quizzes_market_structure: QuizItem[] = [
                     "y": 300
                 }
             ],
-            "label": "중요 지지선 (100)",
+            "label": "중요 지지선 (300)",
             "color": "#10b981"
         }
     ],
@@ -2602,7 +2602,7 @@ export const quizzes_market_structure: QuizItem[] = [
     categoryKey: "structure",
     difficulty: 4,
     theoryRef: "03_market_structure.md",
-    question: "오랫동안 지켜지던 핵심 지지선인 500달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 98.25달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
+    question: "오랫동안 지켜지던 핵심 지지선인 500달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 492.5달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
     chartData: [
         {
             "time": "Day 1",
@@ -2638,7 +2638,7 @@ export const quizzes_market_structure: QuizItem[] = [
                     "y": 500
                 }
             ],
-            "label": "중요 지지선 (100)",
+            "label": "중요 지지선 (500)",
             "color": "#10b981"
         }
     ],
@@ -3183,7 +3183,7 @@ export const quizzes_market_structure: QuizItem[] = [
     categoryKey: "structure",
     difficulty: 4,
     theoryRef: "03_market_structure.md",
-    question: "오랫동안 지켜지던 핵심 지지선인 800달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 98.40달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
+    question: "오랫동안 지켜지던 핵심 지지선인 800달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 788달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
     chartData: [
         {
             "time": "Day 1",
@@ -3219,7 +3219,7 @@ export const quizzes_market_structure: QuizItem[] = [
                     "y": 800
                 }
             ],
-            "label": "중요 지지선 (100)",
+            "label": "중요 지지선 (800)",
             "color": "#10b981"
         }
     ],
@@ -3764,7 +3764,7 @@ export const quizzes_market_structure: QuizItem[] = [
     categoryKey: "structure",
     difficulty: 4,
     theoryRef: "03_market_structure.md",
-    question: "오랫동안 지켜지던 핵심 지지선인 1,000달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 98.50달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
+    question: "오랫동안 지켜지던 핵심 지지선인 1,000달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 985달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
     chartData: [
         {
             "time": "Day 1",
@@ -3800,7 +3800,7 @@ export const quizzes_market_structure: QuizItem[] = [
                     "y": 1000
                 }
             ],
-            "label": "중요 지지선 (100)",
+            "label": "중요 지지선 (1,000)",
             "color": "#10b981"
         }
     ],
@@ -4345,7 +4345,7 @@ export const quizzes_market_structure: QuizItem[] = [
     categoryKey: "structure",
     difficulty: 4,
     theoryRef: "03_market_structure.md",
-    question: "오랫동안 지켜지던 핵심 지지선인 1,200달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 98.60달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
+    question: "오랫동안 지켜지던 핵심 지지선인 1,200달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 1,182달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
     chartData: [
         {
             "time": "Day 1",
@@ -4381,7 +4381,7 @@ export const quizzes_market_structure: QuizItem[] = [
                     "y": 1200
                 }
             ],
-            "label": "중요 지지선 (100)",
+            "label": "중요 지지선 (1,200)",
             "color": "#10b981"
         }
     ],
@@ -4926,7 +4926,7 @@ export const quizzes_market_structure: QuizItem[] = [
     categoryKey: "structure",
     difficulty: 4,
     theoryRef: "03_market_structure.md",
-    question: "오랫동안 지켜지던 핵심 지지선인 2,000달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 98.100달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
+    question: "오랫동안 지켜지던 핵심 지지선인 2,000달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 1,970달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
     chartData: [
         {
             "time": "Day 1",
@@ -4962,7 +4962,7 @@ export const quizzes_market_structure: QuizItem[] = [
                     "y": 2000
                 }
             ],
-            "label": "중요 지지선 (100)",
+            "label": "중요 지지선 (2,000)",
             "color": "#10b981"
         }
     ],
@@ -5507,7 +5507,7 @@ export const quizzes_market_structure: QuizItem[] = [
     categoryKey: "structure",
     difficulty: 4,
     theoryRef: "03_market_structure.md",
-    question: "오랫동안 지켜지던 핵심 지지선인 5,000달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 98.250달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
+    question: "오랫동안 지켜지던 핵심 지지선인 5,000달러 부근에서 매수 진입을 완료했습니다. 그러나 가격이 대량의 거래량을 동반하며 장대음봉으로 지지선을 하방으로 강하게 뚫어냈고, 종가가 지지선 대비 1.5% 아래인 4,925달러로 결정되었습니다. 이 상황에서 원칙을 지키는 올바른 위기 대응 행동은?",
     chartData: [
         {
             "time": "Day 1",
@@ -5543,7 +5543,7 @@ export const quizzes_market_structure: QuizItem[] = [
                     "y": 5000
                 }
             ],
-            "label": "중요 지지선 (100)",
+            "label": "중요 지지선 (5,000)",
             "color": "#10b981"
         }
     ],

@@ -25,7 +25,7 @@
   <text x="1366" y="1530" text-anchor="middle" fill="url(#title-gradient)" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="120" letter-spacing="-0.05em">ChartMon</text>
 
   <!-- Subtitle -->
-  <text x="1366" y="1640" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="52" letter-spacing="-0.02em">나만의 AI 차트 선생님</text>
+  <text x="1366" y="1640" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="52" letter-spacing="-0.02em">나만의 AI 차트 트레이너</text>
 
   <defs>
     <!-- Background Gradient -->

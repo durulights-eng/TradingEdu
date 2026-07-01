@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Capacitor } from '@capacitor/core';
+import { LocalNotifications } from '@capacitor/local-notifications';
 import { quizzes, getTradingTier, getLocalDateString, getYesterdayDateString, isOlderThanYesterday } from './data/quizzes';
 import type { QuizItem } from './data/quizzes';
 import { Dashboard } from './components/Dashboard';
@@ -178,10 +179,12 @@ export const App: React.FC = () => {
 
   // Gamification states loaded from LocalStorage (or defaults)
   const [streak, setStreak] = useState<number>(() => {
-    return Number(localStorage.getItem('chartmon_streak')) || 5;
+    const saved = localStorage.getItem('chartmon_streak');
+    return saved !== null ? Number(saved) : 0;
   });
   const [xp, setXp] = useState<number>(() => {
-    return Number(localStorage.getItem('chartmon_xp')) || 150;
+    const saved = localStorage.getItem('chartmon_xp');
+    return saved !== null ? Number(saved) : 0;
   });
   const [completedQuizzes, setCompletedQuizzes] = useState<number[]>(() => {
     const saved = localStorage.getItem('chartmon_completed');
@@ -222,6 +225,13 @@ export const App: React.FC = () => {
   // Fetch quizzes and profiles from Supabase if configured
   useEffect(() => {
     let authListenerSubscription: any = null;
+
+    // Safety timeout to prevent infinite loading screens
+    const safetyTimeout = setTimeout(() => {
+      setIsProfileLoading(false);
+      setIsInitialized(true);
+      console.warn("ChartMon: Safety timeout reached. Forcing loading states to false.");
+    }, 4500);
 
     async function syncUserProfile(user: any) {
       setIsProfileLoading(true);
@@ -316,6 +326,7 @@ export const App: React.FC = () => {
         console.error('ChartMon: Sync user profile error.', e);
       } finally {
         setIsProfileLoading(false);
+        clearTimeout(safetyTimeout);
       }
     }
 
@@ -393,6 +404,9 @@ export const App: React.FC = () => {
         checkLocalStreak();
       }
       setIsInitialized(true);
+      if (!isSupabaseConfigured) {
+        clearTimeout(safetyTimeout);
+      }
     }
 
     // Auth listener setup
@@ -419,6 +433,7 @@ export const App: React.FC = () => {
           localStorage.removeItem('chartmon_last_daily_completed');
 
           setIsProfileLoading(false);
+          clearTimeout(safetyTimeout);
         }
       });
       authListenerSubscription = subscription;
@@ -427,10 +442,22 @@ export const App: React.FC = () => {
     loadInitialData();
 
     return () => {
+      clearTimeout(safetyTimeout);
       if (authListenerSubscription) {
         authListenerSubscription.unsubscribe();
       }
     };
+  }, []);
+
+  // Request notification permissions on app mount on native platforms (install/startup check)
+  useEffect(() => {
+    if (Capacitor.isNativePlatform()) {
+      LocalNotifications.requestPermissions().then((status) => {
+        console.log('ChartMon: Notification permission status on start:', status);
+      }).catch((err) => {
+        console.error('ChartMon: Notification permission request failed on start:', err);
+      });
+    }
   }, []);
 
   // Listen to window scroll events to toggle scrolled state for top-header
@@ -558,7 +585,10 @@ export const App: React.FC = () => {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo
+          redirectTo,
+          queryParams: {
+            prompt: 'select_account'
+          }
         }
       });
       if (error) {

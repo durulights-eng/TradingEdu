@@ -27,7 +27,11 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({
     return localStorage.getItem('chartmon_notifications_enabled') !== 'false';
   });
 
-  const scheduleDailyReminder = async () => {
+  const [notificationTime, setNotificationTime] = useState<string>(() => {
+    return localStorage.getItem('chartmon_notification_time') || '21:00';
+  });
+
+  const scheduleDailyReminder = async (timeStr?: string) => {
     const check = await LocalNotifications.checkPermissions();
     
     if (check.display === 'denied') {
@@ -69,7 +73,12 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({
       notifications: [{ id: 101 }]
     });
 
-    // Schedule everyday at 21:00 (9:00 PM)
+    const targetTime = timeStr || notificationTime;
+    const [hourStr, minuteStr] = targetTime.split(':');
+    const hour = parseInt(hourStr, 10) || 21;
+    const minute = parseInt(minuteStr, 10) || 0;
+
+    // Schedule everyday at user-selected time
     await LocalNotifications.schedule({
       notifications: [
         {
@@ -78,11 +87,13 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({
           id: 101,
           schedule: {
             on: {
-              hour: 21,
-              minute: 0
+              hour,
+              minute
             },
             repeats: true
-          }
+          },
+          smallIcon: 'ic_stat_notification',
+          iconColor: '#7c6cfa'
         }
       ]
     });
@@ -98,6 +109,22 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({
     }
   };
 
+  const handleTimeChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newTime = e.target.value;
+    setNotificationTime(newTime);
+    localStorage.setItem('chartmon_notification_time', newTime);
+    
+    if (notificationsEnabled && Capacitor.isNativePlatform()) {
+      try {
+        await scheduleDailyReminder(newTime);
+      } catch (err: any) {
+        if (err.message !== 'settings_redirected') {
+          alert('알림 시간 업데이트 중 오류가 발생했습니다.');
+        }
+      }
+    }
+  };
+
   const handleToggleNotifications = async () => {
     const next = !notificationsEnabled;
     
@@ -107,7 +134,11 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({
           await scheduleDailyReminder();
           setNotificationsEnabled(true);
           localStorage.setItem('chartmon_notifications_enabled', 'true');
-          alert('매일 오후 9시에 학습 리마인더 알림을 보내드립니다! 🔔');
+          
+          const [hourStr, minuteStr] = notificationTime.split(':');
+          const hour = parseInt(hourStr, 10) || 21;
+          const minute = parseInt(minuteStr, 10) || 0;
+          alert(`매일 ${hour}시 ${minute}분에 학습 리마인더 알림을 보내드립니다! 🔔`);
         } catch (err: any) {
           if (err.message !== 'settings_redirected') {
             alert(err.message || '알림 설정 중 오류가 발생했습니다.');
@@ -308,6 +339,35 @@ export const SettingsTab: React.FC<SettingsTabProps> = ({
               <div className="toggle-knob" />
             </button>
           </div>
+          {notificationsEnabled && (
+            <div className="settings-row" style={{ borderTop: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1 }}>
+                <Bell size={18} style={{ color: 'var(--text-muted, #5a6577)' }} />
+                <div>
+                  <div style={{ fontSize: '14px', fontWeight: 700 }}>알림 시각 설정</div>
+                  <div style={{ fontSize: '12px', color: 'var(--text-secondary)', marginTop: '2px' }}>
+                    매일 선택한 시간에 알림을 발송합니다
+                  </div>
+                </div>
+              </div>
+              <input
+                type="time"
+                value={notificationTime}
+                onChange={handleTimeChange}
+                style={{
+                  background: 'var(--bg-surface, #1e293b)',
+                  border: '1px solid var(--border-color, rgba(255,255,255,0.08))',
+                  color: 'var(--text-primary, #ffffff)',
+                  borderRadius: '8px',
+                  padding: '6px 12px',
+                  fontSize: '14px',
+                  fontFamily: 'inherit',
+                  outline: 'none',
+                  cursor: 'pointer'
+                }}
+              />
+            </div>
+          )}
         </div>
       </div>
 

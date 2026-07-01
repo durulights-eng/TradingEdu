@@ -235,18 +235,18 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({ onClose })
               </div>
 
               {/* Candles */}
-              <div style={{ height: '70px', width: '12px', background: '#23d18b', borderRadius: '2px', position: 'relative' }}>
-                <div style={{ position: 'absolute', height: '110%', width: '2px', background: '#23d18b', left: '5px', bottom: '-5%' }} />
+              <div style={{ height: '70px', width: '12px', background: '#ff5b67', borderRadius: '2px', position: 'relative' }}>
+                <div style={{ position: 'absolute', height: '110%', width: '2px', background: '#ff5b67', left: '5px', bottom: '-5%' }} />
               </div>
-              <div style={{ height: '90px', width: '12px', background: '#23d18b', borderRadius: '2px', position: 'relative' }}>
-                <div style={{ position: 'absolute', height: '130%', width: '2px', background: '#23d18b', left: '5px', bottom: '-15%' }} />
+              <div style={{ height: '90px', width: '12px', background: '#ff5b67', borderRadius: '2px', position: 'relative' }}>
+                <div style={{ position: 'absolute', height: '130%', width: '2px', background: '#ff5b67', left: '5px', bottom: '-15%' }} />
               </div>
-              <div style={{ height: '40px', width: '12px', background: '#ff5b67', borderRadius: '2px', position: 'relative' }}>
-                <div style={{ position: 'absolute', height: '150%', width: '2px', background: '#ff5b67', left: '5px', bottom: '-25%' }} />
+              <div style={{ height: '40px', width: '12px', background: '#3b82f6', borderRadius: '2px', position: 'relative' }}>
+                <div style={{ position: 'absolute', height: '150%', width: '2px', background: '#3b82f6', left: '5px', bottom: '-25%' }} />
               </div>
               {/* Breakthrough Trap candle */}
-              <div style={{ height: '110px', width: '12px', background: '#23d18b', borderRadius: '2px', position: 'relative', zIndex: 2 }}>
-                <div style={{ position: 'absolute', height: '140%', width: '2px', background: '#23d18b', left: '5px', bottom: '-10%' }} />
+              <div style={{ height: '110px', width: '12px', background: '#ff5b67', borderRadius: '2px', position: 'relative', zIndex: 2 }}>
+                <div style={{ position: 'absolute', height: '140%', width: '2px', background: '#ff5b67', left: '5px', bottom: '-10%' }} />
                 
                 {/* Trap Pulse Highlight */}
                 <div style={{
@@ -269,11 +269,11 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({ onClose })
                 }}>TRAP</div>
               </div>
               
-              <div style={{ height: '50px', width: '12px', background: '#ff5b67', borderRadius: '2px', position: 'relative' }}>
-                <div style={{ position: 'absolute', height: '120%', width: '2px', background: '#ff5b67', left: '5px', bottom: '-10%' }} />
+              <div style={{ height: '50px', width: '12px', background: '#3b82f6', borderRadius: '2px', position: 'relative' }}>
+                <div style={{ position: 'absolute', height: '120%', width: '2px', background: '#3b82f6', left: '5px', bottom: '-10%' }} />
               </div>
-              <div style={{ height: '30px', width: '12px', background: '#ff5b67', borderRadius: '2px', position: 'relative' }}>
-                <div style={{ position: 'absolute', height: '160%', width: '2px', background: '#ff5b67', left: '5px', bottom: '-30%' }} />
+              <div style={{ height: '30px', width: '12px', background: '#3b82f6', borderRadius: '2px', position: 'relative' }}>
+                <div style={{ position: 'absolute', height: '160%', width: '2px', background: '#3b82f6', left: '5px', bottom: '-30%' }} />
               </div>
             </div>
           </div>
@@ -509,7 +509,7 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({ onClose })
               강력한 혜택을 누려보세요!
             </h2>
             <p style={{ color: 'var(--text-secondary, #8b99aa)', fontSize: '14px', lineHeight: 1.6, marginBottom: '24px' }}>
-              모든 트레이닝 드릴 제한 없는 패스권과 8개 심화 이론 모듈 잠금 해제 권한이 제공됩니다.
+              모든 트레이닝 드릴 제한 없는 패스권과<br />8개 심화 이론 모듈 잠금 해제 권한이 제공됩니다.
             </p>
 
             {/* Ambient Glow Premium Card Wrapper */}
@@ -576,9 +576,12 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({ onClose })
                   </div>
                 </div>
 
-                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontSize: '11px', color: 'var(--text-muted, #5a6577)', fontWeight: 600 }}>구독 금액</span>
-                  <span style={{ fontSize: '14px', color: '#ffba3a', fontWeight: 800 }}>월 14,900원 (3개월 패키지 시 월 9,967원 상당)</span>
+                <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  <span style={{ fontSize: '11px', color: 'var(--text-muted, #5a6577)', fontWeight: 600, marginTop: '4px' }}>구독 금액</span>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '2px' }}>
+                    <span style={{ fontSize: '16px', color: '#ffba3a', fontWeight: 800 }}>월 14,900원</span>
+                    <span style={{ fontSize: '11px', color: 'rgba(255, 186, 58, 0.6)', fontWeight: 500 }}>3개월 패키지 이용 시 월 9,967원 상당</span>
+                  </div>
                 </div>
               </div>
             </div>

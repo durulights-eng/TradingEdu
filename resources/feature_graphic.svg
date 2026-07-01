@@ -20,7 +20,7 @@
   
   <!-- Text "ChartMon" and subtitle -->
   <text x="440" y="240" fill="url(#title-gradient)" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="88" letter-spacing="-0.04em">ChartMon</text>
-  <text x="445" y="305" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="30" letter-spacing="-0.02em">나만의 AI 차트 선생님</text>
+  <text x="445" y="305" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="30" letter-spacing="-0.02em">나만의 AI 차트 트레이너</text>
 
   <defs>
     <!-- Background Gradient -->
