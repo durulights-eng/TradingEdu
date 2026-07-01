@@ -11,14 +11,10 @@
             "id": "37205437b5652842",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "feedback_review_report.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "feedback_review_report"
+              "title": "새 탭"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "feedback_review_report.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "feedback_review_report 의 백링크"
+              "title": "백링크"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "feedback_review_report.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "feedback_review_report 의 나가는 링크"
+              "title": "나가는 링크"
             }
           },
           {
@@ -156,13 +150,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "feedback_review_report.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "feedback_review_report 의 개요"
+              "title": "개요"
             }
           }
         ]
@@ -185,6 +178,13 @@
   },
   "active": "37205437b5652842",
   "lastOpenFiles": [
+    "feedback_review_report.md",
+    "1st/ChartMon_20260630.md",
+    "1st/chartmon_tos_fix_guide.md",
+    "1st/ChartMon_Work_Summary_20260701.md",
+    "1st/feedback_review_report.md",
+    "1st/chartmon_privacy_policy_fix_guide.md",
+    "1st",
     "ChartMon_Work_Summary_20260701.md"
   ]
 }

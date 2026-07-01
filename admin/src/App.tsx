@@ -15,7 +15,8 @@ import {
   LogOut, 
   CheckCircle, 
   X, 
-  Info
+  Info,
+  Play
 } from 'lucide-react';
 
 // Interfaces
@@ -108,7 +109,7 @@ export const App: React.FC = () => {
   const [authError, setAuthError] = useState('');
 
   // Navigation tab
-  const [activeTab, setActiveTab] = useState<'users' | 'quizzes' | 'inspector'>('users');
+  const [activeTab, setActiveTab] = useState<'users' | 'quizzes' | 'inspector' | 'simulator'>('users');
 
   // Users Tab states
   const [users, setUsers] = useState<UserProfile[]>([]);
@@ -139,6 +140,71 @@ export const App: React.FC = () => {
   const [selectedQuizId, setSelectedQuizId] = useState<number | null>(null);
   const [inspectorUserAnswer, setInspectorUserAnswer] = useState<number | null>(null);
   const [inspectorAnswered, setInspectorAnswered] = useState(false);
+
+  // Simulator Tab states
+  const [simRawData, setSimRawData] = useState<string>(() => {
+    return JSON.stringify([
+      {"time": "Day 1", "open": 100, "high": 102, "low": 99, "close": 101},
+      {"time": "Day 2", "open": 101, "high": 104, "low": 100, "close": 103},
+      {"time": "Day 3", "open": 103, "high": 103, "low": 98, "close": 99},
+      {"time": "Day 4", "open": 99, "high": 105, "low": 99, "close": 104},
+      {"time": "Day 5", "open": 104, "high": 106, "low": 102, "close": 105},
+      {"time": "Day 6", "open": 105, "high": 109, "low": 104, "close": 108},
+      {"time": "Day 7", "open": 108, "high": 110, "low": 107, "close": 109},
+      {"time": "Day 8", "open": 109, "high": 109, "low": 105, "close": 106},
+      {"time": "Day 9", "open": 106, "high": 112, "low": 106, "close": 111},
+      {"time": "Day 10", "open": 111, "high": 115, "low": 110, "close": 114},
+      {"time": "Day 11", "open": 114, "high": 118, "low": 113, "close": 117},
+      {"time": "Day 12", "open": 117, "high": 119, "low": 115, "close": 116},
+      {"time": "Day 13", "open": 116, "high": 121, "low": 114, "close": 120},
+      {"time": "Day 14", "open": 120, "high": 123, "low": 119, "close": 122},
+      {"time": "Day 15", "open": 122, "high": 122, "low": 117, "close": 118},
+      {"time": "Day 16", "open": 118, "high": 120, "low": 116, "close": 117},
+      {"time": "Day 17", "open": 117, "high": 124, "low": 117, "close": 123},
+      {"time": "Day 18", "open": 123, "high": 126, "low": 122, "close": 125},
+      {"time": "Day 19", "open": 125, "high": 128, "low": 124, "close": 126},
+      {"time": "Day 20", "open": 126, "high": 130, "low": 125, "close": 129}
+    ], null, 2);
+  });
+  const [simAnonymizedData, setSimAnonymizedData] = useState<Candlestick[]>([]);
+  const [simAnonymizerName, setSimAnonymizerName] = useState<string>('익명의 미국 IT 대기업 A사');
+  const [simTrueIdentity, setSimTrueIdentity] = useState<string>('AAPL (2021년 3월)');
+  const [simJitterRange, setSimJitterRange] = useState<number>(0.02);
+  const [simScaleType, setSimScaleType] = useState<'percent' | 'none'>('percent');
+  
+  // Interactive Simulation Runner states
+  const [simRunning, setSimRunning] = useState<boolean>(false);
+  const [simPlayIndex, setSimPlayIndex] = useState<number>(5);
+  const [simPlaySpeed, setSimPlaySpeed] = useState<number>(1000); // ms per candle
+  const [simBalance, setSimBalance] = useState<number>(10000);
+  const [simTrades, setSimTrades] = useState<any[]>([]);
+  const [simPosition, setSimPosition] = useState<any | null>(null);
+  const [simResultReport, setSimResultReport] = useState<any | null>(null);
+  const [simDrawings, setSimDrawings] = useState<any[]>([]);
+
+  // Simulation playback loop
+  useEffect(() => {
+    let timer: any = null;
+    if (simRunning && simAnonymizedData.length > 0) {
+      timer = setInterval(() => {
+        setSimPlayIndex((prev) => {
+          if (prev >= simAnonymizedData.length - 1) {
+            setSimRunning(false);
+            clearInterval(timer);
+            // End simulation and trigger auto close
+            setTimeout(() => {
+              handleEndSimulation();
+            }, 100);
+            return prev;
+          }
+          return prev + 1;
+        });
+      }, simPlaySpeed);
+    }
+    return () => {
+      if (timer) clearInterval(timer);
+    };
+  }, [simRunning, simAnonymizedData, simPlaySpeed, simPosition, simBalance]);
 
   // Quiz Preview Modal states (from clicking list item)
   const [previewQuiz, setPreviewQuiz] = useState<QuizItem | null>(null);
@@ -502,6 +568,236 @@ export const App: React.FC = () => {
     setInspectorAnswered(true);
   };
 
+  // Anonymize & Scale Data
+  const handleAnonymize = () => {
+    try {
+      const parsed = JSON.parse(simRawData);
+      if (!Array.isArray(parsed)) throw new Error('데이터는 배열 형태이어야 합니다.');
+      
+      if (parsed.length === 0) return;
+      
+      // Calculate scaling multiplier based on first candle's open price
+      const firstOpen = parsed[0].open;
+      
+      const processed = parsed.map((c: any, index: number) => {
+        let open = c.open;
+        let high = c.high;
+        let low = c.low;
+        let close = c.close;
+        
+        if (simScaleType === 'percent') {
+          const factor = 100 / firstOpen;
+          open = open * factor;
+          high = high * factor;
+          low = low * factor;
+          close = close * factor;
+        }
+        
+        // Apply jittering noise
+        if (simJitterRange > 0) {
+          const getJitter = (val: number) => {
+            const maxJitter = val * (simJitterRange / 100);
+            const jitter = (Math.random() * 2 - 1) * maxJitter;
+            return Number((val + jitter).toFixed(2));
+          };
+          open = getJitter(open);
+          high = getJitter(high);
+          low = getJitter(low);
+          close = getJitter(close);
+          
+          // Ensure high is highest, low is lowest
+          high = Math.max(high, open, close);
+          low = Math.min(low, open, close);
+        } else {
+          open = Number(open.toFixed(2));
+          high = Number(high.toFixed(2));
+          low = Number(low.toFixed(2));
+          close = Number(close.toFixed(2));
+        }
+        
+        return {
+          time: c.time || `Day ${index + 1}`,
+          open,
+          high,
+          low,
+          close
+        };
+      });
+      
+      setSimAnonymizedData(processed);
+      setSimPlayIndex(Math.min(5, processed.length - 1));
+      setSimRunning(false);
+      setSimBalance(10000);
+      setSimTrades([]);
+      setSimPosition(null);
+      setSimResultReport(null);
+      setSimDrawings([]);
+      alert('성공적으로 데이터를 익명화 및 가공했습니다! 아래 차트와 시뮬레이터에서 확인하세요.');
+    } catch (e: any) {
+      alert(`데이터 가공 실패: ${e.message}`);
+    }
+  };
+
+  // Buy position entry
+  const handleSimBuy = () => {
+    if (simAnonymizedData.length === 0) return;
+    if (simPosition) return alert('이미 진입한 포지션이 있습니다.');
+    const currentCandle = simAnonymizedData[simPlayIndex];
+    const entryPrice = currentCandle.close;
+    
+    const pos = {
+      type: 'BUY',
+      entryPrice,
+      entryIndex: simPlayIndex,
+      leverage: 1
+    };
+    setSimPosition(pos);
+    
+    // Add drawing marker
+    const marker = {
+      type: 'text' as const,
+      points: [{ x: simPlayIndex, y: entryPrice }],
+      label: '▲ BUY',
+      color: '#ef4444'
+    };
+    setSimDrawings(prev => [...prev, marker]);
+  };
+
+  // Sell position entry
+  const handleSimSell = () => {
+    if (simAnonymizedData.length === 0) return;
+    if (simPosition) return alert('이미 진입한 포지션이 있습니다.');
+    const currentCandle = simAnonymizedData[simPlayIndex];
+    const entryPrice = currentCandle.close;
+    
+    const pos = {
+      type: 'SELL',
+      entryPrice,
+      entryIndex: simPlayIndex,
+      leverage: 1
+    };
+    setSimPosition(pos);
+    
+    // Add drawing marker
+    const marker = {
+      type: 'text' as const,
+      points: [{ x: simPlayIndex, y: entryPrice }],
+      label: '▼ SELL',
+      color: '#10b981'
+    };
+    setSimDrawings(prev => [...prev, marker]);
+  };
+
+  // Exit position
+  const handleSimExit = () => {
+    if (!simPosition) return alert('청산할 포지션이 없습니다.');
+    const currentCandle = simAnonymizedData[simPlayIndex];
+    const exitPrice = currentCandle.close;
+    
+    let profitPct = 0;
+    if (simPosition.type === 'BUY') {
+      profitPct = ((exitPrice - simPosition.entryPrice) / simPosition.entryPrice) * 100 * simPosition.leverage;
+    } else {
+      profitPct = ((simPosition.entryPrice - exitPrice) / simPosition.entryPrice) * 100 * simPosition.leverage;
+    }
+    
+    const pnl = simBalance * (profitPct / 100);
+    const newBalance = Number((simBalance + pnl).toFixed(2));
+    
+    const trade = {
+      type: simPosition.type,
+      entryPrice: simPosition.entryPrice,
+      exitPrice,
+      entryIndex: simPosition.entryIndex,
+      exitIndex: simPlayIndex,
+      profitPct: Number(profitPct.toFixed(2)),
+      pnl: Number(pnl.toFixed(2))
+    };
+    
+    setSimBalance(newBalance);
+    setSimTrades(prev => [...prev, trade]);
+    setSimPosition(null);
+    
+    // Add exit marker drawing
+    const marker = {
+      type: 'text' as const,
+      points: [{ x: simPlayIndex, y: exitPrice }],
+      label: `■ EXIT (${profitPct >= 0 ? '+' : ''}${profitPct.toFixed(1)}%)`,
+      color: '#3b82f6'
+    };
+    setSimDrawings(prev => [...prev, marker]);
+  };
+
+  // End simulation & generate final report
+  const handleEndSimulation = () => {
+    if (simAnonymizedData.length === 0) return;
+    
+    setSimBalance((prevBalance) => {
+      let finalBalance = prevBalance;
+      const updatedTrades = [...simTrades];
+      
+      if (simPosition) {
+        const lastIndex = simAnonymizedData.length - 1;
+        const currentCandle = simAnonymizedData[lastIndex];
+        const exitPrice = currentCandle.close;
+        
+        let profitPct = 0;
+        if (simPosition.type === 'BUY') {
+          profitPct = ((exitPrice - simPosition.entryPrice) / simPosition.entryPrice) * 100 * simPosition.leverage;
+        } else {
+          profitPct = ((simPosition.entryPrice - exitPrice) / simPosition.entryPrice) * 100 * simPosition.leverage;
+        }
+        
+        const pnl = finalBalance * (profitPct / 100);
+        finalBalance = Number((finalBalance + pnl).toFixed(2));
+        
+        const trade = {
+          type: simPosition.type,
+          entryPrice: simPosition.entryPrice,
+          exitPrice,
+          entryIndex: simPosition.entryIndex,
+          exitIndex: lastIndex,
+          profitPct: Number(profitPct.toFixed(2)),
+          pnl: Number(pnl.toFixed(2)),
+          forced: true
+        };
+        updatedTrades.push(trade);
+      }
+      
+      // Calculate stats
+      const totalTrades = updatedTrades.length;
+      const winningTrades = updatedTrades.filter(t => t.profitPct > 0).length;
+      const winRate = totalTrades > 0 ? (winningTrades / totalTrades) * 100 : 0;
+      const totalProfitPct = ((finalBalance - 10000) / 10000) * 100;
+      
+      setSimTrades(updatedTrades);
+      setSimPosition(null);
+      setSimRunning(false);
+      
+      setSimResultReport({
+        totalTrades,
+        winRate: Number(winRate.toFixed(1)),
+        totalProfitPct: Number(totalProfitPct.toFixed(2)),
+        finalBalance,
+        anonymizerName: simAnonymizerName,
+        trueIdentity: simTrueIdentity
+      });
+
+      return finalBalance;
+    });
+  };
+
+  // Reset simulator
+  const handleResetSimulator = () => {
+    setSimPlayIndex(Math.min(5, simAnonymizedData.length - 1));
+    setSimRunning(false);
+    setSimBalance(10000);
+    setSimTrades([]);
+    setSimPosition(null);
+    setSimResultReport(null);
+    setSimDrawings([]);
+  };
+
   // Render Login Screen
   if (checkingAuth) {
     return (
@@ -614,6 +910,13 @@ export const App: React.FC = () => {
         >
           <Eye size={16} />
           <span>퀴즈 실전 검수기</span>
+        </button>
+        <button 
+          className={`tab-btn ${activeTab === 'simulator' ? 'active' : ''}`}
+          onClick={() => setActiveTab('simulator')}
+        >
+          <Play size={16} />
+          <span>백테스트 & 익명화 시뮬레이터</span>
         </button>
       </div>
 
@@ -927,6 +1230,344 @@ export const App: React.FC = () => {
                 </div>
               </div>
             )}
+          </div>
+        )}
+
+        {activeTab === 'simulator' && (
+          <div className="panel-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            
+            {/* Left Column: Data Config & Anonymization */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '16px', color: '#fff', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                🔧 데이터 수급 및 익명화 가공 도구
+              </h3>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <div>
+                  <label style={{ fontSize: '12px', color: 'var(--text-secondary)', display: 'block', marginBottom: '6px' }}>
+                    1. 원본 차트 데이터 (JSON 캔들 배열)
+                  </label>
+                  <textarea
+                    value={simRawData}
+                    onChange={(e) => setSimRawData(e.target.value)}
+                    style={{
+                      width: '100%',
+                      height: '180px',
+                      background: '#0d1117',
+                      border: '1px solid var(--border-color)',
+                      borderRadius: '8px',
+                      color: '#58a6ff',
+                      fontFamily: 'monospace',
+                      fontSize: '11px',
+                      padding: '10px',
+                      outline: 'none',
+                      resize: 'vertical'
+                    }}
+                  />
+                </div>
+                
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                  <div>
+                    <label style={{ fontSize: '12px', color: 'var(--text-secondary)', display: 'block', marginBottom: '6px' }}>
+                      익명화 칭호 (가칭)
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={simAnonymizerName}
+                      onChange={(e) => setSimAnonymizerName(e.target.value)}
+                      placeholder="예: 익명의 미국 IT 대기업 A사"
+                      style={{ background: '#161a25', color: '#fff', border: '1px solid var(--border-color)', borderRadius: '6px', padding: '6px 10px', width: '100%', fontSize: '13px' }}
+                    />
+                  </div>
+                  
+                  <div>
+                    <label style={{ fontSize: '12px', color: 'var(--text-secondary)', display: 'block', marginBottom: '6px' }}>
+                      실제 원래 종목/정보 (정답 노출용)
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={simTrueIdentity}
+                      onChange={(e) => setSimTrueIdentity(e.target.value)}
+                      placeholder="예: AAPL (2021년 3월)"
+                      style={{ background: '#161a25', color: '#fff', border: '1px solid var(--border-color)', borderRadius: '6px', padding: '6px 10px', width: '100%', fontSize: '13px' }}
+                    />
+                  </div>
+                </div>
+                
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', alignItems: 'center' }}>
+                  <div>
+                    <label style={{ fontSize: '12px', color: 'var(--text-secondary)', display: 'block', marginBottom: '6px' }}>
+                      노이즈 감도 (Jittering % 범위)
+                    </label>
+                    <input
+                      type="number"
+                      step="0.01"
+                      className="form-control"
+                      value={simJitterRange}
+                      onChange={(e) => setSimJitterRange(parseFloat(e.target.value) || 0)}
+                      style={{ background: '#161a25', color: '#fff', border: '1px solid var(--border-color)', borderRadius: '6px', padding: '6px 10px', width: '100%', fontSize: '13px' }}
+                    />
+                  </div>
+                  
+                  <div style={{ display: 'flex', gap: '12px', marginTop: '16px' }}>
+                    <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#fff', cursor: 'pointer' }}>
+                      <input
+                        type="checkbox"
+                        checked={simScaleType === 'percent'}
+                        onChange={(e) => setSimScaleType(e.target.checked ? 'percent' : 'none')}
+                        style={{ cursor: 'pointer' }}
+                      />
+                      상대 비율화 (시가 100 기준)
+                    </label>
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: '10px', marginTop: '8px' }}>
+                  <button type="button" className="btn btn-brand" onClick={handleAnonymize} style={{ flex: 1 }}>
+                    ⚡ 익명화 가공 & 시뮬레이터 로드
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={() => {
+                      if (quizzesList.length > 0) {
+                        setSimRawData(JSON.stringify(quizzesList[0].chartData, null, 2));
+                        setSimAnonymizerName(`익명의 ${quizzesList[0].category} 팩 차트`);
+                        setSimTrueIdentity('퀴즈 문제 1번 차트 데이터');
+                        alert('문제 1번의 차트 데이터를 원본 창에 복사했습니다. [익명화 가공] 버튼을 눌러 로드하세요.');
+                      } else {
+                        alert('퀴즈 데이터가 없습니다.');
+                      }
+                    }}
+                  >
+                    퀴즈 데이터 복사
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right Column: Interactive Simulator Runner */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {simAnonymizedData.length === 0 ? (
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', border: '2px dashed var(--border-color)', borderRadius: '12px', color: 'var(--text-muted)', padding: '40px' }}>
+                  <Play size={48} style={{ marginBottom: '16px', opacity: 0.5 }} />
+                  <p style={{ textAlign: 'center', fontSize: '13px' }}>왼쪽 도구에서 데이터를 익명화 가공하여 시뮬레이터를 활성화해 주세요.</p>
+                </div>
+              ) : (
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', border: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                    <div>
+                      <span className="badge-tag level" style={{ fontSize: '11px', background: 'rgba(124, 108, 250, 0.15)', color: 'var(--color-brand)', padding: '2px 8px', borderRadius: '4px' }}>
+                        {simAnonymizerName}
+                      </span>
+                    </div>
+                    <div style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
+                      진행 상태: <strong>{simPlayIndex + 1}</strong> / {simAnonymizedData.length} 캔들
+                    </div>
+                  </div>
+
+                  <ChartVisualizer
+                    chartData={simAnonymizedData.slice(0, simPlayIndex + 1)}
+                    drawings={simDrawings}
+                  />
+
+                  {/* Position state header */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px', background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '8px', border: '1px solid var(--border-color)', margin: '10px 0', fontSize: '12px' }}>
+                    <div style={{ textAlign: 'center' }}>
+                      <span style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: '2px' }}>가상 잔액</span>
+                      <strong style={{ fontSize: '14px', color: '#ffba3a' }}>${simBalance.toLocaleString()}</strong>
+                    </div>
+                    <div style={{ textAlign: 'center', borderLeft: '1px solid var(--border-color)', borderRight: '1px solid var(--border-color)' }}>
+                      <span style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: '2px' }}>보유 포지션</span>
+                      {simPosition ? (
+                        <strong style={{ fontSize: '14px', color: simPosition.type === 'BUY' ? '#ef4444' : '#10b981' }}>
+                          {simPosition.type} (${simPosition.entryPrice.toFixed(1)})
+                        </strong>
+                      ) : (
+                        <strong style={{ fontSize: '14px', color: 'var(--text-muted)' }}>없음 (FLAT)</strong>
+                      )}
+                    </div>
+                    <div style={{ textAlign: 'center' }}>
+                      <span style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: '2px' }}>체결 거래</span>
+                      <strong style={{ fontSize: '14px', color: '#fff' }}>{simTrades.length}회</strong>
+                    </div>
+                  </div>
+
+                  {/* Playback & Trades controls */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: 'auto' }}>
+                    {/* Streaming Speed Control */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '12px', color: 'var(--text-secondary)' }}>
+                      <span>차트 재생 속도: </span>
+                      <div style={{ display: 'flex', gap: '6px' }}>
+                        {[2000, 1000, 500, 200].map(sp => (
+                          <button
+                            key={sp}
+                            type="button"
+                            onClick={() => setSimPlaySpeed(sp)}
+                            style={{
+                              padding: '3px 8px',
+                              background: simPlaySpeed === sp ? 'var(--color-brand)' : 'rgba(255,255,255,0.05)',
+                              border: 'none',
+                              borderRadius: '4px',
+                              color: '#fff',
+                              fontSize: '10px',
+                              cursor: 'pointer'
+                            }}
+                          >
+                            {sp === 2000 ? '0.5x' : sp === 1000 ? '1.0x' : sp === 500 ? '2.0x' : '5.0x'}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Simulation buttons */}
+                    <div style={{ display: 'flex', gap: '8px' }}>
+                      <button
+                        type="button"
+                        className={`btn ${simRunning ? 'btn-secondary' : 'btn-brand'}`}
+                        onClick={() => setSimRunning(!simRunning)}
+                        style={{ flex: 1 }}
+                      >
+                        {simRunning ? '⏸️ 일시정지' : '▶️ 시뮬레이션 시작'}
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-secondary"
+                        onClick={() => {
+                          if (simPlayIndex < simAnonymizedData.length - 1) {
+                            setSimPlayIndex(prev => prev + 1);
+                          }
+                        }}
+                        disabled={simRunning || simPlayIndex >= simAnonymizedData.length - 1}
+                        style={{ padding: '8px 12px' }}
+                      >
+                        +1 캔들
+                      </button>
+                      <button type="button" className="btn btn-secondary" onClick={handleResetSimulator} style={{ padding: '8px 12px' }}>
+                        🔄 리셋
+                      </button>
+                    </div>
+
+                    {/* Position entering buttons */}
+                    <div style={{ display: 'flex', gap: '8px', borderTop: '1px solid var(--border-color)', paddingTop: '12px' }}>
+                      <button
+                        type="button"
+                        className="btn btn-brand"
+                        onClick={handleSimBuy}
+                        disabled={simPosition !== null}
+                        style={{ flex: 1, background: '#ef4444', borderColor: '#ef4444' }}
+                      >
+                        롱 (BUY) 진입
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-brand"
+                        onClick={handleSimSell}
+                        disabled={simPosition !== null}
+                        style={{ flex: 1, background: '#10b981', borderColor: '#10b981' }}
+                      >
+                        숏 (SELL) 진입
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-secondary"
+                        onClick={handleSimExit}
+                        disabled={simPosition === null}
+                        style={{ flex: 1, background: '#3b82f6', color: '#fff', borderColor: '#3b82f6' }}
+                      >
+                        포지션 청산 (EXIT)
+                      </button>
+                    </div>
+                    
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      onClick={handleEndSimulation}
+                      style={{ marginTop: '4px', width: '100%', fontSize: '12px', padding: '6px' }}
+                    >
+                      🚩 시뮬레이션 즉시 종료 및 결과 분석
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Results Report overlay modal */}
+            {simResultReport && (
+              <div className="modal-overlay" style={{ zIndex: 9999 }}>
+                <div className="modal-content" style={{ maxWidth: '450px' }}>
+                  <div className="modal-header">
+                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff' }}>📊 백테스트 시뮬레이션 복기 리포트</h3>
+                    <button className="icon-btn" onClick={() => setSimResultReport(null)}>
+                      <X size={18} />
+                    </button>
+                  </div>
+                  <div className="modal-body" style={{ display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '13px' }}>
+                    <div style={{ textAlign: 'center', background: 'rgba(255, 186, 58, 0.08)', padding: '16px', borderRadius: '10px', border: '1px solid rgba(255, 186, 58, 0.2)' }}>
+                      <span style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>최종 자산 결과</span>
+                      <h2 style={{ fontSize: '24px', fontWeight: 800, color: '#ffba3a', margin: '4px 0 0 0' }}>
+                        ${simResultReport.finalBalance.toLocaleString()}
+                      </h2>
+                    </div>
+
+                    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                      <tbody>
+                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+                          <td style={{ padding: '8px 0', color: 'var(--text-secondary)' }}>가칭 종목명</td>
+                          <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 'bold' }}>{simResultReport.anonymizerName}</td>
+                        </tr>
+                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+                          <td style={{ padding: '8px 0', color: 'var(--text-secondary)' }}>진짜 원래 정체</td>
+                          <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 'bold', color: 'var(--color-brand)' }}>{simResultReport.trueIdentity}</td>
+                        </tr>
+                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+                          <td style={{ padding: '8px 0', color: 'var(--text-secondary)' }}>총 매매 횟수</td>
+                          <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 'bold' }}>{simResultReport.totalTrades}회</td>
+                        </tr>
+                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+                          <td style={{ padding: '8px 0', color: 'var(--text-secondary)' }}>매매 승률 (Win Rate)</td>
+                          <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 'bold', color: simResultReport.winRate >= 50 ? '#ef4444' : '#64748b' }}>
+                            {simResultReport.winRate}%
+                          </td>
+                        </tr>
+                        <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+                          <td style={{ padding: '8px 0', color: 'var(--text-secondary)' }}>최종 수익률</td>
+                          <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 'bold', color: simResultReport.totalProfitPct >= 0 ? '#ef4444' : '#3b82f6' }}>
+                            {simResultReport.totalProfitPct >= 0 ? '+' : ''}{simResultReport.totalProfitPct}%
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <div>
+                      <h4 style={{ fontWeight: 'bold', marginBottom: '8px', color: '#fff' }}>거래 일지 내역</h4>
+                      <div style={{ maxHeight: '140px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '6px', background: '#0d1117', padding: '10px', borderRadius: '8px' }}>
+                        {simTrades.length === 0 ? (
+                          <div style={{ color: 'var(--text-muted)', fontSize: '11px', textAlign: 'center', padding: '10px' }}>체결된 거래가 없습니다.</div>
+                        ) : (
+                          simTrades.map((t, idx) => (
+                            <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', borderBottom: '1px dashed rgba(255,255,255,0.05)', paddingBottom: '4px' }}>
+                              <span style={{ color: t.type === 'BUY' ? '#ef4444' : '#10b981' }}>
+                                #{idx + 1} {t.type} (캔들 {t.entryIndex} ➡️ {t.exitIndex}{t.forced ? ' 강제종료' : ''})
+                              </span>
+                              <span style={{ color: t.profitPct >= 0 ? '#ef4444' : '#3b82f6', fontWeight: 'bold' }}>
+                                {t.profitPct >= 0 ? '+' : ''}{t.profitPct}% (${t.pnl >= 0 ? '+' : ''}{t.pnl})
+                              </span>
+                            </div>
+                          ))
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-secondary" onClick={() => setSimResultReport(null)}>확인 및 복기 완료</button>
+                  </div>
+                </div>
+              </div>
+            )}
+
           </div>
         )}
       </div>

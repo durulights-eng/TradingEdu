@@ -184,6 +184,21 @@ export const ChartVisualizer: React.FC<ChartVisualizerProps> = ({ chartData, dra
             ctx.textAlign = 'right';
             ctx.fillText(drawing.label, x - 5, y - 6);
           }
+        } else if (drawing.type === 'text') {
+          if (drawing.points.length > 0 && drawing.label) {
+            const pt = drawing.points[0];
+            const x = getXPixel(pt.x);
+            const y = getYPixel(pt.y);
+
+            ctx.fillStyle = drawing.color || '#3b82f6';
+            ctx.beginPath();
+            ctx.arc(x, y, 3.5, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.font = '800 9px Inter';
+            ctx.textAlign = 'center';
+            ctx.fillText(drawing.label, x, y - 8);
+          }
         }
       });
     };
